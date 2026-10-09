@@ -228,3 +228,10 @@ Por parecer: visitas, leitura até o fim, cliques em "Liberar materiais", **taxa
 ## B10. Configurações
 
 Usuários e papéis (autor, revisor, administrador), modelo padrão do parecer, textos legais, e-mails automáticos, integrações.
+
+---
+
+## Créditos de recursos visuais
+
+- **Bandeiras dos estados:** pacote [icones-bandeiras-br-uf](https://github.com/pierrelapalu/icones-bandeiras-br-uf), de Pierre Lapalu, licença **CC0 1.0** (domínio público). Estilo usado: `rounded` (proporção 3:2, cantos arredondados). Espírito Santo na versão com o lema "Trabalha e Confia"; Paraíba na versão com "NEGO".
+- Uso no site: etiqueta de estado (bandeira + nome), bandeira do Brasil para leis federais, bandeira grande no painel do estado, seletor de estado (menu do inscrito e inscrição), cabeçalho do parecer e card do Instagram.
