@@ -171,6 +171,156 @@ button{font:inherit;cursor:pointer;color:inherit}
 @keyframes fade{from{opacity:0}}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 18px;border-radius:999px;font-size:.9rem;z-index:30;animation:rise .25s ease}
 
+
+/* ---------- inscrição ---------- */
+.sign{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:40px;align-items:start;padding-block:48px 72px}
+.sign-l{display:grid;gap:20px;position:sticky;top:100px}
+.sign-l h1{font-size:clamp(1.8rem,4.4vw,2.5rem);font-weight:800}
+.sign-l h1 em{font-style:normal;color:var(--green)}
+.sign-l > p{color:var(--gray)}
+.perks{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.perks li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;align-items:start}
+.perks .pi{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--green-50);color:var(--green-dk)}
+.perks .pi svg{width:20px;height:20px}
+.perks b{display:block}
+.perks span{color:var(--gray);font-size:.9rem}
+.assure{display:flex;gap:8px;flex-wrap:wrap}
+.assure span{font-size:.8rem;color:var(--green-dk);background:var(--green-50);padding:4px 10px;border-radius:999px;font-weight:600}
+.formcard{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,4vw,32px);display:grid;gap:20px;box-shadow:0 20px 50px -30px rgba(22,32,26,.35)}
+.prog{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.prog div{display:grid;gap:6px;font-size:.78rem;font-weight:600;color:var(--soft)}
+.prog div::before{content:"";height:4px;border-radius:999px;background:var(--line);transition:background .3s}
+.prog .on{color:var(--ink)} .prog .on::before,.prog .ok::before{background:var(--green)}
+.prog .ok{color:var(--green-dk)}
+.fstep{display:grid;gap:14px;animation:rise .3s ease both}
+.fstep h2{font-size:1.25rem;font-weight:700}
+.fstep > p{color:var(--gray);font-size:.92rem;margin-top:-8px}
+.field{display:grid;gap:6px;font-size:.85rem;font-weight:600}
+.field input,.field select{font:inherit;font-weight:400;width:100%;border:1.5px solid var(--line);border-radius:12px;padding:11px 12px;background:var(--white);color:var(--ink)}
+.field input:focus,.field select:focus{outline:0;border-color:var(--green)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{border:1.5px solid var(--line);background:var(--white);border-radius:999px;padding:7px 14px;font-size:.88rem;font-weight:500;transition:all .15s}
+.opt:hover{border-color:var(--green)}
+.opt[aria-pressed="true"]{background:var(--green-50);border-color:var(--green);color:var(--green-dk);font-weight:600}
+.toggle{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 14px;border:1.5px solid var(--line);border-radius:14px}
+.toggle b{display:block;font-size:.95rem}
+.toggle span{color:var(--gray);font-size:.84rem}
+.sw{position:relative;width:44px;height:26px;flex:none;border-radius:999px;background:var(--line);border:0;transition:background .2s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .2s}
+.sw[aria-checked="true"]{background:var(--green)} .sw[aria-checked="true"]::after{transform:translateX(18px)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--gray)}
+.consent input{margin-top:3px}
+.fnav{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.done-card{display:grid;gap:14px;justify-items:center;text-align:center;padding-block:20px;animation:rise .35s ease both}
+.check{width:64px;height:64px;border-radius:50%;background:var(--green);display:grid;place-items:center;color:#fff}
+.check svg{width:30px;height:30px;stroke-dasharray:30;stroke-dashoffset:30;animation:draw .5s .15s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.done-card h2{font-size:1.5rem;font-weight:800}
+.done-card p{color:var(--gray);max-width:36ch}
+.mail{font-weight:600;color:var(--ink);background:var(--green-50);padding:4px 10px;border-radius:8px}
+
+/* ---------- relatório do parecer ---------- */
+.readbar{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;background:var(--green);z-index:10;width:0;transition:width .1s linear}
+.rep{max-width:1040px;margin:0 auto;padding-inline:20px;padding-block:8px 72px}
+.rep-head{display:grid;gap:14px;padding-block:18px 26px;max-width:760px}
+.rep-head .eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dk);font-weight:700}
+.rep-head h1{font-size:clamp(1.9rem,4.8vw,2.7rem);font-weight:800}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--gray);font-size:.88rem}
+.meta b{color:var(--ink);font-weight:600}
+.verdict{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:12px}
+.vcard{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:16px 18px;display:grid;gap:10px;align-content:start}
+.vcard small{font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:700}
+.vcard .big{font-size:1.35rem;font-weight:800;line-height:1.1}
+.meter{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.meter span{height:8px;border-radius:999px;background:var(--line)}
+.meter .f{background:var(--sun-ink)}
+.mlab{display:flex;justify-content:space-between;font-size:.75rem;color:var(--soft)}
+.scale{position:relative;height:8px;border-radius:999px;background:linear-gradient(90deg,var(--rose-ink),#C9CFCB 50%,var(--green-dk))}
+.scale i{position:absolute;top:50%;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--ink);transform:translate(-50%,-50%)}
+.oneline{background:var(--ink);color:#fff;border-radius:18px;padding:18px 22px;font-size:1.08rem;line-height:1.5;margin-bottom:34px}
+.oneline b{color:#9BE3B8}
+.rep-body{display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px;align-items:start}
+.toc{position:sticky;top:96px;display:grid;gap:2px}
+.toc small{font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:700;padding:0 10px 8px}
+.toc a{display:flex;gap:10px;padding:7px 10px;border-radius:10px;font-size:.9rem;color:var(--gray);transition:all .15s}
+.toc a span{font-variant-numeric:tabular-nums;color:var(--soft);font-weight:600}
+.toc a:hover{background:var(--white);color:var(--ink)}
+.toc a.on{background:var(--green-50);color:var(--green-dk);font-weight:600}
+.toc a.on span{color:var(--green-dk)}
+.rsec{display:grid;gap:14px;padding-block:6px 34px;scroll-margin-top:90px}
+.rsec h2{font-size:1.35rem;font-weight:700;display:flex;gap:12px;align-items:baseline}
+.rsec h2 span{color:var(--green);font-size:1rem;font-variant-numeric:tabular-nums}
+.rsec > p{color:#3A443E;max-width:66ch}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.facts div{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:grid;gap:2px}
+.facts b{font-size:1.25rem;font-weight:800;font-variant-numeric:tabular-nums}
+.facts span{font-size:.82rem;color:var(--gray)}
+.cmp{display:grid;gap:8px}
+.cmp-row{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);gap:8px;align-items:stretch}
+.cmp-row > div{border-radius:14px;padding:12px 14px;font-size:.93rem}
+.cmp-row .bef{background:var(--white);border:1px solid var(--line);color:var(--gray)}
+.cmp-row .aft{background:var(--green-50);color:var(--ink)}
+.cmp-row .arr{display:grid;place-items:center;color:var(--soft);font-weight:700}
+.cmp-row small{display:block;font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;font-weight:700;margin-bottom:2px;color:var(--soft)}
+.cmp-row .aft small{color:var(--green-dk)}
+.chart{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:grid;gap:12px;position:relative}
+.chart-cap{display:flex;justify-content:space-between;gap:10px;font-size:.78rem;color:var(--soft);font-weight:600}
+.drow{display:grid;grid-template-columns:110px minmax(0,1fr) 120px;gap:12px;align-items:center;font-size:.9rem;cursor:default;border-radius:8px}
+.drow:focus-visible{outline:2px solid var(--green)}
+.drow .lab{font-weight:600}
+.dtrack{position:relative;height:22px}
+.dtrack::before{content:"";position:absolute;left:50%;top:-4px;bottom:-4px;border-left:1.5px solid #C9CFCB}
+.dbar{position:absolute;top:4px;height:14px}
+.dbar.pos{left:calc(50% + 2px);background:var(--green-dk);border-radius:0 4px 4px 0}
+.dbar.neg{right:calc(50% + 2px);background:var(--rose-ink);border-radius:4px 0 0 4px}
+.dbar.zero{left:calc(50% - 3px);width:6px;background:#C9CFCB;border-radius:3px}
+.drow .val{font-size:.84rem;color:var(--gray)}
+.drow:hover .lab,.drow:focus .lab{color:var(--green-dk)}
+.tip{position:absolute;z-index:3;max-width:260px;background:var(--ink);color:#fff;font-size:.82rem;line-height:1.4;padding:9px 12px;border-radius:10px;pointer-events:none;box-shadow:0 8px 20px -8px rgba(0,0,0,.4)}
+.alerts{display:grid;gap:10px}
+.al{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.al .chipst{font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap;align-self:start}
+.st-pos{background:var(--green-50);color:var(--green-dk)} .st-att{background:var(--sun);color:var(--sun-ink)} .st-crit{background:var(--rose);color:var(--rose-ink)}
+.al b{display:block;margin-bottom:2px}
+.al p{color:var(--gray);font-size:.9rem}
+.laws{display:flex;flex-wrap:wrap;gap:8px}
+.lawchip{border:1.5px solid var(--line);background:var(--white);border-radius:12px;padding:8px 12px;font-size:.88rem;font-weight:600;text-align:left;transition:all .15s}
+.lawchip span{display:block;font-weight:400;color:var(--gray);font-size:.8rem}
+.lawchip[aria-expanded="true"]{border-color:var(--green);background:var(--green-50)}
+.lawnote{background:var(--white);border-left:3px solid var(--green);border-radius:0 12px 12px 0;padding:12px 16px;font-size:.92rem;color:#3A443E}
+.recs{display:grid;gap:10px;counter-reset:r;margin:0;padding:0;list-style:none}
+.recs li{counter-increment:r;display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:start}
+.recs li::before{content:counter(r);width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.9rem}
+.recs li span{padding-top:4px}
+.concl{background:var(--green);color:#fff;border-radius:22px;padding:24px 26px;display:grid;gap:12px}
+.concl p{font-size:1.05rem;line-height:1.55}
+.concl .row{display:flex;gap:8px;flex-wrap:wrap}
+.concl .tag{background:rgba(255,255,255,.18);color:#fff}
+.rep-foot{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:12px;margin-top:8px}
+.panel-s{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:grid;gap:12px;align-content:start}
+.panel-s h3{font-size:1.05rem;font-weight:700}
+.panel-s p{color:var(--gray);font-size:.9rem}
+.cite{font-size:.84rem;background:var(--bg);border-radius:10px;padding:10px 12px;color:#3A443E;user-select:all}
+.btn-o{border:1.5px solid var(--line);background:var(--white);border-radius:999px;padding:8px 14px;font-weight:600;font-size:.88rem;justify-self:start}
+.btn-o:hover{border-color:var(--green)}
+.rep-foot .files{grid-template-columns:1fr}
+.head.wide .wrap{max-width:1040px}
+.to-report{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--green-100);padding-top:14px}
+.to-report span{color:var(--gray);font-size:.9rem}
+
+@media (max-width:860px){
+  .sign,.rep-body,.rep-foot{grid-template-columns:1fr}
+  .sign-l{position:static}
+  .toc{position:static;display:flex;overflow-x:auto;gap:4px}
+  .toc small{display:none}
+  .toc a{white-space:nowrap;background:var(--white);border:1px solid var(--line)}
+  .verdict,.facts{grid-template-columns:1fr}
+  .drow{grid-template-columns:90px minmax(0,1fr)}
+  .drow .val{grid-column:2}
+  .cmp-row{grid-template-columns:1fr}
+  .cmp-row .arr{transform:rotate(90deg);height:16px}
+}
+
 @media (max-width:640px){
   .topics{grid-template-columns:repeat(2,minmax(0,1fr))}
   .topics .topic:last-child{grid-column:1/-1}
@@ -184,7 +334,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 
 <header class="head" id="head"><div class="wrap">
   <a class="brand" href="#home"><i></i>Nome do Site</a>
-  <button class="pill-btn" id="sub-btn" data-act="inscrever">Se inscreva grátis</button>
+  <button class="pill-btn" id="sub-btn" data-act="pagina">Se inscreva grátis</button>
 </div></header>
 <main id="app"></main>
 <p class="foot">Rascunho visual · conteúdos fictícios</p>
@@ -298,7 +448,7 @@ function home(){
       <div class="section-h"><h2>Mais recentes</h2><span id="count">${filtradas().length} leis</span></div>
       <div class="list" id="list">${listHTML()}</div>
     </section>
-    ${state.inscrito?"":`<section class="cta"><div style="display:grid;gap:4px"><h2>Notas técnicas e quadros comparativos</h2><p>Grátis para inscritos, com aviso quando uma lei andar.</p></div><button class="pill-btn" data-act="inscrever">Se inscreva grátis</button></section>`}
+    ${state.inscrito?"":`<section class="cta"><div style="display:grid;gap:4px"><h2>Notas técnicas e quadros comparativos</h2><p>Grátis para inscritos, com aviso quando uma lei andar.</p></div><button class="pill-btn" data-act="pagina">Se inscreva grátis</button></section>`}
   </div>`;
 }
 function lei(l){
@@ -341,6 +491,7 @@ function lei(l){
         <p>O conselho previsto no art. 2º não tem composição mínima. Recomendamos garantir participação das comunidades e de instituições de pesquisa.</p>
         <p><b>Conclusão:</b> ${l.imp.toLowerCase()}, com efeito ${l.car.toLowerCase()} condicionado à regulamentação.</p>
       </div>
+      <div class="to-report"><span>Impactos por dimensão, pontos de atenção, base legal e recomendações.</span><a class="pill-btn" href="#parecer-${l.id}">Ler parecer completo →</a></div>
     </section>
 
     <section class="block b-mat" id="s-mat">
@@ -374,10 +525,170 @@ function abrirInscricao(){
     $("#layer").innerHTML=""; state.inscrito=true; toast("Pronto! Materiais liberados"); render(true); };
 }
 
+
+/* ---------- página de inscrição ---------- */
+const PERFIS=["Advogado(a)","Estudante","Servidor(a) público(a)","Empresa","ONG / movimento","Pesquisador(a)","Jornalista","Cidadão(ã)"];
+const TEMAS=["Licenciamento","Florestas","Água","Clima","Mineração","Agrotóxicos","Unidades de conservação","Povos e comunidades"];
+const UFS="AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP TO".split(" ");
+const insc={passo:1,nome:"",email:"",perfil:"",uf:"TO",temas:["Florestas","Água"],alertas:true,news:true,regional:true,ok:false};
+const PERK_ICON={
+  doc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6" stroke-linecap="round"/></svg>',
+  cmp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="7" height="16" rx="2"/><rect x="14" y="4" width="7" height="16" rx="2"/></svg>',
+  bell:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>',
+  map:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg>',
+};
+function inscricao(){
+  const P=insc.passo;
+  const prog=["Você","Interesses","Avisos"].map((t,i)=>`<div class="${i+1<P||insc.ok?"ok":i+1===P?"on":""}">${t}</div>`).join("");
+  let body="";
+  if(insc.ok){
+    body=`<div class="done-card"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <h2>Confira seu e-mail</h2><p>Enviamos um link de acesso para <span class="mail">${insc.email||"seu e-mail"}</span>. É só clicar para confirmar. Não precisa de senha.</p>
+      <a class="pill-btn" href="#home">Explorar as leis</a></div>`;
+  } else if(P===1){
+    body=`<div class="fstep"><h2>Vamos começar</h2><p>Leva menos de um minuto.</p>
+      <label class="field" for="i-nome">Nome<input id="i-nome" type="text" placeholder="Como podemos te chamar?" value="${insc.nome}"></label>
+      <label class="field" for="i-email">E-mail<input id="i-email" type="email" placeholder="voce@exemplo.com" value="${insc.email}"></label>
+      <div class="fnav"><span></span><button class="pill-btn" data-act="next">Continuar</button></div></div>`;
+  } else if(P===2){
+    body=`<div class="fstep"><h2>O que te interessa?</h2><p>Usamos isso para escolher o que enviar a você.</p>
+      <div class="field">Você é<div class="opts">${PERFIS.map(x=>`<button class="opt" data-perfil="${x}" aria-pressed="${insc.perfil===x}">${x}</button>`).join("")}</div></div>
+      <label class="field" for="i-uf">Seu estado<select id="i-uf">${UFS.map(u=>`<option ${u===insc.uf?"selected":""}>${u}</option>`).join("")}</select></label>
+      <div class="field">Temas <span style="font-weight:400;color:var(--soft)">escolha quantos quiser</span><div class="opts">${TEMAS.map(x=>`<button class="opt" data-tema="${x}" aria-pressed="${insc.temas.includes(x)}">${x}</button>`).join("")}</div></div>
+      <div class="fnav"><button class="ghost" data-act="prev">← Voltar</button><button class="pill-btn" data-act="next">Continuar</button></div></div>`;
+  } else {
+    const t=(k,b,s)=>`<div class="toggle"><div><b>${b}</b><span>${s}</span></div><button class="sw" role="switch" aria-checked="${insc[k]}" aria-label="${b}" data-sw="${k}"></button></div>`;
+    body=`<div class="fstep"><h2>Como quer ser avisado?</h2><p>Você pode mudar isso quando quiser.</p>
+      ${t("alertas","Alertas de tramitação","Quando uma lei dos seus temas entrar em pauta ou for votada")}
+      ${t("news","Resumo semanal","Os pareceres da semana, toda segunda-feira")}
+      ${t("regional","Destaques de "+insc.uf,"Leis do seu estado e da sua região")}
+      <label class="consent"><input id="i-lgpd" type="checkbox"> Concordo com a Política de Privacidade e com o uso dos meus dados para envio dos conteúdos escolhidos.</label>
+      <div class="fnav"><button class="ghost" data-act="prev">← Voltar</button><button class="pill-btn" data-act="finish">Criar inscrição</button></div></div>`;
+  }
+  return `<div class="wrap" style="max-width:1040px"><div class="sign">
+    <aside class="sign-l">
+      <h1>Acompanhe as leis <em>ambientais</em> que importam para você</h1>
+      <p>O parecer é aberto a todos. Inscritos recebem o material de aprofundamento e são avisados antes das votações.</p>
+      <ul class="perks">
+        <li><span class="pi">${PERK_ICON.doc}</span><div><b>Notas técnicas em PDF</b><span>A análise jurídica completa de cada lei.</span></div></li>
+        <li><span class="pi">${PERK_ICON.cmp}</span><div><b>Quadros comparativos</b><span>O que diz a lei hoje e o que muda com o projeto.</span></div></li>
+        <li><span class="pi">${PERK_ICON.bell}</span><div><b>Alertas antes da votação</b><span>Um e-mail quando a lei que você segue andar.</span></div></li>
+        <li><span class="pi">${PERK_ICON.map}</span><div><b>Destaques do seu estado</b><span>O que está em pauta perto de você.</span></div></li>
+      </ul>
+      <div class="assure"><span>Grátis</span><span>Sem senha</span><span>Cancele com um clique</span></div>
+    </aside>
+    <section class="formcard"><div class="prog">${prog}</div>${body}</section>
+  </div></div>`;
+}
+function saveStep(){
+  if($("#i-nome")){ insc.nome=$("#i-nome").value.trim(); insc.email=$("#i-email").value.trim(); }
+  if($("#i-uf")) insc.uf=$("#i-uf").value;
+}
+
+/* ---------- relatório do parecer ---------- */
+const DIMS=[["Ambiental",2,"Protege 48 mil ha de floresta e várzea contra extração ilegal."],["Social",2,"Garante às comunidades tradicionais o uso prioritário da área."],["Econômico",-1,"Restringe atividades madeireiras e de pesca comercial no entorno."],["Institucional",0,"Cria conselho, mas sem composição mínima nem orçamento definido."]];
+const VAL={2:"Muito positivo",1:"Positivo",0:"Neutro","-1":"Negativo","-2":"Muito negativo"};
+const SECS=[["r1","Contexto"],["r2","O que muda"],["r3","Impactos"],["r4","Pontos de atenção"],["r5","Base legal"],["r6","Recomendações"],["r7","Conclusão"]];
+const BASE=[["CF, art. 225","Meio ambiente equilibrado","Impõe ao poder público o dever de definir espaços territoriais especialmente protegidos (§1º, III). O projeto cumpre esse comando."],
+  ["Lei 9.985/2000","SNUC","Define a Reserva Extrativista (art. 18) e exige plano de manejo em até 5 anos (art. 27, §3º). O projeto não repete esse prazo."],
+  ["LC 140/2011","Competências","Atribui ao estado a gestão das unidades que cria (art. 8º, X). A gestão estadual prevista está correta."],
+  ["Convenção 169 OIT","Consulta prévia","Exige consulta livre, prévia e informada às comunidades afetadas. Não há registro de consulta no processo."]];
+function parecer(l){
+  const dir=l.car==="Maléfico"?-1:1;
+  const dims=DIMS.map(d=>[d[0],d[1]*dir,d[2]]);
+  const imp={"Baixo impacto":1,"Médio impacto":2,"Alto impacto":3}[l.imp]||3;
+  const pos=l.car==="Benéfico"?82:l.car==="Maléfico"?18:50;
+  const a=ATORES[l.id];
+  return `<div class="readbar" id="readbar"></div>
+  <div class="rep">
+    <a class="back" href="#${l.id}">← ${l.num}</a>
+    <header class="rep-head">
+      <span class="eyebrow">Parecer técnico · versão 2</span>
+      <h1>${l.titulo}</h1>
+      <div class="meta"><span>${l.num} · ${l.local}</span><span>Publicado em <b>09/10/2026</b></span><span>Texto analisado: <b>versão de 08/10/2026</b></span><span>Leitura de <b>4 min</b></span></div>
+    </header>
+
+    <div class="verdict">
+      <div class="vcard"><small>Impacto</small><span class="big">${l.imp.replace(" impacto","")}</span>
+        <div class="meter" role="img" aria-label="Impacto ${l.imp}">${[1,2,3].map(i=>`<span class="${i<=imp?"f":""}"></span>`).join("")}</div><div class="mlab"><span>Baixo</span><span>Médio</span><span>Alto</span></div></div>
+      <div class="vcard"><small>Caráter</small><span class="big" style="color:${l.car==="Maléfico"?"var(--rose-ink)":l.car==="Benéfico"?"var(--green-dk)":"var(--ink)"}">${l.car}</span>
+        <div class="scale" role="img" aria-label="Caráter ${l.car}"><i style="left:${pos}%"></i></div><div class="mlab"><span>Maléfico</span><span>Neutro</span><span>Benéfico</span></div></div>
+      <div class="vcard"><small>Próximo passo</small><span class="big">${l.status==="Aprovada"?"Regulamentação":"Plenário"}</span>
+        <span style="color:var(--gray);font-size:.9rem">${l.status==="Aprovada"?"Prazo de 180 dias para o Executivo":"Votação prevista para 14/10/2026"}</span></div>
+    </div>
+    <p class="oneline"><b>Em uma frase:</b> ${l.resumo.replace(/\.$/,"")}. A proposta é ${l.car==="Benéfico"?"positiva":"preocupante"}, mas depende de regulamentação para ter efeito real.</p>
+
+    <div class="rep-body">
+      <nav class="toc" aria-label="Sumário"><small>Neste parecer</small>${SECS.map((x,i)=>`<a href="#parecer-${l.id}" data-jump="${x[0]}" class="${i===0?"on":""}"><span>${i+1}</span>${x[1]}</a>`).join("")}</nav>
+      <article>
+        <section class="rsec" id="r1"><h2><span>1</span>Contexto</h2>
+          <p>A região do Baixo Rio Exemplo abriga comunidades extrativistas há mais de um século e sofre pressão crescente de extração ilegal de madeira e pesca predatória. Não há hoje nenhuma proteção legal específica para a área.</p>
+          <div class="facts"><div><b>48 mil ha</b><span>área proposta</span></div><div><b>~1.200</b><span>famílias extrativistas</span></div><div><b>Amazônia</b><span>bioma</span></div></div>
+        </section>
+
+        <section class="rsec" id="r2"><h2><span>2</span>O que muda</h2>
+          <div class="cmp">
+            ${[["Sem proteção legal específica","Reserva Extrativista de uso sustentável"],["Uso livre, sem regras","Uso conforme plano de manejo"],["Sem gestão definida","Gestão estadual com conselho deliberativo"]].map(r=>`<div class="cmp-row"><div class="bef"><small>Hoje</small>${r[0]}</div><span class="arr">→</span><div class="aft"><small>Com o projeto</small>${r[1]}</div></div>`).join("")}
+          </div>
+        </section>
+
+        <section class="rsec" id="r3"><h2><span>3</span>Impactos por dimensão</h2>
+          <div class="chart" id="chart">
+            <div class="chart-cap"><span>← Negativo</span><span>Positivo →</span></div>
+            ${dims.map(d=>`<div class="drow" tabindex="0" data-tip="${d[2]}"><span class="lab">${d[0]}</span>
+              <div class="dtrack">${d[1]===0?'<span class="dbar zero"></span>':`<span class="dbar ${d[1]>0?"pos":"neg"}" style="width:calc(${Math.abs(d[1])*24}% - 2px)"></span>`}</div>
+              <span class="val">${VAL[d[1]]}</span></div>`).join("")}
+          </div>
+          <p style="color:var(--soft);font-size:.85rem">Passe o mouse ou toque em cada dimensão para ver a justificativa.</p>
+        </section>
+
+        <section class="rsec" id="r4"><h2><span>4</span>Pontos de atenção</h2>
+          <div class="alerts">
+            <div class="al"><span class="chipst st-pos">✓ Positivo</span><div><b>Prioridade às comunidades</b><p>O uso dos recursos fica garantido a quem já vive e trabalha na área.</p></div></div>
+            <div class="al"><span class="chipst st-att">! Atenção</span><div><b>Sem prazo para o plano de manejo</b><p>Sem prazo, as regras de uso podem levar anos para existir.</p></div></div>
+            <div class="al"><span class="chipst st-crit">✕ Crítico</span><div><b>Consulta às comunidades não registrada</b><p>A falta de consulta prévia pode levar à anulação da lei na Justiça.</p></div></div>
+          </div>
+        </section>
+
+        <section class="rsec" id="r5"><h2><span>5</span>Base legal</h2>
+          <div class="laws">${BASE.map((b,i)=>`<button class="lawchip" data-law="${i}" aria-expanded="false">${b[0]}<span>${b[1]}</span></button>`).join("")}</div>
+          <div class="lawnote" id="lawnote">Toque em uma norma para ver como ela se aplica ao projeto.</div>
+        </section>
+
+        <section class="rsec" id="r6"><h2><span>6</span>Recomendações</h2>
+          <ol class="recs">
+            <li><span>Fixar prazo de até 2 anos para o plano de manejo.</span></li>
+            <li><span>Definir composição mínima do conselho, com maioria das comunidades.</span></li>
+            <li><span>Realizar consulta prévia antes da votação em plenário.</span></li>
+          </ol>
+        </section>
+
+        <section class="rsec" id="r7"><h2><span>7</span>Conclusão</h2>
+          <div class="concl"><div class="row"><span class="tag">${l.imp}</span><span class="tag">${l.car}</span></div>
+            <p>O projeto protege uma área sensível e as comunidades que dependem dela. Para cumprir o que promete, precisa de prazo para o plano de manejo e de consulta prévia às comunidades.</p></div>
+        </section>
+
+        <div class="rep-foot">
+          <div class="panel-s"><h3>Aprofunde</h3><p>Nota Técnica com a análise jurídica completa e o Quadro comparativo artigo por artigo.</p>
+            <div class="files">
+              <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota Técnica</b><span>12 páginas</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
+              <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>3 páginas</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
+            </div></div>
+          <div class="panel-s"><h3>Citar este parecer</h3>
+            <p class="cite" id="cite">NOME DO SITE. Parecer técnico: ${l.titulo} (${l.num}). Versão 2, 09 out. 2026.</p>
+            <button class="btn-o" data-act="copiar">Copiar citação</button></div>
+        </div>
+      </article>
+    </div>
+  </div>`;
+}
+
 function render(keepScroll){
   const r=(location.hash||"").slice(1); const l=LEIS.find(x=>x.id===r);
+  const pl=r.startsWith("parecer-")?LEIS.find(x=>"parecer-"+x.id===r):null;
   const y=window.scrollY;
-  $("#app").innerHTML = l ? lei(l) : home();
+  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? inscricao() : home();
+  $("#head").classList.toggle("wide", !!pl || r==="inscricao");
   const b=$("#sub-btn"); b.textContent = state.inscrito?"Inscrito ✓":"Se inscreva grátis"; b.classList.toggle("done",state.inscrito);
   window.scrollTo(0, keepScroll?y:0);
   const sf=$("#sf");
@@ -387,6 +698,8 @@ function refreshList(){ $("#list").innerHTML=listHTML(); $("#count").textContent
 window.addEventListener("hashchange",()=>render());
 window.addEventListener("scroll",()=>{
   $("#head").classList.toggle("scrolled",window.scrollY>4);
+  const rb=$("#readbar"); if(rb){ const h=document.documentElement.scrollHeight-innerHeight; rb.style.width=(h>0?scrollY/h*100:0)+"%"; }
+  const toc=document.querySelectorAll(".toc a"); if(toc.length){ let c="r1"; SECS.forEach(x=>{ const el=document.getElementById(x[0]); if(el && el.getBoundingClientRect().top<160) c=x[0]; }); toc.forEach(a=>a.classList.toggle("on",a.dataset.jump===c)); }
   const steps=document.querySelectorAll(".steps a"); if(!steps.length) return;
   let cur="s-lei"; ["s-lei","s-who","s-par","s-mat"].forEach(id=>{ const el=document.getElementById(id); if(el && el.getBoundingClientRect().top<180) cur=id; });
   steps.forEach(a=>a.classList.toggle("on",a.dataset.jump===cur));
@@ -395,14 +708,35 @@ document.addEventListener("click",ev=>{
   const tp=ev.target.closest("[data-topic]"); if(tp){ state.topic=tp.dataset.topic; document.querySelectorAll("[data-topic]").forEach(b=>b.setAttribute("aria-pressed",b===tp)); refreshList(); return; }
   const ch=ev.target.closest("[data-status]"); if(ch){ state.status=ch.dataset.status; document.querySelectorAll("[data-status]").forEach(b=>b.setAttribute("aria-pressed",b===ch)); refreshList(); return; }
   const j=ev.target.closest("[data-jump]"); if(j){ ev.preventDefault(); document.getElementById(j.dataset.jump).scrollIntoView({behavior:"smooth"}); return; }
+  const pf=ev.target.closest("[data-perfil]"); if(pf){ insc.perfil=pf.dataset.perfil; document.querySelectorAll("[data-perfil]").forEach(b=>b.setAttribute("aria-pressed",b===pf)); return; }
+  const tm=ev.target.closest("[data-tema]"); if(tm){ const t=tm.dataset.tema; insc.temas=insc.temas.includes(t)?insc.temas.filter(x=>x!==t):[...insc.temas,t]; tm.setAttribute("aria-pressed",insc.temas.includes(t)); return; }
+  const sw=ev.target.closest("[data-sw]"); if(sw){ const k=sw.dataset.sw; insc[k]=!insc[k]; sw.setAttribute("aria-checked",insc[k]); return; }
+  const lc=ev.target.closest("[data-law]"); if(lc){ const b=BASE[+lc.dataset.law]; document.querySelectorAll("[data-law]").forEach(x=>x.setAttribute("aria-expanded",x===lc)); $("#lawnote").innerHTML=`<b>${b[0]}</b> · ${b[2]}`; return; }
   const a=ev.target.closest("[data-act]"); if(!a) return;
   const act=a.dataset.act;
   if(act==="inscrever" && !state.inscrito) abrirInscricao();
+  if(act==="pagina"){ if(state.inscrito){ toast("Você já está inscrito"); } else { insc.ok=false; insc.passo=1; go("inscricao"); } }
+  if(act==="next"){ saveStep();
+    if(insc.passo===1 && (!insc.nome || !/^\S+@\S+\.\S+$/.test(insc.email))){ toast("Preencha seu nome e um e-mail válido"); return; }
+    if(insc.passo===2 && !insc.perfil){ toast("Escolha o que melhor descreve você"); return; }
+    insc.passo++; render(true); }
+  if(act==="prev"){ saveStep(); insc.passo--; render(true); }
+  if(act==="finish"){ if(!$("#i-lgpd").checked){ toast("Marque a concordância com a Política de Privacidade"); return; } insc.ok=true; state.inscrito=true; render(true); }
+  if(act==="copiar"){ const t=$("#cite").textContent; (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast("Citação copiada"),()=>{ const r=document.createRange(); r.selectNodeContents($("#cite")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); toast("Texto selecionado: use Ctrl+C"); }); }
   if(act==="fechar" && (ev.target===a || a.tagName==="BUTTON")) $("#layer").innerHTML="";
   if(act==="lei"){ state.leiAberta=!state.leiAberta; $("#mais").classList.toggle("open",state.leiAberta); a.textContent=state.leiAberta?"Mostrar menos":"Ler texto completo"; }
   if(act==="part"){ const c=$("#part"); c.classList.toggle("open"); a.textContent=c.classList.contains("open")?"Esconder votos por partido":"Ver votos por partido"; }
   if(act==="pdf"){ state.inscrito ? toast("Download da Nota Técnica (simulação)") : abrirInscricao(); }
 });
+function showTip(row){
+  const ch=$("#chart"); if(!ch) return; let t=$("#tip"); if(!t){ t=document.createElement("div"); t.id="tip"; t.className="tip"; ch.appendChild(t); }
+  t.textContent=row.dataset.tip; const cr=ch.getBoundingClientRect(), rr=row.getBoundingClientRect();
+  t.style.left=Math.min(rr.left-cr.left+110, cr.width-270)+"px"; t.style.top=(rr.bottom-cr.top+6)+"px"; t.hidden=false;
+}
+function hideTip(){ const t=$("#tip"); if(t) t.hidden=true; }
+document.addEventListener("mouseover",e=>{ const r=e.target.closest(".drow"); r?showTip(r):hideTip(); });
+document.addEventListener("focusin",e=>{ const r=e.target.closest(".drow"); r?showTip(r):hideTip(); });
+document.addEventListener("click",e=>{ const r=e.target.closest(".drow"); if(r) showTip(r); });
 document.addEventListener("keydown",e=>{ if(e.key==="Escape") $("#layer").innerHTML=""; });
 render();
 </script>
