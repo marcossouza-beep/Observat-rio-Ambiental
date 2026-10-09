@@ -23,7 +23,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 /* cabeçalho */
 .head{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid transparent}
 .head.scrolled{border-bottom-color:var(--line)}
-.head .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.head .wrap{max-width:1040px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
 .brand{font-weight:800;font-size:1.05rem;display:flex;align-items:center;gap:8px}
 .brand i{width:12px;height:12px;border-radius:50% 50% 50% 0;background:var(--green);transform:rotate(-45deg)}
 .pill-btn{background:var(--green);color:#fff;border:0;border-radius:999px;padding:9px 16px;font-weight:600;font-size:.9rem;transition:background .15s,transform .15s}
@@ -508,6 +508,65 @@ button{font:inherit;cursor:pointer;color:inherit}
   .op > .arrow{display:none}
 }
 
+
+/* ---------- leis estaduais ---------- */
+.uf-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px;align-items:start}
+.tilemap{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(8,1fr);gap:5px;aspect-ratio:6/8;max-width:360px;width:100%}
+.uf{border:0;border-radius:9px;font-size:.8rem;font-weight:700;display:grid;place-items:center;line-height:1;transition:transform .15s,box-shadow .15s;position:relative}
+.uf small{display:block;font-size:.64rem;font-weight:600;margin-top:2px;opacity:.85}
+.uf:hover{transform:scale(1.08);z-index:1}
+.uf[aria-pressed="true"]{box-shadow:0 0 0 3px var(--ink);z-index:2}
+.uf.n0{background:var(--green-50);color:var(--green-dk)}
+.uf.n1{background:#7FCB9D;color:#0F3A22}
+.uf.n2{background:var(--green-dk);color:#fff}
+.uf.breve{background:repeating-linear-gradient(135deg,var(--white) 0 5px,var(--line) 5px 7px);color:var(--soft);box-shadow:inset 0 0 0 1px var(--line)}
+.uf.breve[aria-pressed="true"]{box-shadow:0 0 0 3px var(--ink)}
+.maplegend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.8rem;color:var(--gray);margin-top:12px}
+.maplegend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.ufpanel{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:20px;display:grid;gap:14px;animation:rise .25s ease both}
+.ufpanel h2{font-size:1.5rem;font-weight:800}
+.ufpanel .casa{color:var(--gray);font-size:.9rem;margin-top:-8px}
+.ufstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.ufstats div{background:var(--bg);border-radius:12px;padding:10px 12px;display:grid;gap:2px}
+.ufstats b{font-size:1.4rem;font-weight:800;font-variant-numeric:tabular-nums}
+.ufstats span{font-size:.78rem;color:var(--gray)}
+.cov{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--gray);background:var(--bg);border-radius:12px;padding:10px 12px}
+.cov b{color:var(--ink)}
+.minilist{display:grid;gap:8px}
+.minilaw{display:grid;gap:4px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;transition:border-color .15s}
+.minilaw:hover{border-color:var(--green)}
+.minilaw b{font-size:.98rem}
+.minilaw .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.minilaw .row span.n{font-size:.8rem;color:var(--soft)}
+.ask{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px dashed var(--line);padding-top:12px;font-size:.88rem;color:var(--gray)}
+
+/* ---------- leis federais ---------- */
+.seg{display:inline-flex;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:4px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:none;border-radius:999px;padding:7px 14px;font-weight:600;font-size:.88rem;color:var(--gray)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.funnel{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.stage{border:0;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:12px 10px;display:grid;gap:6px;text-align:left;position:relative;transition:all .15s}
+.stage:hover{border-color:var(--green)}
+.stage[aria-pressed="true"]{background:var(--green-50);border-color:var(--green)}
+.stage b{font-size:1.6rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
+.stage span{font-size:.8rem;color:var(--gray);font-weight:600}
+.stage .bar{height:6px;border-radius:999px;background:var(--line);overflow:hidden}
+.stage .bar i{display:block;height:100%;background:var(--green-dk);border-radius:999px}
+.agenda{display:grid;gap:8px}
+.agenda a{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:10px 14px;transition:border-color .15s}
+.agenda a:hover{border-color:var(--green)}
+.agenda .d{background:var(--sun);color:var(--sun-ink);border-radius:10px;padding:4px 10px;font-weight:700;font-size:.85rem;white-space:nowrap}
+.agenda p{font-weight:600;font-size:.93rem}
+.agenda span.o{font-size:.8rem;color:var(--gray)}
+
+@media (max-width:760px){
+  .uf-layout{grid-template-columns:1fr}
+  .tilemap{margin:0 auto}
+  .funnel{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .agenda a{grid-template-columns:auto minmax(0,1fr)}
+  .agenda a .arrow{display:none}
+}
+
 @media (max-width:640px){
   .topics{grid-template-columns:repeat(2,minmax(0,1fr))}
   .topics .topic:last-child{grid-column:1/-1}
@@ -536,14 +595,26 @@ const TOPICS = [["todos","timeline","Timeline","Tudo, em ordem"],["estadual","es
 const LEIS = [
   {id:"resex",esfera:"estadual",local:"Pará",status:"Em tramitação",titulo:"Nova reserva extrativista no Baixo Rio Exemplo",num:"PL nº 123/2026",
    resumo:"Cria uma unidade de conservação de uso sustentável com 48 mil hectares para comunidades extrativistas.",imp:"Alto impacto",car:"Benéfico",parecer:true},
-  {id:"lic",esfera:"federal",local:"Federal",status:"Em tramitação",titulo:"Licenciamento simplificado para fazendas de médio porte",num:"PL nº 1.234/2026",
+  {id:"lic",esfera:"federal",local:"Federal",status:"Em tramitação",titulo:"Licenciamento simplificado para fazendas de médio porte",num:"PL nº 1.234/2026",casa:"Câmara",etapa:"Plenário",
    resumo:"Dispensa estudo de impacto ambiental e transfere a decisão aos municípios.",imp:"Alto impacto",car:"Maléfico",parecer:true},
   {id:"agua",esfera:"estadual",local:"Tocantins",status:"Aprovada",titulo:"Outorga coletiva de água para irrigação",num:"Lei nº 4.567/2026",
    resumo:"Permite que produtores de uma mesma bacia dividam uma única autorização de uso da água.",imp:"Alto impacto",car:"Maléfico",parecer:true},
-  {id:"caat",esfera:"federal",local:"Federal",status:"Aprovada",titulo:"Programa nacional de restauração da Caatinga",num:"Lei nº 15.0XX/2026",
+  {id:"caat",esfera:"federal",local:"Federal",status:"Aprovada",titulo:"Programa nacional de restauração da Caatinga",num:"Lei nº 15.0XX/2026",casa:"Presidência",etapa:"Virou norma",
    resumo:"Define metas de recomposição da vegetação nativa até 2035, com recursos do fundo clima.",imp:"Alto impacto",car:"Benéfico",parecer:true},
-  {id:"pant",esfera:"federal",local:"Federal",status:"Em tramitação",titulo:"Regras de proteção do Pantanal",num:"PL nº 140/2026",
+  {id:"pant",esfera:"federal",local:"Federal",status:"Em tramitação",titulo:"Regras de proteção do Pantanal",num:"PL nº 140/2026",casa:"Senado",etapa:"Comissões",
    resumo:"Restringe a conversão de vegetação nativa e cria regras para o uso do fogo no bioma.",imp:"Alto impacto",car:"Benéfico",parecer:false},
+  {id:"apps",esfera:"federal",local:"Federal",status:"Em tramitação",titulo:"Marco temporal para áreas de preservação consolidadas",num:"PL nº 4.512/2026",casa:"Senado",etapa:"Outra casa",
+   resumo:"Aprovado na Câmara, permite regularizar desmatamento em APPs feito até 2024.",imp:"Alto impacto",car:"Maléfico",parecer:false},
+  {id:"drones",esfera:"federal",local:"Federal",status:"Em tramitação",titulo:"Uso de agrotóxicos por drones",num:"PL nº 3.010/2026",casa:"Câmara",etapa:"Apresentado",
+   resumo:"Estabelece regras para a aplicação de agrotóxicos por aeronaves remotamente pilotadas.",imp:"Médio impacto",car:"Neutro",parecer:false},
+  {id:"decarb",esfera:"federal",local:"Federal",status:"Aprovada",titulo:"Regulamentação do mercado de carbono florestal",num:"Decreto nº 12.XXX/2026",casa:"Presidência",etapa:"Virou norma",
+   resumo:"Define quem pode vender créditos de carbono florestal e cria o registro nacional.",imp:"Alto impacto",car:"Benéfico",parecer:false},
+  {id:"tofogo",esfera:"estadual",local:"Tocantins",status:"Em tramitação",titulo:"Regras para o uso do fogo no manejo de pastagens",num:"PL nº 210/2026",
+   resumo:"Define períodos de proibição de queimadas e cria autorização simplificada para queima controlada.",imp:"Médio impacto",car:"Neutro",parecer:false},
+  {id:"amgarimpo",esfera:"estadual",local:"Amazonas",status:"Em tramitação",titulo:"Licença ambiental para garimpo de pequeno porte",num:"PL nº 77/2026",
+   resumo:"Cria licença por adesão para lavra garimpeira em áreas de até 50 hectares.",imp:"Alto impacto",car:"Maléfico",parecer:false},
+  {id:"mtpant",esfera:"estadual",local:"Mato Grosso",status:"Aprovada",titulo:"Zoneamento do Pantanal mato-grossense",num:"Lei nº 12.3XX/2026",
+   resumo:"Divide o bioma em zonas de uso e proíbe novas lavouras em áreas alagáveis.",imp:"Alto impacto",car:"Benéfico",parecer:false},
 ];
 const ATORES = {
   resex:{autor:["Dep. Est. Exemplo A","PART-PA"],relator:["Dep. Est. Exemplo B","PART-PA"],orgao:"Comissão de Meio Ambiente da ALEPA",data:"08/10/2026",sim:14,nao:5,abs:1,
@@ -567,8 +638,13 @@ const ATORES = {
     etapas:["Apresentado","Comissões","Plenário Senado","Câmara","Sanção"],atual:1},
 };
 const ini = n => n.replace(/^(Dep\. Est\.|Dep\.|Sen\.)\s*/,"").split(" ").map(w=>w[0]).slice(0,2).join("");
+function atores(l){
+  return ATORES[l.id] || {autor:[l.esfera==="federal"?"Dep. Exemplo S":"Dep. Est. Exemplo T","PART-"+(UF_NOME_R[l.local]||"DF")],relator:["Ainda não designado","—"],orgao:null,emendas:[],
+    etapas:l.esfera==="federal"?["Apresentado","Comissões","Plenário","Outra casa","Sanção"]:["Apresentado","Comissão","Plenário","Sanção"],
+    atual:l.status==="Aprovada"?(l.esfera==="federal"?5:4):l.esfera==="federal"?Math.max(0,["Apresentado","Comissões","Plenário","Outra casa"].indexOf(l.etapa)):1};
+}
 function quem(l){
-  const a=ATORES[l.id]; const tot=a.orgao?a.sim+a.nao+a.abs:0; const pc=v=>(v/tot*100).toFixed(1)+"%";
+  const a=atores(l); const tot=a.orgao?a.sim+a.nao+a.abs:0; const pc=v=>(v/tot*100).toFixed(1)+"%";
   return `<section class="block b-who" id="s-who">
     <h2>Quem está por trás</h2>
     <div class="people">
@@ -581,7 +657,7 @@ function quem(l){
       <div class="collapsible" id="part"><div><div class="parties">${a.partidos.map(p=>`<div class="party"><span>${p[0]}</span><em class="o-${p[1]}">Orientou ${p[1]==="sim"?"sim":p[1]==="nao"?"não":"liberado"}</em><span class="c" style="color:var(--gray)">${p[2]}</span></div>`).join("")}</div></div></div>
       <button class="link-btn" data-act="part">Ver votos por partido</button>`:`<p style="color:var(--gray);font-size:.92rem">Ainda não foi votado.</p>`}
     </div>
-    <div class="emendas"><span class="sub-h">Emendas (${a.emendas.length})</span>
+    <div class="emendas"><span class="sub-h">Emendas (${a.emendas.length})</span>${a.emendas.length?"":`<p style="color:var(--gray);font-size:.92rem">Nenhuma emenda apresentada até agora.</p>`}
       ${a.emendas.map(e=>`<div class="emenda"><span class="n">${e[0]}</span><div>${e[2]}<span>${e[1]}</span></div></div>`).join("")}
     </div>
     <div style="display:grid;gap:10px"><span class="sub-h">Caminho da lei</span>
@@ -607,7 +683,7 @@ function filtradas(){
 function listHTML(){
   const ls = filtradas();
   if(!ls.length) return `<p class="empty">Nada encontrado com esses filtros. Tente outro termo ou estado.</p>`;
-  return ls.map((l,i)=>`<a class="law" href="#${l.id}" style="animation-delay:${i*40}ms">
+  return ls.slice(0,6).map((l,i)=>`<a class="law" href="#${l.id}" style="animation-delay:${i*40}ms">
     <div class="top"><span class="tag tg-place">${l.local}</span>${stTag(l.status)}</div>
     <h3>${l.titulo}</h3><p>${l.resumo}</p>
     <div class="go"><span class="num">${l.num}</span><span class="arrow">${l.parecer?"Ler parecer":"Ver lei"} →</span></div></a>`).join("");
@@ -878,7 +954,7 @@ function parecer(l){
 const iniciais = n => (n||"Maria Exemplo").trim().split(/\s+/).map(w=>w[0]).filter(Boolean).slice(0,2).join("").toUpperCase();
 function headHTML(r){
   const on = k => r===k ? "on" : "";
-  const nav = `<nav class="nav" aria-label="Principal"><a class="${on("timeline")}" href="#timeline">Timeline</a><a class="${on("opiniao")}" href="#opiniao">Opinião</a><a class="${on("artigos")||(r.startsWith("artigo-")?"on":"")}" href="#artigos">Artigos</a>${state.inscrito?`<a class="opt-hide" href="#timeline" data-act="ver-seguindo">Seguindo<span class="cnt">${state.seguindo.length}</span></a>`:""}</nav>`;
+  const nav = `<nav class="nav" aria-label="Principal"><a class="${on("federais")}" href="#federais">Federais</a><a class="${on("estaduais")}" href="#estaduais">Estaduais</a><a class="${on("timeline")}" href="#timeline">Timeline</a><a class="${on("opiniao")}" href="#opiniao">Opinião</a><a class="${on("artigos")||(r.startsWith("artigo-")?"on":"")}" href="#artigos">Artigos</a>${state.inscrito?`<a class="opt-hide" href="#timeline" data-act="ver-seguindo">Seguindo<span class="cnt">${state.seguindo.length}</span></a>`:""}</nav>`;
   if(!state.inscrito) return `<a class="brand" href="#home"><i></i>Nome do Site</a>${nav}<button class="enter" data-act="entrar">Entrar</button><button class="pill-btn" data-act="pagina">Se inscreva grátis</button>`;
   return `<a class="brand" href="#home"><i></i>Nome do Site</a>${nav}
     <div class="me"><button class="avatar" data-act="menu" aria-haspopup="true" aria-expanded="${state.menu}" aria-label="Minha conta">${iniciais(insc.nome)}</button>
@@ -888,7 +964,7 @@ function menuHTML(){
   const sw=(k,t)=>`<div class="mrow"><span>${t}</span><button class="sw" role="switch" aria-checked="${insc[k]}" aria-label="${t}" data-sw="${k}"></button></div>`;
   return `<div class="menu" role="menu">
     <div class="who"><b>${insc.nome||"Maria Exemplo"}</b><span>${insc.email||"maria@exemplo.com"}</span></div>
-    <a class="mrow" href="#timeline">Timeline</a><a class="mrow" href="#opiniao">Opinião</a><a class="mrow" href="#artigos">Artigos</a>
+    <a class="mrow" href="#federais">Leis federais</a><a class="mrow" href="#estaduais">Leis estaduais</a><a class="mrow" href="#timeline">Timeline</a><a class="mrow" href="#opiniao">Opinião</a><a class="mrow" href="#artigos">Artigos</a>
     <a class="mrow" href="#timeline" data-act="ver-seguindo">Leis que sigo <b>${state.seguindo.length}</b></a>
     <div class="mrow"><span>Meu estado</span><select id="m-uf" aria-label="Meu estado">${UFS.map(u=>`<option ${u===insc.uf?"selected":""}>${u}</option>`).join("")}</select></div>
     <div class="mrow"><span>Temas</span><span style="color:var(--gray);font-size:.85rem">${insc.temas.join(", ")||"nenhum"}</span></div>
@@ -957,7 +1033,7 @@ function opLista(){
 }
 function opRows(){
   const ls=opLista(); if(!ls.length) return `<p class="empty">Nenhum parecer com esse filtro.</p>`;
-  return ls.map((l,i)=>{ const d=PAR_DATA[l.id]; return `<a class="op" href="#parecer-${l.id}" style="animation-delay:${i*40}ms"><span class="dt"><b>${d[0]}</b>${d[1]}</span>
+  return ls.map((l,i)=>{ const d=PAR_DATA[l.id]||["01","set",4]; return `<a class="op" href="#parecer-${l.id}" style="animation-delay:${i*40}ms"><span class="dt"><b>${d[0]}</b>${d[1]}</span>
     <div><h3>${l.titulo}</h3><div class="row"><span class="tag tg-place">${l.local}</span><span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}<span class="min">${l.num} · ${d[2]} min</span></div></div>
     <span class="arrow">→</span></a>`; }).join("");
 }
@@ -1041,6 +1117,79 @@ function artigo(a){
 }
 const item = id => LEIS.find(x=>x.id===id) || ARTIGOS.find(x=>x.id===id);
 
+
+const TOPIC_GO={todos:"timeline",parecer:"opiniao",artigos:"artigos",estadual:"estaduais",federal:"federais"};
+/* ---------- leis estaduais ---------- */
+const UFMAP=[["RR",0,1],["AP",0,3],["AC",1,0],["AM",1,1],["PA",1,2],["MA",1,3],["CE",1,4],["RN",1,5],["RO",2,1],["MT",2,2],["TO",2,3],["PI",2,4],["PB",2,5],
+  ["MS",3,2],["GO",3,3],["BA",3,4],["PE",3,5],["SP",4,2],["DF",4,3],["MG",4,4],["AL",4,5],["PR",5,2],["RJ",5,3],["ES",5,4],["SE",5,5],["SC",6,2],["RS",7,2]];
+const UF_NOME={AC:"Acre",AL:"Alagoas",AM:"Amazonas",AP:"Amapá",BA:"Bahia",CE:"Ceará",DF:"Distrito Federal",ES:"Espírito Santo",GO:"Goiás",MA:"Maranhão",MG:"Minas Gerais",MS:"Mato Grosso do Sul",MT:"Mato Grosso",PA:"Pará",PB:"Paraíba",PE:"Pernambuco",PI:"Piauí",PR:"Paraná",RJ:"Rio de Janeiro",RN:"Rio Grande do Norte",RO:"Rondônia",RR:"Roraima",RS:"Rio Grande do Sul",SC:"Santa Catarina",SE:"Sergipe",SP:"São Paulo",TO:"Tocantins"};
+const UF_NOME_R=Object.fromEntries(Object.entries(UF_NOME).map(([k,v])=>[v,k]));
+const REGIAO={Norte:["AC","AM","AP","PA","RO","RR","TO"],Nordeste:["AL","BA","CE","MA","PB","PE","PI","RN","SE"],"Centro-Oeste":["DF","GO","MS","MT"],Sudeste:["ES","MG","RJ","SP"],Sul:["PR","RS","SC"]};
+const COBERTURA={PA:"auto",AM:"auto",TO:"manual",AC:"manual",AP:"manual",RO:"manual",RR:"manual",MT:"manual"};
+const COB_TXT={auto:["Monitoramento automático","Coletamos diariamente os projetos da Assembleia."],manual:["Monitoramento manual","Acompanhamos os projetos ambientais pelo diário da Assembleia."],breve:["Em breve","Este estado entra no monitoramento nas próximas fases."]};
+const ufSel={uf:null};
+const leisUF = uf => LEIS.filter(l=>l.esfera==="estadual" && UF_NOME_R[l.local]===uf);
+function ufPanel(uf){
+  const ls=leisUF(uf); const cob=COBERTURA[uf]||"breve"; const reg=Object.keys(REGIAO).find(r=>REGIAO[r].includes(uf));
+  const t=COB_TXT[cob];
+  return `<div class="ufpanel" id="ufpanel"><span class="sub-h">${reg}</span><h2>${UF_NOME[uf]}</h2><p class="casa">Assembleia Legislativa · Diário Oficial do Estado</p>
+    <div class="ufstats"><div><b>${ls.filter(l=>l.status!=="Aprovada").length}</b><span>em tramitação</span></div><div><b>${ls.filter(l=>l.status==="Aprovada").length}</b><span>aprovadas</span></div><div><b>${ls.filter(l=>l.parecer).length}</b><span>com parecer</span></div></div>
+    <div class="cov"><span class="tag ${cob==="auto"?"tg-ben":cob==="manual"?"tg-alto":"tg-place"}">${t[0]}</span><span>${t[1]}</span></div>
+    <div class="minilist">${ls.length?ls.map(l=>`<a class="minilaw" href="#${l.id}"><b>${l.titulo}</b><div class="row">${stTag(l.status)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}<span class="n">${l.num}</span></div></a>`).join(""):
+      `<p style="color:var(--gray);font-size:.92rem">${cob==="breve"?"Ainda não monitoramos este estado.":"Nenhuma lei ambiental em destaque no momento."}</p>`}</div>
+    <div class="ask"><span>${cob==="breve"?"Quer que priorizemos "+UF_NOME[uf]+"?":"Receba as novidades de "+UF_NOME[uf]+" por e-mail."}</span><button class="pill-btn" data-act="${state.inscrito?"aviso-uf":"pagina"}" data-uf="${uf}">${cob==="breve"?"Avise-me":"Acompanhar estado"}</button></div>
+  </div>`;
+}
+function estaduais(){
+  if(!ufSel.uf) ufSel.uf = state.inscrito && insc.uf ? insc.uf : "PA";
+  const cnt=uf=>leisUF(uf).length;
+  const tiles=UFMAP.map(([uf,r,c])=>{ const n=cnt(uf); const cls=!COBERTURA[uf]?"breve":n>=2?"n2":n===1?"n1":"n0";
+    return `<button class="uf ${cls}" style="grid-row:${r+1};grid-column:${c+1}" data-uf-sel="${uf}" aria-pressed="${ufSel.uf===uf}" aria-label="${UF_NOME[uf]}: ${n} leis${COBERTURA[uf]?"":" (em breve)"}" title="${UF_NOME[uf]}">${uf}${n?`<small>${n}</small>`:""}</button>`; }).join("");
+  const regChips=Object.keys(REGIAO).map(r=>`<button class="chip" data-reg="${r}">${r}</button>`).join("");
+  return `<div class="wrap" style="max-width:1040px">
+    <header class="pg-head"><h1>Leis estaduais</h1><p>As leis ambientais que tramitam nas Assembleias Legislativas. Escolha um estado no mapa.</p></header>
+    <div class="chips" style="justify-content:flex-start;margin-bottom:18px">${regChips}</div>
+    <div class="uf-layout">
+      <div><div class="tilemap" role="group" aria-label="Estados">${tiles}</div>
+        <div class="maplegend"><span><i style="background:var(--green-dk)"></i>2 ou mais leis</span><span><i style="background:#7FCB9D"></i>1 lei</span><span><i style="background:var(--green-50)"></i>monitorado, sem destaque</span><span><i style="background:repeating-linear-gradient(135deg,#fff 0 3px,#E6ECE8 3px 5px);box-shadow:inset 0 0 0 1px #E6ECE8"></i>em breve</span></div></div>
+      <div id="ufwrap">${ufPanel(ufSel.uf)}</div>
+    </div>
+  </div>`;
+}
+
+/* ---------- leis federais ---------- */
+const ETAPAS=["Apresentado","Comissões","Plenário","Outra casa","Virou norma"];
+const fedSel={casa:"Todas",etapa:null};
+function fedLista(){
+  return LEIS.filter(l=>l.esfera==="federal" && (fedSel.casa==="Todas"||l.casa===fedSel.casa) && (!fedSel.etapa||l.etapa===fedSel.etapa));
+}
+function fedCards(){
+  const ls=fedLista(); if(!ls.length) return `<p class="empty">Nenhuma lei federal com esses filtros.</p>`;
+  return ls.map((l,i)=>`<a class="law" href="#${l.id}" style="animation-delay:${i*40}ms">
+    <div class="top"><span class="tag tg-place">${l.casa}</span>${stTag(l.status)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}</div>
+    <h3>${l.titulo}</h3><p>${l.resumo}</p>
+    <div class="go"><span class="num">${l.num} · ${l.etapa}</span><span class="arrow">${l.parecer?"Ler parecer":"Ver lei"} →</span></div></a>`).join("");
+}
+function funnelHTML(){
+  const base=LEIS.filter(l=>l.esfera==="federal" && (fedSel.casa==="Todas"||l.casa===fedSel.casa));
+  const max=Math.max(1,...ETAPAS.map(e=>base.filter(l=>l.etapa===e).length));
+  return ETAPAS.map(e=>{ const n=base.filter(l=>l.etapa===e).length; return `<button class="stage" data-etapa="${e}" aria-pressed="${fedSel.etapa===e}"><b>${n}</b><span>${e}</span><span class="bar"><i style="width:${n/max*100}%"></i></span></button>`; }).join("");
+}
+function federais(){
+  const ag=[["14 out","lic","Plenário da Câmara"],["16 out","pant","Comissão de Meio Ambiente do Senado"],["20 out","apps","Comissão de Constituição e Justiça do Senado"]];
+  return `<div class="wrap">
+    <header class="pg-head"><h1>Leis federais</h1><p>Projetos ambientais na Câmara e no Senado, e o que a Presidência sancionou, vetou ou regulamentou.</p></header>
+    <div class="seg" role="group" aria-label="Casa">${["Todas","Câmara","Senado","Presidência"].map(c=>`<button data-casa="${c}" aria-pressed="${fedSel.casa===c}">${c}</button>`).join("")}</div>
+    <section class="section"><div class="section-h"><h2>Onde estão os projetos</h2><span>Toque numa etapa para filtrar</span></div>
+      <div class="funnel" id="funnel">${funnelHTML()}</div></section>
+    <section class="section" style="padding-top:4px"><div class="section-h"><h2>Esta semana no Congresso</h2></div>
+      <div class="agenda">${ag.map(a=>{ const l=LEIS.find(x=>x.id===a[1]); return `<a href="#${l.id}"><span class="d">${a[0]}</span><div><p>${l.titulo}</p><span class="o">${a[2]}</span></div><span class="arrow">→</span></a>`; }).join("")}</div></section>
+    <section class="section"><div class="section-h"><h2 id="fedtit">${fedSel.etapa?fedSel.etapa:"Todas as leis federais"}</h2><span id="fedcnt">${fedLista().length} leis</span></div>
+      <div class="list" id="fedlist">${fedCards()}</div></section>
+  </div>`;
+}
+function refreshFed(){ $("#funnel").innerHTML=funnelHTML(); $("#fedlist").innerHTML=fedCards(); $("#fedcnt").textContent=fedLista().length+" leis"; $("#fedtit").textContent=fedSel.etapa||"Todas as leis federais"; }
+
 /* ---------- compartilhar ---------- */
 const NET_ICO={
   whatsapp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg>',
@@ -1116,8 +1265,8 @@ function render(keepScroll){
   const pl=r.startsWith("parecer-")?LEIS.find(x=>"parecer-"+x.id===r):null;
   const ar=r.startsWith("artigo-")?ARTIGOS.find(x=>"artigo-"+x.id===r):null;
   const y=window.scrollY;
-  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? inscricao() : r==="timeline" ? timeline() : r==="opiniao" ? opiniao() : r==="artigos" ? artigos() : ar ? artigo(ar) : home();
-  $("#head").classList.toggle("wide", !!pl || r==="inscricao");
+  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? inscricao() : r==="timeline" ? timeline() : r==="opiniao" ? opiniao() : r==="estaduais" ? estaduais() : r==="federais" ? federais() : r==="artigos" ? artigos() : ar ? artigo(ar) : home();
+  $("#head").classList.toggle("wide", !!pl || r==="inscricao" || r==="estaduais");
   state.menu=false; renderHead();
   window.scrollTo(0, keepScroll?y:0);
   const sf=$("#sf");
@@ -1134,7 +1283,7 @@ window.addEventListener("scroll",()=>{
   steps.forEach(a=>a.classList.toggle("on",a.dataset.jump===cur));
 },{passive:true});
 document.addEventListener("click",ev=>{
-  const tp=ev.target.closest("[data-topic]"); if(tp && ({todos:"timeline",parecer:"opiniao",artigos:"artigos"})[tp.dataset.topic]){ go(({todos:"timeline",parecer:"opiniao",artigos:"artigos"})[tp.dataset.topic]); return; }
+  const tp=ev.target.closest("[data-topic]"); if(tp && TOPIC_GO[tp.dataset.topic]){ go(TOPIC_GO[tp.dataset.topic]); return; }
   if(tp && tp.getAttribute("aria-pressed")==="true"){ state.topic="todos"; tp.setAttribute("aria-pressed","false"); refreshList(); return; }
   if(tp){ state.topic=tp.dataset.topic; document.querySelectorAll("[data-topic]").forEach(b=>b.setAttribute("aria-pressed",b===tp)); refreshList(); return; }
   const ch=ev.target.closest("[data-status]"); if(ch){ state.status=ch.dataset.status; document.querySelectorAll("[data-status]").forEach(b=>b.setAttribute("aria-pressed",b===ch)); refreshList(); return; }
@@ -1143,6 +1292,10 @@ document.addEventListener("click",ev=>{
   const tm=ev.target.closest("[data-tema]"); if(tm){ const t=tm.dataset.tema; insc.temas=insc.temas.includes(t)?insc.temas.filter(x=>x!==t):[...insc.temas,t]; tm.setAttribute("aria-pressed",insc.temas.includes(t)); return; }
   const sw=ev.target.closest("[data-sw]"); if(sw){ const k=sw.dataset.sw; insc[k]=!insc[k]; sw.setAttribute("aria-checked",insc[k]); if(sw.closest(".menu")) toast(insc[k]?"Aviso ativado":"Aviso desativado"); return; }
   const lc=ev.target.closest("[data-law]"); if(lc){ const b=BASE[+lc.dataset.law]; document.querySelectorAll("[data-law]").forEach(x=>x.setAttribute("aria-expanded",x===lc)); $("#lawnote").innerHTML=`<b>${b[0]}</b> · ${b[2]}`; return; }
+  const us=ev.target.closest("[data-uf-sel]"); if(us){ ufSel.uf=us.dataset.ufSel; document.querySelectorAll("[data-uf-sel]").forEach(b=>b.setAttribute("aria-pressed",b===us)); $("#ufwrap").innerHTML=ufPanel(ufSel.uf); return; }
+  const rg=ev.target.closest("[data-reg]"); if(rg){ const ufs=REGIAO[rg.dataset.reg]; const pick=ufs.find(u=>leisUF(u).length)||ufs[0]; ufSel.uf=pick; document.querySelectorAll("[data-reg]").forEach(b=>b.setAttribute("aria-pressed",b===rg)); document.querySelectorAll("[data-uf-sel]").forEach(b=>{ b.setAttribute("aria-pressed",b.dataset.ufSel===pick); b.style.opacity=ufs.includes(b.dataset.ufSel)?"1":".35"; }); $("#ufwrap").innerHTML=ufPanel(pick); return; }
+  const cs=ev.target.closest("[data-casa]"); if(cs){ fedSel.casa=cs.dataset.casa; fedSel.etapa=null; document.querySelectorAll("[data-casa]").forEach(b=>b.setAttribute("aria-pressed",b===cs)); refreshFed(); return; }
+  const et=ev.target.closest("[data-etapa]"); if(et){ fedSel.etapa=fedSel.etapa===et.dataset.etapa?null:et.dataset.etapa; refreshFed(); return; }
   const op=ev.target.closest("[data-op]"); if(op){ opFiltro.v=op.dataset.op; document.querySelectorAll(".chip[data-op]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.op===opFiltro.v)); $("#ops").innerHTML=opRows(); return; }
   const af=ev.target.closest("[data-art]"); if(af){ artFiltro.v=af.dataset.art; document.querySelectorAll("[data-art]").forEach(b=>b.setAttribute("aria-pressed",b===af)); $("#arts").innerHTML=artCards(); return; }
   const tl=ev.target.closest("[data-tl]"); if(tl){ if(tl.dataset.priv && !state.inscrito){ abrirInscricao(); return; } state.tlFilter=tl.dataset.tl; document.querySelectorAll("[data-tl]").forEach(b=>b.setAttribute("aria-pressed",b===tl)); $("#feed").innerHTML=feedHTML(); return; }
@@ -1161,6 +1314,7 @@ document.addEventListener("click",ev=>{
   if(act==="ver-seguindo"){ ev.preventDefault(); state.tlFilter="seg"; state.menu=false; if(location.hash==="#timeline") render(); else go("timeline"); return; }
   if(act==="copiar-share"){ copiar($("#share-txt"), state.share.tab==="citacao"?"Citação copiada":"Texto copiado"); return; }
   if(act==="baixar-card"){ toast("Imagem do card gerada (simulação)"); return; }
+  if(act==="aviso-uf"){ toast("Pronto! Você receberá as novidades de "+UF_NOME[a.dataset.uf]); return; }
   if(act==="pagina"){ if(state.inscrito){ toast("Você já está inscrito"); } else { insc.ok=false; insc.passo=1; go("inscricao"); } }
   if(act==="next"){ saveStep();
     if(insc.passo===1 && (!insc.nome || !/^\S+@\S+\.\S+$/.test(insc.email))){ toast("Preencha seu nome e um e-mail válido"); return; }

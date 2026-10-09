@@ -133,6 +133,24 @@ Disponível na página da lei (botão), em cada item da Timeline e no fim do par
 
 Barra de progresso de leitura, categoria, título, linha fina, autor; texto com intertítulos, citação em destaque e gráfico simples; **Leis citadas** (com status, levam à página da lei); **Compartilhar e citar** (mesmas abas do parecer, com textos próprios de artigo); **Leia também**.
 
+## A15. Leis estaduais
+
+| Elemento | Funcionalidade |
+|---|---|
+| Mapa do Brasil em blocos | Um bloco por estado, na posição aproximada; cor indica quantas leis estão em destaque; listrado = "em breve" (estado ainda fora do monitoramento) |
+| Atalhos por região | Norte, Nordeste, Centro-Oeste, Sudeste, Sul destacam os estados da região |
+| Painel do estado | Região, nome, Assembleia; em tramitação, aprovadas, com parecer; tipo de cobertura (automática, manual, em breve); lista de leis; "Acompanhar estado" ou "Avise-me" |
+| Padrão | Para o inscrito, abre no estado cadastrado |
+
+## A16. Leis federais
+
+| Elemento | Funcionalidade |
+|---|---|
+| Casa | Todas · Câmara · Senado · Presidência |
+| Onde estão os projetos | Etapas Apresentado → Comissões → Plenário → Outra casa → Virou norma, com contagem; tocar filtra a lista |
+| Esta semana no Congresso | Votações dos próximos dias com data e órgão |
+| Lista | Casa, status, impacto, caráter, número e etapa |
+
 ---
 
 # Parte B — Painel administrativo (etapa posterior)
