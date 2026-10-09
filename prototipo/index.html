@@ -1,0 +1,395 @@
+<title>Observatório Ambiental</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: barra de modo no topo; site público em coluna editorial; painel com menu lateral + área de trabalho */
+:root{
+  --bg:#F3F6F4; --surface:#FFFFFF; --sunk:#E8EEEB; --ink:#13201C; --muted:#56665F; --line:#D5DED9;
+  --accent:#0E6655; --accent-ink:#FFFFFF; --accent-soft:#DCEEE8;
+  --good:#2C7A4B; --good-soft:#DFF1E5; --warn:#A8660F; --warn-soft:#FBEBD2;
+  --bad:#B03A2A; --bad-soft:#F8E0DC; --info:#2D5A97; --info-soft:#DFE8F5; --neutral-soft:#E9ECEB;
+  --display:"Newsreader",Georgia,"Times New Roman",serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:8px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1614; --surface:#16201D; --sunk:#1D2925; --ink:#E4ECE8; --muted:#9AABA4; --line:#2B3833;
+  --accent:#4FB79F; --accent-ink:#0B1411; --accent-soft:#1D3730;
+  --good:#6BC48E; --good-soft:#1C3325; --warn:#E3A853; --warn-soft:#3A2C17;
+  --bad:#EE8576; --bad-soft:#3D211D; --info:#8DB2E8; --info-soft:#1D2A3E; --neutral-soft:#25302C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1614; --surface:#16201D; --sunk:#1D2925; --ink:#E4ECE8; --muted:#9AABA4; --line:#2B3833;
+  --accent:#4FB79F; --accent-ink:#0B1411; --accent-soft:#1D3730;
+  --good:#6BC48E; --good-soft:#1C3325; --warn:#E3A853; --warn-soft:#3A2C17;
+  --bad:#EE8576; --bad-soft:#3D211D; --info:#8DB2E8; --info-soft:#1D2A3E; --neutral-soft:#25302C; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:2rem} h2{font-size:1.45rem} h3{font-size:1.12rem}
+p{margin:0}
+a{color:var(--accent)}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.small{font-size:.83rem}
+.eyebrow{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* barra de modo */
+.modebar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ink);color:var(--bg);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;padding:8px 16px}
+.modebar .note{font-size:.78rem;opacity:.8}
+.seg{display:inline-flex;border:1px solid color-mix(in srgb,var(--bg) 35%,transparent);border-radius:999px;padding:2px}
+.seg button{background:none;border:0;color:var(--bg);padding:4px 14px;border-radius:999px;font-size:.85rem;font-weight:600}
+.seg button[aria-pressed="true"]{background:var(--bg);color:var(--ink)}
+
+/* chips e badges */
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;font-weight:600;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.b-pauta{background:var(--warn-soft);color:var(--warn)}
+.b-urg{background:var(--bad-soft);color:var(--bad)}
+.b-com{background:var(--info-soft);color:var(--info)}
+.b-lei{background:var(--good-soft);color:var(--good)}
+.b-neutral{background:var(--neutral-soft);color:var(--muted)}
+.tag{font-size:.74rem;padding:2px 8px;border-radius:4px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.t-alto{border-color:var(--bad);color:var(--bad)} .t-baixo{border-color:var(--good);color:var(--good)} .t-medio{border-color:var(--warn);color:var(--warn)}
+.t-mal{background:var(--bad);color:#fff;border-color:var(--bad)} .t-ben{background:var(--good);color:#fff;border-color:var(--good)} .t-neu{background:var(--muted);color:var(--surface);border-color:var(--muted)}
+
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 14px;border-radius:var(--r);font-weight:600;font-size:.86rem}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.ghost{background:none}
+.btn.sm{padding:4px 10px;font-size:.78rem}
+input[type=text],input[type=email],select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px 10px;width:100%}
+
+/* site público */
+.pub-head{background:var(--surface);border-bottom:1px solid var(--line)}
+.pub-head .in{max-width:1120px;margin:0 auto;padding:12px 16px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+.logo{font-family:var(--display);font-size:1.3rem;font-weight:600;color:var(--ink);text-decoration:none;display:flex;gap:8px;align-items:center}
+.logo i{width:22px;height:22px;border-radius:50%;background:conic-gradient(var(--accent) 0 70%,var(--good) 70% 100%);display:inline-block}
+.pub-nav{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.9rem}
+.pub-nav a{color:var(--ink);text-decoration:none}
+.pub-nav a:hover{color:var(--accent)}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:16px;padding-block:28px 56px;display:grid;gap:36px}
+.hero{display:grid;gap:14px;max-width:760px}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:62ch}
+.search{display:flex;gap:8px;flex-wrap:wrap}
+.search input{flex:1 1 260px;padding:12px 14px;font-size:1rem}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters select{width:auto;padding:6px 8px;font-size:.85rem}
+.strip{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.strip-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.vote{display:grid;grid-template-columns:72px 1fr auto;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);align-items:center}
+.vote:last-child{border-bottom:0}
+.vote .d{font-family:var(--mono);font-size:.8rem;color:var(--muted);line-height:1.2}
+.vote .d b{display:block;font-size:1.15rem;color:var(--ink)}
+.vote > div{min-width:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:10px;align-content:start}
+.card .num{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
+.card h3{font-size:1.05rem}
+.card .foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;border-top:1px dashed var(--line);padding-top:10px;margin-top:2px}
+.seal{font-size:.75rem;font-weight:600;color:var(--accent)}
+.grid-themes{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.theme{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px;display:flex;justify-content:space-between;gap:8px;text-decoration:none;color:var(--ink);font-weight:500;font-size:.9rem}
+.theme span{font-family:var(--mono);color:var(--muted);font-size:.8rem}
+.regions{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.region{border-radius:var(--r);padding:14px;background:var(--accent-soft);display:grid;gap:4px}
+.region b{font-family:var(--display);font-size:1.1rem}
+.cta{background:var(--accent);color:var(--accent-ink);border-radius:var(--r);padding:24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.cta h2{color:inherit}
+.cta .btn{background:var(--accent-ink);color:var(--accent);border-color:var(--accent-ink)}
+
+/* listagem */
+.list-layout{display:grid;grid-template-columns:240px 1fr;gap:24px;align-items:start}
+.facets{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:grid;gap:14px}
+.facets fieldset{border:0;padding:0;margin:0;display:grid;gap:4px}
+.facets legend{font-weight:600;font-size:.82rem;margin-bottom:4px}
+.facets label{font-size:.86rem;display:flex;gap:6px;align-items:center}
+.results{display:grid;gap:12px;min-width:0}
+.res-h{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.pager{display:flex;gap:6px;justify-content:center}
+.pager button{min-width:34px}
+
+/* página da proposição */
+.prop-head{display:grid;gap:12px;border-bottom:1px solid var(--line);padding-bottom:20px}
+.prop-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:start}
+.prose{display:grid;gap:22px;min-width:0}
+.prose section{display:grid;gap:10px}
+.prose p{max-width:68ch}
+.art1{border-left:3px solid var(--accent);padding:6px 0 6px 14px;font-family:var(--display);font-size:1.08rem}
+.simple{background:var(--accent-soft);border-radius:var(--r);padding:16px;display:grid;gap:8px}
+.simple ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.locked{position:relative;display:grid;gap:10px}
+.locked .ghost-sec{border:1px dashed var(--line);border-radius:var(--r);padding:12px 14px;display:grid;gap:6px}
+.locked .ghost-sec p{filter:blur(4px);user-select:none;color:var(--muted)}
+.gate{background:var(--surface);border:2px solid var(--accent);border-radius:var(--r);padding:20px;display:grid;gap:10px}
+.side{display:grid;gap:14px;position:sticky;top:64px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:grid;gap:10px}
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.tl li{display:grid;grid-template-columns:14px 1fr;gap:8px;font-size:.85rem}
+.tl li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--line);margin-top:5px}
+.tl li.done::before{background:var(--accent)}
+.tl li.next::before{background:var(--warn);box-shadow:0 0 0 3px var(--warn-soft)}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+.tw{overflow-x:auto}
+.votebar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--sunk)}
+.votebar span{display:block}
+
+/* modal */
+.scrim{position:fixed;inset:0;background:color-mix(in srgb,var(--ink) 55%,transparent);display:grid;place-items:center;padding:16px;z-index:50}
+.modal{background:var(--surface);border-radius:12px;max-width:480px;width:100%;padding:22px;display:grid;gap:12px;max-height:90vh;overflow:auto}
+.modal label{display:grid;gap:4px;font-size:.84rem;font-weight:600}
+.modal .chk{display:flex;gap:8px;font-weight:400;align-items:flex-start}
+.two-f{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.toast{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:.88rem;z-index:60}
+
+@media (max-width:900px){
+  .list-layout,.prop-layout,.two,.editor{grid-template-columns:1fr}
+  .side{position:static}
+  .adm{grid-template-columns:1fr}
+  .adm-nav{border-right:0;border-bottom:1px solid var(--line);display:flex;flex-wrap:nowrap;overflow-x:auto;padding:8px}
+  .adm-nav .grp,.adm-nav .logo{display:none}
+  .adm-nav a{white-space:nowrap;gap:6px}
+  .adm-main{padding-inline:16px}
+  .tri{grid-template-columns:1fr}
+  .tri .acts{justify-content:flex-start}
+  .two-f{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="modebar"><span class="note">Rascunho visual · visão do leitor · projetos, nomes e números fictícios</span></div>
+<div id="app"></div>
+<div id="layer"></div>
+
+<script>
+/* ---------- dados ilustrativos (fictícios) ---------- */
+const PROPS = [
+  {id:"pl1234", tipo:"PL", num:"1.234/2026", casa:"Câmara", data:"12/03/2026", status:["Em pauta","b-pauta"], regime:"Urgência",
+   titulo:"Altera a Lei nº 6.938/1981 para simplificar o licenciamento de atividades agropecuárias de médio porte",
+   imp:"Alto", car:"Maléfico", temas:["Licenciamento","Agropecuária"], biomas:["Cerrado","Amazônia"], regiao:"Centro-Oeste / Norte",
+   autor:"Dep. Exemplo A (PART-MT)", relator:"Dep. Exemplo B (PART-PA)", parecer:true, votaEm:"14/10"},
+  {id:"pls88", tipo:"PL", num:"88/2026", casa:"Senado", data:"02/02/2026", status:["Em comissão","b-com"], regime:"Normal",
+   titulo:"Institui a Política Estadual-Federal de Pagamento por Serviços Ambientais em áreas de nascentes",
+   imp:"Médio", car:"Benéfico", temas:["Água","PSA"], biomas:["Mata Atlântica"], regiao:"Sudeste",
+   autor:"Sen. Exemplo C (PART-MG)", relator:"Sen. Exemplo D (PART-ES)", parecer:true, votaEm:"16/10"},
+  {id:"pl2201", tipo:"PL", num:"2.201/2025", casa:"Câmara", data:"20/08/2025", status:["Urgência","b-urg"], regime:"Urgência",
+   titulo:"Dispõe sobre a pesquisa e lavra mineral em faixa de fronteira e terras da União na Amazônia Legal",
+   imp:"Alto", car:"Maléfico", temas:["Mineração","Povos e comunidades"], biomas:["Amazônia"], regiao:"Norte",
+   autor:"Dep. Exemplo E (PART-RR)", relator:"—", parecer:false, votaEm:"15/10"},
+  {id:"lei15", tipo:"Lei", num:"15.0XX/2026", casa:"Sancionada", data:"30/09/2026", status:["Sancionada","b-lei"], regime:"—",
+   titulo:"Cria o Programa Nacional de Restauração da Caatinga e define metas de recomposição até 2035",
+   imp:"Alto", car:"Benéfico", temas:["Florestas","Clima"], biomas:["Caatinga"], regiao:"Nordeste",
+   autor:"Sen. Exemplo F (PART-PE)", relator:"Dep. Exemplo G (PART-CE)", parecer:true, votaEm:null},
+  {id:"pl3010", tipo:"PL", num:"3.010/2026", casa:"Câmara", data:"05/05/2026", status:["Apresentada","b-neutral"], regime:"Normal",
+   titulo:"Estabelece regras para o uso de agrotóxicos por aeronaves remotamente pilotadas (drones)",
+   imp:"Médio", car:"Neutro", temas:["Agrotóxicos"], biomas:["Todos"], regiao:"Nacional",
+   autor:"Dep. Exemplo H (PART-RS)", relator:"—", parecer:false, votaEm:null},
+  {id:"pls140", tipo:"PL", num:"140/2026", casa:"Senado", data:"18/04/2026", status:["Em pauta","b-pauta"], regime:"Normal",
+   titulo:"Define o regime jurídico de proteção do Pantanal e restringe a conversão de vegetação nativa",
+   imp:"Alto", car:"Benéfico", temas:["Florestas","Biodiversidade"], biomas:["Pantanal"], regiao:"Centro-Oeste",
+   autor:"Sen. Exemplo I (PART-MS)", relator:"Sen. Exemplo J (PART-MT)", parecer:true, votaEm:"17/10"},
+];
+const impCls = v => v==="Alto"?"t-alto":v==="Baixo"?"t-baixo":"t-medio";
+const carCls = v => v==="Maléfico"?"t-mal":v==="Benéfico"?"t-ben":"t-neu";
+const tags = p => `<span class="tag ${impCls(p.imp)}">Impacto ${p.imp.toLowerCase()}</span><span class="tag ${carCls(p.car)}">${p.car}</span>`;
+
+const state = { assinante:false };
+
+/* ---------- utilidades ---------- */
+const $ = s => document.querySelector(s);
+function toast(msg){ const t=document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),2200); }
+function go(r){ location.hash = r; }
+function route(){ return (location.hash||"").replace("#","") || "home"; }
+
+/* ---------- SITE PÚBLICO ---------- */
+function pubHead(){
+  return `<header class="pub-head"><div class="in">
+    <a class="logo" href="#home"><i></i>Observatório Ambiental</a>
+    <nav class="pub-nav"><a href="#lista">Proposições</a><a href="#lista">Temas</a><a href="#lista">Regiões</a><a href="#lista">Parlamentares</a><a href="#home">Metodologia</a></nav>
+    <button class="btn primary sm" data-act="cadastro">Receber alertas</button>
+  </div></header>`;
+}
+function card(p){
+  return `<article class="card">
+    <div class="row" style="justify-content:space-between"><span class="num">${p.tipo} ${p.num} · ${p.casa}</span><span class="badge ${p.status[1]}">${p.status[0]}</span></div>
+    <h3>${p.titulo}</h3>
+    <div class="row">${tags(p)}</div>
+    <p class="small muted">${p.autor}</p>
+    <div class="foot">${p.parecer?'<span class="seal">✓ Parecer disponível</span>':'<span class="small muted">Sem parecer ainda</span>'}<a class="btn sm" href="#prop">Ver detalhes</a></div>
+  </article>`;
+}
+function home(){
+  const pauta = PROPS.filter(p=>p.votaEm).sort((a,b)=>a.votaEm.localeCompare(b.votaEm));
+  const themes = [["Licenciamento",42],["Florestas",61],["Água",28],["Clima",33],["Mineração",19],["Agrotóxicos",24],["Biodiversidade",37],["Unidades de conservação",15],["Saneamento",22],["Povos e comunidades",17]];
+  const regs = [["Norte",54],["Nordeste",38],["Centro-Oeste",47],["Sudeste",41],["Sul",29]];
+  return pubHead()+`<main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">Legislação ambiental em tempo real</span>
+      <h1>O que o Congresso vai decidir sobre o meio ambiente, explicado antes da votação</h1>
+      <p>Monitoramos Câmara, Senado e Presidência. Cada proposição relevante ganha um parecer técnico com impacto, caráter e quem está por trás dela.</p>
+      <form class="search" onsubmit="event.preventDefault();go('lista')">
+        <input id="q" type="text" placeholder="Busque por tema, número do PL, palavra-chave ou parlamentar" aria-label="Buscar">
+        <button class="btn primary">Buscar</button>
+      </form>
+      <div class="filters">
+        <select id="f-casa" aria-label="Casa"><option>Todas as casas</option><option>Câmara</option><option>Senado</option><option>Leis sancionadas</option></select>
+        <select id="f-status" aria-label="Status"><option>Qualquer status</option><option>Em pauta</option><option>Urgência</option><option>Em comissão</option><option>Sancionada</option></select>
+        <select id="f-tema" aria-label="Tema"><option>Todos os temas</option>${themes.map(t=>`<option>${t[0]}</option>`).join("")}</select>
+        <select id="f-uf" aria-label="Região ou UF"><option>Brasil</option>${regs.map(r=>`<option>${r[0]}</option>`).join("")}</select>
+      </div>
+    </section>
+
+    <section class="strip">
+      <div class="strip-h"><h2>Em pauta nos próximos dias</h2><span class="small muted">Atualizado diariamente às 6h</span></div>
+      ${pauta.map(p=>`<div class="vote"><div class="d"><b>${p.votaEm.split("/")[0]}</b>out</div>
+        <div><div class="row"><span class="mono small muted">${p.tipo} ${p.num} · ${p.casa}</span><span class="badge ${p.status[1]}">${p.status[0]}</span>${p.regime==="Urgência"?'<span class="badge b-urg">Urgência</span>':""}</div>
+        <p style="margin-top:4px">${p.titulo}</p></div>
+        <a class="btn sm ${p.parecer?"primary":""}" href="#prop">${p.parecer?"Ler parecer":"Ver ficha"}</a></div>`).join("")}
+    </section>
+
+    <section style="display:grid;gap:14px">
+      <div class="res-h"><h2>Pareceres recentes</h2><a href="#lista">Ver todos →</a></div>
+      <div class="cards">${PROPS.filter(p=>p.parecer).slice(0,3).map(card).join("")}</div>
+    </section>
+
+    <section style="display:grid;gap:14px"><h2>Temas</h2>
+      <div class="grid-themes">${themes.map(t=>`<a class="theme" href="#lista">${t[0]}<span>${t[1]}</span></a>`).join("")}</div>
+    </section>
+
+    <section style="display:grid;gap:14px"><div class="res-h"><h2>Por região</h2><span class="small muted">Proposições monitoradas com impacto regional</span></div>
+      <div class="regions">${regs.map(r=>`<a class="region" href="#lista" style="text-decoration:none;color:inherit"><span class="eyebrow">Região</span><b>${r[0]}</b><span class="mono small">${r[1]} proposições</span></a>`).join("")}</div>
+    </section>
+
+    <section class="cta"><div style="display:grid;gap:6px;max-width:56ch"><h2>Receba o parecer completo e os alertas</h2><p>Cadastro gratuito. Análise artigo por artigo, mapa de votos, PDF e aviso por e-mail quando o projeto andar.</p></div>
+      <button class="btn" data-act="cadastro">Quero me cadastrar</button></section>
+  </main>`;
+}
+function lista(){
+  const fs = (t,opts)=>`<fieldset><legend>${t}</legend>${opts.map(o=>`<label><input type="checkbox">${o}</label>`).join("")}</fieldset>`;
+  return pubHead()+`<main class="wrap"><div class="list-layout">
+    <aside class="facets" aria-label="Filtros">
+      ${fs("Casa",["Câmara","Senado","Congresso (vetos)","Leis sancionadas"])}
+      ${fs("Status",["Em pauta","Urgência","Em comissão","Aguardando sanção","Sancionada","Vetada"])}
+      ${fs("Impacto",["Alto","Médio","Baixo"])}
+      ${fs("Caráter",["Benéfico","Neutro","Maléfico"])}
+      ${fs("Parecer",["Com parecer","Sem parecer"])}
+      ${fs("Região",["Norte","Nordeste","Centro-Oeste","Sudeste","Sul","Nacional"])}
+    </aside>
+    <section class="results">
+      <form class="search" onsubmit="event.preventDefault()"><input id="q2" type="text" value="licenciamento" aria-label="Buscar"><button class="btn primary">Buscar</button></form>
+      <div class="res-h"><span class="small muted"><b class="mono">${PROPS.length}</b> resultados para “licenciamento”</span>
+        <select id="ord" style="width:auto" aria-label="Ordenar"><option>Próximos da votação</option><option>Mais recentes</option><option>Relevância</option></select></div>
+      <div class="cards">${PROPS.map(card).join("")}</div>
+      <nav class="pager" aria-label="Paginação"><button class="btn sm primary">1</button><button class="btn sm">2</button><button class="btn sm">3</button><button class="btn sm">Próxima →</button></nav>
+    </section></div></main>`;
+}
+function prop(){
+  const p = PROPS[0]; const sub = state.assinante;
+  const restrictedTitles = ["Análise artigo por artigo","Tabela: lei vigente × proposta","Mapa de votos e emendas","Constitucionalidade"];
+  const fullParecer = `
+    <section><h3>Análise artigo por artigo</h3>
+      <p><b>Art. 1º</b> — Cria a categoria “médio porte simplificado” no art. 10 da Lei 6.938/1981, dispensando EIA/RIMA para empreendimentos agropecuários de até 2.500 ha.</p>
+      <p><b>Art. 2º</b> — Transfere ao município a competência de licenciar essa categoria, sem exigir conselho de meio ambiente instalado.</p></section>
+    <section><h3>Lei vigente × proposta</h3><div class="tw"><table>
+      <thead><tr><th>Dispositivo</th><th>Hoje</th><th>Com o PL</th></tr></thead>
+      <tbody><tr><td class="mono">Art. 10</td><td>Licença prévia exigida conforme potencial poluidor</td><td>Dispensa para médio porte simplificado</td></tr>
+      <tr><td class="mono">Art. 10, §1º</td><td>Publicidade do pedido</td><td>Publicidade apenas no sítio do município</td></tr>
+      <tr><td class="mono">Art. 10-A (novo)</td><td>—</td><td>Licença por adesão e compromisso</td></tr></tbody></table></div></section>
+    <section><h3>Posicionamentos</h3>
+      <p class="small muted">Votação na Comissão de Meio Ambiente · 08/10/2026</p>
+      <div class="votebar" aria-label="12 sim, 7 não, 1 abstenção"><span style="width:60%;background:var(--good)"></span><span style="width:35%;background:var(--bad)"></span><span style="width:5%;background:var(--muted)"></span></div>
+      <p class="small mono">12 sim · 7 não · 1 abstenção</p>
+      <div class="tw"><table><thead><tr><th>Bancada</th><th>Orientação</th><th>Votos</th></tr></thead>
+      <tbody><tr><td>Bloco Exemplo 1</td><td>Sim</td><td class="mono">8 / 0</td></tr><tr><td>Bloco Exemplo 2</td><td>Não</td><td class="mono">1 / 6</td></tr><tr><td>Bloco Exemplo 3</td><td>Liberado</td><td class="mono">3 / 1</td></tr></tbody></table></div>
+      <p><b>Ênfases identificadas:</b> desburocratização do licenciamento; competência municipal; segurança jurídica do produtor.</p></section>
+    <section><h3>Constitucionalidade</h3><p>O art. 225, §1º, IV, da Constituição exige estudo prévio de impacto para obra ou atividade potencialmente causadora de significativa degradação. A dispensa por porte, sem análise do potencial degradador…</p></section>
+    <button class="btn primary" onclick="toast('PDF do parecer completo baixado (simulação)')">Baixar parecer completo (PDF)</button>`;
+  const gate = `<div class="locked">
+      ${restrictedTitles.map(t=>`<div class="ghost-sec"><b>🔒 ${t}</b><p>Conteúdo do parecer completo disponível para assinantes gratuitos do observatório. Análise detalhada com dados e referências.</p></div>`).join("")}
+      <div class="gate"><span class="eyebrow">Gratuito</span><h3>Receba o parecer completo</h3>
+        <p class="small muted">Análise artigo por artigo, tabela comparativa, mapa de votos e PDF. Você também pode seguir este projeto e ser avisado quando ele for votado.</p>
+        <div class="row"><button class="btn primary" data-act="cadastro">Cadastrar e ler agora</button><button class="btn ghost" data-act="cadastro">Já sou assinante</button></div></div>
+    </div>`;
+  return pubHead()+`<main class="wrap">
+    <div class="prop-head">
+      <div class="row"><a href="#lista" class="small">← Proposições</a></div>
+      <div class="row"><span class="mono muted">${p.tipo} ${p.num} · ${p.casa} · apresentado em ${p.data}</span><span class="badge ${p.status[1]}">${p.status[0]}</span><span class="badge b-urg">Urgência</span></div>
+      <h1>${p.titulo}</h1>
+      <div class="row">${tags(p)}${p.temas.map(t=>`<span class="tag">${t}</span>`).join("")}${p.biomas.map(t=>`<span class="tag">${t}</span>`).join("")}</div>
+      <div class="row small"><span class="muted">Visualizando como:</span>
+        <div class="seg" style="border-color:var(--line)" role="group" aria-label="Simular acesso">
+          <button id="v-vis" style="color:var(--ink)" aria-pressed="${!sub}">Visitante</button>
+          <button id="v-ass" style="color:var(--ink)" aria-pressed="${sub}">Assinante</button></div></div>
+    </div>
+    <div class="prop-layout">
+      <article class="prose">
+        <section><span class="eyebrow">Art. 1º</span><p class="art1">Esta Lei altera a Lei nº 6.938, de 31 de agosto de 1981, para instituir procedimento simplificado de licenciamento ambiental para atividades agropecuárias de médio porte.</p></section>
+        <section class="simple"><span class="eyebrow">Em linguagem simples</span>
+          <ul><li><b>O que muda:</b> fazendas de médio porte deixam de precisar de estudo de impacto ambiental.</li>
+          <li><b>Quem é afetado:</b> produtores rurais, municípios, comunidades próximas a áreas de expansão.</li>
+          <li><b>Quando vota:</b> plenário da Câmara, ${p.votaEm}, em regime de urgência.</li></ul></section>
+        <section><h2>Conclusão do parecer</h2>
+          <p>O texto reduz o controle prévio sobre atividades com potencial de supressão de vegetação no Cerrado e na Amazônia, e transfere a decisão a municípios sem estrutura técnica. Classificamos o impacto como <b>alto</b> e o caráter como <b>maléfico</b> à proteção ambiental.</p>
+          <p class="small muted">Parecer v2 · texto de referência: substitutivo de 08/10/2026 · publicado em 09/10/2026</p></section>
+        <hr style="border:0;border-top:1px solid var(--line);width:100%">
+        <h2>Parecer completo</h2>
+        ${sub?fullParecer:gate}
+        <section><h2>Texto integral</h2><p class="small muted">Texto oficial do substitutivo, conforme publicado pela Câmara dos Deputados. <a href="#prop">Abrir na fonte ↗</a> · <a href="#prop">Versão original</a></p></section>
+      </article>
+      <aside class="side">
+        <div class="box"><span class="eyebrow">Atores</span>
+          <div class="small"><span class="muted">Autor</span><br><b>${p.autor}</b></div>
+          <div class="small"><span class="muted">Relator em plenário</span><br><b>${p.relator}</b></div>
+          <div class="small"><span class="muted">Última votação</span><br><b>Aprovado na CMADS · 12 × 7</b></div></div>
+        <div class="box"><span class="eyebrow">Tramitação</span>
+          <ul class="tl"><li class="done"><span>12/03 · Apresentado</span></li><li class="done"><span>02/06 · Relator designado na CMADS</span></li>
+          <li class="done"><span>08/10 · Substitutivo aprovado na CMADS</span></li><li class="done"><span>09/10 · Urgência aprovada</span></li>
+          <li class="next"><span><b>${p.votaEm} · Votação no plenário</b></span></li><li><span>Senado Federal</span></li></ul></div>
+        <div class="box"><span class="eyebrow">Acompanhar</span><p class="small">Receba um e-mail quando este projeto mudar de fase.</p><button class="btn primary" data-act="${sub?"seguir":"cadastro"}">Seguir este projeto</button></div>
+      </aside>
+    </div></main>`;
+}
+function cadastroModal(){
+  return `<div class="scrim" data-act="fechar"><form class="modal" id="cad" onclick="event.stopPropagation()">
+    <span class="eyebrow">Cadastro gratuito</span><h2>Receba o parecer completo</h2>
+    <p class="small muted">Liberamos o parecer completo e o PDF assim que você confirmar o e-mail. Depois, você entra por link enviado ao seu e-mail, sem senha.</p>
+    <label for="c-nome">Nome<input id="c-nome" type="text" required value="Maria Exemplo"></label>
+    <label for="c-email">E-mail<input id="c-email" type="email" required value="maria@exemplo.com"></label>
+    <div class="two-f">
+      <label for="c-perfil">Perfil<select id="c-perfil"><option>Advogado(a)</option><option>Estudante</option><option>Servidor(a) público(a)</option><option>Empresa</option><option>ONG / movimento</option><option>Pesquisador(a)</option><option>Jornalista</option><option>Cidadão(ã)</option></select></label>
+      <label for="c-uf">UF<select id="c-uf">${"AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP TO".split(" ").map(u=>`<option ${u==="TO"?"selected":""}>${u}</option>`).join("")}</select></label>
+    </div>
+    <label class="chk"><input id="c-news" type="checkbox" checked> Quero a newsletter semanal (nacional + minha região)</label>
+    <label class="chk"><input id="c-lgpd" type="checkbox" required> Concordo com o tratamento dos meus dados conforme a Política de Privacidade (LGPD)</label>
+    <div class="row" style="justify-content:flex-end"><button type="button" class="btn ghost" data-act="fechar">Cancelar</button><button class="btn primary">Cadastrar</button></div>
+  </form></div>`;
+}
+
+/* ---------- roteamento ---------- */
+const PUB = {home, lista, prop};
+function render(){
+  const r = PUB[route()] ? route() : "home";
+  $("#app").innerHTML = PUB[r]();
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange", render);
+document.addEventListener("click", e=>{
+  const a = e.target.closest("[data-act]");
+  if (a){ const act=a.dataset.act;
+    if (act==="cadastro"){ $("#layer").innerHTML = cadastroModal();
+      $("#cad").onsubmit = ev=>{ ev.preventDefault(); if(!$("#c-lgpd").checked){toast("Marque o consentimento para continuar");return;} $("#layer").innerHTML=""; state.assinante=true; toast("E-mail confirmado (simulação) · parecer completo liberado"); if(route()==="prop") render(); }; }
+    if (act==="fechar" && (e.target===a || a.tagName==="BUTTON")) $("#layer").innerHTML="";
+    if (act==="seguir") toast("Você será avisado por e-mail quando este projeto mudar de fase");
+    return; }
+  if (e.target.id==="v-vis"){ state.assinante=false; render(); return; }
+  if (e.target.id==="v-ass"){ state.assinante=true; render(); return; }
+});
+render();
+</script>
