@@ -303,7 +303,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 .cite{font-size:.84rem;background:var(--bg);border-radius:10px;padding:10px 12px;color:#3A443E;user-select:all}
 .btn-o{border:1.5px solid var(--line);background:var(--white);border-radius:999px;padding:8px 14px;font-weight:600;font-size:.88rem;justify-self:start}
 .btn-o:hover{border-color:var(--green)}
-.rep-foot .files{grid-template-columns:1fr}
+.rep-foot{grid-template-columns:1fr!important}
 .head.wide .wrap{max-width:1040px}
 .to-report{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--green-100);padding-top:14px}
 .to-report span{color:var(--gray);font-size:.9rem}
@@ -321,6 +321,100 @@ button{font:inherit;cursor:pointer;color:inherit}
   .cmp-row .arr{transform:rotate(90deg);height:16px}
 }
 
+
+/* ---------- cabeçalho do assinante ---------- */
+.nav{display:flex;align-items:center;gap:4px;margin-left:auto;margin-right:8px}
+.nav a{padding:7px 12px;border-radius:999px;font-size:.92rem;font-weight:500;color:var(--gray);transition:all .15s}
+.nav a:hover{color:var(--ink);background:var(--white)}
+.nav a.on{color:var(--ink);background:var(--white);box-shadow:0 0 0 1px var(--line)}
+.nav .cnt{font-size:.72rem;font-weight:700;background:var(--green);color:#fff;border-radius:999px;padding:1px 7px;margin-left:4px}
+.enter{background:none;border:0;font-weight:600;font-size:.92rem;padding:8px 10px;color:var(--ink)}
+.me{position:relative}
+.avatar{width:38px;height:38px;border-radius:50%;border:2px solid var(--white);box-shadow:0 0 0 1.5px var(--green-100);background:var(--green-50);color:var(--green-dk);font-weight:700;font-size:.85rem;display:grid;place-items:center;transition:box-shadow .15s}
+.avatar:hover,.avatar[aria-expanded="true"]{box-shadow:0 0 0 2px var(--green)}
+.menu{position:absolute;right:0;top:calc(100% + 10px);width:290px;background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 50px -24px rgba(22,32,26,.35);padding:8px;display:grid;gap:2px;z-index:15;animation:rise .2s ease}
+.menu .who{padding:10px 12px 12px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.menu .who b{display:block}
+.menu .who span{font-size:.85rem;color:var(--gray)}
+.menu .mrow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;font-size:.9rem}
+.menu .mrow select{font:inherit;font-size:.85rem;border:1px solid var(--line);border-radius:8px;padding:3px 6px;background:var(--white);color:var(--ink)}
+.menu .sw{width:38px;height:22px}
+.menu .sw::after{width:16px;height:16px}
+.menu .sw[aria-checked="true"]::after{transform:translateX(16px)}
+.menu a.mrow:hover,.menu button.mrow:hover{background:var(--bg)}
+.menu button.mrow{border:0;background:none;width:100%;text-align:left}
+.menu .sep{height:1px;background:var(--line);margin:6px 0}
+.menu .lbl{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:700;padding:6px 12px 2px}
+
+/* ---------- timeline ---------- */
+.tl-head{padding-block:40px 18px;display:grid;gap:12px}
+.tl-head h1{font-size:clamp(1.9rem,4.8vw,2.6rem);font-weight:800}
+.tl-head p{color:var(--gray);max-width:54ch}
+.upcoming{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.up{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:12px 14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center;transition:transform .2s}
+.up:hover{transform:translateY(-2px);border-color:var(--green-100)}
+.up .d{width:46px;text-align:center;border-radius:12px;background:var(--sun);color:var(--sun-ink);padding:5px 0;line-height:1.1}
+.up .d b{display:block;font-size:1.15rem}
+.up .d small{font-size:.7rem;font-weight:700;text-transform:uppercase}
+.up p{font-size:.88rem;font-weight:600;line-height:1.3}
+.up span{font-size:.78rem;color:var(--gray)}
+.tl-filters{display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:calc(env(safe-area-inset-top,0px) + 66px);z-index:3;background:var(--bg);padding-block:12px}
+.chip.lock{color:var(--soft)}
+.feed{display:grid;gap:4px;padding-bottom:40px}
+.day{font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:700;padding:18px 0 8px 64px}
+.ev{display:grid;grid-template-columns:48px 16px minmax(0,1fr);gap:0 0;align-items:stretch;animation:rise .35s ease both}
+.ev .t{font-size:.78rem;color:var(--soft);text-align:right;padding:18px 10px 0 0;font-variant-numeric:tabular-nums}
+.ev .rail{position:relative}
+.ev .rail::before{content:"";position:absolute;left:7px;top:0;bottom:0;width:2px;background:var(--line)}
+.ev .rail i{position:absolute;left:1px;top:20px;width:14px;height:14px;border-radius:50%;border:3px solid var(--bg)}
+.ev .card{margin:6px 0 6px 14px;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;gap:6px;transition:box-shadow .2s,border-color .2s}
+.ev .card:hover{box-shadow:0 12px 28px -20px rgba(22,32,26,.4);border-color:var(--green-100)}
+.ev .kind{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ev .kind b{font-size:.78rem;font-weight:700}
+.ev h3{font-size:1.05rem;font-weight:700}
+.ev p{color:var(--gray);font-size:.9rem}
+.ev .acts{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:4px}
+.mini{border:1px solid var(--line);background:var(--white);border-radius:999px;padding:5px 12px;font-size:.82rem;font-weight:600;display:inline-flex;gap:6px;align-items:center;transition:all .15s}
+.mini:hover{border-color:var(--green)}
+.mini.on{background:var(--green-50);border-color:var(--green);color:var(--green-dk)}
+.mini svg{width:14px;height:14px}
+.k-par{background:var(--green)} .k-pauta{background:#D9A400} .k-vot{background:var(--sky-ink)} .k-lei{background:var(--green-dk)} .k-sub{background:#8A9A10} .k-veto{background:var(--rose-ink)}
+.c-par{color:var(--green-dk)} .c-pauta{color:var(--sun-ink)} .c-vot{color:var(--sky-ink)} .c-lei{color:var(--green-dk)} .c-sub{color:var(--lime-ink)} .c-veto{color:var(--rose-ink)}
+.tl-empty{padding:30px 0 30px 64px;color:var(--soft)}
+
+/* ---------- compartilhar ---------- */
+.share{display:grid;gap:14px}
+.share-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.stab{border:1.5px solid var(--line);background:var(--white);border-radius:999px;padding:6px 13px;font-size:.86rem;font-weight:600;display:inline-flex;gap:7px;align-items:center;color:var(--gray)}
+.stab svg{width:15px;height:15px}
+.stab[aria-selected="true"]{border-color:var(--ink);background:var(--ink);color:#fff}
+.preview{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:.9rem;line-height:1.55;white-space:pre-wrap;color:#2B342F;max-height:240px;overflow:auto;user-select:all}
+.preview.code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem}
+.ig{width:min(300px,100%);aspect-ratio:1;border-radius:18px;background:var(--green);color:#fff;padding:22px;display:grid;align-content:space-between;justify-self:center}
+.ig small{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.ig h4{margin:0;font-size:1.35rem;line-height:1.15;font-weight:800}
+.ig .tg{display:flex;gap:6px;flex-wrap:wrap}
+.ig .tg span{background:rgba(255,255,255,.2);border-radius:999px;padding:3px 10px;font-size:.72rem;font-weight:700}
+.ig .ft{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;font-weight:600}
+.fmt{display:flex;gap:6px;flex-wrap:wrap}
+.share-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.share-row span{font-size:.82rem;color:var(--soft)}
+.modal.wide{max-width:560px}
+.share-btn{display:inline-flex;gap:6px;align-items:center}
+.share-btn svg{width:15px;height:15px}
+
+@media (max-width:860px){
+  .nav a.opt-hide{display:none}
+  .upcoming{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .nav{display:none}
+  .day{padding-left:0}
+  .ev{grid-template-columns:16px minmax(0,1fr)}
+  .ev .t{display:none}
+  .tl-empty{padding-left:0}
+}
+
 @media (max-width:640px){
   .topics{grid-template-columns:repeat(2,minmax(0,1fr))}
   .topics .topic:last-child{grid-column:1/-1}
@@ -332,10 +426,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 
-<header class="head" id="head"><div class="wrap">
-  <a class="brand" href="#home"><i></i>Nome do Site</a>
-  <button class="pill-btn" id="sub-btn" data-act="pagina">Se inscreva grátis</button>
-</div></header>
+<header class="head" id="head"><div class="wrap" id="headin"></div></header>
 <main id="app"></main>
 <p class="foot">Rascunho visual · conteúdos fictícios</p>
 <div id="layer"></div>
@@ -405,7 +496,7 @@ function quem(l){
     </div>
   </section>`;
 }
-const state = {inscrito:false, topic:"todos", status:"Todas", q:"", leiAberta:false};
+const state = {inscrito:false, menu:false, tlFilter:"tudo", seguindo:["resex","lic"], share:{tab:"whatsapp", cit:"abnt"}, topic:"todos", status:"Todas", q:"", leiAberta:false};
 
 const $ = s => document.querySelector(s);
 const go = r => { location.hash = r; };
@@ -442,7 +533,7 @@ function home(){
     </section>
     <section class="section">
       <div class="section-h"><h2>Explore por tópico</h2></div>
-      <div class="topics">${TOPICS.map(t=>`<button class="topic" data-topic="${t[0]}" aria-pressed="${state.topic===t[0]}">${ICON[t[1]]}<b>${t[2]}</b><small>${t[3]}</small></button>`).join("")}</div>
+      <div class="topics">${TOPICS.map(t=>`<button class="topic" data-topic="${t[0]}" aria-pressed="${t[0]!=="todos"&&state.topic===t[0]}">${ICON[t[1]]}<b>${t[2]}</b><small>${t[3]}</small></button>`).join("")}</div>
     </section>
     <section class="section">
       <div class="section-h"><h2>Mais recentes</h2><span id="count">${filtradas().length} leis</span></div>
@@ -456,7 +547,7 @@ function lei(l){
   return `<div class="wrap">
     <a class="back" href="#home">← Voltar</a>
     <header class="lawhead">
-      <div class="top" style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag tg-place">${l.local}</span>${stTag(l.status)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}</div>
+      <div class="top" style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag tg-place">${l.local}</span>${stTag(l.status)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}<button class="mini share-btn" data-share="${l.id}" style="margin-left:auto">${ICO_SHARE}Compartilhar</button></div>
       <h1>${l.titulo}</h1><span class="num">${l.num}</span>
     </header>
     <nav class="steps" aria-label="Seções"><a href="#${l.id}" data-jump="s-lei" class="on">A lei</a><a href="#${l.id}" data-jump="s-who">Quem</a><a href="#${l.id}" data-jump="s-par">Parecer</a><a href="#${l.id}" data-jump="s-mat">Material</a></nav>
@@ -505,7 +596,7 @@ function lei(l){
   </div>`;
 }
 function modal(){
-  return `<div class="scrim" data-act="fechar"><form class="modal" id="f" onclick="event.stopPropagation()">
+  return `<div class="scrim" data-act="fechar"><form class="modal" id="f">
     <h2>Se inscreva grátis</h2>
     <p>Libere as notas técnicas e os quadros comparativos em PDF.</p>
     <input id="n" type="text" placeholder="Seu nome" aria-label="Nome" required>
@@ -518,10 +609,18 @@ function modal(){
     <div class="acts"><button type="button" class="ghost" data-act="fechar">Agora não</button><button class="pill-btn">Inscrever</button></div>
   </form></div>`;
 }
+function abrirEntrar(){
+  $("#layer").innerHTML=`<div class="scrim" data-act="fechar"><form class="modal" id="fe">
+    <h2>Entrar</h2><p>Enviamos um link de acesso para o seu e-mail. Não precisa de senha.</p>
+    <input id="le" type="email" placeholder="Seu e-mail" aria-label="E-mail" required value="maria@exemplo.com">
+    <div class="acts"><button type="button" class="ghost" data-act="fechar">Cancelar</button><button class="pill-btn">Enviar link</button></div></form></div>`;
+  $("#fe").onsubmit=e=>{ e.preventDefault(); insc.email=$("#le").value; insc.nome=insc.nome||"Maria Exemplo"; $("#layer").innerHTML=""; state.inscrito=true; toast("Link confirmado (simulação) · bem-vinda de volta"); render(true); };
+}
 function abrirInscricao(){
   $("#layer").innerHTML = modal(); $("#n").focus();
   $("#f").onsubmit = e=>{ e.preventDefault();
     if(!$("#c").checked){ toast("Marque a concordância com a Política de Privacidade"); return; }
+    insc.nome=$("#n").value.trim()||insc.nome; insc.email=$("#e").value.trim()||insc.email; insc.uf=$("#s").value;
     $("#layer").innerHTML=""; state.inscrito=true; toast("Pronto! Materiais liberados"); render(true); };
 }
 
@@ -674,22 +773,151 @@ function parecer(l){
               <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota Técnica</b><span>12 páginas</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
               <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>3 páginas</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
             </div></div>
-          <div class="panel-s"><h3>Citar este parecer</h3>
-            <p class="cite" id="cite">NOME DO SITE. Parecer técnico: ${l.titulo} (${l.num}). Versão 2, 09 out. 2026.</p>
-            <button class="btn-o" data-act="copiar">Copiar citação</button></div>
+          <div class="panel-s" style="grid-column:1/-1"><h3>Compartilhar e citar</h3><p>Textos prontos para redes sociais e referência para trabalhos acadêmicos.</p>${shareHTML(l)}</div>
         </div>
       </article>
     </div>
   </div>`;
 }
 
+
+/* ---------- cabeçalho ---------- */
+const iniciais = n => (n||"Maria Exemplo").trim().split(/\s+/).map(w=>w[0]).filter(Boolean).slice(0,2).join("").toUpperCase();
+function headHTML(r){
+  const on = k => r===k ? "on" : "";
+  const nav = `<nav class="nav" aria-label="Principal"><a class="${on("home")}" href="#home">Leis</a><a class="${on("timeline")}" href="#timeline">Timeline</a>${state.inscrito?`<a class="opt-hide" href="#timeline" data-act="ver-seguindo">Seguindo<span class="cnt">${state.seguindo.length}</span></a>`:""}</nav>`;
+  if(!state.inscrito) return `<a class="brand" href="#home"><i></i>Nome do Site</a>${nav}<button class="enter" data-act="entrar">Entrar</button><button class="pill-btn" data-act="pagina">Se inscreva grátis</button>`;
+  return `<a class="brand" href="#home"><i></i>Nome do Site</a>${nav}
+    <div class="me"><button class="avatar" data-act="menu" aria-haspopup="true" aria-expanded="${state.menu}" aria-label="Minha conta">${iniciais(insc.nome)}</button>
+    ${state.menu?menuHTML():""}</div>`;
+}
+function menuHTML(){
+  const sw=(k,t)=>`<div class="mrow"><span>${t}</span><button class="sw" role="switch" aria-checked="${insc[k]}" aria-label="${t}" data-sw="${k}"></button></div>`;
+  return `<div class="menu" role="menu">
+    <div class="who"><b>${insc.nome||"Maria Exemplo"}</b><span>${insc.email||"maria@exemplo.com"}</span></div>
+    <a class="mrow" href="#timeline">Timeline</a>
+    <a class="mrow" href="#timeline" data-act="ver-seguindo">Leis que sigo <b>${state.seguindo.length}</b></a>
+    <div class="mrow"><span>Meu estado</span><select id="m-uf" aria-label="Meu estado">${UFS.map(u=>`<option ${u===insc.uf?"selected":""}>${u}</option>`).join("")}</select></div>
+    <div class="mrow"><span>Temas</span><span style="color:var(--gray);font-size:.85rem">${insc.temas.join(", ")||"nenhum"}</span></div>
+    <div class="sep"></div><span class="lbl">Avisos por e-mail</span>
+    ${sw("alertas","Alertas de tramitação")}${sw("news","Resumo semanal")}
+    <div class="sep"></div>
+    <button class="mrow" data-act="sair">Sair</button>
+  </div>`;
+}
+
+/* ---------- timeline ---------- */
+const KIND={par:"Parecer publicado",pauta:"Entrou em pauta",vot:"Votação",lei:"Virou lei",sub:"Texto alterado",veto:"Veto"};
+const EVENTOS=[
+  {dia:"Hoje · 9 de outubro",h:"10:20",k:"par",id:"resex",txt:"Alto impacto, benéfico. Pede prazo para o plano de manejo e consulta prévia às comunidades."},
+  {dia:"Hoje · 9 de outubro",h:"08:05",k:"pauta",id:"lic",txt:"Vai a plenário na quarta (14/10) em regime de urgência."},
+  {dia:"Ontem · 8 de outubro",h:"17:40",k:"vot",id:"lic",txt:"Aprovado na Comissão de Meio Ambiente por 12 votos a 7."},
+  {dia:"Ontem · 8 de outubro",h:"15:10",k:"sub",id:"pant",txt:"Relator apresentou substitutivo que permite queima controlada em áreas de manejo tradicional."},
+  {dia:"Ontem · 8 de outubro",h:"11:00",k:"vot",id:"resex",txt:"Aprovado na Comissão de Meio Ambiente da Assembleia por 14 votos a 5."},
+  {dia:"Esta semana",h:"seg",k:"par",id:"lic",txt:"Alto impacto, maléfico. Dispensa estudo de impacto sem avaliar o potencial de degradação."},
+  {dia:"Setembro",h:"30/09",k:"lei",id:"caat",txt:"Sancionada com dois vetos. Metas de recomposição até 2035."},
+  {dia:"Setembro",h:"30/09",k:"veto",id:"caat",txt:"Vetado o artigo que destinava recursos do fundo clima ao programa."},
+  {dia:"Setembro",h:"18/09",k:"lei",id:"agua",txt:"Lei sancionada pelo governador. Entra em vigor em 90 dias."},
+];
+const PROXIMAS=[["14","out","lic","Plenário da Câmara"],["16","out","pant","Comissão do Senado"],["21","out","resex","Plenário da ALEPA"]];
+const ICO_SHARE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
+const ICO_BELL='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>';
+function evFiltrados(){
+  const f=state.tlFilter;
+  return EVENTOS.filter(e=>{ const l=LEIS.find(x=>x.id===e.id);
+    if(f==="par") return e.k==="par";
+    if(f==="vot") return e.k==="vot"||e.k==="pauta";
+    if(f==="lei") return e.k==="lei"||e.k==="veto";
+    if(f==="seg") return state.seguindo.includes(e.id);
+    if(f==="uf") return l.local===({TO:"Tocantins",PA:"Pará"}[insc.uf]||"__") || l.esfera==="federal";
+    return true; });
+}
+function feedHTML(){
+  const evs=evFiltrados(); if(!evs.length) return `<p class="tl-empty">Nenhum acontecimento com esse filtro.</p>`;
+  let last=""; return evs.map((e,i)=>{ const l=LEIS.find(x=>x.id===e.id); const seg=state.seguindo.includes(l.id);
+    const day = e.dia!==last ? `<div class="day">${e.dia}</div>` : ""; last=e.dia;
+    return day+`<div class="ev" style="animation-delay:${i*30}ms"><span class="t">${e.h}</span><span class="rail"><i class="k-${e.k}"></i></span>
+      <div class="card"><div class="kind"><b class="c-${e.k}">${KIND[e.k]}</b><span class="tag tg-place">${l.local}</span><span style="font-size:.8rem;color:var(--soft)">${l.num}</span></div>
+        <h3>${l.titulo}</h3><p>${e.txt}</p>
+        <div class="acts"><a class="mini" href="#${e.k==="par"?"parecer-":""}${l.id}">${e.k==="par"?"Ler parecer":"Ver lei"} →</a>
+          <button class="mini ${seg&&state.inscrito?"on":""}" data-seguir="${l.id}">${ICO_BELL}${seg&&state.inscrito?"Seguindo":"Seguir"}</button>
+          <button class="mini" data-share="${l.id}" aria-label="Compartilhar">${ICO_SHARE}Compartilhar</button></div></div></div>`; }).join("");
+}
+function timeline(){
+  const f=(k,t,priv)=>`<button class="chip ${priv&&!state.inscrito?"lock":""}" data-tl="${k}" data-priv="${priv?1:""}" aria-pressed="${state.tlFilter===k}">${priv&&!state.inscrito?"🔒 ":""}${t}</button>`;
+  return `<div class="wrap">
+    <header class="tl-head"><h1>Timeline</h1><p>Tudo o que aconteceu com as leis ambientais que monitoramos, do mais recente ao mais antigo.</p></header>
+    <section style="display:grid;gap:10px"><span class="sub-h">Próximas votações</span>
+      <div class="upcoming">${PROXIMAS.map(u=>{ const l=LEIS.find(x=>x.id===u[2]); return `<a class="up" href="#${l.id}"><span class="d"><b>${u[0]}</b><small>${u[1]}</small></span><div><p>${l.titulo}</p><span>${u[3]}</span></div></a>`; }).join("")}</div>
+    </section>
+    <div class="tl-filters" role="group" aria-label="Filtrar">${f("tudo","Tudo")}${f("par","Pareceres")}${f("vot","Votações")}${f("lei","Leis sancionadas")}${f("seg","Seguindo",1)}${f("uf","Meu estado"+(state.inscrito?" ("+insc.uf+")":""),1)}</div>
+    <div class="feed" id="feed">${feedHTML()}</div>
+  </div>`;
+}
+
+/* ---------- compartilhar ---------- */
+const NET_ICO={
+  whatsapp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg>',
+  linkedin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>',
+  x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l16 16M20 4L4 20"/></svg>',
+  instagram:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>',
+  citacao:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 7h4v4c0 3-2 5-4 6M15 7h4v4c0 3-2 5-4 6"/></svg>',
+};
+const MESES=["jan.","fev.","mar.","abr.","maio","jun.","jul.","ago.","set.","out.","nov.","dez."];
+const MESES_L=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+function textos(l){
+  const url=`https://nomedosite.com.br/parecer/${l.id}`;
+  const hoje=new Date(); const acesso=`${hoje.getDate()} ${MESES[hoje.getMonth()]} ${hoje.getFullYear()}`;
+  const tags="#MeioAmbiente #LegislaçãoAmbiental #"+l.local.replace(/\s/g,"");
+  return {
+    whatsapp:`*${l.titulo}*\n${l.num} · ${l.local} · ${l.status}\n\n${l.imp} · ${l.car}\n${l.resumo}\n\nLeia o parecer técnico: ${url}`,
+    linkedin:`${l.titulo} (${l.num})\n\nO que muda: ${l.resumo}\n\nNossa avaliação: ${l.imp.toLowerCase()}, caráter ${l.car.toLowerCase()}. O parecer técnico traz impactos por dimensão, pontos de atenção, base legal e recomendações.\n\nLeia na íntegra: ${url}\n\n${tags}`,
+    x:`${l.titulo} (${l.num}, ${l.local}): ${l.imp.toLowerCase()}, ${l.car.toLowerCase()}. Entenda o que muda ${url} ${tags}`,
+    abnt:`SOBRENOME, Nome do Autor. ${l.titulo}: parecer técnico sobre o ${l.num}. Versão 2. Nome do Site, 9 out. 2026. Disponível em: ${url}. Acesso em: ${acesso}.`,
+    apa:`Sobrenome, N. A. (2026, 9 de outubro). ${l.titulo} [Parecer técnico sobre o ${l.num}, versão 2]. Nome do Site. ${url}`,
+    bibtex:`@misc{parecer_${l.id}_2026,\n  author       = {Sobrenome, Nome do Autor},\n  title        = {${l.titulo}: parecer técnico sobre o ${l.num}},\n  howpublished = {Nome do Site},\n  year         = {2026},\n  month        = {out},\n  note         = {Versão 2. Disponível em: \\url{${url}}. Acesso em: ${hoje.getDate()} ${MESES_L[hoje.getMonth()]} ${hoje.getFullYear()}}\n}`,
+  };
+}
+function shareHTML(l){
+  const T=textos(l); const tab=state.share.tab;
+  const tabs=[["whatsapp","WhatsApp"],["linkedin","LinkedIn"],["x","X"],["instagram","Instagram"],["citacao","Citação acadêmica"]];
+  let body="";
+  if(tab==="instagram"){
+    body=`<div class="ig" aria-label="Prévia do card para Instagram"><small>Parecer técnico · ${l.local}</small><h4>${l.titulo}</h4>
+      <div class="tg"><span>${l.imp}</span><span>${l.car}</span><span>${l.status}</span></div><div class="ft"><span>${l.num}</span><span>Nome do Site</span></div></div>
+      <div class="share-row"><span>Card 1080 × 1080 para feed e stories</span><button class="pill-btn" data-act="baixar-card">Baixar imagem</button></div>`;
+  } else if(tab==="citacao"){
+    const c=state.share.cit;
+    body=`<div class="fmt" role="group" aria-label="Formato">${[["abnt","ABNT (NBR 6023)"],["apa","APA 7"],["bibtex","BibTeX"]].map(f=>`<button class="opt" data-cit="${f[0]}" aria-pressed="${c===f[0]}">${f[1]}</button>`).join("")}</div>
+      <div class="preview ${c==="bibtex"?"code":""}" id="share-txt">${T[c]}</div>
+      <div class="share-row"><span>Substitua o autor pelo nome que constar no parecer.</span><button class="pill-btn" data-act="copiar-share">Copiar citação</button></div>`;
+  } else {
+    const lim = tab==="x" ? ` · ${T.x.length}/280 caracteres` : "";
+    body=`<div class="preview" id="share-txt">${T[tab]}</div>
+      <div class="share-row"><span>Texto pronto para colar${lim}</span><button class="pill-btn" data-act="copiar-share">Copiar texto</button></div>`;
+  }
+  return `<div class="share" id="sharebox" data-id="${l.id}"><div class="share-tabs" role="tablist">${tabs.map(t=>`<button class="stab" role="tab" data-stab="${t[0]}" aria-selected="${tab===t[0]}">${NET_ICO[t[0]]}${t[1]}</button>`).join("")}</div>${body}</div>`;
+}
+function abrirShare(id){
+  const l=LEIS.find(x=>x.id===id);
+  $("#layer").innerHTML=`<div class="scrim" data-act="fechar"><div class="modal wide" role="dialog" aria-label="Compartilhar">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><h2>Compartilhar</h2><button class="ghost" data-act="fechar" aria-label="Fechar">✕</button></div>
+    <p style="margin-top:-6px">${l.titulo}</p><div id="sharewrap">${shareHTML(l)}</div></div></div>`;
+}
+function refreshShare(){ const b=$("#sharebox"); if(!b) return; const l=LEIS.find(x=>x.id===b.dataset.id); b.outerHTML=shareHTML(l); }
+function copiar(el,msg){
+  const t=el.textContent;
+  (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast(msg),()=>{ const r=document.createRange(); r.selectNodeContents(el); const s=getSelection(); s.removeAllRanges(); s.addRange(r); toast("Texto selecionado: use Ctrl+C"); });
+}
+
+function renderHead(){ const r=(location.hash||"").slice(1)||"home"; $("#headin").innerHTML=headHTML(r); }
 function render(keepScroll){
   const r=(location.hash||"").slice(1); const l=LEIS.find(x=>x.id===r);
   const pl=r.startsWith("parecer-")?LEIS.find(x=>"parecer-"+x.id===r):null;
   const y=window.scrollY;
-  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? inscricao() : home();
+  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? inscricao() : r==="timeline" ? timeline() : home();
   $("#head").classList.toggle("wide", !!pl || r==="inscricao");
-  const b=$("#sub-btn"); b.textContent = state.inscrito?"Inscrito ✓":"Se inscreva grátis"; b.classList.toggle("done",state.inscrito);
+  state.menu=false; renderHead();
   window.scrollTo(0, keepScroll?y:0);
   const sf=$("#sf");
   if(sf){ sf.onsubmit=e=>{e.preventDefault();}; $("#q").oninput=e=>{ state.q=e.target.value; refreshList(); }; }
@@ -705,16 +933,31 @@ window.addEventListener("scroll",()=>{
   steps.forEach(a=>a.classList.toggle("on",a.dataset.jump===cur));
 },{passive:true});
 document.addEventListener("click",ev=>{
-  const tp=ev.target.closest("[data-topic]"); if(tp){ state.topic=tp.dataset.topic; document.querySelectorAll("[data-topic]").forEach(b=>b.setAttribute("aria-pressed",b===tp)); refreshList(); return; }
+  const tp=ev.target.closest("[data-topic]"); if(tp && tp.dataset.topic==="todos"){ go("timeline"); return; }
+  if(tp && tp.getAttribute("aria-pressed")==="true"){ state.topic="todos"; tp.setAttribute("aria-pressed","false"); refreshList(); return; }
+  if(tp){ state.topic=tp.dataset.topic; document.querySelectorAll("[data-topic]").forEach(b=>b.setAttribute("aria-pressed",b===tp)); refreshList(); return; }
   const ch=ev.target.closest("[data-status]"); if(ch){ state.status=ch.dataset.status; document.querySelectorAll("[data-status]").forEach(b=>b.setAttribute("aria-pressed",b===ch)); refreshList(); return; }
   const j=ev.target.closest("[data-jump]"); if(j){ ev.preventDefault(); document.getElementById(j.dataset.jump).scrollIntoView({behavior:"smooth"}); return; }
   const pf=ev.target.closest("[data-perfil]"); if(pf){ insc.perfil=pf.dataset.perfil; document.querySelectorAll("[data-perfil]").forEach(b=>b.setAttribute("aria-pressed",b===pf)); return; }
   const tm=ev.target.closest("[data-tema]"); if(tm){ const t=tm.dataset.tema; insc.temas=insc.temas.includes(t)?insc.temas.filter(x=>x!==t):[...insc.temas,t]; tm.setAttribute("aria-pressed",insc.temas.includes(t)); return; }
-  const sw=ev.target.closest("[data-sw]"); if(sw){ const k=sw.dataset.sw; insc[k]=!insc[k]; sw.setAttribute("aria-checked",insc[k]); return; }
+  const sw=ev.target.closest("[data-sw]"); if(sw){ const k=sw.dataset.sw; insc[k]=!insc[k]; sw.setAttribute("aria-checked",insc[k]); if(sw.closest(".menu")) toast(insc[k]?"Aviso ativado":"Aviso desativado"); return; }
   const lc=ev.target.closest("[data-law]"); if(lc){ const b=BASE[+lc.dataset.law]; document.querySelectorAll("[data-law]").forEach(x=>x.setAttribute("aria-expanded",x===lc)); $("#lawnote").innerHTML=`<b>${b[0]}</b> · ${b[2]}`; return; }
-  const a=ev.target.closest("[data-act]"); if(!a) return;
+  const tl=ev.target.closest("[data-tl]"); if(tl){ if(tl.dataset.priv && !state.inscrito){ abrirInscricao(); return; } state.tlFilter=tl.dataset.tl; document.querySelectorAll("[data-tl]").forEach(b=>b.setAttribute("aria-pressed",b===tl)); $("#feed").innerHTML=feedHTML(); return; }
+  const sg=ev.target.closest("[data-seguir]"); if(sg){ if(!state.inscrito){ abrirInscricao(); return; } const id=sg.dataset.seguir; const on=state.seguindo.includes(id); state.seguindo=on?state.seguindo.filter(x=>x!==id):[...state.seguindo,id]; toast(on?"Você deixou de seguir esta lei":"Pronto! Você será avisado quando esta lei andar"); if($("#feed")) $("#feed").innerHTML=feedHTML(); renderHead(); return; }
+  const sh=ev.target.closest("[data-share]"); if(sh){ abrirShare(sh.dataset.share); return; }
+  const st=ev.target.closest("[data-stab]"); if(st){ state.share.tab=st.dataset.stab; refreshShare(); return; }
+  const ct=ev.target.closest("[data-cit]"); if(ct){ state.share.cit=ct.dataset.cit; refreshShare(); return; }
+  const a=ev.target.closest("[data-act]");
+  if(state.menu && !ev.target.closest(".menu") && !(a && a.dataset.act==="menu")){ state.menu=false; renderHead(); }
+  if(!a) return;
   const act=a.dataset.act;
   if(act==="inscrever" && !state.inscrito) abrirInscricao();
+  if(act==="menu"){ state.menu=!state.menu; renderHead(); return; }
+  if(act==="sair"){ state.inscrito=false; state.menu=false; insc.ok=false; insc.passo=1; toast("Você saiu da sua conta"); render(true); return; }
+  if(act==="entrar"){ abrirEntrar(); return; }
+  if(act==="ver-seguindo"){ ev.preventDefault(); state.tlFilter="seg"; state.menu=false; if(location.hash==="#timeline") render(); else go("timeline"); return; }
+  if(act==="copiar-share"){ copiar($("#share-txt"), state.share.tab==="citacao"?"Citação copiada":"Texto copiado"); return; }
+  if(act==="baixar-card"){ toast("Imagem do card gerada (simulação)"); return; }
   if(act==="pagina"){ if(state.inscrito){ toast("Você já está inscrito"); } else { insc.ok=false; insc.passo=1; go("inscricao"); } }
   if(act==="next"){ saveStep();
     if(insc.passo===1 && (!insc.nome || !/^\S+@\S+\.\S+$/.test(insc.email))){ toast("Preencha seu nome e um e-mail válido"); return; }
@@ -722,7 +965,6 @@ document.addEventListener("click",ev=>{
     insc.passo++; render(true); }
   if(act==="prev"){ saveStep(); insc.passo--; render(true); }
   if(act==="finish"){ if(!$("#i-lgpd").checked){ toast("Marque a concordância com a Política de Privacidade"); return; } insc.ok=true; state.inscrito=true; render(true); }
-  if(act==="copiar"){ const t=$("#cite").textContent; (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast("Citação copiada"),()=>{ const r=document.createRange(); r.selectNodeContents($("#cite")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); toast("Texto selecionado: use Ctrl+C"); }); }
   if(act==="fechar" && (ev.target===a || a.tagName==="BUTTON")) $("#layer").innerHTML="";
   if(act==="lei"){ state.leiAberta=!state.leiAberta; $("#mais").classList.toggle("open",state.leiAberta); a.textContent=state.leiAberta?"Mostrar menos":"Ler texto completo"; }
   if(act==="part"){ const c=$("#part"); c.classList.toggle("open"); a.textContent=c.classList.contains("open")?"Esconder votos por partido":"Ver votos por partido"; }
@@ -737,6 +979,7 @@ function hideTip(){ const t=$("#tip"); if(t) t.hidden=true; }
 document.addEventListener("mouseover",e=>{ const r=e.target.closest(".drow"); r?showTip(r):hideTip(); });
 document.addEventListener("focusin",e=>{ const r=e.target.closest(".drow"); r?showTip(r):hideTip(); });
 document.addEventListener("click",e=>{ const r=e.target.closest(".drow"); if(r) showTip(r); });
-document.addEventListener("keydown",e=>{ if(e.key==="Escape") $("#layer").innerHTML=""; });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ $("#layer").innerHTML=""; if(state.menu){ state.menu=false; renderHead(); } } });
+document.addEventListener("change",e=>{ if(e.target.id==="m-uf"){ insc.uf=e.target.value; toast("Estado atualizado para "+insc.uf); } });
 render();
 </script>

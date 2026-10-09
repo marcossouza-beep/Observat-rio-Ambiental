@@ -85,6 +85,33 @@ Texto introdutório do tema ou da região, proposições em pauta, pareceres, fi
 
 Critérios das tags de impacto e caráter, modelo do parecer, fontes, política de correção, aviso de opinião pessoal do autor. **[F1]**
 
+## A9. Timeline **[F1 manual / F2 automática]**
+
+| Elemento | Funcionalidade |
+|---|---|
+| Próximas votações | 3 cartões com data, lei e órgão |
+| Filtros | Tudo · Pareceres · Votações · Leis sancionadas · **Seguindo** e **Meu estado** (só para inscritos; para visitantes abrem a inscrição) |
+| Feed | Agrupado por dia; cada acontecimento tem tipo (parecer publicado, entrou em pauta, votação, texto alterado, virou lei, veto), estado, número, título e uma linha de explicação |
+| Ações por item | Ler parecer / Ver lei · **Seguir** (alerta por e-mail) · **Compartilhar** |
+
+## A10. Cabeçalho do inscrito
+
+- Menu: Leis · Timeline · Seguindo (com contador).
+- **Avatar** discreto com as iniciais; ao clicar abre um menu com nome e e-mail, leis que sigo, meu estado (troca rápida), temas, chaves de aviso por e-mail (alertas de tramitação, resumo semanal) e Sair.
+- Visitante vê "Entrar" (link de acesso por e-mail, sem senha) e "Se inscreva grátis".
+
+## A11. Compartilhar e citar
+
+Disponível na página da lei (botão), em cada item da Timeline e no fim do parecer (bloco fixo).
+
+| Aba | Conteúdo |
+|---|---|
+| WhatsApp | Título em negrito, número, estado, status, tags e link |
+| LinkedIn | Texto profissional com o que muda, a avaliação e hashtags |
+| X | Versão curta com contador de caracteres (≤ 280) |
+| Instagram | Card quadrado 1080 × 1080 gerado com título, tags e número |
+| Citação acadêmica | **ABNT (NBR 6023)**, **APA 7** e **BibTeX**, com data de acesso automática |
+
 ---
 
 # Parte B — Painel administrativo (etapa posterior)
