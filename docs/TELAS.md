@@ -112,6 +112,27 @@ Disponível na página da lei (botão), em cada item da Timeline e no fim do par
 | Instagram | Card quadrado 1080 × 1080 gerado com título, tags e número |
 | Citação acadêmica | **ABNT (NBR 6023)**, **APA 7** e **BibTeX**, com data de acesso automática |
 
+## A12. Opinião (vitrine dos pareceres)
+
+| Elemento | Funcionalidade |
+|---|---|
+| Placar | Total de pareceres e barra Benéficos / Neutros / Maléficos; tocar numa cor filtra a lista |
+| Mais recente | Destaque do último parecer com impacto, caráter e situação |
+| Lista | Data, título, estado, tags, número e tempo de leitura; filtros Benéficos, Maléficos, Alto impacto, Federais, Estaduais |
+
+## A13. Artigos
+
+| Elemento | Funcionalidade |
+|---|---|
+| Destaque | Artigo principal com capa, categoria, autor, data e tempo de leitura |
+| Categorias | Tendências · Explicadores · Dados (cada uma com uma capa gráfica própria) |
+| Grade | Cards com capa, título, linha fina, data e tempo de leitura |
+| Chamada | "Um artigo por semana no seu e-mail" para visitantes |
+
+## A14. Leitura de artigo
+
+Barra de progresso de leitura, categoria, título, linha fina, autor; texto com intertítulos, citação em destaque e gráfico simples; **Leis citadas** (com status, levam à página da lei); **Compartilhar e citar** (mesmas abas do parecer, com textos próprios de artigo); **Leia também**.
+
 ---
 
 # Parte B — Painel administrativo (etapa posterior)

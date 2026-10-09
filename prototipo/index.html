@@ -324,7 +324,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 
 /* ---------- cabeçalho do assinante ---------- */
 .nav{display:flex;align-items:center;gap:4px;margin-left:auto;margin-right:8px}
-.nav a{padding:7px 12px;border-radius:999px;font-size:.92rem;font-weight:500;color:var(--gray);transition:all .15s}
+.nav a{padding:7px 10px;border-radius:999px;font-size:.92rem;font-weight:500;color:var(--gray);transition:all .15s}
 .nav a:hover{color:var(--ink);background:var(--white)}
 .nav a.on{color:var(--ink);background:var(--white);box-shadow:0 0 0 1px var(--line)}
 .nav .cnt{font-size:.72rem;font-weight:700;background:var(--green);color:#fff;border-radius:999px;padding:1px 7px;margin-left:4px}
@@ -382,6 +382,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 .c-par{color:var(--green-dk)} .c-pauta{color:var(--sun-ink)} .c-vot{color:var(--sky-ink)} .c-lei{color:var(--green-dk)} .c-sub{color:var(--lime-ink)} .c-veto{color:var(--rose-ink)}
 .tl-empty{padding:30px 0 30px 64px;color:var(--soft)}
 
+
 /* ---------- compartilhar ---------- */
 .share{display:grid;gap:14px}
 .share-tabs{display:flex;gap:6px;flex-wrap:wrap}
@@ -409,10 +410,102 @@ button{font:inherit;cursor:pointer;color:inherit}
 }
 @media (max-width:560px){
   .nav{display:none}
+  .head .pill-btn{padding:8px 12px;font-size:.84rem}
+  .enter{padding:8px 6px}
   .day{padding-left:0}
   .ev{grid-template-columns:16px minmax(0,1fr)}
   .ev .t{display:none}
   .tl-empty{padding-left:0}
+}
+
+
+/* ---------- opinião ---------- */
+.pg-head{padding-block:40px 18px;display:grid;gap:12px}
+.pg-head h1{font-size:clamp(1.9rem,4.8vw,2.6rem);font-weight:800}
+.pg-head p{color:var(--gray);max-width:56ch}
+.tally{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:16px 18px;display:grid;gap:10px}
+.tally-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.tally-h b{font-size:1.05rem}
+.tally-h span{font-size:.85rem;color:var(--soft)}
+.stack{display:flex;gap:2px;height:14px}
+.stack button{border:0;padding:0;height:100%;transition:filter .15s,transform .15s}
+.stack button:first-child{border-radius:999px 0 0 999px} .stack button:last-child{border-radius:0 999px 999px 0}
+.stack button:hover{filter:brightness(1.08);transform:scaleY(1.25)}
+.stack .s-ben{background:var(--green-dk)} .stack .s-neu{background:#B9C2BD} .stack .s-mal{background:var(--rose-ink)}
+.tally-leg{display:flex;gap:16px;flex-wrap:wrap;font-size:.88rem;color:var(--gray)}
+.tally-leg i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.tally-leg b{color:var(--ink)}
+.feat{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);border-radius:22px;overflow:hidden;background:var(--white);border:1px solid var(--line);transition:box-shadow .2s}
+.feat:hover{box-shadow:0 18px 40px -26px rgba(22,32,26,.45)}
+.feat .fl{padding:clamp(20px,4vw,30px);display:grid;gap:12px;align-content:start}
+.feat .fl small{font-size:.75rem;letter-spacing:.07em;text-transform:uppercase;font-weight:700;color:var(--green-dk)}
+.feat h2{font-size:clamp(1.4rem,3.4vw,1.8rem);font-weight:800}
+.feat p{color:var(--gray)}
+.feat .fr{background:var(--green-50);padding:clamp(20px,4vw,28px);display:grid;gap:14px;align-content:center}
+.feat .fr .vline{display:grid;gap:4px}
+.feat .fr small{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:700}
+.feat .fr b{font-size:1.2rem;font-weight:800}
+.ops{display:grid;gap:0;background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.op{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line);transition:background .15s;animation:rise .3s ease both}
+.op:last-child{border-bottom:0}
+.op:hover{background:var(--bg)}
+.op .dt{text-align:center;line-height:1.1;color:var(--soft);font-size:.75rem;font-weight:700;text-transform:uppercase}
+.op .dt b{display:block;font-size:1.35rem;color:var(--ink)}
+.op h3{font-size:1.02rem;font-weight:700;margin-bottom:4px}
+.op .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.op .min{font-size:.8rem;color:var(--soft)}
+
+/* ---------- artigos ---------- */
+.art-feat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;border-radius:24px;overflow:hidden;background:var(--white);border:1px solid var(--line);transition:box-shadow .2s}
+.art-feat:hover{box-shadow:0 18px 40px -26px rgba(22,32,26,.45)}
+.art-feat .txt{padding:clamp(22px,4vw,34px);display:grid;gap:12px;align-content:center}
+.art-feat h2{font-size:clamp(1.5rem,3.6vw,2rem);font-weight:800}
+.art-feat p{color:var(--gray)}
+.cover{min-height:220px;position:relative}
+.cv-tend{background:repeating-linear-gradient(135deg,var(--green) 0 14px,var(--green-dk) 14px 28px)}
+.cv-dados{background:radial-gradient(circle,var(--sky-ink) 2.5px,transparent 3px) 0 0/16px 16px,var(--sky)}
+.cv-expl{background:radial-gradient(circle at 30% 40%,var(--sun) 0 34%,transparent 35%),radial-gradient(circle at 75% 70%,#F7E7A0 0 26%,transparent 27%),var(--cream)}
+.cover .cat{position:absolute;left:16px;top:16px;background:var(--white);color:var(--ink);font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:999px}
+.byline{display:flex;gap:10px;align-items:center;font-size:.85rem;color:var(--gray)}
+.byline .av{width:30px;height:30px;font-size:.72rem}
+.arts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.art{background:var(--white);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:grid;grid-template-rows:120px auto;transition:transform .2s,box-shadow .2s;animation:rise .3s ease both}
+.art:hover{transform:translateY(-3px);box-shadow:0 16px 34px -24px rgba(22,32,26,.45)}
+.art .cover{min-height:0}
+.art .in{padding:16px 18px;display:grid;gap:8px;align-content:start}
+.art h3{font-size:1.08rem;font-weight:700}
+.art p{color:var(--gray);font-size:.9rem}
+.art .min{font-size:.8rem;color:var(--soft)}
+.news{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--green-50);border-radius:20px;padding:20px 22px;margin-block:20px 60px}
+.news b{font-size:1.1rem}
+.news p{color:var(--gray);font-size:.92rem}
+
+/* ---------- leitura de artigo ---------- */
+.reader{max-width:680px;margin:0 auto;padding-inline:20px;padding-block:8px 70px;display:grid;gap:22px}
+.reader .cover{min-height:200px;border-radius:22px}
+.reader h1{font-size:clamp(1.9rem,5vw,2.7rem);font-weight:800}
+.reader .dek{font-size:1.15rem;color:var(--gray);line-height:1.5}
+.body{display:grid;gap:18px;font-size:1.06rem;line-height:1.7;color:#27302B}
+.body h2{font-size:1.3rem;font-weight:700;margin-top:8px}
+.pull{border-left:4px solid var(--green);padding:4px 0 4px 18px;font-size:1.3rem;font-weight:700;line-height:1.35;color:var(--ink)}
+.fig{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:16px 18px;display:grid;gap:10px}
+.fig small{font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:700}
+.hbar{display:grid;grid-template-columns:110px minmax(0,1fr) 42px;gap:10px;align-items:center;font-size:.9rem}
+.hbar .tr{height:14px;background:var(--bg);border-radius:0 4px 4px 0}
+.hbar .tr span{display:block;height:100%;background:var(--green-dk);border-radius:0 4px 4px 0}
+.hbar b{font-variant-numeric:tabular-nums;text-align:right}
+.reader .art .cover{min-height:0;border-radius:0}
+.brand,.head .pill-btn{white-space:nowrap}
+.cited{display:grid;gap:8px}
+.cited a{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:12px 14px;transition:border-color .15s}
+.cited a:hover{border-color:var(--green)}
+.cited a span{font-size:.82rem;color:var(--soft)}
+
+@media (max-width:760px){
+  .feat,.art-feat,.arts{grid-template-columns:1fr}
+  .art-feat .cover{min-height:150px;order:-1}
+  .op{grid-template-columns:48px minmax(0,1fr)}
+  .op > .arrow{display:none}
 }
 
 @media (max-width:640px){
@@ -785,7 +878,7 @@ function parecer(l){
 const iniciais = n => (n||"Maria Exemplo").trim().split(/\s+/).map(w=>w[0]).filter(Boolean).slice(0,2).join("").toUpperCase();
 function headHTML(r){
   const on = k => r===k ? "on" : "";
-  const nav = `<nav class="nav" aria-label="Principal"><a class="${on("home")}" href="#home">Leis</a><a class="${on("timeline")}" href="#timeline">Timeline</a>${state.inscrito?`<a class="opt-hide" href="#timeline" data-act="ver-seguindo">Seguindo<span class="cnt">${state.seguindo.length}</span></a>`:""}</nav>`;
+  const nav = `<nav class="nav" aria-label="Principal"><a class="${on("timeline")}" href="#timeline">Timeline</a><a class="${on("opiniao")}" href="#opiniao">Opinião</a><a class="${on("artigos")||(r.startsWith("artigo-")?"on":"")}" href="#artigos">Artigos</a>${state.inscrito?`<a class="opt-hide" href="#timeline" data-act="ver-seguindo">Seguindo<span class="cnt">${state.seguindo.length}</span></a>`:""}</nav>`;
   if(!state.inscrito) return `<a class="brand" href="#home"><i></i>Nome do Site</a>${nav}<button class="enter" data-act="entrar">Entrar</button><button class="pill-btn" data-act="pagina">Se inscreva grátis</button>`;
   return `<a class="brand" href="#home"><i></i>Nome do Site</a>${nav}
     <div class="me"><button class="avatar" data-act="menu" aria-haspopup="true" aria-expanded="${state.menu}" aria-label="Minha conta">${iniciais(insc.nome)}</button>
@@ -795,7 +888,7 @@ function menuHTML(){
   const sw=(k,t)=>`<div class="mrow"><span>${t}</span><button class="sw" role="switch" aria-checked="${insc[k]}" aria-label="${t}" data-sw="${k}"></button></div>`;
   return `<div class="menu" role="menu">
     <div class="who"><b>${insc.nome||"Maria Exemplo"}</b><span>${insc.email||"maria@exemplo.com"}</span></div>
-    <a class="mrow" href="#timeline">Timeline</a>
+    <a class="mrow" href="#timeline">Timeline</a><a class="mrow" href="#opiniao">Opinião</a><a class="mrow" href="#artigos">Artigos</a>
     <a class="mrow" href="#timeline" data-act="ver-seguindo">Leis que sigo <b>${state.seguindo.length}</b></a>
     <div class="mrow"><span>Meu estado</span><select id="m-uf" aria-label="Meu estado">${UFS.map(u=>`<option ${u===insc.uf?"selected":""}>${u}</option>`).join("")}</select></div>
     <div class="mrow"><span>Temas</span><span style="color:var(--gray);font-size:.85rem">${insc.temas.join(", ")||"nenhum"}</span></div>
@@ -855,6 +948,99 @@ function timeline(){
   </div>`;
 }
 
+/* ---------- opinião ---------- */
+const PAR_DATA={resex:["09","out",4],lic:["05","out",5],caat:["30","set",4],agua:["18","set",3]};
+const opFiltro={v:"todos"};
+function opLista(){
+  const f=opFiltro.v;
+  return LEIS.filter(l=>l.parecer && (f==="todos"||(f==="ben"&&l.car==="Benéfico")||(f==="mal"&&l.car==="Maléfico")||(f==="neu"&&l.car==="Neutro")||(f==="alto"&&l.imp==="Alto impacto")||(f==="fed"&&l.esfera==="federal")||(f==="est"&&l.esfera==="estadual")));
+}
+function opRows(){
+  const ls=opLista(); if(!ls.length) return `<p class="empty">Nenhum parecer com esse filtro.</p>`;
+  return ls.map((l,i)=>{ const d=PAR_DATA[l.id]; return `<a class="op" href="#parecer-${l.id}" style="animation-delay:${i*40}ms"><span class="dt"><b>${d[0]}</b>${d[1]}</span>
+    <div><h3>${l.titulo}</h3><div class="row"><span class="tag tg-place">${l.local}</span><span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}<span class="min">${l.num} · ${d[2]} min</span></div></div>
+    <span class="arrow">→</span></a>`; }).join("");
+}
+function opiniao(){
+  const all=LEIS.filter(l=>l.parecer); const c=k=>all.filter(l=>l.car===k).length;
+  const n={ben:c("Benéfico"),neu:c("Neutro"),mal:c("Maléfico")}; const tot=all.length;
+  const seg=(k,cls,lab)=>n[k]?`<button class="${cls}" style="flex:${n[k]}" data-op="${k}" title="${lab}: ${n[k]}" aria-label="${lab}: ${n[k]} pareceres"></button>`:"";
+  const top=all[0];
+  const f=(k,t)=>`<button class="chip" data-op="${k}" aria-pressed="${opFiltro.v===k}">${t}</button>`;
+  return `<div class="wrap">
+    <header class="pg-head"><h1>Opinião</h1><p>Pareceres técnicos sobre as leis ambientais em tramitação e recém-aprovadas. Cada um traz impacto, caráter, pontos de atenção e recomendações.</p></header>
+    <section class="tally"><div class="tally-h"><b>${tot} pareceres publicados</b><span>Toque numa cor para filtrar</span></div>
+      <div class="stack">${seg("ben","s-ben","Benéficos")}${seg("neu","s-neu","Neutros")}${seg("mal","s-mal","Maléficos")}</div>
+      <div class="tally-leg"><span><i style="background:var(--green-dk)"></i><b>${n.ben}</b> benéficos</span><span><i style="background:#B9C2BD"></i><b>${n.neu}</b> neutros</span><span><i style="background:var(--rose-ink)"></i><b>${n.mal}</b> maléficos</span></div>
+    </section>
+    <section class="section"><div class="section-h"><h2>Mais recente</h2></div>
+      <a class="feat" href="#parecer-${top.id}"><div class="fl"><small>Parecer técnico · ${top.local}</small><h2>${top.titulo}</h2><p>${top.resumo}</p><span class="arrow">Ler parecer →</span></div>
+        <div class="fr"><div class="vline"><small>Impacto</small><b>${top.imp.replace(" impacto","")}</b></div><div class="vline"><small>Caráter</small><b style="color:${top.car==="Maléfico"?"var(--rose-ink)":"var(--green-dk)"}">${top.car}</b></div><div class="vline"><small>Situação</small><b>${top.status}</b></div></div></a>
+    </section>
+    <section class="section"><div class="section-h"><h2>Todos os pareceres</h2></div>
+      <div class="chips" style="justify-content:flex-start">${f("todos","Todos")}${f("ben","Benéficos")}${f("mal","Maléficos")}${f("alto","Alto impacto")}${f("fed","Federais")}${f("est","Estaduais")}</div>
+      <div class="ops" id="ops">${opRows()}</div>
+    </section>
+  </div>`;
+}
+
+/* ---------- artigos ---------- */
+const ARTIGOS=[
+  {id:"onda",cat:"Tendências",cv:"cv-tend",titulo:"Licenciamento em 2026: a onda de flexibilização chega aos estados",dek:"Depois do debate federal, ao menos seis assembleias discutem regras próprias para dispensar estudos de impacto.",autor:"Nome do Autor",min:7,data:"07 out"},
+  {id:"bancadas",cat:"Dados",cv:"cv-dados",titulo:"Como votaram as bancadas regionais em 40 projetos ambientais",dek:"Norte e Centro-Oeste concentram os votos favoráveis à flexibilização; Sudeste se divide.",autor:"Nome do Autor",min:5,data:"02 out"},
+  {id:"resex-o-que-e",cat:"Explicadores",cv:"cv-expl",titulo:"O que é uma Reserva Extrativista e quem pode viver nela",dek:"Um guia rápido sobre a unidade de conservação criada para proteger o modo de vida das comunidades tradicionais.",autor:"Nome do Autor",min:4,data:"28 set"},
+  {id:"caminho",cat:"Explicadores",cv:"cv-expl",titulo:"Do projeto à lei: o caminho de uma proposta ambiental",dek:"Comissões, plenário, outra casa, sanção e vetos. Onde dá para influenciar em cada etapa.",autor:"Nome do Autor",min:3,data:"20 set"},
+  {id:"carbono",cat:"Tendências",cv:"cv-tend",titulo:"Mercado de carbono: o que muda com a regulamentação",dek:"O decreto define quem pode vender créditos florestais e como eles serão registrados.",autor:"Nome do Autor",min:6,data:"12 set"},
+  {id:"glossario",cat:"Explicadores",cv:"cv-expl",titulo:"Glossário: 20 termos para entender a legislação ambiental",dek:"De APP a zoneamento, o que cada sigla quer dizer e onde ela aparece nas leis.",autor:"Nome do Autor",min:6,data:"01 set"},
+  {id:"cerrado",cat:"Dados",cv:"cv-dados",titulo:"Cerrado concentra 4 em cada 10 projetos de conversão de vegetação",dek:"Levantamento com os projetos monitorados desde janeiro mostra onde a pressão é maior.",autor:"Nome do Autor",min:4,data:"05 set"},
+];
+const artFiltro={v:"Todos"};
+function artCards(){
+  const ls=ARTIGOS.slice(1).filter(a=>artFiltro.v==="Todos"||a.cat===artFiltro.v);
+  if(!ls.length) return `<p class="empty">Nenhum artigo nesta categoria ainda.</p>`;
+  return ls.map((a,i)=>`<a class="art" href="#artigo-${a.id}" style="animation-delay:${i*40}ms"><div class="cover ${a.cv}"><span class="cat">${a.cat}</span></div>
+    <div class="in"><h3>${a.titulo}</h3><p>${a.dek}</p><span class="min">${a.data} · ${a.min} min de leitura</span></div></a>`).join("");
+}
+function artigos(){
+  const a=ARTIGOS[0];
+  return `<div class="wrap">
+    <header class="pg-head"><h1>Artigos</h1><p>Tendências, explicadores e dados para entender para onde caminha a legislação ambiental.</p></header>
+    <a class="art-feat" href="#artigo-${a.id}"><div class="txt"><span class="tag tg-ben" style="justify-self:start">${a.cat}</span><h2>${a.titulo}</h2><p>${a.dek}</p>
+      <div class="byline"><span class="av">${iniciais(a.autor)}</span><span>${a.autor} · ${a.data} · ${a.min} min</span></div></div><div class="cover ${a.cv}"></div></a>
+    <section class="section"><div class="chips" style="justify-content:flex-start">${["Todos","Tendências","Explicadores","Dados"].map(c=>`<button class="chip" data-art="${c}" aria-pressed="${artFiltro.v===c}">${c}</button>`).join("")}</div>
+      <div class="arts" id="arts">${artCards()}</div></section>
+    ${state.inscrito?"":`<section class="news"><div><b>Um artigo por semana no seu e-mail</b><p>Junto com os pareceres e alertas das leis que você segue.</p></div><button class="pill-btn" data-act="pagina">Se inscreva grátis</button></section>`}
+  </div>`;
+}
+function artigo(a){
+  const rel=ARTIGOS.filter(x=>x.id!==a.id).slice(0,2);
+  return `<div class="readbar" id="readbar"></div><article class="reader">
+    <a class="back" href="#artigos">← Artigos</a>
+    <div style="display:grid;gap:14px"><span class="tag tg-ben" style="justify-self:start">${a.cat}</span><h1>${a.titulo}</h1><p class="dek">${a.dek}</p>
+      <div class="byline"><span class="av">${iniciais(a.autor)}</span><span><b style="color:var(--ink)">${a.autor}</b> · ${a.data} 2026 · ${a.min} min de leitura</span>
+      <button class="mini" data-share="${a.id}" style="margin-left:auto">${ICO_SHARE}Compartilhar</button></div></div>
+    <div class="cover ${a.cv}"></div>
+    <div class="body">
+      <p>Até o ano passado, o debate sobre flexibilizar o licenciamento ambiental estava concentrado em Brasília. Em 2026, ele se espalhou: assembleias de pelo menos seis estados analisam projetos que dispensam estudos de impacto para atividades de médio porte.</p>
+      <p>Os textos se parecem. Quase todos usam o porte da atividade, e não o potencial de degradação, como critério para dispensar o estudo. E quase todos transferem a decisão para os municípios.</p>
+      <p class="pull">“O porte da fazenda não diz nada sobre o dano que ela pode causar.”</p>
+      <h2>Onde os projetos estão</h2>
+      <div class="fig"><small>Projetos estaduais de licenciamento simplificado, por região</small>
+        ${[["Centro-Oeste",3],["Norte",2],["Nordeste",1],["Sudeste",0],["Sul",0]].map(r=>`<div class="hbar"><span>${r[0]}</span><span class="tr"><span style="width:${r[1]/3*100}%"></span></span><b>${r[1]}</b></div>`).join("")}
+        <span style="font-size:.8rem;color:var(--soft)">Fonte: monitoramento do observatório, jan.–out. 2026 (dados fictícios do protótipo).</span></div>
+      <p>O movimento acompanha o projeto federal que tramita em urgência na Câmara. Se aprovado, ele pode servir de base para que os estados ampliem ainda mais as dispensas.</p>
+      <h2>O que observar</h2>
+      <p>Três pontos merecem atenção nas próximas semanas: a votação do projeto federal em plenário, a regulamentação nos estados que já aprovaram suas leis e eventuais ações no Supremo questionando a dispensa por porte.</p>
+    </div>
+    <section class="cited"><span class="sub-h">Leis citadas neste artigo</span>
+      ${["lic","agua"].map(id=>{ const l=LEIS.find(x=>x.id===id); return `<a href="#${l.id}"><div><b>${l.titulo}</b><br><span>${l.num} · ${l.local}</span></div><span class="tag dot ${l.status==="Aprovada"?"tg-apr":"tg-tram"}">${l.status}</span></a>`; }).join("")}
+    </section>
+    <section class="panel-s"><h3>Compartilhar e citar</h3>${shareHTML(a)}</section>
+    <section style="display:grid;gap:12px"><span class="sub-h">Leia também</span><div class="arts">${rel.map(x=>`<a class="art" href="#artigo-${x.id}"><div class="cover ${x.cv}"><span class="cat">${x.cat}</span></div><div class="in"><h3>${x.titulo}</h3><span class="min">${x.min} min de leitura</span></div></a>`).join("")}</div></section>
+  </article>`;
+}
+const item = id => LEIS.find(x=>x.id===id) || ARTIGOS.find(x=>x.id===id);
+
 /* ---------- compartilhar ---------- */
 const NET_ICO={
   whatsapp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg>',
@@ -866,6 +1052,7 @@ const NET_ICO={
 const MESES=["jan.","fev.","mar.","abr.","maio","jun.","jul.","ago.","set.","out.","nov.","dez."];
 const MESES_L=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
 function textos(l){
+  if(ARTIGOS.includes(l)) return textosArtigo(l);
   const url=`https://nomedosite.com.br/parecer/${l.id}`;
   const hoje=new Date(); const acesso=`${hoje.getDate()} ${MESES[hoje.getMonth()]} ${hoje.getFullYear()}`;
   const tags="#MeioAmbiente #LegislaçãoAmbiental #"+l.local.replace(/\s/g,"");
@@ -878,19 +1065,32 @@ function textos(l){
     bibtex:`@misc{parecer_${l.id}_2026,\n  author       = {Sobrenome, Nome do Autor},\n  title        = {${l.titulo}: parecer técnico sobre o ${l.num}},\n  howpublished = {Nome do Site},\n  year         = {2026},\n  month        = {out},\n  note         = {Versão 2. Disponível em: \\url{${url}}. Acesso em: ${hoje.getDate()} ${MESES_L[hoje.getMonth()]} ${hoje.getFullYear()}}\n}`,
   };
 }
+function textosArtigo(a){
+  const url=`https://nomedosite.com.br/artigos/${a.id}`; const hoje=new Date();
+  const acesso=`${hoje.getDate()} ${MESES[hoje.getMonth()]} ${hoje.getFullYear()}`;
+  return {
+    whatsapp:`*${a.titulo}*\n${a.cat} · ${a.min} min de leitura\n\n${a.dek}\n\nLeia: ${url}`,
+    linkedin:`${a.titulo}\n\n${a.dek}\n\nNovo artigo no observatório, com dados e as leis citadas.\n\nLeia: ${url}\n\n#MeioAmbiente #LegislaçãoAmbiental #${a.cat.normalize("NFD").replace(/[\u0300-\u036f]/g,"")}`,
+    x:`${a.titulo} ${url} #MeioAmbiente`,
+    abnt:`SOBRENOME, Nome do Autor. ${a.titulo}. Nome do Site, ${a.data.replace(" out"," out.").replace(" set"," set.")} 2026. Disponível em: ${url}. Acesso em: ${acesso}.`,
+    apa:`Sobrenome, N. A. (2026). ${a.titulo}. Nome do Site. ${url}`,
+    bibtex:`@misc{artigo_${a.id.replace(/-/g,"_")}_2026,\n  author       = {Sobrenome, Nome do Autor},\n  title        = {${a.titulo}},\n  howpublished = {Nome do Site},\n  year         = {2026},\n  note         = {Disponível em: \\url{${url}}. Acesso em: ${hoje.getDate()} ${MESES_L[hoje.getMonth()]} ${hoje.getFullYear()}}\n}`,
+  };
+}
 function shareHTML(l){
   const T=textos(l); const tab=state.share.tab;
   const tabs=[["whatsapp","WhatsApp"],["linkedin","LinkedIn"],["x","X"],["instagram","Instagram"],["citacao","Citação acadêmica"]];
   let body="";
   if(tab==="instagram"){
-    body=`<div class="ig" aria-label="Prévia do card para Instagram"><small>Parecer técnico · ${l.local}</small><h4>${l.titulo}</h4>
-      <div class="tg"><span>${l.imp}</span><span>${l.car}</span><span>${l.status}</span></div><div class="ft"><span>${l.num}</span><span>Nome do Site</span></div></div>
+    const art=ARTIGOS.includes(l);
+    body=`<div class="ig" aria-label="Prévia do card para Instagram"><small>${art?"Artigo · "+l.cat:"Parecer técnico · "+l.local}</small><h4>${l.titulo}</h4>
+      <div class="tg">${art?`<span>${l.min} min de leitura</span>`:`<span>${l.imp}</span><span>${l.car}</span><span>${l.status}</span>`}</div><div class="ft"><span>${art?l.data+" 2026":l.num}</span><span>Nome do Site</span></div></div>
       <div class="share-row"><span>Card 1080 × 1080 para feed e stories</span><button class="pill-btn" data-act="baixar-card">Baixar imagem</button></div>`;
   } else if(tab==="citacao"){
     const c=state.share.cit;
     body=`<div class="fmt" role="group" aria-label="Formato">${[["abnt","ABNT (NBR 6023)"],["apa","APA 7"],["bibtex","BibTeX"]].map(f=>`<button class="opt" data-cit="${f[0]}" aria-pressed="${c===f[0]}">${f[1]}</button>`).join("")}</div>
       <div class="preview ${c==="bibtex"?"code":""}" id="share-txt">${T[c]}</div>
-      <div class="share-row"><span>Substitua o autor pelo nome que constar no parecer.</span><button class="pill-btn" data-act="copiar-share">Copiar citação</button></div>`;
+      <div class="share-row"><span>Substitua o autor pelo nome que constar no texto.</span><button class="pill-btn" data-act="copiar-share">Copiar citação</button></div>`;
   } else {
     const lim = tab==="x" ? ` · ${T.x.length}/280 caracteres` : "";
     body=`<div class="preview" id="share-txt">${T[tab]}</div>
@@ -899,12 +1099,12 @@ function shareHTML(l){
   return `<div class="share" id="sharebox" data-id="${l.id}"><div class="share-tabs" role="tablist">${tabs.map(t=>`<button class="stab" role="tab" data-stab="${t[0]}" aria-selected="${tab===t[0]}">${NET_ICO[t[0]]}${t[1]}</button>`).join("")}</div>${body}</div>`;
 }
 function abrirShare(id){
-  const l=LEIS.find(x=>x.id===id);
+  const l=item(id);
   $("#layer").innerHTML=`<div class="scrim" data-act="fechar"><div class="modal wide" role="dialog" aria-label="Compartilhar">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><h2>Compartilhar</h2><button class="ghost" data-act="fechar" aria-label="Fechar">✕</button></div>
     <p style="margin-top:-6px">${l.titulo}</p><div id="sharewrap">${shareHTML(l)}</div></div></div>`;
 }
-function refreshShare(){ const b=$("#sharebox"); if(!b) return; const l=LEIS.find(x=>x.id===b.dataset.id); b.outerHTML=shareHTML(l); }
+function refreshShare(){ const b=$("#sharebox"); if(!b) return; const l=item(b.dataset.id); b.outerHTML=shareHTML(l); }
 function copiar(el,msg){
   const t=el.textContent;
   (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast(msg),()=>{ const r=document.createRange(); r.selectNodeContents(el); const s=getSelection(); s.removeAllRanges(); s.addRange(r); toast("Texto selecionado: use Ctrl+C"); });
@@ -914,8 +1114,9 @@ function renderHead(){ const r=(location.hash||"").slice(1)||"home"; $("#headin"
 function render(keepScroll){
   const r=(location.hash||"").slice(1); const l=LEIS.find(x=>x.id===r);
   const pl=r.startsWith("parecer-")?LEIS.find(x=>"parecer-"+x.id===r):null;
+  const ar=r.startsWith("artigo-")?ARTIGOS.find(x=>"artigo-"+x.id===r):null;
   const y=window.scrollY;
-  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? inscricao() : r==="timeline" ? timeline() : home();
+  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? inscricao() : r==="timeline" ? timeline() : r==="opiniao" ? opiniao() : r==="artigos" ? artigos() : ar ? artigo(ar) : home();
   $("#head").classList.toggle("wide", !!pl || r==="inscricao");
   state.menu=false; renderHead();
   window.scrollTo(0, keepScroll?y:0);
@@ -933,7 +1134,7 @@ window.addEventListener("scroll",()=>{
   steps.forEach(a=>a.classList.toggle("on",a.dataset.jump===cur));
 },{passive:true});
 document.addEventListener("click",ev=>{
-  const tp=ev.target.closest("[data-topic]"); if(tp && tp.dataset.topic==="todos"){ go("timeline"); return; }
+  const tp=ev.target.closest("[data-topic]"); if(tp && ({todos:"timeline",parecer:"opiniao",artigos:"artigos"})[tp.dataset.topic]){ go(({todos:"timeline",parecer:"opiniao",artigos:"artigos"})[tp.dataset.topic]); return; }
   if(tp && tp.getAttribute("aria-pressed")==="true"){ state.topic="todos"; tp.setAttribute("aria-pressed","false"); refreshList(); return; }
   if(tp){ state.topic=tp.dataset.topic; document.querySelectorAll("[data-topic]").forEach(b=>b.setAttribute("aria-pressed",b===tp)); refreshList(); return; }
   const ch=ev.target.closest("[data-status]"); if(ch){ state.status=ch.dataset.status; document.querySelectorAll("[data-status]").forEach(b=>b.setAttribute("aria-pressed",b===ch)); refreshList(); return; }
@@ -942,6 +1143,8 @@ document.addEventListener("click",ev=>{
   const tm=ev.target.closest("[data-tema]"); if(tm){ const t=tm.dataset.tema; insc.temas=insc.temas.includes(t)?insc.temas.filter(x=>x!==t):[...insc.temas,t]; tm.setAttribute("aria-pressed",insc.temas.includes(t)); return; }
   const sw=ev.target.closest("[data-sw]"); if(sw){ const k=sw.dataset.sw; insc[k]=!insc[k]; sw.setAttribute("aria-checked",insc[k]); if(sw.closest(".menu")) toast(insc[k]?"Aviso ativado":"Aviso desativado"); return; }
   const lc=ev.target.closest("[data-law]"); if(lc){ const b=BASE[+lc.dataset.law]; document.querySelectorAll("[data-law]").forEach(x=>x.setAttribute("aria-expanded",x===lc)); $("#lawnote").innerHTML=`<b>${b[0]}</b> · ${b[2]}`; return; }
+  const op=ev.target.closest("[data-op]"); if(op){ opFiltro.v=op.dataset.op; document.querySelectorAll(".chip[data-op]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.op===opFiltro.v)); $("#ops").innerHTML=opRows(); return; }
+  const af=ev.target.closest("[data-art]"); if(af){ artFiltro.v=af.dataset.art; document.querySelectorAll("[data-art]").forEach(b=>b.setAttribute("aria-pressed",b===af)); $("#arts").innerHTML=artCards(); return; }
   const tl=ev.target.closest("[data-tl]"); if(tl){ if(tl.dataset.priv && !state.inscrito){ abrirInscricao(); return; } state.tlFilter=tl.dataset.tl; document.querySelectorAll("[data-tl]").forEach(b=>b.setAttribute("aria-pressed",b===tl)); $("#feed").innerHTML=feedHTML(); return; }
   const sg=ev.target.closest("[data-seguir]"); if(sg){ if(!state.inscrito){ abrirInscricao(); return; } const id=sg.dataset.seguir; const on=state.seguindo.includes(id); state.seguindo=on?state.seguindo.filter(x=>x!==id):[...state.seguindo,id]; toast(on?"Você deixou de seguir esta lei":"Pronto! Você será avisado quando esta lei andar"); if($("#feed")) $("#feed").innerHTML=feedHTML(); renderHead(); return; }
   const sh=ev.target.closest("[data-share]"); if(sh){ abrirShare(sh.dataset.share); return; }
