@@ -124,6 +124,36 @@ button{font:inherit;cursor:pointer;color:inherit}
 .file b{display:block;font-size:.95rem}
 .file span{font-size:.82rem;color:var(--gray)}
 .file .st{margin-left:auto;font-size:.8rem;color:var(--gray);white-space:nowrap}
+.b-who{background:var(--white);border:1px solid var(--line)}
+.people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.person{display:flex;gap:12px;align-items:center;background:var(--bg);border-radius:14px;padding:12px 14px;min-width:0}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:.85rem;flex:none;background:var(--green-100);color:var(--green-dk)}
+.av.rel{background:var(--sky);color:var(--sky-ink)}
+.person small{display:block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);font-weight:700}
+.person b{display:block;font-size:.98rem}
+.person span{font-size:.85rem;color:var(--gray)}
+.sub-h{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);font-weight:700}
+.votes{display:grid;gap:8px}
+.vbar{display:flex;height:12px;border-radius:999px;overflow:hidden;background:var(--line)}
+.vbar span{display:block;height:100%}
+.vleg{display:flex;gap:14px;flex-wrap:wrap;font-size:.88rem;color:var(--gray)}
+.vleg i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+.parties{display:grid;gap:6px}
+.party{display:grid;grid-template-columns:minmax(0,1fr) 90px 70px;gap:10px;font-size:.88rem;align-items:center;padding:6px 0;border-bottom:1px dashed var(--line)}
+.party:last-child{border-bottom:0}
+.party em{font-style:normal;font-size:.78rem;font-weight:600;padding:2px 8px;border-radius:999px;justify-self:start}
+.o-sim{background:var(--green-50);color:var(--green-dk)} .o-nao{background:var(--rose);color:var(--rose-ink)} .o-lib{background:var(--line);color:var(--gray)}
+.emendas{display:grid;gap:8px}
+.emenda{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;font-size:.92rem}
+.emenda .n{background:var(--sun);color:var(--sun-ink);font-weight:700;font-size:.75rem;border-radius:8px;padding:3px 8px}
+.emenda span{color:var(--gray);font-size:.84rem;display:block}
+.path{display:flex;gap:0;overflow-x:auto;padding-bottom:4px}
+.path div{flex:1;min-width:92px;display:grid;gap:6px;justify-items:center;text-align:center;font-size:.78rem;color:var(--soft);position:relative}
+.path div::before{content:"";position:absolute;top:7px;left:-50%;width:100%;height:2px;background:var(--line);z-index:0}
+.path div:first-child::before{display:none}
+.path i{width:16px;height:16px;border-radius:50%;background:var(--white);border:2px solid var(--line);position:relative;z-index:1}
+.path .ok{color:var(--ink)} .path .ok i{background:var(--green);border-color:var(--green)} .path .ok::before{background:var(--green)}
+.path .now{color:var(--ink);font-weight:700} .path .now i{background:var(--white);border-color:var(--green);box-shadow:0 0 0 4px var(--green-50)} .path .now::before{background:var(--green)}
 .foot{color:var(--soft);font-size:.8rem;text-align:center;padding-block:40px}
 
 /* inscrição */
@@ -144,7 +174,9 @@ button{font:inherit;cursor:pointer;color:inherit}
 @media (max-width:640px){
   .topics{grid-template-columns:repeat(2,minmax(0,1fr))}
   .topics .topic:last-child{grid-column:1/-1}
-  .quick,.files,.modal .row{grid-template-columns:1fr}
+  .quick,.files,.modal .row,.people{grid-template-columns:1fr}
+  .party{grid-template-columns:minmax(0,1fr) 80px}
+  .party .c{display:none}
   .hero{padding-block:36px 20px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -179,6 +211,50 @@ const LEIS = [
   {id:"pant",esfera:"federal",local:"Federal",status:"Em tramitação",titulo:"Regras de proteção do Pantanal",num:"PL nº 140/2026",
    resumo:"Restringe a conversão de vegetação nativa e cria regras para o uso do fogo no bioma.",imp:"Alto impacto",car:"Benéfico",parecer:false},
 ];
+const ATORES = {
+  resex:{autor:["Dep. Est. Exemplo A","PART-PA"],relator:["Dep. Est. Exemplo B","PART-PA"],orgao:"Comissão de Meio Ambiente da ALEPA",data:"08/10/2026",sim:14,nao:5,abs:1,
+    partidos:[["Bloco Exemplo 1","sim","9 × 0"],["Bloco Exemplo 2","nao","2 × 5"],["Bloco Exemplo 3","lib","3 × 0"]],
+    emendas:[["1","Dep. Est. Exemplo C","Reduz a área da reserva para 40 mil hectares"],["2","Dep. Est. Exemplo D","Fixa prazo de 2 anos para o plano de manejo"],["3","Dep. Est. Exemplo E","Garante assento das comunidades no conselho"]],
+    etapas:["Apresentado","Comissão","Plenário","Sanção"],atual:2},
+  lic:{autor:["Dep. Exemplo F","PART-MT"],relator:["Dep. Exemplo G","PART-GO"],orgao:"Comissão de Meio Ambiente da Câmara",data:"08/10/2026",sim:12,nao:7,abs:1,
+    partidos:[["Bloco Exemplo 1","sim","8 × 0"],["Bloco Exemplo 2","nao","1 × 6"],["Bloco Exemplo 3","lib","3 × 1"]],
+    emendas:[["3","Dep. Exemplo H","Exclui a Amazônia Legal do procedimento simplificado"],["7","Dep. Exemplo I","Eleva o limite para 5.000 hectares"]],
+    etapas:["Apresentado","Comissões","Plenário Câmara","Senado","Sanção"],atual:2},
+  agua:{autor:["Dep. Est. Exemplo J","PART-TO"],relator:["Dep. Est. Exemplo K","PART-TO"],orgao:"Plenário da ALETO",data:"15/09/2026",sim:18,nao:4,abs:2,
+    partidos:[["Bloco Exemplo 1","sim","12 × 0"],["Bloco Exemplo 2","nao","2 × 4"],["Bloco Exemplo 3","sim","4 × 0"]],
+    emendas:[["1","Dep. Est. Exemplo L","Exige monitoramento da vazão pela agência estadual"]],
+    etapas:["Apresentado","Comissão","Plenário","Sanção"],atual:4},
+  caat:{autor:["Sen. Exemplo M","PART-PE"],relator:["Dep. Exemplo N","PART-CE"],orgao:"Plenário da Câmara",data:"10/09/2026",sim:398,nao:41,abs:6,
+    partidos:[["Bloco Exemplo 1","sim","210 × 2"],["Bloco Exemplo 2","sim","150 × 9"],["Bloco Exemplo 3","nao","38 × 30"]],
+    emendas:[["2","Dep. Exemplo O","Inclui o semiárido mineiro no programa"]],
+    etapas:["Senado","Câmara","Sanção"],atual:3},
+  pant:{autor:["Sen. Exemplo P","PART-MS"],relator:["Sen. Exemplo Q","PART-MT"],orgao:null,
+    emendas:[["1","Sen. Exemplo R","Permite queima controlada em áreas de manejo tradicional"]],
+    etapas:["Apresentado","Comissões","Plenário Senado","Câmara","Sanção"],atual:1},
+};
+const ini = n => n.replace(/^(Dep\. Est\.|Dep\.|Sen\.)\s*/,"").split(" ").map(w=>w[0]).slice(0,2).join("");
+function quem(l){
+  const a=ATORES[l.id]; const tot=a.orgao?a.sim+a.nao+a.abs:0; const pc=v=>(v/tot*100).toFixed(1)+"%";
+  return `<section class="block b-who" id="s-who">
+    <h2>Quem está por trás</h2>
+    <div class="people">
+      <div class="person"><span class="av">${ini(a.autor[0])}</span><div><small>Autor</small><b>${a.autor[0]}</b><span>${a.autor[1]}</span></div></div>
+      <div class="person"><span class="av rel">${ini(a.relator[0])}</span><div><small>Relator</small><b>${a.relator[0]}</b><span>${a.relator[1]}</span></div></div>
+    </div>
+    <div class="votes"><span class="sub-h">Última votação${a.orgao?` · ${a.orgao} · ${a.data}`:""}</span>
+      ${a.orgao?`<div class="vbar" role="img" aria-label="${a.sim} sim, ${a.nao} não, ${a.abs} abstenções"><span style="width:${pc(a.sim)};background:var(--green)"></span><span style="width:${pc(a.nao)};background:var(--rose-ink)"></span><span style="width:${pc(a.abs)};background:var(--soft)"></span></div>
+      <div class="vleg"><span><i style="background:var(--green)"></i><b>${a.sim}</b> sim</span><span><i style="background:var(--rose-ink)"></i><b>${a.nao}</b> não</span><span><i style="background:var(--soft)"></i><b>${a.abs}</b> abstenção</span></div>
+      <div class="collapsible" id="part"><div><div class="parties">${a.partidos.map(p=>`<div class="party"><span>${p[0]}</span><em class="o-${p[1]}">Orientou ${p[1]==="sim"?"sim":p[1]==="nao"?"não":"liberado"}</em><span class="c" style="color:var(--gray)">${p[2]}</span></div>`).join("")}</div></div></div>
+      <button class="link-btn" data-act="part">Ver votos por partido</button>`:`<p style="color:var(--gray);font-size:.92rem">Ainda não foi votado.</p>`}
+    </div>
+    <div class="emendas"><span class="sub-h">Emendas (${a.emendas.length})</span>
+      ${a.emendas.map(e=>`<div class="emenda"><span class="n">${e[0]}</span><div>${e[2]}<span>${e[1]}</span></div></div>`).join("")}
+    </div>
+    <div style="display:grid;gap:10px"><span class="sub-h">Caminho da lei</span>
+      <div class="path">${a.etapas.map((e,i)=>`<div class="${i<a.atual?"ok":i===a.atual?"now":""}"><i></i>${e}</div>`).join("")}</div>
+    </div>
+  </section>`;
+}
 const state = {inscrito:false, topic:"todos", status:"Todas", q:"", leiAberta:false};
 
 const $ = s => document.querySelector(s);
@@ -233,7 +309,7 @@ function lei(l){
       <div class="top" style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag tg-place">${l.local}</span>${stTag(l.status)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}</div>
       <h1>${l.titulo}</h1><span class="num">${l.num}</span>
     </header>
-    <nav class="steps" aria-label="Seções"><a href="#${l.id}" data-jump="s-lei" class="on">1 · A lei</a><a href="#${l.id}" data-jump="s-par">2 · Parecer</a><a href="#${l.id}" data-jump="s-mat">3 · Material</a></nav>
+    <nav class="steps" aria-label="Seções"><a href="#${l.id}" data-jump="s-lei" class="on">A lei</a><a href="#${l.id}" data-jump="s-who">Quem</a><a href="#${l.id}" data-jump="s-par">Parecer</a><a href="#${l.id}" data-jump="s-mat">Material</a></nav>
 
     <section class="block b-law" id="s-lei">
       <h2>A lei <small>texto oficial</small></h2>
@@ -250,6 +326,8 @@ function lei(l){
         <button class="link-btn" data-act="lei">${state.leiAberta?"Mostrar menos":"Ler texto completo"}</button>
       </div>
     </section>
+
+    ${quem(l)}
 
     <section class="block b-par" id="s-par">
       <h2>Parecer técnico</h2>
@@ -310,7 +388,7 @@ window.addEventListener("hashchange",()=>render());
 window.addEventListener("scroll",()=>{
   $("#head").classList.toggle("scrolled",window.scrollY>4);
   const steps=document.querySelectorAll(".steps a"); if(!steps.length) return;
-  let cur="s-lei"; ["s-lei","s-par","s-mat"].forEach(id=>{ const el=document.getElementById(id); if(el && el.getBoundingClientRect().top<180) cur=id; });
+  let cur="s-lei"; ["s-lei","s-who","s-par","s-mat"].forEach(id=>{ const el=document.getElementById(id); if(el && el.getBoundingClientRect().top<180) cur=id; });
   steps.forEach(a=>a.classList.toggle("on",a.dataset.jump===cur));
 },{passive:true});
 document.addEventListener("click",ev=>{
@@ -322,6 +400,7 @@ document.addEventListener("click",ev=>{
   if(act==="inscrever" && !state.inscrito) abrirInscricao();
   if(act==="fechar" && (ev.target===a || a.tagName==="BUTTON")) $("#layer").innerHTML="";
   if(act==="lei"){ state.leiAberta=!state.leiAberta; $("#mais").classList.toggle("open",state.leiAberta); a.textContent=state.leiAberta?"Mostrar menos":"Ler texto completo"; }
+  if(act==="part"){ const c=$("#part"); c.classList.toggle("open"); a.textContent=c.classList.contains("open")?"Esconder votos por partido":"Ver votos por partido"; }
   if(act==="pdf"){ state.inscrito ? toast("Download da Nota Técnica (simulação)") : abrirInscricao(); }
 });
 document.addEventListener("keydown",e=>{ if(e.key==="Escape") $("#layer").innerHTML=""; });
