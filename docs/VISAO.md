@@ -13,7 +13,7 @@ Um **observatório sistemático** da legislação ambiental brasileira. O portal
 | Natureza | Projeto pessoal |
 | Formato | Observatório sistemático (monitoramento contínuo + curadoria) |
 | Público | A coletividade (cidadão, profissionais, academia, setor produtivo, sociedade civil) |
-| Modelo | **Freemium**: parte pública aberta; parecer completo e PDF mediante cadastro; camada paga a definir depois de medir a demanda |
+| Modelo | **Freemium**: parecer aberto a todos; Nota Técnica e Quadro comparativo (PDF) para inscritos; camada paga a definir depois de medir a demanda |
 | Produção | 3 a 10 pareceres por semana, guiados pelo que vai a votação |
 | Nome da análise | **Parecer** |
 | Autoria | Autor único no início, com estrutura pronta para colaboradores |
@@ -32,8 +32,8 @@ A coexistência, na mesma página, de:
 
 | Camada | Acesso | Conteúdo |
 |---|---|---|
-| Pública | Sem cadastro | Ficha da proposição (número, data, status, ementa, Art. 1º), texto integral, autor/relator, resultado de votações, tags, **resumo do parecer** e conclusão |
-| Cadastro gratuito | Nome, e-mail, perfil, UF + consentimento | **Parecer completo** no site e em PDF, mapa de posicionamentos, emendas, ênfases, alertas de tramitação, newsletter (nacional ou regional) |
+| Pública | Sem cadastro | Ficha da proposição (número, data, status, ementa, Art. 1º), texto integral, autor/relator, resultado de votações, tags e o **parecer técnico completo** |
+| Cadastro gratuito | Nome, e-mail, perfil, UF + consentimento | **Materiais em PDF**: Nota Técnica e Quadro comparativo (lei vigente × proposta); alertas de tramitação; newsletter (nacional ou regional) |
 | Premium (futuro) | Pago | A definir com base nas métricas |
 
 ## Princípios de produto

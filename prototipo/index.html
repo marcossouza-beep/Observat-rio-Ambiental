@@ -116,8 +116,6 @@ button{font:inherit;cursor:pointer;color:inherit}
 .quick b{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--green-dk)}
 .quick span{font-size:.93rem}
 .par{display:grid;gap:12px;color:#3A443E;max-width:64ch}
-.locked{position:relative;max-height:96px;overflow:hidden}
-.locked::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,var(--green-50) 85%)}
 .unlock{display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:var(--gray);font-size:.92rem}
 .files{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .file{display:flex;align-items:center;gap:14px;background:var(--white);border:0;border-radius:16px;padding:14px 16px;text-align:left;transition:transform .2s}
@@ -224,7 +222,7 @@ function home(){
       <div class="section-h"><h2>Mais recentes</h2><span id="count">${filtradas().length} leis</span></div>
       <div class="list" id="list">${listHTML()}</div>
     </section>
-    ${state.inscrito?"":`<section class="cta"><div style="display:grid;gap:4px"><h2>Receba o parecer completo</h2><p>Grátis. Notas técnicas em PDF e aviso quando uma lei andar.</p></div><button class="pill-btn" data-act="inscrever">Se inscreva grátis</button></section>`}
+    ${state.inscrito?"":`<section class="cta"><div style="display:grid;gap:4px"><h2>Notas técnicas e quadros comparativos</h2><p>Grátis para inscritos, com aviso quando uma lei andar.</p></div><button class="pill-btn" data-act="inscrever">Se inscreva grátis</button></section>`}
   </div>`;
 }
 function lei(l){
@@ -260,12 +258,11 @@ function lei(l){
         <div><b>Quem é afetado</b><span>Comunidades locais, produtores e órgãos ambientais.</span></div>
         <div><b>Próximo passo</b><span>${l.status==="Aprovada"?"Regulamentação pelo Executivo.":"Votação em plenário nas próximas semanas."}</span></div>
       </div>
-      <div class="par ${ins?"":"locked"}">
+      <div class="par">
         <p>O projeto acerta ao vincular o uso dos recursos a um plano de manejo, mas não define prazo para elaborá-lo. Sem prazo, as regras podem ficar anos no papel.</p>
         <p>O conselho previsto no art. 2º não tem composição mínima. Recomendamos garantir participação das comunidades e de instituições de pesquisa.</p>
         <p><b>Conclusão:</b> ${l.imp.toLowerCase()}, com efeito ${l.car.toLowerCase()} condicionado à regulamentação.</p>
       </div>
-      ${ins?"":`<div class="unlock"><button class="pill-btn" data-act="inscrever">Ler parecer completo</button><span>Grátis, só precisa se inscrever.</span></div>`}
     </section>
 
     <section class="block b-mat" id="s-mat">
@@ -274,13 +271,14 @@ function lei(l){
         <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota Técnica</b><span>Direito Ambiental</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
         <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>Antes × depois</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
       </div>
+      ${ins?"":`<div class="unlock"><button class="pill-btn" data-act="inscrever">Liberar materiais</button><span>Grátis para inscritos.</span></div>`}
     </section>
   </div>`;
 }
 function modal(){
   return `<div class="scrim" data-act="fechar"><form class="modal" id="f" onclick="event.stopPropagation()">
     <h2>Se inscreva grátis</h2>
-    <p>Libere os pareceres completos e as notas técnicas em PDF.</p>
+    <p>Libere as notas técnicas e os quadros comparativos em PDF.</p>
     <input id="n" type="text" placeholder="Seu nome" aria-label="Nome" required>
     <input id="e" type="email" placeholder="Seu e-mail" aria-label="E-mail" required>
     <div class="row">
@@ -295,7 +293,7 @@ function abrirInscricao(){
   $("#layer").innerHTML = modal(); $("#n").focus();
   $("#f").onsubmit = e=>{ e.preventDefault();
     if(!$("#c").checked){ toast("Marque a concordância com a Política de Privacidade"); return; }
-    $("#layer").innerHTML=""; state.inscrito=true; toast("Pronto! Conteúdo completo liberado"); render(true); };
+    $("#layer").innerHTML=""; state.inscrito=true; toast("Pronto! Materiais liberados"); render(true); };
 }
 
 function render(keepScroll){

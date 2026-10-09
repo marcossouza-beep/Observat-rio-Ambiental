@@ -20,7 +20,7 @@
 | Pareceres recentes | Cards dos últimos pareceres publicados | F1 |
 | Temas | Grade de categorias (licenciamento, florestas, água, clima, mineração, agrotóxicos, fauna, UCs, saneamento, povos e comunidades) | F1 |
 | Regiões | Mapa ou lista das 5 regiões com contagem de proposições monitoradas | F1 (tags) / F5 (fontes estaduais) |
-| Chamada de cadastro | "Receba o parecer completo e alertas de tramitação" | F1 |
+| Chamada de cadastro | "Notas técnicas e quadros comparativos grátis para inscritos" | F1 |
 | Rodapé | Metodologia, política de privacidade, termos, contato | F1 |
 
 ## A2. Listagem e resultados de busca
@@ -46,14 +46,14 @@
 | Atores | Autor(es), relator atual, resultado das votações | Público | F2 |
 | Resumo do parecer | Em linguagem simples: o que muda, quem é afetado, quando vota | Público | F1 |
 | Conclusão | Posição do parecer em 1–2 parágrafos | Público | F1 |
-| Parecer completo | Análise artigo por artigo, tabela lei vigente x proposta, gráficos, constitucionalidade | **Restrito** | F1 |
-| Posicionamentos | Mapa de votos por parlamentar, partido e UF; orientações de bancada | **Restrito** | F2 |
-| Emendas e ênfases | Quem apresentou o quê; eixos e argumentos centrais | **Restrito** | F2 |
+| Parecer técnico | Resumo rápido (o que muda, quem é afetado, próximo passo), análise e conclusão | Público | F1 |
+| Posicionamentos | Mapa de votos por parlamentar, partido e UF; orientações de bancada | Público | F2 |
+| Emendas e ênfases | Quem apresentou o quê; eixos e argumentos centrais | Público | F2 |
 | Texto integral | Texto oficial (*ipsis litteris*) com link para a fonte e versões | Público | F1 |
-| Download | PDF do parecer completo | **Restrito** | F1 |
+| Material completo | **Nota Técnica** e **Quadro comparativo** (lei vigente × proposta) em PDF | **Inscritos** | F1 |
 | Acompanhar | Botão "Seguir esta proposição" (alertas por e-mail) | Cadastro | F3 |
 
-**Comportamento do conteúdo restrito para visitante:** títulos das seções visíveis, prévia esmaecida das primeiras linhas, e o bloco **"Receba o parecer completo"** com o formulário.
+**Comportamento para o visitante:** lê a lei e o parecer inteiros; os materiais aparecem com cadeado e o botão **"Liberar materiais"** abre a inscrição.
 
 ## A4. Cadastro (modal e página)
 
@@ -67,7 +67,7 @@
 | Consentimento para tratamento de dados (LGPD) | Sim |
 | Receber newsletter (nacional / da minha região) | Não |
 
-**Fluxo:** envio → e-mail de confirmação → clique → acesso liberado (parecer completo no site + PDF). Acessos seguintes por **link mágico**, sem senha.
+**Fluxo:** envio → e-mail de confirmação → clique → download dos materiais liberado. Acessos seguintes por **link mágico**, sem senha.
 
 ## A5. Área do assinante
 
@@ -75,7 +75,7 @@ Proposições seguidas, temas e regiões assinados, preferências de e-mail, his
 
 ## A6. Página de parlamentar **[F3]**
 
-Foto, partido, UF, casa; proposições ambientais de autoria; relatorias; votações em matérias ambientais (restrito: votos detalhados); botão seguir.
+Foto, partido, UF, casa; proposições ambientais de autoria; relatorias; votações em matérias ambientais; botão seguir.
 
 ## A7. Página de tema e de região **[F1 / F5]**
 
@@ -130,7 +130,7 @@ Cadastro manual: mesmo formulário, com upload do PDF do texto (extração autom
 | Layout | **Tela dividida**: texto da lei à esquerda (com marcação de trechos), parecer à direita |
 | Gerar rascunho IA | Preenche os blocos do modelo padrão a partir do dossiê **[F2]** |
 | Blocos | Resumo simples · Contexto e tramitação · Análise artigo por artigo · Tabela comparativa · Gráfico · Votos · Emendas · Constitucionalidade · Conclusão · Texto livre |
-| Visibilidade | Chave **Público / Restrito** em cada bloco + marcador de **corte** arrastável |
+| Materiais | Upload ou geração da Nota Técnica e do Quadro comparativo, com chave **Público / Inscritos** (padrão: inscritos) |
 | Inserir dados | Botões para inserir blocos prontos com dados capturados (tabela de votos, lista de emendas, linha do tempo) |
 | Tags | Impacto, caráter, temas, biomas, regiões (sugestões da IA aceitáveis com um clique) |
 | Vincular trecho | Selecionar trecho da lei e anexar comentário do parecer |
@@ -157,7 +157,7 @@ Lista com nome, e-mail, perfil, UF, data, **parecer de origem**, consentimentos;
 
 ## B9. Métricas **[F1]**
 
-Por parecer: visitas, leitura até o corte, **taxa de conversão em cadastro**, downloads do PDF. Geral: crescimento de assinantes, perfis, UFs, origem do tráfego, termos mais buscados no site.
+Por parecer: visitas, leitura até o fim, cliques em "Liberar materiais", **taxa de conversão em cadastro**, downloads dos PDFs. Geral: crescimento de assinantes, perfis, UFs, origem do tráfego, termos mais buscados no site.
 
 ## B10. Configurações
 

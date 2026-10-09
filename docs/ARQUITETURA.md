@@ -12,7 +12,7 @@
 | Coleta | Tarefas agendadas diárias (Vercel Cron ou GitHub Actions) | Conectores das fontes |
 | Processamento | Extração de texto de PDF (com OCR de reserva) e comparação de versões | Texto integral, Art. 1º, diferenças entre versões |
 | IA | API de modelo de linguagem | Classificação, resumo, ênfases, rascunho do parecer |
-| PDF | Geração automática ao publicar | Parecer completo para assinantes |
+| PDF | Geração automática ao publicar | Nota Técnica e Quadro comparativo para inscritos |
 | E-mail | Resend ou Brevo | Confirmação, link mágico, alertas, newsletter |
 | Hospedagem | Vercel + Supabase | Custo inicial baixo |
 
@@ -95,21 +95,22 @@ Parecer         id, proposicao_id, versao, data_referencia_texto, impacto (alto|
                 carater (benefico|neutro|malefico), status (rascunho_ia|em_revisao|revisado|agendado|publicado),
                 publicado_em, pdf_url, autor_id
 BlocoParecer    id, parecer_id, ordem, tipo (resumo|contexto|analise|tabela|grafico|votos|emendas|conclusao|texto),
-                titulo, conteudo, visibilidade (publico|restrito)
+                titulo, conteudo
 
 Assinante       id, nome, email, perfil, uf, interesses, consentimento_em, opt_newsletter,
                 confirmado_em, origem_parecer_id
 Assinatura      assinante_id, alvo_tipo (proposicao|tema|regiao|uf|parlamentar), alvo_id
-Evento          id, assinante_id, tipo (download|leitura|alerta_enviado), parecer_id, data
+Material        id, parecer_id, tipo (nota_tecnica|quadro_comparativo|outro), titulo, arquivo_url, visibilidade (publico|restrito)
+Evento          id, assinante_id, tipo (download|leitura|alerta_enviado), parecer_id, material_id, data
 ```
 
 ## Controle público x restrito
 
-- Cada **bloco do parecer** tem visibilidade `publico` ou `restrito`; no editor há um marcador de **corte**.
-- O servidor só envia os blocos restritos a assinantes autenticados (link mágico). O HTML do visitante não contém o conteúdo restrito.
-- Para o visitante: títulos das seções restritas + prévia esmaecida + formulário de cadastro.
-- Marcação de dados estruturados para conteúdo restrito (`isAccessibleForFree: false` com `hasPart`) para que o Google não penalize a página.
-- O PDF completo é gerado na publicação e entregue por link assinado e temporário.
+- O **parecer técnico é público** e integralmente indexável.
+- São restritos a inscritos os **materiais em PDF**: Nota Técnica e Quadro comparativo (lei vigente × proposta).
+- Cada material tem visibilidade `publico` ou `restrito` (padrão: restrito). O servidor só entrega o arquivo a inscritos autenticados (link mágico).
+- Para o visitante: os cards dos materiais aparecem com cadeado e o botão de inscrição.
+- Os PDFs são gerados ou enviados na publicação e entregues por link assinado e temporário.
 
 ## LGPD
 

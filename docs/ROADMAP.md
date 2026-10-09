@@ -10,8 +10,8 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 |---|---|
 | 1. Fundação | Repositório, stack, modelo de dados, ambiente de homologação, deploy |
 | 2. Site público | Home com busca e filtros, categorias, listagem com cards e tags de status, página da proposição, páginas de tema |
-| 3. Painel | Cadastro manual de proposição e parecer, editor em blocos com tela dividida, tags de impacto e caráter, controle público/restrito |
-| 4. Freemium e lançamento | Cadastro com confirmação de e-mail e link mágico, parecer completo e PDF para assinantes, política de privacidade e termos, SEO técnico |
+| 3. Painel | Cadastro manual de proposição e parecer, editor em blocos com tela dividida, tags de impacto e caráter, upload de Nota Técnica e Quadro comparativo |
+| 4. Freemium e lançamento | Cadastro com confirmação de e-mail e link mágico, download dos materiais (PDF) para inscritos, política de privacidade e termos, SEO técnico |
 
 **Critério de saída:** 4 a 6 semanas publicando no ritmo de 3 a 10 pareceres por semana.
 
