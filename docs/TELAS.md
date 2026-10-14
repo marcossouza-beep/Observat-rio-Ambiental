@@ -89,11 +89,10 @@ Acesso pelos cartões de autor e relator, pelos autores de emendas e pela lista 
 
 ## A3b. Autoria no parecer e no artigo
 
-- **Assinatura no topo:** foto, "Por Nome do Autor" (link para a página do autor) e título profissional.
-- **Quadro "Sobre o autor" no fim:** foto, nome, título, minibiografia, redes (LinkedIn, Instagram, X, Currículo Lattes, e-mail) e link "Todos os pareceres do autor".
-- **Assuntos:** temas, biomas e esfera (federal/estado) como links internos.
+- **Só no topo, discreta:** foto pequena, "Por Nome do Autor" (link para a página do autor), ícones pequenos das redes (LinkedIn, Instagram, X, Currículo Lattes, e-mail) e título profissional. Sem quadro de autor no fim da página.
+- **Assuntos:** temas, biomas e esfera (federal/estado) como links internos, no fim do parecer.
 - **Trilha de navegação** no topo: Início › Leis federais › PL › Parecer.
-- **Página do autor:** foto, título, biografia, redes, números (pareceres, artigos, correções) e listas de pareceres e artigos.
+- **Página do autor** (acessada pelo nome): foto, título, biografia, redes, números e listas de pareceres e artigos.
 
 ## A6b. Deputados estaduais
 

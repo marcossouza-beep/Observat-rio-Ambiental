@@ -7,7 +7,7 @@
 
 1. **Uma página, uma intenção de busca.** A página da lei responde "o que é e em que pé está"; o parecer responde "o que muda e se é bom ou ruim"; a página do parlamentar responde "o que essa pessoa propõe e como vota".
 2. **Conteúdo próprio primeiro.** O texto oficial da lei existe em outros sites; o que nos diferencia é o parecer. Só indexamos páginas com conteúdo próprio suficiente.
-3. **Autoria visível (E-E-A-T).** Tema jurídico pede autor identificado, com título, foto e presença profissional. Cada parecer tem assinatura no topo, quadro "Sobre o autor" no fim e página do autor.
+3. **Autoria visível (E-E-A-T).** Tema jurídico pede autor identificado, com título, foto e presença profissional. Cada parecer tem assinatura discreta no topo (foto, título, redes) e o nome leva à página do autor, que concentra biografia e credenciais.
 4. **Resposta logo no início.** O resumo em linguagem simples e o veredito ficam no topo; é o trecho que o Google tende a mostrar.
 
 ## 2. Endereços (URLs)

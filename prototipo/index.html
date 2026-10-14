@@ -883,6 +883,10 @@ a.person .go-c{margin-left:auto;width:28px;height:28px}
 .byauthor{display:flex;align-items:center;gap:12px}
 .byauthor a{font-weight:700;color:var(--ink)}
 .byauthor small{display:block;color:var(--gray);font-size:.84rem}
+.msoc{display:inline-flex;gap:2px;margin-left:8px;vertical-align:-3px}
+.msoc a{width:22px;height:22px;display:grid;place-items:center;border-radius:6px;color:var(--soft);font-weight:400!important;transition:color .15s,background .15s}
+.msoc a:hover{color:var(--green-dk);background:var(--green-50)}
+.msoc svg{width:14px;height:14px}
 .abox{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start;background:var(--white);border:1px solid var(--line);border-radius:22px;padding:20px 22px;margin:6px 0 26px}
 .abox .eyebrow{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);font-weight:700}
 .abox h3{font-size:1.2rem;font-weight:800;margin-top:2px}
@@ -1375,7 +1379,6 @@ function parecer(l){
             <p>O projeto protege uma área sensível e as comunidades que dependem dela. Para cumprir o que promete, precisa de prazo para o plano de manejo e de consulta prévia às comunidades.</p></div>
         </section>
 
-        ${authorBox()}
         ${subjects(l)}
         <div class="rep-foot">
           <div class="panel-s"><h3>Aprofunde</h3><p>Nota Técnica com a análise jurídica completa e o Quadro comparativo artigo por artigo.</p>
@@ -1552,7 +1555,6 @@ function artigo(a){
       <h2>O que observar</h2>
       <p>Três pontos merecem atenção nas próximas semanas: a votação do projeto federal em plenário, a regulamentação nos estados que já aprovaram suas leis e eventuais ações no Supremo questionando a dispensa por porte.</p>
     </div>
-    ${authorBox()}
     <section class="cited"><span class="sub-h">Leis citadas neste artigo</span>
       ${["lic","agua"].map(id=>{ const l=LEIS.find(x=>x.id===id); return `<a href="#${l.id}"><div><b>${l.titulo}</b><br><span>${l.num} · ${l.local}</span></div><span class="tag dot ${l.status==="Aprovada"?"tg-apr":"tg-tram"}">${l.status}</span></a>`; }).join("")}
     </section>
@@ -1982,7 +1984,8 @@ const AUTOR={slug:"nome-do-autor",nome:"Nome do Autor",titulo:"Mestre em Direito
   redes:[["linkedin","LinkedIn"],["instagram","Instagram"],["x","X"],["lattes","Currículo Lattes"],["email","E-mail"]]};
 const photo = (cls) => `<span class="photo ${cls}" role="img" aria-label="Foto de ${AUTOR.nome}">${iniciais(AUTOR.nome)}</span>`;
 const socials = () => `<div class="socials">${AUTOR.redes.map(([k,t])=>`<a class="soc" href="#autor" aria-label="${t}" title="${t}" data-soc="${t}">${SOC_ICO[k]}</a>`).join("")}</div>`;
-const byAuthor = (extra) => `<div class="byauthor">${photo("sm")}<div><span>Por <a href="#autor">${AUTOR.nome}</a></span><small>${AUTOR.titulo}${extra?" · "+extra:""}</small></div></div>`;
+const miniSocials = () => `<span class="msoc">${AUTOR.redes.map(([k,t])=>`<a href="#autor" aria-label="${t}" title="${t}" data-soc="${t}">${SOC_ICO[k]}</a>`).join("")}</span>`;
+const byAuthor = (extra) => `<div class="byauthor">${photo("sm")}<div><span>Por <a href="#autor">${AUTOR.nome}</a>${miniSocials()}</span><small>${AUTOR.titulo}${extra?" · "+extra:""}</small></div></div>`;
 const authorBox = () => `<aside class="abox" aria-label="Sobre o autor">${photo("md")}<div><span class="eyebrow">Sobre o autor</span><h3><a href="#autor">${AUTOR.nome}</a></h3><span class="tit">${AUTOR.titulo}</span><p>${AUTOR.bio}</p>${socials()}<a class="arrow" href="#autor" style="font-size:.88rem;margin-top:10px">Todos os pareceres do autor${ARR}</a></div></aside>`;
 const LEI_TEMAS={resex:["Unidades de conservação","Povos e comunidades"],lic:["Licenciamento"],agua:["Água"],caat:["Florestas","Clima"],pant:["Florestas"],apps:["Florestas"],drones:["Agrotóxicos"],decarb:["Clima"],tofogo:["Florestas"],amgarimpo:["Mineração"],mtpant:["Florestas","Água"]};
 function subjects(l){
