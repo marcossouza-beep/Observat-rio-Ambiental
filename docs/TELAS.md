@@ -87,6 +87,14 @@ Acesso pelos cartões de autor e relator, pelos autores de emendas e pela lista 
 | Relatorias e Emendas | Listas com link para a lei |
 | Método | Voto "Sim" em proposta benéfica, ou "Não" em proposta maléfica ou que enfraquece indiretamente, conta como a favor da proteção; propostas neutras ficam fora; mostra o sentido dos votos, não avalia a pessoa |
 
+## A3b. Autoria no parecer e no artigo
+
+- **Assinatura no topo:** foto, "Por Nome do Autor" (link para a página do autor) e título profissional.
+- **Quadro "Sobre o autor" no fim:** foto, nome, título, minibiografia, redes (LinkedIn, Instagram, X, Currículo Lattes, e-mail) e link "Todos os pareceres do autor".
+- **Assuntos:** temas, biomas e esfera (federal/estado) como links internos.
+- **Trilha de navegação** no topo: Início › Leis federais › PL › Parecer.
+- **Página do autor:** foto, título, biografia, redes, números (pareceres, artigos, correções) e listas de pareceres e artigos.
+
 ## A6b. Deputados estaduais
 
 | Elemento | Conteúdo |
@@ -270,7 +278,8 @@ Cadastro manual: mesmo formulário, com upload do PDF do texto (extração autom
 | Pré-visualizar | Como **Visitante** / como **Assinante** / **PDF** |
 | Status | Rascunho → Em revisão → Agendado → Publicado |
 | Versões | Histórico do parecer; nova versão quando o texto-base muda, com data de referência |
-| Publicar | Publicar agora ou agendar; gera o PDF; dispara alertas para seguidores **[F3]** |
+| SEO | Palavra-chave principal, nome popular, secundárias, título SEO (≤ 60), descrição (≤ 155), endereço; **prévia do resultado no Google**; checklist (palavra-chave no título, H1, endereço e 1º parágrafo; ≥ 3 links internos; texto alternativo; dados estruturados). Ver `docs/SEO.md` |
+| Publicar | Publicar agora ou agendar; gera o PDF e a imagem de compartilhamento; atualiza o sitemap e avisa os buscadores; dispara alertas para seguidores **[F3]** |
 
 ## B5. Calendário editorial **[F1]**
 

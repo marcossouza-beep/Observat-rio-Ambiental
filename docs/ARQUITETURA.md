@@ -93,7 +93,10 @@ PalavraChave    id, termo, peso, grupo, regiao (nullable), exclusao (bool)
 
 Parecer         id, proposicao_id, versao, data_referencia_texto, impacto (alto|medio|baixo),
                 carater (malefico|enfraquece_indiretamente|neutro|benefico), biomas[], areas[], status (rascunho|em_revisao|agendado|publicado),
-                publicado_em, pdf_url, autor_id
+                publicado_em, atualizado_em, pdf_url, autor_id,
+                slug, titulo_seo, meta_descricao, palavra_chave, palavras_secundarias[], nome_popular,
+                og_image_url, indexar (bool), canonical_url
+Autor           id, slug, nome, titulo, bio, foto_url, linkedin, instagram, x, lattes, email_publico
 BlocoParecer    id, parecer_id, ordem, tipo (resumo|contexto|analise|tabela|grafico|votos|emendas|conclusao|texto),
                 titulo, conteudo
 

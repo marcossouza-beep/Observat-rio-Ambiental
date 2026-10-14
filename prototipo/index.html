@@ -873,6 +873,36 @@ a.person .go-c{margin-left:auto;width:28px;height:28px}
 @media (max-width:760px){ .cscale,.rules,.iacols{grid-template-columns:1fr 1fr} }
 @media (max-width:480px){ .cscale,.rules,.iacols{grid-template-columns:1fr} }
 
+
+/* ---------- autor ---------- */
+.photo{border-radius:50%;background:linear-gradient(150deg,#DCEFE4,#B9DCC8);color:var(--green-dk);display:grid;place-items:center;font-weight:800;flex:none;position:relative;overflow:hidden}
+.photo::after{content:"";position:absolute;inset:auto 0 0 0;height:38%;background:radial-gradient(60% 100% at 50% 100%,rgba(31,122,77,.18),transparent)}
+.photo.sm{width:40px;height:40px;font-size:.8rem}
+.photo.md{width:72px;height:72px;font-size:1.3rem}
+.photo.lg{width:112px;height:112px;font-size:2rem}
+.byauthor{display:flex;align-items:center;gap:12px}
+.byauthor a{font-weight:700;color:var(--ink)}
+.byauthor small{display:block;color:var(--gray);font-size:.84rem}
+.abox{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start;background:var(--white);border:1px solid var(--line);border-radius:22px;padding:20px 22px;margin:6px 0 26px}
+.abox .eyebrow{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);font-weight:700}
+.abox h3{font-size:1.2rem;font-weight:800;margin-top:2px}
+.abox .tit{color:var(--green-dk);font-weight:600;font-size:.92rem}
+.abox p{color:var(--gray);font-size:.92rem;margin-top:6px;max-width:62ch}
+.socials{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.soc{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--white);display:grid;place-items:center;color:var(--ink);transition:all .15s}
+.soc:hover{border-color:var(--green);color:var(--green-dk)}
+.soc svg{width:17px;height:17px}
+.subjects{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.85rem;color:var(--gray);margin-bottom:22px}
+.subjects a{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--ink)}
+.subjects a:hover{border-color:var(--green)}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.86rem;color:var(--soft)}
+.crumbs a{color:var(--gray)}
+.crumbs a:hover{color:var(--ink)}
+.crumbs .ico{width:14px;height:14px}
+.auth-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:center;padding-block:26px 8px}
+.auth-head h1{font-size:clamp(1.8rem,4.5vw,2.5rem);font-weight:800}
+@media (max-width:560px){ .abox{grid-template-columns:1fr} .auth-head{grid-template-columns:1fr} }
+
 @media (max-width:640px){
   .topics{grid-template-columns:repeat(2,minmax(0,1fr))}
   .topics .topic:last-child{grid-column:1/-1}
@@ -1087,6 +1117,7 @@ function lei(l){
 
     <section class="block b-par" id="s-par">
       <h2>Parecer técnico</h2>
+      ${byAuthor()}
       <div class="quick">
         <div><b>O que muda</b><span>${l.resumo}</span></div>
         <div><b>Quem é afetado</b><span>Comunidades locais, produtores e órgãos ambientais.</span></div>
@@ -1276,10 +1307,11 @@ function parecer(l){
   const a=ATORES[l.id];
   return `<div class="readbar" id="readbar"></div>
   <div class="rep">
-    <a class="back" href="#${l.id}">${ARL} ${l.num}</a>
+    ${crumbs([["Início","#home"],[l.esfera==="federal"?"Leis federais":"Leis estaduais",l.esfera==="federal"?"#federais":"#estaduais"],[l.num,"#"+l.id],["Parecer",""]])}
     <header class="rep-head">
       <span class="eyebrow">Parecer técnico · versão 2</span>
       <h1>${l.titulo}</h1>
+      ${byAuthor("assina este parecer")}
       <div class="meta"><span class="withflag">${flag(flagOf(l.local),"md")}${l.num} · ${l.local}</span><span>Publicado em <b>09/10/2026</b></span><span>Texto analisado: <b>versão de 08/10/2026</b></span><span>Leitura de <b>4 min</b></span></div>
     </header>
 
@@ -1343,6 +1375,8 @@ function parecer(l){
             <p>O projeto protege uma área sensível e as comunidades que dependem dela. Para cumprir o que promete, precisa de prazo para o plano de manejo e de consulta prévia às comunidades.</p></div>
         </section>
 
+        ${authorBox()}
+        ${subjects(l)}
         <div class="rep-foot">
           <div class="panel-s"><h3>Aprofunde</h3><p>Nota Técnica com a análise jurídica completa e o Quadro comparativo artigo por artigo.</p>
             <div class="files">
@@ -1492,7 +1526,7 @@ function artigos(){
   return `<div class="wrap">
     <header class="pg-head"><h1>Artigos</h1><p>Tendências, explicadores e dados para entender para onde caminha a legislação ambiental.</p></header>
     <a class="art-feat" href="#artigo-${a.id}"><div class="txt"><span class="tag tg-ben" style="justify-self:start">${a.cat}</span><h2>${a.titulo}</h2><p>${a.dek}</p>
-      <div class="byline"><span class="av">${iniciais(a.autor)}</span><span>${a.autor} · ${a.data} · ${a.min} min</span></div></div><div class="cover ${a.cv}"></div></a>
+      <div class="byline">${photo("sm")}<span>${AUTOR.nome} · ${a.data} · ${a.min} min</span></div></div><div class="cover ${a.cv}"></div></a>
     <section class="section"><div class="chips" style="justify-content:flex-start">${["Todos","Tendências","Explicadores","Dados"].map(c=>`<button class="chip" data-art="${c}" aria-pressed="${artFiltro.v===c}">${c}</button>`).join("")}</div>
       <div class="arts" id="arts">${artCards()}</div></section>
     ${state.inscrito?"":`<section class="news"><div><b>Um artigo por semana no seu e-mail</b><p>Junto com os pareceres e alertas das leis que você segue.</p></div><button class="pill-btn" data-act="pagina">Se inscreva grátis</button></section>`}
@@ -1503,7 +1537,7 @@ function artigo(a){
   return `<div class="readbar" id="readbar"></div><article class="reader">
     <a class="back" href="#artigos">${ARL} Artigos</a>
     <div style="display:grid;gap:14px"><span class="tag tg-ben" style="justify-self:start">${a.cat}</span><h1>${a.titulo}</h1><p class="dek">${a.dek}</p>
-      <div class="byline"><span class="av">${iniciais(a.autor)}</span><span><b style="color:var(--ink)">${a.autor}</b> · ${a.data} 2026 · ${a.min} min de leitura</span>
+      <div class="byline">${byAuthor(a.data+" 2026 · "+a.min+" min de leitura")}
       <button class="mini" data-share="${a.id}" style="margin-left:auto">${ICO_SHARE}Compartilhar</button></div></div>
     <div class="cover ${a.cv}"></div>
     <div class="body">
@@ -1518,6 +1552,7 @@ function artigo(a){
       <h2>O que observar</h2>
       <p>Três pontos merecem atenção nas próximas semanas: a votação do projeto federal em plenário, a regulamentação nos estados que já aprovaram suas leis e eventuais ações no Supremo questionando a dispensa por porte.</p>
     </div>
+    ${authorBox()}
     <section class="cited"><span class="sub-h">Leis citadas neste artigo</span>
       ${["lic","agua"].map(id=>{ const l=LEIS.find(x=>x.id===id); return `<a href="#${l.id}"><div><b>${l.titulo}</b><br><span>${l.num} · ${l.local}</span></div><span class="tag dot ${l.status==="Aprovada"?"tg-apr":"tg-tram"}">${l.status}</span></a>`; }).join("")}
     </section>
@@ -1934,6 +1969,39 @@ function metodologia(){
   </div>`;
 }
 
+
+/* ---------- autor dos pareceres ---------- */
+const SOC_ICO={
+  linkedin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>', instagram:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>',
+  x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l16 16M20 4L4 20"/></svg>',
+  lattes:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4z"/><path d="M7 9v5c0 1.7 2.2 3 5 3s5-1.3 5-3V9"/></svg>',
+  email:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',
+};
+const AUTOR={slug:"nome-do-autor",nome:"Nome do Autor",titulo:"Mestre em Direito Ambiental",
+  bio:"Atua há 15 anos com legislação ambiental e licenciamento. Pesquisa conservação na Amazônia e no Cerrado. Escreve os pareceres do observatório.",
+  redes:[["linkedin","LinkedIn"],["instagram","Instagram"],["x","X"],["lattes","Currículo Lattes"],["email","E-mail"]]};
+const photo = (cls) => `<span class="photo ${cls}" role="img" aria-label="Foto de ${AUTOR.nome}">${iniciais(AUTOR.nome)}</span>`;
+const socials = () => `<div class="socials">${AUTOR.redes.map(([k,t])=>`<a class="soc" href="#autor" aria-label="${t}" title="${t}" data-soc="${t}">${SOC_ICO[k]}</a>`).join("")}</div>`;
+const byAuthor = (extra) => `<div class="byauthor">${photo("sm")}<div><span>Por <a href="#autor">${AUTOR.nome}</a></span><small>${AUTOR.titulo}${extra?" · "+extra:""}</small></div></div>`;
+const authorBox = () => `<aside class="abox" aria-label="Sobre o autor">${photo("md")}<div><span class="eyebrow">Sobre o autor</span><h3><a href="#autor">${AUTOR.nome}</a></h3><span class="tit">${AUTOR.titulo}</span><p>${AUTOR.bio}</p>${socials()}<a class="arrow" href="#autor" style="font-size:.88rem;margin-top:10px">Todos os pareceres do autor${ARR}</a></div></aside>`;
+const LEI_TEMAS={resex:["Unidades de conservação","Povos e comunidades"],lic:["Licenciamento"],agua:["Água"],caat:["Florestas","Clima"],pant:["Florestas"],apps:["Florestas"],drones:["Agrotóxicos"],decarb:["Clima"],tofogo:["Florestas"],amgarimpo:["Mineração"],mtpant:["Florestas","Água"]};
+function subjects(l){
+  const bio=(LEI_BIOMA[l.id]||[]); const uf=UF_NOME_R[l.local];
+  const items=[...(LEI_TEMAS[l.id]||[]).map(t=>[t,"#panorama"]),...bio.map(b=>[b,"#panorama"]),[l.esfera==="federal"?"Leis federais":l.local, l.esfera==="federal"?"#federais":"#estaduais"]];
+  return `<div class="subjects"><span>Assuntos:</span>${items.map(([t,h])=>`<a href="${h}">${t}</a>`).join("")}</div>`;
+}
+function crumbs(parts){ return `<nav class="crumbs" aria-label="Você está em">${parts.map((p,i)=>i<parts.length-1?`<a href="${p[1]}">${p[0]}</a>${CHEV}`:`<span aria-current="page">${p[0]}</span>`).join("")}</nav>`; }
+function autorPage(){
+  const ps=LEIS.filter(l=>l.parecer);
+  return `<div class="wrap">
+    ${crumbs([["Início","#home"],["Autores","#autor"],[AUTOR.nome,""]])}
+    <header class="auth-head">${photo("lg")}<div><span class="sub-h">Autor dos pareceres</span><h1>${AUTOR.nome}</h1><span class="tit" style="color:var(--green-dk);font-weight:600">${AUTOR.titulo}</span><p style="color:var(--gray);margin-top:8px;max-width:60ch">${AUTOR.bio}</p>${socials()}</div></header>
+    <div class="kpis pstats" style="margin-top:14px"><div class="kpi"><b>${ps.length}</b><span>pareceres publicados</span></div><div class="kpi"><b>${ARTIGOS.length}</b><span>artigos</span></div><div class="kpi"><b>2</b><span>correções registradas</span></div><div class="kpi"><b>2026</b><span>no observatório desde</span></div></div>
+    <section class="section"><div class="section-h"><h2>Pareceres</h2><a class="arrow" href="#opiniao" style="font-size:.88rem">Ver na Opinião${ARR}</a></div><div class="ops">${opRows()}</div></section>
+    <section class="section"><div class="section-h"><h2>Artigos</h2></div><div class="arts">${ARTIGOS.slice(0,4).map(x=>`<a class="art" href="#artigo-${x.id}"><div class="cover ${x.cv}"><span class="cat">${x.cat}</span></div><div class="in"><h3>${x.titulo}</h3><span class="min">${x.data} · ${x.min} min de leitura</span></div></a>`).join("")}</div></section>
+  </div>`;
+}
+
 /* ---------- compartilhar ---------- */
 const NET_ICO={
   whatsapp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg>',
@@ -2009,7 +2077,7 @@ function render(keepScroll){
   const pl=r.startsWith("parecer-")?LEIS.find(x=>"parecer-"+x.id===r):null;
   const ar=r.startsWith("artigo-")?ARTIGOS.find(x=>"artigo-"+x.id===r):null;
   const y=window.scrollY;
-  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? (isNarrow()?mobileSignup(true):inscricao()) : r==="inscricao-celular" ? inscricaoCelular() : r==="panorama" ? panorama() : r.startsWith("parl-") ? parlamentar(r.slice(5)) : r==="parlamentares-estaduais" ? parlamentaresEstaduais() : r==="metodologia" ? metodologia() : r==="timeline" ? timeline() : r==="opiniao" ? opiniao() : r==="estaduais" ? estaduais() : r==="federais" ? federais() : r==="artigos" ? artigos() : ar ? artigo(ar) : home();
+  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? (isNarrow()?mobileSignup(true):inscricao()) : r==="inscricao-celular" ? inscricaoCelular() : r==="panorama" ? panorama() : r.startsWith("parl-") ? parlamentar(r.slice(5)) : r==="parlamentares-estaduais" ? parlamentaresEstaduais() : r==="metodologia" ? metodologia() : r==="autor" ? autorPage() : r==="timeline" ? timeline() : r==="opiniao" ? opiniao() : r==="estaduais" ? estaduais() : r==="federais" ? federais() : r==="artigos" ? artigos() : ar ? artigo(ar) : home();
   $("#head").classList.toggle("wide", !!pl || ["inscricao","inscricao-celular","estaduais","panorama","metodologia"].includes(r));
   document.body.classList.toggle("focus", (r==="inscricao"||r==="inscricao-celular") && isNarrow());
   state.menu=false; renderHead();
@@ -2038,6 +2106,7 @@ document.addEventListener("click",ev=>{
   const bm=ev.target.closest("[data-bioma]"); if(bm){ const t=bm.dataset.bioma; insc.biomas=insc.biomas.includes(t)?insc.biomas.filter(x=>x!==t):[...insc.biomas,t]; bm.setAttribute("aria-pressed",insc.biomas.includes(t)); return; }
   const pdu=ev.target.closest("[data-pd-uf]"); if(pdu){ pdState.uf=pdu.dataset.pdUf; pdState.q=""; render(true); return; }
   const pdb=ev.target.closest("[data-pd-back]"); if(pdb){ pdState.uf=pdb.dataset.pdBack; }
+  const so=ev.target.closest("[data-soc]"); if(so){ ev.preventDefault(); toast("Abre o perfil do autor no "+so.dataset.soc+" (no site real)"); return; }
   const cb=ev.target.closest("[data-car]"); if(cb){ metSel.car=cb.dataset.car; document.querySelectorAll("[data-car]").forEach(b=>b.setAttribute("aria-pressed",b===cb)); $("#cex").innerHTML=cexHTML(); return; }
   const jl=ev.target.closest("[data-jump-later]"); if(jl){ ev.preventDefault(); const id=jl.dataset.jumpLater; if(location.hash!=="#metodologia") go("metodologia"); setTimeout(()=>{ const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:"smooth"}); },80); return; }
   const pt2=ev.target.closest("[data-ptab2]"); if(pt2){ parlSel.tab=pt2.dataset.ptab2; render(true); return; }

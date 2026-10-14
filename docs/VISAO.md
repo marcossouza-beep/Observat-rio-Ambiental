@@ -57,7 +57,7 @@ A coexistência, na mesma página, de:
 - **Fato x interpretação.** Dados (autoria, votos, status) são capturados e exibidos pelo sistema; a interpretação está no parecer.
 - **O parecer é do autor, nunca da IA.** A automação (incluindo IA) apenas captura pelas APIs os dados e textos oficiais, organiza o dossiê e entrega ao autor. A análise, a comparação de versões, a classificação e a redação do parecer são feitas integralmente pelo autor indicado, que assina.
 - **UX didática.** Layout simples, dinâmico, com tags coloridas e leitura guiada.
-- **SEO desde o início.** Parte pública indexável; páginas por proposição, parlamentar, tema, região e estado.
+- **SEO desde o início.** Parte pública indexável; páginas por proposição, parecer, parlamentar, tema, bioma, estado e autor; autoria visível em todo parecer. Plano completo em `docs/SEO.md`.
 
 ## Itens pendentes
 
