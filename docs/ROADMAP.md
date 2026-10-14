@@ -8,7 +8,7 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 
 | Sprint | Entregas |
 |---|---|
-| 1. Fundação | Repositório, stack, modelo de dados (incluindo Compromisso, Pedido, Verificacao), ambiente de teste, deploy, cópia diária do banco, monitor de site no ar |
+| 1. Fundação | Repositório, stack, modelo de dados (incluindo Compromisso, Pedido, Verificacao), ambiente de teste, deploy, cópia diária do banco, monitor de site no ar, **teste de fumaça das APIs** (`docs/APIS.md`, seção 6) e cadastro no INLABS |
 | 2. Site público | Home com busca e filtros, categorias, listagem com cards e tags de status, página da proposição, páginas de tema |
 | 3. Painel | Hoje, Pareceres (com prazos e fila "A atualizar"), editor com dossiê ao lado e modelo de 7 seções, classificação, SEO, materiais, publicação com tudo o que o sistema faz sozinho, Pedidos (correções, LGPD), Textos do site, Ajustes de prazos. Protótipo: `prototipo/painel.html` |
 | 4. Freemium e lançamento | Cadastro com confirmação de e-mail e link mágico, download dos materiais (PDF) para inscritos, política de privacidade e termos, SEO (endereços, títulos e descrições, dados estruturados, sitemaps, Search Console, página e quadro do autor; ver `docs/SEO.md`) |

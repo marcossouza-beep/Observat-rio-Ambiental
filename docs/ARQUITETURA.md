@@ -56,12 +56,14 @@ Cada fonte é um **conector** independente que entrega dados no formato padrão.
 
 ### Fontes federais (MVP e Fase 2)
 
+> Análise detalhada, riscos e teste de fumaça: `docs/APIS.md`.
+
 | Fonte | Conteúdo |
 |---|---|
 | Câmara — Dados Abertos (API v2) | Proposições, temas, autores, relatores, tramitações, pautas e eventos, votações e votos, inteiro teor |
-| Senado — Dados Abertos | Matérias, autoria, movimentações, agenda, votações, textos |
+| Senado — Dados Abertos | Processos (substituindo os serviços antigos de "matéria"), autoria, relatoria, tramitação, agenda, votações, textos |
 | Congresso Nacional (via Dados Abertos do Senado) | Vetos e sessões conjuntas |
-| Diário Oficial da União (Imprensa Nacional) | Leis sancionadas, vetos, decretos, MPs |
+| Diário Oficial da União (INLABS, Imprensa Nacional; cadastro gratuito) | Edição completa em XML: leis sancionadas, vetos, decretos, MPs, atos do MMA, Ibama, ICMBio |
 | LexML / Planalto | Normas consolidadas e legislação afetada |
 
 ### Fontes regionais (Fase 4 em diante)
