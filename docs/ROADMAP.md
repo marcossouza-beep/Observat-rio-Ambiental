@@ -33,6 +33,8 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 - Newsletter semanal (nacional e regionais).
 - Versionamento do parecer quando o texto-base muda.
 - Páginas de parlamentar.
+- **Credenciamento de imprensa** (passo extra na inscrição, fila de verificação no painel, selo e recursos de imprensa).
+- **Padrão de atuação** por UF e por casa da União, e página **Panorama** (casas e estados, biomas, áreas), alimentados pela classificação dos pareceres.
 
 **Critério de saída:** base de assinantes em crescimento constante.
 

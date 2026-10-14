@@ -92,14 +92,16 @@ Bioma           id, nome                              -- Amazônia, Cerrado, Caa
 PalavraChave    id, termo, peso, grupo, regiao (nullable), exclusao (bool)
 
 Parecer         id, proposicao_id, versao, data_referencia_texto, impacto (alto|medio|baixo),
-                carater (benefico|neutro|malefico), status (rascunho_ia|em_revisao|revisado|agendado|publicado),
+                carater (malefico|enfraquece_indiretamente|neutro|benefico), biomas[], areas[], status (rascunho_ia|em_revisao|revisado|agendado|publicado),
                 publicado_em, pdf_url, autor_id
 BlocoParecer    id, parecer_id, ordem, tipo (resumo|contexto|analise|tabela|grafico|votos|emendas|conclusao|texto),
                 titulo, conteudo
 
-Assinante       id, nome, email, perfil, uf, interesses, consentimento_em, opt_newsletter,
+Assinante       id, nome, email, perfil, uf, temas[], biomas[], consentimento_em, opt_newsletter,
                 confirmado_em, origem_parecer_id
-Assinatura      assinante_id, alvo_tipo (proposicao|tema|regiao|uf|parlamentar), alvo_id
+Assinatura      assinante_id, alvo_tipo (proposicao|tema|bioma|regiao|uf|parlamentar), alvo_id
+CredImprensa    assinante_id, veiculo, tipo_veiculo, funcao, link_comprovacao, email_profissional, registro_mtb,
+                autoriza_verificacao_em, status (em_analise|verificado|recusado), verificado_por, verificado_em, motivo
 Material        id, parecer_id, tipo (nota_tecnica|quadro_comparativo|outro), titulo, arquivo_url, visibilidade (publico|restrito)
 Evento          id, assinante_id, tipo (download|leitura|alerta_enviado), parecer_id, material_id, data
 ```
@@ -115,3 +117,26 @@ Evento          id, assinante_id, tipo (download|leitura|alerta_enviado), parece
 ## LGPD
 
 Política de privacidade, consentimento registrado com data, finalidade explícita, descadastro em um clique, exportação e exclusão dos dados a pedido, canal de contato do controlador.
+
+## Indicadores (padrão de atuação e panorama)
+
+Calculados a partir dos **pareceres publicados**, nunca de votos individuais.
+
+| Indicador | Cálculo |
+|---|---|
+| Padrão de atuação | % de pareceres por caráter (maléfico, enfraquece indiretamente, neutro, benéfico), agrupados por **jurisdição/casa** (União, Câmara, Senado, Presidência, cada UF) |
+| Tudo que tramitou × aprovado | Mesmo cálculo, filtrando as proposições que viraram norma |
+| Tendência | Diferença entre benéficos e (maléficos + indiretos): ≥ 15 pontos "tende a proteger"; ≤ −15 "tende a enfraquecer"; senão "equilibrada" |
+| Amostra mínima | Grupos com menos de 5 pareceres aparecem como "amostra pequena" e não recebem tendência |
+| Por bioma e por área | Mesmo cálculo por `Parecer.biomas[]` e `Parecer.areas[]` (um parecer pode contar em mais de um grupo), mais % de alto impacto e contagem de propostas monitoradas |
+| Leitura qualitativa | Texto editorial por bioma/área ("principais pressões", "principais avanços", "o que temos visto"), atualizado pelo autor |
+
+Paleta de polaridade (validada para daltonismo): maléfico `#C2551F`, enfraquece indiretamente `#E9A04F` com listras, neutro `#C9CFCB`, benéfico `#1F7A4D`. Percentuais sempre escritos na barra e opção "ver como tabela".
+
+## Credenciamento de imprensa
+
+- O perfil "Jornalista" abre um passo extra na inscrição: veículo, tipo de veículo, função, link de comprovação (obrigatórios), e-mail profissional e registro MTb (opcionais) e autorização de verificação.
+- Verificação manual no painel (fila "Credenciamento"), em até 2 dias úteis; e-mail do domínio do veículo agiliza.
+- Status: em análise → verificado (selo "Imprensa verificada") ou recusado (com motivo).
+- Recursos liberados: pareceres sob embargo antes da publicação, pedido de entrevista com o autor, gráficos em PNG e dados em CSV.
+- LGPD: finalidade específica (credenciamento), consentimento separado, dados não compartilhados, exclusão a pedido.

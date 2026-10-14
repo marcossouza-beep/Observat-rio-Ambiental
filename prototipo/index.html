@@ -7,7 +7,7 @@
 :root{
   --green:#2FA765; --green-dk:#23864F; --green-50:#EAF7EF; --green-100:#D3EFDD;
   --bg:#FBFCFB; --white:#FFFFFF; --ink:#16201A; --gray:#66726B; --soft:#9AA59F; --line:#E6ECE8;
-  --sun:#FFF6CF; --sun-ink:#7A5B00; --lime:#EDF5A8; --lime-ink:#4F5A00; --rose:#FDE7E7; --rose-ink:#B23B3B; --sky:#E5F0FF; --sky-ink:#2C5AA0; --cream:#FFFDF4;
+  --pol-neg:#C2551F; --pol-ind:#E9A04F; --pol-mid:#C9CFCB; --pol-pos:#1F7A4D; --sun:#FFF6CF; --sun-ink:#7A5B00; --lime:#EDF5A8; --lime-ink:#4F5A00; --rose:#FDE7E7; --rose-ink:#B23B3B; --sky:#E5F0FF; --sky-ink:#2C5AA0; --cream:#FFFDF4;
   --font:"Figtree",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   color-scheme:light;
 }
@@ -92,6 +92,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 .tg-alto{background:var(--sun);color:var(--sun-ink)}
 .tg-mal{background:var(--rose);color:var(--rose-ink)}
 .tg-ben{background:var(--green-50);color:var(--green-dk)}
+.tg-neu{background:#EEF1EF;color:var(--gray)}
 .dot::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 
 .cta{margin-block:20px 64px;background:var(--green);color:#fff;border-radius:24px;padding:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
@@ -244,7 +245,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 .meter span{height:8px;border-radius:999px;background:var(--line)}
 .meter .f{background:var(--sun-ink)}
 .mlab{display:flex;justify-content:space-between;font-size:.75rem;color:var(--soft)}
-.scale{position:relative;height:8px;border-radius:999px;background:linear-gradient(90deg,var(--rose-ink),#C9CFCB 50%,var(--green-dk))}
+.scale{position:relative;height:8px;border-radius:999px;background:linear-gradient(90deg,var(--pol-neg),var(--pol-ind) 30%,#C9CFCB 52%,var(--pol-pos))}
 .scale i{position:absolute;top:50%;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--ink);transform:translate(-50%,-50%)}
 .oneline{background:var(--ink);color:#fff;border-radius:18px;padding:18px 22px;font-size:1.08rem;line-height:1.5;margin-bottom:34px}
 .oneline b{color:#9BE3B8}
@@ -280,8 +281,8 @@ button{font:inherit;cursor:pointer;color:inherit}
 .dtrack{position:relative;height:22px}
 .dtrack::before{content:"";position:absolute;left:50%;top:-4px;bottom:-4px;border-left:1.5px solid #C9CFCB}
 .dbar{position:absolute;top:4px;height:14px}
-.dbar.pos{left:calc(50% + 2px);background:var(--green-dk);border-radius:0 4px 4px 0}
-.dbar.neg{right:calc(50% + 2px);background:var(--rose-ink);border-radius:4px 0 0 4px}
+.dbar.pos{left:calc(50% + 2px);background:var(--pol-pos);border-radius:0 4px 4px 0}
+.dbar.neg{right:calc(50% + 2px);background:var(--pol-neg);border-radius:4px 0 0 4px}
 .dbar.zero{left:calc(50% - 3px);width:6px;background:#C9CFCB;border-radius:3px}
 .drow .val{font-size:.84rem;color:var(--gray)}
 .drow:hover .lab,.drow:focus .lab{color:var(--green-dk)}
@@ -440,7 +441,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 .stack button{border:0;padding:0;height:100%;transition:filter .15s,transform .15s}
 .stack button:first-child{border-radius:999px 0 0 999px} .stack button:last-child{border-radius:0 999px 999px 0}
 .stack button:hover{filter:brightness(1.08);transform:scaleY(1.25)}
-.stack .s-ben{background:var(--green-dk)} .stack .s-neu{background:#B9C2BD} .stack .s-mal{background:var(--rose-ink)}
+.stack .s-ben{background:var(--pol-pos)} .stack .s-neu{background:var(--pol-mid)} .stack .s-mal{background:var(--pol-neg)} .stack .s-ind{background:repeating-linear-gradient(135deg,var(--pol-ind) 0 6px,#F3C185 6px 9px)}
 .tally-leg{display:flex;gap:16px;flex-wrap:wrap;font-size:.88rem;color:var(--gray)}
 .tally-leg i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
 .tally-leg b{color:var(--ink)}
@@ -576,6 +577,163 @@ button{font:inherit;cursor:pointer;color:inherit}
   .agenda a .arrow{display:none}
 }
 
+
+/* ---------- inscrição: perfil em cartões, imprensa ---------- */
+.pcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.pcard{display:grid;grid-template-columns:minmax(0,1fr) 20px;gap:2px 10px;align-items:center;text-align:left;border:1.5px solid var(--line);background:var(--white);border-radius:14px;padding:11px 14px;transition:border-color .15s,background .15s}
+.pcard b{font-size:.95rem}
+.pcard span{grid-column:1;font-size:.8rem;color:var(--gray)}
+.pcard i{grid-row:1/3;grid-column:2;width:20px;height:20px;border-radius:50%;border:2px solid var(--line);display:block}
+.pcard[aria-checked="true"]{border-color:var(--green);background:var(--green-50)}
+.pcard[aria-checked="true"] i{border:6px solid var(--green)}
+.pcard .press{color:var(--sky-ink);font-weight:600}
+.pressbox{background:var(--sky);border-radius:14px;padding:14px 16px;display:grid;gap:8px}
+.pressbox b{color:var(--sky-ink)}
+.pressbox ul{margin:0;padding-left:18px;display:grid;gap:3px;font-size:.88rem;color:#2B3A55}
+.hint{font-size:.8rem;color:var(--soft);font-weight:400}
+.field .req{color:var(--rose-ink)}
+.statuscard{display:grid;gap:6px;background:var(--sky);border-radius:14px;padding:14px 16px;text-align:left;width:100%}
+.statuscard b{color:var(--sky-ink)}
+.statuscard span{font-size:.88rem;color:#2B3A55}
+.linkbtn{background:none;border:0;padding:0;color:var(--gray);font-size:.82rem;text-decoration:underline}
+.avatar{position:relative}
+.avatar.press::after{content:"✓";position:absolute;right:-3px;bottom:-3px;width:16px;height:16px;border-radius:50%;background:var(--sky-ink);color:#fff;font-size:.6rem;display:grid;place-items:center;border:2px solid var(--white)}
+.pchip{font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--sky);color:var(--sky-ink)}
+
+/* ---------- inscrição no celular ---------- */
+.mflow{display:flex;flex-direction:column;min-height:0;background:var(--bg);color:var(--ink)}
+.mflow.full{min-height:100vh;min-height:100dvh}
+.mtop{display:grid;grid-template-columns:40px minmax(0,1fr) 40px;align-items:center;gap:12px;padding:12px 16px;background:var(--bg);position:sticky;top:0;z-index:2}
+.mx{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--white);font-size:1.05rem;display:grid;place-items:center}
+.mprog{height:6px;border-radius:999px;background:var(--line);overflow:hidden}
+.mprog span{display:block;height:100%;background:var(--green);border-radius:999px;transition:width .35s ease}
+.mcount{font-size:.78rem;color:var(--soft);font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.mbody{padding:6px 20px 24px;display:grid;gap:16px;align-content:start;flex:1}
+.mbody h2{font-size:1.55rem;font-weight:800;line-height:1.15}
+.mbody .lead{color:var(--gray);font-size:.95rem;margin-top:-6px}
+.mbody .field input,.mbody .field select{font-size:16px;padding:14px;border-radius:14px}
+.mbody .pcards{grid-template-columns:1fr}
+.mbody .pcard{padding:14px 16px}
+.mperks{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-20px;padding:2px 20px 6px;scrollbar-width:none}
+.mperks::-webkit-scrollbar{display:none}
+.mperk{flex:0 0 78%;scroll-snap-align:start;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:14px;display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;align-items:start}
+.mperk .pi{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--green-50);color:var(--green-dk)}
+.mperk .pi svg{width:20px;height:20px}
+.mperk b{display:block;font-size:.95rem}
+.mperk span{font-size:.84rem;color:var(--gray)}
+.mbrand{display:flex;align-items:center;gap:8px;font-weight:800}
+.mbrand i{width:12px;height:12px;border-radius:50% 50% 50% 0;background:var(--green);transform:rotate(-45deg)}
+.mfoot{padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px));background:var(--white);border-top:1px solid var(--line);display:grid;gap:6px;position:sticky;bottom:0;z-index:2}
+.pill-btn.block{width:100%;padding:15px;font-size:1rem}
+.mfoot small{text-align:center;color:var(--soft);font-size:.78rem}
+body.focus .head,body.focus .foot{display:none}
+
+/* moldura de celular (visualização no computador) */
+.phone-page{display:grid;grid-template-columns:auto minmax(0,1fr);gap:56px;align-items:start;padding-block:36px 70px}
+.phone{width:380px;height:790px;border-radius:52px;background:#141A17;padding:12px;box-shadow:0 40px 80px -40px rgba(22,32,26,.6),inset 0 0 0 2px #2A332F;position:relative}
+.phone .notch{position:absolute;top:24px;left:50%;transform:translateX(-50%);width:108px;height:30px;border-radius:20px;background:#141A17;z-index:6}
+.phone .screen{height:100%;border-radius:40px;overflow:hidden;background:var(--bg);display:flex;flex-direction:column}
+.phone .sbar{height:50px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:6px 28px 0;font-size:.8rem;font-weight:700;background:var(--bg)}
+.phone .mflow{flex:1;min-height:0}
+.phone .mbody{overflow-y:auto}
+.phone .mfoot{position:static}
+.phone .mtop{position:static}
+.notes{display:grid;gap:20px;max-width:420px}
+.notes h1{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800}
+.notes > p{color:var(--gray)}
+.notes ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.notes li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start;font-size:.95rem}
+.notes li i{width:28px;height:28px;border-radius:9px;background:var(--green-50);color:var(--green-dk);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:.85rem}
+.notes .row{display:flex;gap:8px;flex-wrap:wrap}
+
+/* ---------- padrão de atuação e panorama ---------- */
+.atu{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:18px 20px;display:grid;gap:14px}
+.atu-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.atu-h h3{font-size:1.1rem;font-weight:700}
+.atu-h small{display:block;color:var(--soft);font-size:.82rem;font-weight:500;margin-top:2px}
+.trend{font-size:.78rem;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.tr-pos{background:var(--green-50);color:#1F7A4D} .tr-neg{background:#FCEADF;color:#9A4A16} .tg-ind{background:#FCEFD9;color:#8A5A12} .tr-eq{background:var(--neutral-soft,#EEF1EF);color:var(--gray)} .tr-low{background:var(--bg);color:var(--soft);box-shadow:inset 0 0 0 1px var(--line)}
+.srow{display:grid;grid-template-columns:190px minmax(0,1fr);gap:12px;align-items:center;font-size:.88rem}
+.srow > span{color:var(--gray)}
+.srow > span b{color:var(--ink);font-weight:600}
+.sbar{display:flex;gap:2px;height:24px}
+.sbar i{display:flex;align-items:center;justify-content:center;font-style:normal;font-size:.74rem;font-weight:700;min-width:0;overflow:hidden;white-space:nowrap;transition:filter .15s}
+.sbar i:first-child{border-radius:6px 0 0 6px} .sbar i:last-child{border-radius:0 6px 6px 0} .sbar i:only-child{border-radius:6px}
+.sbar i:hover{filter:brightness(1.07)}
+.sbar .m{background:var(--pol-neg);color:#fff} .sbar .i{background:repeating-linear-gradient(135deg,var(--pol-ind) 0 6px,#F3C185 6px 9px);color:#3A2408} .sbar .n{background:var(--pol-mid);color:var(--ink)} .sbar .b{background:var(--pol-pos);color:#fff}
+.sbar.sm{height:16px} .sbar.sm i{font-size:0}
+.nodata{font-size:.85rem;color:var(--soft);height:24px;display:flex;align-items:center}
+.plegend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.82rem;color:var(--gray)}
+.plegend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.themes{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.84rem;color:var(--gray)}
+.themes span.t{background:var(--bg);border-radius:999px;padding:3px 10px;color:var(--ink);font-weight:500}
+.method{font-size:.78rem;color:var(--soft);line-height:1.45}
+.atu-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.gtip{position:fixed;z-index:40;background:var(--ink);color:#fff;font-size:.8rem;padding:7px 10px;border-radius:8px;pointer-events:none;white-space:nowrap}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.kpi{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;gap:2px}
+.kpi b{font-size:1.7rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi span{font-size:.82rem;color:var(--gray)}
+.ptabs{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+.prows{display:grid;gap:4px}
+.pgroup{font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:700;padding:14px 0 6px}
+.prow{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr) 150px;gap:14px;align-items:center;padding:10px 12px;border-radius:14px;background:var(--white);border:1px solid var(--line);transition:border-color .15s}
+.prow:hover{border-color:var(--green)}
+.prow .nm{display:flex;gap:10px;align-items:center;min-width:0}
+.prow .nm b{display:block;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prow .nm small{display:block;font-size:.78rem;color:var(--soft)}
+.prow .trend{justify-self:end}
+.ptable{width:100%;border-collapse:collapse;font-size:.88rem;background:var(--white);border-radius:14px;overflow:hidden}
+.ptable th,.ptable td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.ptable th{font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--soft);background:var(--bg)}
+.ptable td.r,.ptable th.r{text-align:right}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.bcard{border:1.5px solid var(--line);background:var(--white);border-radius:18px;padding:14px 16px;display:grid;gap:8px;text-align:left;transition:border-color .15s,transform .15s}
+.bcard:hover{transform:translateY(-2px)}
+.bcard[aria-pressed="true"]{border-color:var(--green);background:var(--green-50)}
+.bcard h3{font-size:1.05rem;font-weight:700}
+.bcard small{font-size:.8rem;color:var(--gray)}
+.bcard .fx{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2px 8px;font-size:.8rem;color:var(--gray)}
+.bcard .fx span{white-space:nowrap}
+.bdetail{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:20px;display:grid;gap:16px;margin-top:12px;animation:rise .25s ease both}
+.bdetail h3{font-size:1.35rem;font-weight:800}
+.qual{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.qual div{border-radius:14px;padding:14px 16px;display:grid;gap:6px}
+.qual .q-neg{background:#FCEADF} .qual .q-pos{background:var(--green-50)}
+.qual b{font-size:.82rem;letter-spacing:.05em;text-transform:uppercase}
+.qual .q-neg b{color:#9A4A16} .qual .q-pos b{color:#1F7A4D}
+.qual ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:.92rem}
+.arows{display:grid;gap:4px}
+.arow{display:grid;grid-template-columns:170px 160px minmax(0,1fr) 28px;gap:14px;align-items:center;padding:10px 12px;border-radius:14px;background:var(--white);border:1px solid var(--line);text-align:left;width:100%}
+.arow b{font-size:.93rem}
+.mag{display:grid;grid-template-columns:minmax(0,1fr) 28px;gap:6px;align-items:center;font-size:.84rem;font-variant-numeric:tabular-nums}
+.mag span.tr{height:10px;background:var(--bg);border-radius:0 4px 4px 0}
+.mag span.tr i{display:block;height:100%;background:var(--green);border-radius:0 4px 4px 0}
+.arow .chev{color:var(--soft);transition:transform .2s;justify-self:end}
+.arow[aria-expanded="true"]{border-color:var(--green)}
+.arow[aria-expanded="true"] .chev{transform:rotate(90deg)}
+.anote{margin:-2px 0 6px;padding:10px 14px 12px 196px;font-size:.9rem;color:#3A443E}
+.pano-teaser{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;background:var(--white);border:1px solid var(--line);border-radius:20px;padding:18px 20px}
+.pano-teaser p{color:var(--gray);font-size:.92rem}
+.pano-teaser .sbar{width:220px;max-width:100%}
+
+@media (max-width:900px){
+  .nav{overflow-x:auto;scrollbar-width:none;min-width:0;flex:1 1 auto;margin-right:0}
+  .nav::-webkit-scrollbar{display:none}
+  .phone-page{grid-template-columns:1fr;justify-items:center}
+}
+@media (max-width:760px){
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prow{grid-template-columns:minmax(0,1fr) auto;gap:10px}
+  .prow .sbar{grid-column:1/-1;grid-row:2}
+  .prow .trend{grid-row:1;grid-column:2;align-self:start}
+  .srow{grid-template-columns:1fr}
+  .arow{grid-template-columns:minmax(0,1fr) 28px}
+  .arow .mag,.arow .sbar{grid-column:1/-1}
+  .anote{padding-left:14px}
+  .qual,.pcards{grid-template-columns:1fr}
+}
+
 @media (max-width:640px){
   .topics{grid-template-columns:repeat(2,minmax(0,1fr))}
   .topics .topic:last-child{grid-column:1/-1}
@@ -607,7 +765,7 @@ const LEIS = [
   {id:"lic",esfera:"federal",local:"Federal",status:"Em tramitação",titulo:"Licenciamento simplificado para fazendas de médio porte",num:"PL nº 1.234/2026",casa:"Câmara",etapa:"Plenário",
    resumo:"Dispensa estudo de impacto ambiental e transfere a decisão aos municípios.",imp:"Alto impacto",car:"Maléfico",parecer:true},
   {id:"agua",esfera:"estadual",local:"Tocantins",status:"Aprovada",titulo:"Outorga coletiva de água para irrigação",num:"Lei nº 4.567/2026",
-   resumo:"Permite que produtores de uma mesma bacia dividam uma única autorização de uso da água.",imp:"Alto impacto",car:"Maléfico",parecer:true},
+   resumo:"Permite que produtores de uma mesma bacia dividam uma única autorização de uso da água.",imp:"Alto impacto",car:"Enfraquece indiretamente",parecer:true},
   {id:"caat",esfera:"federal",local:"Federal",status:"Aprovada",titulo:"Programa nacional de restauração da Caatinga",num:"Lei nº 15.0XX/2026",casa:"Presidência",etapa:"Virou norma",
    resumo:"Define metas de recomposição da vegetação nativa até 2035, com recursos do fundo clima.",imp:"Alto impacto",car:"Benéfico",parecer:true},
   {id:"pant",esfera:"federal",local:"Federal",status:"Em tramitação",titulo:"Regras de proteção do Pantanal",num:"PL nº 140/2026",casa:"Senado",etapa:"Comissões",
@@ -619,7 +777,7 @@ const LEIS = [
   {id:"decarb",esfera:"federal",local:"Federal",status:"Aprovada",titulo:"Regulamentação do mercado de carbono florestal",num:"Decreto nº 12.XXX/2026",casa:"Presidência",etapa:"Virou norma",
    resumo:"Define quem pode vender créditos de carbono florestal e cria o registro nacional.",imp:"Alto impacto",car:"Benéfico",parecer:false},
   {id:"tofogo",esfera:"estadual",local:"Tocantins",status:"Em tramitação",titulo:"Regras para o uso do fogo no manejo de pastagens",num:"PL nº 210/2026",
-   resumo:"Define períodos de proibição de queimadas e cria autorização simplificada para queima controlada.",imp:"Médio impacto",car:"Neutro",parecer:false},
+   resumo:"Define períodos de proibição de queimadas e cria autorização simplificada para queima controlada.",imp:"Médio impacto",car:"Enfraquece indiretamente",parecer:false},
   {id:"amgarimpo",esfera:"estadual",local:"Amazonas",status:"Em tramitação",titulo:"Licença ambiental para garimpo de pequeno porte",num:"PL nº 77/2026",
    resumo:"Cria licença por adesão para lavra garimpeira em áreas de até 50 hectares.",imp:"Alto impacto",car:"Maléfico",parecer:false},
   {id:"mtpant",esfera:"estadual",local:"Mato Grosso",status:"Aprovada",titulo:"Zoneamento do Pantanal mato-grossense",num:"Lei nº 12.3XX/2026",
@@ -712,7 +870,7 @@ const $ = s => document.querySelector(s);
 const go = r => { location.hash = r; };
 function toast(m){ const t=document.createElement("div"); t.className="toast"; t.textContent=m; document.body.appendChild(t); setTimeout(()=>t.remove(),2400); }
 const stTag = s => `<span class="tag dot ${s==="Aprovada"?"tg-apr":"tg-tram"}">${s}</span>`;
-const carTag = c => `<span class="tag ${c==="Maléfico"?"tg-mal":"tg-ben"}">${c}</span>`;
+const carTag = c => `<span class="tag ${c==="Maléfico"?"tg-mal":c==="Enfraquece indiretamente"?"tg-ind":c==="Neutro"?"tg-neu":"tg-ben"}">${c}</span>`;
 
 function filtradas(){
   const q = state.q.trim().toLowerCase();
@@ -745,6 +903,7 @@ function home(){
       <div class="section-h"><h2>Explore por tópico</h2></div>
       <div class="topics">${TOPICS.map(t=>`<button class="topic" data-topic="${t[0]}" aria-pressed="${t[0]!=="todos"&&state.topic===t[0]}">${ICON[t[1]]}<b>${t[2]}</b><small>${t[3]}</small></button>`).join("")}</div>
     </section>
+    <a class="pano-teaser" href="#panorama"><div style="display:grid;gap:4px"><b>Panorama</b><p>Padrão de atuação da União e dos estados, por bioma e por área.</p></div>${sbar(ATUACAO.BR.p,ATUACAO.BR.n)}<span class="arrow">Ver →</span></a>
     <section class="section">
       <div class="section-h"><h2>Mais recentes</h2><span id="count">${filtradas().length} leis</span></div>
       <div class="list" id="list">${listHTML()}</div>
@@ -837,62 +996,123 @@ function abrirInscricao(){
 
 /* ---------- página de inscrição ---------- */
 const PERFIS=["Advogado(a)","Estudante","Servidor(a) público(a)","Empresa","ONG / movimento","Pesquisador(a)","Jornalista","Cidadão(ã)"];
+const PERFIL_DESC={"Advogado(a)":"Atuação jurídica e consultoria","Estudante":"Graduação ou pós-graduação","Servidor(a) público(a)":"Órgãos ambientais, MP, Judiciário, Legislativo","Empresa":"Setor produtivo e consultorias","ONG / movimento":"Sociedade civil organizada","Pesquisador(a)":"Universidades e institutos","Jornalista":"Inclui credenciamento de imprensa","Cidadão(ã)":"Quero acompanhar as leis"};
 const TEMAS=["Licenciamento","Florestas","Água","Clima","Mineração","Agrotóxicos","Unidades de conservação","Povos e comunidades"];
+const BIOMAS_L=["Amazônia","Cerrado","Caatinga","Mata Atlântica","Pantanal","Pampa","Costeiro e marinho"];
+const VTIPOS=["Jornal","TV","Rádio","Site ou portal","Agência","Podcast","Freelancer"];
+const FUNCOES=["Repórter","Editor(a)","Produtor(a)","Colunista","Freelancer","Outra"];
 const UFS="AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP TO".split(" ");
-const insc={passo:1,nome:"",email:"",perfil:"",uf:"TO",temas:["Florestas","Água"],alertas:true,news:true,regional:true,ok:false};
+const insc={i:0,nome:"",email:"",perfil:"",uf:"TO",temas:["Florestas","Água"],biomas:["Amazônia","Cerrado"],alertas:true,news:true,regional:true,ok:false,
+  imp:{veiculo:"",tipo:"",funcao:"Repórter",mtb:"",link:"",emailp:"",aut:false},press:null};
+const STEP_LBL={voce:"Você",perfil:"Perfil",imprensa:"Imprensa",interesses:"Interesses",avisos:"Avisos"};
+const stepsInsc = () => ["voce","perfil",...(insc.perfil==="Jornalista"?["imprensa"]:[]),"interesses","avisos"];
+const resetInsc = () => { insc.i=0; insc.ok=false; };
 const PERK_ICON={
   doc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6" stroke-linecap="round"/></svg>',
   cmp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="7" height="16" rx="2"/><rect x="14" y="4" width="7" height="16" rx="2"/></svg>',
   bell:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>',
   map:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg>',
 };
-function inscricao(){
-  const P=insc.passo;
-  const prog=["Você","Interesses","Avisos"].map((t,i)=>`<div class="${i+1<P||insc.ok?"ok":i+1===P?"on":""}">${t}</div>`).join("");
-  let body="";
-  if(insc.ok){
-    body=`<div class="done-card"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
-      <h2>Confira seu e-mail</h2><p>Enviamos um link de acesso para <span class="mail">${insc.email||"seu e-mail"}</span>. É só clicar para confirmar. Não precisa de senha.</p>
-      <a class="pill-btn" href="#home">Explorar as leis</a></div>`;
-  } else if(P===1){
-    body=`<div class="fstep"><h2>Vamos começar</h2><p>Leva menos de um minuto.</p>
-      <label class="field" for="i-nome">Nome<input id="i-nome" type="text" placeholder="Como podemos te chamar?" value="${insc.nome}"></label>
-      <label class="field" for="i-email">E-mail<input id="i-email" type="email" placeholder="voce@exemplo.com" value="${insc.email}"></label>
-      <div class="fnav"><span></span><button class="pill-btn" data-act="next">Continuar</button></div></div>`;
-  } else if(P===2){
-    body=`<div class="fstep"><h2>O que te interessa?</h2><p>Usamos isso para escolher o que enviar a você.</p>
-      <div class="field">Você é<div class="opts">${PERFIS.map(x=>`<button class="opt" data-perfil="${x}" aria-pressed="${insc.perfil===x}">${x}</button>`).join("")}</div></div>
-      <label class="field" for="i-uf">Seu estado<span class="withflag" style="width:100%"><span id="i-flag">${flag(insc.uf,"md")}</span><select id="i-uf">${UFS.map(u=>`<option value="${u}" ${u===insc.uf?"selected":""}>${UF_NOME[u]}</option>`).join("")}</select></span></label>
-      <div class="field">Temas <span style="font-weight:400;color:var(--soft)">escolha quantos quiser</span><div class="opts">${TEMAS.map(x=>`<button class="opt" data-tema="${x}" aria-pressed="${insc.temas.includes(x)}">${x}</button>`).join("")}</div></div>
-      <div class="fnav"><button class="ghost" data-act="prev">← Voltar</button><button class="pill-btn" data-act="next">Continuar</button></div></div>`;
-  } else {
-    const t=(k,b,s)=>`<div class="toggle"><div><b>${b}</b><span>${s}</span></div><button class="sw" role="switch" aria-checked="${insc[k]}" aria-label="${b}" data-sw="${k}"></button></div>`;
-    body=`<div class="fstep"><h2>Como quer ser avisado?</h2><p>Você pode mudar isso quando quiser.</p>
-      ${t("alertas","Alertas de tramitação","Quando uma lei dos seus temas entrar em pauta ou for votada")}
+const PERKS=[["doc","Notas técnicas em PDF","A análise jurídica completa de cada lei."],["cmp","Quadros comparativos","O que diz a lei hoje e o que muda com o projeto."],["bell","Alertas antes da votação","Um e-mail quando a lei que você segue andar."],["map","Destaques do seu estado","O que está em pauta perto de você."]];
+function stepBody(id){
+  if(id==="voce") return `<label class="field" for="i-nome">Nome<input id="i-nome" type="text" autocomplete="name" placeholder="Como podemos te chamar?" value="${insc.nome}"></label>
+      <label class="field" for="i-email">E-mail<input id="i-email" type="email" inputmode="email" autocomplete="email" placeholder="voce@exemplo.com" value="${insc.email}"></label>`;
+  if(id==="perfil") return `<div class="pcards" role="radiogroup" aria-label="Perfil">${PERFIS.map(x=>`<button class="pcard" role="radio" data-perfil="${x}" aria-checked="${insc.perfil===x}"><b>${x}</b><span class="${x==="Jornalista"?"press":""}">${PERFIL_DESC[x]}</span><i></i></button>`).join("")}</div>`;
+  if(id==="imprensa"){ const m=insc.imp; return `<div class="pressbox"><b>O que o credenciamento libera</b><ul><li>Pareceres antes da publicação, sob embargo</li><li>Contato direto com o autor para entrevistas</li><li>Gráficos e dados prontos para matérias</li><li>Selo "Imprensa verificada" no seu perfil</li></ul></div>
+      <label class="field" for="ip-veiculo"><span>Veículo <span class="req">*</span></span><input id="ip-veiculo" type="text" autocomplete="organization" placeholder="Ex.: Jornal do Tocantins" value="${m.veiculo}"></label>
+      <div class="field">Tipo de veículo<div class="opts">${VTIPOS.map(v=>`<button class="opt" data-vtipo="${v}" aria-pressed="${m.tipo===v}">${v}</button>`).join("")}</div></div>
+      <label class="field" for="ip-funcao">Função<select id="ip-funcao">${FUNCOES.map(f=>`<option ${m.funcao===f?"selected":""}>${f}</option>`).join("")}</select></label>
+      <label class="field" for="ip-link"><span>Link de comprovação <span class="req">*</span></span><span class="hint">Uma matéria assinada por você ou sua página no veículo</span><input id="ip-link" type="url" inputmode="url" placeholder="https://" value="${m.link}"></label>
+      <label class="field" for="ip-emailp"><span>E-mail profissional</span><span class="hint">Opcional. Um e-mail do domínio do veículo agiliza a verificação.</span><input id="ip-emailp" type="email" inputmode="email" placeholder="voce@veiculo.com.br" value="${m.emailp}"></label>
+      <label class="field" for="ip-mtb"><span>Registro profissional (MTb)</span><span class="hint">Opcional</span><input id="ip-mtb" type="text" placeholder="0000/UF" value="${m.mtb}"></label>
+      <label class="consent"><input id="ip-aut" type="checkbox" ${m.aut?"checked":""}> Autorizo a verificação destas informações. Elas são usadas só para o credenciamento e não são compartilhadas.</label>
+      <p class="hint">Uma pessoa da equipe verifica em até 2 dias úteis. Enquanto isso, você já tem tudo o que os inscritos têm.</p>`; }
+  if(id==="interesses") return `<label class="field" for="i-uf">Seu estado<span class="withflag" style="width:100%"><span id="i-flag">${flag(insc.uf,"md")}</span><select id="i-uf">${UFS.map(u=>`<option value="${u}" ${u===insc.uf?"selected":""}>${UF_NOME[u]}</option>`).join("")}</select></span></label>
+      <div class="field">Temas <span class="hint">escolha quantos quiser</span><div class="opts">${TEMAS.map(x=>`<button class="opt" data-tema="${x}" aria-pressed="${insc.temas.includes(x)}">${x}</button>`).join("")}</div></div>
+      <div class="field">Biomas <span class="hint">escolha quantos quiser</span><div class="opts">${BIOMAS_L.map(x=>`<button class="opt" data-bioma="${x}" aria-pressed="${insc.biomas.includes(x)}">${x}</button>`).join("")}</div></div>`;
+  const t=(k,b,d)=>`<div class="toggle"><div><b>${b}</b><span>${d}</span></div><button class="sw" role="switch" aria-checked="${insc[k]}" aria-label="${b}" data-sw="${k}"></button></div>`;
+  return `${t("alertas","Alertas de tramitação","Quando uma lei dos seus temas entrar em pauta ou for votada")}
       ${t("news","Resumo semanal","Os pareceres da semana, toda segunda-feira")}
-      ${t("regional","Destaques de "+insc.uf,"Leis do seu estado e da sua região")}
-      <label class="consent"><input id="i-lgpd" type="checkbox"> Concordo com a Política de Privacidade e com o uso dos meus dados para envio dos conteúdos escolhidos.</label>
-      <div class="fnav"><button class="ghost" data-act="prev">← Voltar</button><button class="pill-btn" data-act="finish">Criar inscrição</button></div></div>`;
-  }
+      ${t("regional","Destaques de "+UF_NOME[insc.uf],"Leis do seu estado e da sua região")}
+      <label class="consent"><input id="i-lgpd" type="checkbox"> Concordo com a Política de Privacidade e com o uso dos meus dados para envio dos conteúdos escolhidos.</label>`;
+}
+const STEP_TXT={voce:["Vamos começar","Leva menos de um minuto."],perfil:["Você é…","Usamos isso para escolher o que enviar a você."],imprensa:["Credenciamento de imprensa","Confirmamos que você é jornalista para liberar os recursos de imprensa."],interesses:["O que te interessa?","Seu estado, temas e biomas."],avisos:["Como quer ser avisado?","Você pode mudar isso quando quiser."]};
+function doneBody(){
+  return `<span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+    <h2>Confira seu e-mail</h2><p>Enviamos um link de acesso para <span class="mail">${insc.email||"seu e-mail"}</span>. É só clicar para confirmar. Não precisa de senha.</p>
+    ${insc.press?`<div class="statuscard"><b>${insc.press==="verificado"?"✓ Imprensa verificada":"Credenciamento em análise"}</b><span>${insc.imp.veiculo||"Seu veículo"} · ${insc.imp.funcao}</span><span>${insc.press==="verificado"?"Os recursos de imprensa já estão liberados.":"Você recebe um e-mail em até 2 dias úteis."}</span>
+      ${insc.press==="analise"?`<button class="linkbtn" data-act="aprovar-imprensa">Simular aprovação (protótipo)</button>`:""}</div>`:""}`;
+}
+function inscricao(){
+  const S=stepsInsc(), id=S[insc.i], last=insc.i===S.length-1;
+  const prog=S.map((t,i)=>`<div class="${i<insc.i||insc.ok?"ok":i===insc.i?"on":""}">${STEP_LBL[t]}</div>`).join("");
+  const body = insc.ok ? `<div class="done-card">${doneBody()}<a class="pill-btn" href="#home">Explorar as leis</a></div>`
+    : `<div class="fstep"><h2>${STEP_TXT[id][0]}</h2><p>${STEP_TXT[id][1]}</p>${stepBody(id)}
+      <div class="fnav">${insc.i?`<button class="ghost" data-act="prev">← Voltar</button>`:"<span></span>"}<button class="pill-btn" data-act="${last?"finish":"next"}">${last?"Criar inscrição":"Continuar"}</button></div></div>`;
   return `<div class="wrap" style="max-width:1040px"><div class="sign">
     <aside class="sign-l">
       <h1>Acompanhe as leis <em>ambientais</em> que importam para você</h1>
       <p>O parecer é aberto a todos. Inscritos recebem o material de aprofundamento e são avisados antes das votações.</p>
-      <ul class="perks">
-        <li><span class="pi">${PERK_ICON.doc}</span><div><b>Notas técnicas em PDF</b><span>A análise jurídica completa de cada lei.</span></div></li>
-        <li><span class="pi">${PERK_ICON.cmp}</span><div><b>Quadros comparativos</b><span>O que diz a lei hoje e o que muda com o projeto.</span></div></li>
-        <li><span class="pi">${PERK_ICON.bell}</span><div><b>Alertas antes da votação</b><span>Um e-mail quando a lei que você segue andar.</span></div></li>
-        <li><span class="pi">${PERK_ICON.map}</span><div><b>Destaques do seu estado</b><span>O que está em pauta perto de você.</span></div></li>
-      </ul>
+      <ul class="perks">${PERKS.map(k=>`<li><span class="pi">${PERK_ICON[k[0]]}</span><div><b>${k[1]}</b><span>${k[2]}</span></div></li>`).join("")}</ul>
       <div class="assure"><span>Grátis</span><span>Sem senha</span><span>Cancele com um clique</span></div>
+      <a href="#inscricao-celular" class="arrow" style="font-size:.9rem">Ver como fica no celular →</a>
     </aside>
-    <section class="formcard"><div class="prog">${prog}</div>${body}</section>
+    <section class="formcard"><div class="prog" style="grid-template-columns:repeat(${S.length},1fr)">${prog}</div>${body}</section>
   </div></div>`;
+}
+function mobileSignup(full){
+  const S=stepsInsc(), id=S[insc.i], last=insc.i===S.length-1;
+  const pct = insc.ok ? 100 : Math.round(insc.i/S.length*100)+8;
+  let body, foot;
+  if(insc.ok){
+    body=`<div class="done-card" style="padding-top:30px">${doneBody()}</div>`;
+    foot=`<a class="pill-btn block" href="#home" style="text-align:center">Explorar as leis</a>`;
+  } else {
+    const intro = id==="voce" ? `<div class="mbrand"><i></i>Nome do Site</div>
+      <h2>Leis ambientais explicadas antes da votação</h2><p class="lead">Grátis, sem senha. O parecer é aberto a todos; inscritos recebem o aprofundamento e os alertas.</p>
+      <div class="mperks" aria-label="Benefícios">${PERKS.map(k=>`<div class="mperk"><span class="pi">${PERK_ICON[k[0]]}</span><div><b>${k[1]}</b><span>${k[2]}</span></div></div>`).join("")}</div>` 
+      : `<h2>${STEP_TXT[id][0]}</h2><p class="lead">${STEP_TXT[id][1]}</p>`;
+    body = intro + stepBody(id);
+    foot=`<button class="pill-btn block" data-act="${last?"finish":"next"}">${last?"Criar inscrição":"Continuar"}</button><small>${id==="imprensa"?"Verificação em até 2 dias úteis":"Grátis · sem senha · cancele quando quiser"}</small>`;
+  }
+  return `<div class="mflow ${full?"full":""}">
+    <div class="mtop"><button class="mx" data-act="${insc.i&&!insc.ok?"prev":"m-close"}" aria-label="${insc.i&&!insc.ok?"Voltar":"Fechar"}">${insc.i&&!insc.ok?"←":"✕"}</button>
+      <div class="mprog" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><span style="width:${Math.min(pct,100)}%"></span></div>
+      <span class="mcount">${insc.ok?"✓":(insc.i+1)+"/"+S.length}</span></div>
+    <div class="mbody" id="mbody">${body}</div>
+    <div class="mfoot">${foot}</div></div>`;
+}
+const isNarrow = () => matchMedia("(max-width:560px)").matches;
+function inscricaoCelular(){
+  if(isNarrow()) return mobileSignup(true);
+  return `<div class="wrap" style="max-width:1040px"><div class="phone-page">
+    <div class="phone" aria-label="Simulação de celular"><span class="notch"></span><div class="screen"><div class="sbar"><span>9:41</span><span>●●● 5G ▮</span></div>${mobileSignup(false)}</div></div>
+    <div class="notes"><span class="sub-h">Inscrição no celular</span><h1>Um assunto por tela, o botão sempre no polegar</h1>
+      <p>A mesma inscrição do computador, redesenhada para o celular. Use o celular ao lado: ele funciona de verdade.</p>
+      <ul>
+        <li><i>1</i><span><b>Barra de progresso e contador</b> no topo, para a pessoa saber quanto falta.</span></li>
+        <li><i>2</i><span><b>Botão principal fixo embaixo</b>, ao alcance do polegar. Voltar fica no canto de cima.</span></li>
+        <li><i>3</i><span><b>Benefícios em carrossel</b> no primeiro passo, sem empurrar o formulário para baixo.</span></li>
+        <li><i>4</i><span><b>Perfil em cartões grandes</b>, fáceis de tocar, em vez de lista suspensa.</span></li>
+        <li><i>5</i><span><b>Teclado certo para cada campo</b>: e-mail abre o teclado de e-mail; link abre o de endereço. Campos com 16px, para o celular não dar zoom.</span></li>
+        <li><i>6</i><span><b>Passo extra só para jornalistas</b>: o credenciamento de imprensa aparece quando a pessoa escolhe "Jornalista".</span></li>
+      </ul>
+      <div class="row"><button class="btn-o" data-act="m-reset">Recomeçar</button><button class="btn-o" data-act="m-jorn">Ver o fluxo de jornalista</button></div>
+    </div></div></div>`;
 }
 function saveStep(){
   if($("#i-nome")){ insc.nome=$("#i-nome").value.trim(); insc.email=$("#i-email").value.trim(); }
   if($("#i-uf")) insc.uf=$("#i-uf").value;
+  if($("#ip-veiculo")){ const m=insc.imp; m.veiculo=$("#ip-veiculo").value.trim(); m.funcao=$("#ip-funcao").value; m.link=$("#ip-link").value.trim(); m.emailp=$("#ip-emailp").value.trim(); m.mtb=$("#ip-mtb").value.trim(); m.aut=$("#ip-aut").checked; }
 }
+function validaPasso(){
+  const id=stepsInsc()[insc.i];
+  if(id==="voce" && (!insc.nome || !/^\S+@\S+\.\S+$/.test(insc.email))) return "Preencha seu nome e um e-mail válido";
+  if(id==="perfil" && !insc.perfil) return "Escolha o que melhor descreve você";
+  if(id==="imprensa"){ const m=insc.imp; if(!m.veiculo) return "Informe o veículo em que você trabalha"; if(!/^(https?:\/\/)?\S+\.\S+/.test(m.link)) return "Informe um link de comprovação"; if(!m.aut) return "Autorize a verificação para continuar"; }
+  return "";
+}
+function topoInsc(){ const b=$("#mbody"); if(b) b.scrollTop=0; if(isNarrow()) window.scrollTo(0,0); }
 
 /* ---------- relatório do parecer ---------- */
 const DIMS=[["Ambiental",2,"Protege 48 mil ha de floresta e várzea contra extração ilegal."],["Social",2,"Garante às comunidades tradicionais o uso prioritário da área."],["Econômico",-1,"Restringe atividades madeireiras e de pesca comercial no entorno."],["Institucional",0,"Cria conselho, mas sem composição mínima nem orçamento definido."]];
@@ -903,10 +1123,10 @@ const BASE=[["CF, art. 225","Meio ambiente equilibrado","Impõe ao poder públic
   ["LC 140/2011","Competências","Atribui ao estado a gestão das unidades que cria (art. 8º, X). A gestão estadual prevista está correta."],
   ["Convenção 169 OIT","Consulta prévia","Exige consulta livre, prévia e informada às comunidades afetadas. Não há registro de consulta no processo."]];
 function parecer(l){
-  const dir=l.car==="Maléfico"?-1:1;
-  const dims=DIMS.map(d=>[d[0],d[1]*dir,d[2]]);
+  const dir=l.car==="Maléfico"?-1:l.car==="Enfraquece indiretamente"?-0.5:l.car==="Neutro"?0.25:1;
+  const dims=DIMS.map(d=>[d[0],Math.round(d[1]*dir)||0,d[2]]);
   const imp={"Baixo impacto":1,"Médio impacto":2,"Alto impacto":3}[l.imp]||3;
-  const pos=l.car==="Benéfico"?82:l.car==="Maléfico"?18:50;
+  const pos=l.car==="Benéfico"?82:l.car==="Maléfico"?12:l.car==="Enfraquece indiretamente"?32:50;
   const a=ATORES[l.id];
   return `<div class="readbar" id="readbar"></div>
   <div class="rep">
@@ -920,8 +1140,8 @@ function parecer(l){
     <div class="verdict">
       <div class="vcard"><small>Impacto</small><span class="big">${l.imp.replace(" impacto","")}</span>
         <div class="meter" role="img" aria-label="Impacto ${l.imp}">${[1,2,3].map(i=>`<span class="${i<=imp?"f":""}"></span>`).join("")}</div><div class="mlab"><span>Baixo</span><span>Médio</span><span>Alto</span></div></div>
-      <div class="vcard"><small>Caráter</small><span class="big" style="color:${l.car==="Maléfico"?"var(--rose-ink)":l.car==="Benéfico"?"var(--green-dk)":"var(--ink)"}">${l.car}</span>
-        <div class="scale" role="img" aria-label="Caráter ${l.car}"><i style="left:${pos}%"></i></div><div class="mlab"><span>Maléfico</span><span>Neutro</span><span>Benéfico</span></div></div>
+      <div class="vcard"><small>Caráter</small><span class="big" style="color:${l.car==="Maléfico"?"var(--rose-ink)":l.car==="Benéfico"?"var(--green-dk)":l.car==="Enfraquece indiretamente"?"#8A5A12":"var(--ink)"}">${l.car}</span>
+        <div class="scale" role="img" aria-label="Caráter ${l.car}"><i style="left:${pos}%"></i></div><div class="mlab"><span>Maléfico</span><span>Indireto</span><span>Neutro</span><span>Benéfico</span></div></div>
       <div class="vcard"><small>Próximo passo</small><span class="big">${l.status==="Aprovada"?"Regulamentação":"Plenário"}</span>
         <span style="color:var(--gray);font-size:.9rem">${l.status==="Aprovada"?"Prazo de 180 dias para o Executivo":"Votação prevista para 14/10/2026"}</span></div>
     </div>
@@ -983,6 +1203,8 @@ function parecer(l){
               <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota Técnica</b><span>12 páginas</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
               <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>3 páginas</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
             </div></div>
+          ${state.inscrito&&insc.press?`<div class="panel-s" style="grid-column:1/-1;background:var(--sky);border-color:transparent"><h3 style="color:var(--sky-ink)">Para a imprensa ${insc.press==="verificado"?'<span class="pchip" style="background:#fff">✓ Verificada</span>':""}</h3>
+            ${insc.press==="verificado"?`<p style="color:#2B3A55">Entrevista com o autor, gráficos em alta resolução e os dados deste parecer.</p><div class="row" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn-o" data-act="imp-entrevista">Pedir entrevista</button><button class="btn-o" data-act="imp-graficos">Baixar gráficos (PNG)</button><button class="btn-o" data-act="imp-dados">Dados (CSV)</button></div>`:`<p style="color:#2B3A55">Seu credenciamento está em análise. Assim que for aprovado, você poderá pedir entrevistas e baixar gráficos e dados.</p>`}</div>`:!state.inscrito?`<p class="hint" style="grid-column:1/-1">É jornalista? <a href="#inscricao" data-act="m-jorn-desk">Faça o credenciamento de imprensa →</a></p>`:""}
           <div class="panel-s" style="grid-column:1/-1"><h3>Compartilhar e citar</h3><p>Textos prontos para redes sociais e referência para trabalhos acadêmicos.</p>${shareHTML(l)}</div>
         </div>
       </article>
@@ -995,17 +1217,18 @@ function parecer(l){
 const iniciais = n => (n||"Maria Exemplo").trim().split(/\s+/).map(w=>w[0]).filter(Boolean).slice(0,2).join("").toUpperCase();
 function headHTML(r){
   const on = k => r===k ? "on" : "";
-  const nav = `<nav class="nav" aria-label="Principal"><a class="${on("federais")}" href="#federais">Federais</a><a class="${on("estaduais")}" href="#estaduais">Estaduais</a><a class="${on("timeline")}" href="#timeline">Timeline</a><a class="${on("opiniao")}" href="#opiniao">Opinião</a><a class="${on("artigos")||(r.startsWith("artigo-")?"on":"")}" href="#artigos">Artigos</a>${state.inscrito?`<a class="opt-hide" href="#timeline" data-act="ver-seguindo">Seguindo<span class="cnt">${state.seguindo.length}</span></a>`:""}</nav>`;
+  const nav = `<nav class="nav" aria-label="Principal"><a class="${on("federais")}" href="#federais">Federais</a><a class="${on("estaduais")}" href="#estaduais">Estaduais</a><a class="${on("panorama")}" href="#panorama">Panorama</a><a class="${on("timeline")}" href="#timeline">Timeline</a><a class="${on("opiniao")}" href="#opiniao">Opinião</a><a class="${on("artigos")||(r.startsWith("artigo-")?"on":"")}" href="#artigos">Artigos</a>${state.inscrito?`<a class="opt-hide" href="#timeline" data-act="ver-seguindo">Seguindo<span class="cnt">${state.seguindo.length}</span></a>`:""}</nav>`;
   if(!state.inscrito) return `<a class="brand" href="#home"><i></i>Nome do Site</a>${nav}<button class="enter" data-act="entrar">Entrar</button><button class="pill-btn" data-act="pagina">Se inscreva grátis</button>`;
   return `<a class="brand" href="#home"><i></i>Nome do Site</a>${nav}
-    <div class="me"><button class="avatar" data-act="menu" aria-haspopup="true" aria-expanded="${state.menu}" aria-label="Minha conta">${iniciais(insc.nome)}</button>
+    <div class="me"><button class="avatar ${insc.press==="verificado"?"press":""}" data-act="menu" aria-haspopup="true" aria-expanded="${state.menu}" aria-label="Minha conta">${iniciais(insc.nome)}</button>
     ${state.menu?menuHTML():""}</div>`;
 }
 function menuHTML(){
   const sw=(k,t)=>`<div class="mrow"><span>${t}</span><button class="sw" role="switch" aria-checked="${insc[k]}" aria-label="${t}" data-sw="${k}"></button></div>`;
   return `<div class="menu" role="menu">
     <div class="who"><b>${insc.nome||"Maria Exemplo"}</b><span>${insc.email||"maria@exemplo.com"}</span></div>
-    <div class="m-nav"><a class="mrow" href="#federais">Leis federais</a><a class="mrow" href="#estaduais">Leis estaduais</a><a class="mrow" href="#timeline">Timeline</a><a class="mrow" href="#opiniao">Opinião</a><a class="mrow" href="#artigos">Artigos</a><div class="sep"></div></div>
+    <div class="m-nav"><a class="mrow" href="#federais">Leis federais</a><a class="mrow" href="#estaduais">Leis estaduais</a><a class="mrow" href="#panorama">Panorama</a><a class="mrow" href="#timeline">Timeline</a><a class="mrow" href="#opiniao">Opinião</a><a class="mrow" href="#artigos">Artigos</a><div class="sep"></div></div>
+    ${insc.press?`<div class="mrow"><span>Imprensa</span><span class="pchip">${insc.press==="verificado"?"✓ Verificada":"Em análise"}</span></div>`:""}
     <a class="mrow" href="#timeline" data-act="ver-seguindo">Leis que sigo <b>${state.seguindo.length}</b></a>
     <div class="mrow"><span>Meu estado</span><span class="withflag"><span id="m-flag">${flag(insc.uf)}</span><select id="m-uf" aria-label="Meu estado">${UFS.map(u=>`<option ${u===insc.uf?"selected":""}>${u}</option>`).join("")}</select></span></div>
     <div class="mrow"><span>Temas</span><span style="color:var(--gray);font-size:.85rem">${insc.temas.join(", ")||"nenhum"}</span></div>
@@ -1070,7 +1293,7 @@ const PAR_DATA={resex:["09","out",4],lic:["05","out",5],caat:["30","set",4],agua
 const opFiltro={v:"todos"};
 function opLista(){
   const f=opFiltro.v;
-  return LEIS.filter(l=>l.parecer && (f==="todos"||(f==="ben"&&l.car==="Benéfico")||(f==="mal"&&l.car==="Maléfico")||(f==="neu"&&l.car==="Neutro")||(f==="alto"&&l.imp==="Alto impacto")||(f==="fed"&&l.esfera==="federal")||(f==="est"&&l.esfera==="estadual")));
+  return LEIS.filter(l=>l.parecer && (f==="todos"||(f==="ben"&&l.car==="Benéfico")||(f==="mal"&&l.car==="Maléfico")||(f==="neu"&&l.car==="Neutro")||(f==="ind"&&l.car==="Enfraquece indiretamente")||(f==="alto"&&l.imp==="Alto impacto")||(f==="fed"&&l.esfera==="federal")||(f==="est"&&l.esfera==="estadual")));
 }
 function opRows(){
   const ls=opLista(); if(!ls.length) return `<p class="empty">Nenhum parecer com esse filtro.</p>`;
@@ -1080,22 +1303,22 @@ function opRows(){
 }
 function opiniao(){
   const all=LEIS.filter(l=>l.parecer); const c=k=>all.filter(l=>l.car===k).length;
-  const n={ben:c("Benéfico"),neu:c("Neutro"),mal:c("Maléfico")}; const tot=all.length;
+  const n={ben:c("Benéfico"),neu:c("Neutro"),mal:c("Maléfico"),ind:c("Enfraquece indiretamente")}; const tot=all.length;
   const seg=(k,cls,lab)=>n[k]?`<button class="${cls}" style="flex:${n[k]}" data-op="${k}" title="${lab}: ${n[k]}" aria-label="${lab}: ${n[k]} pareceres"></button>`:"";
   const top=all[0];
   const f=(k,t)=>`<button class="chip" data-op="${k}" aria-pressed="${opFiltro.v===k}">${t}</button>`;
   return `<div class="wrap">
     <header class="pg-head"><h1>Opinião</h1><p>Pareceres técnicos sobre as leis ambientais em tramitação e recém-aprovadas. Cada um traz impacto, caráter, pontos de atenção e recomendações.</p></header>
     <section class="tally"><div class="tally-h"><b>${tot} pareceres publicados</b><span>Toque numa cor para filtrar</span></div>
-      <div class="stack">${seg("ben","s-ben","Benéficos")}${seg("neu","s-neu","Neutros")}${seg("mal","s-mal","Maléficos")}</div>
-      <div class="tally-leg"><span><i style="background:var(--green-dk)"></i><b>${n.ben}</b> benéficos</span><span><i style="background:#B9C2BD"></i><b>${n.neu}</b> neutros</span><span><i style="background:var(--rose-ink)"></i><b>${n.mal}</b> maléficos</span></div>
+      <div class="stack">${seg("mal","s-mal","Maléficos")}${seg("ind","s-ind","Enfraquecem indiretamente")}${seg("neu","s-neu","Neutros")}${seg("ben","s-ben","Benéficos")}</div>
+      <div class="tally-leg"><span><i style="background:var(--pol-neg)"></i><b>${n.mal}</b> maléficos</span><span><i style="background:repeating-linear-gradient(135deg,var(--pol-ind) 0 3px,#F3C185 3px 5px)"></i><b>${n.ind}</b> enfraquecem indiretamente</span><span><i style="background:var(--pol-mid)"></i><b>${n.neu}</b> neutros</span><span><i style="background:var(--pol-pos)"></i><b>${n.ben}</b> benéficos</span></div>
     </section>
     <section class="section"><div class="section-h"><h2>Mais recente</h2></div>
       <a class="feat" href="#parecer-${top.id}"><div class="fl"><small class="withflag">${flag(flagOf(top.local))}Parecer técnico · ${top.local}</small><h2>${top.titulo}</h2><p>${top.resumo}</p><span class="arrow">Ler parecer →</span></div>
-        <div class="fr"><div class="vline"><small>Impacto</small><b>${top.imp.replace(" impacto","")}</b></div><div class="vline"><small>Caráter</small><b style="color:${top.car==="Maléfico"?"var(--rose-ink)":"var(--green-dk)"}">${top.car}</b></div><div class="vline"><small>Situação</small><b>${top.status}</b></div></div></a>
+        <div class="fr"><div class="vline"><small>Impacto</small><b>${top.imp.replace(" impacto","")}</b></div><div class="vline"><small>Caráter</small><b style="color:${top.car==="Maléfico"?"var(--rose-ink)":top.car==="Enfraquece indiretamente"?"#8A5A12":"var(--green-dk)"}">${top.car}</b></div><div class="vline"><small>Situação</small><b>${top.status}</b></div></div></a>
     </section>
     <section class="section"><div class="section-h"><h2>Todos os pareceres</h2></div>
-      <div class="chips" style="justify-content:flex-start">${f("todos","Todos")}${f("ben","Benéficos")}${f("mal","Maléficos")}${f("alto","Alto impacto")}${f("fed","Federais")}${f("est","Estaduais")}</div>
+      <div class="chips" style="justify-content:flex-start">${f("todos","Todos")}${f("ben","Benéficos")}${f("mal","Maléficos")}${f("ind","Enfraquecem indiretamente")}${f("alto","Alto impacto")}${f("fed","Federais")}${f("est","Estaduais")}</div>
       <div class="ops" id="ops">${opRows()}</div>
     </section>
   </div>`;
@@ -1176,6 +1399,7 @@ function ufPanel(uf){
   return `<div class="ufpanel" id="ufpanel"><span class="sub-h">${reg}</span><div class="uf-title">${flag(uf,"lg")}<h2>${UF_NOME[uf]}</h2></div><p class="casa">Assembleia Legislativa · Diário Oficial do Estado</p>
     <div class="ufstats"><div><b>${ls.filter(l=>l.status!=="Aprovada").length}</b><span>em tramitação</span></div><div><b>${ls.filter(l=>l.status==="Aprovada").length}</b><span>aprovadas</span></div><div><b>${ls.filter(l=>l.parecer).length}</b><span>com parecer</span></div></div>
     <div class="cov"><span class="tag ${cob==="auto"?"tg-ben":cob==="manual"?"tg-alto":"tg-place"}">${t[0]}</span><span>${t[1]}</span></div>
+    ${atuacaoBlock(uf)}
     <div class="minilist">${ls.length?ls.map(l=>`<a class="minilaw" href="#${l.id}"><b>${l.titulo}</b><div class="row">${stTag(l.status)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}<span class="n">${l.num}</span></div></a>`).join(""):
       `<p style="color:var(--gray);font-size:.92rem">${cob==="breve"?"Ainda não monitoramos este estado.":"Nenhuma lei ambiental em destaque no momento."}</p>`}</div>
     <div class="ask"><span>${cob==="breve"?"Quer que priorizemos "+UF_NOME[uf]+"?":"Receba as novidades de "+UF_NOME[uf]+" por e-mail."}</span><button class="pill-btn" data-act="${state.inscrito?"aviso-uf":"pagina"}" data-uf="${uf}">${cob==="breve"?"Avise-me":"Acompanhar estado"}</button></div>
@@ -1221,7 +1445,8 @@ function federais(){
   return `<div class="wrap">
     <header class="pg-head"><h1>Leis federais</h1><p>Projetos ambientais na Câmara e no Senado, e o que a Presidência sancionou, vetou ou regulamentou.</p></header>
     <div class="seg" role="group" aria-label="Casa">${["Todas","Câmara","Senado","Presidência"].map(c=>`<button data-casa="${c}" aria-pressed="${fedSel.casa===c}">${c}</button>`).join("")}</div>
-    <section class="section"><div class="section-h"><h2>Onde estão os projetos</h2><span>Toque numa etapa para filtrar</span></div>
+    <section class="section" id="atuwrap">${atuacaoBlock(fedSel.casa==="Todas"?"BR":fedSel.casa)}</section>
+    <section class="section" style="padding-top:0"><div class="section-h"><h2>Onde estão os projetos</h2><span>Toque numa etapa para filtrar</span></div>
       <div class="funnel" id="funnel">${funnelHTML()}</div></section>
     <section class="section" style="padding-top:4px"><div class="section-h"><h2>Esta semana no Congresso</h2></div>
       <div class="agenda">${ag.map(a=>{ const l=LEIS.find(x=>x.id===a[1]); return `<a href="#${l.id}"><span class="d">${a[0]}</span><div><p>${l.titulo}</p><span class="o">${a[2]}</span></div><span class="arrow">→</span></a>`; }).join("")}</div></section>
@@ -1229,7 +1454,120 @@ function federais(){
       <div class="list" id="fedlist">${fedCards()}</div></section>
   </div>`;
 }
-function refreshFed(){ $("#funnel").innerHTML=funnelHTML(); $("#fedlist").innerHTML=fedCards(); $("#fedcnt").textContent=fedLista().length+" leis"; $("#fedtit").textContent=fedSel.etapa||"Todas as leis federais"; }
+function refreshFed(){ $("#atuwrap").innerHTML=atuacaoBlock(fedSel.casa==="Todas"?"BR":fedSel.casa); $("#funnel").innerHTML=funnelHTML(); $("#fedlist").innerHTML=fedCards(); $("#fedcnt").textContent=fedLista().length+" leis"; $("#fedtit").textContent=fedSel.etapa||"Todas as leis federais"; }
+
+
+/* ---------- padrão de atuação (base: pareceres; dados fictícios) ---------- */
+const ATUACAO={
+  BR:{nome:"União",sub:"Câmara, Senado e Presidência",n:48,p:[31,13,21,35],ap:{n:14,p:[35,15,21,29]},temas:[["Licenciamento",29],["Florestas",21],["Mineração",15]]},
+  "Câmara":{nome:"Câmara dos Deputados",n:26,p:[38,16,19,27],ap:{n:6,p:[35,15,17,33]},temas:[["Licenciamento",35],["Agrotóxicos",19],["Mineração",15]]},
+  "Senado":{nome:"Senado Federal",n:15,p:[23,10,20,47],ap:{n:5,p:[28,12,20,40]},temas:[["Florestas",33],["Clima",20],["Licenciamento",20]]},
+  "Presidência":{nome:"Presidência",sub:"Sanções, vetos e decretos",n:7,p:[10,4,29,57],ap:{n:7,p:[10,4,29,57]},temas:[["Clima",43],["Florestas",29],["Unidades de conservação",14]]},
+  PA:{n:12,p:[23,10,17,50],ap:{n:4,p:[17,8,25,50]},temas:[["Unidades de conservação",33],["Mineração",25],["Florestas",17]]},
+  TO:{n:10,p:[28,12,30,30],ap:{n:4,p:[35,15,25,25]},temas:[["Água",40],["Florestas",30],["Licenciamento",20]]},
+  AM:{n:9,p:[39,17,22,22],ap:{n:3,p:[47,20,0,33]},temas:[["Mineração",44],["Florestas",22],["Povos e comunidades",22]]},
+  MT:{n:8,p:[44,19,12,25],ap:{n:3,p:[47,20,0,33]},temas:[["Licenciamento",38],["Agrotóxicos",25],["Florestas",25]]},
+  RO:{n:5,p:[42,18,20,20],ap:{n:2,p:[35,15,0,50]},temas:[["Licenciamento",40],["Florestas",40]]},
+  AC:{n:4,p:[17,8,25,50],ap:{n:1,p:[0,0,0,100]},temas:[["Florestas",50],["Povos e comunidades",25]]},
+  RR:{n:3,p:[47,20,33,0],ap:{n:1,p:[70,30,0,0]},temas:[["Mineração",67]]},
+  AP:{n:2,p:[0,0,50,50],ap:{n:0,p:[0,0,0,0]},temas:[["Unidades de conservação",50]]},
+};
+const POL=[["m","Maléfico: enfraquece diretamente"],["i","Enfraquece indiretamente"],["n","Neutro"],["b","Benéfico: fortalece a proteção"]];
+const POL_VAR={m:"neg",i:"ind",n:"mid",b:"pos"};
+const DEF_IND="Enfraquece indiretamente: a proposta não muda a proteção de forma direta, mas abre caminho para o dano, por exemplo cortando fiscalização ou orçamento, ampliando prazos ou criando exceções que dependem de regulamento.";
+const AMOSTRA_MIN=5;
+function sbar(p,n,small){
+  if(!n) return `<span class="nodata">Nenhum parecer no período</span>`;
+  const lab=["Maléfico","Enfraquece indiretamente","Neutro","Benéfico"];
+  return `<div class="sbar ${small?"sm":""}" role="img" aria-label="${lab.map((l,i)=>l+" "+p[i]+"%").join(", ")}">${p.map((v,i)=>v?`<i class="${"minb"[i]}" style="flex:${v}" data-t="${lab[i]}: ${v}% (${Math.round(v*n/100)} de ${n})">${v>=12?v+"%":""}</i>`:"").join("")}</div>`;
+}
+function tendencia(a){
+  if(a.n<AMOSTRA_MIN) return `<span class="trend tr-low">Amostra pequena</span>`;
+  const d=a.p[3]-(a.p[0]+a.p[1]);
+  return d>=15?`<span class="trend tr-pos" data-t="Propostas benéficas superam as que enfraquecem em ${d} pontos">Tende a proteger</span>`:d<=-15?`<span class="trend tr-neg" data-t="Propostas que enfraquecem (direta ou indiretamente) superam as benéficas em ${-d} pontos">Tende a enfraquecer</span>`:`<span class="trend tr-eq" data-t="Diferença menor que 15 pontos">Equilibrada</span>`;
+}
+const plegend = () => `<div class="plegend">${POL.map(([k,t])=>`<span ${k==="i"?`data-t="${DEF_IND}" style="cursor:help;text-decoration:underline dotted"`:""}><i style="background:${k==="i"?"repeating-linear-gradient(135deg,var(--pol-ind) 0 3px,#F3C185 3px 5px)":"var(--pol-"+POL_VAR[k]+")"}"></i>${t}</span>`).join("")}</div>`;
+const METODO = "Percentual dos pareceres do observatório sobre propostas desta casa, pelo caráter da mudança para a proteção ambiental (maléfico, enfraquece indiretamente, neutro ou benéfico). Mede o conteúdo das propostas, não o voto de cada parlamentar. Dados fictícios no protótipo.";
+function atuacaoBlock(key){
+  const a=ATUACAO[key]; if(!a) return "";
+  const nome = a.nome || UF_NOME[key];
+  return `<div class="atu"><div class="atu-h"><div><h3>Padrão de atuação · ${nome}</h3><small>Base: ${a.n} pareceres${a.sub?" · "+a.sub:""}</small></div>${tendencia(a)}</div>
+    <div class="srow"><span><b>Tudo que tramitou</b></span>${sbar(a.p,a.n)}</div>
+    <div class="srow"><span><b>Só o que foi aprovado</b> · ${a.ap.n}</span>${sbar(a.ap.p,a.ap.n)}</div>
+    ${plegend()}
+    <div class="themes">Temas mais frequentes: ${a.temas.map(t=>`<span class="t">${t[0]} ${t[1]}%</span>`).join("")}</div>
+    <div class="atu-foot"><p class="method">${METODO}</p><a class="arrow" href="#panorama" style="font-size:.88rem">Ver panorama completo →</a></div></div>`;
+}
+
+/* ---------- panorama ---------- */
+const BIOMAS=[
+  {nome:"Amazônia",prop:24,n:19,p:[33,14,16,37],alto:68,temas:["Mineração","Florestas","Povos e comunidades"],neg:["Garimpo e mineração com licença simplificada","Regularização de áreas desmatadas"],pos:["Novas reservas extrativistas estaduais","Regras para o mercado de carbono florestal"]},
+  {nome:"Cerrado",prop:18,n:14,p:[45,19,15,21],alto:57,temas:["Licenciamento","Agrotóxicos","Água"],neg:["Dispensa de licenciamento para a agropecuária","Agrotóxicos aplicados por drones sem distância mínima"],pos:["Outorgas de água com monitoramento de vazão"]},
+  {nome:"Caatinga",prop:6,n:5,p:[14,6,20,60],alto:40,temas:["Florestas","Clima","Água"],neg:["Parques eólicos sem estudo de fauna"],pos:["Programa nacional de restauração","Metas de recomposição até 2035"]},
+  {nome:"Mata Atlântica",prop:7,n:5,p:[28,12,20,40],alto:40,temas:["Florestas","Água","Saneamento"],neg:["Marco temporal para APPs consolidadas"],pos:["Pagamento por serviços ambientais em nascentes"]},
+  {nome:"Pantanal",prop:5,n:4,p:[17,8,25,50],alto:75,temas:["Florestas","Fogo","Água"],neg:["Queima controlada em áreas de manejo"],pos:["Zoneamento que proíbe lavouras em áreas alagáveis","Lei de proteção do bioma em tramitação"]},
+  {nome:"Pampa",prop:2,n:1,p:[70,30,0,0],alto:100,temas:["Florestas"],neg:["Conversão de campos nativos em lavoura"],pos:[]},
+  {nome:"Costeiro e marinho",prop:3,n:2,p:[35,15,50,0],alto:50,temas:["Licenciamento","Pesca"],neg:["Flexibilização de construções na zona costeira"],pos:[]},
+];
+const LEI_BIOMA={resex:["Amazônia"],lic:["Cerrado","Amazônia"],agua:["Cerrado"],caat:["Caatinga"],pant:["Pantanal"],apps:["Mata Atlântica","Cerrado","Amazônia"],drones:["Cerrado"],decarb:["Amazônia"],tofogo:["Cerrado"],amgarimpo:["Amazônia"],mtpant:["Pantanal"]};
+const AREAS=[
+  ["Licenciamento",14,[50,21,14,15],79,"Projetos que dispensam estudo de impacto pelo porte da atividade se repetem na União e nos estados."],
+  ["Florestas",12,[23,10,17,50],58,"Equilíbrio entre novas áreas protegidas e tentativas de regularizar desmatamento antigo."],
+  ["Mineração",8,[53,22,13,12],88,"Pressão concentrada na Amazônia, com licenças simplificadas para garimpo."],
+  ["Água",7,[30,13,28,29],43,"Outorgas coletivas e simplificadas avançam; poucas preveem monitoramento da vazão."],
+  ["Clima",6,[12,5,33,50],50,"Avanços na regulamentação do mercado de carbono e em metas de restauração."],
+  ["Agrotóxicos",5,[42,18,40,0],40,"Novas formas de aplicação chegam sem regras de distância mínima de casas e rios."],
+  ["Unidades de conservação",5,[0,0,20,80],60,"A criação de unidades estaduais é a principal agenda positiva do período."],
+  ["Povos e comunidades",4,[35,15,25,25],75,"A falta de consulta prévia é o ponto crítico mais citado nos pareceres."],
+  ["Fauna",3,[23,10,33,34],33,"Pouca atividade legislativa; temas pontuais de pesca e caça."],
+  ["Saneamento",3,[0,0,67,33],33,"Mudanças de prazo nas metas de universalização."],
+];
+const pano={tab:"casas",base:"all",tabela:false,bio:"Amazônia",area:null};
+function panoCasas(){
+  const get=a=>pano.base==="ap"?{n:a.ap.n,p:a.ap.p}:{n:a.n,p:a.p};
+  const ufs=Object.keys(ATUACAO).filter(k=>UF_NOME[k]).sort((x,y)=>ATUACAO[y].n-ATUACAO[x].n);
+  const fed=["BR","Câmara","Senado","Presidência"];
+  if(pano.tabela){
+    const tr=k=>{ const a=ATUACAO[k], g=get(a); return `<tr><td>${flag(UF_NOME[k]?k:"BR")} ${a.nome||UF_NOME[k]}</td><td class="r">${g.n}</td><td class="r">${g.p[0]}%</td><td class="r">${g.p[1]}%</td><td class="r">${g.p[2]}%</td><td class="r">${g.p[3]}%</td></tr>`; };
+    return `<div class="tw"><table class="ptable"><thead><tr><th>Casa ou estado</th><th class="r">Pareceres</th><th class="r">Maléfico</th><th class="r">Indireto</th><th class="r">Neutro</th><th class="r">Benéfico</th></tr></thead><tbody>${[...fed,...ufs].map(tr).join("")}</tbody></table></div>`;
+  }
+  const row=k=>{ const a=ATUACAO[k], g=get(a), uf=!!UF_NOME[k];
+    return `<a class="prow" href="#${uf?"estaduais":"federais"}" data-pgo="${k}"><div class="nm">${flag(uf?k:"BR","md")}<div><b>${a.nome||UF_NOME[k]}</b><small>${g.n} pareceres${a.sub?" · "+a.sub:""}</small></div></div>${sbar(g.p,g.n)}${tendencia({n:g.n,p:g.p})}</a>`; };
+  return `<div class="seg" role="group" aria-label="Base" style="margin-bottom:8px"><button data-pbase="all" aria-pressed="${pano.base==="all"}">Tudo que tramitou</button><button data-pbase="ap" aria-pressed="${pano.base==="ap"}">Só o que foi aprovado</button></div>
+    <div class="prows"><div class="pgroup">União</div>${fed.map(row).join("")}<div class="pgroup">Estados monitorados</div>${ufs.map(row).join("")}</div>`;
+}
+function panoBiomas(){
+  if(pano.tabela) return `<div class="tw"><table class="ptable"><thead><tr><th>Bioma</th><th class="r">Propostas</th><th class="r">Pareceres</th><th class="r">Maléfico</th><th class="r">Indireto</th><th class="r">Neutro</th><th class="r">Benéfico</th><th class="r">Alto impacto</th></tr></thead><tbody>${BIOMAS.map(b=>`<tr><td>${b.nome}</td><td class="r">${b.prop}</td><td class="r">${b.n}</td><td class="r">${b.p[0]}%</td><td class="r">${b.p[1]}%</td><td class="r">${b.p[2]}%</td><td class="r">${b.p[3]}%</td><td class="r">${b.alto}%</td></tr>`).join("")}</tbody></table></div>`;
+  const b=BIOMAS.find(x=>x.nome===pano.bio)||BIOMAS[0];
+  const leis=LEIS.filter(l=>(LEI_BIOMA[l.id]||[]).includes(b.nome));
+  return `<div class="bgrid">${BIOMAS.map(x=>`<button class="bcard" data-bio="${x.nome}" aria-pressed="${x.nome===b.nome}"><h3>${x.nome}</h3><small>${x.n} pareceres · ${x.prop} propostas</small>${sbar(x.p,x.n,true)}<div class="fx"><span>Alto impacto ${x.alto}%</span>${x.n<AMOSTRA_MIN?`<span>amostra pequena</span>`:`<span>${x.temas[0]}</span>`}</div></button>`).join("")}</div>
+    <div class="bdetail" id="bdetail"><div class="atu-h"><div><span class="sub-h">Bioma</span><h3>${b.nome}</h3><small style="color:var(--soft)">${b.n} pareceres sobre ${b.prop} propostas · alto impacto em ${b.alto}%</small></div>${tendencia(b)}</div>
+      ${sbar(b.p,b.n)}${plegend()}
+      <div class="qual"><div class="q-neg"><b>Principais pressões</b><ul>${b.neg.map(x=>`<li>${x}</li>`).join("")||"<li>Nenhuma no período</li>"}</ul></div><div class="q-pos"><b>Principais avanços</b><ul>${b.pos.map(x=>`<li>${x}</li>`).join("")||"<li>Nenhum no período</li>"}</ul></div></div>
+      <div class="themes">Temas mais frequentes: ${b.temas.map(t=>`<span class="t">${t}</span>`).join("")}</div>
+      ${leis.length?`<div class="minilist"><span class="sub-h">Leis neste bioma</span>${leis.map(l=>`<a class="minilaw" href="#${l.id}"><b>${l.titulo}</b><div class="row">${placeTag(l.local)}${stTag(l.status)}${carTag(l.car)}<span class="n">${l.num}</span></div></a>`).join("")}</div>`:""}
+    </div>`;
+}
+function panoAreas(){
+  if(pano.tabela) return `<div class="tw"><table class="ptable"><thead><tr><th>Área</th><th class="r">Pareceres</th><th class="r">Maléfico</th><th class="r">Indireto</th><th class="r">Neutro</th><th class="r">Benéfico</th><th class="r">Alto impacto</th></tr></thead><tbody>${AREAS.map(a=>`<tr><td>${a[0]}</td><td class="r">${a[1]}</td><td class="r">${a[2][0]}%</td><td class="r">${a[2][1]}%</td><td class="r">${a[2][2]}%</td><td class="r">${a[2][3]}%</td><td class="r">${a[3]}%</td></tr>`).join("")}</tbody></table></div>`;
+  const max=Math.max(...AREAS.map(a=>a[1]));
+  return `<div class="arows">${AREAS.map(a=>`<button class="arow" data-area="${a[0]}" aria-expanded="${pano.area===a[0]}"><b>${a[0]}</b><span class="mag"><span class="tr"><i style="width:${a[1]/max*100}%"></i></span><span>${a[1]}</span></span>${sbar(a[2],a[1])}<span class="chev">›</span></button>${pano.area===a[0]?`<p class="anote"><b>O que temos visto:</b> ${a[4]} Alto impacto em ${a[3]}% dos pareceres.</p>`:""}`).join("")}</div>`;
+}
+function panoBody(){ return pano.tab==="casas"?panoCasas():pano.tab==="biomas"?panoBiomas():panoAreas(); }
+function panorama(){
+  const tabs=[["casas","Casas e estados"],["biomas","Biomas"],["areas","Áreas"]];
+  const desc={casas:"O padrão de atuação de cada casa da União e de cada estado, pelo caráter das propostas analisadas.",biomas:"Quantas propostas atingem cada bioma, o tipo de mudança que trazem e o que mais pesa em cada um.",areas:"As áreas do meio ambiente com mais pareceres e o caráter das propostas em cada uma. Toque numa área para ver a leitura qualitativa."};
+  return `<div class="wrap" style="max-width:1040px">
+    <header class="pg-head"><h1>Panorama</h1><p>Os números por trás dos pareceres: quem propõe o quê, em quais biomas e em quais áreas do meio ambiente.</p></header>
+    <div class="kpis"><div class="kpi"><b>101</b><span>pareceres publicados</span></div><div class="kpi"><b>128</b><span>propostas monitoradas</span></div><div class="kpi"><b>8</b><span>estados + União</span></div><div class="kpi"><b>7</b><span>biomas</span></div></div>
+    <div class="ptabs"><div class="seg" role="tablist">${tabs.map(t=>`<button role="tab" data-ptab="${t[0]}" aria-pressed="${pano.tab===t[0]}">${t[1]}</button>`).join("")}</div>
+      <button class="btn-o" data-act="ptabela" aria-pressed="${pano.tabela}">${pano.tabela?"Ver como gráfico":"Ver como tabela"}</button></div>
+    <p style="color:var(--gray);margin:14px 0 8px" id="pdesc">${desc[pano.tab]}</p>
+    ${pano.tabela?"":plegend()}<p class="method" style="margin-top:6px">${DEF_IND}</p>
+    <div id="pbody" style="margin-top:12px">${panoBody()}</div>
+    <p class="method" style="margin-top:18px">Método: cada parecer classifica a proposta como maléfica (enfraquece diretamente), que enfraquece indiretamente, neutra ou benéfica à proteção ambiental e como de alto, médio ou baixo impacto. Os percentuais somam os pareceres de cada grupo; um parecer pode envolver mais de um bioma ou área. Grupos com menos de ${AMOSTRA_MIN} pareceres aparecem como "amostra pequena". Dados fictícios no protótipo.</p>
+  </div>`;
+}
 
 /* ---------- compartilhar ---------- */
 const NET_ICO={
@@ -1306,8 +1644,9 @@ function render(keepScroll){
   const pl=r.startsWith("parecer-")?LEIS.find(x=>"parecer-"+x.id===r):null;
   const ar=r.startsWith("artigo-")?ARTIGOS.find(x=>"artigo-"+x.id===r):null;
   const y=window.scrollY;
-  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? inscricao() : r==="timeline" ? timeline() : r==="opiniao" ? opiniao() : r==="estaduais" ? estaduais() : r==="federais" ? federais() : r==="artigos" ? artigos() : ar ? artigo(ar) : home();
-  $("#head").classList.toggle("wide", !!pl || r==="inscricao" || r==="estaduais");
+  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? (isNarrow()?mobileSignup(true):inscricao()) : r==="inscricao-celular" ? inscricaoCelular() : r==="panorama" ? panorama() : r==="timeline" ? timeline() : r==="opiniao" ? opiniao() : r==="estaduais" ? estaduais() : r==="federais" ? federais() : r==="artigos" ? artigos() : ar ? artigo(ar) : home();
+  $("#head").classList.toggle("wide", !!pl || ["inscricao","inscricao-celular","estaduais","panorama"].includes(r));
+  document.body.classList.toggle("focus", (r==="inscricao"||r==="inscricao-celular") && isNarrow());
   state.menu=false; renderHead();
   window.scrollTo(0, keepScroll?y:0);
   const sf=$("#sf");
@@ -1329,7 +1668,14 @@ document.addEventListener("click",ev=>{
   if(tp){ state.topic=tp.dataset.topic; document.querySelectorAll("[data-topic]").forEach(b=>b.setAttribute("aria-pressed",b===tp)); refreshList(); return; }
   const ch=ev.target.closest("[data-status]"); if(ch){ state.status=ch.dataset.status; document.querySelectorAll("[data-status]").forEach(b=>b.setAttribute("aria-pressed",b===ch)); refreshList(); return; }
   const j=ev.target.closest("[data-jump]"); if(j){ ev.preventDefault(); document.getElementById(j.dataset.jump).scrollIntoView({behavior:"smooth"}); return; }
-  const pf=ev.target.closest("[data-perfil]"); if(pf){ insc.perfil=pf.dataset.perfil; document.querySelectorAll("[data-perfil]").forEach(b=>b.setAttribute("aria-pressed",b===pf)); return; }
+  const pf=ev.target.closest("[data-perfil]"); if(pf){ insc.perfil=pf.dataset.perfil; document.querySelectorAll("[data-perfil]").forEach(b=>b.setAttribute("aria-checked",b===pf)); const c=$(".mcount"); if(c) c.textContent=(insc.i+1)+"/"+stepsInsc().length; const pr=$(".prog"); if(pr){ render(true); } return; }
+  const vt=ev.target.closest("[data-vtipo]"); if(vt){ insc.imp.tipo=vt.dataset.vtipo; document.querySelectorAll("[data-vtipo]").forEach(b=>b.setAttribute("aria-pressed",b===vt)); return; }
+  const bm=ev.target.closest("[data-bioma]"); if(bm){ const t=bm.dataset.bioma; insc.biomas=insc.biomas.includes(t)?insc.biomas.filter(x=>x!==t):[...insc.biomas,t]; bm.setAttribute("aria-pressed",insc.biomas.includes(t)); return; }
+  const pt=ev.target.closest("[data-ptab]"); if(pt){ pano.tab=pt.dataset.ptab; render(true); return; }
+  const pb=ev.target.closest("[data-pbase]"); if(pb){ pano.base=pb.dataset.pbase; $("#pbody").innerHTML=panoBody(); return; }
+  const bi=ev.target.closest("[data-bio]"); if(bi){ pano.bio=bi.dataset.bio; $("#pbody").innerHTML=panoBody(); $("#bdetail").scrollIntoView({behavior:"smooth",block:"nearest"}); return; }
+  const ar2=ev.target.closest("[data-area]"); if(ar2){ pano.area=pano.area===ar2.dataset.area?null:ar2.dataset.area; $("#pbody").innerHTML=panoBody(); return; }
+  const pg=ev.target.closest("[data-pgo]"); if(pg){ const k=pg.dataset.pgo; if(UF_NOME[k]) ufSel.uf=k; else { fedSel.casa=k==="BR"?"Todas":k; fedSel.etapa=null; } return; }
   const tm=ev.target.closest("[data-tema]"); if(tm){ const t=tm.dataset.tema; insc.temas=insc.temas.includes(t)?insc.temas.filter(x=>x!==t):[...insc.temas,t]; tm.setAttribute("aria-pressed",insc.temas.includes(t)); return; }
   const sw=ev.target.closest("[data-sw]"); if(sw){ const k=sw.dataset.sw; insc[k]=!insc[k]; sw.setAttribute("aria-checked",insc[k]); if(sw.closest(".menu")) toast(insc[k]?"Aviso ativado":"Aviso desativado"); return; }
   const lc=ev.target.closest("[data-law]"); if(lc){ const b=BASE[+lc.dataset.law]; document.querySelectorAll("[data-law]").forEach(x=>x.setAttribute("aria-expanded",x===lc)); $("#lawnote").innerHTML=`<b>${b[0]}</b> · ${b[2]}`; return; }
@@ -1350,19 +1696,24 @@ document.addEventListener("click",ev=>{
   const act=a.dataset.act;
   if(act==="inscrever" && !state.inscrito) abrirInscricao();
   if(act==="menu"){ state.menu=!state.menu; renderHead(); return; }
-  if(act==="sair"){ state.inscrito=false; state.menu=false; insc.ok=false; insc.passo=1; toast("Você saiu da sua conta"); render(true); return; }
+  if(act==="sair"){ state.inscrito=false; state.menu=false; resetInsc(); insc.press=null; toast("Você saiu da sua conta"); render(true); return; }
   if(act==="entrar"){ abrirEntrar(); return; }
   if(act==="ver-seguindo"){ ev.preventDefault(); state.tlFilter="seg"; state.menu=false; if(location.hash==="#timeline") render(); else go("timeline"); return; }
   if(act==="copiar-share"){ copiar($("#share-txt"), state.share.tab==="citacao"?"Citação copiada":"Texto copiado"); return; }
   if(act==="baixar-card"){ toast("Imagem do card gerada (simulação)"); return; }
   if(act==="aviso-uf"){ toast("Pronto! Você receberá as novidades de "+UF_NOME[a.dataset.uf]); return; }
-  if(act==="pagina"){ if(state.inscrito){ toast("Você já está inscrito"); } else { insc.ok=false; insc.passo=1; go("inscricao"); } }
-  if(act==="next"){ saveStep();
-    if(insc.passo===1 && (!insc.nome || !/^\S+@\S+\.\S+$/.test(insc.email))){ toast("Preencha seu nome e um e-mail válido"); return; }
-    if(insc.passo===2 && !insc.perfil){ toast("Escolha o que melhor descreve você"); return; }
-    insc.passo++; render(true); }
-  if(act==="prev"){ saveStep(); insc.passo--; render(true); }
-  if(act==="finish"){ if(!$("#i-lgpd").checked){ toast("Marque a concordância com a Política de Privacidade"); return; } insc.ok=true; state.inscrito=true; render(true); }
+  if(act==="pagina"){ if(state.inscrito){ toast("Você já está inscrito"); } else { resetInsc(); go("inscricao"); } }
+  if(act==="next"){ saveStep(); const er=validaPasso(); if(er){ toast(er); return; } insc.i++; render(true); topoInsc(); }
+  if(act==="prev"){ saveStep(); insc.i=Math.max(0,insc.i-1); render(true); topoInsc(); }
+  if(act==="finish"){ saveStep(); if(!$("#i-lgpd").checked){ toast("Marque a concordância com a Política de Privacidade"); return; } insc.ok=true; state.inscrito=true; if(insc.perfil==="Jornalista") insc.press="analise"; render(true); topoInsc(); }
+  if(act==="m-close"){ go(isNarrow()?"home":"inscricao-celular"===location.hash.slice(1)?"home":"home"); return; }
+  if(act==="m-reset"){ resetInsc(); if(state.inscrito){ state.inscrito=false; insc.press=null; } render(true); return; }
+  if(act==="m-jorn"||act==="m-jorn-desk"){ if(act==="m-jorn-desk") ev.preventDefault(); state.inscrito=false; insc.ok=false; insc.press=null; insc.nome=insc.nome||"Ana Repórter"; insc.email=insc.email||"ana@exemplo.com"; insc.perfil="Jornalista"; insc.i=2; if(act==="m-jorn-desk") go("inscricao"); else render(true); topoInsc(); return; }
+  if(act==="aprovar-imprensa"){ insc.press="verificado"; toast("Credenciamento aprovado · selo de imprensa ativado"); render(true); return; }
+  if(act==="imp-entrevista"){ toast("Pedido enviado ao autor (simulação)"); return; }
+  if(act==="imp-graficos"){ toast("Gráficos em PNG gerados (simulação)"); return; }
+  if(act==="imp-dados"){ toast("Arquivo CSV gerado (simulação)"); return; }
+  if(act==="ptabela"){ pano.tabela=!pano.tabela; render(true); return; }
   if(act==="fechar" && (ev.target===a || a.tagName==="BUTTON")) $("#layer").innerHTML="";
   if(act==="lei"){ state.leiAberta=!state.leiAberta; $("#mais").classList.toggle("open",state.leiAberta); a.textContent=state.leiAberta?"Mostrar menos":"Ler texto completo"; }
   if(act==="part"){ const c=$("#part"); c.classList.toggle("open"); a.textContent=c.classList.contains("open")?"Esconder votos por partido":"Ver votos por partido"; }
@@ -1377,6 +1728,9 @@ function hideTip(){ const t=$("#tip"); if(t) t.hidden=true; }
 document.addEventListener("mouseover",e=>{ const r=e.target.closest(".drow"); r?showTip(r):hideTip(); });
 document.addEventListener("focusin",e=>{ const r=e.target.closest(".drow"); r?showTip(r):hideTip(); });
 document.addEventListener("click",e=>{ const r=e.target.closest(".drow"); if(r) showTip(r); });
+function gtip(el){ let t=$("#gtip"); if(!t){ t=document.createElement("div"); t.id="gtip"; t.className="gtip"; document.body.appendChild(t); } t.textContent=el.dataset.t; const r=el.getBoundingClientRect(); t.hidden=false; t.style.left=Math.max(8,Math.min(innerWidth-t.offsetWidth-8, r.left+r.width/2-t.offsetWidth/2))+"px"; t.style.top=(r.top-t.offsetHeight-6)+"px"; }
+document.addEventListener("mouseover",e=>{ const el=e.target.closest("[data-t]"); const t=$("#gtip"); if(el) gtip(el); else if(t) t.hidden=true; });
+window.addEventListener("scroll",()=>{ const t=$("#gtip"); if(t) t.hidden=true; },{passive:true});
 document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ $("#layer").innerHTML=""; if(state.menu){ state.menu=false; renderHead(); } } });
 document.addEventListener("change",e=>{ if(e.target.id==="m-uf"){ insc.uf=e.target.value; $("#m-flag").innerHTML=flag(insc.uf); toast("Estado atualizado para "+UF_NOME[insc.uf]); }
   if(e.target.id==="i-uf"){ insc.uf=e.target.value; $("#i-flag").innerHTML=flag(insc.uf,"md"); } });

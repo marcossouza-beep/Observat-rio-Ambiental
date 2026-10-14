@@ -36,6 +36,19 @@ A coexistência, na mesma página, de:
 | Cadastro gratuito | Nome, e-mail, perfil, UF + consentimento | **Materiais em PDF**: Nota Técnica e Quadro comparativo (lei vigente × proposta); alertas de tramitação; newsletter (nacional ou regional) |
 | Premium (futuro) | Pago | A definir com base nas métricas |
 
+## Classificação dos pareceres
+
+| Campo | Valores |
+|---|---|
+| Impacto | Alto · Médio · Baixo |
+| Caráter | **Maléfico** (enfraquece diretamente) · **Enfraquece indiretamente** · Neutro · **Benéfico** (fortalece a proteção) |
+
+"Enfraquece indiretamente": a proposta não muda a proteção de forma direta, mas abre caminho para o dano (corta fiscalização ou orçamento, amplia prazos, cria exceções que dependem de regulamento).
+
+## Públicos com recursos próprios
+
+- **Imprensa credenciada:** jornalistas verificados (veículo, função, comprovação) recebem pareceres sob embargo, contato com o autor, gráficos e dados.
+
 ## Princípios de produto
 
 - **A pauta de votação define a pauta editorial.** O radar mostra o que entra em pauta, ganha urgência, recebe substitutivo, é votado, sancionado ou vetado.

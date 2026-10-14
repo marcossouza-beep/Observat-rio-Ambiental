@@ -151,11 +151,44 @@ Barra de progresso de leitura, categoria, título, linha fina, autor; texto com 
 | Esta semana no Congresso | Votações dos próximos dias com data e órgão |
 | Lista | Casa, status, impacto, caráter, número e etapa |
 
+## A17. Inscrição no celular
+
+Fluxo próprio para telas pequenas (no computador, a página `#inscricao-celular` mostra o mesmo fluxo dentro de uma moldura de celular).
+
+| Elemento | Decisão |
+|---|---|
+| Topo | Voltar/fechar, barra de progresso e contador (ex.: 3/5) |
+| Passos | Você → Perfil → **Imprensa** (só jornalistas) → Interesses (estado com bandeira, temas, **biomas**) → Avisos |
+| Botão principal | Fixo embaixo, ao alcance do polegar |
+| Benefícios | Carrossel horizontal no primeiro passo |
+| Perfil | Cartões grandes de toque (escolha única) |
+| Campos | 16px (sem zoom), teclado certo por tipo (e-mail, URL), preenchimento automático |
+| Final | "Confira seu e-mail"; para jornalistas, cartão "Credenciamento em análise" |
+
+## A18. Credenciamento de imprensa
+
+Passo extra quando o perfil é Jornalista: o que o credenciamento libera; veículo*, tipo de veículo, função, link de comprovação*, e-mail profissional, registro MTb, autorização de verificação*. Depois: selo no avatar, status no menu ("Em análise" / "✓ Verificada") e bloco **Para a imprensa** no parecer (pedir entrevista, gráficos PNG, dados CSV). Visitantes veem "É jornalista? Faça o credenciamento".
+
+## A19. Padrão de atuação (em Leis federais e no painel de cada estado)
+
+Barras 100% com Maléfico · Enfraquece indiretamente · Neutro · Benéfico, em duas linhas (tudo que tramitou / só o que foi aprovado), tendência (tende a proteger / equilibrada / tende a enfraquecer / amostra pequena), temas mais frequentes e nota de método. Em Leis federais acompanha o filtro de casa (Todas = União).
+
+## A20. Panorama
+
+| Aba | Conteúdo |
+|---|---|
+| Casas e estados | Ranking com bandeira, nº de pareceres, barra de caráter e tendência; alterna "tudo que tramitou / só aprovadas"; tocar leva à página da casa ou do estado |
+| Biomas | Cartão por bioma (pareceres, propostas, barra, % alto impacto); detalhe com principais pressões e avanços, temas e leis do bioma |
+| Áreas | Linha por área com quantidade (barra) e caráter (barra 100%); tocar abre "O que temos visto" |
+| Todas | Legenda única, definição de "enfraquece indiretamente", "Ver como tabela", método e amostra mínima |
+
 ---
 
 # Parte B — Painel administrativo (etapa posterior)
 
-Menu lateral: **Radar · Triagem · Proposições · Pareceres · Calendário · Palavras-chave · Fontes · Assinantes · Métricas · Configurações**.
+Menu lateral: **Radar · Triagem · Proposições · Pareceres · Calendário · Palavras-chave · Fontes · Assinantes · Credenciamento · Métricas · Configurações**.
+
+> **Credenciamento (imprensa):** fila de pedidos com veículo, função, link de comprovação e e-mail; ações Aprovar / Pedir mais informações / Recusar (com motivo); histórico de quem verificou.
 
 ## B1. Radar (tela inicial) **[F2]**
 
