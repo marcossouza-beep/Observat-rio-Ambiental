@@ -75,7 +75,17 @@ Proposições seguidas, temas e regiões assinados, preferências de e-mail, his
 
 ## A6. Página de parlamentar **[F3]**
 
-Foto, partido, UF, casa; proposições ambientais de autoria; relatorias; votações em matérias ambientais; botão seguir.
+Acesso pelos cartões de autor e relator, pelos autores de emendas e pela lista "Parlamentares" em Leis federais.
+
+| Bloco | Conteúdo |
+|---|---|
+| Cabeçalho | Retrato (ou iniciais) com bandeira do estado, cargo e casa, nome, partido, estado, mandato; botão Seguir |
+| Em números | Propostas ambientais de autoria, relatorias, emendas, presença em votações ambientais |
+| Comissões | Comissões em que atua (titular, suplente, presidente) |
+| Como votou | Resumo ("em N votações sobre propostas com parecer, votou no sentido da proteção em X"), barra contra / ausente / a favor, lista de votos com caráter da proposta, voto (Sim, Não, Ausente) e sentido |
+| Autorias | Padrão das propostas de autoria (barra de caráter e tendência) e lista |
+| Relatorias e Emendas | Listas com link para a lei |
+| Método | Voto "Sim" em proposta benéfica, ou "Não" em proposta maléfica ou que enfraquece indiretamente, conta como a favor da proteção; propostas neutras ficam fora; mostra o sentido dos votos, não avalia a pessoa |
 
 ## A7. Página de tema e de região **[F1 / F5]**
 
@@ -263,6 +273,12 @@ Por parecer: visitas, leitura até o fim, cliques em "Liberar materiais", **taxa
 Usuários e papéis (autor, revisor, administrador), modelo padrão do parecer, textos legais, e-mails automáticos, integrações.
 
 ---
+
+## Padrões visuais
+
+- **Setas:** ícones desenhados (traço arredondado), não caracteres de texto. Seta inline após o texto do link; seta em círculo para linhas clicáveis; seta para a esquerda em "voltar". Movem levemente ao passar o mouse.
+- **Gráficos de caráter:** barras finas (10px) com percentuais em texto discreto embaixo; tendência como ponto colorido + texto; números de destaque sem caixa, só com linha superior.
+- **Placar de votação (sim/não):** azul e roxo, para não sugerir que "sim" é bom ou ruim; verde e laranja ficam reservados para o caráter (proteção).
 
 ## Créditos de recursos visuais
 
