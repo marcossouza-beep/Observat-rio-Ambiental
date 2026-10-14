@@ -53,6 +53,8 @@
 | Material completo | **Nota Técnica** e **Quadro comparativo** (lei vigente × proposta) em PDF | **Inscritos** | F1 |
 | Acompanhar | Botão "Seguir esta proposição" (alertas por e-mail) | Cadastro | F3 |
 
+**Lei ainda sem parecer:** o bloco do parecer vira "Parecer em preparação" (publicado nos próximos dias, na mesma página), com "O que já se sabe" (frase automática com casa, autoria, etapa, votações e emendas) e o botão "Avise-me quando o parecer sair". O bloco Material não aparece até o parecer sair.
+
 **Comportamento para o visitante:** lê a lei e o parecer inteiros; os materiais aparecem com cadeado e o botão **"Liberar materiais"** abre a inscrição.
 
 ## A4. Cadastro (modal e página)

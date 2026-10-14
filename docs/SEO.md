@@ -6,7 +6,7 @@
 ## 1. Princípios
 
 1. **Uma página, uma intenção de busca.** A página da lei responde "o que é e em que pé está"; o parecer responde "o que muda e se é bom ou ruim"; a página do parlamentar responde "o que essa pessoa propõe e como vota".
-2. **Conteúdo próprio primeiro.** O texto oficial da lei existe em outros sites; o que nos diferencia é o parecer. Só indexamos páginas com conteúdo próprio suficiente.
+2. **Conteúdo próprio primeiro.** O texto oficial da lei existe em outros sites; o que nos diferencia é o parecer. Páginas de leis ainda sem parecer são indexadas com conteúdo próprio organizado (situação, autoria, votações, links) e o aviso de que o parecer sai em breve.
 3. **Autoria visível (E-E-A-T).** Tema jurídico pede autor identificado, com título, foto e presença profissional. Cada parecer tem assinatura discreta no topo (foto, título, redes) e o nome leva à página do autor, que concentra biografia e credenciais.
 4. **Resposta logo no início.** O resumo em linguagem simples e o veredito ficam no topo; é o trecho que o Google tende a mostrar.
 
@@ -65,7 +65,7 @@ O editor mostra uma **prévia do resultado no Google** (título, endereço, desc
 |---|---|---|
 | Parecer | Sim | Sempre |
 | Lei com parecer | Sim | Página distinta: texto, tramitação, atores |
-| Lei sem parecer | **Não** (`noindex, follow`) | Até ter parecer; evita conteúdo duplicado do site oficial |
+| Lei sem parecer | **Sim** | Com aviso "Parecer em preparação" e o bloco "O que já se sabe" (frase montada a partir dos dados da tramitação: casa, autoria, etapa, votações, emendas), além de autores, tramitação e links internos. Captura a busca desde que o projeto aparece; o parecer entra na mesma página e no mesmo endereço |
 | Parlamentar federal | Sim | Se tiver ao menos uma autoria, relatoria ou voto em proposta monitorada |
 | Parlamentar estadual | Sim | Só com autoria ou relatoria monitorada; os demais não têm página |
 | Tema, bioma, estado | Sim | Com texto de abertura escrito pelo autor |
@@ -130,3 +130,12 @@ Exemplo do parecer:
 - Google Search Console e Bing Webmaster Tools desde o lançamento.
 - Painel mensal: páginas indexadas × enviadas, impressões, cliques, CTR e posição por tipo de página; consultas que mais trazem visitas; páginas com erro.
 - Revisão trimestral dos títulos e descrições dos pareceres com CTR baixo.
+
+## 8. Leis indexadas antes do parecer
+
+- **Título:** `{Número}: o que é, situação e votação — parecer em breve | Nome do Site`; quando o parecer sai, o título muda para o padrão do parecer (mesmo endereço).
+- **Descrição:** a frase "O que já se sabe" resumida + "Parecer técnico em preparação".
+- **Na página:** aviso "Parecer em preparação", bloco "O que já se sabe" e botão "Avise-me quando o parecer sair" (transforma a visita orgânica em inscrito).
+- **Ao publicar o parecer:** `dateModified` e `lastmod` atualizados, sitemap reenviado e aviso aos buscadores; inscritos que pediram aviso recebem e-mail.
+- **Cuidado editorial:** o aviso promete o parecer "nos próximos dias". Ele aparece para as propostas ativadas na triagem (fila de pareceres). Propostas só acompanhadas, sem parecer previsto, mostram "Acompanhando: siga para saber quando houver novidade", para não prometer o que não virá.
+- **Acompanhar no Search Console:** páginas com impressões altas e ainda sem parecer indicam onde há demanda; servem para priorizar a fila.

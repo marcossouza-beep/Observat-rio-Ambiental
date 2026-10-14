@@ -122,6 +122,15 @@ a:hover .go-c{background:var(--green);color:#fff}
 .b-law{background:var(--cream);border:1px solid #F3ECCB}
 .b-par{background:var(--green-50)}
 .b-mat{background:var(--rose)}
+.b-pend{background:var(--white);border:1.5px dashed var(--green-100)}
+.pend-h{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:start}
+.pend-h p{color:var(--gray);margin-top:4px}
+.pend-ico{width:44px;height:44px;border-radius:14px;background:var(--green-50);color:var(--green-dk);display:grid;place-items:center}
+.pend-ico svg{width:22px;height:22px}
+.pend-facts{background:var(--bg);border-radius:14px;padding:14px 16px;display:grid;gap:6px}
+.pend-facts p{font-size:.95rem}
+.pend-facts small{color:var(--soft);font-size:.8rem}
+.tg-soon{background:var(--green-50);color:var(--green-dk)}
 .block h2{font-size:1.3rem;font-weight:700;display:flex;align-items:center;gap:10px}
 .block h2 small{font-size:.8rem;font-weight:600;color:var(--soft)}
 .lawtext{display:grid;gap:10px;color:#3A443E;font-size:.97rem}
@@ -1065,7 +1074,7 @@ function listHTML(){
   return ls.slice(0,6).map((l,i)=>`<a class="law" href="#${l.id}" style="animation-delay:${i*40}ms">
     <div class="top">${placeTag(l.local)}${stTag(l.status)}</div>
     <h3>${l.titulo}</h3><p>${l.resumo}</p>
-    <div class="go"><span class="num">${l.num}</span><span class="arrow">${l.parecer?"Ler parecer":"Ver lei"}${ARR}</span></div></a>`).join("");
+    <div class="go"><span class="num">${l.num}</span><span class="arrow">${l.parecer?"Ler parecer":"Parecer em breve"}${ARR}</span></div></a>`).join("");
 }
 function home(){
   return `<div class="wrap">
@@ -1091,6 +1100,54 @@ function home(){
     ${state.inscrito?"":`<section class="cta"><div style="display:grid;gap:4px"><h2>Notas técnicas e quadros comparativos</h2><p>Grátis para inscritos, com aviso quando uma lei andar.</p></div><button class="pill-btn" data-act="pagina">Se inscreva grátis</button></section>`}
   </div>`;
 }
+function parBlockHTML(l){ const ins=state.inscrito; return `    <section class="block b-par" id="s-par">
+      <h2>Parecer técnico</h2>
+      ${byAuthor()}
+      <div class="quick">
+        <div><b>O que muda</b><span>${l.resumo}</span></div>
+        <div><b>Quem é afetado</b><span>Comunidades locais, produtores e órgãos ambientais.</span></div>
+        <div><b>Próximo passo</b><span>${l.status==="Aprovada"?"Regulamentação pelo Executivo.":"Votação em plenário nas próximas semanas."}</span></div>
+      </div>
+      <div class="par">
+        <p>O projeto acerta ao vincular o uso dos recursos a um plano de manejo, mas não define prazo para elaborá-lo. Sem prazo, as regras podem ficar anos no papel.</p>
+        <p>O conselho previsto no art. 2º não tem composição mínima. Recomendamos garantir participação das comunidades e de instituições de pesquisa.</p>
+        <p><b>Conclusão:</b> ${l.imp.toLowerCase()}, com efeito ${l.car.toLowerCase()} condicionado à regulamentação.</p>
+      </div>
+      <div class="to-report"><span>Impactos por dimensão, pontos de atenção, base legal e recomendações.</span><a class="pill-btn" href="#parecer-${l.id}">Ler parecer completo${ARR}</a></div>
+    </section>
+
+`; }
+function matBlockHTML(l){ const ins=state.inscrito; return `    <section class="block b-mat" id="s-mat">
+      <h2>Material completo</h2>
+      <div class="files">
+        <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota Técnica</b><span>Direito Ambiental</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
+        <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>Antes × depois</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
+      </div>
+      ${ins?"":`<div class="unlock"><button class="pill-btn" data-act="inscrever">Liberar materiais</button><span>Grátis para inscritos.</span></div>`}
+    </section>
+`; }
+function factsSentence(l){
+  const a=atores(l), ne=a.emendas.length;
+  if(/^Decreto/.test(l.num)) return `O ${l.num} foi editado pela Presidência da República e já está em vigor. Decretos não passam por votação no Congresso.`;
+  const casa = l.esfera==="federal" ? "no Congresso Nacional" : "na Assembleia Legislativa "+deUF(UF_NOME_R[l.local]);
+  const inicio = l.status==="Aprovada" ? `A ${l.num} foi aprovada ${casa} e sancionada` : `O ${l.num} tramita ${casa}`;
+  const vot = a.orgao ? ` Na última votação, em ${a.data}, ${a.orgao} aprovou o texto por ${a.sim} a ${a.nao}.` : (l.status==="Aprovada"?"":" Ainda não houve votação.");
+  const em = ne ? ` ${ne===1?"Foi apresentada 1 emenda.":"Foram apresentadas "+ne+" emendas."}` : (l.status==="Aprovada"?"":" Nenhuma emenda foi apresentada até agora.");
+  const ETAPA_TXT={"Apresentado":"aguarda distribuição às comissões","Comissões":"está em análise nas comissões","Plenário":"está pronto para votação em plenário","Outra casa":"já passou pela casa de origem e está em análise na outra casa"};
+  const sit = l.status!=="Aprovada" ? ` Hoje ${ETAPA_TXT[l.etapa]||"está em tramitação"}.` : "";
+  const vf = (typeof VOTADO_EM!=="undefined" && VOTADO_EM[l.id]) ? VOTADO_EM[l.id].map(v=>v[1]).join(" e ") : "";
+  const vot2 = a.orgao ? vot : vf ? ` Já houve votação em: ${vf}.` : vot;
+  return `${inicio}; a autoria é de ${a.autor[0]} (${a.autor[1]}).${sit}${vot2}${em}`;
+}
+function pendingHTML(l){
+  const seg=state.seguindo.includes(l.id)&&state.inscrito;
+  return `<section class="block b-pend" id="s-par">
+      <div class="pend-h"><span class="pend-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div><h2>Parecer em preparação</h2><p>O parecer técnico sobre ${l.num} está sendo escrito e será publicado nos próximos dias, nesta mesma página.</p></div></div>
+      <div class="pend-facts"><span class="sub-h">O que já se sabe</span><p>${factsSentence(l)}</p><small>Informações da tramitação oficial, atualizadas automaticamente.</small></div>
+      <div class="unlock"><button class="pill-btn" data-seguir="${l.id}">${seg?"Você será avisado":"Avise-me quando o parecer sair"}</button><span>Grátis. Você recebe um e-mail no dia da publicação.</span></div>
+    </section>`;
+}
 function lei(l){
   const ins = state.inscrito;
   return `<div class="wrap">
@@ -1099,7 +1156,7 @@ function lei(l){
       <div class="top" style="display:flex;gap:6px;flex-wrap:wrap">${placeTag(l.local)}${stTag(l.status)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}<button class="mini share-btn" data-share="${l.id}" style="margin-left:auto">${ICO_SHARE}Compartilhar</button></div>
       <h1>${l.titulo}</h1><span class="num">${l.num}</span>
     </header>
-    <nav class="steps" aria-label="Seções"><a href="#${l.id}" data-jump="s-lei" class="on">A lei</a><a href="#${l.id}" data-jump="s-who">Quem</a><a href="#${l.id}" data-jump="s-par">Parecer</a><a href="#${l.id}" data-jump="s-mat">Material</a></nav>
+    <nav class="steps" aria-label="Seções"><a href="#${l.id}" data-jump="s-lei" class="on">A lei</a><a href="#${l.id}" data-jump="s-who">Quem</a><a href="#${l.id}" data-jump="s-par">${l.parecer?"Parecer":"Parecer em breve"}</a>${l.parecer?`<a href="#${l.id}" data-jump="s-mat">Material</a>`:""}</nav>
 
     <section class="block b-law" id="s-lei">
       <h2>A lei <small>texto oficial</small></h2>
@@ -1119,30 +1176,9 @@ function lei(l){
 
     ${quem(l)}
 
-    <section class="block b-par" id="s-par">
-      <h2>Parecer técnico</h2>
-      ${byAuthor()}
-      <div class="quick">
-        <div><b>O que muda</b><span>${l.resumo}</span></div>
-        <div><b>Quem é afetado</b><span>Comunidades locais, produtores e órgãos ambientais.</span></div>
-        <div><b>Próximo passo</b><span>${l.status==="Aprovada"?"Regulamentação pelo Executivo.":"Votação em plenário nas próximas semanas."}</span></div>
-      </div>
-      <div class="par">
-        <p>O projeto acerta ao vincular o uso dos recursos a um plano de manejo, mas não define prazo para elaborá-lo. Sem prazo, as regras podem ficar anos no papel.</p>
-        <p>O conselho previsto no art. 2º não tem composição mínima. Recomendamos garantir participação das comunidades e de instituições de pesquisa.</p>
-        <p><b>Conclusão:</b> ${l.imp.toLowerCase()}, com efeito ${l.car.toLowerCase()} condicionado à regulamentação.</p>
-      </div>
-      <div class="to-report"><span>Impactos por dimensão, pontos de atenção, base legal e recomendações.</span><a class="pill-btn" href="#parecer-${l.id}">Ler parecer completo${ARR}</a></div>
-    </section>
+    ${l.parecer?parBlockHTML(l):pendingHTML(l)}
 
-    <section class="block b-mat" id="s-mat">
-      <h2>Material completo</h2>
-      <div class="files">
-        <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota Técnica</b><span>Direito Ambiental</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
-        <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>Antes × depois</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
-      </div>
-      ${ins?"":`<div class="unlock"><button class="pill-btn" data-act="inscrever">Liberar materiais</button><span>Grátis para inscritos.</span></div>`}
-    </section>
+    ${l.parecer?matBlockHTML(l):""}
   </div>`;
 }
 function modal(){
@@ -1619,7 +1655,7 @@ function fedCards(){
   return ls.map((l,i)=>`<a class="law" href="#${l.id}" style="animation-delay:${i*40}ms">
     <div class="top">${placeTag(l.casa)}${stTag(l.status)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}</div>
     <h3>${l.titulo}</h3><p>${l.resumo}</p>
-    <div class="go"><span class="num">${l.num} · ${l.etapa}</span><span class="arrow">${l.parecer?"Ler parecer":"Ver lei"}${ARR}</span></div></a>`).join("");
+    <div class="go"><span class="num">${l.num} · ${l.etapa}</span><span class="arrow">${l.parecer?"Ler parecer":"Parecer em breve"}${ARR}</span></div></a>`).join("");
 }
 function funnelHTML(){
   const base=LEIS.filter(l=>l.esfera==="federal" && (fedSel.casa==="Todas"||l.casa===fedSel.casa));
