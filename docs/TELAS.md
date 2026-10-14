@@ -18,7 +18,7 @@
 | Busca principal | Campo único: termo, número do PL, palavra-chave, parlamentar; filtros rápidos por **casa**, **status**, **tema**, **região/UF** | F1 |
 | Em pauta esta semana | Faixa com as proposições ambientais que entram em votação nos próximos dias (data, órgão, tags) | F2 |
 | Pareceres recentes | Cards dos últimos pareceres publicados | F1 |
-| Temas | Grade de categorias (licenciamento, florestas, água, clima, mineração, agrotóxicos, fauna, UCs, saneamento, povos e comunidades) | F1 |
+| Temas | Grade de categorias (licenciamento, florestas, água, clima, mineração, agrotóxicos, **espécies exóticas**, fauna, UCs, saneamento, povos e comunidades) | F1 |
 | Regiões | Mapa ou lista das 5 regiões com contagem de proposições monitoradas | F1 (tags) / F5 (fontes estaduais) |
 | Chamada de cadastro | "Notas técnicas e quadros comparativos grátis para inscritos" | F1 |
 | Rodapé | Metodologia, política de privacidade, termos, contato | F1 |
@@ -112,7 +112,7 @@ Página de transparência, com sumário fixo e versão do método (ex.: 1.0) e d
 | 2. Como classificamos | Caráter em 4 categorias com definição e exemplo real do site ao tocar; tabela de critérios de impacto (alto, médio, baixo); regra de desempate (usa o nível mais alto e explica) |
 | 3. Indicadores | Padrão de atuação, tendência (fórmula e limites de ±15), amostra mínima (5), sentido do voto federal, biomas e áreas (contagem múltipla), estados sem votos |
 | 4. Fontes | Tabela fonte · o que usamos · frequência; vale sempre a fonte oficial |
-| 5. Uso de IA | O que a IA faz e o que não faz; todo parecer é revisado e assinado |
+| 5. Automação e IA | A automação só captura e organiza dados e textos oficiais; nunca escreve, resume, compara ou interpreta; todo parecer é escrito e assinado pelo autor |
 | 6. Independência e limites | Projeto pessoal, não é consultoria nem peça processual, sem patrocínio de interessados, avalia propostas e não pessoas |
 | 7. Correções | Formulário de pedido de correção e registro público das correções |
 | 8. Perguntas frequentes | Respostas curtas e expansíveis |
@@ -238,9 +238,9 @@ Menu lateral: **Radar · Triagem · Proposições · Pareceres · Calendário ·
 
 | Elemento | Funcionalidade |
 |---|---|
-| Lista | Fonte, número, ementa, data, **nota de relevância (0–100)**, palavras-chave encontradas (destacadas), eixos e regiões sugeridos, resumo da IA em 2 linhas |
+| Lista | Fonte, número, ementa, data, **nota de relevância (0–100)**, palavras-chave encontradas (destacadas), eixos e regiões pelos termos encontrados, ementa oficial |
 | Filtros | Fonte, casa, esfera, região/UF, faixa de relevância, eixo |
-| Ações por item | **Ativar** (gera dossiê e rascunho), **Monitorar** (acompanha sem parecer), **Descartar** (com motivo, usado para calibrar a IA) |
+| Ações por item | **Ativar** (monta o dossiê para o autor), **Monitorar** (acompanha sem parecer), **Descartar** (com motivo, usado para ajustar o dicionário de palavras-chave) |
 | Ações em lote | Monitorar ou descartar vários |
 
 ## B3. Ficha da proposição (painel) **[F1 / F2]**
@@ -250,25 +250,25 @@ Abas:
 1. **Dados** — campos da proposição (editáveis; origem API ou manual).
 2. **Texto e versões** — texto integral, versões, **comparação entre versões**.
 3. **Tramitação** — linha do tempo completa.
-4. **Atores e posicionamentos** — autores, relatores, emendas, votações e votos, orientações de bancada, ênfases (confirmar/ajustar as da IA).
+4. **Atores e posicionamentos** — autores, relatores, emendas, votações e votos, orientações de bancada, ênfases (registradas pelo autor).
 5. **Legislação afetada** — leis e artigos alterados, com o texto vigente.
 6. **Parecer** — atalho para o editor.
 
 Cadastro manual: mesmo formulário, com upload do PDF do texto (extração automática). **[F1]**
 
-## B4. Editor do parecer **[F1, IA na F2]**
+## B4. Editor do parecer **[F1]**
 
 | Elemento | Funcionalidade |
 |---|---|
 | Layout | **Tela dividida**: texto da lei à esquerda (com marcação de trechos), parecer à direita |
-| Gerar rascunho IA | Preenche os blocos do modelo padrão a partir do dossiê **[F2]** |
+| Dossiê ao lado | Texto integral, versões, justificativa, tramitação e legislação afetada para consulta do autor (nada é preenchido automaticamente no parecer) |
 | Blocos | Resumo simples · Contexto e tramitação · Análise artigo por artigo · Tabela comparativa · Gráfico · Votos · Emendas · Constitucionalidade · Conclusão · Texto livre |
 | Materiais | Upload ou geração da Nota Técnica e do Quadro comparativo, com chave **Público / Inscritos** (padrão: inscritos) |
 | Inserir dados | Botões para inserir blocos prontos com dados capturados (tabela de votos, lista de emendas, linha do tempo) |
-| Tags | Impacto, caráter, temas, biomas, regiões (sugestões da IA aceitáveis com um clique) |
+| Tags | Impacto, caráter, temas, biomas, regiões, definidos pelo autor |
 | Vincular trecho | Selecionar trecho da lei e anexar comentário do parecer |
 | Pré-visualizar | Como **Visitante** / como **Assinante** / **PDF** |
-| Status | Rascunho IA → Em revisão → Revisado → Agendado → Publicado |
+| Status | Rascunho → Em revisão → Agendado → Publicado |
 | Versões | Histórico do parecer; nova versão quando o texto-base muda, com data de referência |
 | Publicar | Publicar agora ou agendar; gera o PDF; dispara alertas para seguidores **[F3]** |
 

@@ -11,7 +11,7 @@
 | Banco de dados | **Postgres (Supabase)** | Dados, busca textual em português (`tsvector`), autenticação de assinantes, armazenamento de PDFs |
 | Coleta | Tarefas agendadas diárias (Vercel Cron ou GitHub Actions) | Conectores das fontes |
 | Processamento | Extração de texto de PDF (com OCR de reserva) e comparação de versões | Texto integral, Art. 1º, diferenças entre versões |
-| IA | API de modelo de linguagem | Classificação, resumo, ênfases, rascunho do parecer |
+| Automação | Conectores, extração de texto de PDF, filtro por palavras-chave | Capturar e organizar dados e textos oficiais. **Não escreve, não resume e não interpreta pareceres** |
 | PDF | Geração automática ao publicar | Nota Técnica e Quadro comparativo para inscritos |
 | E-mail | Resend ou Brevo | Confirmação, link mágico, alertas, newsletter |
 | Hospedagem | Vercel + Supabase | Custo inicial baixo |
@@ -28,7 +28,7 @@ Normalização (formato único de Proposição + Tramitação + Atores)
 Filtro por palavras-chave (ementa, indexação, texto)  ──►  descartados
    │
    ▼
-Classificação por IA (relevância 0–100, eixos, biomas, regiões, resumo)
+Pontuação por palavras-chave (pesos do dicionário; eixos e regiões pelos termos encontrados)
    │
    ▼
 Caixa de Triagem (painel)  ──  Ativar | Monitorar | Descartar
@@ -37,21 +37,21 @@ Caixa de Triagem (painel)  ──  Ativar | Monitorar | Descartar
 Dossiê (texto, justificativa, substitutivos, emendas, votações, legislação afetada)
    │
    ▼
-Rascunho do parecer por IA (modelo padrão, tags sugeridas)
+Análise e redação do parecer pelo autor (modelo padrão; classificação definida pelo autor)
    │
    ▼
-Revisão do autor → Publicação (site + PDF) → Alertas e newsletter
+Publicação (site + PDF) → Alertas e newsletter
 ```
 
 ## Conectores e níveis de automação
 
-Cada fonte é um **conector** independente que entrega dados no formato padrão. Triagem, IA, editor, freemium e alertas são iguais para todas as fontes.
+Cada fonte é um **conector** independente que entrega dados no formato padrão. Triagem, editor, freemium e alertas são iguais para todas as fontes.
 
 | Nível | Tipo de fonte | Captura |
 |---|---|---|
 | A | API / dados abertos | Automática |
 | B | Site com consulta estruturada | Leitura automatizada do site |
-| C | Diário Oficial / Diário da Assembleia em PDF | Extração de texto + palavra-chave + IA |
+| C | Diário Oficial / Diário da Assembleia em PDF | Extração de texto + palavra-chave |
 | D | Nada estruturado | Cadastro manual no painel |
 
 ### Fontes federais (MVP e Fase 2)
@@ -86,13 +86,13 @@ Emenda          id, proposicao_id, parlamentar_id, data, numero, resumo, texto
 Votacao         id, proposicao_id, data, orgao, resultado, placar_sim, placar_nao, placar_abst
 Voto            votacao_id, parlamentar_id, voto (sim|nao|abstencao|obstrucao|ausente)
 Orientacao      votacao_id, bancada, orientacao
-Enfase          id, proposicao_id, eixo, trecho, origem (ia|autor), confirmada
+Enfase          id, proposicao_id, eixo, trecho, registrada_por (autor)
 Tema            id, nome, slug, eixo                 -- licenciamento, florestas, água...
 Bioma           id, nome                              -- Amazônia, Cerrado, Caatinga...
 PalavraChave    id, termo, peso, grupo, regiao (nullable), exclusao (bool)
 
 Parecer         id, proposicao_id, versao, data_referencia_texto, impacto (alto|medio|baixo),
-                carater (malefico|enfraquece_indiretamente|neutro|benefico), biomas[], areas[], status (rascunho_ia|em_revisao|revisado|agendado|publicado),
+                carater (malefico|enfraquece_indiretamente|neutro|benefico), biomas[], areas[], status (rascunho|em_revisao|agendado|publicado),
                 publicado_em, pdf_url, autor_id
 BlocoParecer    id, parecer_id, ordem, tipo (resumo|contexto|analise|tabela|grafico|votos|emendas|conclusao|texto),
                 titulo, conteudo

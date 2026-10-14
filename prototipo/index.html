@@ -1143,7 +1143,7 @@ function abrirInscricao(){
 /* ---------- página de inscrição ---------- */
 const PERFIS=["Advogado(a)","Estudante","Servidor(a) público(a)","Empresa","ONG / movimento","Pesquisador(a)","Jornalista","Cidadão(ã)"];
 const PERFIL_DESC={"Advogado(a)":"Atuação jurídica e consultoria","Estudante":"Graduação ou pós-graduação","Servidor(a) público(a)":"Órgãos ambientais, MP, Judiciário, Legislativo","Empresa":"Setor produtivo e consultorias","ONG / movimento":"Sociedade civil organizada","Pesquisador(a)":"Universidades e institutos","Jornalista":"Inclui credenciamento de imprensa","Cidadão(ã)":"Quero acompanhar as leis"};
-const TEMAS=["Licenciamento","Florestas","Água","Clima","Mineração","Agrotóxicos","Unidades de conservação","Povos e comunidades"];
+const TEMAS=["Licenciamento","Florestas","Água","Clima","Mineração","Agrotóxicos","Espécies exóticas","Unidades de conservação","Povos e comunidades"];
 const BIOMAS_L=["Amazônia","Cerrado","Caatinga","Mata Atlântica","Pantanal","Pampa","Costeiro e marinho"];
 const VTIPOS=["Jornal","TV","Rádio","Site ou portal","Agência","Podcast","Freelancer"];
 const FUNCOES=["Repórter","Editor(a)","Produtor(a)","Colunista","Freelancer","Outra"];
@@ -1671,6 +1671,7 @@ const AREAS=[
   ["Agrotóxicos",5,[42,18,40,0],40,"Novas formas de aplicação chegam sem regras de distância mínima de casas e rios."],
   ["Unidades de conservação",5,[0,0,20,80],60,"A criação de unidades estaduais é a principal agenda positiva do período."],
   ["Povos e comunidades",4,[35,15,25,25],75,"A falta de consulta prévia é o ponto crítico mais citado nos pareceres."],
+  ["Espécies exóticas",4,[40,20,25,15],60,"Propostas que liberam o cultivo de espécies exóticas em rios e reservatórios, como a tilápia, avançam mais rápido que as regras de controle de espécies invasoras."],
   ["Fauna",3,[23,10,33,34],33,"Pouca atividade legislativa; temas pontuais de pesca e caça."],
   ["Saneamento",3,[0,0,67,33],33,"Mudanças de prazo nas metas de universalização."],
 ];
@@ -1828,7 +1829,7 @@ function parlamentaresEstaduais(){
 
 
 /* ---------- metodologia ---------- */
-const MSECS=[["m1","Do projeto ao parecer"],["m2","Como classificamos"],["m3","Indicadores"],["m4","Fontes"],["m5","Uso de IA"],["m6","Independência e limites"],["m7","Correções"],["m8","Perguntas frequentes"]];
+const MSECS=[["m1","Do projeto ao parecer"],["m2","Como classificamos"],["m3","Indicadores"],["m4","Fontes"],["m5","Automação e IA"],["m6","Independência e limites"],["m7","Correções"],["m8","Perguntas frequentes"]];
 const CARATER=[
   {k:"m",nome:"Maléfico",sub:"enfraquece diretamente",cor:"var(--pol-neg)",def:"Reduz ou retira proteção existente de forma direta: dispensa estudo, libera atividade antes proibida, diminui área protegida.",ex:"lic"},
   {k:"i",nome:"Enfraquece indiretamente",sub:"abre caminho para o dano",cor:"repeating-linear-gradient(135deg,var(--pol-ind) 0 4px,#F3C185 4px 6px)",def:"Não muda a proteção de forma direta, mas cria condições para o dano: corta fiscalização ou orçamento, amplia prazos, cria exceções que dependem de regulamento.",ex:"agua"},
@@ -1852,9 +1853,9 @@ function metodologia(){
         <section class="rsec" id="m1"><h2><span>1</span>Do projeto ao parecer</h2>
           <ol class="flow">
             <li><div><b>Monitoramento</b><p>Todos os dias coletamos novas proposições, tramitações, pautas, votações, sanções e vetos nas fontes oficiais.</p><span class="who m">Automático</span></div></li>
-            <li><div><b>Triagem</b><p>Palavras-chave e um modelo de IA sugerem o que é relevante para o meio ambiente. Uma pessoa decide o que entra, o que só é acompanhado e o que é descartado.</p><span class="who hm">Automático + pessoa</span></div></li>
-            <li><div><b>Análise</b><p>Leitura do texto integral e das versões (substitutivos, emendas), da justificativa e da legislação que a proposta altera.</p><span class="who h">Pessoa</span></div></li>
-            <li><div><b>Parecer</b><p>Redigido num modelo fixo: resumo, o que muda, impactos por dimensão, pontos de atenção, base legal, recomendações e conclusão. O autor assina e responde pelo texto.</p><span class="who h">Pessoa</span></div></li>
+            <li><div><b>Triagem</b><p>Um dicionário de palavras-chave separa o que pode ser ambiental e monta o dossiê de cada proposta (texto integral, versões, tramitação, autores). O autor decide o que entra, o que só é acompanhado e o que é descartado.</p><span class="who hm">Automático + pessoa</span></div></li>
+            <li><div><b>Análise</b><p>O autor lê o texto integral, compara as versões (substitutivos, emendas), a justificativa e a legislação que a proposta altera.</p><span class="who h">Pessoa</span></div></li>
+            <li><div><b>Parecer</b><p>Escrito integralmente pelo autor indicado, num modelo fixo: resumo, o que muda, impactos por dimensão, pontos de atenção, base legal, recomendações e conclusão. O autor assina e responde pelo texto.</p><span class="who h">Pessoa</span></div></li>
             <li><div><b>Publicação e atualização</b><p>O parecer informa a versão do texto analisado. Se o texto mudar, publicamos nova versão do parecer e mantemos o histórico.</p><span class="who h">Pessoa</span></div></li>
           </ol></section>
 
@@ -1892,10 +1893,11 @@ function metodologia(){
             <tr><td>Tribunal Superior Eleitoral</td><td>Lista de deputados estaduais eleitos</td><td>Uma vez por legislatura</td></tr></tbody></table></div>
           <p class="method">Todo texto de lei publicado aqui tem link para a fonte oficial. Em caso de diferença, vale a fonte oficial.</p></section>
 
-        <section class="rsec" id="m5"><h2><span>5</span>Uso de inteligência artificial</h2>
-          <div class="iacols"><div class="yes"><b>A IA ajuda a</b><ul><li>Separar o que é ambiental entre centenas de proposições</li><li>Resumir ementas e justificativas</li><li>Comparar versões do texto</li><li>Sugerir um rascunho do parecer no modelo padrão</li></ul></div>
-            <div class="no"><b>A IA não</b><ul><li>Decide o caráter ou o impacto</li><li>Publica nada sem revisão</li><li>Assina pareceres</li><li>Avalia parlamentares</li></ul></div></div>
-          <p class="method">Todo parecer é revisado e assinado por uma pessoa, que responde pelo conteúdo.</p></section>
+        <section class="rsec" id="m5"><h2><span>5</span>Automação e inteligência artificial</h2>
+          <p>A tecnologia só busca e organiza. A análise e a escrita são do autor.</p>
+          <div class="iacols"><div class="yes"><b>A automação faz</b><ul><li>Captura, pelas APIs e diários oficiais, os textos e dados das proposições</li><li>Extrai o texto de documentos em PDF</li><li>Separa por palavras-chave o que pode ser ambiental</li><li>Organiza e entrega ao autor o dossiê de cada proposta</li></ul></div>
+            <div class="no"><b>Nunca faz</b><ul><li>Escrever, rascunhar ou resumir pareceres</li><li>Comparar ou interpretar o texto da lei</li><li>Definir caráter ou impacto</li><li>Avaliar parlamentares</li></ul></div></div>
+          <p class="method">Todo parecer é escrito do início ao fim e assinado pelo autor indicado, que responde pelo conteúdo.</p></section>
 
         <section class="rsec" id="m6"><h2><span>6</span>Independência e limites</h2>
           <div class="limits">

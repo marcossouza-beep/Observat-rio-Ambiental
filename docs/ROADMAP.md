@@ -19,8 +19,8 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 
 - Conectores Câmara, Senado, Congresso (vetos) e DOU.
 - Dicionário de palavras-chave com pesos e exclusões.
-- Classificação por IA e caixa de Triagem.
-- Dossiê automático e **rascunho do parecer por IA**.
+- Pontuação por palavras-chave e caixa de Triagem.
+- **Dossiê automático** entregue ao autor (texto integral, versões, justificativa, tramitação, autores, legislação afetada). O parecer é escrito pelo autor.
 - Atores e posicionamentos: autoria, relatoria, emendas, votações, orientações, ênfases.
 - Radar com alertas internos: pauta, urgência, substitutivo, votação, sanção, veto.
 
