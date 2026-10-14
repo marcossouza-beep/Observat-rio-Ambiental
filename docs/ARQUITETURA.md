@@ -140,3 +140,20 @@ Paleta de polaridade (validada para daltonismo): maléfico `#C2551F`, enfraquece
 - Status: em análise → verificado (selo "Imprensa verificada") ou recusado (com motivo).
 - Recursos liberados: pareceres sob embargo antes da publicação, pedido de entrevista com o autor, gráficos em PNG e dados em CSV.
 - LGPD: finalidade específica (credenciamento), consentimento separado, dados não compartilhados, exclusão a pedido.
+
+## Dados de parlamentares: o que automatizar (e o que não fazer)
+
+**Princípio:** nenhum dado de parlamentar é cadastrado à mão. Tudo vem de fonte oficial automática ou é subproduto do registro da proposição e do parecer. A energia do autor vai para a análise e o parecer.
+
+| Dado | Federal (Câmara e Senado) | Estadual (Assembleias) |
+|---|---|---|
+| Lista de parlamentares, partido, UF | API de Dados Abertos (automático) | Resultados oficiais da eleição no TSE: importação **uma vez por legislatura**; ajuste pontual quando um suplente assume |
+| Autoria e relatoria | API (automático) | Registrada junto com a proposição monitorada (já é preciso registrá-la para escrever o parecer) |
+| Emendas | API (automático) | Só quando constarem na página da proposição; opcional |
+| Votos nominais | API (automático) | **Não mostrar.** Raramente publicados em formato aberto e muitas votações são simbólicas; manter só o resultado da votação na página da lei, quando houver |
+| Presença | API (automático) | Não mostrar |
+| Padrão das propostas de autoria | Calculado dos pareceres | Calculado dos pareceres (custo zero) |
+| Comissões, mandato | API (automático) | Não mostrar (não compensa manter) |
+| Foto | API (automático) | Iniciais; foto só se a Assembleia expuser link estável |
+
+Assembleias com dados abertos estruturados (ex.: Minas Gerais) podem ganhar conector próprio no levantamento da Fase 4, sem mudar o desenho da página.

@@ -87,6 +87,17 @@ Acesso pelos cartões de autor e relator, pelos autores de emendas e pela lista 
 | Relatorias e Emendas | Listas com link para a lei |
 | Método | Voto "Sim" em proposta benéfica, ou "Não" em proposta maléfica ou que enfraquece indiretamente, conta como a favor da proteção; propostas neutras ficam fora; mostra o sentido dos votos, não avalia a pessoa |
 
+## A6b. Deputados estaduais
+
+| Elemento | Conteúdo |
+|---|---|
+| Seleção de estado | Botões com bandeira dos estados monitorados (padrão: estado do inscrito ou o selecionado em Leis estaduais) |
+| Cabeçalho | Sigla da Assembleia, total de deputados e quantos têm atuação ambiental monitorada |
+| Busca | Por nome ou partido |
+| Lista | Deputados com autoria, relatoria ou emenda em propostas monitoradas, com barra do caráter das autorias; os demais ficam recolhidos em "Outros N deputados" |
+| Nota de fonte | Lista vem do TSE (uma vez por legislatura); autorias vêm das propostas monitoradas; votos individuais não são mostrados |
+| Perfil estadual | Versão leve da página de parlamentar: sem "Como votou", presença e comissões; números (autorias monitoradas, relatorias, emendas, com parecer), aviso de que a Assembleia não publica votos nominais em formato aberto, abas Autorias, Relatorias e Emendas |
+
 ## A7. Página de tema e de região **[F1 / F5]**
 
 Texto introdutório do tema ou da região, proposições em pauta, pareceres, filtros; assinatura da newsletter regional.

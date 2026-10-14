@@ -795,6 +795,30 @@ a.person .go-c{margin-left:auto;width:28px;height:28px}
   .vrow .sentido{grid-column:1/-1}
 }
 
+
+/* ---------- parlamentares estaduais ---------- */
+.ufpick{display:flex;gap:8px;flex-wrap:wrap}
+.ufbtn{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:var(--white);border-radius:999px;padding:6px 14px 6px 8px;font-weight:600;font-size:.88rem}
+.ufbtn[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:#fff}
+.srcnote{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-size:.88rem;color:var(--gray)}
+.srcnote b{color:var(--ink)}
+.srcnote .ico{width:22px;height:22px;color:var(--green-dk)}
+.dlist{display:grid}
+.drow2{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,200px) auto;gap:16px;align-items:center;padding:12px 8px;border-bottom:1px solid var(--line);border-radius:12px;transition:background .15s}
+.drow2:hover{background:var(--white)}
+.drow2 .av{width:42px;height:42px;font-size:.8rem}
+.drow2 b{display:block}
+.drow2 small{color:var(--soft);font-size:.8rem}
+.others{display:flex;flex-wrap:wrap;gap:6px}
+.others span{font-size:.84rem;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--gray)}
+.search.slim{padding:4px 4px 4px 14px;box-shadow:none}
+.datanote{font-size:.85rem;color:var(--gray);background:var(--bg);border-radius:12px;padding:10px 14px}
+@media (max-width:760px){
+  .drow2{grid-template-columns:auto minmax(0,1fr) auto}
+  .drow2 .sbar,.drow2 .hint{grid-column:2;grid-row:2}
+  .drow2 .go-c{grid-column:3;grid-row:1}
+}
+
 @media (max-width:640px){
   .topics{grid-template-columns:repeat(2,minmax(0,1fr))}
   .topics .topic:last-child{grid-column:1/-1}
@@ -867,7 +891,7 @@ const ATORES = {
 };
 const ini = n => n.replace(/^(Dep\. Est\.|Dep\.|Sen\.)\s*/,"").split(" ").map(w=>w[0]).slice(0,2).join("");
 function atores(l){
-  return ATORES[l.id] || {autor:[l.esfera==="federal"?"Dep. Exemplo S":"Dep. Est. Exemplo T","PART-"+(UF_NOME_R[l.local]||"DF")],relator:["Ainda não designado","—"],orgao:null,emendas:[],
+  return ATORES[l.id] || {autor:[l.esfera==="federal"?"Dep. Exemplo S":"Dep. Est. Exemplo "+l.id.slice(0,2).toUpperCase(),"PART-"+(UF_NOME_R[l.local]||"DF")],relator:["Ainda não designado","—"],orgao:null,emendas:[],
     etapas:l.esfera==="federal"?["Apresentado","Comissões","Plenário","Outra casa","Sanção"]:["Apresentado","Comissão","Plenário","Sanção"],
     atual:l.status==="Aprovada"?(l.esfera==="federal"?5:4):l.esfera==="federal"?Math.max(0,["Apresentado","Comissões","Plenário","Outra casa"].indexOf(l.etapa)):1};
 }
@@ -1098,7 +1122,7 @@ function stepBody(id){
   const t=(k,b,d)=>`<div class="toggle"><div><b>${b}</b><span>${d}</span></div><button class="sw" role="switch" aria-checked="${insc[k]}" aria-label="${b}" data-sw="${k}"></button></div>`;
   return `${t("alertas","Alertas de tramitação","Quando uma lei dos seus temas entrar em pauta ou for votada")}
       ${t("news","Resumo semanal","Os pareceres da semana, toda segunda-feira")}
-      ${t("regional","Destaques de "+UF_NOME[insc.uf],"Leis do seu estado e da sua região")}
+      ${t("regional","Destaques "+deUF(insc.uf),"Leis do seu estado e da sua região")}
       <label class="consent"><input id="i-lgpd" type="checkbox"> Concordo com a Política de Privacidade e com o uso dos meus dados para envio dos conteúdos escolhidos.</label>`;
 }
 const STEP_TXT={voce:["Vamos começar","Leva menos de um minuto."],perfil:["Você é…","Usamos isso para escolher o que enviar a você."],imprensa:["Credenciamento de imprensa","Confirmamos que você é jornalista para liberar os recursos de imprensa."],interesses:["O que te interessa?","Seu estado, temas e biomas."],avisos:["Como quer ser avisado?","Você pode mudar isso quando quiser."]};
@@ -1452,6 +1476,8 @@ const TOPIC_GO={todos:"timeline",parecer:"opiniao",artigos:"artigos",estadual:"e
 const UFMAP=[["RR",0,1],["AP",0,3],["AC",1,0],["AM",1,1],["PA",1,2],["MA",1,3],["CE",1,4],["RN",1,5],["RO",2,1],["MT",2,2],["TO",2,3],["PI",2,4],["PB",2,5],
   ["MS",3,2],["GO",3,3],["BA",3,4],["PE",3,5],["SP",4,2],["DF",4,3],["MG",4,4],["AL",4,5],["PR",5,2],["RJ",5,3],["ES",5,4],["SE",5,5],["SC",6,2],["RS",7,2]];
 const UF_NOME={AC:"Acre",AL:"Alagoas",AM:"Amazonas",AP:"Amapá",BA:"Bahia",CE:"Ceará",DF:"Distrito Federal",ES:"Espírito Santo",GO:"Goiás",MA:"Maranhão",MG:"Minas Gerais",MS:"Mato Grosso do Sul",MT:"Mato Grosso",PA:"Pará",PB:"Paraíba",PE:"Pernambuco",PI:"Piauí",PR:"Paraná",RJ:"Rio de Janeiro",RN:"Rio Grande do Norte",RO:"Rondônia",RR:"Roraima",RS:"Rio Grande do Sul",SC:"Santa Catarina",SE:"Sergipe",SP:"São Paulo",TO:"Tocantins"};
+const PREP_UF={AC:"do",AM:"do",AP:"do",CE:"do",ES:"do",MA:"do",PA:"do",PI:"do",PR:"do",RJ:"do",RN:"do",RS:"do",TO:"do",DF:"do",BA:"da",PB:"da"};
+const deUF = uf => (PREP_UF[uf]||"de")+" "+UF_NOME[uf];
 const UF_NOME_R=Object.fromEntries(Object.entries(UF_NOME).map(([k,v])=>[v,k]));
 const REGIAO={Norte:["AC","AM","AP","PA","RO","RR","TO"],Nordeste:["AL","BA","CE","MA","PB","PE","PI","RN","SE"],"Centro-Oeste":["DF","GO","MS","MT"],Sudeste:["ES","MG","RJ","SP"],Sul:["PR","RS","SC"]};
 const COBERTURA={PA:"auto",AM:"auto",TO:"manual",AC:"manual",AP:"manual",RO:"manual",RR:"manual",MT:"manual"};
@@ -1467,7 +1493,8 @@ function ufPanel(uf){
     ${atuacaoBlock(uf)}
     <div class="minilist">${ls.length?ls.map(l=>`<a class="minilaw" href="#${l.id}"><b>${l.titulo}</b><div class="row">${stTag(l.status)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}<span class="n">${l.num}</span></div></a>`).join(""):
       `<p style="color:var(--gray);font-size:.92rem">${cob==="breve"?"Ainda não monitoramos este estado.":"Nenhuma lei ambiental em destaque no momento."}</p>`}</div>
-    <div class="ask"><span>${cob==="breve"?"Quer que priorizemos "+UF_NOME[uf]+"?":"Receba as novidades de "+UF_NOME[uf]+" por e-mail."}</span><button class="pill-btn" data-act="${state.inscrito?"aviso-uf":"pagina"}" data-uf="${uf}">${cob==="breve"?"Avise-me":"Acompanhar estado"}</button></div>
+    ${COBERTURA[uf]?`<a class="arrow" href="#parlamentares-estaduais" data-pd-back="${uf}" style="font-size:.9rem">Deputados ${deUF(uf)} ${ARR}</a>`:""}
+    <div class="ask"><span>${cob==="breve"?"Quer que priorizemos "+UF_NOME[uf]+"?":"Receba as novidades "+deUF(uf)+" por e-mail."}</span><button class="pill-btn" data-act="${state.inscrito?"aviso-uf":"pagina"}" data-uf="${uf}">${cob==="breve"?"Avise-me":"Acompanhar estado"}</button></div>
   </div>`;
 }
 function estaduais(){
@@ -1675,7 +1702,9 @@ function parlamentar(slug){
   const pro=d.votos.filter(v=>v.pro===true).length, contra=d.votos.filter(v=>v.pro===false).length, aus=d.votos.filter(v=>v.pro===null).length, tot=d.votos.length;
   const pc=v=>tot?Math.round(v/tot*100):0;
   const lst=(ls,vazio)=>ls.length?`<div class="minilist">${ls.map(l=>`<a class="minilaw" href="#${l.id}"><b>${l.titulo}</b><div class="row">${placeTag(l.local)}${stTag(l.status)}${carTag(l.car)}<span class="n">${l.num}</span></div></a>`).join("")}</div>`:`<p class="hint">${vazio}</p>`;
-  const tabs=[["votos","Como votou"],["autorias","Autorias"],["relatorias","Relatorias ("+d.relatorias.length+")"],["emendas","Emendas ("+d.emendas.length+")"]];
+  const est=d.esfera==="estadual";
+  if(est){ d.nAut=d.autorias.length; d.autP=carP(d.autorias); if(parlSel.tab==="votos") parlSel.tab="autorias"; }
+  const tabs=[...(est?[]:[["votos","Como votou"]]),["autorias","Autorias"+(est?" ("+d.autorias.length+")":"")],["relatorias","Relatorias ("+d.relatorias.length+")"],["emendas","Emendas ("+d.emendas.length+")"]];
   let body="";
   if(parlSel.tab==="votos") body = tot?`<div class="vote-sum"><p>Em <b>${tot} votações</b> sobre propostas com parecer, votou no sentido da proteção ambiental em <b>${pro}</b>.</p>
       <div class="sb"><div class="sbar" role="img" aria-label="A favor da proteção ${pc(pro)}%, contra ${pc(contra)}%, ausente ${pc(aus)}%">${contra?`<i class="m" style="flex:${contra}" data-t="Contra a proteção: ${contra} de ${tot}"></i>`:""}${aus?`<i class="n" style="flex:${aus}" data-t="Ausente ou abstenção: ${aus} de ${tot}"></i>`:""}${pro?`<i class="b" style="flex:${pro}" data-t="A favor da proteção: ${pro} de ${tot}"></i>`:""}</div>
@@ -1687,20 +1716,57 @@ function parlamentar(slug){
   if(parlSel.tab==="emendas") body=d.emendas.length?`<div class="emendas">${d.emendas.map(([l,n,t])=>`<div class="emenda"><span class="n">${n}</span><div>${t}<span><a href="#${l.id}">${l.titulo}</a> · ${l.num}</span></div></div>`).join("")}</div>`:`<p class="hint">Nenhuma emenda em proposta monitorada.</p>`;
   const seg=state.seguindoP.includes(d.slug);
   return `<div class="wrap">
-    <a class="back" href="#${d.esfera==="federal"?"federais":"estaduais"}">${ARL} ${d.esfera==="federal"?"Leis federais":"Leis estaduais"}</a>
+    <a class="back" href="#${est?"parlamentares-estaduais":"federais"}" ${est?`data-pd-back="${d.uf}"`:""}>${ARL} ${est?"Deputados "+deUF(d.uf):"Leis federais"}</a>
     <header class="parl-head"><div class="portrait" aria-hidden="true">${ini(d.nome)}${flag(d.uf)}</div>
       <div><span class="sub-h">${d.cargo} · ${d.casa}</span><h1>${d.nome}</h1><div class="meta"><span>${d.pu.split("-")[0]} · ${UF_NOME[d.uf]||d.uf}</span><span>Mandato ${d.mandato}</span></div></div>
       <div class="parl-acts"><button class="mini ${seg&&state.inscrito?"on":""}" data-seguir-p="${d.slug}">${ICO_BELL}${seg&&state.inscrito?"Seguindo":"Seguir"}</button></div></header>
-    <div class="kpis pstats"><div class="kpi"><b>${d.nAut}</b><span>propostas ambientais de autoria</span></div><div class="kpi"><b>${d.relatorias.length}</b><span>relatorias</span></div><div class="kpi"><b>${d.emendas.length}</b><span>emendas</span></div><div class="kpi"><b>${tot?Math.round((tot-aus)/tot*100):0}%</b><span>presença em votações ambientais</span></div></div>
-    <div class="comm" style="margin-top:14px">${d.comissoes.map(c=>`<span>${c}</span>`).join("")}</div>
+    <div class="kpis pstats"><div class="kpi"><b>${d.nAut}</b><span>propostas ambientais de autoria${est?" monitoradas":""}</span></div><div class="kpi"><b>${d.relatorias.length}</b><span>relatorias</span></div><div class="kpi"><b>${d.emendas.length}</b><span>emendas</span></div>${est?`<div class="kpi"><b>${d.autorias.filter(l=>l.parecer).length}</b><span>com parecer publicado</span></div>`:`<div class="kpi"><b>${tot?Math.round((tot-aus)/tot*100):0}%</b><span>presença em votações ambientais</span></div>`}</div>
+    ${est?`<p class="datanote" style="margin-top:14px">A ${ALE_SIGLA[d.uf]||"Assembleia"} não publica votos nominais em formato aberto. Por isso esta página mostra só o que o deputado propôs, relatou e emendou nas leis que acompanhamos.</p>`:`<div class="comm" style="margin-top:14px">${d.comissoes.map(c=>`<span>${c}</span>`).join("")}</div>`}
     <div class="ptabs2" role="tablist">${tabs.map(t=>`<button role="tab" data-ptab2="${t[0]}" aria-selected="${parlSel.tab===t[0]}">${t[1]}</button>`).join("")}</div>
     <section style="padding-block:18px 10px" id="parlbody">${body}</section>
-    <p class="method">Os indicadores usam a classificação dos pareceres do observatório: um voto "Sim" numa proposta benéfica, ou "Não" numa proposta maléfica ou que enfraquece indiretamente, conta como a favor da proteção. Propostas neutras não entram na conta. Mostram o sentido dos votos e das propostas, não avaliam a pessoa. Dados fictícios no protótipo.</p>
+    <p class="method">${est?"O padrão das propostas usa a classificação dos pareceres do observatório sobre as propostas de autoria. Mostra o sentido das propostas, não avalia a pessoa. Dados fictícios no protótipo.":`Os indicadores usam a classificação dos pareceres do observatório: um voto "Sim" numa proposta benéfica, ou "Não" numa proposta maléfica ou que enfraquece indiretamente, conta como a favor da proteção. Propostas neutras não entram na conta. Mostram o sentido dos votos e das propostas, não avaliam a pessoa. Dados fictícios no protótipo.`}</p>
   </div>`;
 }
 function parlLista(esfera){
   const idx=Object.values(parlIndex()).filter(p=>cargoDe(p.nome)[2]===esfera);
   return `<div class="plist">${idx.map(p=>`<a href="#parl-${p.slug}"><span class="av">${ini(p.nome)}</span><div><b>${p.nome}</b><small>${cargoDe(p.nome)[0]} · ${p.pu.split("-")[0]}-${p.uf} · ${p.autorias.length} autoria(s), ${p.relatorias.length} relatoria(s), ${p.emendas.length} emenda(s)</small></div>${GO}</a>`).join("")}</div>`;
+}
+
+
+/* ---------- parlamentares estaduais ---------- */
+const ALE_TAM={AC:24,AM:24,AP:24,PA:41,RO:24,RR:24,TO:24,MT:24};
+const ALE_SIGLA={AC:"Aleac",AM:"Aleam",AP:"Alap",PA:"Alepa",RO:"Ale-RO",RR:"ALE-RR",TO:"Aleto",MT:"ALMT"};
+const pdState={uf:null,q:""};
+const carP = ls => { const n=ls.length; if(!n) return [0,0,0,0]; const c=k=>ls.filter(l=>l.car===k).length; const raw=[c("Maléfico"),c("Enfraquece indiretamente"),c("Neutro"),c("Benéfico")]; return raw.map(v=>Math.round(v/n*100)); };
+function depsUF(uf){
+  const idx=Object.values(parlIndex()).filter(p=>cargoDe(p.nome)[2]==="estadual" && p.uf===uf);
+  const r=seed("roster-"+uf); const partidos=["PART","PMOV","PUNI","PREP","PDEM"];
+  const extra=Array.from({length:Math.max(0,(ALE_TAM[uf]||24)-idx.length)},(_,i)=>({nome:`Dep. Est. Exemplo ${uf}${String(i+1).padStart(2,"0")}`,pu:`${partidos[Math.floor(r()*5)]}-${uf}`,autorias:[],relatorias:[],emendas:[]}));
+  return {com:idx.sort((a,b)=>(b.autorias.length+b.relatorias.length+b.emendas.length)-(a.autorias.length+a.relatorias.length+a.emendas.length)),sem:extra};
+}
+function depRows(uf){
+  const {com,sem}=depsUF(uf); const q=pdState.q.trim().toLowerCase();
+  const f=p=>!q||p.nome.toLowerCase().includes(q)||p.pu.toLowerCase().includes(q);
+  const c=com.filter(f), s2=sem.filter(f);
+  return `${c.length?`<div class="dlist">${c.map(p=>`<a class="drow2" href="#parl-${p.slug}"><span class="av">${ini(p.nome)}</span><div><b>${p.nome}</b><small>${p.pu.split("-")[0]} · ${p.autorias.length} autoria(s) · ${p.relatorias.length} relatoria(s) · ${p.emendas.length} emenda(s)</small></div>${p.autorias.length?sbar(carP(p.autorias),p.autorias.length,true):`<span class="hint">Sem autoria monitorada</span>`}${GO}</a>`).join("")}</div>`:`<p class="hint">Ninguém com esse nome entre os deputados com propostas monitoradas.</p>`}
+    ${s2.length?`<details style="margin-top:14px"><summary class="hint" style="cursor:pointer">Outros ${s2.length} deputados sem proposta ambiental monitorada</summary><div class="others" style="margin-top:10px">${s2.map(p=>`<span>${p.nome} · ${p.pu.split("-")[0]}</span>`).join("")}</div></details>`:""}`;
+}
+function parlamentaresEstaduais(){
+  const ufs=Object.keys(COBERTURA);
+  if(!pdState.uf) pdState.uf = ufs.includes(ufSel.uf)?ufSel.uf:(state.inscrito&&ufs.includes(insc.uf)?insc.uf:"PA");
+  const uf=pdState.uf, {com}=depsUF(uf);
+  return `<div class="wrap">
+    <a class="back" href="#estaduais">${ARL} Leis estaduais</a>
+    <header class="pg-head"><h1>Deputados estaduais</h1><p>Quem propõe, relata e emenda as leis ambientais nas Assembleias que monitoramos.</p></header>
+    <div class="ufpick" role="group" aria-label="Estado">${ufs.map(u=>`<button class="ufbtn" data-pd-uf="${u}" aria-pressed="${u===uf}">${flag(u)}${UF_NOME[u]}</button>`).join("")}</div>
+    <section class="section">
+      <div class="section-h"><h2 class="withflag">${flag(uf,"md")}${ALE_SIGLA[uf]||"Assembleia"} · ${UF_NOME[uf]}</h2><span>${ALE_TAM[uf]||24} deputados · ${com.length} com atuação ambiental monitorada</span></div>
+      <form class="search slim" role="search" onsubmit="event.preventDefault()"><input id="pd-q" type="text" placeholder="Buscar deputado ou partido" value="${pdState.q}" aria-label="Buscar deputado"></form>
+      <div id="pdrows">${depRows(uf)}</div>
+    </section>
+    <div class="srcnote"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>
+      <div><b>De onde vêm estes dados.</b> A lista de deputados vem dos resultados oficiais da eleição (TSE), atualizada uma vez por legislatura e quando um suplente assume. Autorias, relatorias e emendas são registradas junto com cada proposta monitorada. As Assembleias, em geral, não publicam votos nominais em formato aberto; por isso a página estadual não mostra votos individuais.</div></div>
+  </div>`;
 }
 
 /* ---------- compartilhar ---------- */
@@ -1778,7 +1844,7 @@ function render(keepScroll){
   const pl=r.startsWith("parecer-")?LEIS.find(x=>"parecer-"+x.id===r):null;
   const ar=r.startsWith("artigo-")?ARTIGOS.find(x=>"artigo-"+x.id===r):null;
   const y=window.scrollY;
-  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? (isNarrow()?mobileSignup(true):inscricao()) : r==="inscricao-celular" ? inscricaoCelular() : r==="panorama" ? panorama() : r.startsWith("parl-") ? parlamentar(r.slice(5)) : r==="timeline" ? timeline() : r==="opiniao" ? opiniao() : r==="estaduais" ? estaduais() : r==="federais" ? federais() : r==="artigos" ? artigos() : ar ? artigo(ar) : home();
+  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? (isNarrow()?mobileSignup(true):inscricao()) : r==="inscricao-celular" ? inscricaoCelular() : r==="panorama" ? panorama() : r.startsWith("parl-") ? parlamentar(r.slice(5)) : r==="parlamentares-estaduais" ? parlamentaresEstaduais() : r==="timeline" ? timeline() : r==="opiniao" ? opiniao() : r==="estaduais" ? estaduais() : r==="federais" ? federais() : r==="artigos" ? artigos() : ar ? artigo(ar) : home();
   $("#head").classList.toggle("wide", !!pl || ["inscricao","inscricao-celular","estaduais","panorama"].includes(r));
   document.body.classList.toggle("focus", (r==="inscricao"||r==="inscricao-celular") && isNarrow());
   state.menu=false; renderHead();
@@ -1805,6 +1871,8 @@ document.addEventListener("click",ev=>{
   const pf=ev.target.closest("[data-perfil]"); if(pf){ insc.perfil=pf.dataset.perfil; document.querySelectorAll("[data-perfil]").forEach(b=>b.setAttribute("aria-checked",b===pf)); const c=$(".mcount"); if(c) c.textContent=(insc.i+1)+"/"+stepsInsc().length; const pr=$(".prog"); if(pr){ render(true); } return; }
   const vt=ev.target.closest("[data-vtipo]"); if(vt){ insc.imp.tipo=vt.dataset.vtipo; document.querySelectorAll("[data-vtipo]").forEach(b=>b.setAttribute("aria-pressed",b===vt)); return; }
   const bm=ev.target.closest("[data-bioma]"); if(bm){ const t=bm.dataset.bioma; insc.biomas=insc.biomas.includes(t)?insc.biomas.filter(x=>x!==t):[...insc.biomas,t]; bm.setAttribute("aria-pressed",insc.biomas.includes(t)); return; }
+  const pdu=ev.target.closest("[data-pd-uf]"); if(pdu){ pdState.uf=pdu.dataset.pdUf; pdState.q=""; render(true); return; }
+  const pdb=ev.target.closest("[data-pd-back]"); if(pdb){ pdState.uf=pdb.dataset.pdBack; }
   const pt2=ev.target.closest("[data-ptab2]"); if(pt2){ parlSel.tab=pt2.dataset.ptab2; render(true); return; }
   const sp=ev.target.closest("[data-seguir-p]"); if(sp){ if(!state.inscrito){ abrirInscricao(); return; } const k=sp.dataset.seguirP; const on=state.seguindoP.includes(k); state.seguindoP=on?state.seguindoP.filter(x=>x!==k):[...state.seguindoP,k]; toast(on?"Você deixou de seguir este parlamentar":"Pronto! Você será avisado quando este parlamentar propuser ou votar matérias ambientais"); render(true); return; }
   const pt=ev.target.closest("[data-ptab]"); if(pt){ pano.tab=pt.dataset.ptab; render(true); return; }
@@ -1837,7 +1905,7 @@ document.addEventListener("click",ev=>{
   if(act==="ver-seguindo"){ ev.preventDefault(); state.tlFilter="seg"; state.menu=false; if(location.hash==="#timeline") render(); else go("timeline"); return; }
   if(act==="copiar-share"){ copiar($("#share-txt"), state.share.tab==="citacao"?"Citação copiada":"Texto copiado"); return; }
   if(act==="baixar-card"){ toast("Imagem do card gerada (simulação)"); return; }
-  if(act==="aviso-uf"){ toast("Pronto! Você receberá as novidades de "+UF_NOME[a.dataset.uf]); return; }
+  if(act==="aviso-uf"){ toast("Pronto! Você receberá as novidades "+deUF(a.dataset.uf)); return; }
   if(act==="pagina"){ if(state.inscrito){ toast("Você já está inscrito"); } else { resetInsc(); go("inscricao"); } }
   if(act==="next"){ saveStep(); const er=validaPasso(); if(er){ toast(er); return; } insc.i++; render(true); topoInsc(); }
   if(act==="prev"){ saveStep(); insc.i=Math.max(0,insc.i-1); render(true); topoInsc(); }
@@ -1868,6 +1936,7 @@ function gtip(el){ let t=$("#gtip"); if(!t){ t=document.createElement("div"); t.
 document.addEventListener("mouseover",e=>{ const el=e.target.closest("[data-t]"); const t=$("#gtip"); if(el) gtip(el); else if(t) t.hidden=true; });
 window.addEventListener("scroll",()=>{ const t=$("#gtip"); if(t) t.hidden=true; },{passive:true});
 document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ $("#layer").innerHTML=""; if(state.menu){ state.menu=false; renderHead(); } } });
+document.addEventListener("input",e=>{ if(e.target.id==="pd-q"){ pdState.q=e.target.value; $("#pdrows").innerHTML=depRows(pdState.uf); } });
 document.addEventListener("change",e=>{ if(e.target.id==="m-uf"){ insc.uf=e.target.value; $("#m-flag").innerHTML=flag(insc.uf); toast("Estado atualizado para "+UF_NOME[insc.uf]); }
   if(e.target.id==="i-uf"){ insc.uf=e.target.value; $("#i-flag").innerHTML=flag(insc.uf,"md"); } });
 render();
