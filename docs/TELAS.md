@@ -225,25 +225,6 @@ Barras 100% com Maléfico · Enfraquece indiretamente · Neutro · Benéfico, em
 | Áreas | Linha por área com quantidade (barra) e caráter (barra 100%); tocar abre "O que temos visto" |
 | Todas | Legenda única, definição de "enfraquece indiretamente", "Ver como tabela", método e amostra mínima |
 
-## A21. Temas e biomas
-
-**Índice (`/temas`):** cartões dos 7 biomas e das 11 áreas, cada um com nº de pareceres, barra de caráter e % de alto impacto.
-
-**Página de bioma ou tema (`/biomas/cerrado`, `/temas/especies-exoticas`):**
-
-| Bloco | Conteúdo |
-|---|---|
-| Cabeçalho | Trilha de navegação, nome, **texto de abertura escrito pelo autor** (importante para SEO), tendência e botão Seguir |
-| Números | Propostas acompanhadas, pareceres, % de alto impacto, em tramitação agora |
-| Para que lado vão as propostas | Barra de caráter com percentuais e legenda |
-| Leitura qualitativa | Bioma: principais pressões e avanços. Tema: "O que temos visto" |
-| Leis acompanhadas | Cards com estado, status, caráter e "Ler parecer" ou "Parecer em breve" |
-| Estados | Bioma: estados que o bioma abrange; tema: estados com leis sobre o tema. Monitorados levam à página do estado; os demais aparecem em cinza |
-| Relações | Bioma → temas mais frequentes; tema → biomas onde mais aparece |
-| Artigos relacionados | Até 2 |
-
-Acesso: "Explore por bioma" na home, rodapé, Panorama (nome do bioma e "Ver página do tema") e "Assuntos" de cada parecer.
-
 ---
 
 # Parte B — Painel administrativo (etapa posterior)
