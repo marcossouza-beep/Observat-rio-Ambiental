@@ -938,6 +938,38 @@ a.person .go-c{margin-left:auto;width:28px;height:28px}
 .biochips a{border:1px solid var(--line);background:var(--white);border-radius:999px;padding:6px 14px;font-size:.88rem;font-weight:500}
 .biochips a:hover{border-color:var(--green)}
 
+
+/* ---------- home: explore e biomas ---------- */
+.tgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.tcard{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:16px;transition:border-color .2s,transform .2s,box-shadow .2s}
+.tcard:hover{border-color:var(--green-100);transform:translateY(-2px);box-shadow:0 14px 30px -22px rgba(22,32,26,.45)}
+.tico{width:44px;height:44px;border-radius:14px;background:var(--green-50);color:var(--green-dk);display:grid;place-items:center;transition:background .2s,color .2s}
+.tico svg{width:24px;height:24px}
+.tcard:hover .tico{background:var(--green);color:#fff}
+.tcard b{display:block;font-size:1rem}
+.tcard div span{display:block;font-size:.84rem;color:var(--gray);margin-top:1px}
+.tcard small{display:block;font-size:.76rem;color:var(--soft);margin-top:6px}
+.bgrid2{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.bchip{display:flex;align-items:center;gap:10px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:10px 12px;transition:border-color .2s,background .2s}
+.bchip:hover{border-color:var(--green-100);background:var(--green-50)}
+.bico{width:36px;height:36px;border-radius:11px;background:var(--bg);color:var(--green-dk);display:grid;place-items:center;flex:none}
+.bico svg{width:21px;height:21px}
+.bchip:hover .bico{background:var(--white)}
+.bchip b{display:block;font-size:.9rem;line-height:1.2}
+.bchip small{font-size:.75rem;color:var(--soft)}
+.bchip.all{border-style:dashed}
+.bchip.all .bico{color:var(--ink)}
+.hints{display:flex;flex-wrap:wrap;gap:6px 10px;justify-content:center;font-size:.85rem;color:var(--soft)}
+.hints a{color:var(--gray);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.hints a:hover{color:var(--ink)}
+.seg.sm button{padding:5px 11px;font-size:.82rem}
+.agenda .o{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.agenda .o .tag{font-size:.7rem}
+.section-h{flex-wrap:wrap}
+.section-h h2{white-space:nowrap}
+@media (max-width:760px){ .tgrid{grid-template-columns:repeat(2,minmax(0,1fr))} .bgrid2{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:420px){ .tgrid{grid-template-columns:1fr} }
+
 @media (max-width:640px){
   .topics{grid-template-columns:repeat(2,minmax(0,1fr))}
   .topics .topic:last-child{grid-column:1/-1}
@@ -1098,7 +1130,39 @@ function listHTML(){
     <h3>${l.titulo}</h3><p>${l.resumo}</p>
     <div class="go"><span class="num">${l.num}</span><span class="arrow">${l.parecer?"Ler parecer":"Parecer em breve"}${ARR}</span></div></a>`).join("");
 }
+const HICO={
+  federal:'<path d="M3 9.2 12 4l9 5.2z"/><path d="M5.5 11.5v6M10 11.5v6M14 11.5v6M18.5 11.5v6"/><path d="M3.5 20h17"/>',
+  estadual:'<path d="M12 21s-6.5-5.7-6.5-11.2A6.5 6.5 0 0 1 18.5 9.8C18.5 15.3 12 21 12 21z"/><path d="M9.2 10.2l1.9 1.9 3.7-3.8"/>',
+  panorama:'<path d="M12 3a9 9 0 1 0 9 9h-9z"/><path d="M15 3.5a9 9 0 0 1 5.5 5.5H15z"/>',
+  timeline:'<path d="M6.5 4v16"/><circle cx="6.5" cy="7" r="2.2"/><circle cx="6.5" cy="17" r="2.2"/><path d="M11.5 7h8.5M11.5 12h5.5M11.5 17h8.5"/>',
+  opiniao:'<path d="M14 21H6V3h9l4 4v6"/><path d="M15 3v4h4"/><path d="M9 9h6M9 12.5h5"/><circle cx="17.5" cy="17.5" r="3.3"/><path d="M16.1 17.6l1 1 1.9-2"/>',
+  artigos:'<rect x="3" y="4.5" width="14" height="15.5" rx="2"/><path d="M17 8.5h3.5V18a2 2 0 0 1-2 2H17"/><path d="M6.5 8.5h7M6.5 12h7M6.5 15.5h4.5"/>',
+};
+const BICO={
+  "Amazônia":'<path d="M12 21v-5.5"/><path d="M12 15.5c-4.2 0-6.5-2.6-6.5-5.6S8.2 3.5 12 3.5s6.5 3.4 6.5 6.4-2.3 5.6-6.5 5.6z"/><path d="M9 10.5l3 2 3-2.6"/>',
+  "Cerrado":'<path d="M12 21c0-3.4-.8-5.5-2.8-7.4"/><path d="M12 17.5c.6-2.3 2.3-3.6 4.6-4.4"/><path d="M4.5 10.2c.6-2.6 3.3-3.8 5.6-2.9 1.2-2 5-2.1 6.2.6 2.1-.1 3.4 1.5 3 3.4H4.5z"/><path d="M3 21h18"/>',
+  "Caatinga":'<path d="M10 21V6.2a2 2 0 0 1 4 0V21"/><path d="M10 13H8.2A2.2 2.2 0 0 1 6 10.8V8.5"/><path d="M14 15.5h1.8a2.2 2.2 0 0 0 2.2-2.2v-2.8"/><path d="M4 21h16"/>',
+  "Mata Atlântica":'<path d="M5 19.5C5 11 11 4.5 20 4.5c0 9-6 15-14.5 15"/><path d="M5 19.5l8.5-8.5"/>',
+  "Pantanal":'<path d="M3 15.5c2-1.8 4-1.8 6 0s4 1.8 6 0 4-1.8 6 0"/><path d="M3 19.5c2-1.8 4-1.8 6 0s4 1.8 6 0 4-1.8 6 0"/><path d="M11 12V4.5l4 2"/>',
+  "Pampa":'<path d="M5 20c.6-4.4 1.8-7.3 3.8-9.4"/><path d="M9.5 20c0-5 1-8.8 3-11.8"/><path d="M14.5 20c.2-4 1.2-6.9 3-9"/><path d="M3 20h18"/>',
+  "Costeiro e marinho":'<path d="M3 16.5c2-1.8 4-1.8 6 0s4 1.8 6 0 4-1.8 6 0"/><circle cx="16" cy="8" r="3"/><path d="M3 20.5h18"/>',
+};
+const svgI = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+function homeTopics(){
+  const nFed=LEIS.filter(l=>l.esfera==="federal").length, nEst=LEIS.filter(l=>l.esfera==="estadual").length, nPar=LEIS.filter(l=>l.parecer).length;
+  const T=[["federais","federal","Leis federais","Câmara, Senado e Presidência",`${nFed} leis acompanhadas`],
+    ["estaduais","estadual","Leis estaduais","Assembleias, com mapa por estado",`${nEst} leis · ${Object.keys(COBERTURA).length} estados`],
+    ["panorama","panorama","Panorama","Padrão de atuação em números","101 pareceres analisados"],
+    ["timeline","timeline","Timeline","Tudo o que aconteceu, em ordem",`${EVENTOS.length} acontecimentos recentes`],
+    ["opiniao","opiniao","Opinião","Os pareceres técnicos",`${nPar} pareceres publicados`],
+    ["artigos","artigos","Artigos","Tendências, explicadores e dados",`${ARTIGOS.length} artigos`]];
+  return `<div class="tgrid">${T.map(t=>`<a class="tcard" href="#${t[0]}"><span class="tico">${svgI(HICO[t[1]])}</span><div><b>${t[2]}</b><span>${t[3]}</span><small>${t[4]}</small></div></a>`).join("")}</div>`;
+}
+function homeBiomas(){
+  return `<div class="bgrid2">${BIOMAS.map(b=>`<a class="bchip" href="#bioma-${slugify(b.nome)}"><span class="bico">${svgI(BICO[b.nome])}</span><div><b>${b.nome}</b><small>${b.n} pareceres</small></div></a>`).join("")}<a class="bchip all" href="#temas"><span class="bico">${ARR}</span><div><b>Temas e biomas</b><small>Ver todos</small></div></a></div>`;
+}
 function home(){
+  const ag=[["14 out","lic","Plenário da Câmara"],["16 out","pant","Comissão de Meio Ambiente do Senado"],["21 out","resex","Plenário da Alepa"]];
   return `<div class="wrap">
     <section class="hero">
       <h1>Leis <em>ambientais</em> explicadas,<br>antes de virarem <em>realidade.</em></h1>
@@ -1108,18 +1172,18 @@ function home(){
         <input id="q" type="text" placeholder="Busque uma lei, tema ou estado" value="${state.q}" aria-label="Buscar" autocomplete="off">
         <button class="pill-btn">Pesquisar</button>
       </form>
-      <div class="chips" role="group" aria-label="Status">${["Todas","Em tramitação","Aprovada"].map(s=>`<button class="chip" data-status="${s}" aria-pressed="${state.status===s}">${s==="Aprovada"?"Aprovadas":s}</button>`).join("")}</div>
+      <div class="hints">Experimente: <a href="#home" data-q="licenciamento">licenciamento</a><a href="#home" data-q="Pantanal">Pantanal</a><a href="#home" data-q="Tocantins">Tocantins</a><a href="#home" data-q="garimpo">garimpo</a></div>
     </section>
+    <section class="section" style="padding-top:8px"><div class="section-h"><h2>Em votação esta semana</h2><a class="arrow" href="#timeline" style="font-size:.88rem">Ver Timeline${ARR}</a></div>
+      <div class="agenda">${ag.map(a=>{ const l=LEIS.find(x=>x.id===a[1]); return `<a href="#${l.id}"><span class="d">${a[0]}</span><div><p>${l.titulo}</p><span class="o">${placeTag(l.local)} ${a[2]}</span></div><span class="arrow">${GO}</span></a>`; }).join("")}</div></section>
+    <section class="section"><div class="section-h"><h2>Explore</h2></div>${homeTopics()}</section>
+    <section class="section"><div class="section-h"><h2>Por bioma</h2></div>${homeBiomas()}</section>
     <section class="section">
-      <div class="section-h"><h2>Explore por tópico</h2></div>
-      <div class="topics">${TOPICS.map(t=>`<button class="topic" data-topic="${t[0]}" aria-pressed="${t[0]!=="todos"&&state.topic===t[0]}">${ICON[t[1]]}<b>${t[2]}</b><small>${t[3]}</small></button>`).join("")}</div>
-    </section>
-    <section class="section" style="padding-top:0"><div class="section-h"><h2>Explore por bioma</h2><a class="arrow" href="#temas" style="font-size:.88rem">Todos os temas e biomas${ARR}</a></div><div class="biochips">${BIOMAS.map(b=>`<a href="#bioma-${slugify(b.nome)}">${b.nome}</a>`).join("")}</div></section>
-    <a class="pano-teaser" href="#panorama"><div style="display:grid;gap:4px"><b>Panorama</b><p>Padrão de atuação da União e dos estados, por bioma e por área.</p></div>${sbar(ATUACAO.BR.p,ATUACAO.BR.n)}<span class="arrow">Ver${ARR}</span></a>
-    <section class="section">
-      <div class="section-h"><h2>Mais recentes</h2><span id="count">${filtradas().length} leis</span></div>
+      <div class="section-h"><h2>Mais recentes</h2><div class="seg sm" role="group" aria-label="Status">${["Todas","Em tramitação","Aprovada"].map(x=>`<button data-status="${x}" aria-pressed="${state.status===x}">${x==="Aprovada"?"Aprovadas":x}</button>`).join("")}</div></div>
+      <p class="hint" id="count" style="margin-top:-6px">${filtradas().length} leis</p>
       <div class="list" id="list">${listHTML()}</div>
     </section>
+    <a class="pano-teaser" href="#panorama"><div style="display:grid;gap:4px"><b>Panorama</b><p>Padrão de atuação da União e dos estados, por bioma e por área.</p></div>${sbar(ATUACAO.BR.p,ATUACAO.BR.n)}<span class="arrow">Ver${ARR}</span></a>
     ${state.inscrito?"":`<section class="cta"><div style="display:grid;gap:4px"><h2>Notas técnicas e quadros comparativos</h2><p>Grátis para inscritos, com aviso quando uma lei andar.</p></div><button class="pill-btn" data-act="pagina">Se inscreva grátis</button></section>`}
   </div>`;
 }
@@ -2227,6 +2291,7 @@ document.addEventListener("click",ev=>{
   const tp=ev.target.closest("[data-topic]"); if(tp && TOPIC_GO[tp.dataset.topic]){ go(TOPIC_GO[tp.dataset.topic]); return; }
   if(tp && tp.getAttribute("aria-pressed")==="true"){ state.topic="todos"; tp.setAttribute("aria-pressed","false"); refreshList(); return; }
   if(tp){ state.topic=tp.dataset.topic; document.querySelectorAll("[data-topic]").forEach(b=>b.setAttribute("aria-pressed",b===tp)); refreshList(); return; }
+  const hq=ev.target.closest("[data-q]"); if(hq){ ev.preventDefault(); state.q=hq.dataset.q; $("#q").value=state.q; refreshList(); $("#list").scrollIntoView({behavior:"smooth",block:"start"}); return; }
   const ch=ev.target.closest("[data-status]"); if(ch){ state.status=ch.dataset.status; document.querySelectorAll("[data-status]").forEach(b=>b.setAttribute("aria-pressed",b===ch)); refreshList(); return; }
   const j=ev.target.closest("[data-jump]"); if(j){ ev.preventDefault(); document.getElementById(j.dataset.jump).scrollIntoView({behavior:"smooth"}); return; }
   const pf=ev.target.closest("[data-perfil]"); if(pf){ insc.perfil=pf.dataset.perfil; document.querySelectorAll("[data-perfil]").forEach(b=>b.setAttribute("aria-checked",b===pf)); const c=$(".mcount"); if(c) c.textContent=(insc.i+1)+"/"+stepsInsc().length; const pr=$(".prog"); if(pr){ render(true); } return; }

@@ -12,16 +12,21 @@
 
 **Objetivo:** levar o visitante ao que interessa em um clique e mostrar o que está prestes a ser votado.
 
+Ordem dos blocos, de cima para baixo:
+
 | Bloco | Funcionalidade | Fase |
 |---|---|---|
-| Cabeçalho | Logo, menu (Proposições, Temas, Regiões, Parlamentares, Sobre/Metodologia), botão **Receber alertas** | F1 |
-| Busca principal | Campo único: termo, número do PL, palavra-chave, parlamentar; filtros rápidos por **casa**, **status**, **tema**, **região/UF** | F1 |
-| Em pauta esta semana | Faixa com as proposições ambientais que entram em votação nos próximos dias (data, órgão, tags) | F2 |
-| Pareceres recentes | Cards dos últimos pareceres publicados | F1 |
-| Temas | Grade de categorias (licenciamento, florestas, água, clima, mineração, agrotóxicos, **espécies exóticas**, fauna, UCs, saneamento, povos e comunidades) | F1 |
-| Regiões | Mapa ou lista das 5 regiões com contagem de proposições monitoradas | F1 (tags) / F5 (fontes estaduais) |
+| Cabeçalho | Logo, menu, **Entrar** e botão **Se inscreva grátis**; para inscritos, menu e avatar (A10) | F1 |
+| Abertura e busca | Frase de abertura, campo único de busca (termo, número do PL, parlamentar, tema) e atalhos "Experimente:" (ex.: licenciamento, Pantanal, Tocantins, garimpo) que preenchem a busca e levam à lista | F1 |
+| Em votação esta semana | Até 3 itens com data em destaque, título, bandeira da esfera e órgão onde será votado; link "Ver Timeline" | F2 (manual na F1) |
+| Explore | 6 cartões com ícone próprio, descrição curta e contagem: Leis federais, Leis estaduais, Panorama, Timeline, Opinião, Artigos | F1 |
+| Por bioma | Botões com ícone de cada bioma (Amazônia, Cerrado, Caatinga, Mata Atlântica, Pantanal, Pampa, Costeiro e marinho) e número de pareceres; botão "Temas e biomas · Ver todos" | F1 |
+| Mais recentes | Lista das proposições com filtro de situação (Todas, Em tramitação, Aprovadas) no título do bloco e contagem; cards com "Ler parecer" ou "Parecer em breve" | F1 |
+| Panorama (chamada) | Barra fina com o padrão de atuação geral e link para o Panorama | F3 |
 | Chamada de cadastro | "Notas técnicas e quadros comparativos grátis para inscritos" | F1 |
-| Rodapé | Metodologia, política de privacidade, termos, contato | F1 |
+| Rodapé | Temas e biomas, Metodologia, Correções, Independência, Política de privacidade, Termos de uso | F1 |
+
+**Ícones:** traço único (1,8 px), cor verde da marca, sobre quadrado verde-claro de cantos arredondados. No celular, os cartões do Explore viram uma coluna e os botões de bioma ficam em duas.
 
 ## A2. Listagem e resultados de busca
 
