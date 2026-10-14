@@ -18,8 +18,6 @@
 | Parecer | `/pareceres/pl-1234-2026-licenciamento-simplificado` |
 | Estado | `/estados/para` · deputados: `/estados/para/deputados` |
 | Parlamentar | `/parlamentares/dep-exemplo-f` |
-| Tema / área | `/temas/especies-exoticas` |
-| Bioma | `/biomas/cerrado` |
 | Artigo | `/artigos/licenciamento-2026-flexibilizacao-estados` |
 | Autor | `/autores/nome-do-autor` |
 | Institucionais | `/metodologia`, `/panorama`, `/timeline` |
@@ -68,7 +66,8 @@ O editor mostra uma **prévia do resultado no Google** (título, endereço, desc
 | Lei sem parecer | **Sim** | Com aviso "Parecer em preparação" e o bloco "O que já se sabe" (frase montada a partir dos dados da tramitação: casa, autoria, etapa, votações, emendas), além de autores, tramitação e links internos. Captura a busca desde que o projeto aparece; o parecer entra na mesma página e no mesmo endereço |
 | Parlamentar federal | Sim | Se tiver ao menos uma autoria, relatoria ou voto em proposta monitorada |
 | Parlamentar estadual | Sim | Só com autoria ou relatoria monitorada; os demais não têm página |
-| Tema, bioma, estado | Sim | Com texto de abertura escrito pelo autor |
+| Estado | Sim | Página de Leis estaduais do estado (painel com padrão de atuação e leis) |
+| Temas e biomas | Sem página própria | O resumo fica no Panorama (abas Biomas e Áreas); termos de tema e bioma entram como palavras-chave secundárias dos pareceres |
 | Artigo, Panorama, Metodologia, Autor | Sim | Sempre |
 | Busca interna, filtros, inscrição, conta | Não | `noindex` |
 | PDFs (Nota Técnica, Quadro) | Não | Exigem inscrição; a página do parecer, aberta, é que ranqueia |
@@ -121,7 +120,7 @@ Exemplo do parecer:
 - **Canonical** em todas as páginas; uma única versão de cada endereço (https, sem barra final).
 - **Imagem de compartilhamento automática** (1200 × 630) por parecer, no mesmo padrão do card do Instagram.
 - **Velocidade (Core Web Vitals):** LCP < 2,5 s, INP < 200 ms, CLS < 0,1; imagens em WebP; fontes com subconjunto.
-- **Links internos automáticos:** parecer ↔ lei ↔ parlamentares ↔ temas ↔ biomas ↔ estado ("Assuntos" e "Quem está por trás").
+- **Links internos automáticos:** parecer ↔ lei ↔ parlamentares ↔ estado ↔ Panorama ("Assuntos" e "Quem está por trás").
 - **Trilha de navegação** visível em todas as páginas internas, com marcação `BreadcrumbList`.
 - **Busca interna:** busca textual em português sem acento e com sinônimos (ex.: `APP` = área de preservação permanente; `tilápia` → espécies exóticas). Os termos buscados alimentam a lista de palavras-chave.
 
