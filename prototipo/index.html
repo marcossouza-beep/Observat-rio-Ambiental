@@ -173,7 +173,11 @@ a:hover .go-c{background:var(--green);color:#fff}
 .path i{width:16px;height:16px;border-radius:50%;background:var(--white);border:2px solid var(--line);position:relative;z-index:1}
 .path .ok{color:var(--ink)} .path .ok i{background:var(--green);border-color:var(--green)} .path .ok::before{background:var(--green)}
 .path .now{color:var(--ink);font-weight:700} .path .now i{background:var(--white);border-color:var(--green);box-shadow:0 0 0 4px var(--green-50)} .path .now::before{background:var(--green)}
-.foot{color:var(--soft);font-size:.8rem;text-align:center;padding-block:40px}
+.foot{color:var(--soft);font-size:.8rem;padding-block:34px 40px;border-top:1px solid var(--line);margin-top:30px;padding-inline:20px}
+.foot-in{max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between}
+.foot nav{display:flex;flex-wrap:wrap;gap:6px 18px}
+.foot nav a{color:var(--gray);font-size:.88rem}
+.foot nav a:hover{color:var(--ink)}
 
 /* inscrição */
 .scrim{position:fixed;inset:0;background:rgba(22,32,26,.45);display:grid;place-items:center;padding:16px;z-index:20;animation:fade .2s ease}
@@ -819,6 +823,56 @@ a.person .go-c{margin-left:auto;width:28px;height:28px}
   .drow2 .go-c{grid-column:3;grid-row:1}
 }
 
+
+/* ---------- metodologia ---------- */
+.flow{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:f}
+.flow li{counter-increment:f;display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;position:relative;padding-bottom:20px}
+.flow li::before{content:counter(f);width:36px;height:36px;border-radius:50%;background:var(--green-50);color:var(--green-dk);display:grid;place-items:center;font-weight:800;font-size:.95rem;z-index:1}
+.flow li::after{content:"";position:absolute;left:17px;top:38px;bottom:2px;width:2px;background:var(--line)}
+.flow li:last-child::after{display:none}
+.flow b{display:block;font-size:1.02rem;margin-top:6px}
+.flow p{color:var(--gray);font-size:.93rem;margin-top:2px}
+.flow .who{display:inline-block;margin-top:6px;font-size:.74rem;font-weight:700;padding:2px 8px;border-radius:999px}
+.who.h{background:var(--green-50);color:var(--green-dk)} .who.m{background:var(--sky);color:var(--sky-ink)} .who.hm{background:var(--sun);color:var(--sun-ink)}
+.cscale{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.cbox{border:1px solid var(--line);background:var(--white);border-radius:16px;padding:14px;display:grid;gap:8px;text-align:left;align-content:start;transition:border-color .15s}
+.cbox[aria-pressed="true"]{border-color:var(--ink)}
+.cbox .sw2{height:8px;border-radius:999px}
+.cbox b{font-size:.98rem}
+.cbox span{font-size:.84rem;color:var(--gray)}
+.cex{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;gap:8px;margin-top:8px}
+.cex small{font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:700}
+.crit{width:100%;border-collapse:collapse;font-size:.9rem;background:var(--white);border-radius:14px;overflow:hidden}
+.crit th,.crit td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.crit th{font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--soft);background:var(--bg)}
+.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.rule{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;gap:6px;align-content:start}
+.rule b{font-size:.95rem}
+.rule p{font-size:.88rem;color:var(--gray)}
+.rule code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;background:var(--bg);border-radius:6px;padding:2px 6px;color:var(--ink)}
+.iacols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.iacols div{border-radius:16px;padding:14px 16px;display:grid;gap:6px;align-content:start}
+.iacols .yes{background:var(--green-50)} .iacols .no{background:#FCEADF}
+.iacols b{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+.iacols .yes b{color:#1F7A4D} .iacols .no b{color:#9A4A16}
+.iacols ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:.92rem}
+.limits{display:grid;gap:8px}
+.limits div{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;font-size:.93rem}
+.limits .ico{width:20px;height:20px;color:var(--green-dk);margin-top:2px}
+.fixlog{display:grid}
+.fixlog div{display:grid;grid-template-columns:70px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.fixlog span{color:var(--soft);font-variant-numeric:tabular-nums}
+.fixlog a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.faq details{border-bottom:1px solid var(--line);padding:12px 2px}
+.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ico{transition:transform .2s;color:var(--soft)}
+.faq details[open] summary .ico{transform:rotate(90deg)}
+.faq p{color:var(--gray);font-size:.93rem;margin-top:8px;max-width:66ch}
+.metod-link{font-size:.85rem;color:var(--gray);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+@media (max-width:760px){ .cscale,.rules,.iacols{grid-template-columns:1fr 1fr} }
+@media (max-width:480px){ .cscale,.rules,.iacols{grid-template-columns:1fr} }
+
 @media (max-width:640px){
   .topics{grid-template-columns:repeat(2,minmax(0,1fr))}
   .topics .topic:last-child{grid-column:1/-1}
@@ -832,7 +886,10 @@ a.person .go-c{margin-left:auto;width:28px;height:28px}
 
 <header class="head" id="head"><div class="wrap" id="headin"></div></header>
 <main id="app"></main>
-<p class="foot">Rascunho visual · conteúdos fictícios</p>
+<footer class="foot"><div class="foot-in">
+  <a class="brand" href="#home"><i></i>Nome do Site</a>
+  <nav aria-label="Institucional"><a href="#metodologia">Metodologia</a><a href="#metodologia" data-jump-later="m7">Correções</a><a href="#metodologia" data-jump-later="m6">Independência</a><a href="#home">Política de privacidade</a><a href="#home">Termos de uso</a></nav>
+  <small>Rascunho visual · conteúdos fictícios</small></div></footer>
 <div id="layer"></div>
 
 <script>
@@ -1229,7 +1286,7 @@ function parecer(l){
     <div class="verdict">
       <div class="vcard"><small>Impacto</small><span class="big">${l.imp.replace(" impacto","")}</span>
         <div class="meter" role="img" aria-label="Impacto ${l.imp}">${[1,2,3].map(i=>`<span class="${i<=imp?"f":""}"></span>`).join("")}</div><div class="mlab"><span>Baixo</span><span>Médio</span><span>Alto</span></div></div>
-      <div class="vcard"><small>Caráter</small><span class="big" style="color:${l.car==="Maléfico"?"var(--rose-ink)":l.car==="Benéfico"?"var(--green-dk)":l.car==="Enfraquece indiretamente"?"#8A5A12":"var(--ink)"}">${l.car}</span>
+      <div class="vcard"><small>Caráter · <a class="metod-link" href="#metodologia">como classificamos</a></small><span class="big" style="color:${l.car==="Maléfico"?"var(--rose-ink)":l.car==="Benéfico"?"var(--green-dk)":l.car==="Enfraquece indiretamente"?"#8A5A12":"var(--ink)"}">${l.car}</span>
         <div class="scale" role="img" aria-label="Caráter ${l.car}"><i style="left:${pos}%"></i></div><div class="mlab"><span>Maléfico</span><span>Indireto</span><span>Neutro</span><span>Benéfico</span></div></div>
       <div class="vcard"><small>Próximo passo</small><span class="big">${l.status==="Aprovada"?"Regulamentação":"Plenário"}</span>
         <span style="color:var(--gray);font-size:.9rem">${l.status==="Aprovada"?"Prazo de 180 dias para o Executivo":"Votação prevista para 14/10/2026"}</span></div>
@@ -1591,7 +1648,7 @@ function atuacaoBlock(key){
     <div class="srow"><span><b>Só o que foi aprovado</b> · ${a.ap.n}</span>${sbar(a.ap.p,a.ap.n)}</div>
     ${plegend()}
     <div class="themes">Temas mais frequentes: ${a.temas.map(t=>`<span class="t">${t[0]} ${t[1]}%</span>`).join("")}</div>
-    <div class="atu-foot"><p class="method">${METODO}</p><a class="arrow" href="#panorama" style="font-size:.88rem">Ver panorama completo${ARR}</a></div></div>`;
+    <div class="atu-foot"><p class="method">${METODO} <a class="metod-link" href="#metodologia">Ver metodologia</a></p><a class="arrow" href="#panorama" style="font-size:.88rem">Ver panorama completo${ARR}</a></div></div>`;
 }
 
 /* ---------- panorama ---------- */
@@ -1660,7 +1717,7 @@ function panorama(){
     <p style="color:var(--gray);margin:14px 0 8px" id="pdesc">${desc[pano.tab]}</p>
     ${pano.tabela?"":plegend()}<p class="method" style="margin-top:6px">${DEF_IND}</p>
     <div id="pbody" style="margin-top:12px">${panoBody()}</div>
-    <p class="method" style="margin-top:18px">Método: cada parecer classifica a proposta como maléfica (enfraquece diretamente), que enfraquece indiretamente, neutra ou benéfica à proteção ambiental e como de alto, médio ou baixo impacto. Os percentuais somam os pareceres de cada grupo; um parecer pode envolver mais de um bioma ou área. Grupos com menos de ${AMOSTRA_MIN} pareceres aparecem como "amostra pequena". Dados fictícios no protótipo.</p>
+    <p class="method" style="margin-top:18px">Método: cada parecer classifica a proposta como maléfica (enfraquece diretamente), que enfraquece indiretamente, neutra ou benéfica à proteção ambiental e como de alto, médio ou baixo impacto. Os percentuais somam os pareceres de cada grupo; um parecer pode envolver mais de um bioma ou área. Grupos com menos de ${AMOSTRA_MIN} pareceres aparecem como "amostra pequena". Dados fictícios no protótipo. <a class="metod-link" href="#metodologia">Ver metodologia completa</a></p>
   </div>`;
 }
 
@@ -1769,6 +1826,112 @@ function parlamentaresEstaduais(){
   </div>`;
 }
 
+
+/* ---------- metodologia ---------- */
+const MSECS=[["m1","Do projeto ao parecer"],["m2","Como classificamos"],["m3","Indicadores"],["m4","Fontes"],["m5","Uso de IA"],["m6","Independência e limites"],["m7","Correções"],["m8","Perguntas frequentes"]];
+const CARATER=[
+  {k:"m",nome:"Maléfico",sub:"enfraquece diretamente",cor:"var(--pol-neg)",def:"Reduz ou retira proteção existente de forma direta: dispensa estudo, libera atividade antes proibida, diminui área protegida.",ex:"lic"},
+  {k:"i",nome:"Enfraquece indiretamente",sub:"abre caminho para o dano",cor:"repeating-linear-gradient(135deg,var(--pol-ind) 0 4px,#F3C185 4px 6px)",def:"Não muda a proteção de forma direta, mas cria condições para o dano: corta fiscalização ou orçamento, amplia prazos, cria exceções que dependem de regulamento.",ex:"agua"},
+  {k:"n",nome:"Neutro",sub:"sem efeito relevante",cor:"var(--pol-mid)",def:"Organiza procedimentos, cria datas comemorativas ou ajusta regras sem mudar o nível de proteção.",ex:"drones"},
+  {k:"b",nome:"Benéfico",sub:"fortalece a proteção",cor:"var(--pol-pos)",def:"Amplia ou cria proteção: novas áreas protegidas, metas de recuperação, regras mais rigorosas, mais transparência.",ex:"resex"},
+];
+const metSel={car:"m"};
+const ICO_CHECK='<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.8"/></svg>';
+function cexHTML(){
+  const c=CARATER.find(x=>x.k===metSel.car), l=LEIS.find(x=>x.id===c.ex);
+  return `<div class="cex"><small>Exemplo no observatório</small><a class="minilaw" href="#${l.id}" style="border:0;padding:0"><b>${l.titulo}</b><div class="row">${placeTag(l.local)}${carTag(l.car)}<span class="n">${l.num}</span></div></a><p style="color:var(--gray);font-size:.9rem">${c.def}</p></div>`;
+}
+function metodologia(){
+  return `<div class="rep">
+    <header class="rep-head"><span class="eyebrow">Metodologia</span><h1>Como lemos, classificamos e medimos as leis ambientais</h1>
+      <p style="color:var(--gray);font-size:1.05rem;max-width:62ch">Tudo o que o observatório publica segue o mesmo método. Esta página explica cada etapa, os critérios das etiquetas e as regras dos gráficos, para que qualquer pessoa possa conferir e discordar com base.</p>
+      <div class="meta"><span>Versão do método <b>1.0</b></span><span>Atualizada em <b>14/10/2026</b></span></div></header>
+    <div class="rep-body">
+      <nav class="toc" aria-label="Nesta página"><small>Nesta página</small>${MSECS.map((x,i)=>`<a href="#metodologia" data-jump="${x[0]}" class="${i===0?"on":""}"><span>${i+1}</span>${x[1]}</a>`).join("")}</nav>
+      <article>
+        <section class="rsec" id="m1"><h2><span>1</span>Do projeto ao parecer</h2>
+          <ol class="flow">
+            <li><div><b>Monitoramento</b><p>Todos os dias coletamos novas proposições, tramitações, pautas, votações, sanções e vetos nas fontes oficiais.</p><span class="who m">Automático</span></div></li>
+            <li><div><b>Triagem</b><p>Palavras-chave e um modelo de IA sugerem o que é relevante para o meio ambiente. Uma pessoa decide o que entra, o que só é acompanhado e o que é descartado.</p><span class="who hm">Automático + pessoa</span></div></li>
+            <li><div><b>Análise</b><p>Leitura do texto integral e das versões (substitutivos, emendas), da justificativa e da legislação que a proposta altera.</p><span class="who h">Pessoa</span></div></li>
+            <li><div><b>Parecer</b><p>Redigido num modelo fixo: resumo, o que muda, impactos por dimensão, pontos de atenção, base legal, recomendações e conclusão. O autor assina e responde pelo texto.</p><span class="who h">Pessoa</span></div></li>
+            <li><div><b>Publicação e atualização</b><p>O parecer informa a versão do texto analisado. Se o texto mudar, publicamos nova versão do parecer e mantemos o histórico.</p><span class="who h">Pessoa</span></div></li>
+          </ol></section>
+
+        <section class="rsec" id="m2"><h2><span>2</span>Como classificamos</h2>
+          <p>Cada parecer recebe duas etiquetas: o <b>caráter</b> (para que lado a proposta move a proteção ambiental) e o <b>impacto</b> (o tamanho do efeito).</p>
+          <h3 style="font-size:1.05rem;margin-top:6px">Caráter</h3>
+          <div class="cscale" role="group" aria-label="Categorias de caráter">${CARATER.map(c=>`<button class="cbox" data-car="${c.k}" aria-pressed="${metSel.car===c.k}"><span class="sw2" style="background:${c.cor}"></span><b>${c.nome}</b><span>${c.sub}</span></button>`).join("")}</div>
+          <div id="cex">${cexHTML()}</div>
+          <h3 style="font-size:1.05rem;margin-top:14px">Impacto</h3>
+          <div class="tw"><table class="crit"><thead><tr><th>Nível</th><th>Quando usamos</th></tr></thead><tbody>
+            <tr><td><span class="tag tg-alto">Alto</span></td><td>Atinge um bioma inteiro, uma norma geral (como o licenciamento) ou muitas pessoas; ou o dano é difícil de reverter.</td></tr>
+            <tr><td><span class="tag tg-alto" style="opacity:.8">Médio</span></td><td>Efeito regional ou setorial, com possibilidade de correção por regulamento ou fiscalização.</td></tr>
+            <tr><td><span class="tag tg-alto" style="opacity:.6">Baixo</span></td><td>Efeito local, pontual ou só procedimental.</td></tr></tbody></table></div>
+          <p class="method">Na dúvida entre dois níveis, usamos o mais alto e explicamos o motivo no parecer.</p></section>
+
+        <section class="rsec" id="m3"><h2><span>3</span>Indicadores</h2>
+          <p>Os gráficos do Panorama, dos estados, das casas e dos parlamentares são contagens dos nossos pareceres. Eles medem o conteúdo das propostas, não o mérito das pessoas.</p>
+          <div class="rules">
+            <div class="rule"><b>Padrão de atuação</b><p>Percentual de pareceres em cada caráter, por casa ou estado. Mostramos tudo que tramitou e, separado, só o que foi aprovado.</p></div>
+            <div class="rule"><b>Tendência</b><p><code>benéficos − (maléficos + indiretos)</code>. A partir de 15 pontos: "tende a proteger"; abaixo de −15: "tende a enfraquecer"; entre os dois: "equilibrada".</p></div>
+            <div class="rule"><b>Amostra mínima</b><p>Com menos de 5 pareceres, o grupo aparece como "amostra pequena" e não recebe tendência.</p></div>
+            <div class="rule"><b>Sentido do voto (federal)</b><p>"Sim" em proposta benéfica ou "Não" em proposta maléfica ou indireta conta a favor da proteção. Propostas neutras ficam fora. Só usamos votos nominais publicados pela casa.</p></div>
+            <div class="rule"><b>Biomas e áreas</b><p>Um parecer pode contar em mais de um bioma ou área. Por isso as somas por bioma podem passar do total de pareceres.</p></div>
+            <div class="rule"><b>Estados</b><p>As Assembleias raramente publicam votos nominais em formato aberto. Nos estados mostramos autorias, relatorias e emendas, não votos.</p></div>
+          </div></section>
+
+        <section class="rsec" id="m4"><h2><span>4</span>Fontes</h2>
+          <div class="tw"><table class="crit"><thead><tr><th>Fonte</th><th>O que usamos</th><th>Atualização</th></tr></thead><tbody>
+            <tr><td>Câmara dos Deputados · Dados Abertos</td><td>Proposições, autores, tramitação, pautas, votações e votos</td><td>Diária</td></tr>
+            <tr><td>Senado Federal · Dados Abertos</td><td>Matérias, autoria, tramitação, agenda, votações</td><td>Diária</td></tr>
+            <tr><td>Congresso Nacional</td><td>Vetos e sessões conjuntas</td><td>Diária</td></tr>
+            <tr><td>Diário Oficial da União</td><td>Sanções, vetos, decretos e medidas provisórias</td><td>Diária</td></tr>
+            <tr><td>LexML e Planalto</td><td>Texto vigente das leis alteradas</td><td>Semanal</td></tr>
+            <tr><td>Assembleias Legislativas e diários estaduais</td><td>Proposições estaduais, autoria e tramitação</td><td>Diária ou manual, conforme o estado</td></tr>
+            <tr><td>Tribunal Superior Eleitoral</td><td>Lista de deputados estaduais eleitos</td><td>Uma vez por legislatura</td></tr></tbody></table></div>
+          <p class="method">Todo texto de lei publicado aqui tem link para a fonte oficial. Em caso de diferença, vale a fonte oficial.</p></section>
+
+        <section class="rsec" id="m5"><h2><span>5</span>Uso de inteligência artificial</h2>
+          <div class="iacols"><div class="yes"><b>A IA ajuda a</b><ul><li>Separar o que é ambiental entre centenas de proposições</li><li>Resumir ementas e justificativas</li><li>Comparar versões do texto</li><li>Sugerir um rascunho do parecer no modelo padrão</li></ul></div>
+            <div class="no"><b>A IA não</b><ul><li>Decide o caráter ou o impacto</li><li>Publica nada sem revisão</li><li>Assina pareceres</li><li>Avalia parlamentares</li></ul></div></div>
+          <p class="method">Todo parecer é revisado e assinado por uma pessoa, que responde pelo conteúdo.</p></section>
+
+        <section class="rsec" id="m6"><h2><span>6</span>Independência e limites</h2>
+          <div class="limits">
+            <div>${ICO_CHECK}<span><b>Projeto pessoal e independente.</b> Os pareceres expressam a análise técnica do autor e não representam nenhuma instituição.</span></div>
+            <div>${ICO_CHECK}<span><b>Não é consultoria nem peça processual.</b> O parecer é uma análise pública; não substitui orientação jurídica para um caso concreto.</span></div>
+            <div>${ICO_CHECK}<span><b>Sem financiamento de interessados.</b> Não aceitamos patrocínio de quem tenha interesse direto nas leis analisadas.</span></div>
+            <div>${ICO_CHECK}<span><b>Avaliamos propostas, não pessoas.</b> Os indicadores mostram o sentido das propostas e dos votos.</span></div>
+          </div></section>
+
+        <section class="rsec" id="m7"><h2><span>7</span>Correções</h2>
+          <p>Errou um número, uma data ou uma leitura do texto? Avise. Corrigimos, informamos no próprio parecer o que mudou e registramos abaixo.</p>
+          <form class="atu" id="fixform" style="gap:10px"><div class="two-f" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <label class="field" for="fx-n">Seu nome<input id="fx-n" type="text" autocomplete="name"></label>
+            <label class="field" for="fx-e">E-mail<input id="fx-e" type="email" inputmode="email" autocomplete="email"></label></div>
+            <label class="field" for="fx-l">Link da página<input id="fx-l" type="url" inputmode="url" placeholder="https://"></label>
+            <label class="field" for="fx-t">O que está errado<input id="fx-t" type="text" placeholder="Ex.: o placar da votação de 08/10 está trocado"></label>
+            <div><button class="pill-btn">Enviar pedido de correção</button></div></form>
+          <h3 style="font-size:1.05rem;margin-top:10px">Correções recentes</h3>
+          <div class="fixlog">
+            <div><span>12/10</span><p><a href="#lic">Licenciamento simplificado</a>: placar da votação na comissão corrigido de 13 × 6 para 12 × 7.</p></div>
+            <div><span>03/10</span><p><a href="#parecer-resex">Reserva extrativista no Baixo Rio Exemplo</a>: área corrigida de 45 mil para 48 mil hectares; classificação mantida.</p></div>
+          </div></section>
+
+        <section class="rsec" id="m8"><h2><span>8</span>Perguntas frequentes</h2>
+          <div class="faq">
+            <details><summary>Quem escreve os pareceres?${CHEV}</summary><p>O autor do observatório, que assina cada parecer. A estrutura está pronta para colaboradores, sempre identificados.</p></details>
+            <details><summary>Por que "maléfico" e "benéfico"? Isso não é opinião?${CHEV}</summary><p>É uma avaliação técnica com critério público: para que lado a proposta move a proteção ambiental prevista na Constituição e nas leis gerais. O raciocínio completo está em cada parecer, e você pode discordar com base nele.</p></details>
+            <details><summary>Vocês analisam todas as leis?${CHEV}</summary><p>Monitoramos todas as que passam pela triagem ambiental, mas escrevemos parecer sobre as mais relevantes e as que estão perto de votação.</p></details>
+            <details><summary>Posso usar o conteúdo em reportagens ou trabalhos acadêmicos?${CHEV}</summary><p>Sim, citando a fonte. Cada parecer tem citação pronta em ABNT, APA e BibTeX. Jornalistas credenciados têm acesso a gráficos e dados.</p></details>
+            <details><summary>O método muda?${CHEV}</summary><p>Pode mudar. Quando mudar, a versão do método sobe, a data é atualizada e explicamos aqui o que mudou.</p></details>
+          </div></section>
+      </article>
+    </div>
+  </div>`;
+}
+
 /* ---------- compartilhar ---------- */
 const NET_ICO={
   whatsapp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg>',
@@ -1844,8 +2007,8 @@ function render(keepScroll){
   const pl=r.startsWith("parecer-")?LEIS.find(x=>"parecer-"+x.id===r):null;
   const ar=r.startsWith("artigo-")?ARTIGOS.find(x=>"artigo-"+x.id===r):null;
   const y=window.scrollY;
-  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? (isNarrow()?mobileSignup(true):inscricao()) : r==="inscricao-celular" ? inscricaoCelular() : r==="panorama" ? panorama() : r.startsWith("parl-") ? parlamentar(r.slice(5)) : r==="parlamentares-estaduais" ? parlamentaresEstaduais() : r==="timeline" ? timeline() : r==="opiniao" ? opiniao() : r==="estaduais" ? estaduais() : r==="federais" ? federais() : r==="artigos" ? artigos() : ar ? artigo(ar) : home();
-  $("#head").classList.toggle("wide", !!pl || ["inscricao","inscricao-celular","estaduais","panorama"].includes(r));
+  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? (isNarrow()?mobileSignup(true):inscricao()) : r==="inscricao-celular" ? inscricaoCelular() : r==="panorama" ? panorama() : r.startsWith("parl-") ? parlamentar(r.slice(5)) : r==="parlamentares-estaduais" ? parlamentaresEstaduais() : r==="metodologia" ? metodologia() : r==="timeline" ? timeline() : r==="opiniao" ? opiniao() : r==="estaduais" ? estaduais() : r==="federais" ? federais() : r==="artigos" ? artigos() : ar ? artigo(ar) : home();
+  $("#head").classList.toggle("wide", !!pl || ["inscricao","inscricao-celular","estaduais","panorama","metodologia"].includes(r));
   document.body.classList.toggle("focus", (r==="inscricao"||r==="inscricao-celular") && isNarrow());
   state.menu=false; renderHead();
   window.scrollTo(0, keepScroll?y:0);
@@ -1857,7 +2020,7 @@ window.addEventListener("hashchange",()=>render());
 window.addEventListener("scroll",()=>{
   $("#head").classList.toggle("scrolled",window.scrollY>4);
   const rb=$("#readbar"); if(rb){ const h=document.documentElement.scrollHeight-innerHeight; rb.style.width=(h>0?scrollY/h*100:0)+"%"; }
-  const toc=document.querySelectorAll(".toc a"); if(toc.length){ let c="r1"; SECS.forEach(x=>{ const el=document.getElementById(x[0]); if(el && el.getBoundingClientRect().top<160) c=x[0]; }); toc.forEach(a=>a.classList.toggle("on",a.dataset.jump===c)); }
+  const toc=document.querySelectorAll(".toc a"); if(toc.length){ let c=toc[0].dataset.jump; toc.forEach(a=>{ const el=document.getElementById(a.dataset.jump); if(el && el.getBoundingClientRect().top<160) c=a.dataset.jump; }); toc.forEach(a=>a.classList.toggle("on",a.dataset.jump===c)); }
   const steps=document.querySelectorAll(".steps a"); if(!steps.length) return;
   let cur="s-lei"; ["s-lei","s-who","s-par","s-mat"].forEach(id=>{ const el=document.getElementById(id); if(el && el.getBoundingClientRect().top<180) cur=id; });
   steps.forEach(a=>a.classList.toggle("on",a.dataset.jump===cur));
@@ -1873,6 +2036,8 @@ document.addEventListener("click",ev=>{
   const bm=ev.target.closest("[data-bioma]"); if(bm){ const t=bm.dataset.bioma; insc.biomas=insc.biomas.includes(t)?insc.biomas.filter(x=>x!==t):[...insc.biomas,t]; bm.setAttribute("aria-pressed",insc.biomas.includes(t)); return; }
   const pdu=ev.target.closest("[data-pd-uf]"); if(pdu){ pdState.uf=pdu.dataset.pdUf; pdState.q=""; render(true); return; }
   const pdb=ev.target.closest("[data-pd-back]"); if(pdb){ pdState.uf=pdb.dataset.pdBack; }
+  const cb=ev.target.closest("[data-car]"); if(cb){ metSel.car=cb.dataset.car; document.querySelectorAll("[data-car]").forEach(b=>b.setAttribute("aria-pressed",b===cb)); $("#cex").innerHTML=cexHTML(); return; }
+  const jl=ev.target.closest("[data-jump-later]"); if(jl){ ev.preventDefault(); const id=jl.dataset.jumpLater; if(location.hash!=="#metodologia") go("metodologia"); setTimeout(()=>{ const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:"smooth"}); },80); return; }
   const pt2=ev.target.closest("[data-ptab2]"); if(pt2){ parlSel.tab=pt2.dataset.ptab2; render(true); return; }
   const sp=ev.target.closest("[data-seguir-p]"); if(sp){ if(!state.inscrito){ abrirInscricao(); return; } const k=sp.dataset.seguirP; const on=state.seguindoP.includes(k); state.seguindoP=on?state.seguindoP.filter(x=>x!==k):[...state.seguindoP,k]; toast(on?"Você deixou de seguir este parlamentar":"Pronto! Você será avisado quando este parlamentar propuser ou votar matérias ambientais"); render(true); return; }
   const pt=ev.target.closest("[data-ptab]"); if(pt){ pano.tab=pt.dataset.ptab; render(true); return; }
@@ -1936,6 +2101,7 @@ function gtip(el){ let t=$("#gtip"); if(!t){ t=document.createElement("div"); t.
 document.addEventListener("mouseover",e=>{ const el=e.target.closest("[data-t]"); const t=$("#gtip"); if(el) gtip(el); else if(t) t.hidden=true; });
 window.addEventListener("scroll",()=>{ const t=$("#gtip"); if(t) t.hidden=true; },{passive:true});
 document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ $("#layer").innerHTML=""; if(state.menu){ state.menu=false; renderHead(); } } });
+document.addEventListener("submit",e=>{ if(e.target.id==="fixform"){ e.preventDefault(); if(!$("#fx-t").value.trim()){ toast("Conte o que está errado"); return; } e.target.reset(); toast("Pedido recebido. Respondemos por e-mail em até 3 dias úteis."); } });
 document.addEventListener("input",e=>{ if(e.target.id==="pd-q"){ pdState.q=e.target.value; $("#pdrows").innerHTML=depRows(pdState.uf); } });
 document.addEventListener("change",e=>{ if(e.target.id==="m-uf"){ insc.uf=e.target.value; $("#m-flag").innerHTML=flag(insc.uf); toast("Estado atualizado para "+UF_NOME[insc.uf]); }
   if(e.target.id==="i-uf"){ insc.uf=e.target.value; $("#i-flag").innerHTML=flag(insc.uf,"md"); } });

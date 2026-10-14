@@ -102,9 +102,22 @@ Acesso pelos cartões de autor e relator, pelos autores de emendas e pela lista 
 
 Texto introdutório do tema ou da região, proposições em pauta, pareceres, filtros; assinatura da newsletter regional.
 
-## A8. Metodologia
+## A8. Metodologia **[F1]**
 
-Critérios das tags de impacto e caráter, modelo do parecer, fontes, política de correção, aviso de opinião pessoal do autor. **[F1]**
+Página de transparência, com sumário fixo e versão do método (ex.: 1.0) e data de atualização.
+
+| Seção | Conteúdo |
+|---|---|
+| 1. Do projeto ao parecer | Monitoramento (automático) → Triagem (automático + pessoa) → Análise (pessoa) → Parecer (pessoa, modelo fixo) → Publicação e atualização (versões) |
+| 2. Como classificamos | Caráter em 4 categorias com definição e exemplo real do site ao tocar; tabela de critérios de impacto (alto, médio, baixo); regra de desempate (usa o nível mais alto e explica) |
+| 3. Indicadores | Padrão de atuação, tendência (fórmula e limites de ±15), amostra mínima (5), sentido do voto federal, biomas e áreas (contagem múltipla), estados sem votos |
+| 4. Fontes | Tabela fonte · o que usamos · frequência; vale sempre a fonte oficial |
+| 5. Uso de IA | O que a IA faz e o que não faz; todo parecer é revisado e assinado |
+| 6. Independência e limites | Projeto pessoal, não é consultoria nem peça processual, sem patrocínio de interessados, avalia propostas e não pessoas |
+| 7. Correções | Formulário de pedido de correção e registro público das correções |
+| 8. Perguntas frequentes | Respostas curtas e expansíveis |
+
+Acesso: rodapé (Metodologia, Correções, Independência), notas de método do Panorama e do padrão de atuação, e o link "como classificamos" no veredito do parecer.
 
 ## A9. Timeline **[F1 manual / F2 automática]**
 
