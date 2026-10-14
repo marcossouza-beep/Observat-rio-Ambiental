@@ -609,6 +609,11 @@ a:hover .go-c{background:var(--green);color:#fff}
 .pcard[aria-checked="true"]{border-color:var(--green);background:var(--green-50)}
 .pcard[aria-checked="true"] i{border:6px solid var(--green)}
 .pcard .press{color:var(--sky-ink);font-weight:600}
+.pdet{margin-top:14px;padding:14px;border-radius:14px;background:var(--bg);border:1px solid var(--line)}
+.pdet:empty{display:none}
+.pdet .field+.field{margin-top:12px}
+.pdet-q{display:block;font-weight:600;font-size:.9rem;margin-bottom:8px}
+.pdet-note{margin-top:12px;font-size:.86rem;color:var(--sky-ink)}
 .pressbox{background:var(--sky);border-radius:14px;padding:14px 16px;display:grid;gap:8px}
 .pressbox b{color:var(--sky-ink)}
 .pressbox ul{margin:0;padding-left:18px;display:grid;gap:3px;font-size:.88rem;color:#2B3A55}
@@ -1249,7 +1254,7 @@ function modal(){
     <input id="n" type="text" placeholder="Seu nome" aria-label="Nome" required>
     <input id="e" type="email" placeholder="Seu e-mail" aria-label="E-mail" required>
     <div class="row">
-      <select id="p" aria-label="Perfil"><option>Advogado(a)</option><option>Estudante</option><option>Servidor(a)</option><option>Empresa</option><option>ONG</option><option>Cidadão(ã)</option></select>
+      <select id="p" aria-label="Perfil">${PERFIS.map(x=>`<option>${x}</option>`).join("")}</select>
       <select id="s" aria-label="Estado">${"AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP TO".split(" ").map(u=>`<option ${u==="TO"?"selected":""}>${u}</option>`).join("")}</select>
     </div>
     <label class="chk"><input id="c" type="checkbox"> Concordo com a Política de Privacidade</label>
@@ -1274,13 +1279,21 @@ function abrirInscricao(){
 
 /* ---------- página de inscrição ---------- */
 const PERFIS=["Advogado(a)","Estudante","Servidor(a) público(a)","Empresa","ONG / movimento","Pesquisador(a)","Jornalista","Cidadão(ã)"];
-const PERFIL_DESC={"Advogado(a)":"Atuação jurídica e consultoria","Estudante":"Graduação ou pós-graduação","Servidor(a) público(a)":"Órgãos ambientais, MP, Judiciário, Legislativo","Empresa":"Setor produtivo e consultorias","ONG / movimento":"Sociedade civil organizada","Pesquisador(a)":"Universidades e institutos","Jornalista":"Inclui credenciamento de imprensa","Cidadão(ã)":"Quero acompanhar as leis"};
+const PERFIL_DESC={"Advogado(a)":"Atuação jurídica e consultoria","Estudante":"Informe curso e estado","Servidor(a) público(a)":"Órgãos ambientais, MP, Judiciário, Legislativo","Empresa":"Setor produtivo e consultorias","ONG / movimento":"Sociedade civil organizada","Pesquisador(a)":"Universidades e institutos","Jornalista":"Inclui credenciamento de imprensa","Cidadão(ã)":"Quero acompanhar as leis"};
+const PERFIL_SUB={"Advogado(a)":["Advocacia privada","Advocacia pública","Jurídico de empresa","Consultoria ambiental"],
+  "Servidor(a) público(a)":["Órgão ambiental","Ministério Público","Defensoria","Judiciário","Legislativo","Outro órgão"],
+  "Empresa":["Agropecuária","Mineração","Energia","Saneamento","Indústria","Consultoria ambiental"],
+  "ONG / movimento":["Meio ambiente","Povos e comunidades","Direitos e cidadania","Outro foco"],
+  "Pesquisador(a)":["Direito","Ciências ambientais e biológicas","Ciências agrárias","Engenharias","Ciências humanas e sociais"],
+  "Cidadão(ã)":["Interesse geral","Produtor(a) rural","Moro em área afetada","Professor(a) da educação básica"]};
+const PERFIL_Q={"Advogado(a)":"Onde você atua?","Servidor(a) público(a)":"Em que órgão?","Empresa":"Em que setor?","ONG / movimento":"Qual o foco?","Pesquisador(a)":"Em que área?","Cidadão(ã)":"O que mais descreve você?"};
+const CURSOS=["Direito","Engenharia Ambiental","Ciências Biológicas","Agronomia","Gestão Ambiental","Engenharia Florestal","Geografia","Oceanografia"];
 const TEMAS=["Licenciamento","Florestas","Água","Clima","Mineração","Agrotóxicos","Espécies exóticas","Unidades de conservação","Povos e comunidades"];
 const BIOMAS_L=["Amazônia","Cerrado","Caatinga","Mata Atlântica","Pantanal","Pampa","Costeiro e marinho"];
 const VTIPOS=["Jornal","TV","Rádio","Site ou portal","Agência","Podcast","Freelancer"];
 const FUNCOES=["Repórter","Editor(a)","Produtor(a)","Colunista","Freelancer","Outra"];
 const UFS="AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP TO".split(" ");
-const insc={i:0,nome:"",email:"",perfil:"",uf:"TO",temas:["Florestas","Água"],biomas:["Amazônia","Cerrado"],alertas:true,news:true,regional:true,ok:false,
+const insc={i:0,nome:"",email:"",perfil:"",sub:"",curso:"",uf:"TO",temas:["Florestas","Água"],biomas:["Amazônia","Cerrado"],alertas:true,news:true,regional:true,ok:false,
   imp:{veiculo:"",tipo:"",funcao:"Repórter",mtb:"",link:"",emailp:"",aut:false},press:null};
 const STEP_LBL={voce:"Você",perfil:"Perfil",imprensa:"Imprensa",interesses:"Interesses",avisos:"Avisos"};
 const stepsInsc = () => ["voce","perfil",...(insc.perfil==="Jornalista"?["imprensa"]:[]),"interesses","avisos"];
@@ -1295,7 +1308,7 @@ const PERKS=[["doc","Notas técnicas em PDF","A análise jurídica completa de c
 function stepBody(id){
   if(id==="voce") return `<label class="field" for="i-nome">Nome<input id="i-nome" type="text" autocomplete="name" placeholder="Como podemos te chamar?" value="${insc.nome}"></label>
       <label class="field" for="i-email">E-mail<input id="i-email" type="email" inputmode="email" autocomplete="email" placeholder="voce@exemplo.com" value="${insc.email}"></label>`;
-  if(id==="perfil") return `<div class="pcards" role="radiogroup" aria-label="Perfil">${PERFIS.map(x=>`<button class="pcard" role="radio" data-perfil="${x}" aria-checked="${insc.perfil===x}"><b>${x}</b><span class="${x==="Jornalista"?"press":""}">${PERFIL_DESC[x]}</span><i></i></button>`).join("")}</div>`;
+  if(id==="perfil") return `<div class="pcards" role="radiogroup" aria-label="Perfil">${PERFIS.map(x=>`<button class="pcard" role="radio" data-perfil="${x}" aria-checked="${insc.perfil===x}"><b>${x}</b><span class="${x==="Jornalista"?"press":""}">${PERFIL_DESC[x]}</span><i></i></button>`).join("")}</div><div id="pdet">${perfilDetalhe()}</div>`;
   if(id==="imprensa"){ const m=insc.imp; return `<div class="pressbox"><b>O que o credenciamento libera</b><ul><li>Pareceres antes da publicação, sob embargo</li><li>Contato direto com o autor para entrevistas</li><li>Gráficos e dados prontos para matérias</li><li>Selo "Imprensa verificada" no seu perfil</li></ul></div>
       <label class="field" for="ip-veiculo"><span>Veículo <span class="req">*</span></span><input id="ip-veiculo" type="text" autocomplete="organization" placeholder="Ex.: Jornal do Tocantins" value="${m.veiculo}"></label>
       <div class="field">Tipo de veículo<div class="opts">${VTIPOS.map(v=>`<button class="opt" data-vtipo="${v}" aria-pressed="${m.tipo===v}">${v}</button>`).join("")}</div></div>
@@ -1305,7 +1318,7 @@ function stepBody(id){
       <label class="field" for="ip-mtb"><span>Registro profissional (MTb)</span><span class="hint">Opcional</span><input id="ip-mtb" type="text" placeholder="0000/UF" value="${m.mtb}"></label>
       <label class="consent"><input id="ip-aut" type="checkbox" ${m.aut?"checked":""}> Autorizo a verificação destas informações. Elas são usadas só para o credenciamento e não são compartilhadas.</label>
       <p class="hint">Uma pessoa da equipe verifica em até 2 dias úteis. Enquanto isso, você já tem tudo o que os inscritos têm.</p>`; }
-  if(id==="interesses") return `<label class="field" for="i-uf">Seu estado<span class="withflag" style="width:100%"><span id="i-flag">${flag(insc.uf,"md")}</span><select id="i-uf">${UFS.map(u=>`<option value="${u}" ${u===insc.uf?"selected":""}>${UF_NOME[u]}</option>`).join("")}</select></span></label>
+  if(id==="interesses") return `${insc.perfil==="Estudante"?"":ufField("Seu estado")}
       <div class="field">Temas <span class="hint">escolha quantos quiser</span><div class="opts">${TEMAS.map(x=>`<button class="opt" data-tema="${x}" aria-pressed="${insc.temas.includes(x)}">${x}</button>`).join("")}</div></div>
       <div class="field">Biomas <span class="hint">escolha quantos quiser</span><div class="opts">${BIOMAS_L.map(x=>`<button class="opt" data-bioma="${x}" aria-pressed="${insc.biomas.includes(x)}">${x}</button>`).join("")}</div></div>`;
   const t=(k,b,d)=>`<div class="toggle"><div><b>${b}</b><span>${d}</span></div><button class="sw" role="switch" aria-checked="${insc[k]}" aria-label="${b}" data-sw="${k}"></button></div>`;
@@ -1378,7 +1391,16 @@ function inscricaoCelular(){
       <div class="row"><button class="btn-o" data-act="m-reset">Recomeçar</button><button class="btn-o" data-act="m-jorn">Ver o fluxo de jornalista</button></div>
     </div></div></div>`;
 }
+function ufField(lbl){ return `<label class="field" for="i-uf">${lbl}<span class="withflag" style="width:100%"><span id="i-flag">${flag(insc.uf,"md")}</span><select id="i-uf">${UFS.map(u=>`<option value="${u}" ${u===insc.uf?"selected":""}>${UF_NOME[u]}</option>`).join("")}</select></span></label>`; }
+function perfilDetalhe(){
+  const p=insc.perfil;
+  if(!p) return "";
+  if(p==="Jornalista") return `<p class="pdet-note">No próximo passo: credenciamento de imprensa.</p>`;
+  if(p==="Estudante") return `<div class="pdet"><label class="field" for="i-curso">Curso<input id="i-curso" type="text" list="cursos" autocomplete="off" placeholder="Ex.: Direito" value="${insc.curso}"><datalist id="cursos">${CURSOS.map(c=>`<option value="${c}">`).join("")}</datalist></label>${ufField("Estado onde você mora")}</div>`;
+  return `<div class="pdet"><span class="pdet-q">${PERFIL_Q[p]}</span><div class="opts">${PERFIL_SUB[p].map(x=>`<button type="button" class="opt" data-sub="${x}" aria-pressed="${insc.sub===x}">${x}</button>`).join("")}</div></div>`;
+}
 function saveStep(){
+  if($("#i-curso")) insc.curso=$("#i-curso").value.trim();
   if($("#i-nome")){ insc.nome=$("#i-nome").value.trim(); insc.email=$("#i-email").value.trim(); }
   if($("#i-uf")) insc.uf=$("#i-uf").value;
   if($("#ip-veiculo")){ const m=insc.imp; m.veiculo=$("#ip-veiculo").value.trim(); m.funcao=$("#ip-funcao").value; m.link=$("#ip-link").value.trim(); m.emailp=$("#ip-emailp").value.trim(); m.mtb=$("#ip-mtb").value.trim(); m.aut=$("#ip-aut").checked; }
@@ -1387,6 +1409,8 @@ function validaPasso(){
   const id=stepsInsc()[insc.i];
   if(id==="voce" && (!insc.nome || !/^\S+@\S+\.\S+$/.test(insc.email))) return "Preencha seu nome e um e-mail válido";
   if(id==="perfil" && !insc.perfil) return "Escolha o que melhor descreve você";
+  if(id==="perfil" && insc.perfil==="Estudante" && !insc.curso) return "Informe o seu curso";
+  if(id==="perfil" && PERFIL_SUB[insc.perfil] && !insc.sub) return PERFIL_Q[insc.perfil].replace("?","")+": escolha uma opção";
   if(id==="imprensa"){ const m=insc.imp; if(!m.veiculo) return "Informe o veículo em que você trabalha"; if(!/^(https?:\/\/)?\S+\.\S+/.test(m.link)) return "Informe um link de comprovação"; if(!m.aut) return "Autorize a verificação para continuar"; }
   return "";
 }
@@ -2268,7 +2292,8 @@ document.addEventListener("click",ev=>{
   const hq=ev.target.closest("[data-q]"); if(hq){ ev.preventDefault(); state.q=hq.dataset.q; $("#q").value=state.q; refreshList(); $("#list").scrollIntoView({behavior:"smooth",block:"start"}); return; }
   const ch=ev.target.closest("[data-status]"); if(ch){ state.status=ch.dataset.status; document.querySelectorAll("[data-status]").forEach(b=>b.setAttribute("aria-pressed",b===ch)); refreshList(); return; }
   const j=ev.target.closest("[data-jump]"); if(j){ ev.preventDefault(); document.getElementById(j.dataset.jump).scrollIntoView({behavior:"smooth"}); return; }
-  const pf=ev.target.closest("[data-perfil]"); if(pf){ insc.perfil=pf.dataset.perfil; document.querySelectorAll("[data-perfil]").forEach(b=>b.setAttribute("aria-checked",b===pf)); const c=$(".mcount"); if(c) c.textContent=(insc.i+1)+"/"+stepsInsc().length; const pr=$(".prog"); if(pr){ render(true); } return; }
+  const sb=ev.target.closest("[data-sub]"); if(sb){ insc.sub=sb.dataset.sub; document.querySelectorAll("[data-sub]").forEach(b=>b.setAttribute("aria-pressed",b===sb)); return; }
+  const pf=ev.target.closest("[data-perfil]"); if(pf){ if(insc.perfil!==pf.dataset.perfil) insc.sub=""; insc.perfil=pf.dataset.perfil; const pd=$("#pdet"); if(pd) pd.innerHTML=perfilDetalhe(); document.querySelectorAll("[data-perfil]").forEach(b=>b.setAttribute("aria-checked",b===pf)); const c=$(".mcount"); if(c) c.textContent=(insc.i+1)+"/"+stepsInsc().length; const pr=$(".prog"); if(pr){ render(true); } return; }
   const vt=ev.target.closest("[data-vtipo]"); if(vt){ insc.imp.tipo=vt.dataset.vtipo; document.querySelectorAll("[data-vtipo]").forEach(b=>b.setAttribute("aria-pressed",b===vt)); return; }
   const bm=ev.target.closest("[data-bioma]"); if(bm){ const t=bm.dataset.bioma; insc.biomas=insc.biomas.includes(t)?insc.biomas.filter(x=>x!==t):[...insc.biomas,t]; bm.setAttribute("aria-pressed",insc.biomas.includes(t)); return; }
   const pdu=ev.target.closest("[data-pd-uf]"); if(pdu){ pdState.uf=pdu.dataset.pdUf; pdState.q=""; render(true); return; }

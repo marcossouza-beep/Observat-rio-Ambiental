@@ -203,6 +203,15 @@ table.t tr:last-child td{border-bottom:0}
 .after div{display:flex;gap:10px;font-size:.88rem;align-items:flex-start}
 .after div::before{counter-increment:a;content:counter(a);width:20px;height:20px;border-radius:50%;background:var(--green-50);color:var(--green-dk);font-weight:700;font-size:.74rem;display:grid;place-items:center;flex:none;margin-top:1px}
 .mtabs{display:none}
+.subf{margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--bg)}
+.subf>span{display:block;font-size:.78rem;font-weight:700;color:var(--gray);margin-bottom:6px}
+.subf .tg{background:var(--white)}
+.subf .tg[aria-pressed="true"]{background:var(--ink)}
+.comfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px}
+.combig{display:flex;align-items:center;gap:10px}
+.combig b{font-size:1.6rem;font-weight:800;line-height:1}
+.combig span{font-size:.84rem;color:var(--gray);line-height:1.25}
+.combig small{color:var(--soft)}
 
 /* ---------- modal e aviso ---------- */
 .ov{position:fixed;inset:0;background:rgba(22,32,26,.38);display:grid;place-items:center;padding:16px;z-index:30}
@@ -351,6 +360,23 @@ const TB=[["Amazônia","bioma",true,"03/2027"],["Cerrado","bioma",true,"03/2027"
   ["Licenciamento","tema",true,"03/2027"],["Florestas","tema",false],["Água","tema",false],["Clima","tema",false],["Mineração","tema",false],["Agrotóxicos","tema",false],["Espécies exóticas","tema",false],["Unidades de conservação","tema",false],["Povos e comunidades","tema",false],["Fauna","tema",false],["Saneamento","tema",false]];
 const KW=[["licenciamento ambiental","Licenciamento",10,false,64],["estudo de impacto ambiental","Licenciamento",9,false,21],["Código Florestal","Florestas",9,false,38],["unidades de conservação","Unidades de conservação",9,false,17],["espécies exóticas","Espécies exóticas",8,false,6],["tilápia","Espécies exóticas",6,false,4],["agrotóxico","Agrotóxicos",9,false,19],["garimpo","Mineração",9,false,12],["Pantanal","Bioma",7,false,15],["denominação de rodovia","Exclusão",0,true,31],["dia nacional","Exclusão",0,true,9]];
 
+/* ---------- base de inscritos (perfil → subgrupo) ---------- */
+const AUD={
+  "Advogado(a)":{"Advocacia privada":201,"Advocacia pública":64,"Jurídico de empresa":72,"Consultoria ambiental":47},
+  "Estudante":{"Direito":141,"Engenharia Ambiental":52,"Ciências Biológicas":38,"Agronomia":27,"Outros cursos":40},
+  "Servidor(a) público(a)":{"Órgão ambiental":66,"Ministério Público":31,"Defensoria":6,"Judiciário":15,"Legislativo":21,"Outro órgão":10},
+  "Empresa":{"Agropecuária":31,"Mineração":12,"Energia":9,"Saneamento":8,"Indústria":8,"Consultoria ambiental":19},
+  "ONG / movimento":{"Meio ambiente":34,"Povos e comunidades":14,"Direitos e cidadania":9,"Outro foco":5},
+  "Pesquisador(a)":{"Direito":22,"Ciências ambientais e biológicas":25,"Ciências agrárias":10,"Engenharias":9,"Ciências humanas e sociais":8},
+  "Jornalista":{"Credenciados":12,"Não credenciados":25},
+  "Cidadão(ã)":{"Interesse geral":88,"Produtor(a) rural":21,"Moro em área afetada":26,"Professor(a) da educação básica":14}
+};
+const AUD_LBL={"Estudante":"Curso","Jornalista":"Credenciamento"};
+const UF_SHARE={TO:.22,PA:.14,SP:.09,MT:.07,DF:.06,GO:.05,MG:.05,AM:.05,RJ:.04,MS:.03,MA:.03,BA:.03,PR:.02,RS:.02,PE:.02,CE:.02,SC:.01,RO:.01,AC:.01,AP:.01,RR:.01,PI:.01,RN:.01,PB:.01,AL:.01,SE:.01,ES:.01};
+const UFL="AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP TO".split(" ");
+const CONSENT=.955;
+const sumO=o=>Object.values(o).reduce((a,b)=>a+b,0);
+
 /* ---------- estado ---------- */
 const S={tab:{},edPane:"dos",dTab:"texto",eTab:"parecer",
   cfg:{parecer:7,atual:5,corr:3,cred:2,lgpd:15,cap:10},
@@ -360,6 +386,7 @@ const S={tab:{},edPane:"dos",dTab:"texto",eTab:"parecer",
   pubModo:"agora",embargo:true,
   coletando:false,senadoOk:false,
   resp:{},nota:"",
+  com:{modo:"todos",perfis:[],subs:{},uf:"",assunto:"",msg:""},
   blocos:{}
 };
 
@@ -715,9 +742,34 @@ function fontes(){
 }
 
 /* ---------- ENVIOS ---------- */
+function comCount(){
+  const c=S.com; let n=0;
+  const ps=c.modo==="todos"?Object.keys(AUD):c.perfis;
+  ps.forEach(p=>{ const sel=c.subs[p]||[]; n+=sel.length?sel.reduce((a,k)=>a+AUD[p][k],0):sumO(AUD[p]); });
+  if(c.uf) n*=UF_SHARE[c.uf]||.01;
+  return Math.round(n*CONSENT);
+}
+function comAud(){
+  const c=S.com;
+  return `${c.modo==="perfil"?`<div class="chips" style="margin-top:8px">${Object.keys(AUD).map(p=>`<button class="tg" data-cp="${p}" aria-pressed="${c.perfis.includes(p)}">${p} <span style="opacity:.6">${sumO(AUD[p])}</span></button>`).join("")}</div>
+    ${c.perfis.map(p=>`<div class="subf"><span>${p} · ${AUD_LBL[p]||"Subgrupo"}</span><div class="chips">${Object.entries(AUD[p]).map(([k,v])=>`<button class="tg" data-cs="${p}|${k}" aria-pressed="${(c.subs[p]||[]).includes(k)}">${k} <span style="opacity:.6">${v}</span></button>`).join("")}</div></div>`).join("")}
+    ${c.perfis.length?`<p class="hint" style="margin-top:6px">Sem subgrupo marcado, vai para o perfil inteiro.</p>`:""}`:""}`;
+}
+function comunicado(){
+  const c=S.com; const n=comCount();
+  return `<section class="card"><div class="ch"><h2>Comunicado aos inscritos</h2><span>sai do seu nome, com descadastro em um clique</span></div>
+    <div class="field"><label>Para</label><div class="seg">${[["todos","Todos"],["perfil","Por perfil"]].map(([v,t])=>`<button data-cmodo="${v}" aria-pressed="${c.modo===v}">${t}</button>`).join("")}</div><div id="caud">${comAud()}</div></div>
+    <div class="field"><label for="cuf">Estado</label><select class="in" id="cuf" style="max-width:260px"><option value="">Todos os estados</option>${UFL.map(u=>`<option ${c.uf===u?"selected":""}>${u}</option>`).join("")}</select></div>
+    <div class="field"><label for="cas">Assunto</label><input class="in" id="cas" placeholder="Ex.: Convite: debate sobre o PL do licenciamento" value="${c.assunto}"></div>
+    <div class="field"><label for="cmsg">Mensagem</label><textarea class="in" id="cmsg" rows="5" placeholder="Escreva o comunicado. Use {nome} para personalizar.">${c.msg}</textarea></div>
+    <div class="comfoot"><div class="combig"><b id="ccount">${n.toLocaleString("pt-BR")}</b><span>pessoas recebem<br><small>só quem aceitou e-mails do observatório</small></span></div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn sm" data-cteste>Enviar teste para mim</button><button class="btn sm" data-cagenda>Agendar</button><button class="btn sm p" data-cenviar>Enviar</button></div></div>
+  </section>`;
+}
 function envios(){
-  return `${mtop()}<div class="ph"><div><h1>E-mails</h1><p class="sub">O que sai sozinho, quando e para quem.</p></div></div>
-  <div class="grid2"><div>
+  return `${mtop()}<div class="ph"><div><h1>E-mails</h1><p class="sub">O que sai sozinho, quando e para quem, e os comunicados que você escreve.</p></div></div>
+  ${comunicado()}
+  <div class="grid2" style="margin-top:14px"><div>
   <section class="card"><div class="ch"><h2>Resumo semanal</h2><span class="chip l">Sai sex, 16/10, 17h</span></div>
     <p class="muted" style="margin-bottom:10px">Montado sozinho com o que aconteceu na semana. Se você não mexer, sai assim mesmo.</p>
     <div class="pubprev" style="margin-top:0"><b>Nesta semana no observatório</b>
@@ -780,8 +832,9 @@ function inscritos(){
   <div class="since"><div><b>1.240</b><span>inscritos confirmados</span></div><div><b>+86</b><span>nos últimos 7 dias</span></div><div><b>12</b><span>jornalistas credenciados</span></div><div><b>3,4%</b><span>visitas que viram inscrição</span></div></div>
   <section class="card"><div class="ch"><h2>De onde vieram</h2><span>parecer que levou à inscrição</span></div>
     <div class="mini"><div>Licenciamento simplificado<span>412</span></div><div>Restauração da Caatinga<span>188</span></div><div>Nova reserva extrativista<span>96</span></div><div>Outorga coletiva de água<span>71</span></div><div>Página inicial e outros<span>473</span></div></div></section>
-  <section class="card"><div class="ch"><h2>Perfis</h2></div>
-    <div class="mini"><div>Profissional do direito<span>31%</span></div><div>Estudante ou academia<span>24%</span></div><div>Cidadão<span>22%</span></div><div>Setor produtivo<span>12%</span></div><div>Sociedade civil<span>8%</span></div><div>Imprensa<span>3%</span></div></div></section>`;
+  <section class="card"><div class="ch"><h2>Perfis</h2><span>cada perfil com seu subgrupo; estudantes por curso</span></div>
+    <div class="rows">${Object.entries(AUD).map(([p,o])=>{const t=sumO(o);return `<div><div><p>${p} <span class="muted" style="font-weight:500">· ${t} (${Math.round(t/12.4)}%)</span></p><div class="m">${Object.entries(o).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<span class="chip">${k} ${v}</span>`).join("")}</div></div><div class="acts"><a class="btn sm" href="#envios" data-compara="${p}">Escrever para este perfil</a></div></div>`;}).join("")}</div>
+</section>`;
 }
 
 /* ---------- AJUSTES ---------- */
@@ -852,6 +905,13 @@ document.addEventListener("click",e=>{
   if(d.publicar){ if(t.getAttribute("aria-disabled")==="true") return toast("Ainda não dá para publicar: resolva os itens em vermelho."); const k=d.publicar, p=P[k];
     if(S.pubModo==="agendar"){ p.st="agendado"; p.quando="15/10, 8h"; p.embargo=S.embargo; location.hash="#pareceres"; S.tab.par="agendado"; return toast("Agendado para 15/10, 8h."); }
     const n=p.aviso||0; p.st="publicado"; p.pub="14/10"; if(p.nova){p.versao=p.nova; delete p.nova;} location.hash="#pareceres"; S.tab.par="publicado"; return toast(`Publicado. ${n?n+" pessoas avisadas; ":""}página, gráficos, Timeline e sitemap atualizados.`); }
+  if(d.cmodo){ S.com.modo=d.cmodo; return rerender(); }
+  if(d.cp){ const a=S.com.perfis; if(a.includes(d.cp)){ a.splice(a.indexOf(d.cp),1); delete S.com.subs[d.cp]; } else a.push(d.cp); return rerender(); }
+  if(d.cs){ const [p,k]=d.cs.split("|"); const a=S.com.subs[p]||(S.com.subs[p]=[]); a.includes(k)?a.splice(a.indexOf(k),1):a.push(k); return rerender(); }
+  if(d.compara){ S.com={modo:"perfil",perfis:[d.compara],subs:{},uf:"",assunto:"",msg:""}; return; }
+  if(d.cteste!==undefined){ return toast("Teste enviado para nome@exemplo.com."); }
+  if(d.cagenda!==undefined||d.cenviar!==undefined){ const c=S.com; if(!c.assunto.trim()||!c.msg.trim()) return toast("Escreva o assunto e a mensagem."); if(c.modo==="perfil"&&!c.perfis.length) return toast("Escolha ao menos um perfil."); const n=comCount();
+    S.com={modo:"todos",perfis:[],subs:{},uf:"",assunto:"",msg:""}; rerender(); return toast(d.cagenda!==undefined?`Comunicado agendado para ${n.toLocaleString("pt-BR")} pessoas.`:`Comunicado na fila de envio para ${n.toLocaleString("pt-BR")} pessoas.`); }
   if(d.sendRev!==undefined){ return toast("Enviado para revisão."); }
   if(d.prev!==undefined){ return toast("Prévia: como visitante, como inscrito e em PDF (no site real abre em nova aba)."); }
   if(d.coletar!==undefined){ S.coletando=true; rerender(); setTimeout(()=>{ S.coletando=false; S.senadoOk=true; rerender(); toast("Senado coletado: 71 itens. Nota pública retirada."); },1400); return; }
@@ -867,6 +927,8 @@ document.addEventListener("input",e=>{
   if(d.blk){ S.blocos[d.blk]=el.value; const k=d.blk.split("|")[0]; const n=secCount(k); const sn=document.getElementById("secn"); if(sn) sn.textContent=`${n} de 7 seções`; el.closest(".blk").classList.toggle("done",el.value.trim().length>20); if(P[k]) P[k].sec=n; const sv=document.getElementById("saved"); if(sv) sv.textContent="Salvo agora"; }
   if(el.id==="mud") S.mud=el.value;
   if(el.id==="nota") S.nota=el.value;
+  if(el.id==="cas") S.com.assunto=el.value;
+  if(el.id==="cmsg") S.com.msg=el.value;
   if(d.seo){ S.seo[d.seo]=el.value; const s=S.seo;
     document.getElementById("gt").textContent=s.tit+" | Nome do Site"; document.getElementById("gd").textContent=s.desc;
     const ct=document.getElementById("c-tit"); ct.textContent=s.tit.length+"/60"; ct.classList.toggle("over",s.tit.length>60);
@@ -876,7 +938,8 @@ document.addEventListener("input",e=>{
   if(d.cfg){ const v=parseInt(el.value,10); if(v>0) S.cfg[d.cfg]=v; }
   if(d.testkw!==undefined){ const v=el.value.trim(); document.getElementById("ttr").textContent=v?`“${v}” capturaria ${Math.max(1,(v.length*7)%40)} propostas nos últimos 30 dias (${Math.max(0,(v.length*3)%9)} já descartadas).`:"Mostra quantas propostas dos últimos 30 dias o termo capturaria."; }
 });
-document.addEventListener("change",e=>{ if(e.target.dataset.emb!==undefined) S.embargo=e.target.checked; });
+document.addEventListener("change",e=>{ if(e.target.dataset.emb!==undefined) S.embargo=e.target.checked;
+  if(e.target.id==="cuf"){ S.com.uf=e.target.value; document.getElementById("ccount").textContent=comCount().toLocaleString("pt-BR"); } });
 document.addEventListener("keydown",e=>{ if(e.key==="Escape") document.getElementById("ovl").innerHTML=""; });
 render();
 </script>

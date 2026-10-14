@@ -103,7 +103,7 @@ Autor           id, slug, nome, titulo, bio, foto_url, linkedin, instagram, x, l
 BlocoParecer    id, parecer_id, ordem, tipo (resumo|o_que_muda|impactos|pontos_atencao|base_legal|recomendacoes|conclusao|tabela|grafico|texto),
                 titulo, conteudo
 
-Assinante       id, nome, email, perfil, uf, temas[], biomas[], consentimento_em, opt_newsletter,
+Assinante       id, nome, email, perfil, subperfil (nulo para estudante), curso (só estudante), uf, temas[], biomas[], consentimento_em, opt_newsletter,
                 confirmado_em, origem_parecer_id
 Assinatura      assinante_id, alvo_tipo (proposicao|tema|bioma|regiao|uf|parlamentar), alvo_id
 CredImprensa    assinante_id, veiculo, tipo_veiculo, funcao, link_comprovacao, email_profissional, registro_mtb,
@@ -117,7 +117,9 @@ Pedido          id, tipo (correcao|credenciamento|lgpd), assinante_id, parecer_i
                 decisao (procede|nao_procede|aprovado|recusado|mais_info), recebido_em, respondido_em
 Correcao        id, parecer_id, pedido_id, descricao, feita_em          -- lista pública
 Verificacao     id, tipo (fonte|site|paginas|email|backup|links|sitemap), resultado, detalhe, em
-Envio           id, tipo (aviso_publicacao|alerta|resumo|embargo|acesso), assinante_id, parecer_id,
+Comunicado      id, assunto, mensagem, filtro_perfis[], filtro_subperfis[], filtro_uf, total_previsto,
+                status (rascunho|agendado|enviado), agendado_para, enviado_em
+Envio           id, tipo (aviso_publicacao|alerta|resumo|embargo|acesso|comunicado), comunicado_id, assinante_id, parecer_id,
                 status (fila|enviado|entregue|retorno), em
 ```
 

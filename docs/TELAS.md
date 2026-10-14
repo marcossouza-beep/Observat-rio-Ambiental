@@ -67,7 +67,7 @@ Ordem dos blocos, de cima para baixo:
 |---|---|
 | Nome | Sim |
 | E-mail | Sim |
-| Perfil (advogado, estudante, servidor público, empresa, ONG/movimento, pesquisador, jornalista, cidadão) | Sim |
+| Perfil (advogado, estudante, servidor público, empresa, ONG/movimento, pesquisador, jornalista, cidadão) + subgrupo do perfil; estudante informa curso e estado onde mora (ver A17) | Sim |
 | UF | Sim |
 | Temas de interesse | Não (pode completar depois) |
 | Consentimento para tratamento de dados (LGPD) | Sim |
@@ -208,7 +208,7 @@ Fluxo próprio para telas pequenas (no computador, a página `#inscricao-celular
 | Passos | Você → Perfil → **Imprensa** (só jornalistas) → Interesses (estado com bandeira, temas, **biomas**) → Avisos |
 | Botão principal | Fixo embaixo, ao alcance do polegar |
 | Benefícios | Carrossel horizontal no primeiro passo |
-| Perfil | Cartões grandes de toque (escolha única) |
+| Perfil | Cartões grandes de toque (escolha única). Logo abaixo, uma pergunta curta do perfil (obrigatória): Advogado → onde atua (advocacia privada, pública, jurídico de empresa, consultoria ambiental); Servidor → órgão (ambiental, MP, Defensoria, Judiciário, Legislativo, outro); Empresa → setor (agropecuária, mineração, energia, saneamento, indústria, consultoria ambiental); ONG → foco (meio ambiente, povos e comunidades, direitos e cidadania, outro); Pesquisador → área (Direito, ciências ambientais e biológicas, agrárias, engenharias, humanas e sociais); Cidadão → o que mais descreve (interesse geral, produtor rural, mora em área afetada, professor da educação básica). **Estudante** não tem subgrupo: informa **curso** (com sugestões) e **estado onde mora**, e por isso não vê o campo de estado no passo Interesses. Jornalista segue para o credenciamento |
 | Campos | 16px (sem zoom), teclado certo por tipo (e-mail, URL), preenchimento automático |
 | Final | "Confira seu e-mail"; para jornalistas, cartão "Credenciamento em análise" |
 
@@ -306,6 +306,8 @@ Tabela de fontes: nível A–D, última coleta bem-sucedida, itens contra a méd
 
 ## B7. E-mails **[F3]**
 
+**Comunicado aos inscritos [F1]:** um campo para escrever ao público inscrito. Para: Todos ou Por perfil (um ou mais perfis e, dentro de cada um, subgrupos opcionais; estudantes por curso); filtro por estado; assunto, mensagem com `{nome}`; contagem ao vivo de quem recebe (só quem aceitou e-mails do observatório); enviar teste para mim, agendar ou enviar. Todo comunicado leva o descadastro em um clique. Na tela Inscritos, cada perfil tem o atalho "Escrever para este perfil".
+
 Resumo semanal montado sozinho, com nota opcional do autor (sai mesmo sem ela); envios do dia (alertas agrupados, embargos, avisos de publicação); números de entrega; regras (no máximo 1 alerta por pessoa por dia, só eventos relevantes, descadastro em um clique).
 
 ## B8. Textos do site **[F1]**
@@ -318,7 +320,7 @@ Termo, grupo, peso, exclusão e capturas em 30 dias; teste de um termo novo ante
 
 ## B10. Inscritos **[F1]**
 
-Totais, crescimento, jornalistas credenciados, conversão, parecer que levou à inscrição, perfis; exportação CSV.
+Totais, crescimento, jornalistas credenciados, conversão, parecer que levou à inscrição, perfis com a divisão por subgrupo (estudantes por curso); exportação CSV.
 
 ## B11. Ajustes
 

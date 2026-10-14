@@ -49,6 +49,7 @@
 | "Resumo semanal" | Sexta, 17h, montado automaticamente; o autor pode acrescentar uma nota até a hora do envio | Se o autor não mexer, sai assim mesmo |
 | Embargo para imprensa credenciada | Ao agendar um parecer com embargo | Envio com data e hora de liberação no assunto |
 | Confirmação e link de acesso | Na hora | Monitoramento de entrega e de retorno (bounce) |
+| Comunicados do autor (por perfil, subgrupo e estado) | Quando o autor envia ou agenda | Só para quem aceitou e-mails do observatório; descadastro em um clique; registro de cada envio |
 
 ## 3. Monitoramento
 
