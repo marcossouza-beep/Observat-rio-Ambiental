@@ -916,6 +916,28 @@ a.person .go-c{margin-left:auto;width:28px;height:28px}
 .auth-head h1{font-size:clamp(1.8rem,4.5vw,2.5rem);font-weight:800}
 @media (max-width:560px){ .abox{grid-template-columns:1fr} .auth-head{grid-template-columns:1fr} }
 
+
+/* ---------- temas e biomas ---------- */
+.tb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.tbc{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:8px;align-content:start;transition:border-color .15s,transform .15s}
+.tbc:hover{border-color:var(--green);transform:translateY(-2px)}
+.tbc h3{font-size:1.05rem;font-weight:700}
+.tbc small{color:var(--gray);font-size:.82rem}
+.tbc .fx{display:flex;justify-content:space-between;gap:8px;font-size:.8rem;color:var(--soft)}
+.tbc.bio{background:linear-gradient(180deg,var(--white),var(--bg))}
+.tb-head{display:grid;gap:12px;padding-block:14px 8px;max-width:760px}
+.tb-head h1{font-size:clamp(2rem,5vw,2.8rem);font-weight:800}
+.tb-head .intro{font-size:1.08rem;color:#3A443E;line-height:1.6}
+.tb-head .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.ufchips{display:flex;flex-wrap:wrap;gap:6px}
+.ufchips a,.ufchips span{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--white);border-radius:999px;padding:4px 12px 4px 6px;font-size:.84rem}
+.ufchips span{color:var(--soft)}
+.ufchips span .flag{opacity:.45;filter:grayscale(.4)}
+.ufchips a:hover{border-color:var(--green)}
+.biochips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.biochips a{border:1px solid var(--line);background:var(--white);border-radius:999px;padding:6px 14px;font-size:.88rem;font-weight:500}
+.biochips a:hover{border-color:var(--green)}
+
 @media (max-width:640px){
   .topics{grid-template-columns:repeat(2,minmax(0,1fr))}
   .topics .topic:last-child{grid-column:1/-1}
@@ -931,7 +953,7 @@ a.person .go-c{margin-left:auto;width:28px;height:28px}
 <main id="app"></main>
 <footer class="foot"><div class="foot-in">
   <a class="brand" href="#home"><i></i>Nome do Site</a>
-  <nav aria-label="Institucional"><a href="#metodologia">Metodologia</a><a href="#metodologia" data-jump-later="m7">Correções</a><a href="#metodologia" data-jump-later="m6">Independência</a><a href="#home">Política de privacidade</a><a href="#home">Termos de uso</a></nav>
+  <nav aria-label="Institucional"><a href="#temas">Temas e biomas</a><a href="#metodologia">Metodologia</a><a href="#metodologia" data-jump-later="m7">Correções</a><a href="#metodologia" data-jump-later="m6">Independência</a><a href="#home">Política de privacidade</a><a href="#home">Termos de uso</a></nav>
   <small>Rascunho visual · conteúdos fictícios</small></div></footer>
 <div id="layer"></div>
 
@@ -1092,6 +1114,7 @@ function home(){
       <div class="section-h"><h2>Explore por tópico</h2></div>
       <div class="topics">${TOPICS.map(t=>`<button class="topic" data-topic="${t[0]}" aria-pressed="${t[0]!=="todos"&&state.topic===t[0]}">${ICON[t[1]]}<b>${t[2]}</b><small>${t[3]}</small></button>`).join("")}</div>
     </section>
+    <section class="section" style="padding-top:0"><div class="section-h"><h2>Explore por bioma</h2><a class="arrow" href="#temas" style="font-size:.88rem">Todos os temas e biomas${ARR}</a></div><div class="biochips">${BIOMAS.map(b=>`<a href="#bioma-${slugify(b.nome)}">${b.nome}</a>`).join("")}</div></section>
     <a class="pano-teaser" href="#panorama"><div style="display:grid;gap:4px"><b>Panorama</b><p>Padrão de atuação da União e dos estados, por bioma e por área.</p></div>${sbar(ATUACAO.BR.p,ATUACAO.BR.n)}<span class="arrow">Ver${ARR}</span></a>
     <section class="section">
       <div class="section-h"><h2>Mais recentes</h2><span id="count">${filtradas().length} leis</span></div>
@@ -1767,7 +1790,7 @@ function panoBiomas(){
   const b=BIOMAS.find(x=>x.nome===pano.bio)||BIOMAS[0];
   const leis=LEIS.filter(l=>(LEI_BIOMA[l.id]||[]).includes(b.nome));
   return `<div class="bgrid">${BIOMAS.map(x=>`<button class="bcard" data-bio="${x.nome}" aria-pressed="${x.nome===b.nome}"><h3>${x.nome}</h3><small>${x.n} pareceres · ${x.prop} propostas</small>${sbar(x.p,x.n,true)}<div class="fx"><span>Alto impacto ${x.alto}%</span>${x.n<AMOSTRA_MIN?`<span>amostra pequena</span>`:`<span>${x.temas[0]}</span>`}</div></button>`).join("")}</div>
-    <div class="bdetail" id="bdetail"><div class="atu-h"><div><span class="sub-h">Bioma</span><h3>${b.nome}</h3><small style="color:var(--soft)">${b.n} pareceres sobre ${b.prop} propostas · alto impacto em ${b.alto}%</small></div>${tendencia(b)}</div>
+    <div class="bdetail" id="bdetail"><div class="atu-h"><div><span class="sub-h">Bioma</span><h3><a href="#bioma-${slugify(b.nome)}">${b.nome}</a></h3><small style="color:var(--soft)">${b.n} pareceres sobre ${b.prop} propostas · alto impacto em ${b.alto}%</small></div>${tendencia(b)}</div>
       ${sbar(b.p,b.n)}${plegend()}
       <div class="qual"><div class="q-neg"><b>Principais pressões</b><ul>${b.neg.map(x=>`<li>${x}</li>`).join("")||"<li>Nenhuma no período</li>"}</ul></div><div class="q-pos"><b>Principais avanços</b><ul>${b.pos.map(x=>`<li>${x}</li>`).join("")||"<li>Nenhum no período</li>"}</ul></div></div>
       <div class="themes">Temas mais frequentes: ${b.temas.map(t=>`<span class="t">${t}</span>`).join("")}</div>
@@ -1777,7 +1800,7 @@ function panoBiomas(){
 function panoAreas(){
   if(pano.tabela) return `<div class="tw"><table class="ptable"><thead><tr><th>Área</th><th class="r">Pareceres</th><th class="r">Maléfico</th><th class="r">Indireto</th><th class="r">Neutro</th><th class="r">Benéfico</th><th class="r">Alto impacto</th></tr></thead><tbody>${AREAS.map(a=>`<tr><td>${a[0]}</td><td class="r">${a[1]}</td><td class="r">${a[2][0]}%</td><td class="r">${a[2][1]}%</td><td class="r">${a[2][2]}%</td><td class="r">${a[2][3]}%</td><td class="r">${a[3]}%</td></tr>`).join("")}</tbody></table></div>`;
   const max=Math.max(...AREAS.map(a=>a[1]));
-  return `<div class="arows">${AREAS.map(a=>`<button class="arow" data-area="${a[0]}" aria-expanded="${pano.area===a[0]}"><b>${a[0]}</b><span class="mag"><span class="tr"><i style="width:${a[1]/max*100}%"></i></span><span>${a[1]}</span></span>${sbar(a[2],a[1])}<span class="chev">${CHEV}</span></button>${pano.area===a[0]?`<p class="anote"><b>O que temos visto:</b> ${a[4]} Alto impacto em ${a[3]}% dos pareceres.</p>`:""}`).join("")}</div>`;
+  return `<div class="arows">${AREAS.map(a=>`<button class="arow" data-area="${a[0]}" aria-expanded="${pano.area===a[0]}"><b>${a[0]}</b><span class="mag"><span class="tr"><i style="width:${a[1]/max*100}%"></i></span><span>${a[1]}</span></span>${sbar(a[2],a[1])}<span class="chev">${CHEV}</span></button>${pano.area===a[0]?`<p class="anote"><b>O que temos visto:</b> ${a[4]} Alto impacto em ${a[3]}% dos pareceres. <a class="metod-link" href="#tema-${slugify(a[0])}">Ver página do tema</a></p>`:""}`).join("")}</div>`;
 }
 function panoBody(){ return pano.tab==="casas"?panoCasas():pano.tab==="biomas"?panoBiomas():panoAreas(); }
 function panorama(){
@@ -2026,7 +2049,7 @@ const authorBox = () => `<aside class="abox" aria-label="Sobre o autor">${photo(
 const LEI_TEMAS={resex:["Unidades de conservação","Povos e comunidades"],lic:["Licenciamento"],agua:["Água"],caat:["Florestas","Clima"],pant:["Florestas"],apps:["Florestas"],drones:["Agrotóxicos"],decarb:["Clima"],tofogo:["Florestas"],amgarimpo:["Mineração"],mtpant:["Florestas","Água"]};
 function subjects(l){
   const bio=(LEI_BIOMA[l.id]||[]); const uf=UF_NOME_R[l.local];
-  const items=[...(LEI_TEMAS[l.id]||[]).map(t=>[t,"#panorama"]),...bio.map(b=>[b,"#panorama"]),[l.esfera==="federal"?"Leis federais":l.local, l.esfera==="federal"?"#federais":"#estaduais"]];
+  const items=[...(LEI_TEMAS[l.id]||[]).map(t=>[t,"#tema-"+slugify(t)]),...bio.map(b=>[b,"#bioma-"+slugify(b)]),[l.esfera==="federal"?"Leis federais":l.local, l.esfera==="federal"?"#federais":"#estaduais"]];
   return `<div class="subjects"><span>Assuntos:</span>${items.map(([t,h])=>`<a href="${h}">${t}</a>`).join("")}</div>`;
 }
 function crumbs(parts){ return `<nav class="crumbs" aria-label="Você está em">${parts.map((p,i)=>i<parts.length-1?`<a href="${p[1]}">${p[0]}</a>${CHEV}`:`<span aria-current="page">${p[0]}</span>`).join("")}</nav>`; }
@@ -2038,6 +2061,72 @@ function autorPage(){
     <div class="kpis pstats" style="margin-top:14px"><div class="kpi"><b>${ps.length}</b><span>pareceres publicados</span></div><div class="kpi"><b>${ARTIGOS.length}</b><span>artigos</span></div><div class="kpi"><b>2</b><span>correções registradas</span></div><div class="kpi"><b>2026</b><span>no observatório desde</span></div></div>
     <section class="section"><div class="section-h"><h2>Pareceres</h2><a class="arrow" href="#opiniao" style="font-size:.88rem">Ver na Opinião${ARR}</a></div><div class="ops">${opRows()}</div></section>
     <section class="section"><div class="section-h"><h2>Artigos</h2></div><div class="arts">${ARTIGOS.slice(0,4).map(x=>`<a class="art" href="#artigo-${x.id}"><div class="cover ${x.cv}"><span class="cat">${x.cat}</span></div><div class="in"><h3>${x.titulo}</h3><span class="min">${x.data} · ${x.min} min de leitura</span></div></a>`).join("")}</div></section>
+  </div>`;
+}
+
+
+/* ---------- temas e biomas ---------- */
+const BIOMA_UF={"Amazônia":["AC","AM","AP","PA","RO","RR","MT","MA","TO"],"Cerrado":["GO","TO","MT","MS","MG","BA","MA","PI","DF","SP","PR"],"Caatinga":["BA","CE","PI","PE","PB","RN","AL","SE","MG","MA"],"Mata Atlântica":["RS","SC","PR","SP","RJ","ES","MG","BA","SE","AL","PE","PB","RN","GO","MS"],"Pantanal":["MT","MS"],"Pampa":["RS"],"Costeiro e marinho":["AP","PA","MA","PI","CE","RN","PB","PE","AL","SE","BA","ES","RJ","SP","PR","SC","RS"]};
+const BIOMA_INTRO={"Amazônia":"Maior floresta tropical do mundo, ocupa quase metade do território brasileiro. As leis que mais a afetam tratam de mineração, regularização fundiária e unidades de conservação.",
+  "Cerrado":"Savana mais rica em espécies do planeta e berço de grandes bacias. É o bioma com mais propostas que flexibilizam licenciamento e uso do solo.",
+  "Caatinga":"Único bioma exclusivamente brasileiro, no semiárido. Concentra debates sobre restauração, água e energia renovável.",
+  "Mata Atlântica":"Restam cerca de 12% da cobertura original. As leis giram em torno de áreas de preservação, nascentes e expansão urbana.",
+  "Pantanal":"Maior planície alagável do mundo. O fogo, a pecuária e o zoneamento das áreas alagáveis dominam a agenda.",
+  "Pampa":"Campos nativos do sul do país, pouco protegidos por lei. A conversão em lavouras é a principal pressão.",
+  "Costeiro e marinho":"Manguezais, restingas e o mar territorial. A agenda inclui construções na orla, pesca e exploração de petróleo."};
+const TEMA_INTRO={"Licenciamento":"O licenciamento ambiental decide se uma obra ou atividade pode ser feita e com quais cuidados. É o tema com mais propostas de mudança.",
+  "Florestas":"Código Florestal, áreas de preservação permanente, reserva legal e restauração da vegetação nativa.",
+  "Mineração":"Regras para pesquisa e lavra mineral, garimpo e recuperação de áreas degradadas.",
+  "Água":"Outorga de uso da água, proteção de nascentes, bacias hidrográficas e segurança hídrica.",
+  "Clima":"Metas de emissão, mercado de carbono e adaptação às mudanças do clima.",
+  "Agrotóxicos":"Registro, aplicação e fiscalização de agrotóxicos, inclusive novas formas de aplicação.",
+  "Espécies exóticas":"Introdução, cultivo e controle de espécies que não são nativas da região, como na aquicultura, e combate às espécies invasoras.",
+  "Unidades de conservação":"Criação, ampliação, redução e gestão de parques, reservas e demais áreas protegidas.",
+  "Povos e comunidades":"Direitos territoriais e consulta prévia de povos indígenas e comunidades tradicionais.",
+  "Fauna":"Proteção da fauna silvestre, caça, pesca e tráfico de animais.",
+  "Saneamento":"Esgoto, resíduos sólidos e metas de universalização do saneamento."};
+const areaBySlug = sl => AREAS.find(a=>slugify(a[0])===sl);
+const biomaBySlug = sl => BIOMAS.find(b=>slugify(b.nome)===sl);
+const ARTIGO_TEMA={"Licenciamento":["onda","caminho"],"Clima":["carbono"],"Florestas":["cerrado","glossario"],"Unidades de conservação":["resex-o-que-e"],"Povos e comunidades":["resex-o-que-e"],"Amazônia":["resex-o-que-e","bancadas"],"Cerrado":["cerrado","onda"]};
+function relArts(k){ const ids=ARTIGO_TEMA[k]||["glossario","caminho"]; return ARTIGOS.filter(a=>ids.includes(a.id)).slice(0,2); }
+function lawCards(ls){
+  if(!ls.length) return `<p class="hint">Nenhuma lei acompanhada neste momento.</p>`;
+  return `<div class="list">${ls.map(l=>`<a class="law" href="#${l.id}"><div class="top">${placeTag(l.local)}${stTag(l.status)}${carTag(l.car)}</div><h3>${l.titulo}</h3><p>${l.resumo}</p><div class="go"><span class="num">${l.num}</span><span class="arrow">${l.parecer?"Ler parecer":"Parecer em breve"}${ARR}</span></div></a>`).join("")}</div>`;
+}
+function temasBiomas(){
+  const amax=Math.max(...AREAS.map(a=>a[1]));
+  return `<div class="wrap" style="max-width:1040px">
+    ${crumbs([["Início","#home"],["Temas e biomas",""]])}
+    <header class="pg-head"><h1>Temas e biomas</h1><p>Escolha um assunto ou um bioma para ver as leis acompanhadas, os pareceres e o que tem pesado em cada um.</p></header>
+    <section class="section"><div class="section-h"><h2>Biomas</h2><span>${BIOMAS.length} biomas</span></div>
+      <div class="tb-grid">${BIOMAS.map(b=>`<a class="tbc bio" href="#bioma-${slugify(b.nome)}"><h3>${b.nome}</h3><small>${b.n} pareceres · ${b.prop} propostas</small>${sbar(b.p,b.n,true)}<div class="fx"><span>Alto impacto ${b.alto}%</span>${GO}</div></a>`).join("")}</div></section>
+    <section class="section"><div class="section-h"><h2>Temas</h2><span>${AREAS.length} áreas do meio ambiente</span></div>
+      <div class="tb-grid">${AREAS.map(a=>`<a class="tbc" href="#tema-${slugify(a[0])}"><h3>${a[0]}</h3><small>${a[1]} pareceres</small>${sbar(a[2],a[1],true)}<div class="fx"><span>Alto impacto ${a[3]}%</span>${GO}</div></a>`).join("")}</div></section>
+    <div style="margin-top:14px">${plegend()}</div>
+  </div>`;
+}
+function tbDetail(kind,key){
+  const isB=kind==="bioma";
+  const b=isB?biomaBySlug(key):null, a=isB?null:areaBySlug(key);
+  if(!b && !a) return temasBiomas();
+  const nome=isB?b.nome:a[0], n=isB?b.n:a[1], p=isB?b.p:a[2], alto=isB?b.alto:a[3], prop=isB?b.prop:Math.round(a[1]*1.3);
+  const leis=LEIS.filter(l=>(isB?(LEI_BIOMA[l.id]||[]):(LEI_TEMAS[l.id]||[])).includes(nome));
+  const emPauta=leis.filter(l=>l.status!=="Aprovada").length;
+  const ufs=isB?BIOMA_UF[nome]:[...new Set(leis.map(l=>UF_NOME_R[l.local]).filter(Boolean))];
+  const relB = isB ? b.temas.filter(t=>areaBySlug(slugify(t))) : BIOMAS.filter(x=>x.temas.includes(nome)).map(x=>x.nome);
+  return `<div class="wrap">
+    ${crumbs([["Início","#home"],["Temas e biomas","#temas"],[nome,""]])}
+    <header class="tb-head"><span class="sub-h">${isB?"Bioma":"Tema"}</span><h1>${nome}</h1><p class="intro">${(isB?BIOMA_INTRO:TEMA_INTRO)[nome]||""}</p>
+      <div class="row">${tendencia({n,p})}<button class="mini" data-act="seguir-tema" data-nome="${nome}">${ICO_BELL}Seguir ${isB?"este bioma":"este tema"}</button></div></header>
+    <div class="kpis pstats" style="margin-top:10px"><div class="kpi"><b>${prop}</b><span>propostas acompanhadas</span></div><div class="kpi"><b>${n}</b><span>pareceres publicados</span></div><div class="kpi"><b>${alto}%</b><span>de alto impacto</span></div><div class="kpi"><b>${emPauta}</b><span>em tramitação agora</span></div></div>
+    <section class="section"><div class="section-h"><h2>Para que lado vão as propostas</h2><span>Base: ${n} pareceres</span></div>${sbar(p,n)}${plegend()}</section>
+    ${isB?`<section class="section" style="padding-top:0"><div class="qual"><div class="q-neg"><b>Principais pressões</b><ul>${b.neg.map(x=>`<li>${x}</li>`).join("")||"<li>Nenhuma no período</li>"}</ul></div><div class="q-pos"><b>Principais avanços</b><ul>${b.pos.map(x=>`<li>${x}</li>`).join("")||"<li>Nenhum no período</li>"}</ul></div></div></section>`
+         :`<section class="section" style="padding-top:0"><div class="datanote" style="font-size:.95rem"><b>O que temos visto:</b> ${a[4]}</div></section>`}
+    <section class="section"><div class="section-h"><h2>Leis acompanhadas</h2><span>${leis.length} neste protótipo</span></div>${lawCards(leis)}</section>
+    <section class="section"><div class="section-h"><h2>${isB?"Estados no bioma":"Estados com leis sobre o tema"}</h2></div>
+      ${ufs.length?`<div class="ufchips">${ufs.map(u=>COBERTURA[u]?`<a href="#estaduais" data-uf-go="${u}">${flag(u)}${UF_NOME[u]}</a>`:`<span title="Ainda não monitorado">${flag(u)}${UF_NOME[u]}</span>`).join("")}</div><p class="method" style="margin-top:8px">Estados em cinza ainda não são monitorados.</p>`:`<p class="hint">Só leis federais neste tema por enquanto.</p>`}</section>
+    ${relB.length?`<section class="section"><div class="section-h"><h2>${isB?"Temas mais frequentes":"Biomas onde o tema mais aparece"}</h2></div><div class="biochips">${relB.map(x=>`<a href="#${isB?"tema":"bioma"}-${slugify(x)}">${x}</a>`).join("")}</div></section>`:""}
+    <section class="section"><div class="section-h"><h2>Artigos relacionados</h2></div><div class="arts">${relArts(nome).map(x=>`<a class="art" href="#artigo-${x.id}"><div class="cover ${x.cv}"><span class="cat">${x.cat}</span></div><div class="in"><h3>${x.titulo}</h3><span class="min">${x.min} min de leitura</span></div></a>`).join("")}</div></section>
   </div>`;
 }
 
@@ -2116,8 +2205,8 @@ function render(keepScroll){
   const pl=r.startsWith("parecer-")?LEIS.find(x=>"parecer-"+x.id===r):null;
   const ar=r.startsWith("artigo-")?ARTIGOS.find(x=>"artigo-"+x.id===r):null;
   const y=window.scrollY;
-  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? (isNarrow()?mobileSignup(true):inscricao()) : r==="inscricao-celular" ? inscricaoCelular() : r==="panorama" ? panorama() : r.startsWith("parl-") ? parlamentar(r.slice(5)) : r==="parlamentares-estaduais" ? parlamentaresEstaduais() : r==="metodologia" ? metodologia() : r==="autor" ? autorPage() : r==="timeline" ? timeline() : r==="opiniao" ? opiniao() : r==="estaduais" ? estaduais() : r==="federais" ? federais() : r==="artigos" ? artigos() : ar ? artigo(ar) : home();
-  $("#head").classList.toggle("wide", !!pl || ["inscricao","inscricao-celular","estaduais","panorama","metodologia"].includes(r));
+  $("#app").innerHTML = l ? lei(l) : pl ? parecer(pl) : r==="inscricao" ? (isNarrow()?mobileSignup(true):inscricao()) : r==="inscricao-celular" ? inscricaoCelular() : r==="panorama" ? panorama() : r.startsWith("parl-") ? parlamentar(r.slice(5)) : r==="parlamentares-estaduais" ? parlamentaresEstaduais() : r==="metodologia" ? metodologia() : r==="autor" ? autorPage() : r==="temas" ? temasBiomas() : r.startsWith("tema-") ? tbDetail("tema",r.slice(5)) : r.startsWith("bioma-") ? tbDetail("bioma",r.slice(6)) : r==="timeline" ? timeline() : r==="opiniao" ? opiniao() : r==="estaduais" ? estaduais() : r==="federais" ? federais() : r==="artigos" ? artigos() : ar ? artigo(ar) : home();
+  $("#head").classList.toggle("wide", !!pl || ["inscricao","inscricao-celular","estaduais","panorama","metodologia","temas"].includes(r));
   document.body.classList.toggle("focus", (r==="inscricao"||r==="inscricao-celular") && isNarrow());
   state.menu=false; renderHead();
   window.scrollTo(0, keepScroll?y:0);
@@ -2145,6 +2234,7 @@ document.addEventListener("click",ev=>{
   const bm=ev.target.closest("[data-bioma]"); if(bm){ const t=bm.dataset.bioma; insc.biomas=insc.biomas.includes(t)?insc.biomas.filter(x=>x!==t):[...insc.biomas,t]; bm.setAttribute("aria-pressed",insc.biomas.includes(t)); return; }
   const pdu=ev.target.closest("[data-pd-uf]"); if(pdu){ pdState.uf=pdu.dataset.pdUf; pdState.q=""; render(true); return; }
   const pdb=ev.target.closest("[data-pd-back]"); if(pdb){ pdState.uf=pdb.dataset.pdBack; }
+  const ug=ev.target.closest("[data-uf-go]"); if(ug){ ufSel.uf=ug.dataset.ufGo; }
   const so=ev.target.closest("[data-soc]"); if(so){ ev.preventDefault(); toast("Abre o perfil do autor no "+so.dataset.soc+" (no site real)"); return; }
   const cb=ev.target.closest("[data-car]"); if(cb){ metSel.car=cb.dataset.car; document.querySelectorAll("[data-car]").forEach(b=>b.setAttribute("aria-pressed",b===cb)); $("#cex").innerHTML=cexHTML(); return; }
   const jl=ev.target.closest("[data-jump-later]"); if(jl){ ev.preventDefault(); const id=jl.dataset.jumpLater; if(location.hash!=="#metodologia") go("metodologia"); setTimeout(()=>{ const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:"smooth"}); },80); return; }
@@ -2180,6 +2270,7 @@ document.addEventListener("click",ev=>{
   if(act==="ver-seguindo"){ ev.preventDefault(); state.tlFilter="seg"; state.menu=false; if(location.hash==="#timeline") render(); else go("timeline"); return; }
   if(act==="copiar-share"){ copiar($("#share-txt"), state.share.tab==="citacao"?"Citação copiada":"Texto copiado"); return; }
   if(act==="baixar-card"){ toast("Imagem do card gerada (simulação)"); return; }
+  if(act==="seguir-tema"){ if(!state.inscrito){ abrirInscricao(); return; } toast("Pronto! Você receberá as novidades sobre "+a.dataset.nome); return; }
   if(act==="aviso-uf"){ toast("Pronto! Você receberá as novidades "+deUF(a.dataset.uf)); return; }
   if(act==="pagina"){ if(state.inscrito){ toast("Você já está inscrito"); } else { resetInsc(); go("inscricao"); } }
   if(act==="next"){ saveStep(); const er=validaPasso(); if(er){ toast(er); return; } insc.i++; render(true); topoInsc(); }
