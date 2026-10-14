@@ -8,12 +8,12 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 
 | Sprint | Entregas |
 |---|---|
-| 1. Fundação | Repositório, stack, modelo de dados, ambiente de homologação, deploy |
+| 1. Fundação | Repositório, stack, modelo de dados (incluindo Compromisso, Pedido, Verificacao), ambiente de teste, deploy, cópia diária do banco, monitor de site no ar |
 | 2. Site público | Home com busca e filtros, categorias, listagem com cards e tags de status, página da proposição, páginas de tema |
-| 3. Painel | Cadastro manual de proposição e parecer, editor em blocos com tela dividida, tags de impacto e caráter, upload de Nota Técnica e Quadro comparativo |
+| 3. Painel | Hoje, Pareceres (com prazos e fila "A atualizar"), editor com dossiê ao lado e modelo de 7 seções, classificação, SEO, materiais, publicação com tudo o que o sistema faz sozinho, Pedidos (correções, LGPD), Textos do site, Ajustes de prazos. Protótipo: `prototipo/painel.html` |
 | 4. Freemium e lançamento | Cadastro com confirmação de e-mail e link mágico, download dos materiais (PDF) para inscritos, política de privacidade e termos, SEO (endereços, títulos e descrições, dados estruturados, sitemaps, Search Console, página e quadro do autor; ver `docs/SEO.md`) |
 
-**Critério de saída:** 4 a 6 semanas publicando no ritmo de 3 a 10 pareceres por semana.
+**Critério de saída:** 4 a 6 semanas publicando no ritmo de 3 a 10 pareceres por semana, com o checklist de `docs/ENTREGA.md` cumprido e nenhum compromisso público vencido.
 
 ## Fase 2 — Radar de votação federal (≈ 4–6 semanas)
 
@@ -23,6 +23,8 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 - **Dossiê automático** entregue ao autor (texto integral, versões, justificativa, tramitação, autores, legislação afetada). O parecer é escrito pelo autor.
 - Atores e posicionamentos: autoria, relatoria, emendas, votações, orientações, ênfases.
 - Radar com alertas internos: pauta, urgência, substitutivo, votação, sanção, veto.
+- **Detecção de nova versão do texto** em proposta com parecer: fila "A atualizar" e faixa pública automática.
+- **Fontes e saúde**: coleta 4 vezes ao dia, limites de atraso e de volume, nota pública quando a fonte cai, teste diário contra as APIs ao vivo.
 
 **Critério de saída:** a pauta semanal é definida pelo Radar.
 

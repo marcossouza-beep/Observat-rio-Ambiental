@@ -56,6 +56,7 @@ A coexistência, na mesma página, de:
 - **A pauta de votação define a pauta editorial.** O radar mostra o que entra em pauta, ganha urgência, recebe substitutivo, é votado, sancionado ou vetado.
 - **Fato x interpretação.** Dados (autoria, votos, status) são capturados e exibidos pelo sistema; a interpretação está no parecer.
 - **O parecer é do autor, nunca da IA.** A automação (incluindo IA) apenas captura pelas APIs os dados e textos oficiais, organiza o dossiê e entrega ao autor. A análise, a comparação de versões, a classificação e a redação do parecer são feitas integralmente pelo autor indicado, que assina.
+- **Só prometer o que se cumpre.** Todo dado automático mostra a data; toda promessa com prazo vira compromisso cobrado no painel; parecer de texto que mudou é marcado na hora. Detalhes em `docs/ENTREGA.md`.
 - **UX didática.** Layout simples, dinâmico, com tags coloridas e leitura guiada.
 - **SEO desde o início.** Parte pública indexável; páginas por proposição, parecer, parlamentar, tema, bioma, estado e autor; autoria visível em todo parecer. Plano completo em `docs/SEO.md`.
 

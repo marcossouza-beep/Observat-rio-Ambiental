@@ -1,7 +1,7 @@
 # Telas e funcionalidades — Observatório Ambiental
 
-> Especificação funcional. O rascunho visual da **visão do leitor** está em `prototipo/index.html`.
-> Prioridade atual: **Parte A (site público)**. A Parte B (painel) fica registrada para uma etapa posterior.
+> Especificação funcional. Rascunhos visuais: **site público** em `prototipo/index.html` e **painel do autor** em `prototipo/painel.html`.
+> Foco atual: painel e entrega real de tudo o que o site promete (ver `docs/ENTREGA.md`).
 > Fase indicada entre colchetes: **[F1]** MVP, **[F2]** Radar, **[F3]** Alertas, **[F5]** Regional.
 
 ---
@@ -19,14 +19,13 @@ Ordem dos blocos, de cima para baixo:
 | Cabeçalho | Logo, menu, **Entrar** e botão **Se inscreva grátis**; para inscritos, menu e avatar (A10) | F1 |
 | Abertura e busca | Frase de abertura, campo único de busca (termo, número do PL, parlamentar, tema) e atalhos "Experimente:" (ex.: licenciamento, Pantanal, Tocantins, garimpo) que preenchem a busca e levam à lista | F1 |
 | Em votação esta semana | Até 3 itens com data em destaque, título, bandeira da esfera e órgão onde será votado; link "Ver Timeline" | F2 (manual na F1) |
-| Explore | 6 cartões com ícone próprio, descrição curta e contagem: Leis federais, Leis estaduais, Panorama, Timeline, Opinião, Artigos | F1 |
-| Por bioma | Botões com ícone de cada bioma (Amazônia, Cerrado, Caatinga, Mata Atlântica, Pantanal, Pampa, Costeiro e marinho) e número de pareceres; botão "Temas e biomas · Ver todos" | F1 |
+| Explore | 4 cartões (2 × 2) com ícone próprio, descrição curta e contagem: Leis federais, Leis estaduais, Opinião, Artigos. Timeline e Panorama têm acesso pela agenda e pela chamada do Panorama | F1 |
 | Mais recentes | Lista das proposições com filtro de situação (Todas, Em tramitação, Aprovadas) no título do bloco e contagem; cards com "Ler parecer" ou "Parecer em breve" | F1 |
 | Panorama (chamada) | Barra fina com o padrão de atuação geral e link para o Panorama | F3 |
 | Chamada de cadastro | "Notas técnicas e quadros comparativos grátis para inscritos" | F1 |
 | Rodapé | Temas e biomas, Metodologia, Correções, Independência, Política de privacidade, Termos de uso | F1 |
 
-**Ícones:** traço único (1,8 px), cor verde da marca, sobre quadrado verde-claro de cantos arredondados. No celular, os cartões do Explore viram uma coluna e os botões de bioma ficam em duas.
+**Ícones:** traço único (1,8 px), cor verde da marca, sobre quadrado verde-claro de cantos arredondados. Em telas estreitas, os cartões do Explore viram uma coluna. Temas e biomas ficam fora da home; o acesso é pelo rodapé, pelo Panorama e pelos "Assuntos" de cada parecer.
 
 ## A2. Listagem e resultados de busca
 
@@ -247,88 +246,83 @@ Barras 100% com Maléfico · Enfraquece indiretamente · Neutro · Benéfico, em
 | Relações | Bioma → temas mais frequentes; tema → biomas onde mais aparece |
 | Artigos relacionados | Até 2 |
 
-Acesso: "Explore por bioma" na home, rodapé, Panorama (nome do bioma e "Ver página do tema") e "Assuntos" de cada parecer.
+Acesso: rodapé, Panorama (nome do bioma e "Ver página do tema") e "Assuntos" de cada parecer.
 
 ---
 
-# Parte B — Painel administrativo (etapa posterior)
+# Parte B — Painel do autor
 
-Menu lateral: **Radar · Triagem · Proposições · Pareceres · Calendário · Palavras-chave · Fontes · Assinantes · Credenciamento · Métricas · Configurações**.
+> Protótipo: `prototipo/painel.html`. O painel existe para cumprir o que o site promete, no prazo, sem nada desatualizado (ver `docs/ENTREGA.md`). Funciona no computador (menu lateral) e no celular (barra inferior: Hoje, Triagem, Pareceres, Pedidos, Mais).
 
-> **Credenciamento (imprensa):** fila de pedidos com veículo, função, link de comprovação e e-mail; ações Aprovar / Pedir mais informações / Recusar (com motivo); histórico de quem verificou.
+Menu: **Trabalho** (Hoje, Triagem, Pareceres, Pedidos) · **Sistema** (Fontes e saúde, E-mails) · **Conteúdo** (Textos do site, Palavras-chave, Inscritos, Ajustes).
 
-## B1. Radar (tela inicial) **[F2]**
+## B1. Hoje **[F1]**
 
 | Bloco | Conteúdo |
 |---|---|
-| Indicadores do dia | Capturadas hoje · Na triagem · Entraram em pauta · Ganharam urgência · Mudaram de status (com parecer) |
-| Votações dos próximos 7 dias | Lista por data: proposição, órgão (plenário/comissão), tem parecer? botão **Escrever parecer** |
-| Alertas | Eventos relevantes das proposições ativas: substitutivo apresentado, parecer do relator, votação, sanção, veto — cada um com botão "Atualizar parecer" |
-| Pareceres da semana | Progresso da meta (ex.: 4 de 6) |
-| Saúde das fontes | Última coleta por conector, erros |
+| Situação | Itens urgentes e pareceres prometidos em aberto |
+| Desde ontem | Novas na triagem · leis que mudaram de situação · textos que mudaram depois do parecer · alertas enviados |
+| Precisa de você | Lista única, do mais urgente: texto mudou em lei com parecer, parecer prometido atrasado ou perto do prazo, correção, credenciamento, fonte fora do ar. Cada item tem prazo e a ação direta (Abrir, Nova data, Só acompanhar, Responder, Verificar) |
+| Votações dos próximos 7 dias | Pauta oficial com a situação do parecer (publicado, desatualizado, em preparação com progresso) |
+| Meta da semana | Publicados, agendados, em revisão e em preparação contra a meta |
+| Fontes e sistema | Resumo da saúde das fontes |
+| Promessas no ar | Quantas páginas mostram "Parecer em preparação" e "Atualização em preparação"; quantas pessoas aguardam aviso |
 
 ## B2. Triagem **[F2]**
 
 | Elemento | Funcionalidade |
 |---|---|
-| Lista | Fonte, número, ementa, data, **nota de relevância (0–100)**, palavras-chave encontradas (destacadas), eixos e regiões pelos termos encontrados, ementa oficial |
-| Filtros | Fonte, casa, esfera, região/UF, faixa de relevância, eixo |
-| Ações por item | **Ativar** (monta o dossiê para o autor), **Monitorar** (acompanha sem parecer), **Descartar** (com motivo, usado para ajustar o dicionário de palavras-chave) |
-| Ações em lote | Monitorar ou descartar vários |
+| Lista | Nota de relevância (0–100), número, fonte, data, ementa com as palavras-chave destacadas, temas encontrados, sinal de "provável homenagem" |
+| Filtros | Todas, Câmara, Senado, DOU, Estados |
+| Capacidade | "Pareceres prometidos em aberto: 5 de 10". No limite, ativar pede prazo maior ou sugere acompanhar |
+| Ativar parecer | Janela com prazo (padrão 7 dias), prévia do aviso público e efeito na capacidade. Ao confirmar, o aviso "Parecer em preparação" vai ao ar e o dossiê fica pronto |
+| Acompanhar | A página pública mostra "Acompanhando", sem prometer parecer |
+| Descartar | Com motivo (fora do tema, homenagem ou data, duplicada, outro); o motivo ajusta as palavras-chave |
 
-## B3. Ficha da proposição (painel) **[F1 / F2]**
+## B3. Pareceres **[F1]**
 
-Abas:
-
-1. **Dados** — campos da proposição (editáveis; origem API ou manual).
-2. **Texto e versões** — texto integral, versões, **comparação entre versões**.
-3. **Tramitação** — linha do tempo completa.
-4. **Atores e posicionamentos** — autores, relatores, emendas, votações e votos, orientações de bancada, ênfases (registradas pelo autor).
-5. **Legislação afetada** — leis e artigos alterados, com o texto vigente.
-6. **Parecer** — atalho para o editor.
-
-Cadastro manual: mesmo formulário, com upload do PDF do texto (extração automática). **[F1]**
+Abas: **A atualizar** · Em preparação · Em revisão · Agendados · Publicados · Acompanhando. Cada linha mostra prazo (com cor), progresso nas 7 seções, versão do texto analisada e quantas pessoas aguardam aviso. "A atualizar" recebe sozinho todo parecer cujo texto-base mudou.
 
 ## B4. Editor do parecer **[F1]**
 
 | Elemento | Funcionalidade |
 |---|---|
-| Layout | **Tela dividida**: texto da lei à esquerda (com marcação de trechos), parecer à direita |
-| Dossiê ao lado | Texto integral, versões, justificativa, tramitação e legislação afetada para consulta do autor (nada é preenchido automaticamente no parecer) |
-| Blocos | Resumo simples · Contexto e tramitação · Análise artigo por artigo · Tabela comparativa · Gráfico · Votos · Emendas · Constitucionalidade · Conclusão · Texto livre |
-| Materiais | Upload ou geração da Nota Técnica e do Quadro comparativo, com chave **Público / Inscritos** (padrão: inscritos) |
-| Inserir dados | Botões para inserir blocos prontos com dados capturados (tabela de votos, lista de emendas, linha do tempo) |
-| Tags | Impacto, caráter, temas, biomas, regiões, definidos pelo autor |
-| Vincular trecho | Selecionar trecho da lei e anexar comentário do parecer |
-| Pré-visualizar | Como **Visitante** / como **Assinante** / **PDF** |
-| Status | Rascunho → Em revisão → Agendado → Publicado |
-| Versões | Histórico do parecer; nova versão quando o texto-base muda, com data de referência |
-| SEO | Palavra-chave principal, nome popular, secundárias, título SEO (≤ 60), descrição (≤ 155), endereço; **prévia do resultado no Google**; checklist (palavra-chave no título, H1, endereço e 1º parágrafo; ≥ 3 links internos; texto alternativo; dados estruturados). Ver `docs/SEO.md` |
-| Publicar | Publicar agora ou agendar; gera o PDF e a imagem de compartilhamento; atualiza o sitemap e avisa os buscadores; dispara alertas para seguidores **[F3]** |
+| Topo | Etapas (Rascunho → Em revisão → Agendado → Publicado), salvamento automático, pré-visualizar (visitante, inscrito, PDF) |
+| Faixa de contexto | Prazo prometido, data da votação, pessoas aguardando; ou, se o texto mudou, o que a página pública está mostrando |
+| Dossiê (esquerda) | Texto · Versões (com marcação mecânica do que entrou e saiu entre versões, como o controle de alterações de um editor de texto) · Tramitação · Atores · Lei afetada. Nada do dossiê é escrito no parecer sozinho |
+| Parecer | As 7 seções do modelo fixo (Resumo, O que muda, Impactos por dimensão, Pontos de atenção, Base legal, Recomendações, Conclusão); em nova versão, campo "O que mudou nesta versão" |
+| Classificação | Impacto, caráter (4 categorias com definição), áreas, biomas. Alimenta os gráficos ao publicar |
+| SEO | Prévia do Google, palavra-chave, nome popular, título (≤ 60), descrição (≤ 155), endereço; checklist ao vivo (ver `docs/SEO.md`) |
+| Materiais | Nota técnica e Quadro comparativo em PDF; visibilidade (padrão: só inscritos) |
+| Publicar | Agora ou agendar; embargo para imprensa credenciada; travas (seções, impacto, caráter, nota de versão) e avisos (nota técnica, SEO); lista do que o sistema faz sozinho ao publicar: troca o aviso pelo parecer no mesmo endereço, envia os e-mails, atualiza gráficos, Timeline, sitemap e buscadores, gera imagem e PDF |
 
-## B5. Calendário editorial **[F1]**
+## B5. Pedidos **[F1 / F3]**
 
-Visão semanal: pareceres agendados e publicados sobrepostos às **datas de votação** do Radar; meta semanal (3–10).
+Abas **Correções** (prazo público de 3 dias úteis; "Procede" abre a resposta e registra a correção no parecer e na página de Correções; "Não procede" responde com a justificativa) · **Imprensa** (veículo, função, e-mail com aviso de domínio do veículo, comprovação, registro; Aprovar, Pedir mais informações, Recusar; prazo de 2 dias úteis) · **Dados pessoais** (LGPD, prazo de 15 dias; excluir e avisar).
 
-## B6. Palavras-chave **[F2]**
+## B6. Fontes e saúde **[F2]**
 
-Dicionário editável: termo, grupo/eixo, **peso**, escopo (nacional ou região), **exclusão**; teste em tempo real ("quantas proposições dos últimos 30 dias este termo captura").
+Tabela de fontes: nível A–D, última coleta bem-sucedida, itens contra a média, situação (ok, fora há X h, volume baixo, manual) e ação (coletar agora, ver amostra, cadastrar). Quando uma fonte cai, mostra a nota que está no ar nas páginas públicas. Bloco **Sistema**: site no ar, teste diário das páginas, e-mails, cópia do banco, links oficiais, sitemap e Search Console.
 
-## B7. Fontes **[F2 / F4]**
+## B7. E-mails **[F3]**
 
-Lista de conectores: jurisdição, nível A–D, frequência, última coleta, itens capturados, erros; botão "coletar agora"; ativar/desativar.
+Resumo semanal montado sozinho, com nota opcional do autor (sai mesmo sem ela); envios do dia (alertas agrupados, embargos, avisos de publicação); números de entrega; regras (no máximo 1 alerta por pessoa por dia, só eventos relevantes, descadastro em um clique).
 
-## B8. Assinantes **[F1]**
+## B8. Textos do site **[F1]**
 
-Lista com nome, e-mail, perfil, UF, data, **parecer de origem**, consentimentos; filtros; exportação CSV; atender pedidos de exclusão (LGPD).
+Temas e biomas (com e sem texto de abertura; sem texto, a página fica fora da busca; data para revisar), Artigos, Página do autor (foto, título, biografia, redes) e Metodologia (versão e compromissos a confirmar).
 
-## B9. Métricas **[F1]**
+## B9. Palavras-chave **[F2]**
 
-Por parecer: visitas, leitura até o fim, cliques em "Liberar materiais", **taxa de conversão em cadastro**, downloads dos PDFs. Geral: crescimento de assinantes, perfis, UFs, origem do tráfego, termos mais buscados no site.
+Termo, grupo, peso, exclusão e capturas em 30 dias; teste de um termo novo antes de salvar.
 
-## B10. Configurações
+## B10. Inscritos **[F1]**
 
-Usuários e papéis (autor, revisor, administrador), modelo padrão do parecer, textos legais, e-mails automáticos, integrações.
+Totais, crescimento, jornalistas credenciados, conversão, parecer que levou à inscrição, perfis; exportação CSV.
+
+## B11. Ajustes
+
+Prazos prometidos (parecer, atualização, correção, imprensa, LGPD) e limite de pareceres em aberto, que comandam os avisos do painel e os textos públicos; canais de alerta do autor; pessoas e papéis (autor, revisor, administrador).
 
 ---
 

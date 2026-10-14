@@ -72,11 +72,13 @@ Assembleias Legislativas (26) + Câmara Legislativa do DF, Diários Oficiais est
 
 ```
 Jurisdicao      id, esfera (federal|estadual|municipal), uf, regiao, nome
-Fonte           id, jurisdicao_id, nome, conector, nivel (A–D), frequencia, ultima_coleta, status
+Fonte           id, jurisdicao_id, nome, conector, nivel (A–D), frequencia, ultima_coleta, ultima_coleta_ok,
+                itens_ultima_coleta, media_itens_30d, status (ok|atrasada|fora|volume_baixo|manual), erro
 Proposicao      id, fonte_id, casa, tipo, numero, ano, ementa, art1, url_inteiro_teor, texto,
                 status_simplificado, status_oficial, data_apresentacao, ultima_movimentacao,
                 regime (normal|prioridade|urgencia), relevancia, origem (api|manual),
-                situacao_editorial (capturada|triagem|ativa|monitorada|descartada)
+                situacao_editorial (capturada|triagem|ativa|monitorada|descartada), motivo_descarte,
+                prazo_parecer, ativada_em
 Tramitacao      id, proposicao_id, data, orgao, descricao, tipo_evento
                 (apresentacao|pauta|urgencia|parecer_relator|substitutivo|votacao|sancao|veto|arquivamento)
 Versao          id, proposicao_id, data, rotulo (original|substitutivo|redacao_final), texto, url
@@ -91,13 +93,14 @@ Tema            id, nome, slug, eixo                 -- licenciamento, florestas
 Bioma           id, nome                              -- Amazônia, Cerrado, Caatinga...
 PalavraChave    id, termo, peso, grupo, regiao (nullable), exclusao (bool)
 
-Parecer         id, proposicao_id, versao, data_referencia_texto, impacto (alto|medio|baixo),
+Parecer         id, proposicao_id, versao, versao_texto_id (Versao analisada), data_referencia_texto,
+                desatualizado_desde (preenchido quando chega Versao nova), nota_da_versao, impacto (alto|medio|baixo),
                 carater (malefico|enfraquece_indiretamente|neutro|benefico), biomas[], areas[], status (rascunho|em_revisao|agendado|publicado),
                 publicado_em, atualizado_em, pdf_url, autor_id,
                 slug, titulo_seo, meta_descricao, palavra_chave, palavras_secundarias[], nome_popular,
                 og_image_url, indexar (bool), canonical_url
 Autor           id, slug, nome, titulo, bio, foto_url, linkedin, instagram, x, lattes, email_publico
-BlocoParecer    id, parecer_id, ordem, tipo (resumo|contexto|analise|tabela|grafico|votos|emendas|conclusao|texto),
+BlocoParecer    id, parecer_id, ordem, tipo (resumo|o_que_muda|impactos|pontos_atencao|base_legal|recomendacoes|conclusao|tabela|grafico|texto),
                 titulo, conteudo
 
 Assinante       id, nome, email, perfil, uf, temas[], biomas[], consentimento_em, opt_newsletter,
@@ -107,7 +110,18 @@ CredImprensa    assinante_id, veiculo, tipo_veiculo, funcao, link_comprovacao, e
                 autoriza_verificacao_em, status (em_analise|verificado|recusado), verificado_por, verificado_em, motivo
 Material        id, parecer_id, tipo (nota_tecnica|quadro_comparativo|outro), titulo, arquivo_url, visibilidade (publico|restrito)
 Evento          id, assinante_id, tipo (download|leitura|alerta_enviado), parecer_id, material_id, data
+
+Compromisso     id, tipo (parecer_prometido|atualizacao|correcao|credenciamento|lgpd), alvo_tipo, alvo_id,
+                aberto_em, prazo_em, status (aberto|cumprido|retirado|vencido), cumprido_em
+Pedido          id, tipo (correcao|credenciamento|lgpd), assinante_id, parecer_id, texto, resposta,
+                decisao (procede|nao_procede|aprovado|recusado|mais_info), recebido_em, respondido_em
+Correcao        id, parecer_id, pedido_id, descricao, feita_em          -- lista pública
+Verificacao     id, tipo (fonte|site|paginas|email|backup|links|sitemap), resultado, detalhe, em
+Envio           id, tipo (aviso_publicacao|alerta|resumo|embargo|acesso), assinante_id, parecer_id,
+                status (fila|enviado|entregue|retorno), em
 ```
+
+**Compromisso** é a tabela que sustenta `docs/ENTREGA.md`: toda promessa com prazo nasce aqui, aparece em "Hoje" e muda de cor conforme o prazo. O aviso público ("Parecer em preparação", "Atualização em preparação") é gerado a partir do compromisso aberto; se o compromisso é retirado, o aviso muda no mesmo instante.
 
 ## Controle público x restrito
 
@@ -160,3 +174,15 @@ Paleta de polaridade (validada para daltonismo): maléfico `#C2551F`, enfraquece
 | Foto | API (automático) | Iniciais; foto só se a Assembleia expuser link estável |
 
 Assembleias com dados abertos estruturados (ex.: Minas Gerais) podem ganhar conector próprio no levantamento da Fase 4, sem mudar o desenho da página.
+
+## Contra a desatualização (resumo)
+
+Detalhes, limites e prazos em `docs/ENTREGA.md`.
+
+- **Coletas** às 6h, 12h, 18h e 23h; cada uma grava `ultima_coleta_ok` e o volume.
+- **Páginas públicas** mostram a data da última coleta; se a fonte passar de 8 h sem coleta, aparece a nota "fonte oficial fora do ar; dados até…".
+- **Nova versão do texto** em proposta com parecer publicado → `Parecer.desatualizado_desde` preenchido, faixa pública "atualização em preparação" e compromisso de atualização aberto.
+- **Contagens e gráficos** são consultas ao banco, refeitas a cada publicação; nada é digitado.
+- **Verificação horária e diária** (`Verificacao`): fontes, formato das APIs, site no ar, teste das páginas, e-mails, cópia do banco, links oficiais, sitemap. Alertas por e-mail e celular.
+- **Testes**: conectores com respostas gravadas + teste diário contra a API ao vivo; testes de navegador das páginas principais a cada mudança no código; ambiente de teste antes do ar.
+
