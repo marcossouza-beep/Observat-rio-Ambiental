@@ -201,7 +201,7 @@ a:hover .go-c{background:var(--green);color:#fff}
 .modal .acts{display:flex;justify-content:flex-end;gap:8px;align-items:center}
 .ghost{background:none;border:0;color:var(--gray);padding:8px}
 @keyframes fade{from{opacity:0}}
-.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 18px;border-radius:999px;font-size:.9rem;z-index:30;animation:rise .25s ease}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 18px;border-radius:16px;font-size:.9rem;z-index:30;animation:rise .25s ease;width:max-content;max-width:calc(100vw - 32px);text-align:center}
 
 
 /* ---------- inscrição ---------- */
@@ -376,6 +376,16 @@ a:hover .go-c{background:var(--green);color:#fff}
 .menu a.mrow:hover,.menu button.mrow:hover{background:var(--bg)}
 .menu button.mrow{border:0;background:none;width:100%;text-align:left}
 .menu .sep{height:1px;background:var(--line);margin:6px 0}
+.adot{position:absolute;top:-2px;right:-2px;width:11px;height:11px;border-radius:50%;background:#E2A400;border:2px solid var(--white)}
+.mcomp{margin:2px 4px 8px;padding:12px;border-radius:14px;background:var(--sun)}
+.mcomp>b{display:block;font-size:.92rem;color:var(--sun-ink)}
+.mcomp>span{display:block;font-size:.8rem;color:var(--sun-ink);margin:2px 0 10px}
+.mcomp .mq{font-weight:600;color:var(--ink);font-size:.82rem;margin-bottom:6px}
+.mcomp .opts{gap:6px}
+.mcomp .opt{padding:5px 11px;font-size:.8rem;background:var(--white)}
+.mcurso{display:flex;gap:6px}
+.mcurso input{flex:1;min-width:0;font:inherit;font-size:.88rem;border:1px solid var(--line);border-radius:999px;padding:7px 12px;background:var(--white);color:var(--ink)}
+.mcurso .pill-btn{padding:7px 12px}
 .menu .lbl{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:700;padding:6px 12px 2px}
 
 /* ---------- timeline ---------- */
@@ -1273,7 +1283,8 @@ function abrirInscricao(){
   $("#f").onsubmit = e=>{ e.preventDefault();
     if(!$("#c").checked){ toast("Marque a concordância com a Política de Privacidade"); return; }
     insc.nome=$("#n").value.trim()||insc.nome; insc.email=$("#e").value.trim()||insc.email; insc.uf=$("#s").value;
-    $("#layer").innerHTML=""; state.inscrito=true; toast("Pronto! Materiais liberados"); render(true); };
+    insc.perfil=$("#p").value; insc.sub=""; insc.curso="";
+    $("#layer").innerHTML=""; state.inscrito=true; toast("Materiais liberados! Complete seu perfil no menu da conta."); render(true); };
 }
 
 
@@ -1524,13 +1535,22 @@ function headHTML(r){
   const nav = `<nav class="nav" aria-label="Principal"><a class="${on("federais")}" href="#federais">Federais</a><a class="${on("estaduais")}" href="#estaduais">Estaduais</a><a class="${on("panorama")}" href="#panorama">Panorama</a><a class="${on("timeline")}" href="#timeline">Timeline</a><a class="${on("opiniao")}" href="#opiniao">Opinião</a><a class="${on("artigos")||(r.startsWith("artigo-")?"on":"")}" href="#artigos">Artigos</a>${state.inscrito?`<a class="opt-hide" href="#timeline" data-act="ver-seguindo">Seguindo<span class="cnt">${state.seguindo.length}</span></a>`:""}</nav>`;
   if(!state.inscrito) return `<a class="brand" href="#home"><i></i>Nome do Site</a>${nav}<button class="enter" data-act="entrar">Entrar</button><button class="pill-btn" data-act="pagina">Se inscreva grátis</button>`;
   return `<a class="brand" href="#home"><i></i>Nome do Site</a>${nav}
-    <div class="me"><button class="avatar ${insc.press==="verificado"?"press":""}" data-act="menu" aria-haspopup="true" aria-expanded="${state.menu}" aria-label="Minha conta">${iniciais(insc.nome)}</button>
+    <div class="me"><button class="avatar ${insc.press==="verificado"?"press":""}" data-act="menu" aria-haspopup="true" aria-expanded="${state.menu}" aria-label="Minha conta${perfilIncompleto()?" (perfil a completar)":""}">${iniciais(insc.nome)}${perfilIncompleto()?`<i class="adot"></i>`:""}</button>
     ${state.menu?menuHTML():""}</div>`;
+}
+const perfilIncompleto=()=>!!insc.perfil && (insc.perfil==="Estudante"?!insc.curso:!!PERFIL_SUB[insc.perfil]&&!insc.sub);
+function perfilMenu(){
+  if(!insc.perfil) return "";
+  if(!perfilIncompleto()) return `<div class="mrow"><span>Perfil</span><span style="color:var(--gray);font-size:.85rem;text-align:right">${insc.perfil}${insc.sub?" · "+insc.sub:insc.curso?" · "+insc.curso:""}</span></div>`;
+  return `<div class="mcomp"><b>Complete seu perfil</b><span>Leva 5 segundos e ajuda a enviar só o que interessa a você.</span>
+    ${insc.perfil==="Estudante"?`<div class="mcurso"><input id="m-curso" list="m-cursos" placeholder="Seu curso" aria-label="Seu curso" autocomplete="off"><datalist id="m-cursos">${CURSOS.map(c=>`<option value="${c}">`).join("")}</datalist><button class="pill-btn" data-act="salvar-curso">Salvar</button></div>`:
+    `<span class="mq">${insc.perfil} · ${PERFIL_Q[insc.perfil]}</span><div class="opts">${PERFIL_SUB[insc.perfil].map(x=>`<button type="button" class="opt" data-sub="${x}" aria-pressed="false">${x}</button>`).join("")}</div>`}</div>`;
 }
 function menuHTML(){
   const sw=(k,t)=>`<div class="mrow"><span>${t}</span><button class="sw" role="switch" aria-checked="${insc[k]}" aria-label="${t}" data-sw="${k}"></button></div>`;
   return `<div class="menu" role="menu">
     <div class="who"><b>${insc.nome||"Maria Exemplo"}</b><span>${insc.email||"maria@exemplo.com"}</span></div>
+    ${perfilMenu()}
     <div class="m-nav"><a class="mrow" href="#federais">Leis federais</a><a class="mrow" href="#estaduais">Leis estaduais</a><a class="mrow" href="#panorama">Panorama</a><a class="mrow" href="#timeline">Timeline</a><a class="mrow" href="#opiniao">Opinião</a><a class="mrow" href="#artigos">Artigos</a><div class="sep"></div></div>
     ${insc.press?`<div class="mrow"><span>Imprensa</span><span class="pchip">${insc.press==="verificado"?"✓ Verificada":"Em análise"}</span></div>`:""}
     <a class="mrow" href="#timeline" data-act="ver-seguindo">Leis que sigo <b>${state.seguindo.length}</b></a>
@@ -2292,7 +2312,7 @@ document.addEventListener("click",ev=>{
   const hq=ev.target.closest("[data-q]"); if(hq){ ev.preventDefault(); state.q=hq.dataset.q; $("#q").value=state.q; refreshList(); $("#list").scrollIntoView({behavior:"smooth",block:"start"}); return; }
   const ch=ev.target.closest("[data-status]"); if(ch){ state.status=ch.dataset.status; document.querySelectorAll("[data-status]").forEach(b=>b.setAttribute("aria-pressed",b===ch)); refreshList(); return; }
   const j=ev.target.closest("[data-jump]"); if(j){ ev.preventDefault(); document.getElementById(j.dataset.jump).scrollIntoView({behavior:"smooth"}); return; }
-  const sb=ev.target.closest("[data-sub]"); if(sb){ insc.sub=sb.dataset.sub; document.querySelectorAll("[data-sub]").forEach(b=>b.setAttribute("aria-pressed",b===sb)); return; }
+  const sb=ev.target.closest("[data-sub]"); if(sb){ insc.sub=sb.dataset.sub; if(sb.closest(".menu")){ renderHead(); toast("Perfil completo. Obrigado!"); return; } document.querySelectorAll("[data-sub]").forEach(b=>b.setAttribute("aria-pressed",b===sb)); return; }
   const pf=ev.target.closest("[data-perfil]"); if(pf){ if(insc.perfil!==pf.dataset.perfil) insc.sub=""; insc.perfil=pf.dataset.perfil; const pd=$("#pdet"); if(pd) pd.innerHTML=perfilDetalhe(); document.querySelectorAll("[data-perfil]").forEach(b=>b.setAttribute("aria-checked",b===pf)); const c=$(".mcount"); if(c) c.textContent=(insc.i+1)+"/"+stepsInsc().length; const pr=$(".prog"); if(pr){ render(true); } return; }
   const vt=ev.target.closest("[data-vtipo]"); if(vt){ insc.imp.tipo=vt.dataset.vtipo; document.querySelectorAll("[data-vtipo]").forEach(b=>b.setAttribute("aria-pressed",b===vt)); return; }
   const bm=ev.target.closest("[data-bioma]"); if(bm){ const t=bm.dataset.bioma; insc.biomas=insc.biomas.includes(t)?insc.biomas.filter(x=>x!==t):[...insc.biomas,t]; bm.setAttribute("aria-pressed",insc.biomas.includes(t)); return; }
@@ -2329,6 +2349,7 @@ document.addEventListener("click",ev=>{
   const act=a.dataset.act;
   if(act==="inscrever" && !state.inscrito) abrirInscricao();
   if(act==="menu"){ state.menu=!state.menu; renderHead(); return; }
+  if(act==="salvar-curso"){ const v=$("#m-curso").value.trim(); if(!v){ toast("Informe o seu curso"); return; } insc.curso=v; renderHead(); toast("Perfil completo. Obrigado!"); return; }
   if(act==="sair"){ state.inscrito=false; state.menu=false; resetInsc(); insc.press=null; toast("Você saiu da sua conta"); render(true); return; }
   if(act==="entrar"){ abrirEntrar(); return; }
   if(act==="ver-seguindo"){ ev.preventDefault(); state.tlFilter="seg"; state.menu=false; if(location.hash==="#timeline") render(); else go("timeline"); return; }

@@ -753,7 +753,7 @@ function comAud(){
   const c=S.com;
   return `${c.modo==="perfil"?`<div class="chips" style="margin-top:8px">${Object.keys(AUD).map(p=>`<button class="tg" data-cp="${p}" aria-pressed="${c.perfis.includes(p)}">${p} <span style="opacity:.6">${sumO(AUD[p])}</span></button>`).join("")}</div>
     ${c.perfis.map(p=>`<div class="subf"><span>${p} · ${AUD_LBL[p]||"Subgrupo"}</span><div class="chips">${Object.entries(AUD[p]).map(([k,v])=>`<button class="tg" data-cs="${p}|${k}" aria-pressed="${(c.subs[p]||[]).includes(k)}">${k} <span style="opacity:.6">${v}</span></button>`).join("")}</div></div>`).join("")}
-    ${c.perfis.length?`<p class="hint" style="margin-top:6px">Sem subgrupo marcado, vai para o perfil inteiro.</p>`:""}`:""}`;
+    ${c.perfis.length?`<p class="hint" style="margin-top:6px">Sem subgrupo marcado, vai para o perfil inteiro. Quem ainda não completou o subgrupo na conta só recebe os envios ao perfil inteiro.</p>`:""}`:""}`;
 }
 function comunicado(){
   const c=S.com; const n=comCount();
@@ -833,6 +833,7 @@ function inscritos(){
   <section class="card"><div class="ch"><h2>De onde vieram</h2><span>parecer que levou à inscrição</span></div>
     <div class="mini"><div>Licenciamento simplificado<span>412</span></div><div>Restauração da Caatinga<span>188</span></div><div>Nova reserva extrativista<span>96</span></div><div>Outorga coletiva de água<span>71</span></div><div>Página inicial e outros<span>473</span></div></div></section>
   <section class="card"><div class="ch"><h2>Perfis</h2><span>cada perfil com seu subgrupo; estudantes por curso</span></div>
+    <div class="note y" style="margin-bottom:12px">${I(IC.alerta)}<div><b>96 inscritos ainda sem subgrupo</b> (vieram pela inscrição rápida). O site pede para completar no menu da conta, com um aviso discreto no avatar.</div></div>
     <div class="rows">${Object.entries(AUD).map(([p,o])=>{const t=sumO(o);return `<div><div><p>${p} <span class="muted" style="font-weight:500">· ${t} (${Math.round(t/12.4)}%)</span></p><div class="m">${Object.entries(o).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<span class="chip">${k} ${v}</span>`).join("")}</div></div><div class="acts"><a class="btn sm" href="#envios" data-compara="${p}">Escrever para este perfil</a></div></div>`;}).join("")}</div>
 </section>`;
 }

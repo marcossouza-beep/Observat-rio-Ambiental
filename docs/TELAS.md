@@ -146,6 +146,7 @@ Acesso: rodapé (Metodologia, Correções, Independência), notas de método do 
 - Menu: Leis · Timeline · Seguindo (com contador).
 - **Avatar** discreto com as iniciais; ao clicar abre um menu com nome e e-mail, leis que sigo, meu estado (troca rápida), temas, chaves de aviso por e-mail (alertas de tramitação, resumo semanal) e Sair.
 - Visitante vê "Entrar" (link de acesso por e-mail, sem senha) e "Se inscreva grátis".
+- **Perfil a completar:** quem se inscreve pela janela rápida informa só o perfil. O avatar ganha um ponto amarelo discreto e o menu da conta abre com o cartão "Complete seu perfil": a pergunta do subgrupo em botões (um toque salva) ou, para estudante, o campo de curso. Depois de completo, o menu mostra "Perfil: Servidor(a) público(a) · Ministério Público".
 
 ## A11. Compartilhar e citar
 
