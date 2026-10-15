@@ -50,3 +50,7 @@ node_modules/
 /playwright/.cache/
 /fumaca-resultado
 /arquivos
+
+# gerados pelo next dev
+AGENTS.md
+CLAUDE.md
