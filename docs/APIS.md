@@ -3,6 +3,24 @@
 > O que cada fonte entrega, como coletar sem perder nada, onde estão os riscos e qual o plano B.
 > **Limite desta análise:** o ambiente em que foi escrita bloqueia o acesso aos servidores da Câmara, do Senado e da Imprensa Nacional. Ela se apoia na documentação pública e em relatos de quem usa as APIs. Tudo o que está marcado com **(confirmar)** entra no teste de fumaça do primeiro dia de construção (seção 6).
 
+## 0. Resultado do primeiro teste real (15/10/2026, GitHub Actions)
+
+| Ponto | Resultado |
+|---|---|
+| Câmara: busca, ficha, autores, tramitação, temas | ✅ Funciona. A ficha traz `statusProposicao` (situação, órgão, regime, despacho, relator) e `urlInteiroTeor` (PDF real, ~150 KB) |
+| Câmara: **votos individuais** | ✅ **Disponíveis.** 3 de 5 votações recentes do Plenário trouxeram 399 a 466 votos; as outras 2 vieram vazias (provavelmente votações simbólicas, sem votos nominais). O risco apontado na seção 2.1 não se confirmou |
+| Câmara: pautas da semana | ✅ Eventos e itens de pauta |
+| Câmara: tema oficial de meio ambiente | ✅ Tema **48** (Meio Ambiente e Desenvolvimento Sustentável); também 54 (Energia, Recursos Hídricos e Minerais) e 64 (Agricultura, Pecuária, Pesca e Extrativismo) |
+| Câmara: arquivos em massa | ✅ Por ano e **atualizados diariamente**: proposições (~72 MB em 2026), votações (~8 MB), votos (~32 MB). Servem para carga histórica e conferência |
+| Senado: serviço novo `processo` | ✅ Responde em JSON. Campos: identificação, ementa, autoria, situação atual, tramitando, norma gerada, link do documento, código da matéria |
+| Senado: serviço antigo `matéria` | ⚠️ Ainda responde, **com aviso de descontinuação**. Confirma a decisão de usar `processo` |
+| Senado: votações (`/votacao` por período) e agenda das comissões | ✅ Funcionam |
+| Senado: agenda do Plenário | ⚠️ O endereço testado devolveu erro 400; testando variantes |
+| DOU (INLABS) | ✅ Portal no ar; login e download aguardam a conta (segredos `INLABS_EMAIL` e `INLABS_SENHA`) |
+| LexML | ✅ Resolução de URN funciona; a busca SRU devolveu HTML (investigando a consulta certa) |
+| TSE | ✅ Catálogo e arquivo `consulta_cand_2022.zip` (4,4 MB) acessíveis |
+| IBGE e Querido Diário | ❌ Falha de conexão a partir do GitHub (investigando a causa). A tabela de UFs já está no código; não bloqueia nada até a Fase 7 |
+
 ## 1. Resumo
 
 | Fonte | Para quê | Formato | Acesso | Avaliação | Fase |
@@ -41,7 +59,7 @@
 - **Paginação:** até 100 itens por página, com links "próxima" na resposta.
 - **Limite de requisições:** não há número oficial publicado; há relato de erro 429 em rajadas. Regra nossa: no máximo 1 a 2 requisições por segundo, repetição com espera crescente, e coleta fora dos horários de pico.
 - **Inteiro teor:** é um **PDF** no site da Câmara (link na ficha). Precisa de extração de texto, com OCR de reserva para PDFs escaneados.
-- **Risco principal — votos recentes:** um relato de terceiros (testado em jan/2026) aponta `/votacoes/{id}/votos` **vazio para votações a partir de mai/2024**. **(confirmar)** Se persistir, o plano B é: (1) buscar os votos nos arquivos de dados da Câmara, se publicados; (2) mostrar só placar e orientações, com a nota "votos nominais ainda não publicados pela Câmara" (já previsto em `docs/ENTREGA.md`). Isso afeta o "Sentido do voto" (Panorama e página do parlamentar).
+- **Votos recentes:** um relato de terceiros apontava `/votacoes/{id}/votos` vazio a partir de mai/2024. **No teste de 15/10/2026 os votos vieram preenchidos** (seção 0). O plano B abaixo continua valendo caso volte a acontecer. Se persistir, o plano B é: (1) buscar os votos nos arquivos de dados da Câmara, se publicados; (2) mostrar só placar e orientações, com a nota "votos nominais ainda não publicados pela Câmara" (já previsto em `docs/ENTREGA.md`). Isso afeta o "Sentido do voto" (Panorama e página do parlamentar).
 - **Arquivos em massa:** a Câmara publica conjuntos de arquivos (CSV e JSON) para carga inicial. **(confirmar)** quais estão atualizados; se existirem por ano, usamos para a carga histórica e deixamos a API para o dia a dia.
 
 ### 2.2 Senado Federal — Dados Abertos
@@ -122,7 +140,7 @@
 
 | Risco | Probabilidade | Efeito | Decisão |
 |---|---|---|---|
-| Votos individuais recentes ausentes na Câmara | Média (relato de 2026) | "Sentido do voto" incompleto | Confirmar no dia 1; plano B com arquivos e nota pública |
+| Votos individuais recentes ausentes na Câmara | Baixa (votos vieram no teste de 15/10/2026) | "Sentido do voto" incompleto | Teste diário confere; plano B com arquivos em massa e nota pública |
 | Desativação dos serviços antigos do Senado | Alta (já anunciada) | Conector quebra | Construir sobre "processo" desde o início |
 | Mudança no login ou no XML do INLABS | Baixa | DOU atrasa | Alerta + coleta manual pelo site |
 | Limite de requisições (429) | Média | Coleta lenta | Ritmo controlado e coleta incremental |

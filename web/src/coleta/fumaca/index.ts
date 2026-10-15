@@ -8,7 +8,7 @@
  */
 import { mkdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
-import { VERIFICACOES } from './verificacoes'
+import { descreverErro, VERIFICACOES } from './verificacoes'
 
 const saida = path.resolve(process.cwd(), 'fumaca-resultado')
 const filtro = process.argv[2]
@@ -24,7 +24,7 @@ async function main() {
     try {
       res = await v.rodar(ctx)
     } catch (e) {
-      res = { ok: false, notas: [`erro: ${(e as Error).message}`] }
+      res = { ok: false, notas: [`erro: ${descreverErro(e)}`] }
     }
     const ms = Date.now() - t0
     Object.assign(ctx, res.contexto || {})

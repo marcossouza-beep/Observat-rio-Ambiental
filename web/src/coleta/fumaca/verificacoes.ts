@@ -24,6 +24,13 @@ const rapido = { tentativas: 2, esperaBaseMs: 1500, tempoLimiteMs: 40_000 }
 
 type Camara<T> = { dados: T; links?: { rel: string; href: string }[] }
 
+/** "fetch failed" esconde a causa real (TLS, DNS, conexão); mostra a causa. */
+export function descreverErro(e: unknown): string {
+  const err = e as Error & { cause?: { code?: string; message?: string } }
+  const causa = err.cause ? ` (${err.cause.code || ''} ${err.cause.message || ''})`.replace(/\s+\)/, ')') : ''
+  return `${err.message}${causa}`
+}
+
 async function textoCurto(url: string, headers: Record<string, string> = {}) {
   const r = await obter(url, { ...rapido, headers })
   const tipo = r.headers.get('content-type') || ''
@@ -180,15 +187,26 @@ export const VERIFICACOES: Verificacao[] = [
     descricao: 'Índice da documentação: lista de serviços (procurar "processo")',
     essencial: true,
     async rodar() {
-      const r = await textoCurto(`${SENADO}/docs/index.html`)
-      const recursos = [...new Set([...r.corpo.matchAll(/resource_([A-Za-z]+)\.html/g)].map((m) => m[1]))]
-      const caminhos = [...new Set([...r.corpo.matchAll(/\/dadosabertos\/([a-z]+(?:\/[a-zA-Z{}]+)?)/g)].map((m) => m[1]))].slice(0, 80)
-      return {
-        ok: r.tamanho > 500,
-        notas: [`serviços: ${recursos.join(', ') || 'não identificados'}`, `caminhos citados: ${caminhos.join(' · ')}`],
-        amostra: r.corpo.slice(0, 20_000),
-        contexto: { recursosSenado: recursos },
+      const notas: string[] = []
+      for (const url of [`${SENADO}/v3/api-docs`, `${SENADO}/api-docs`, `${SENADO}/v2/api-docs`, `${SENADO}/openapi.json`]) {
+        try {
+          const r = await textoCurto(url, { Accept: 'application/json' })
+          const spec = JSON.parse(r.corpo) as { paths?: Record<string, unknown> }
+          const caminhos = Object.keys(spec.paths || {})
+          if (!caminhos.length) {
+            notas.push(`${url.replace(SENADO, '')}: sem caminhos`)
+            continue
+          }
+          const interesse = caminhos.filter((c) => /processo|votac|agenda|plenario|comissao|veto|emenda|texto|documento|relator|autor/i.test(c))
+          notas.push(`especificação em ${url.replace(SENADO, '')}: ${caminhos.length} caminhos`, `de interesse: ${interesse.join(' · ')}`)
+          return { ok: true, notas, amostra: spec }
+        } catch (e) {
+          notas.push(`${url.replace(SENADO, '')}: ${descreverErro(e)}`)
+        }
       }
+      const r = await textoCurto(`${SENADO}/docs/index.html`)
+      notas.push(`docs/index.html: ${r.tamanho} bytes; início: ${r.corpo.replace(/\s+/g, ' ').slice(0, 300)}`)
+      return { ok: r.tamanho > 500, notas, amostra: r.corpo.slice(0, 20_000) }
     },
   },
   {
@@ -241,7 +259,9 @@ export const VERIFICACOES: Verificacao[] = [
       const notas: string[] = []
       const amostra: Record<string, unknown> = {}
       for (const [nome, url] of [
-        ['plenário', `${SENADO}/plenario/agenda/mes/${semHifen(hoje()).slice(0, 6)}`],
+        ['plenário (mês)', `${SENADO}/plenario/agenda/mes/${semHifen(hoje())}`],
+        ['plenário (dia)', `${SENADO}/plenario/agenda/dia/${semHifen(hoje())}`],
+        ['plenário (período)', `${SENADO}/plenario/agenda?dataInicio=${hoje()}&dataFim=${diasAFrente(7)}`],
         ['comissões', `${SENADO}/comissao/agenda/${semHifen(hoje())}/${semHifen(diasAFrente(7))}`],
       ] as const) {
         try {
@@ -249,7 +269,7 @@ export const VERIFICACOES: Verificacao[] = [
           notas.push(`${nome}: HTTP ${r.status}, ${r.tamanho} bytes`)
           amostra[nome] = r.corpo.slice(0, 10_000)
         } catch (e) {
-          notas.push(`${nome}: ${(e as Error).message}`)
+          notas.push(`${nome}: ${descreverErro(e)}`)
         }
       }
       return { ok: notas.some((n) => n.includes('HTTP 200')), notas, amostra }
@@ -309,13 +329,17 @@ export const VERIFICACOES: Verificacao[] = [
     descricao: 'Busca SRU e resolução da URN do Código Florestal',
     async rodar() {
       const urn = 'urn:lex:br:federal:lei:2012-05-25;12651'
-      const sru = await textoCurto(`https://www.lexml.gov.br/busca/SRU?operation=searchRetrieve&version=1.1&query=${encodeURIComponent(`urn="${urn}"`)}&maximumRecords=1`)
-      const res = await obter(`https://www.lexml.gov.br/urn/${urn}`, rapido)
-      return {
-        ok: sru.status === 200,
-        notas: [`SRU: HTTP ${sru.status}, ${sru.tipo}, ${/numberOfRecords>\s*(\d+)/.exec(sru.corpo)?.[1] ?? '?'} registros`, `URN: HTTP ${res.status}, terminou em ${res.url}`],
-        amostra: sru.corpo.slice(0, 10_000),
+      const notas: string[] = []
+      let amostra = ''
+      for (const consulta of [`urn="${urn}"`, 'dc.title any "12651"', 'lei 12651']) {
+        const sru = await textoCurto(`https://www.lexml.gov.br/busca/SRU?operation=searchRetrieve&version=1.1&query=${encodeURIComponent(consulta)}&maximumRecords=1`)
+        const n = /numberOfRecords>\s*(\d+)/.exec(sru.corpo)?.[1]
+        notas.push(`SRU [${consulta}]: HTTP ${sru.status}, ${sru.tipo}, ${n ?? '?'} registros; início: ${sru.corpo.replace(/\s+/g, ' ').slice(0, 160)}`)
+        if (!amostra) amostra = sru.corpo.slice(0, 10_000)
       }
+      const res = await obter(`https://www.lexml.gov.br/urn/${urn}`, rapido)
+      notas.push(`URN: HTTP ${res.status}, terminou em ${res.url}`)
+      return { ok: res.status === 200, notas, amostra }
     },
   },
   {
@@ -340,8 +364,7 @@ export const VERIFICACOES: Verificacao[] = [
   {
     id: 'ibge',
     fonte: 'IBGE',
-    descricao: 'Lista de estados',
-    essencial: true,
+    descricao: 'Lista de estados (a tabela de UFs também está no código; o IBGE serve para municípios)',
     async rodar() {
       const e = await obterJson<{ sigla: string }[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados', rapido)
       return { ok: e.length === 27, notas: [`${e.length} UFs`] }
@@ -352,11 +375,17 @@ export const VERIFICACOES: Verificacao[] = [
     fonte: 'Querido Diário',
     descricao: 'Busca em diários de Palmas (TO)',
     async rodar() {
-      const r = await obterJson<{ total_gazettes?: number; gazettes?: unknown[] }>(
-        'https://api.queridodiario.ok.org.br/gazettes?territory_ids=1721000&size=1&querystring=ambiental',
-        rapido,
-      )
-      return { ok: (r.total_gazettes ?? 0) >= 0 && Array.isArray(r.gazettes), notas: [`${r.total_gazettes ?? '?'} diários com "ambiental"`], amostra: r }
+      const notas: string[] = []
+      for (const base of ['https://api.queridodiario.ok.org.br', 'https://api.queridodiario.org.br', 'https://queridodiario.ok.org.br/api']) {
+        try {
+          const r = await obterJson<{ total_gazettes?: number; gazettes?: unknown[] }>(`${base}/gazettes?territory_ids=1721000&size=1&querystring=ambiental`, { ...rapido, tentativas: 1 })
+          notas.push(`${base}: ${r.total_gazettes ?? '?'} diários com "ambiental"`)
+          return { ok: Array.isArray(r.gazettes), notas, amostra: r }
+        } catch (e) {
+          notas.push(`${base}: ${descreverErro(e)}`)
+        }
+      }
+      return { ok: false, notas }
     },
   },
 ]
