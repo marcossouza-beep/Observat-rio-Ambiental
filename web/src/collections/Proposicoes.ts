@@ -43,7 +43,13 @@ export const Proposicoes: CollectionConfig = {
         }
         if (data.sigla && data.numero && data.ano) {
           data.rotulo = rotuloProposicao(data.sigla, data.numero, data.ano)
-          if (!data.slug) data.slug = slugProposicao(data.sigla, data.numero, data.ano, data.titulo || undefined)
+          if (!data.slug) {
+            // Proposta estadual leva a UF no endereço: o PL 77/2026 de Tocantins não colide com o federal nem com o de outro estado
+            const esfera = data.esfera ?? originalDoc?.esfera
+            const uf = data.uf ?? originalDoc?.uf
+            const sigla = esfera === 'estadual' && uf ? `${uf} ${data.sigla}` : data.sigla
+            data.slug = slugProposicao(sigla, data.numero, data.ano, data.titulo || undefined)
+          }
         }
         // Casa de origem (para o padrão de atuação por casa); fica a que o autor escolher, se escolher.
         if (!data.casaOrigem && !originalDoc?.casaOrigem) {

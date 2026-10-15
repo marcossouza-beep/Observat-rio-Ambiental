@@ -12,6 +12,7 @@ import { extrairTextoPdf, artigoPrimeiro } from '../textos'
 import { lerZip } from '../zip'
 import { buscarNaRede, type Conector } from '../conector'
 import { pontuar } from '../../lib/relevancia'
+import { CONECTORES_SAPL } from '../sapl/conector'
 import { conectorSenado } from '../senado/conector'
 
 export type Resultado = { ok: boolean; notas: string[]; amostra?: unknown; contexto?: Record<string, unknown> }
@@ -340,6 +341,44 @@ export const VERIFICACOES: Verificacao[] = [
             ...r.avisos,
           ],
           amostra: { proposicao: p?.proposicao, tramitacoes: p?.tramitacoes.slice(-5), pautas: r.pautas.slice(0, 5) },
+        }
+      },
+    }),
+  ),
+  // Assembleias do Norte (SAPL): não essenciais; uma semana sem matéria nova é normal fora das sessões
+  ...Object.values(CONECTORES_SAPL).map(
+    (c): Verificacao => ({
+      id: `conector-${c.slug}`,
+      fonte: c.nome,
+      descricao: 'Conector do SAPL contra a API ao vivo (últimos 7 dias, até 2 matérias abertas)',
+      async rodar() {
+        const agora = new Date()
+        const dic = [
+          { termo: 'ambiental', peso: 10 },
+          { termo: 'meio ambiente', peso: 10 },
+          { termo: 'florestal', peso: 8 },
+          { termo: 'recursos hídricos', peso: 8 },
+        ]
+        const r = await c.coletar({
+          desde: new Date(agora.getTime() - 7 * 864e5),
+          agora,
+          acompanhadas: new Set(),
+          descartadas: new Set(),
+          relevancia: (t) => pontuar(t, dic).nota,
+          notaMinima: 50,
+          maxNovas: 2,
+          buscar: buscarNaRede(rapido),
+        })
+        const p = r.pacotes[0]
+        const a = r.amostra as { deInteresse?: number } | undefined
+        return {
+          ok: true,
+          notas: [
+            `${r.itensListados} matérias atualizadas na semana (${a?.deInteresse ?? '?'} de tipos que interessam)`,
+            `${r.pacotes.length} abertas: ${r.pacotes.map((x) => `${x.proposicao.sigla} ${x.proposicao.numero}/${x.proposicao.ano} (${x.tramitacoes.length} andamentos)`).join('; ') || 'nenhuma relevante no período'}`,
+            ...r.avisos,
+          ],
+          amostra: { proposicao: p?.proposicao, tramitacoes: p?.tramitacoes.slice(-5) },
         }
       },
     }),

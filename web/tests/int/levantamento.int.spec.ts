@@ -1,5 +1,5 @@
 /**
- * Fase 4: as fontes estaduais do levantamento entram no painel desligadas, com nível e motivo.
+ * Fase 4/5: as fontes estaduais do levantamento entram no painel com nível e motivo; as que têm conector pronto já ligadas.
  */
 import { getPayload, type Payload } from 'payload'
 import config from '@/payload.config'
@@ -24,10 +24,10 @@ beforeAll(async () => {
 })
 
 describe('fontes estaduais do levantamento', () => {
-  it('cria desligadas, com nível, endereço e motivo; nível D fica manual', async () => {
+  it('cria com nível, endereço e motivo; com conector pronto já liga; nível D sem conector fica manual', async () => {
     expect(await registrarFontesEstaduais(payload, resultado('2026-10-15T19:00:00.000Z', null))).toEqual({ criadas: 2, atualizadas: 0 })
     const casa = (await payload.find({ collection: 'fontes', where: { slug: { equals: 'casa-to' } } })).docs[0]
-    expect(casa).toMatchObject({ nivel: 'A', esfera: 'estadual', uf: 'TO', ativa: false, manual: false, url: 'https://sapl.al.to.leg.br/api/materia/materialegislativa/?page_size=1' })
+    expect(casa).toMatchObject({ nivel: 'A', esfera: 'estadual', uf: 'TO', ativa: true, conector: 'casa-to', manual: false, url: 'https://sapl.al.to.leg.br/api/materia/materialegislativa/?page_size=1' })
     expect(casa.levantamento?.motivo).toBe('API do SAPL respondendo (14533 matérias)')
     const doe = (await payload.find({ collection: 'fontes', where: { slug: { equals: 'doe-to' } } })).docs[0]
     expect(doe).toMatchObject({ nivel: 'D', manual: true, ativa: false })
@@ -42,5 +42,12 @@ describe('fontes estaduais do levantamento', () => {
     const depois = await payload.findByID({ collection: 'fontes', id: doe.id })
     expect(depois).toMatchObject({ nivel: 'C', ativa: false, conector: 'doe-to', manual: true })
     expect(depois.levantamento?.verificadoEm).toBe('2026-10-20T19:00:00.000Z')
+  })
+
+  it('casa com conector que o autor desligou não é religada por nova sondagem', async () => {
+    const casa = (await payload.find({ collection: 'fontes', where: { slug: { equals: 'casa-to' } } })).docs[0]
+    await payload.update({ collection: 'fontes', id: casa.id, data: { ativa: false } })
+    await registrarFontesEstaduais(payload, resultado('2026-10-21T19:00:00.000Z', 200))
+    expect((await payload.findByID({ collection: 'fontes', id: casa.id })).ativa).toBe(false)
   })
 })

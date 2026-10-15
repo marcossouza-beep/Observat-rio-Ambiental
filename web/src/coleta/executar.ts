@@ -11,11 +11,12 @@ import { conectorCongresso } from './congresso/conector'
 import { conectorDou } from './dou/conector'
 import { buscarNaRede, identificacaoDe, type Buscar, type Conector, type ContextoColeta } from './conector'
 import { balancoVazio, gravarEventos, gravarPacote, gravarPautas, type Balanco } from './gravar'
+import { CONECTORES_SAPL, SAPL_NORTE } from './sapl/conector'
 import { conectorSenado } from './senado/conector'
 import { preencherTextos, type Baixador } from './textos'
 import { ErroFormato } from './tipos'
 
-export const CONECTORES: Record<string, Conector> = { camara: conectorCamara, senado: conectorSenado, congresso: conectorCongresso, dou: conectorDou }
+export const CONECTORES: Record<string, Conector> = { camara: conectorCamara, senado: conectorSenado, congresso: conectorCongresso, dou: conectorDou, ...CONECTORES_SAPL }
 
 /** Prefixos das chaves de pauta de cada fonte (para tirar da agenda o que saiu de pauta). */
 const PREFIXOS_PAUTA: Record<string, string[]> = { camara: ['camara:pauta:'], senado: ['senado:pauta:', 'senado:reuniao:'], congresso: ['congresso:pauta:'], dou: [] }
@@ -25,6 +26,7 @@ const FONTES_PADRAO: Record<string, Partial<Fonte>> = {
   senado: { nome: 'Senado Federal', nivel: 'A', esfera: 'federal' },
   congresso: { nome: 'Congresso Nacional (vetos)', nivel: 'A', esfera: 'federal' },
   dou: { nome: 'Diário Oficial da União (INLABS)', nivel: 'A', esfera: 'federal' },
+  ...Object.fromEntries(SAPL_NORTE.map((c) => [`casa-${c.uf}`, { nome: c.nome, nivel: 'A', esfera: 'estadual', uf: c.uf.toUpperCase(), url: c.base }])),
 }
 
 export type ResultadoRodada = { fonte: string; ok: boolean; itens?: number; balanco?: Balanco; avisos?: string[]; erro?: string; ignorada?: string }

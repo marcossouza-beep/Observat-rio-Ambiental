@@ -1,6 +1,6 @@
 /**
- * Roda a coleta das fontes federais e grava no banco.
- * Uso: pnpm coleta                  (Câmara, Senado, Congresso e Diário Oficial)
+ * Roda a coleta das fontes e grava no banco.
+ * Uso: pnpm coleta                  (Câmara, Senado, Congresso, Diário Oficial e as Assembleias com SAPL)
  *      COLETA_FONTES=senado,dou pnpm coleta
  * No GitHub Actions: .github/workflows/coleta.yml (6h, 12h, 18h e 23h em Brasília).
  * Sai com erro se alguma fonte falhar (o alerta aparece também no painel, em Hoje).

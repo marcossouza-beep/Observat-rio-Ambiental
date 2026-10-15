@@ -1,0 +1,131 @@
+/**
+ * Conector do SAPL (Interlegis): um por Assembleia, todos com o mesmo código.
+ * Em cada rodada lista as matérias atualizadas desde a última coleta (data_ultima_atualizacao),
+ * fica só com os tipos que interessam (tipoDeInteresse), e busca tramitação e autoria das propostas
+ * já acompanhadas e das novas com nota de relevância suficiente (dicionário nacional + palavras-chave do estado).
+ */
+import { dia, type Conector, type ContextoColeta, type ResultadoColeta } from '../conector'
+import type { PacoteProposicao } from '../tipos'
+import {
+  mapearMateria,
+  tabela,
+  tipoDeInteresse,
+  type ContextoSapl,
+  type Pagina,
+  type Registro,
+} from './mapear'
+
+/** Assembleias do Norte com a API do SAPL aberta (docs/LEVANTAMENTO.md). Roraima usa o SAPL, mas recusa o acesso. */
+export const SAPL_NORTE: { uf: string; nome: string; base: string }[] = [
+  { uf: 'ac', nome: 'Assembleia Legislativa do Acre (SAPL)', base: 'https://sapl.al.ac.leg.br' },
+  {
+    uf: 'am',
+    nome: 'Assembleia Legislativa do Amazonas (SAPL)',
+    base: 'https://sapl.al.am.leg.br',
+  },
+  {
+    uf: 'ro',
+    nome: 'Assembleia Legislativa de Rondônia (SAPL)',
+    base: 'https://sapl.al.ro.leg.br',
+  },
+  {
+    uf: 'to',
+    nome: 'Assembleia Legislativa do Tocantins (SAPL)',
+    base: 'https://sapl.al.to.leg.br',
+  },
+]
+
+const MAX_PAGINAS = 10
+const resultados = (p: unknown) => ((p as Pagina)?.results || []) as Registro[]
+
+async function todas(ctx: ContextoColeta, url: string, maxPaginas = MAX_PAGINAS) {
+  const lista: Registro[] = []
+  let total = 0
+  for (let pagina = 1; pagina <= maxPaginas; pagina++) {
+    const p = (await ctx.buscar(`${url}${url.includes('?') ? '&' : '?'}page=${pagina}`)) as Pagina
+    lista.push(...resultados(p))
+    total = p?.pagination?.total_entries ?? lista.length
+    if (!p?.pagination?.next_page) break
+  }
+  return { lista, total }
+}
+
+export function conectorSapl(uf: string, nome: string, base: string): Conector {
+  return {
+    slug: `casa-${uf}`,
+    nome,
+    uf: uf.toUpperCase(),
+    async coletar(ctx): Promise<ResultadoColeta> {
+      const avisos: string[] = []
+      // Tabelas da casa: tipos de matéria, situações e unidades de tramitação
+      const [tipos, situacoes, unidades] = await Promise.all(
+        ['tipomaterialegislativa', 'statustramitacao', 'unidadetramitacao'].map(async (t) =>
+          tabela((await todas(ctx, `${base}/api/materia/${t}/?page_size=200`, 3)).lista),
+        ),
+      )
+      const sapl: ContextoSapl = { uf, base, tipos, situacoes, unidades, autores: new Map() }
+
+      const { lista, total } = await todas(
+        ctx,
+        `${base}/api/materia/materialegislativa/?data_ultima_atualizacao__gte=${dia(ctx.desde)}&o=-data_ultima_atualizacao&page_size=100`,
+      )
+      const deInteresse = lista.filter((m) => tipoDeInteresse(tipos.get(Number(m.tipo))))
+
+      const pacotes: PacoteProposicao[] = []
+      let novas = 0
+      for (const m of deInteresse) {
+        const chave = `sapl:${uf}:${m.id}`
+        if (ctx.descartadas.has(chave)) continue
+        const acompanhada = ctx.acompanhadas.has(chave)
+        if (!acompanhada) {
+          if (
+            novas >= ctx.maxNovas ||
+            ctx.relevancia(`${m.ementa || ''} ${m.indexacao || ''}`) < ctx.notaMinima
+          )
+            continue
+          novas++
+        }
+        const [tram, aut] = await Promise.all([
+          ctx.buscar(
+            `${base}/api/materia/tramitacao/?materia=${m.id}&page_size=100&o=-data_tramitacao`,
+          ),
+          ctx.buscar(`${base}/api/materia/autoria/?materia=${m.id}&page_size=50`),
+        ])
+        for (const a of resultados(aut)) {
+          const idAutor = Number(a.autor)
+          if (idAutor && !sapl.autores.has(idAutor)) {
+            try {
+              sapl.autores.set(
+                idAutor,
+                (await ctx.buscar(`${base}/api/base/autor/${idAutor}/`)) as Registro,
+              )
+            } catch (e) {
+              avisos.push(`autor ${idAutor}: ${(e as Error).message}`.slice(0, 200))
+            }
+          }
+        }
+        pacotes.push(mapearMateria(m, resultados(tram), resultados(aut), sapl))
+      }
+      if (novas >= ctx.maxNovas)
+        avisos.push(
+          `limite de ${ctx.maxNovas} propostas novas por rodada atingido; o restante entra nas próximas`,
+        )
+
+      return {
+        pacotes,
+        pautas: [],
+        itensListados: total,
+        amostra: {
+          listadas: lista.length,
+          deInteresse: deInteresse.length,
+          primeira: lista[0] ?? null,
+        },
+        avisos,
+      }
+    },
+  }
+}
+
+export const CONECTORES_SAPL: Record<string, Conector> = Object.fromEntries(
+  SAPL_NORTE.map((c) => [`casa-${c.uf}`, conectorSapl(c.uf, c.nome, c.base)]),
+)
