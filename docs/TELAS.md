@@ -201,17 +201,23 @@ Barra de progresso de leitura, categoria, título, linha fina, autor; texto com 
 
 ## A17. Inscrição no celular
 
-Fluxo próprio para telas pequenas (no computador, a página `#inscricao-celular` mostra o mesmo fluxo dentro de uma moldura de celular).
+Fluxo próprio para telas pequenas (no computador, a página `#inscricao-celular` do protótipo mostra o mesmo fluxo dentro de uma moldura de celular). **Construído em `/inscricao`** (`web/src/componentes/FormInscricao.tsx`); o mesmo formulário serve ao computador, com os cartões de perfil em duas colunas.
 
 | Elemento | Decisão |
 |---|---|
-| Topo | Voltar/fechar, barra de progresso e contador (ex.: 3/5) |
-| Passos | Você → Perfil → **Imprensa** (só jornalistas) → Interesses (estado com bandeira, temas, **biomas**) → Avisos |
-| Botão principal | Fixo embaixo, ao alcance do polegar |
-| Benefícios | Carrossel horizontal no primeiro passo |
-| Perfil | Cartões grandes de toque (escolha única). Logo abaixo, uma pergunta curta do perfil (obrigatória): Advogado → onde atua (advocacia privada, pública, jurídico de empresa, consultoria ambiental); Servidor → órgão (ambiental, MP, Defensoria, Judiciário, Legislativo, outro); Empresa → setor (agropecuária, mineração, energia, saneamento, indústria, consultoria ambiental); ONG → foco (meio ambiente, povos e comunidades, direitos e cidadania, outro); Pesquisador → área (Direito, ciências ambientais e biológicas, agrárias, engenharias, humanas e sociais); Cidadão → o que mais descreve (interesse geral, produtor rural, mora em área afetada, professor da educação básica). **Estudante** não tem subgrupo: informa **curso** (com sugestões) e **estado onde mora**, e por isso não vê o campo de estado no passo Interesses. Jornalista segue para o credenciamento |
-| Campos | 16px (sem zoom), teclado certo por tipo (e-mail, URL), preenchimento automático |
-| Final | "Confira seu e-mail"; para jornalistas, cartão "Credenciamento em análise" |
+| Topo | Barra de progresso e contador "Passo 2 de 4 · Perfil"; a cada passo a tela volta ao topo do formulário e o foco vai para o título |
+| Passos | Você → Perfil → **Imprensa** (só jornalistas) → Interesses (estado com bandeira, temas, **biomas**) → Confirmação |
+| Botão principal | Barra fixa no pé da tela, ao alcance do polegar: "Voltar" e "Continuar" com 52px de altura; a mensagem de erro aparece dentro da barra, sempre à vista; respeita a área segura do iPhone |
+| Formulário | No celular ocupa a largura toda, como uma folha; o texto de abertura some e vira a lista de benefícios do primeiro passo |
+| Benefícios | Lista curta no primeiro passo: "O parecer é aberto a todos. Inscritos também têm: notas técnicas e quadros em PDF, aviso no dia do parecer, grátis e sem senha" |
+| E-mail | Sugestão para erro de digitação no domínio ("Você quis dizer ana@gmail.com?"), com um toque para corrigir |
+| Perfil | Cartões grandes de toque (escolha única, com marcador de rádio). Ao escolher, a lista se recolhe no cartão "Perfil escolhido · Trocar" e logo abaixo aparece a pergunta curta do perfil (obrigatória): Advogado → onde atua (advocacia privada, pública, jurídico de empresa, consultoria ambiental); Servidor → órgão (ambiental, MP, Defensoria, Judiciário, Legislativo, outro); Empresa → setor (agropecuária, mineração, energia, saneamento, indústria, consultoria ambiental); ONG → foco (meio ambiente, povos e comunidades, direitos e cidadania, outro); Pesquisador → área (Direito, ciências ambientais e biológicas, agrárias, engenharias, humanas e sociais); Cidadão → o que mais descreve (interesse geral, produtor rural, mora em área afetada, professor da educação básica). **Estudante** não tem subgrupo: informa **curso** (com sugestões) e **estado onde mora**, e por isso não vê o campo de estado no passo Interesses. Jornalista segue para o credenciamento |
+| Estado | Lista pelo nome do estado, com a bandeira ao lado da escolha |
+| Interesses | Tudo opcional; contador "2 escolhidos" em temas e biomas; botões de 44px |
+| Confirmação | Resumo (nome, e-mail, perfil, imprensa, interesses) com "Editar" em cada linha, que leva ao passo certo; concordância com a Política de Privacidade em cartão de toque |
+| Campos | 16px (sem zoom no iPhone), teclado certo por tipo (e-mail, URL), preenchimento automático, tecla "próximo" no teclado, sem correção automática no e-mail |
+| Final | "Confira seu e-mail" com os 3 passos, aviso de credenciamento para jornalistas, "peça outro link" e "Errou o e-mail? Corrigir" |
+| Teste | `tests/e2e/inscricao-celular.e2e.spec.ts` (390×844): sem rolagem lateral, botão à vista mesmo depois de rolar, campos com 16px, sugestão de e-mail, bandeira do estado |
 
 ## A18. Credenciamento de imprensa
 
