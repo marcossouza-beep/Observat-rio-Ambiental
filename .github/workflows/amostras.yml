@@ -15,9 +15,10 @@ on:
 permissions:
   contents: write
 
-# O INLABS recusa dois logins ao mesmo tempo: Coleta, Teste das APIs e Gravar amostras fazem fila.
+# O INLABS recusa dois logins ao mesmo tempo: Coleta, Teste das APIs e Gravar amostras do DOU fazem fila.
+# Gravações que não usam o INLABS (ex.: só sapl) rodam fora dessa fila.
 concurrency:
-  group: inlabs
+  group: ${{ (github.event.inputs.fonte == '' || contains(github.event.inputs.fonte, 'dou')) && 'inlabs' || format('amostras-{0}', github.run_id) }}
   cancel-in-progress: false
 
 jobs:
