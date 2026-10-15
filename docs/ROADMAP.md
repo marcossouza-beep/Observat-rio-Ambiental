@@ -94,7 +94,7 @@ Mapa das 27 casas legislativas estaduais e dos 27 Diários Oficiais: URL, format
 > **Fase 4 — feita: levantamento em [`docs/LEVANTAMENTO.md`](LEVANTAMENTO.md).**
 > - **Como:** o fluxo "Levantamento regional" (GitHub Actions) sonda os sites das 27 casas e dos 27 diários, segue os links de proposições, dados abertos, API e SAPL, e grava as evidências em `web/levantamento/resultado.json`. O nível A–D sai das evidências (`web/src/levantamento/classificacao.ts`), com as revisões registradas e justificadas.
 > - **Resultado (15/10/2026):** casas — 9 em A, 4 em B, 4 em C, 10 em D; diários — nenhum com API (20 em C, 7 em D). Sete Assembleias usam o SAPL do Interlegis com a API aberta (AC, AL, AM, PB, PI, RO, TO): um conector só atende todas. ALMG (API de dados abertos) e Alesp (arquivo de proposituras) também estão em A.
-> - **Achado importante:** 11 sites não responderam de servidores fora do Brasil nas duas sondagens (entre eles CLDF, Alepe, ALRS, Ales e Alema). A coleta desses estados vai precisar de um servidor no Brasil.
+> - **Achado importante:** 11 sites não responderam de servidores fora do Brasil em três rodadas (entre eles CLDF, Alepe, ALRS, Ales e Alema). A coleta desses estados vai precisar de um servidor no Brasil.
 > - **No painel:** `pnpm levantamento:fontes` registra as 54 fontes estaduais em Fontes, com nível, endereço e motivo, desligadas até cada conector existir.
 > - **Região-piloto sugerida pelos números:** Norte (4 de 7 casas em A, todas pelo SAPL).
 

@@ -89,7 +89,7 @@ async function main() {
     '',
     `- **SAPL (Interlegis):** ${sapl.length} casas respondem pela mesma API (${sapl.join(', ')}). Um único conector do SAPL cobre todas, com o mesmo formato de matéria, tramitação e autoria.`,
     `- **Diários Oficiais:** nenhum tem API; todos publicam edições em PDF ou em consulta por data. Para os estados, o diário é fonte de confirmação (lei publicada, veto), não de acompanhamento diário.`,
-    `- **Sem resposta de fora do Brasil (${semResposta.length}):** ${semResposta.join(', ')}. Falharam nas duas sondagens por tempo esgotado ou conexão recusada, o que costuma indicar bloqueio de acesso estrangeiro. A coleta desses estados precisa rodar de um servidor no Brasil; a confirmação vem do teste a partir de lá.`,
+    `- **Sem resposta de fora do Brasil (${semResposta.length}):** ${semResposta.join(', ')}. Falharam em todas as rodadas (três, em 15/10/2026) por tempo esgotado ou conexão recusada, o que costuma indicar bloqueio de acesso estrangeiro. A coleta desses estados precisa rodar de um servidor no Brasil; a confirmação vem do teste a partir de lá.`,
     `- **Região-piloto (Fase 5):** a região com mais casas em nível A é ${REGIOES.slice().sort((a, b) => porRegiao[b].A.length - porRegiao[a].A.length)[0]}.`,
     '',
     ...REGIOES.flatMap((g) => [

@@ -1,7 +1,7 @@
 # Levantamento regional (Fase 4)
 
 > Gerado por `pnpm levantamento:relatorio` a partir da sondagem automática (`web/levantamento/resultado.json`).
-> Sondagem de 15 de outubro de 2026 às 16:48, rodada em GitHub Actions. Não edite à mão: corrija a classificação em `web/src/levantamento/classificacao.ts` (AJUSTES) e gere de novo.
+> Sondagem de 15 de outubro de 2026 às 20:25, rodada em GitHub Actions. Não edite à mão: corrija a classificação em `web/src/levantamento/classificacao.ts` (AJUSTES) e gere de novo.
 
 ## Como foi feito
 
@@ -40,7 +40,7 @@
 
 - **SAPL (Interlegis):** 7 casas respondem pela mesma API (AC, AL, AM, PB, PI, RO, TO). Um único conector do SAPL cobre todas, com o mesmo formato de matéria, tramitação e autoria.
 - **Diários Oficiais:** nenhum tem API; todos publicam edições em PDF ou em consulta por data. Para os estados, o diário é fonte de confirmação (lei publicada, veto), não de acompanhamento diário.
-- **Sem resposta de fora do Brasil (11):** AM (diário), AP (Alap), DF (CLDF), DF (diário), ES (Ales), MA (Alema), PE (Alepe), PI (diário), RS (ALRS), RS (diário), TO (diário). Falharam nas duas sondagens por tempo esgotado ou conexão recusada, o que costuma indicar bloqueio de acesso estrangeiro. A coleta desses estados precisa rodar de um servidor no Brasil; a confirmação vem do teste a partir de lá.
+- **Sem resposta de fora do Brasil (11):** AM (diário), AP (Alap), DF (CLDF), DF (diário), ES (Ales), MA (Alema), PE (Alepe), PI (diário), RS (ALRS), RS (diário), TO (diário). Falharam em todas as rodadas (três, em 15/10/2026) por tempo esgotado ou conexão recusada, o que costuma indicar bloqueio de acesso estrangeiro. A coleta desses estados precisa rodar de um servidor no Brasil; a confirmação vem do teste a partir de lá.
 - **Região-piloto (Fase 5):** a região com mais casas em nível A é Norte.
 
 ## Norte
