@@ -12,7 +12,7 @@ import type { Payload } from 'payload'
 import type { Proposicao } from '../payload-types'
 import { EVENTOS_DO_RADAR } from './classificar'
 import { identificacaoDe } from './conector'
-import type { ParlamentarColetado, PacoteProposicao, PautaColetada, ProposicaoColetada, TipoEvento } from './tipos'
+import type { EventoColetado, ParlamentarColetado, PacoteProposicao, PautaColetada, ProposicaoColetada, TipoEvento, TramitacaoColetada, VersaoColetada } from './tipos'
 
 /** Sem revalidar a cada item: a coleta revalida o site uma vez no fim. */
 const SILENCIO = { semRevalidar: true }
@@ -171,15 +171,12 @@ async function chavesExistentes(o: Opcoes, colecao: 'tramitacoes' | 'versoes' | 
   return existentes
 }
 
-export async function gravarPacote(o: Opcoes, pacote: PacoteProposicao) {
-  const { doc, nova } = await gravarProposicao(o, pacote.proposicao)
-  if (doc.situacaoEditorial === 'descartada') return doc
-  const id = doc.id
-  const alertar = !nova
+type SemProposicao<T> = Omit<T, 'proposicao'>
 
-  const jaTram = await chavesExistentes(o, 'tramitacoes', pacote.tramitacoes.map((t) => t.chave))
-  for (const t of pacote.tramitacoes) {
-    if (jaTram.has(t.chave)) continue
+async function gravarTramitacoes(o: Opcoes, id: number, tramitacoes: SemProposicao<TramitacaoColetada>[], alertar: boolean) {
+  const ja = await chavesExistentes(o, 'tramitacoes', tramitacoes.map((t) => t.chave))
+  for (const t of tramitacoes) {
+    if (ja.has(t.chave)) continue
     await o.payload.create({
       collection: 'tramitacoes',
       context: SILENCIO,
@@ -190,21 +187,54 @@ export async function gravarPacote(o: Opcoes, pacote: PacoteProposicao) {
       await criarAlerta(o, { proposicao: id, tipo: t.tipoEvento, titulo: `${ROTULO_ALERTA[t.tipoEvento]}: ${t.descricao}`, data: t.data, chave: `tram:${t.chave}`, link: t.urlDocumento })
     }
   }
+}
 
-  const jaVer = await chavesExistentes(o, 'versoes', pacote.versoes.map((v) => v.chave))
-  for (const v of pacote.versoes) {
-    if (jaVer.has(v.chave)) continue
+async function gravarVersoes(o: Opcoes, id: number, versoes: SemProposicao<VersaoColetada>[], alertar: boolean) {
+  const ja = await chavesExistentes(o, 'versoes', versoes.map((v) => v.chave))
+  for (const v of versoes) {
+    if (ja.has(v.chave)) continue
     // O gancho de Versões marca o parecer como desatualizado se o texto for posterior ao analisado.
     await o.payload.create({
       collection: 'versoes',
       context: SILENCIO,
-      data: { proposicao: id, data: v.data, tipo: v.tipo, rotulo: v.rotulo, url: v.url, hash: createHash('sha256').update(v.url).digest('hex').slice(0, 32), chaveOrigem: v.chave },
+      data: {
+        proposicao: id,
+        data: v.data,
+        tipo: v.tipo,
+        rotulo: v.rotulo,
+        url: v.url,
+        texto: v.texto?.slice(0, 400_000),
+        hash: createHash('sha256').update(v.texto || v.url).digest('hex').slice(0, 32),
+        chaveOrigem: v.chave,
+      },
     })
     o.balanco.versoes++
     if (alertar && v.tipo !== 'original' && recente(o, v.data)) {
       await criarAlerta(o, { proposicao: id, tipo: 'nova_versao', titulo: `Texto novo: ${v.rotulo}`, data: v.data, chave: `versao:${v.chave}`, link: v.url })
     }
   }
+}
+
+/** Fatos avulsos (vetos, publicação no DOU) sobre propostas que o site já tem. */
+export async function gravarEventos(o: Opcoes, eventos: EventoColetado[]) {
+  for (const e of eventos) {
+    const prop = await acharProposicao(o.payload, e.alvo.chaves, e.alvo.identificacoes)
+    if (!prop || prop.situacaoEditorial === 'descartada') continue
+    const extras = (e.chavesExtras || []).filter((c) => c !== prop.chaveOrigem && !(prop.chavesExtras || []).includes(c))
+    if (extras.length) await o.payload.update({ collection: 'proposicoes', id: prop.id, context: SILENCIO, data: { chavesExtras: [...(prop.chavesExtras || []), ...extras] } })
+    await gravarTramitacoes(o, prop.id, e.tramitacoes, true)
+    if (e.versoes?.length) await gravarVersoes(o, prop.id, e.versoes, true)
+  }
+}
+
+export async function gravarPacote(o: Opcoes, pacote: PacoteProposicao) {
+  const { doc, nova } = await gravarProposicao(o, pacote.proposicao)
+  if (doc.situacaoEditorial === 'descartada') return doc
+  const id = doc.id
+  const alertar = !nova
+
+  await gravarTramitacoes(o, id, pacote.tramitacoes, alertar)
+  await gravarVersoes(o, id, pacote.versoes, alertar)
 
   const jaVot = await chavesExistentes(o, 'votacoes', pacote.votacoes.map((v) => v.chave))
   for (const v of pacote.votacoes) {

@@ -57,7 +57,7 @@
 | `SITE_URL` e `CRON_SECRET` | Agendamentos (verificação horária; a cada 15 min: pareceres agendados, comunicados e fila de e-mails; limpeza diária) |
 | `BACKUP_DATABASE_URL` e `BACKUP_SENHA` | Cópia diária cifrada do banco, com teste de restauração |
 | `PAYLOAD_SECRET` (o mesmo da Vercel) e, se quiser separar, `COLETA_DATABASE_URL` | **Coleta da Câmara e do Senado** 4 vezes ao dia (6h, 12h, 18h e 23h). Sem `COLETA_DATABASE_URL`, usa a `BACKUP_DATABASE_URL` (conexão direta, porta 5432) |
-| `INLABS_EMAIL` e `INLABS_SENHA` | Teste do Diário Oficial no teste de fumaça (e, na Fase 2, a coleta) |
+| `INLABS_EMAIL` e `INLABS_SENHA` | **Coleta do Diário Oficial** (fluxo "Coleta") e o teste diário das APIs. Sem eles, o Diário Oficial é pulado com aviso |
 
 Guarde a `BACKUP_SENHA` fora do GitHub: sem ela, as cópias não abrem. Para abrir uma cópia:
 `gpg --decrypt banco-AAAAMMDD.dump.gpg > banco.dump` e `pg_restore -d <banco> banco.dump`.
@@ -66,7 +66,7 @@ Depois de cadastrar os segredos, rode a coleta uma vez à mão para conferir: Gi
 
 ## 4. INLABS (Diário Oficial da União)
 
-Criar a conta gratuita em inlabs.in.gov.br com um e-mail do projeto e cadastrar os segredos do passo 3.
+Criar a conta gratuita em inlabs.in.gov.br com um e-mail do projeto e cadastrar os segredos `INLABS_EMAIL` (o e-mail da conta) e `INLABS_SENHA` no passo 3. Para conferir: Actions → **Teste das APIs** → *Run workflow*; a verificação "DOU (INLABS)" mostra quantos atos do dia foram lidos. Para gravar amostras reais nos testes: Actions → **Gravar amostras das APIs** → fonte `dou`.
 
 ## 5. Monitor de disponibilidade
 

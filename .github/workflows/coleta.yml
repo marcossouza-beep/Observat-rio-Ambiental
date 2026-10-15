@@ -1,4 +1,4 @@
-# Coleta automática da Câmara e do Senado (docs/APIS.md e docs/ENTREGA.md):
+# Coleta automática da Câmara, do Senado, do Congresso (vetos) e do Diário Oficial (INLABS) (docs/APIS.md e docs/ENTREGA.md):
 # 06h, 12h, 18h e 23h em Brasília. Grava direto no banco; o site mostra a data da última coleta.
 # Precisa dos segredos COLETA_DATABASE_URL (ou BACKUP_DATABASE_URL: conexão direta do Supabase, porta 5432)
 # e PAYLOAD_SECRET. Sem eles, não faz nada.
@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
     inputs:
       fontes:
-        description: 'camara,senado (vazio = todas)'
+        description: 'camara,senado,congresso,dou (vazio = todas)'
         required: false
         default: ''
 
@@ -31,6 +31,8 @@ jobs:
     env:
       DATABASE_URL: ${{ secrets.COLETA_DATABASE_URL || secrets.BACKUP_DATABASE_URL }}
       PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
+      INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
+      INLABS_SENHA: ${{ secrets.INLABS_SENHA }}
       COLETA_FONTES: ${{ github.event.inputs.fontes }}
     steps:
       - name: Banco ainda não configurado

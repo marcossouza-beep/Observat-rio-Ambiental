@@ -1,7 +1,7 @@
 /**
  * Roda a coleta das fontes federais e grava no banco.
- * Uso: pnpm coleta                  (Câmara e Senado)
- *      COLETA_FONTES=senado pnpm coleta
+ * Uso: pnpm coleta                  (Câmara, Senado, Congresso e Diário Oficial)
+ *      COLETA_FONTES=senado,dou pnpm coleta
  * No GitHub Actions: .github/workflows/coleta.yml (6h, 12h, 18h e 23h em Brasília).
  * Sai com erro se alguma fonte falhar (o alerta aparece também no painel, em Hoje).
  */
@@ -16,7 +16,7 @@ const fontes = (process.env.COLETA_FONTES || Object.keys(CONECTORES).join(','))
   .filter(Boolean)
 
 const payload = await getPayload({ config: await config })
-const resultados = await coletar(payload, fontes)
+const { resultados, textos } = await coletar(payload, fontes)
 const linhas = ['# Coleta', '', `Rodada em ${new Date().toISOString()}`, '']
 for (const r of resultados) {
   linhas.push(`## ${r.ok ? '✅' : '❌'} ${r.fonte}`, '')
@@ -27,6 +27,7 @@ for (const r of resultados) {
   for (const a of r.avisos || []) linhas.push(`- aviso: ${a}`)
   linhas.push('')
 }
+linhas.push('## Texto integral (PDF)', '', `- ${Object.entries(textos).map(([k, v]) => `${k}: ${v}`).join(' · ')}`, '')
 const relatorio = linhas.join('\n')
 console.log(relatorio)
 if (process.env.GITHUB_STEP_SUMMARY) await writeFile(process.env.GITHUB_STEP_SUMMARY, relatorio, { flag: 'a' })

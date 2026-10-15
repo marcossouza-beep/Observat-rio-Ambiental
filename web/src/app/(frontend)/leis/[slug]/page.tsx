@@ -130,6 +130,18 @@ export default async function PaginaLei({ params }: { params: Params }) {
               <p>{lei.art1}</p>
             </>
           ) : null}
+          {lei.leisAfetadas?.length ? (
+            <>
+              <span className="sub-h">Leis citadas na ementa</span>
+              <p className="leis-citadas">
+                {lei.leisAfetadas.map((l, i) => (
+                  <a key={l.id || i} href={l.url || '#'} target="_blank" rel="noopener">
+                    {l.rotulo}
+                  </a>
+                ))}
+              </p>
+            </>
+          ) : null}
         </div>
         {lei.urlInteiroTeor || lei.urlFonte ? (
           <a className="link-oficial" href={lei.urlInteiroTeor || lei.urlFonte || '#'} target="_blank" rel="noopener">

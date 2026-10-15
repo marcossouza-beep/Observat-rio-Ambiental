@@ -290,3 +290,5 @@ a:hover .ico-l { transform: translateX(-3px); }
 }
 .beneficios .lead { display: none; }
 @media (max-width: 640px) { .beneficios .lead { display: block; color: var(--green-dk); font-weight: 600; } }
+.leis-citadas { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.leis-citadas a { color: var(--green-dk); text-decoration: underline; text-underline-offset: 3px; font-size: 0.93rem; }

@@ -116,3 +116,6 @@ ul.obs-checagem li { margin-left: 0 !important; }
 .obs-btn:hover { border-color: var(--obs-verde); }
 .obs-btn:disabled { opacity: 0.6; cursor: wait; }
 .obs-linhas a.obs-visto { opacity: 0.6; }
+.obs-dossie details { margin-top: 4px; }
+.obs-dossie summary { cursor: pointer; color: var(--obs-verde-esc); font-size: 0.85rem; }
+.obs-texto { white-space: pre-wrap; max-height: 420px; overflow: auto; font-size: 0.85rem; line-height: 1.5; background: var(--theme-elevation-50); border-radius: 8px; padding: 10px 12px; margin-top: 6px; }

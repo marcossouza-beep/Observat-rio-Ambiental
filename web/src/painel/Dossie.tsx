@@ -52,6 +52,21 @@ export async function Dossie({ data, payload }: UIFieldServerProps) {
         </>
       ) : null}
 
+      {prop.leisAfetadas?.length ? (
+        <>
+          <h3>Leis citadas na ementa</h3>
+          <ul>
+            {prop.leisAfetadas.map((l) => (
+              <li key={l.id || l.rotulo}>
+                <a href={l.url || '#'} target="_blank" rel="noopener">
+                  {l.rotulo} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
+
       <h3>Versões do texto</h3>
       {versoes.docs.length ? (
         <ul>
@@ -66,6 +81,17 @@ export async function Dossie({ data, payload }: UIFieldServerProps) {
                     arquivo
                   </a>
                 </>
+              ) : null}
+              {v.texto ? (
+                <details>
+                  <summary>texto integral ({Math.round(v.texto.length / 1000)} mil caracteres)</summary>
+                  <div className="obs-texto">{v.texto.slice(0, 20000)}</div>
+                  {v.texto.length > 20000 ? <p className="obs-nota">Mostrando o começo. O texto completo está no arquivo oficial.</p> : null}
+                </details>
+              ) : v.semTextoMotivo ? (
+                <span className="obs-nota"> · {v.semTextoMotivo}</span>
+              ) : v.url ? (
+                <span className="obs-nota"> · texto ainda não lido (a coleta lê algumas versões por rodada)</span>
               ) : null}
             </li>
           ))}

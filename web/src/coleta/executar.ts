@@ -7,19 +7,24 @@ import { revalidarSite } from '../hooks/revalidar'
 import { pontuar, type Termo } from '../lib/relevancia'
 import type { Fonte } from '../payload-types'
 import { conectorCamara } from './camara/conector'
+import { conectorCongresso } from './congresso/conector'
+import { conectorDou } from './dou/conector'
 import { buscarNaRede, identificacaoDe, type Buscar, type Conector, type ContextoColeta } from './conector'
-import { balancoVazio, gravarPacote, gravarPautas, type Balanco } from './gravar'
+import { balancoVazio, gravarEventos, gravarPacote, gravarPautas, type Balanco } from './gravar'
 import { conectorSenado } from './senado/conector'
+import { preencherTextos, type Baixador } from './textos'
 import { ErroFormato } from './tipos'
 
-export const CONECTORES: Record<string, Conector> = { camara: conectorCamara, senado: conectorSenado }
+export const CONECTORES: Record<string, Conector> = { camara: conectorCamara, senado: conectorSenado, congresso: conectorCongresso, dou: conectorDou }
 
 /** Prefixos das chaves de pauta de cada fonte (para tirar da agenda o que saiu de pauta). */
-const PREFIXOS_PAUTA: Record<string, string[]> = { camara: ['camara:pauta:'], senado: ['senado:pauta:', 'senado:reuniao:'] }
+const PREFIXOS_PAUTA: Record<string, string[]> = { camara: ['camara:pauta:'], senado: ['senado:pauta:', 'senado:reuniao:'], congresso: ['congresso:pauta:'], dou: [] }
 
 const FONTES_PADRAO: Record<string, Partial<Fonte>> = {
   camara: { nome: 'Câmara dos Deputados', nivel: 'A', esfera: 'federal' },
   senado: { nome: 'Senado Federal', nivel: 'A', esfera: 'federal' },
+  congresso: { nome: 'Congresso Nacional (vetos)', nivel: 'A', esfera: 'federal' },
+  dou: { nome: 'Diário Oficial da União (INLABS)', nivel: 'A', esfera: 'federal' },
 }
 
 export type ResultadoRodada = { fonte: string; ok: boolean; itens?: number; balanco?: Balanco; avisos?: string[]; erro?: string; ignorada?: string }
@@ -73,13 +78,15 @@ async function mediaItens(payload: Payload, fonteId: number, agora: Date) {
   return v.length ? Math.round(v.reduce((a, b) => a + b, 0) / v.length) : null
 }
 
-export async function coletarFonte(payload: Payload, slug: string, opcoes: { agora?: Date; buscar?: Buscar } = {}): Promise<ResultadoRodada> {
-  const conector = CONECTORES[slug]
+export async function coletarFonte(payload: Payload, slug: string, opcoes: { agora?: Date; buscar?: Buscar; conector?: Conector } = {}): Promise<ResultadoRodada> {
+  const conector = opcoes.conector || CONECTORES[slug]
   if (!conector) return { fonte: slug, ok: false, erro: 'conector desconhecido' }
   const agora = opcoes.agora || new Date()
   const fonte = await fonteDe(payload, slug)
   if (fonte.ativa === false) return { fonte: slug, ok: true, ignorada: 'fonte desativada nos Ajustes' }
   if (fonte.manual) return { fonte: slug, ok: true, ignorada: 'fonte de cadastro manual' }
+  const falta = conector.naoConfigurado?.()
+  if (falta) return { fonte: slug, ok: true, ignorada: falta }
 
   const ajustes = await payload.findGlobal({ slug: 'ajustes', depth: 0 })
   const desde = fonte.ultimaColetaOk ? new Date(fonte.ultimaColetaOk) : new Date(agora.getTime() - 7 * 864e5)
@@ -110,6 +117,7 @@ export async function coletarFonte(payload: Payload, slug: string, opcoes: { ago
         avisos.push(`${pacote.proposicao.chave}: ${(e as Error).message}${det?.collection ? ` (${det.collection})` : ''}`.slice(0, 300))
       }
     }
+    await gravarEventos(o, r.eventos || [])
     await gravarPautas(o, r.pautas, PREFIXOS_PAUTA[slug] || [])
     const fim = new Date()
     await payload.update({
@@ -138,9 +146,16 @@ export async function coletarFonte(payload: Payload, slug: string, opcoes: { ago
   }
 }
 
-export async function coletar(payload: Payload, fontes = Object.keys(CONECTORES), opcoes: { agora?: Date; buscar?: Buscar } = {}) {
+export async function coletar(payload: Payload, fontes = Object.keys(CONECTORES), opcoes: { agora?: Date; buscar?: Buscar; baixarArquivo?: Baixador } = {}) {
   const resultados: ResultadoRodada[] = []
   // Uma fonte por vez: se uma cai, as outras continuam.
   for (const f of fontes) resultados.push(await coletarFonte(payload, f, opcoes))
-  return resultados
+  // Texto integral das versões novas (PDF → texto), algumas por rodada
+  let textos: Awaited<ReturnType<typeof preencherTextos>> | { erro: string }
+  try {
+    textos = await preencherTextos(payload, { baixar: opcoes.baixarArquivo })
+  } catch (e) {
+    textos = { erro: (e as Error).message }
+  }
+  return { resultados, textos }
 }

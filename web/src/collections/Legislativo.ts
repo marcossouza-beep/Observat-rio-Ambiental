@@ -67,6 +67,8 @@ export const Versoes: CollectionConfig = {
     afterChange: [
       async ({ doc, operation, req }) => {
         if (operation !== 'create') return doc
+        // Lei publicada repete a redação final; o veto, se houver, chega ao autor pelo Radar.
+        if (doc.tipo === 'norma') return doc
         const propId = typeof doc.proposicao === 'object' ? doc.proposicao.id : doc.proposicao
         const pareceres = await req.payload.find({
           collection: 'pareceres',
@@ -122,6 +124,8 @@ export const Versoes: CollectionConfig = {
     { name: 'url', label: 'Arquivo oficial', type: 'text' },
     { name: 'texto', label: 'Texto extraído', type: 'textarea' },
     { name: 'extraidoPorOcr', type: 'checkbox', defaultValue: false },
+    { name: 'semTextoMotivo', label: 'Por que não há texto', type: 'text', admin: { readOnly: true } },
+    { name: 'tentativasTexto', label: 'Tentativas de leitura', type: 'number', defaultValue: 0, admin: { readOnly: true } },
     { name: 'hash', label: 'Resumo do arquivo (para detectar mudança)', type: 'text', index: true, admin: { readOnly: true } },
     chaveOrigem,
   ],

@@ -3,7 +3,7 @@
  * As chaves ("camara:2345678", "senado:processo:123") são estáveis: coletar duas vezes não duplica nada.
  */
 
-export type Casa = 'camara' | 'senado' | 'congresso'
+export type Casa = 'camara' | 'senado' | 'congresso' | 'presidencia'
 
 export type TipoEvento =
   | 'apresentacao'
@@ -76,6 +76,8 @@ export type VersaoColetada = {
   tipo: TipoVersao
   rotulo: string
   url: string
+  /** Texto integral, quando a fonte já entrega (ex.: Diário Oficial). Dos PDFs, é extraído depois. */
+  texto?: string
 }
 
 export type VotacaoColetada = {
@@ -123,4 +125,16 @@ export class ErroFormato extends Error {
 export function exigir<T>(valor: T | null | undefined, fonte: string, campo: string, onde: string): T {
   if (valor === null || valor === undefined || valor === '') throw new ErroFormato(fonte, campo, onde)
   return valor
+}
+
+/**
+ * Fato avulso sobre uma proposta que o site já acompanha (veto, lei publicada no Diário Oficial…).
+ * Só é gravado se a proposta for encontrada por uma das chaves ou números.
+ */
+export type EventoColetado = {
+  alvo: { chaves: string[]; identificacoes?: string[] }
+  /** Chaves que passam a apontar para a proposta (ex.: o código do veto, para a agenda do Congresso). */
+  chavesExtras?: string[]
+  tramitacoes: Omit<TramitacaoColetada, 'proposicao'>[]
+  versoes?: Omit<VersaoColetada, 'proposicao'>[]
 }

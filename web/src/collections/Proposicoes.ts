@@ -2,6 +2,7 @@ import { APIError, type CollectionConfig } from 'payload'
 import { campoSoEquipe, equipe, proposicaoPublicaOuEquipe } from '../access'
 import { abrirCompromisso, mudarCompromissos } from '../hooks/compromissos'
 import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
+import { leisCitadas } from '../lib/leis'
 import { pontuar, type Termo } from '../lib/relevancia'
 import { rotuloProposicao, slugProposicao } from '../lib/texto'
 
@@ -34,6 +35,10 @@ export const Proposicoes: CollectionConfig = {
           const r = pontuar(texto, dic.docs.map((d) => ({ termo: d.termo, peso: d.peso, exclusao: !!d.exclusao, grupo: d.grupo || undefined }) as Termo))
           data.relevancia = r.nota
           data.termosEncontrados = r.encontrados
+        }
+        // Leis que a proposta altera (pela ementa), com link para o LexML
+        if (data.ementa !== undefined && (data.ementa !== originalDoc?.ementa || !originalDoc?.leisAfetadas?.length)) {
+          data.leisAfetadas = leisCitadas(data.ementa).map((l) => ({ rotulo: l.rotulo, url: l.url, urn: l.urn }))
         }
         if (data.sigla && data.numero && data.ano) {
           data.rotulo = rotuloProposicao(data.sigla, data.numero, data.ano)
@@ -186,6 +191,17 @@ export const Proposicoes: CollectionConfig = {
         },
         { name: 'orgao', label: 'Órgão', type: 'text' },
         { name: 'data', type: 'date' },
+      ],
+    },
+    {
+      name: 'leisAfetadas',
+      label: 'Leis citadas na ementa',
+      type: 'array',
+      admin: { readOnly: true, description: 'Preenchido sozinho a partir da ementa, com link para o LexML' },
+      fields: [
+        { name: 'rotulo', type: 'text' },
+        { name: 'url', type: 'text' },
+        { name: 'urn', type: 'text' },
       ],
     },
     { name: 'temas', type: 'relationship', relationTo: 'temas', hasMany: true },

@@ -92,7 +92,7 @@ describe('Senado', () => {
   it('processo: o mesmo PL 2159/2021, com chaves para juntar com a Câmara', () => {
     expect(p).toMatchObject({ chave: 'senado:8079566', casa: 'senado', sigla: 'PL', numero: 2159, ano: 2021, statusSimplificado: 'norma' })
     expect(p.statusOficial).toBe('Transformada em norma jurídica com veto parcial')
-    expect(p.chavesExtras).toEqual(['senado:materia:148785'])
+    expect(p.chavesExtras).toEqual(['senado:materia:148785', 'norma:lei:15190:2025'])
     expect(p.outrasIdentificacoes).toContain('PL 3729/2004')
     expect(p.temasOficiais).toContain('Meio ambiente')
     expect(p.urlFonte).toBe('https://www25.senado.leg.br/web/atividade/materias/-/materia/148785')

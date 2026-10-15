@@ -37,6 +37,15 @@
 | Senado: votações | `/votacao?idProcesso=` traz os 81 votos; os totais vêm vazios e são contados pelos votos |
 | Senado: agendas | Plenário em formato antigo (`AgendaPlenario.Sessoes.Sessao`, matérias pelo código antigo); comissões em `AgendaReuniao.reunioes.reuniao[].partes.itens[].doma.idProcesso`. Um item sozinho vem como objeto, vários como lista |
 
+### 0.2 Parte 2 (15/10/2026)
+
+| Ponto | Resultado |
+|---|---|
+| Vetos | `/materia/vetos/{ano}` (formato antigo, `ListaVetosAnoCN`): veto, proposta vetada, lei gerada, mensagem no Planalto, data em que tranca a pauta. Resultado por dispositivo em `/plenario/resultado/veto/materia/{codigo}` ("Mantido" ou "Rejeitado" = derrubado) |
+| Agenda do Congresso | `/plenario/agenda/cn/{inicio}/{fim}`, mesmo formato da agenda do Plenário do Senado; os itens citam o veto, ligado à proposta por chave extra |
+| Inteiro teor | PDFs da Câmara (`prop_mostrarintegra?codteor=`) e do Senado (`sdleg-getter`) têm camada de texto: 12 páginas em ~0,3 s, 56 páginas em ~0,4 s |
+| INLABS | Conta criada; falta cadastrar os segredos no GitHub para validar com edições reais. O leitor segue o formato do exemplo oficial (atributos `artType`, `artCategory`, `pubDate`, `pdfPage`; campos `Identifica`, `Ementa`, `Texto`) e o teste diário mostra quantos atos do dia foram lidos |
+
 ## 1. Resumo
 
 | Fonte | Para quê | Formato | Acesso | Avaliação | Fase |

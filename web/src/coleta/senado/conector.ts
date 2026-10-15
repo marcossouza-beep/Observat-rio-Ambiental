@@ -16,7 +16,8 @@ import {
   type ResumoSenado,
 } from './mapear'
 
-export const SENADO = 'https://legis.senado.leg.br/dadosabertos'
+export { SENADO_DADOS as SENADO } from './mapear'
+import { SENADO_DADOS as SENADO } from './mapear'
 const compacto = (d: string) => d.replace(/-/g, '')
 
 async function pacote(ctx: ContextoColeta, id: number): Promise<PacoteProposicao> {

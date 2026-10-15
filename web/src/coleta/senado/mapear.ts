@@ -17,8 +17,17 @@ import {
 import { dataBrasilia, inteiro, lista, texto } from '../util'
 
 const FONTE = 'Senado'
+export const SENADO_DADOS = 'https://legis.senado.leg.br/dadosabertos'
 export const chaveSenado = (id: number | string) => `senado:${id}`
 export const chaveMateria = (codigo: number | string) => `senado:materia:${inteiro(codigo) ?? codigo}`
+/** Lei gerada pela proposta: "norma:lei:15190:2025". Liga a publicação no Diário Oficial à proposta. */
+export function chaveDaNorma(siglaTipo: unknown, numero: unknown, ano: unknown): string[] {
+  const n = inteiro(String(numero ?? '').replace(/\./g, ''))
+  const a = inteiro(ano)
+  if (!n || !a) return []
+  const tipo = /complementar|^LCP/i.test(String(siglaTipo)) ? 'lcp' : /^LEI/i.test(String(siglaTipo)) ? 'lei' : null
+  return tipo ? [`norma:${tipo}:${n}:${a}`] : []
+}
 export const chaveSenador = (codigo: number | string) => `senado:parlamentar:${codigo}`
 const fotoSenador = (codigo: number | string) => `https://www.senado.leg.br/senadores/img/fotos-oficiais/senador${codigo}.jpg`
 
@@ -47,6 +56,7 @@ type Processo = {
   outrosNumeros?: { sigla?: string; numero?: string; ano?: number }[]
   autuacoes?: { informesLegislativos?: Informe[] }[]
   ordensDoDia?: { dataSessao?: string; codigoSessao?: number }[]
+  normaGerada?: { siglaTipo?: string; numero?: number | string; anoAssinatura?: string | number } | null
 }
 type Relatoria = { codigoParlamentar?: number; nomeParlamentar?: string; siglaPartidoParlamentar?: string; ufParlamentar?: string; siglaColegiado?: string; dataDesignacao?: string; dataDestituicao?: string | null; urlFotoParlamentar?: string }
 
@@ -108,7 +118,7 @@ export function mapearProcessoSenado(bruto: unknown, relatorias?: unknown): Prop
     urlFonte: p.codigoMateria ? `https://www25.senado.leg.br/web/atividade/materias/-/materia/${p.codigoMateria}` : undefined,
     temasOficiais: [p.conteudo?.assuntoEspecifico, ...lista<{ descricao?: string }>(p.classificacoes).map((c) => c.descricao)].filter((t): t is string => !!texto(t)),
     autoria: [...autoresDoSenado(p.autoriaIniciativa), ...(relator ? [relator] : [])],
-    chavesExtras: p.codigoMateria ? [chaveMateria(p.codigoMateria)] : [],
+    chavesExtras: [...(p.codigoMateria ? [chaveMateria(p.codigoMateria)] : []), ...chaveDaNorma(p.normaGerada?.siglaTipo, p.normaGerada?.numero, p.normaGerada?.anoAssinatura)],
     outrasIdentificacoes: [...new Set(outras.filter((x): x is string => !!x).map((x) => x.replace(/ 0+(\d)/, ' $1')))],
   }
 }
@@ -207,9 +217,12 @@ type SessaoPlenario = { Data?: string; Hora?: string; SituacaoSessao?: string; T
 type MateriaPauta = { CodigoMateria?: string; Apreciacao?: string; DescricaoIdentificacaoMateria?: string }
 
 /** Agenda do Plenário (Senado e Congresso). As matérias vêm pelo código antigo ("CodigoMateria"). */
-export function mapearAgendaPlenarioSenado(bruto: unknown): PautaColetada[] {
-  const sessoes = lista<SessaoPlenario>((bruto as { AgendaPlenario?: { Sessoes?: { Sessao?: unknown } } })?.AgendaPlenario?.Sessoes?.Sessao)
+export function mapearAgendaPlenarioSenado(bruto: unknown, casa: 'SF' | 'CN' = 'SF'): PautaColetada[] {
+  const raiz = bruto as { AgendaPlenario?: { Sessoes?: { Sessao?: unknown } }; AgendaPlenarioCN?: { Sessoes?: { Sessao?: unknown } } }
+  const sessoes = lista<SessaoPlenario>((raiz?.AgendaPlenario || raiz?.AgendaPlenarioCN)?.Sessoes?.Sessao)
   return sessoes.flatMap((s): PautaColetada[] => {
+    // Sessões do Congresso ficam com o conector do Congresso (e as do Senado, com o do Senado)
+    if ((s.Casa === 'CN') !== (casa === 'CN')) return []
     if (/cancelad|n[ãa]o realizada/i.test(s.SituacaoSessao || '')) return []
     const data = dataBrasilia(s.Data && s.Hora ? `${s.Data}T${s.Hora}` : s.Data)
     if (!data) return []
@@ -217,7 +230,7 @@ export function mapearAgendaPlenarioSenado(bruto: unknown): PautaColetada[] {
     return lista<MateriaPauta>(s.Materias?.Materia)
       .filter((m) => m.CodigoMateria)
       .map((m) => ({
-        chave: `senado:pauta:${s.CodigoSessao}:${inteiro(m.CodigoMateria)}`,
+        chave: `${casa === 'CN' ? 'congresso' : 'senado'}:pauta:${s.CodigoSessao}:${inteiro(m.CodigoMateria)}`,
         proposicao: chaveMateria(m.CodigoMateria!),
         data,
         orgao: s.Casa === 'CN' ? 'CN' : 'PLEN',

@@ -221,6 +221,17 @@ export interface Proposicao {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Preenchido sozinho a partir da ementa, com link para o LexML
+   */
+  leisAfetadas?:
+    | {
+        rotulo?: string | null;
+        url?: string | null;
+        urn?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   temas?: (number | Tema)[] | null;
   biomas?: (number | Bioma)[] | null;
   situacaoEditorial: 'triagem' | 'ativa' | 'monitorada' | 'descartada';
@@ -594,6 +605,8 @@ export interface Versao {
   url?: string | null;
   texto?: string | null;
   extraidoPorOcr?: boolean | null;
+  semTextoMotivo?: string | null;
+  tentativasTexto?: number | null;
   hash?: string | null;
   chaveOrigem?: string | null;
   updatedAt: string;
@@ -1214,6 +1227,14 @@ export interface ProposicoesSelect<T extends boolean = true> {
         data?: T;
         id?: T;
       };
+  leisAfetadas?:
+    | T
+    | {
+        rotulo?: T;
+        url?: T;
+        urn?: T;
+        id?: T;
+      };
   temas?: T;
   biomas?: T;
   situacaoEditorial?: T;
@@ -1372,6 +1393,8 @@ export interface VersoesSelect<T extends boolean = true> {
   url?: T;
   texto?: T;
   extraidoPorOcr?: T;
+  semTextoMotivo?: T;
+  tentativasTexto?: T;
   hash?: T;
   chaveOrigem?: T;
   updatedAt?: T;

@@ -9,6 +9,11 @@ import { beforeAll, describe, expect, it } from 'vitest'
 import { mapearPautaCamara } from '@/coleta/camara/mapear'
 import { coletarFonte } from '@/coleta/executar'
 import { acharProposicao } from '@/coleta/gravar'
+import { criarConectorDou } from '@/coleta/dou/conector'
+import { vetosDoAno } from '@/coleta/congresso/mapear'
+import { preencherTextos } from '@/coleta/textos'
+import { readdirSync } from 'node:fs'
+import { criarZip } from '../helpers/zip'
 
 let payload: Payload
 
@@ -44,6 +49,14 @@ function buscaGravada(extra: { semPauta?: boolean; fichaQuebrada?: boolean } = {
     if (p.endsWith('/dadosabertos/votacao')) return corpo('senado/votacao-processo')
     if (p.includes('/plenario/agenda/mes/')) return corpo('senado/agenda-plenario-mes')
     if (p.includes('/comissao/agenda/')) return corpo('senado/agenda-comissoes')
+    if (p.includes('/materia/vetos/')) {
+      // O primeiro veto da lista gravada, como já apreciado (para passar pelo resultado)
+      const c = corpo('senado/vetos-ano')
+      c.ListaVetosAnoCN.Vetos.Veto[0].Materia.EmTramitacao = 'Não'
+      return c
+    }
+    if (p.includes('/plenario/resultado/veto/materia/')) return corpo('senado/veto-resultado-materia')
+    if (p.includes('/plenario/agenda/cn/')) return corpo('senado/agenda-congresso')
     throw new Error(`Endereço sem resposta gravada: ${url}`)
   }
 }
@@ -136,6 +149,68 @@ describe('coleta da Câmara e do Senado', () => {
     expect(depois.erro).toMatch(/Formato da Câmara mudou/)
     const v = await payload.find({ collection: 'verificacoes', where: { resultado: { equals: 'falha' } } })
     expect(v.docs[0].detalhe).toMatch(/Câmara dos Deputados/)
+  }, 120_000)
+
+  it('Congresso: veto vira andamento da proposta vetada, com o resultado da apreciação', async () => {
+    // Um veto já apreciado da lista gravada; o autor acompanha a proposta vetada
+    const v = vetosDoAno(corpo('senado/vetos-ano'))[0]
+    const m = v.MateriaVetada!
+    const vetada = (await payload.create({ collection: 'proposicoes', data: { esfera: 'federal', sigla: m.Sigla!, numero: Number(m.Numero), ano: Number(m.Ano), situacaoEditorial: 'monitorada' } })).id
+    const r = await coletarFonte(payload, 'congresso', { agora: AGORA, buscar: buscaGravada() })
+    expect(r.ok).toBe(true)
+    const t = await payload.find({ collection: 'tramitacoes', where: { proposicao: { equals: vetada } }, sort: 'data' })
+    const porChave = new Map(t.docs.map((x) => [x.chaveOrigem, x]))
+    expect([...porChave.keys()].sort()).toEqual([`congresso:veto:${v.Codigo}`, `congresso:veto:${v.Codigo}:resultado`])
+    expect(porChave.get(`congresso:veto:${v.Codigo}`)!.tipoEvento).toBe('veto')
+    expect(porChave.get(`congresso:veto:${v.Codigo}:resultado`)!.descricao).toMatch(/^Congresso (derrubou|manteve|apreciou)/)
+    // O código do veto passa a apontar para a proposta (a agenda do Congresso cita o veto)
+    expect((await acharProposicao(payload, [`senado:materia:${v.Materia!.Codigo}`]))?.id).toBe(vetada)
+  }, 120_000)
+
+  it('Diário Oficial: lei e veto da proposta acompanhada; portaria nova relevante na triagem', async () => {
+    await payload.updateGlobal({ slug: 'ajustes', data: { coleta: { notaMinima: 40, maxNovas: 5 } } })
+    await payload.create({ collection: 'palavras-chave', data: { termo: 'licenciamento ambiental', peso: 10, grupo: 'Licenciamento' } }).catch(() => null)
+    const dir = path.resolve(__dirname, '../fixtures/coleta/dou-modelo')
+    const zip = criarZip(readdirSync(dir).map((n) => ({ nome: n, texto: readFileSync(path.join(dir, n), 'utf8'), comprimir: true })))
+    const baixar = (async (url: string | URL | Request) => {
+      const u = String(url)
+      if (u.endsWith('/logar.php')) return new Response(null, { status: 302, headers: { 'set-cookie': 'inlabs_session_cookie=teste; path=/' } })
+      if (u.includes('dl=2025-08-08-DO1.zip')) return new Response(zip, { status: 200 })
+      return new Response('', { status: 404 })
+    }) as typeof fetch
+    const r = await coletarFonte(payload, 'dou', { agora: new Date('2025-08-08T20:00:00.000Z'), conector: criarConectorDou({ email: 'e', senha: 's', baixar }) })
+    expect(r.avisos).toEqual([])
+    expect(r.ok).toBe(true)
+    expect(r.itens).toBe(4)
+    const t = await payload.find({ collection: 'tramitacoes', where: { chaveOrigem: { in: ['dou:9000001:publicacao', 'dou:9000002'] } }, depth: 0 })
+    expect(t.docs.map((x) => [x.chaveOrigem, x.tipoEvento, x.proposicao]).sort()).toEqual([
+      ['dou:9000001:publicacao', 'sancao', lic],
+      ['dou:9000002', 'veto', lic],
+    ])
+    const lei = (await payload.find({ collection: 'versoes', where: { chaveOrigem: { equals: 'dou:9000001' } } })).docs[0]
+    expect(lei).toMatchObject({ tipo: 'norma' })
+    expect(lei.texto).toMatch(/Lei Geral do Licenciamento Ambiental/)
+    const nova = (await payload.find({ collection: 'proposicoes', where: { chaveOrigem: { equals: 'dou:9000003' } } })).docs[0]
+    expect(nova).toMatchObject({ sigla: 'PRT-IBAMA', numero: 45, ano: 2025, situacaoEditorial: 'triagem', casa: 'presidencia' })
+    expect((await payload.count({ collection: 'proposicoes', where: { chaveOrigem: { equals: 'dou:9000004' } } })).totalDocs).toBe(0)
+  }, 120_000)
+
+  it('sem os segredos do INLABS, o Diário Oficial é pulado sem erro', async () => {
+    const r = await coletarFonte(payload, 'dou', { conector: criarConectorDou({ email: '', senha: '' }) })
+    expect(r).toMatchObject({ ok: true, ignorada: expect.stringMatching(/INLABS_EMAIL/) })
+  })
+
+  it('texto integral: lê o PDF da versão e dá à proposta o Art. 1º', async () => {
+    const pdf = readFileSync(path.resolve(__dirname, '../fixtures/coleta/pdf/camara-recente.pdf'))
+    const r = await preencherTextos(payload, { limite: 2, baixar: async () => pdf })
+    expect(r.lidos).toBe(2)
+    const lidas = await payload.count({ collection: 'versoes', where: { and: [{ texto: { like: 'O CONGRESSO NACIONAL decreta' } }, { chaveOrigem: { not_equals: 'dou:9000001' } }] } })
+    expect(lidas.totalDocs).toBe(2)
+    const p = await payload.findByID({ collection: 'proposicoes', id: lic })
+    expect(p.art1).toMatch(/^Art\. 1º/)
+    // Arquivo que não é PDF: marcado e não tentado de novo
+    const html = await preencherTextos(payload, { limite: 1, baixar: async () => Buffer.from('<html>página</html>') })
+    expect(html.falhas).toBe(1)
   }, 120_000)
 
   it('apagar a proposição leva junto o que é dela; com parecer, não deixa', async () => {

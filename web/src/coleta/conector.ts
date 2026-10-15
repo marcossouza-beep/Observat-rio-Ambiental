@@ -3,7 +3,7 @@
  * A busca na rede é injetada (`buscar`), para os testes rodarem com respostas gravadas.
  */
 import { obterJson, type OpcoesHttp } from './http'
-import type { PacoteProposicao, PautaColetada } from './tipos'
+import type { EventoColetado, PacoteProposicao, PautaColetada } from './tipos'
 
 export type Buscar = (url: string) => Promise<unknown>
 export const buscarNaRede = (o: OpcoesHttp = {}): Buscar => (url) => obterJson(url, o)
@@ -28,6 +28,8 @@ export type ContextoColeta = {
 export type ResultadoColeta = {
   pacotes: PacoteProposicao[]
   pautas: PautaColetada[]
+  /** Fatos avulsos sobre propostas acompanhadas (vetos, publicação no DOU). */
+  eventos?: EventoColetado[]
   /** Quantos itens a fonte listou (para a média de volume e o alarme de volume baixo). */
   itensListados: number
   /** Pequena amostra da resposta bruta, guardada em Coletas por 90 dias. */
@@ -35,7 +37,13 @@ export type ResultadoColeta = {
   avisos: string[]
 }
 
-export type Conector = { slug: string; nome: string; coletar: (ctx: ContextoColeta) => Promise<ResultadoColeta> }
+export type Conector = {
+  slug: string
+  nome: string
+  /** Motivo para não rodar (ex.: faltam credenciais); null quando está pronto. */
+  naoConfigurado?: () => string | null
+  coletar: (ctx: ContextoColeta) => Promise<ResultadoColeta>
+}
 
 export const SIGLAS_ACOMPANHADAS = ['PL', 'PLP', 'PEC', 'MPV', 'PDL', 'PLV']
 

@@ -5,6 +5,11 @@
  */
 import { obter, obterJson } from '../http'
 import { conectorCamara } from '../camara/conector'
+import { conectorCongresso } from '../congresso/conector'
+import { baixarEdicao, entrarInlabs } from '../dou/inlabs'
+import { lerAto, siglaDoAto } from '../dou/mapear'
+import { extrairTextoPdf, artigoPrimeiro } from '../textos'
+import { lerZip } from '../zip'
 import { buscarNaRede, type Conector } from '../conector'
 import { pontuar } from '../../lib/relevancia'
 import { conectorSenado } from '../senado/conector'
@@ -301,7 +306,7 @@ export const VERIFICACOES: Verificacao[] = [
     },
   },
   // ---------------- Conectores (sem banco) ----------------
-  ...([conectorCamara, conectorSenado] as Conector[]).map(
+  ...([conectorCamara, conectorSenado, conectorCongresso] as Conector[]).map(
     (c): Verificacao => ({
       id: `conector-${c.slug}`,
       fonte: c.nome,
@@ -343,27 +348,45 @@ export const VERIFICACOES: Verificacao[] = [
   {
     id: 'dou-inlabs',
     fonte: 'DOU (INLABS)',
-    descricao: 'Login e download da Seção 1 do dia (precisa de INLABS_EMAIL e INLABS_SENHA)',
+    descricao: 'Login, download da Seção 1 (edição normal e extra) e leitura dos atos pelo conector',
+    essencial: true,
     async rodar() {
       const email = process.env.INLABS_EMAIL
       const senha = process.env.INLABS_SENHA
       const home = await textoCurto('https://inlabs.in.gov.br/')
       const notas = [`portal: HTTP ${home.status}, ${home.tamanho} bytes`]
-      if (!email || !senha) return { ok: home.status === 200, notas: [...notas, 'sem credenciais: login e download não testados (crie a conta e defina os segredos)'] }
-      const login = await fetch('https://inlabs.in.gov.br/logar.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ email, password: senha }),
-        redirect: 'manual',
-      })
-      const cookie = (login.headers.get('set-cookie') || '').match(/inlabs_session_cookie=[^;]+/)?.[0]
-      notas.push(`login: HTTP ${login.status}, cookie de sessão ${cookie ? 'recebido' : 'NÃO recebido'}`)
-      if (!cookie) return { ok: false, notas }
-      const dia = hoje()
-      const r = await fetch(`https://inlabs.in.gov.br/index.php?p=${dia}&dl=${dia}-DO1.zip`, { headers: { Cookie: cookie } })
-      const buf = Buffer.from(await r.arrayBuffer())
-      notas.push(`DO1 de ${dia}: HTTP ${r.status}, ${Math.round(buf.length / 1024)} KB, ${buf.subarray(0, 2).toString() === 'PK' ? 'arquivo ZIP' : 'não é ZIP (talvez ainda não publicado)'}`)
-      return { ok: r.status === 200, notas }
+      if (!email || !senha) return { ok: home.status === 200, notas: [...notas, 'sem credenciais: login e download não testados (defina os segredos INLABS_EMAIL e INLABS_SENHA)'] }
+      const cookie = await entrarInlabs(email, senha)
+      notas.push('login: ok')
+      for (let n = 0; n < 7; n++) {
+        const data = new Date(Date.now() - n * 864e5).toISOString().slice(0, 10)
+        const zip = await baixarEdicao(cookie, data, 'DO1')
+        if (!zip) continue
+        const xmls = lerZip(zip, (nome) => nome.toLowerCase().endsWith('.xml'))
+        const atos = xmls.map((x) => lerAto(x.conteudo.toString('utf8'))).filter((a): a is NonNullable<typeof a> => !!a)
+        const siglas: Record<string, number> = {}
+        for (const a of atos) {
+          const sg = siglaDoAto(a)
+          if (sg) siglas[sg] = (siglas[sg] || 0) + 1
+        }
+        notas.push(`DO1 de ${data}: ${Math.round(zip.length / 1024)} KB, ${xmls.length} arquivos XML, ${atos.length} atos lidos`, `atos que o conector reconhece: ${JSON.stringify(siglas)}`)
+        return { ok: xmls.length > 0 && atos.length / xmls.length > 0.9, notas, amostra: { primeiro: xmls[0]?.conteudo.toString('utf8').slice(0, 5000), atos: atos.slice(0, 3) } }
+      }
+      notas.push('nenhuma edição nos últimos 7 dias (estranho)')
+      return { ok: false, notas }
+    },
+  },
+  {
+    id: 'texto-pdf',
+    fonte: 'Câmara',
+    descricao: 'Texto integral: baixar o PDF de um projeto recente e extrair o texto',
+    async rodar(ctx) {
+      const url = ctx.urlInteiroTeor as string | undefined
+      if (!url) return { ok: false, notas: ['sem link de inteiro teor'] }
+      const r = await obter(url, rapido)
+      const { texto, paginas } = await extrairTextoPdf(new Uint8Array(await r.arrayBuffer()))
+      const art1 = artigoPrimeiro(texto)
+      return { ok: texto.length > 500, notas: [`${paginas} páginas, ${texto.length} caracteres`, `Art. 1º: ${art1 ? art1.slice(0, 160) : 'não encontrado'}`] }
     },
   },
   {

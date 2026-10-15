@@ -46,6 +46,11 @@ async function pacote(ctx: ContextoColeta, id: number, nova: boolean): Promise<P
   ])
   const proposicao = mapearFichaCamara((ficha as Pagina)?.dados, { autores: (autores as Pagina)?.dados, temas: (temas as Pagina)?.dados })
   const { tramitacoes, versoes } = mapearTramitacoesCamara(proposicao.chave, (tram as Pagina)?.dados)
+  // "Transformado na Lei Ordinária 15190/2025": a lei gerada vira chave da proposta (liga a publicação no DOU)
+  for (const t of tramitacoes) {
+    const m = /Transformad[oa] n[ao] Lei (Ordin[áa]ria|Complementar) n?[º°]?\s*([\d.]+)\/(\d{4})/i.exec(t.descricao)
+    if (m) proposicao.chavesExtras = [...new Set([...(proposicao.chavesExtras || []), `norma:${/complementar/i.test(m[1]) ? 'lcp' : 'lei'}:${Number(m[2].replace(/\./g, ''))}:${m[3]}`])]
+  }
   const original = versaoOriginalCamara(proposicao)
   if (original && !versoes.some((v) => v.chave === original.chave)) versoes.unshift(original)
 

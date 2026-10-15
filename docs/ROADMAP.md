@@ -48,7 +48,15 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 > - Saúde das fontes: cada coleta fica registrada (com amostra por 90 dias), a fonte guarda a última coleta bem-sucedida, o volume e o erro; formato mudou → a coleta daquela casa para e avisa no painel.
 > - Coleta 4 vezes ao dia pelo GitHub Actions (fluxo "Coleta"), e o teste diário das APIs agora roda os dois conectores de ponta a ponta contra a API ao vivo.
 >
-> **Falta na Fase 2:** Diário Oficial (INLABS, depende da conta), vetos do Congresso, texto integral dos PDFs no dossiê (extração de texto) e lei afetada (LexML), ajuste fino do dicionário de palavras-chave com o uso real.
+> **Fase 2, parte 2 — feita (código): Diário Oficial, vetos, texto integral e leis afetadas.**
+> - **Diário Oficial (INLABS):** login, Seção 1 e edições extras de cada dia desde a última coleta; leitura dos atos (leis, leis complementares, medidas provisórias, decretos, decretos legislativos e portarias, instruções normativas e resoluções de MMA, Ibama, ICMBio, SFB, ANA, Conama, Funai, Incra, MAPA e MME). Lei de proposta acompanhada vira andamento "sanção" com o texto da lei; mensagem de veto vira andamento "veto"; ato novo relevante pelo dicionário entra na Triagem.
+> - **Vetos do Congresso:** cada veto a uma proposta acompanhada vira andamento (total ou parcial, número de dispositivos, data em que passa a trancar a pauta), com o resultado da apreciação (mantido, derrubado) e a pauta das sessões do Congresso.
+> - **Texto integral:** a coleta baixa o PDF das versões novas (algumas por rodada), extrai o texto, guarda na versão e dá à proposta o Art. 1º. O dossiê mostra o texto e a marcação do que mudou entre versões. PDF escaneado fica marcado (leitura por OCR fica para depois).
+> - **Leis afetadas:** as leis citadas na ementa ("altera as Leis nºs 9.605… e 9.985…") viram links para o LexML, no dossiê e na página da lei.
+> - A lei gerada liga as fontes: "Transformado na Lei 15.190/2025" (Câmara/Senado) e a "LEI Nº 15.190" do Diário Oficial caem na mesma proposta.
+> - Lei publicada não marca o parecer como desatualizado (repete a redação final); o veto chega ao autor pelo Radar.
+>
+> **Falta na Fase 2:** validar o Diário Oficial com edições reais (depende dos segredos `INLABS_EMAIL` e `INLABS_SENHA` no GitHub), leitura por OCR de PDF escaneado e ajuste fino do dicionário de palavras-chave com o uso real.
 
 **Critério de saída:** a pauta semanal é definida pelo Radar.
 
