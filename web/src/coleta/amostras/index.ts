@@ -308,7 +308,7 @@ const PASSOS: Passo[] = [
     async rodar(ctx) {
       await mkdir(path.join(saida, 'pdf'), { recursive: true })
       const urls: [string, string | undefined][] = [
-        ['camara-recente', ctx.camaraRecenteTeor as string | undefined],
+        ['camara-recente', (ctx.camaraRecenteTeor as string | undefined) || 'https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3182478'],
         ['senado-documento', 'https://legis.senado.gov.br/sdleg-getter/dadosabertos/documento/d663bfce-d4fd-442c-b44f-6c337bf5ba5e'],
       ]
       for (const [nome, url] of urls) {
