@@ -9,11 +9,13 @@
 | Site público | **Next.js** (renderização no servidor + páginas estáticas revalidadas) | Velocidade e SEO |
 | Painel administrativo | **Payload CMS** (embutido no Next.js) | Editor rico, coleções, papéis de usuário |
 | Banco de dados | **Postgres (Supabase)** | Dados, busca textual em português (`tsvector`), autenticação de assinantes, armazenamento de PDFs |
-| Coleta | Tarefas agendadas diárias (Vercel Cron ou GitHub Actions) | Conectores das fontes |
+| Coleta e tarefas | Agendamentos do GitHub Actions chamando `POST /api/cron/<tarefa>` com segredo (o cron gratuito da Vercel só roda 1 vez por dia) | Conectores, verificação horária, pareceres agendados, limpeza |
 | Processamento | Extração de texto de PDF (com OCR de reserva) e comparação de versões | Texto integral, Art. 1º, diferenças entre versões |
 | Automação | Conectores, extração de texto de PDF, filtro por palavras-chave | Capturar e organizar dados e textos oficiais. **Não escreve, não resume e não interpreta pareceres** |
 | PDF | Geração automática ao publicar | Nota Técnica e Quadro comparativo para inscritos |
 | E-mail | Resend ou Brevo | Confirmação, link mágico, alertas, newsletter |
+| Arquivos | Supabase Storage (compatível com S3), bucket privado; o acesso passa pelo Payload | Fotos, Nota técnica e Quadro comparativo |
+| Cópia do banco | GitHub Actions: `pg_dump` diário, cifrado, com teste de restauração | Recuperação em caso de falha |
 | Hospedagem | Vercel + Supabase | Custo inicial baixo |
 
 ## Fluxo de dados

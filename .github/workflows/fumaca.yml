@@ -1,0 +1,41 @@
+# Teste de fumaça das APIs oficiais (docs/APIS.md, seção 6).
+# Roda quando o código de coleta muda, todo dia de manhã e sob demanda.
+# Falha se uma fonte essencial parar de responder ou mudar de formato.
+name: Teste das APIs
+
+on:
+  push:
+    paths: ['web/src/coleta/**', '.github/workflows/fumaca.yml']
+  schedule:
+    - cron: '17 10 * * *' # 07:17 em Brasília
+  workflow_dispatch:
+
+jobs:
+  fumaca:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: web
+    env:
+      INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
+      INLABS_SENHA: ${{ secrets.INLABS_SENHA }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - name: Chamar as APIs
+        run: pnpm fumaca
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fumaca-resultado
+          path: web/fumaca-resultado
+          retention-days: 30

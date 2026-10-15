@@ -1,0 +1,82 @@
+# Verificação de cada mudança no código: lint, tipos, migrações, testes e build.
+name: CI
+
+on:
+  push:
+    paths: ['web/**', '.github/workflows/ci.yml']
+  pull_request:
+    paths: ['web/**', '.github/workflows/ci.yml']
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: web
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: observatorio
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/observatorio
+      TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/observatorio_teste
+      PAYLOAD_SECRET: segredo-de-ci-0123456789abcdef0123456789
+      CRON_SECRET: segredo-cron-ci
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - name: Lint
+        run: pnpm lint
+      - name: Tipos
+        run: pnpm typecheck
+      - name: Testes de regras (unidade)
+        run: pnpm test:unit
+      - name: Banco de teste
+        run: PGPASSWORD=postgres psql -h localhost -U postgres -c 'CREATE DATABASE observatorio_teste;'
+      - name: Migrações (banco principal e de teste)
+        run: |
+          pnpm migrate
+          DATABASE_URL=$TEST_DATABASE_URL pnpm migrate
+      - name: Migrações cobrem todo o modelo de dados
+        run: |
+          pnpm payload migrate:create checagem --skip-empty
+          if [ -n "$(git status --porcelain src/migrations)" ]; then
+            echo "::error::O modelo de dados mudou sem migração. Rode 'pnpm payload migrate:create <nome>' e faça commit."
+            git status --porcelain src/migrations
+            exit 1
+          fi
+      - name: Testes com banco (integração)
+        run: pnpm test:int
+      - name: Carga inicial
+        run: pnpm seed
+      - name: Build
+        run: pnpm build
+      - name: Navegador para testes
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Testes de ponta a ponta
+        run: pnpm test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: web/playwright-report
+          retention-days: 7

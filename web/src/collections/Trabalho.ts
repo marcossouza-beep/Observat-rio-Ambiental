@@ -1,0 +1,137 @@
+import type { CollectionConfig } from 'payload'
+import { equipe, publico } from '../access'
+import { TIPOS_COMPROMISSO, ROTULO_COMPROMISSO } from '../lib/compromissos'
+import { abrirCompromisso, mudarCompromissos } from '../hooks/compromissos'
+
+const soEquipe = { read: equipe, create: equipe, update: equipe, delete: equipe }
+
+export const Compromissos: CollectionConfig = {
+  slug: 'compromissos',
+  labels: { singular: 'Compromisso', plural: 'Compromissos' },
+  admin: {
+    group: 'Trabalho',
+    useAsTitle: 'descricao',
+    defaultColumns: ['descricao', 'prazoEm', 'status', 'tipo'],
+    description: 'Toda promessa pública com prazo. Nasce sozinha; fecha quando a promessa é cumprida ou retirada.',
+  },
+  access: soEquipe,
+  defaultSort: 'prazoEm',
+  fields: [
+    { name: 'tipo', type: 'select', required: true, options: TIPOS_COMPROMISSO.map((t) => ({ label: ROTULO_COMPROMISSO[t], value: t })) },
+    { name: 'descricao', label: 'Descrição', type: 'text', required: true },
+    {
+      type: 'row',
+      fields: [
+        {
+          name: 'alvo',
+          type: 'select',
+          required: true,
+          options: [
+            { label: 'Proposição', value: 'proposicoes' },
+            { label: 'Parecer', value: 'pareceres' },
+            { label: 'Pedido', value: 'pedidos' },
+            { label: 'Credenciamento', value: 'credenciamentos' },
+          ],
+        },
+        { name: 'alvoId', type: 'text', required: true, index: true },
+      ],
+    },
+    { name: 'proposicao', label: 'Proposição', type: 'relationship', relationTo: 'proposicoes' },
+    {
+      type: 'row',
+      fields: [
+        { name: 'abertoEm', type: 'date', required: true },
+        { name: 'prazoEm', label: 'Prazo', type: 'date', required: true, index: true },
+        { name: 'encerradoEm', type: 'date' },
+      ],
+    },
+    {
+      name: 'status',
+      type: 'select',
+      required: true,
+      defaultValue: 'aberto',
+      index: true,
+      options: [
+        { label: 'Aberto', value: 'aberto' },
+        { label: 'Suspenso (aguardando resposta)', value: 'suspenso' },
+        { label: 'Cumprido', value: 'cumprido' },
+        { label: 'Retirado', value: 'retirado' },
+      ],
+    },
+  ],
+}
+
+/** Pedidos do público com prazo: correções e dados pessoais (LGPD). */
+export const Pedidos: CollectionConfig = {
+  slug: 'pedidos',
+  labels: { singular: 'Pedido', plural: 'Pedidos' },
+  admin: { group: 'Trabalho', useAsTitle: 'resumo', defaultColumns: ['resumo', 'tipo', 'decisao', 'createdAt'] },
+  access: soEquipe,
+  hooks: {
+    beforeChange: [
+      ({ data, originalDoc }) => {
+        data.resumo = (data.texto || '').slice(0, 80)
+        if (data.decisao && data.decisao !== 'pendente' && !originalDoc?.respondidoEm) data.respondidoEm = new Date().toISOString()
+        return data
+      },
+    ],
+    afterChange: [
+      async ({ doc, previousDoc, operation, req }) => {
+        const tipo = doc.tipo === 'lgpd' ? 'lgpd' : doc.tipo === 'correcao' ? 'correcao' : null
+        if (!tipo) return doc
+        if (operation === 'create') {
+          await abrirCompromisso(req, { tipo, alvo: 'pedidos', alvoId: doc.id, descricao: doc.resumo || '' })
+        } else if (doc.decisao !== 'pendente' && previousDoc?.decisao === 'pendente') {
+          await mudarCompromissos(req, { alvo: 'pedidos', alvoId: doc.id, status: 'cumprido' })
+        }
+        return doc
+      },
+    ],
+  },
+  fields: [
+    {
+      name: 'tipo',
+      type: 'select',
+      required: true,
+      options: [
+        { label: 'Correção', value: 'correcao' },
+        { label: 'Dados pessoais (LGPD)', value: 'lgpd' },
+        { label: 'Outro', value: 'outro' },
+      ],
+    },
+    { name: 'resumo', type: 'text', admin: { readOnly: true } },
+    { name: 'nome', type: 'text' },
+    { name: 'email', type: 'email', required: true },
+    { name: 'parecer', type: 'relationship', relationTo: 'pareceres' },
+    { name: 'texto', label: 'Pedido', type: 'textarea', required: true },
+    {
+      name: 'decisao',
+      label: 'Decisão',
+      type: 'select',
+      defaultValue: 'pendente',
+      options: [
+        { label: 'Pendente', value: 'pendente' },
+        { label: 'Procede', value: 'procede' },
+        { label: 'Não procede', value: 'nao_procede' },
+        { label: 'Atendido (LGPD)', value: 'atendido' },
+      ],
+    },
+    { name: 'resposta', type: 'textarea' },
+    { name: 'respondidoEm', type: 'date', admin: { readOnly: true } },
+  ],
+}
+
+/** Registro público de correções, exibido no parecer e na página de Correções. */
+export const Correcoes: CollectionConfig = {
+  slug: 'correcoes',
+  labels: { singular: 'Correção', plural: 'Correções' },
+  admin: { group: 'Trabalho', useAsTitle: 'descricao', defaultColumns: ['descricao', 'parecer', 'feitaEm'] },
+  access: { read: publico, create: equipe, update: equipe, delete: equipe },
+  defaultSort: '-feitaEm',
+  fields: [
+    { name: 'parecer', type: 'relationship', relationTo: 'pareceres', required: true },
+    { name: 'descricao', label: 'O que foi corrigido', type: 'text', required: true },
+    { name: 'feitaEm', type: 'date', required: true, defaultValue: () => new Date().toISOString() },
+    { name: 'pedido', type: 'relationship', relationTo: 'pedidos', access: { read: ({ req: { user } }) => !!user } },
+  ],
+}

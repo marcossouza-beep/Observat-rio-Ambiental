@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap');
+
+:root {
+  --green: #2fa765;
+  --ink: #16201a;
+  --gray: #66726b;
+  --bg: #fbfcfb;
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--bg); color: var(--ink); font-family: 'Figtree', system-ui, sans-serif; }
+.inicio { min-height: 100vh; display: grid; place-content: center; gap: 18px; padding: 24px 16px; text-align: center; max-width: 720px; margin: 0 auto; }
+.marca { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; justify-content: center; }
+.marca i { width: 12px; height: 12px; border-radius: 50% 50% 50% 0; background: var(--green); transform: rotate(-45deg); display: inline-block; }
+h1 { font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.08; letter-spacing: -0.02em; }
+h1 em { font-style: normal; color: var(--green); }
+p { color: var(--gray); font-size: 1.05rem; }

@@ -1,0 +1,55 @@
+# Cópia diária do banco, cifrada, com teste de restauração a cada cópia.
+# Precisa dos segredos BACKUP_DATABASE_URL (conexão direta do Supabase, porta 5432) e BACKUP_SENHA.
+name: Backup do banco
+
+on:
+  schedule:
+    - cron: '23 6 * * *' # 03:23 em Brasília
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      BACKUP_DATABASE_URL: ${{ secrets.BACKUP_DATABASE_URL }}
+      BACKUP_SENHA: ${{ secrets.BACKUP_SENHA }}
+    services:
+      restauracao:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ['5433:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - name: Banco ainda não configurado
+        if: env.BACKUP_DATABASE_URL == '' || env.BACKUP_SENHA == ''
+        run: echo "Defina BACKUP_DATABASE_URL e BACKUP_SENHA para ativar a cópia diária."
+      - name: Copiar
+        if: env.BACKUP_DATABASE_URL != '' && env.BACKUP_SENHA != ''
+        run: |
+          docker run --rm --network host postgres:16 \
+            pg_dump "$BACKUP_DATABASE_URL" --format=custom --no-owner --no-privileges > banco.dump
+          ls -lh banco.dump
+      - name: Testar a restauração
+        if: env.BACKUP_DATABASE_URL != '' && env.BACKUP_SENHA != ''
+        run: |
+          docker run --rm --network host -v "$PWD:/b" -e PGPASSWORD=postgres postgres:16 \
+            pg_restore -h localhost -p 5433 -U postgres -d postgres --no-owner --no-privileges /b/banco.dump || true
+          TABELAS=$(docker run --rm --network host -e PGPASSWORD=postgres postgres:16 \
+            psql -h localhost -p 5433 -U postgres -d postgres -tAc "select count(*) from information_schema.tables where table_schema='public'")
+          echo "Tabelas restauradas: $TABELAS"
+          test "$TABELAS" -gt 20
+      - name: Cifrar
+        if: env.BACKUP_DATABASE_URL != '' && env.BACKUP_SENHA != ''
+        run: |
+          gpg --batch --yes --pinentry-mode loopback --passphrase "$BACKUP_SENHA" \
+            --symmetric --cipher-algo AES256 -o "banco-$(date -u +%Y%m%d).dump.gpg" banco.dump
+          rm banco.dump
+      - uses: actions/upload-artifact@v4
+        if: env.BACKUP_DATABASE_URL != '' && env.BACKUP_SENHA != ''
+        with:
+          name: backup-banco
+          path: '*.dump.gpg'
+          retention-days: 30
