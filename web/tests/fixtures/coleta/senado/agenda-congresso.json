@@ -1,0 +1,51 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/plenario/agenda/cn/20260925/20261025",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T13:27:31.002Z",
+  "corpo": {
+    "AgendaPlenarioCN": {
+      "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/AgendaPlenarioCNv2.xsd",
+      "Metadados": {
+        "Versao": "15/10/2026 10:27:31",
+        "VersaoServico": "2",
+        "DescricaoDataSet": "Exibe as agendas das sessões plenárias em uma determinada data."
+      },
+      "Sessoes": {
+        "Sessao": [
+          {
+            "DiaUtil": "13",
+            "Data": "2026-10-13",
+            "DiaSemana": "terça-feira",
+            "Mes": "Outubro",
+            "Horario": "10 horas ",
+            "Hora": "10:00",
+            "NumeroSessao": "20ª Sessão",
+            "TipoSessao": "SESSÃO SOLENE ",
+            "LocalSessao": "Plenário do Senado Federal",
+            "CodigoSessao": "588625",
+            "Casa": "CN",
+            "SessaoLegislativa": "4",
+            "Legislatura": "57",
+            "CodigoSituacaoSessao": "40",
+            "SituacaoSessao": "Encerrada",
+            "Realizada": {
+              "Status": "Sim"
+            },
+            "Evento": {
+              "DescricaoTipoEvento": "Sessão do Congresso Nacional",
+              "Data": "13 de outubro de 2026",
+              "DiaSemana": "terça-feira",
+              "Horario": "às 10 horas",
+              "TipoSessao": "(SESSÃO SOLENE ) ",
+              "DescricaoEvento": "Destinada a homenagear o Dia Mundial da Alimentação. Requerentes: Senadora Tereza Cristina (PP/MS); Deputado Federal Giovani Cherini (PL/RS); Deputada Federal Laura Carneiro (PSD/RJ) e Deputado Federal Sóstenes Cavalcante (PL/RJ). REQ 18/2026-Mesa.",
+              "FimInscricao": "(Até as 23h46min de 9.10.2026)",
+              "IndicadorPublicaOrador": "0"
+            },
+            "Materias": {}
+          }
+        ]
+      }
+    }
+  }
+}

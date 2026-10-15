@@ -1,0 +1,29 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/processo?codigoMateria=172342",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T13:27:30.380Z",
+  "corpo": [
+    {
+      "autoria": "Presidência da República",
+      "casaIdentificadora": "CN",
+      "codigoMateria": 172342,
+      "dataApresentacao": "2026-01-09",
+      "dataDeliberacao": "2026-04-30",
+      "dataSituacaoAtual": "2026-06-17",
+      "dataUltimaAtualizacao": "2026-08-11T19:57:15.546",
+      "ementa": "Veto total aposto ao Projeto de Lei nº 2.162, de 2023, que \"Altera a Lei nº 7.210, de 11 de julho de 1984 (Lei de Execução Penal), e o Decreto-Lei nº 2.848, de 7 de dezembro de 1940 (Código Penal).\"",
+      "enteIdentificador": "PLEN",
+      "id": 8984927,
+      "identificacao": "VET 3/2026",
+      "normaGerada": "Lei nº 15.402 de 08/05/2026",
+      "siglaTipoDeliberacao": "REJEITADO_PLENARIO",
+      "situacaoAtual": "INCLUÍDA EM ORDEM DO DIA",
+      "tipoConteudo": "Veto Constitucional",
+      "tipoDocumento": "Mensagem",
+      "tramitando": "Não",
+      "ultimaInformacaoAtualizada": "PUBLICACAO_OFICIAL",
+      "urlDocumento": "https://legis.senado.gov.br/sdleg-getter/dadosabertos/documento/c8e06e76-dd9c-4893-b475-1663129b53ee"
+    }
+  ]
+}
