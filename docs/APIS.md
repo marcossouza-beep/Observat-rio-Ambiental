@@ -15,11 +15,13 @@
 | Senado: serviço novo `processo` | ✅ Responde em JSON. Campos: identificação, ementa, autoria, situação atual, tramitando, norma gerada, link do documento, código da matéria |
 | Senado: serviço antigo `matéria` | ⚠️ Ainda responde, **com aviso de descontinuação**. Confirma a decisão de usar `processo` |
 | Senado: votações (`/votacao` por período) e agenda das comissões | ✅ Funcionam |
-| Senado: agenda do Plenário | ⚠️ O endereço testado devolveu erro 400; testando variantes |
+| Senado: agenda do Plenário | ✅ `/plenario/agenda/mes/{AAAAMMDD}` e `/plenario/agenda/dia/{AAAAMMDD}` |
+| Senado: especificação da API | ✅ Publicada em `/dadosabertos/v3/api-docs` (157 caminhos). Os que usaremos estão na seção 2.2 |
 | DOU (INLABS) | ✅ Portal no ar; login e download aguardam a conta (segredos `INLABS_EMAIL` e `INLABS_SENHA`) |
-| LexML | ✅ Resolução de URN funciona; a busca SRU devolveu HTML (investigando a consulta certa) |
+| LexML | ✅ Resolução de URN funciona. ❌ A busca SRU devolve uma página de "verificação de segurança" (proteção contra robôs) quando chamada de servidor: **não dá para automatizar a busca**. Decisão: usar só a URN (montada a partir do tipo, data e número da lei) |
 | TSE | ✅ Catálogo e arquivo `consulta_cand_2022.zip` (4,4 MB) acessíveis |
-| IBGE e Querido Diário | ❌ Falha de conexão a partir do GitHub (investigando a causa). A tabela de UFs já está no código; não bloqueia nada até a Fase 7 |
+| IBGE | ⚠️ O certificado do servidor do IBGE vem incompleto (`UNABLE_TO_VERIFY_LEAF_SIGNATURE`). Decisão: tabela de UFs e regiões fixa no código; municípios (Fase 7) por arquivo baixado uma vez ou incluindo o certificado intermediário |
+| Querido Diário | ✅ No endereço novo **`api.queridodiario.org.br`** (2.632 diários de Palmas com "ambiental"). O endereço antigo `api.queridodiario.ok.org.br` não responde mais |
 
 ## 1. Resumo
 
@@ -66,6 +68,7 @@
 
 - **Endereço:** `https://legis.senado.leg.br/dadosabertos` · documentação em `/docs/index.html`. Resposta em XML por padrão; JSON pedindo o formato (cabeçalho `Accept` ou sufixo `.json`).
 - **Transição em curso:** o Senado está substituindo os serviços antigos de **"matéria"** (`/materia/...`) pelos de **"processo"** (`/processo/...`). Há aviso de desativação para alguns serviços antigos (por exemplo, emendas, com data de 01/02/2026), que continuavam respondendo em set/2026, sem garantia. Serviços de autoria e relatoria também ganharam novas versões, com a antiga disponível por parâmetro de versão por um tempo.
+- **Serviços confirmados na especificação (15/10/2026):** `/processo` (busca), `/processo/{id}`, `/processo/emenda`, `/processo/documento`, `/processo/relatoria`, `/processo/prazo`, `/processo/assuntos`; `/votacao` (por período); `/votacaoComissao/materia/{sigla}/{numero}/{ano}`; `/plenario/votacao/nominal/{ano}`; `/plenario/votacao/orientacaoBancada/{inicio}/{fim}`; `/plenario/agenda/dia|mes/{data}` e `/plenario/agenda/cn/{inicio}/{fim}` (Congresso); `/comissao/agenda/{inicio}/{fim}`; `/plenario/resultado/veto/{codigo}` e `/materia/vetos/{ano}`; `/senador/{codigo}/autorias|relatorias|votacoes`.
 - **Decisão:** construir o conector **já sobre os serviços de "processo"** e usar os de "matéria" só onde ainda não houver equivalente, isolados num ponto do código e com alerta se pararem de responder.
 - **O que usamos:** busca e detalhe do processo (identificação, ementa, situação, autoria, relatoria, tramitação), emendas, documentos e textos, votações (nominais por matéria e por data), agenda do Plenário e das comissões, senadores. **(confirmar)** os nomes exatos de cada serviço novo na documentação.
 - **Congresso Nacional:** vetos, sessões conjuntas e medidas provisórias estão na mesma base do Senado.
@@ -107,7 +110,7 @@
 
 ### 2.8 Querido Diário (Fase 7)
 
-- **Endereço:** `https://api.queridodiario.ok.org.br` (busca em `/gazettes` por município, termo e período; documentação em `/docs`).
+- **Endereço:** `https://api.queridodiario.org.br` (busca em `/gazettes` por município, termo e período). O endereço antigo `api.queridodiario.ok.org.br` deixou de responder.
 - **Uso:** diários municipais das capitais e cidades-chave. Cobertura cresce, mas é parcial; checar município a município.
 
 ## 3. De onde vem cada dado do site

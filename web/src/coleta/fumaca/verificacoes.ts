@@ -376,7 +376,7 @@ export const VERIFICACOES: Verificacao[] = [
     descricao: 'Busca em diários de Palmas (TO)',
     async rodar() {
       const notas: string[] = []
-      for (const base of ['https://api.queridodiario.ok.org.br', 'https://api.queridodiario.org.br', 'https://queridodiario.ok.org.br/api']) {
+      for (const base of ['https://api.queridodiario.org.br', 'https://api.queridodiario.ok.org.br']) {
         try {
           const r = await obterJson<{ total_gazettes?: number; gazettes?: unknown[] }>(`${base}/gazettes?territory_ids=1721000&size=1&querystring=ambiental`, { ...rapido, tentativas: 1 })
           notas.push(`${base}: ${r.total_gazettes ?? '?'} diários com "ambiental"`)
