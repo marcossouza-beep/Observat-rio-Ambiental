@@ -26,6 +26,17 @@ export const Fontes: CollectionConfig = {
         { name: 'uf', label: 'UF', type: 'text', maxLength: 2 },
       ],
     },
+    { name: 'url', label: 'Endereço', type: 'text', admin: { description: 'Onde a fonte publica (página, API ou diário).' } },
+    {
+      name: 'levantamento',
+      label: 'Levantamento (Fase 4)',
+      type: 'group',
+      admin: { description: 'Preenchido pela sondagem automática (pnpm levantamento:fontes). Ver docs/LEVANTAMENTO.md.' },
+      fields: [
+        { name: 'motivo', label: 'Por que este nível', type: 'textarea', admin: { readOnly: true } },
+        { name: 'verificadoEm', label: 'Verificado em', type: 'date', admin: { readOnly: true, date: { pickerAppearance: 'dayAndTime' } } },
+      ],
+    },
     { name: 'frequencia', type: 'text', defaultValue: '6h, 12h, 18h, 23h' },
     { name: 'manual', label: 'Cadastro manual (nível D)', type: 'checkbox', defaultValue: false },
     { name: 'ativa', type: 'checkbox', defaultValue: true },

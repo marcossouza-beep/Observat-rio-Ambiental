@@ -8,6 +8,7 @@ import * as migration_20261015_133325_fase2_parte2 from './20261015_133325_fase2
 import * as migration_20261015_172744_fase3 from './20261015_172744_fase3';
 import * as migration_20261015_180134_sem_embargo from './20261015_180134_sem_embargo';
 import * as migration_20261015_181752_fase3_parte2 from './20261015_181752_fase3_parte2';
+import * as migration_20261015_194718_fase4 from './20261015_194718_fase4';
 
 export const migrations = [
   {
@@ -58,6 +59,11 @@ export const migrations = [
   {
     up: migration_20261015_181752_fase3_parte2.up,
     down: migration_20261015_181752_fase3_parte2.down,
-    name: '20261015_181752_fase3_parte2'
+    name: '20261015_181752_fase3_parte2',
+  },
+  {
+    up: migration_20261015_194718_fase4.up,
+    down: migration_20261015_194718_fase4.down,
+    name: '20261015_194718_fase4'
   },
 ];

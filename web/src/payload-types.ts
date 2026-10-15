@@ -337,6 +337,17 @@ export interface Fonte {
   nivel?: ('A' | 'B' | 'C' | 'D') | null;
   esfera?: ('federal' | 'estadual' | 'municipal') | null;
   uf?: string | null;
+  /**
+   * Onde a fonte publica (página, API ou diário).
+   */
+  url?: string | null;
+  /**
+   * Preenchido pela sondagem automática (pnpm levantamento:fontes). Ver docs/LEVANTAMENTO.md.
+   */
+  levantamento?: {
+    motivo?: string | null;
+    verificadoEm?: string | null;
+  };
   frequencia?: string | null;
   manual?: boolean | null;
   ativa?: boolean | null;
@@ -1621,6 +1632,13 @@ export interface FontesSelect<T extends boolean = true> {
   nivel?: T;
   esfera?: T;
   uf?: T;
+  url?: T;
+  levantamento?:
+    | T
+    | {
+        motivo?: T;
+        verificadoEm?: T;
+      };
   frequencia?: T;
   manual?: T;
   ativa?: T;
