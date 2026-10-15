@@ -56,7 +56,9 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 > - A lei gerada liga as fontes: "Transformado na Lei 15.190/2025" (Câmara/Senado) e a "LEI Nº 15.190" do Diário Oficial caem na mesma proposta.
 > - Lei publicada não marca o parecer como desatualizado (repete a redação final); o veto chega ao autor pelo Radar.
 >
-> **Falta na Fase 2:** validar o Diário Oficial com edições reais (depende dos segredos `INLABS_EMAIL` e `INLABS_SENHA` no GitHub), leitura por OCR de PDF escaneado e ajuste fino do dicionário de palavras-chave com o uso real.
+> Diário Oficial validado com a edição real de 15/10/2026 (314 de 314 atos lidos).
+>
+> **Falta na Fase 2:** leitura por OCR de PDF escaneado e ajuste fino do dicionário de palavras-chave com o uso real.
 
 **Critério de saída:** a pauta semanal é definida pelo Radar.
 

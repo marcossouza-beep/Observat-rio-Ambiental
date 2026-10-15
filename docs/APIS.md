@@ -44,7 +44,7 @@
 | Vetos | `/materia/vetos/{ano}` (formato antigo, `ListaVetosAnoCN`): veto, proposta vetada, lei gerada, mensagem no Planalto, data em que tranca a pauta. Resultado por dispositivo em `/plenario/resultado/veto/materia/{codigo}` ("Mantido" ou "Rejeitado" = derrubado) |
 | Agenda do Congresso | `/plenario/agenda/cn/{inicio}/{fim}`, mesmo formato da agenda do Plenário do Senado; os itens citam o veto, ligado à proposta por chave extra |
 | Inteiro teor | PDFs da Câmara (`prop_mostrarintegra?codteor=`) e do Senado (`sdleg-getter`) têm camada de texto: 12 páginas em ~0,3 s, 56 páginas em ~0,4 s |
-| INLABS | Conta criada; falta cadastrar os segredos no GitHub para validar com edições reais. O leitor segue o formato do exemplo oficial (atributos `artType`, `artCategory`, `pubDate`, `pdfPage`; campos `Identifica`, `Ementa`, `Texto`) e o teste diário mostra quantos atos do dia foram lidos |
+| INLABS | ✅ **Validado com a edição real de 15/10/2026:** login ok, Seção 1 com 314 atos (ZIP de 2,3 MB), **314 de 314 lidos** pelo conector. O formato é o do exemplo oficial (atributos `artType`, `artCategory`, `pubDate`, `pdfPage`, `idMateria`; campos `Identifica`, `Ementa`, `Texto` em CDATA; arquivos com BOM). As mensagens do Presidente vêm agrupadas num só ato ("Despachos do Presidente da República"), com várias mensagens; o conector separa cada uma. O INLABS recusa dois logins ao mesmo tempo: os fluxos que entram nele fazem fila |
 
 ## 1. Resumo
 
