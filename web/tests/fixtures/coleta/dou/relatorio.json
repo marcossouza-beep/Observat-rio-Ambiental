@@ -1,4 +1,36 @@
 {
-  "gravadoEm": "2026-10-15T13:27:37.066Z",
-  "erro": "sem os segredos INLABS_EMAIL e INLABS_SENHA"
+  "gravadoEm": "2026-10-15T16:58:10.691Z",
+  "login": "ok",
+  "data": "2026-10-15",
+  "secao": "DO1",
+  "tamanhoZip": 2405547,
+  "arquivos": 314,
+  "tipos": {
+    "Ato Regulamentar": 1,
+    "Pauta": 21,
+    "Acórdão": 24,
+    "Resolução": 24,
+    "Decisão": 37,
+    "Despacho": 58,
+    "Ato": 10,
+    "Retificação": 3,
+    "Portaria": 90,
+    "Ata": 2,
+    "Extrato de Parecer Técnico": 5,
+    "Ato Declaratório": 18,
+    "Autorização": 9,
+    "Circular": 2,
+    "Aviso de Consulta Pública": 2,
+    "Alvará": 1,
+    "Deliberação": 4,
+    "Portaria Conjunta": 2,
+    "Mensagem": 1
+  },
+  "gravados": [
+    "515_20261015_24435095.xml",
+    "515_20261015_24444936.xml",
+    "515_20261015_24466965.xml",
+    "515_20261015_24493853.xml"
+  ],
+  "extra": 0
 }
