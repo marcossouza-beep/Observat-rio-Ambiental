@@ -1,0 +1,471 @@
+{
+  "url": "https://sapl.al.to.leg.br/api/materia/statustramitacao/?page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T23:46:31.831Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 56,
+      "total_entries": 56,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 4,
+        "__str__": "Aguardando a inclusão na ordem do dia",
+        "metadata": {},
+        "sigla": "OD",
+        "descricao": "Aguardando a inclusão na ordem do dia",
+        "indicador": "R"
+      },
+      {
+        "id": 41,
+        "__str__": "Aguardando Análise da Comissão",
+        "metadata": {},
+        "sigla": "AAC",
+        "descricao": "Aguardando Análise da Comissão",
+        "indicador": "R"
+      },
+      {
+        "id": 45,
+        "__str__": "Aguardando Autógrafo",
+        "metadata": {},
+        "sigla": "AUTOGRAFO",
+        "descricao": "Aguardando Autógrafo",
+        "indicador": "R"
+      },
+      {
+        "id": 42,
+        "__str__": "Aguardando Correção",
+        "metadata": {},
+        "sigla": "CORREÇÃO",
+        "descricao": "Aguardando Correção",
+        "indicador": "R"
+      },
+      {
+        "id": 48,
+        "__str__": "Aguardando despacho final",
+        "metadata": {},
+        "sigla": "ADF",
+        "descricao": "Aguardando despacho final",
+        "indicador": "F"
+      },
+      {
+        "id": 11,
+        "__str__": "Aguardando Leitura no Expediente",
+        "metadata": {},
+        "sigla": "EXPEDIENTE",
+        "descricao": "Aguardando Leitura no Expediente",
+        "indicador": "R"
+      },
+      {
+        "id": 6,
+        "__str__": "Aguardando promulgação da lei",
+        "metadata": {},
+        "sigla": "AGPROMLEI",
+        "descricao": "Aguardando promulgação da lei",
+        "indicador": "F"
+      },
+      {
+        "id": 82,
+        "__str__": "APENSADO",
+        "metadata": {},
+        "sigla": "AP",
+        "descricao": "APENSADO",
+        "indicador": "F"
+      },
+      {
+        "id": 53,
+        "__str__": "Autógrafo de Lei Elaborado",
+        "metadata": {},
+        "sigla": "ALE",
+        "descricao": "Autógrafo de Lei Elaborado",
+        "indicador": ""
+      },
+      {
+        "id": 67,
+        "__str__": "Cancelamento a pedido do autor",
+        "metadata": {},
+        "sigla": "CL",
+        "descricao": "Cancelamento a pedido do autor",
+        "indicador": "F"
+      },
+      {
+        "id": 55,
+        "__str__": "Cancelamento de Recurso",
+        "metadata": {},
+        "sigla": "CR",
+        "descricao": "Cancelamento de Recurso",
+        "indicador": "F"
+      },
+      {
+        "id": 83,
+        "__str__": "Encaminhado para aprovação de recurso",
+        "metadata": {},
+        "sigla": "Recurso",
+        "descricao": "Encaminhado para aprovação de recurso",
+        "indicador": ""
+      },
+      {
+        "id": 84,
+        "__str__": "Encaminhado para tramitação normal",
+        "metadata": {},
+        "sigla": "ETN",
+        "descricao": "Encaminhado para tramitação normal",
+        "indicador": ""
+      },
+      {
+        "id": 64,
+        "__str__": "Encaminhamento ao Arquivo",
+        "metadata": {},
+        "sigla": "Arquivo",
+        "descricao": "Encaminhamento ao Arquivo",
+        "indicador": "F"
+      },
+      {
+        "id": 71,
+        "__str__": "ENCAMINHAMENTO ÀS COMISSÕES",
+        "metadata": {},
+        "sigla": "ENC",
+        "descricao": "ENCAMINHAMENTO ÀS COMISSÕES",
+        "indicador": "R"
+      },
+      {
+        "id": 43,
+        "__str__": "Gerar Proposição",
+        "metadata": {},
+        "sigla": "Gerar Prop",
+        "descricao": "Gerar Proposição",
+        "indicador": "R"
+      },
+      {
+        "id": 54,
+        "__str__": "Lei Promulgada",
+        "metadata": {},
+        "sigla": "LP",
+        "descricao": "Lei Promulgada",
+        "indicador": "F"
+      },
+      {
+        "id": 58,
+        "__str__": "Lei Sancionada",
+        "metadata": {},
+        "sigla": "LS",
+        "descricao": "Lei Sancionada",
+        "indicador": ""
+      },
+      {
+        "id": 52,
+        "__str__": "Mensagem de Veto",
+        "metadata": {},
+        "sigla": "Mensagem",
+        "descricao": "Mensagem de Veto",
+        "indicador": "R"
+      },
+      {
+        "id": 72,
+        "__str__": "PROCURADORIA GERAL DA ASSEMBLEIA LEGISLATIVA",
+        "metadata": {},
+        "sigla": "PGAL",
+        "descricao": "PROCURADORIA GERAL DA ASSEMBLEIA LEGISLATIVA",
+        "indicador": "R"
+      },
+      {
+        "id": 74,
+        "__str__": "PROJETO DE CONVERSÃO - MP Nº 14/2023",
+        "metadata": {},
+        "sigla": "PLCV",
+        "descricao": "PROJETO DE CONVERSÃO - MP Nº 14/2023",
+        "indicador": "F"
+      },
+      {
+        "id": 73,
+        "__str__": "PROJETO DE CONVERSÃO - MP Nº 19/2023",
+        "metadata": {},
+        "sigla": "PLCV",
+        "descricao": "PROJETO DE CONVERSÃO - MP Nº 19/2023",
+        "indicador": "F"
+      },
+      {
+        "id": 60,
+        "__str__": "Projeto de Lei de Conversão - MP 01/2022",
+        "metadata": {},
+        "sigla": "PLCV",
+        "descricao": "Projeto de Lei de Conversão - MP 01/2022",
+        "indicador": "F"
+      },
+      {
+        "id": 57,
+        "__str__": "Projeto de Lei de Conversão - MP 02/2022",
+        "metadata": {},
+        "sigla": "PLCV",
+        "descricao": "Projeto de Lei de Conversão - MP 02/2022",
+        "indicador": "F"
+      },
+      {
+        "id": 61,
+        "__str__": "Projeto de Lei de Conversão - MP 03/2022",
+        "metadata": {},
+        "sigla": "PLCV",
+        "descricao": "Projeto de Lei de Conversão - MP 03/2022",
+        "indicador": "F"
+      },
+      {
+        "id": 63,
+        "__str__": "Projeto de Lei de Conversão - MP 10/2022",
+        "metadata": {},
+        "sigla": "PLCV",
+        "descricao": "Projeto de Lei de Conversão - MP 10/2022",
+        "indicador": "F"
+      },
+      {
+        "id": 62,
+        "__str__": "Projeto de Lei de Conversão - MP 26/2021",
+        "metadata": {},
+        "sigla": "PLCV",
+        "descricao": "Projeto de Lei de Conversão - MP 26/2021",
+        "indicador": "F"
+      },
+      {
+        "id": 59,
+        "__str__": "Projeto de Lei de Conversão - MP 29/2021",
+        "metadata": {},
+        "sigla": "PLCV",
+        "descricao": "Projeto de Lei de Conversão - MP 29/2021",
+        "indicador": "F"
+      },
+      {
+        "id": 75,
+        "__str__": "PROJETO DE LEI DE CONVERSÃO - MP Nº 22/2023",
+        "metadata": {},
+        "sigla": "PLCV",
+        "descricao": "PROJETO DE LEI DE CONVERSÃO - MP Nº 22/2023",
+        "indicador": "F"
+      },
+      {
+        "id": 76,
+        "__str__": "Projeto de Lei de Conversão nº 230/2023 - MP Nº 05/2023",
+        "metadata": {},
+        "sigla": "PLCV",
+        "descricao": "Projeto de Lei de Conversão nº 230/2023 - MP Nº 05/2023",
+        "indicador": "F"
+      },
+      {
+        "id": 56,
+        "__str__": "Promulgação de Decreto Legislativo",
+        "metadata": {},
+        "sigla": "PRDL",
+        "descricao": "Promulgação de Decreto Legislativo",
+        "indicador": "F"
+      },
+      {
+        "id": 10,
+        "__str__": "Proposição anexada à outra análoga ou conexa mais antiga",
+        "metadata": {},
+        "sigla": "ANEXADA",
+        "descricao": "Proposição anexada à outra análoga ou conexa mais antiga",
+        "indicador": "R"
+      },
+      {
+        "id": 13,
+        "__str__": "Proposição aprovada",
+        "metadata": {},
+        "sigla": "APROVADA",
+        "descricao": "Proposição aprovada",
+        "indicador": "F"
+      },
+      {
+        "id": 12,
+        "__str__": "Proposição aprovada em 1º turno",
+        "metadata": {},
+        "sigla": "APROV1TUR",
+        "descricao": "Proposição aprovada em 1º turno",
+        "indicador": "R"
+      },
+      {
+        "id": 44,
+        "__str__": "Proposição Aprovada em 2° Turno",
+        "metadata": {},
+        "sigla": "APROV2TUR",
+        "descricao": "Proposição Aprovada em 2° Turno",
+        "indicador": "R"
+      },
+      {
+        "id": 14,
+        "__str__": "Proposição arquivada",
+        "metadata": {},
+        "sigla": "ARQUIVADA",
+        "descricao": "Proposição arquivada",
+        "indicador": "F"
+      },
+      {
+        "id": 47,
+        "__str__": "Proposição Desarquivada",
+        "metadata": {},
+        "sigla": "DESARQUIVA",
+        "descricao": "Proposição Desarquivada",
+        "indicador": "R"
+      },
+      {
+        "id": 16,
+        "__str__": "Proposição desarquivada pelo Autor",
+        "metadata": {},
+        "sigla": "DESARQUIV",
+        "descricao": "Proposição desarquivada pelo Autor",
+        "indicador": "R"
+      },
+      {
+        "id": 17,
+        "__str__": "Proposição distribuída às comissões",
+        "metadata": {},
+        "sigla": "DISTRCOMIS",
+        "descricao": "Proposição distribuída às comissões",
+        "indicador": "R"
+      },
+      {
+        "id": 85,
+        "__str__": "Proposição Rejeitada",
+        "metadata": {},
+        "sigla": "PROP R",
+        "descricao": "Proposição Rejeitada",
+        "indicador": "F"
+      },
+      {
+        "id": 29,
+        "__str__": "Proposição rejeitada pelo Plenário",
+        "metadata": {},
+        "sigla": "REJEITADA",
+        "descricao": "Proposição rejeitada pelo Plenário",
+        "indicador": "F"
+      },
+      {
+        "id": 32,
+        "__str__": "Proposição retirada da Ordem do Dia",
+        "metadata": {},
+        "sigla": "RETORDIA",
+        "descricao": "Proposição retirada da Ordem do Dia",
+        "indicador": "R"
+      },
+      {
+        "id": 31,
+        "__str__": "Proposição retirada pelo autor",
+        "metadata": {},
+        "sigla": "RETAUTOR",
+        "descricao": "Proposição retirada pelo autor",
+        "indicador": "F"
+      },
+      {
+        "id": 49,
+        "__str__": "RECURSO APROVADO PELO PLENÁRIO E ENCAMINHADO À COASC",
+        "metadata": {},
+        "sigla": "COASC",
+        "descricao": "RECURSO APROVADO PELO PLENÁRIO E ENCAMINHADO À COASC",
+        "indicador": "F"
+      },
+      {
+        "id": 66,
+        "__str__": "Requerimento",
+        "metadata": {},
+        "sigla": "Req",
+        "descricao": "Requerimento",
+        "indicador": "F"
+      },
+      {
+        "id": 65,
+        "__str__": "Requerimento Aprovado",
+        "metadata": {},
+        "sigla": "RA",
+        "descricao": "Requerimento Aprovado",
+        "indicador": "F"
+      },
+      {
+        "id": 68,
+        "__str__": "Requerimento Aprovado em 12/04/2023",
+        "metadata": {},
+        "sigla": "Req Aprov",
+        "descricao": "Requerimento Aprovado em 12/04/2023",
+        "indicador": "F"
+      },
+      {
+        "id": 77,
+        "__str__": "Requerimento Deferido",
+        "metadata": {},
+        "sigla": "REQ D",
+        "descricao": "Requerimento Deferido",
+        "indicador": "F"
+      },
+      {
+        "id": 78,
+        "__str__": "Requerimento deliberado",
+        "metadata": {},
+        "sigla": "RD",
+        "descricao": "Requerimento deliberado",
+        "indicador": "F"
+      },
+      {
+        "id": 81,
+        "__str__": "Requerimento de Pesar",
+        "metadata": {},
+        "sigla": "RP",
+        "descricao": "Requerimento de Pesar",
+        "indicador": "F"
+      },
+      {
+        "id": 50,
+        "__str__": "Requerimento Idêntico",
+        "metadata": {},
+        "sigla": "IDENT",
+        "descricao": "Requerimento Idêntico",
+        "indicador": "F"
+      },
+      {
+        "id": 80,
+        "__str__": "Requerimento sem atendimento da solicitação",
+        "metadata": {},
+        "sigla": "REQ",
+        "descricao": "Requerimento sem atendimento da solicitação",
+        "indicador": "F"
+      },
+      {
+        "id": 46,
+        "__str__": "Requerimentos Sujeitos a Despacho Apenas do Presidente",
+        "metadata": {},
+        "sigla": "DESPACpres",
+        "descricao": "Requerimentos Sujeitos a Despacho Apenas do Presidente",
+        "indicador": "R"
+      },
+      {
+        "id": 70,
+        "__str__": "Retirado da pauta da Ordem do Dia",
+        "metadata": {},
+        "sigla": "DRP",
+        "descricao": "Retirado da pauta da Ordem do Dia",
+        "indicador": "R"
+      },
+      {
+        "id": 39,
+        "__str__": "Veto sobre a proposição rejeitado",
+        "metadata": {},
+        "sigla": "VETOREJEI",
+        "descricao": "Veto sobre a proposição rejeitado",
+        "indicador": "F"
+      },
+      {
+        "id": 28,
+        "__str__": "Veto total ou parcial promulgado",
+        "metadata": {},
+        "sigla": "PROMULVETO",
+        "descricao": "Veto total ou parcial promulgado",
+        "indicador": "F"
+      }
+    ]
+  }
+}

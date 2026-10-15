@@ -1,0 +1,43 @@
+{
+  "url": "https://sapl.al.ac.leg.br/api/materia/tramitacao/?materia=18729&page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T23:46:42.431Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 1,
+      "total_entries": 1,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 28986,
+        "__str__": "Indicação nº 1 de 2026 | DESPACHADO À SECRETARIA EXECUTIVA | 04/02/2026",
+        "link_detail_backend": "/materia/tramitacao/28986",
+        "metadata": {},
+        "timestamp": "2026-02-04T14:20:34.695603-03:00",
+        "data_tramitacao": "2026-02-04",
+        "data_encaminhamento": null,
+        "urgente": false,
+        "turno": "",
+        "texto": "",
+        "data_fim_prazo": null,
+        "ip": "201.73.245.18",
+        "ultima_edicao": "2026-02-04T14:20:09.423374-03:00",
+        "status": 29,
+        "materia": 18729,
+        "unidade_tramitacao_local": 2,
+        "unidade_tramitacao_destino": 24,
+        "user": 84
+      }
+    ]
+  }
+}

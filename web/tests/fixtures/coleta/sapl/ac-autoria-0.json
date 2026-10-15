@@ -1,0 +1,32 @@
+{
+  "url": "https://sapl.al.ac.leg.br/api/materia/autoria/?materia=18729",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T23:46:43.027Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 1,
+      "total_entries": 1,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 18014,
+        "__str__": "Autoria: FAGNER CALEGÁRIO - Indicação nº 1 de 2026",
+        "link_detail_backend": "/materia/autoria/18014",
+        "metadata": {},
+        "primeiro_autor": true,
+        "autor": 116,
+        "materia": 18729
+      }
+    ]
+  }
+}

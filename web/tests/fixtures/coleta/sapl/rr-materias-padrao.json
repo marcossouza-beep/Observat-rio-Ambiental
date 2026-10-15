@@ -1,0 +1,8 @@
+{
+  "url": "https://sapl.al.rr.leg.br/api/materia/materialegislativa/?page_size=5",
+  "status": 403,
+  "tipo": "",
+  "gravadaEm": "2026-10-15T23:46:30.263Z",
+  "corpo": null,
+  "erro": "HTTP 403 em https://sapl.al.rr.leg.br/api/materia/materialegislativa/?page_size=5"
+}

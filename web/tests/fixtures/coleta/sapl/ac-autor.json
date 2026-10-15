@@ -1,0 +1,22 @@
+{
+  "url": "https://sapl.al.ac.leg.br/api/base/autor/116/",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T23:46:43.603Z",
+  "corpo": {
+    "id": 116,
+    "__str__": "FAGNER CALEGÁRIO",
+    "link_detail_backend": "/sistema/autor/116",
+    "metadata": {},
+    "autor_related": {
+      "value": 238,
+      "text": "FAGNER CALEGÁRIO"
+    },
+    "object_id": 238,
+    "nome": "FAGNER CALEGÁRIO",
+    "cargo": "",
+    "tipo": 1,
+    "content_type": 26,
+    "operadores": []
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "url": "https://sapl.al.am.leg.br/api/materia/autoria/?materia=180303",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T23:46:46.992Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 0,
+      "end_index": 0,
+      "total_entries": 0,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": []
+  }
+}

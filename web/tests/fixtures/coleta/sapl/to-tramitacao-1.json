@@ -1,0 +1,99 @@
+{
+  "url": "https://sapl.al.to.leg.br/api/materia/tramitacao/?materia=13715&page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T23:46:35.733Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 4,
+      "total_entries": 4,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 17724,
+        "__str__": "Medida Provisória nº 2 de 2026 | Proposição aprovada | 03/06/2026",
+        "metadata": {},
+        "timestamp": "2026-06-08T10:49:46.703254-03:00",
+        "data_tramitacao": "2026-06-03",
+        "data_encaminhamento": "2026-06-03",
+        "urgente": false,
+        "turno": "U",
+        "texto": "",
+        "data_fim_prazo": null,
+        "ip": "10.98.21.107",
+        "ultima_edicao": "2026-06-08T10:49:17.813754-03:00",
+        "status": 13,
+        "materia": 13715,
+        "unidade_tramitacao_local": 4,
+        "unidade_tramitacao_destino": 7,
+        "user": 52
+      },
+      {
+        "id": 17662,
+        "__str__": "Medida Provisória nº 2 de 2026 | Aguardando a inclusão na ordem do dia | 02/06/2026",
+        "metadata": {},
+        "timestamp": "2026-06-02T12:21:09.384991-03:00",
+        "data_tramitacao": "2026-06-02",
+        "data_encaminhamento": null,
+        "urgente": false,
+        "turno": "",
+        "texto": "",
+        "data_fim_prazo": null,
+        "ip": "10.98.21.95",
+        "ultima_edicao": "2026-06-02T12:20:57.102930-03:00",
+        "status": 4,
+        "materia": 13715,
+        "unidade_tramitacao_local": 10,
+        "unidade_tramitacao_destino": 4,
+        "user": 54
+      },
+      {
+        "id": 17411,
+        "__str__": "Medida Provisória nº 2 de 2026 | Aguardando Análise da Comissão | 12/05/2026",
+        "metadata": {},
+        "timestamp": "2026-05-12T17:03:14.859818-03:00",
+        "data_tramitacao": "2026-05-12",
+        "data_encaminhamento": null,
+        "urgente": false,
+        "turno": "",
+        "texto": "",
+        "data_fim_prazo": null,
+        "ip": "10.98.20.101",
+        "ultima_edicao": "2026-05-12T17:03:08.459663-03:00",
+        "status": 41,
+        "materia": 13715,
+        "unidade_tramitacao_local": 9,
+        "unidade_tramitacao_destino": 10,
+        "user": 54
+      },
+      {
+        "id": 16357,
+        "__str__": "Medida Provisória nº 2 de 2026 | Aguardando Análise da Comissão | 04/02/2026",
+        "metadata": {},
+        "timestamp": "2026-02-04T12:50:38.911375-03:00",
+        "data_tramitacao": "2026-02-04",
+        "data_encaminhamento": "2026-02-04",
+        "urgente": false,
+        "turno": "",
+        "texto": "",
+        "data_fim_prazo": null,
+        "ip": "10.98.20.39",
+        "ultima_edicao": "2026-02-04T12:50:24.751161-03:00",
+        "status": 41,
+        "materia": 13715,
+        "unidade_tramitacao_local": 7,
+        "unidade_tramitacao_destino": 9,
+        "user": 85
+      }
+    ]
+  }
+}

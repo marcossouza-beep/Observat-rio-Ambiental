@@ -1,0 +1,407 @@
+{
+  "url": "https://sapl.al.to.leg.br/api/materia/unidadetramitacao/?page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T23:46:32.124Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 48,
+      "total_entries": 48,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 7,
+        "__str__": "001 - Diretoria Legislativa - DIRLEG",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 6,
+        "parlamentar": null
+      },
+      {
+        "id": 4,
+        "__str__": "002 - Coordenadoria de Assistência ao Plenário - COASP",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 7,
+        "parlamentar": null
+      },
+      {
+        "id": 9,
+        "__str__": "01 - CCJ - Comissão de Constituição Justiça e Redação",
+        "metadata": {},
+        "comissao": 1,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 10,
+        "__str__": "02 - CF - Comissão. Finanças Tributação. Fiscalização e Controle",
+        "metadata": {},
+        "comissao": 2,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 11,
+        "__str__": "03 -CDR - Comissão de Desenvolvimento Rural, Cooperativismo Ciência, Tecnologia e Economia",
+        "metadata": {},
+        "comissao": 3,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 12,
+        "__str__": "04 - CDC - Comissão de Administração, Trabalho, Defesa do Consumidor, Transporte, Desenvolvimento Urbano",
+        "metadata": {},
+        "comissao": 4,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 13,
+        "__str__": "05 - CECD - Comissão de Educação, Cultura e Desporte",
+        "metadata": {},
+        "comissao": 5,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 14,
+        "__str__": "06 - CCDH - Comissão de Cidadania e Direitos Humanos",
+        "metadata": {},
+        "comissao": 6,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 15,
+        "__str__": "07 - Saude - Comissão Saúde Assistencia Social",
+        "metadata": {},
+        "comissao": 7,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 16,
+        "__str__": "08 - CPS - Comissão Permanente de Segurança",
+        "metadata": {},
+        "comissao": 8,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 17,
+        "__str__": "09 - CAPJ - Comissão de Permanente  de Acompanhamento de Politicas Juventude",
+        "metadata": {},
+        "comissao": 9,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 18,
+        "__str__": "10 - CPDDM - Comissão Permanente Defesa dos Direitos da Mulher",
+        "metadata": {},
+        "comissao": 10,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 19,
+        "__str__": "11 - CMEMA - Comissão de Minas, Energia, Meio Ambiente Turismo",
+        "metadata": {},
+        "comissao": 11,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 48,
+        "__str__": "12 CDDI - COMISSÃO DE DEFESA DO DIREITO DOS IDOSOS",
+        "metadata": {},
+        "comissao": 15,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 20,
+        "__str__": "AMÁLIA SANTANA",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 2
+      },
+      {
+        "id": 21,
+        "__str__": "AMÉLIO CAYRES",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 3
+      },
+      {
+        "id": 22,
+        "__str__": "ANTONIO ANDRADE",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 4
+      },
+      {
+        "id": 1,
+        "__str__": "Assembleia Legislativa do Estado do Tocantins - ALTO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 2,
+        "parlamentar": null
+      },
+      {
+        "id": 50,
+        "__str__": "CAIQCT - Comissão Permanente de Assuntos Indígenas, Quilombolas e Comunidades Tradicionais",
+        "metadata": {},
+        "comissao": 13,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 49,
+        "__str__": "CDDI - Comissão Permanente de Defesa do Direito do Idoso",
+        "metadata": {},
+        "comissao": 14,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 23,
+        "__str__": "CLAUDIA LELIS",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 5
+      },
+      {
+        "id": 24,
+        "__str__": "CLEITON CARDOSO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 6
+      },
+      {
+        "id": 47,
+        "__str__": "Coordenadoria de Arquivo - COARQ",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 10,
+        "parlamentar": null
+      },
+      {
+        "id": 8,
+        "__str__": "Coordenadoria de Assistência as Comissões - COASC",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 8,
+        "parlamentar": null
+      },
+      {
+        "id": 25,
+        "__str__": "DELEGADO RERISSON",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 7
+      },
+      {
+        "id": 26,
+        "__str__": "EDUARDO DO DERTINS",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 8
+      },
+      {
+        "id": 27,
+        "__str__": "EDUARDO SIQUEIRA CAMPOS",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 9
+      },
+      {
+        "id": 28,
+        "__str__": "ELENIL DA PENHA",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 10
+      },
+      {
+        "id": 29,
+        "__str__": "FABION GOMES",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 11
+      },
+      {
+        "id": 5,
+        "__str__": "Gabinete da Presidência - GP",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 5,
+        "parlamentar": null
+      },
+      {
+        "id": 30,
+        "__str__": "GLEYDSON NATO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 12
+      },
+      {
+        "id": 31,
+        "__str__": "ISSAM SAADO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 13
+      },
+      {
+        "id": 32,
+        "__str__": "IVAN VAQUEIRO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 14
+      },
+      {
+        "id": 33,
+        "__str__": "IVORY DE LIRA",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 15
+      },
+      {
+        "id": 34,
+        "__str__": "JAIR FARIAS",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 16
+      },
+      {
+        "id": 35,
+        "__str__": "JORGE FREDERICO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 17
+      },
+      {
+        "id": 36,
+        "__str__": "LÉO BARBOSA",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 18
+      },
+      {
+        "id": 37,
+        "__str__": "LUANA RIBEIRO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 19
+      },
+      {
+        "id": 38,
+        "__str__": "NILTON FRANCO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 20
+      },
+      {
+        "id": 39,
+        "__str__": "OLYNTHO NETO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 21
+      },
+      {
+        "id": 40,
+        "__str__": "PROFESSOR JÚNIOR GEO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 22
+      },
+      {
+        "id": 3,
+        "__str__": "Protocolo - PRO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 4,
+        "parlamentar": null
+      },
+      {
+        "id": 41,
+        "__str__": "RICARDO AYRES",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 23
+      },
+      {
+        "id": 42,
+        "__str__": "VALDEMAR JÚNIOR",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 24
+      },
+      {
+        "id": 43,
+        "__str__": "VALDEREZ CASTELO BRANCO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 25
+      },
+      {
+        "id": 44,
+        "__str__": "VANDA MONTEIRO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 26
+      },
+      {
+        "id": 45,
+        "__str__": "VILMAR DE OLIVEIRA",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 27
+      },
+      {
+        "id": 46,
+        "__str__": "ZÉ ROBERTO LULA",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 28
+      }
+    ]
+  }
+}

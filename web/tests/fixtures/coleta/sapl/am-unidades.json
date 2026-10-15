@@ -1,0 +1,428 @@
+{
+  "url": "https://sapl.al.am.leg.br/api/materia/unidadetramitacao/?page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T23:46:45.415Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 45,
+      "total_entries": 45,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 74,
+        "__str__": "ARQUIVO - ARQUIVO",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/74",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 46,
+        "parlamentar": null
+      },
+      {
+        "id": 30,
+        "__str__": "Cabo Maciel",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/30",
+        "metadata": {},
+        "comissao": null,
+        "orgao": null,
+        "parlamentar": 12
+      },
+      {
+        "id": 17,
+        "__str__": "CAE - Comissão de Assuntos Econômicos",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/17",
+        "metadata": {},
+        "comissao": 4,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 9,
+        "__str__": "CAI - Comissão de Assuntos Indígenas",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/9",
+        "metadata": {},
+        "comissao": 23,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 10,
+        "__str__": "CAMDRR - Comissão de Assuntos Municipais e Desenvolvimento Rural e Regional",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/10",
+        "metadata": {},
+        "comissao": 13,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 61,
+        "__str__": "CAST - Comissão de Assistência Social e Trabalho",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/61",
+        "metadata": {},
+        "comissao": 1,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 47,
+        "__str__": "CCEC - Comissão de Cultura e Economia Criativa",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/47",
+        "metadata": {},
+        "comissao": 31,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 28,
+        "__str__": "CCJR - Comissão de Constituição, Justiça e Redação",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/28",
+        "metadata": {},
+        "comissao": 3,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 11,
+        "__str__": "CCTCII - Comissão de Ciência e Tecnologia, Comunicação, Informática e Inovação",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/11",
+        "metadata": {},
+        "comissao": 7,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 36,
+        "__str__": "CDC - Comissão de Defesa do Consumidor",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/36",
+        "metadata": {},
+        "comissao": 8,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 15,
+        "__str__": "CDDCA - Comissão de Defesa dos Direitos das Crianças e Adolescentes",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/15",
+        "metadata": {},
+        "comissao": 11,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 13,
+        "__str__": "CDHPDAIPS - Direitos Humanos, Pessoa com Deficiência, Assuntos Indígenas e Promoção Social",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/13",
+        "metadata": {},
+        "comissao": 9,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 68,
+        "__str__": "CE - Comissão Especial",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/68",
+        "metadata": {},
+        "comissao": 27,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 77,
+        "__str__": "CECEM - Comissão de Empreendedorismo, Comércio Exterior e Mercosul",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/77",
+        "metadata": {},
+        "comissao": 38,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 80,
+        "__str__": "CEI - Comissão Especial de Impeachment",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/80",
+        "metadata": {},
+        "comissao": 39,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 16,
+        "__str__": "CEP - Comissão de Ética",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/16",
+        "metadata": {},
+        "comissao": 24,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 18,
+        "__str__": "CGRHMES - Comissão de Geodiversidade, Recursos Hídricos, Minas, Gás, Energia e Saneamento",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/18",
+        "metadata": {},
+        "comissao": 17,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 48,
+        "__str__": "CGSP - Comissão de Gestão e Serviços Públicos",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/48",
+        "metadata": {},
+        "comissao": 32,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 19,
+        "__str__": "CICZF - Comissão de Indústria, Comércio e Zona Franca",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/19",
+        "metadata": {},
+        "comissao": 14,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 38,
+        "__str__": "CMFPI - Comissão da Mulher, da Família e da Pessoa Idosa",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/38",
+        "metadata": {},
+        "comissao": 16,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 14,
+        "__str__": "COED - Comissão de Educação",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/14",
+        "metadata": {},
+        "comissao": 10,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 41,
+        "__str__": "COMAPA - Comissão de Agricultura, Pecuária, Pesca, Aquicultura, Abastecimento e Desenvolvimento Rural",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/41",
+        "metadata": {},
+        "comissao": 5,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 22,
+        "__str__": "COPSP - Comissão de Obras, Patrimônio e Serviços Públicos",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/22",
+        "metadata": {},
+        "comissao": 12,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 66,
+        "__str__": "CPAMADS - Comissão de Proteção aos Animais, Meio Ambiente e Desenvolvimento Sustentável",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/66",
+        "metadata": {},
+        "comissao": 35,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 24,
+        "__str__": "CPSDCLP - Comissão de Política sobre Drogas, Cidadania e Legislação Participativa",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/24",
+        "metadata": {},
+        "comissao": 18,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 20,
+        "__str__": "CRIPDEL - Comissão de Relações Internacionais, Promoção ao Desporto e de Esporte e Lazer",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/20",
+        "metadata": {},
+        "comissao": 21,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 23,
+        "__str__": "CSP - Comissão de Saúde e Previdência Social",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/23",
+        "metadata": {},
+        "comissao": 19,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 21,
+        "__str__": "CSPJD - Comissão de Segurança Pública, Acesso à Justiça e Defesa Social",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/21",
+        "metadata": {},
+        "comissao": 6,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 25,
+        "__str__": "CTE - Comissão de Turismo e Empreendedorismo",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/25",
+        "metadata": {},
+        "comissao": 15,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 75,
+        "__str__": "CTFN - Comissão de Turismo, Fomento e Negócios",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/75",
+        "metadata": {},
+        "comissao": 28,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 37,
+        "__str__": "CTTM - Comissão de Transporte, Trânsito e Mobilidade",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/37",
+        "metadata": {},
+        "comissao": 20,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 1,
+        "__str__": "Diretoria de Apoio Legislativo - DAL",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/1",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 4,
+        "parlamentar": null
+      },
+      {
+        "id": 44,
+        "__str__": "Diretoria de Documentação - DD",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/44",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 39,
+        "parlamentar": null
+      },
+      {
+        "id": 2,
+        "__str__": "Gerência de Assistência às Comissões Técnicas - GACT",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/2",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 3,
+        "parlamentar": null
+      },
+      {
+        "id": 72,
+        "__str__": "Gerência de Expediente - GEREXP",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/72",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 43,
+        "parlamentar": null
+      },
+      {
+        "id": 73,
+        "__str__": "GOVERNO DO ESTADO / CASA CIVIL - CASACIVIL",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/73",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 45,
+        "parlamentar": null
+      },
+      {
+        "id": 70,
+        "__str__": "GOVERNO DO ESTADO DO AMAZONAS - GOVESTAM",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/70",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 41,
+        "parlamentar": null
+      },
+      {
+        "id": 67,
+        "__str__": "MD - Mesa Diretora - Mesa Diretora - MD",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/67",
+        "metadata": {},
+        "comissao": 33,
+        "orgao": 2,
+        "parlamentar": null
+      },
+      {
+        "id": 27,
+        "__str__": "Plenário Ruy Araújo - PRA",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/27",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 35,
+        "parlamentar": null
+      },
+      {
+        "id": 78,
+        "__str__": "PRESIDÊNCIA - PRE",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/78",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 47,
+        "parlamentar": null
+      },
+      {
+        "id": 79,
+        "__str__": "PROCURADORIA - PRO",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/79",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 48,
+        "parlamentar": null
+      },
+      {
+        "id": 82,
+        "__str__": "Protocolo - PROT",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/82",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 50,
+        "parlamentar": null
+      },
+      {
+        "id": 71,
+        "__str__": "SECRETARIA DE ESTADO DA SAÚDE - SUSAM",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/71",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 42,
+        "parlamentar": null
+      },
+      {
+        "id": 81,
+        "__str__": "SECRETARIA GERAL - SG",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/81",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 49,
+        "parlamentar": null
+      },
+      {
+        "id": 69,
+        "__str__": "SECRETARIA MUNICIPAL DE INFRAESTRUTURA - SEMINF",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/69",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 40,
+        "parlamentar": null
+      }
+    ]
+  }
+}

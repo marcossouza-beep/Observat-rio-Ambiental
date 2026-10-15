@@ -1,0 +1,191 @@
+{
+  "url": "https://sapl.al.am.leg.br/api/materia/tipomaterialegislativa/?page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T23:46:44.204Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 14,
+      "total_entries": 14,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 8,
+        "__str__": "Indicação",
+        "link_detail_backend": "/sistema/materia/tipo/8",
+        "metadata": {},
+        "sigla": "IND",
+        "descricao": "Indicação",
+        "num_automatica": false,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 14,
+        "__str__": "MENSAGEM DO GOVERNADOR",
+        "link_detail_backend": "/sistema/materia/tipo/14",
+        "metadata": {},
+        "sigla": "MSGOV",
+        "descricao": "MENSAGEM DO GOVERNADOR",
+        "num_automatica": false,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "",
+        "sequencia_regimental": 2
+      },
+      {
+        "id": 11,
+        "__str__": "Ofício",
+        "link_detail_backend": "/sistema/materia/tipo/11",
+        "metadata": {},
+        "sigla": "OFI",
+        "descricao": "Ofício",
+        "num_automatica": false,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "",
+        "sequencia_regimental": 3
+      },
+      {
+        "id": 6,
+        "__str__": "Projeto de Decreto Legislativo",
+        "link_detail_backend": "/sistema/materia/tipo/6",
+        "metadata": {},
+        "sigla": "PDL",
+        "descricao": "Projeto de Decreto Legislativo",
+        "num_automatica": false,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "",
+        "sequencia_regimental": 4
+      },
+      {
+        "id": 5,
+        "__str__": "Projeto de Lei Complementar",
+        "link_detail_backend": "/sistema/materia/tipo/5",
+        "metadata": {},
+        "sigla": "PLC",
+        "descricao": "Projeto de Lei Complementar",
+        "num_automatica": false,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "",
+        "sequencia_regimental": 5
+      },
+      {
+        "id": 1,
+        "__str__": "Projeto de Lei Ordinária",
+        "link_detail_backend": "/sistema/materia/tipo/1",
+        "metadata": {},
+        "sigla": "PL",
+        "descricao": "Projeto de Lei Ordinária",
+        "num_automatica": false,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "",
+        "sequencia_regimental": 6
+      },
+      {
+        "id": 2,
+        "__str__": "Projeto de Resolução Legislativa",
+        "link_detail_backend": "/sistema/materia/tipo/2",
+        "metadata": {},
+        "sigla": "PRL",
+        "descricao": "Projeto de Resolução Legislativa",
+        "num_automatica": false,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "",
+        "sequencia_regimental": 7
+      },
+      {
+        "id": 10,
+        "__str__": "Proposta de Emenda à Constituição do Estado",
+        "link_detail_backend": "/sistema/materia/tipo/10",
+        "metadata": {},
+        "sigla": "PEC",
+        "descricao": "Proposta de Emenda à Constituição do Estado",
+        "num_automatica": false,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "",
+        "sequencia_regimental": 8
+      },
+      {
+        "id": 3,
+        "__str__": "Requerimento",
+        "link_detail_backend": "/sistema/materia/tipo/3",
+        "metadata": {},
+        "sigla": "REQ",
+        "descricao": "Requerimento",
+        "num_automatica": false,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "",
+        "sequencia_regimental": 9
+      },
+      {
+        "id": 9,
+        "__str__": "Veto a Projeto de Lei",
+        "link_detail_backend": "/sistema/materia/tipo/9",
+        "metadata": {},
+        "sigla": "VET",
+        "descricao": "Veto a Projeto de Lei",
+        "num_automatica": false,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "",
+        "sequencia_regimental": 10
+      },
+      {
+        "id": 15,
+        "__str__": "Denúncia",
+        "link_detail_backend": "/sistema/materia/tipo/15",
+        "metadata": {},
+        "sigla": "DEN",
+        "descricao": "Denúncia",
+        "num_automatica": false,
+        "quorum_minimo_votacao": null,
+        "sequencia_numeracao": "",
+        "sequencia_regimental": 11
+      },
+      {
+        "id": 16,
+        "__str__": "Representação",
+        "link_detail_backend": "/sistema/materia/tipo/16",
+        "metadata": {},
+        "sigla": "REP",
+        "descricao": "Representação",
+        "num_automatica": false,
+        "quorum_minimo_votacao": null,
+        "sequencia_numeracao": "",
+        "sequencia_regimental": 12
+      },
+      {
+        "id": 17,
+        "__str__": "Registro de Candidatura",
+        "link_detail_backend": "/sistema/materia/tipo/17",
+        "metadata": {},
+        "sigla": "RC",
+        "descricao": "Registro de Candidatura",
+        "num_automatica": false,
+        "quorum_minimo_votacao": null,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 13
+      },
+      {
+        "id": 18,
+        "__str__": "Registro de Candidatura - Presidência",
+        "link_detail_backend": "/sistema/materia/tipo/18",
+        "metadata": {},
+        "sigla": "RC",
+        "descricao": "Registro de Candidatura - Presidência",
+        "num_automatica": false,
+        "quorum_minimo_votacao": null,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 14
+      }
+    ]
+  }
+}

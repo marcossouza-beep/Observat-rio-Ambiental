@@ -1,0 +1,374 @@
+{
+  "url": "https://sapl.al.ac.leg.br/api/materia/statustramitacao/?page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T23:46:41.023Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 39,
+      "total_entries": 39,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 2,
+        "__str__": "Aguardando Parecer",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/2",
+        "metadata": {},
+        "sigla": "AGPARECER",
+        "descricao": "Aguardando Parecer",
+        "indicador": ""
+      },
+      {
+        "id": 6,
+        "__str__": "Aguardando Redação Final",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/6",
+        "metadata": {},
+        "sigla": "AGREDFINAL",
+        "descricao": "Aguardando Redação Final",
+        "indicador": "F"
+      },
+      {
+        "id": 16,
+        "__str__": "AGUARDANDO VOTAÇÃO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/16",
+        "metadata": {},
+        "sigla": "AV",
+        "descricao": "AGUARDANDO VOTAÇÃO",
+        "indicador": "R"
+      },
+      {
+        "id": 33,
+        "__str__": "Apensado conforme art. 190",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/33",
+        "metadata": {},
+        "sigla": "AP",
+        "descricao": "Apensado conforme art. 190",
+        "indicador": "F"
+      },
+      {
+        "id": 1,
+        "__str__": "Apresentado no Plenário",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/1",
+        "metadata": {},
+        "sigla": "APPLEN",
+        "descricao": "Apresentado no Plenário",
+        "indicador": ""
+      },
+      {
+        "id": 4,
+        "__str__": "Aprovado",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/4",
+        "metadata": {},
+        "sigla": "APROVADO",
+        "descricao": "Aprovado",
+        "indicador": "F"
+      },
+      {
+        "id": 11,
+        "__str__": "Aprovado 1ª Discussão",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/11",
+        "metadata": {},
+        "sigla": "APROVADO",
+        "descricao": "Aprovado 1ª Discussão",
+        "indicador": "F"
+      },
+      {
+        "id": 12,
+        "__str__": "Aprovado 1ª Votação",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/12",
+        "metadata": {},
+        "sigla": "APROVADO",
+        "descricao": "Aprovado 1ª Votação",
+        "indicador": "F"
+      },
+      {
+        "id": 13,
+        "__str__": "Aprovado 2ª Discussão",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/13",
+        "metadata": {},
+        "sigla": "APROVADO",
+        "descricao": "Aprovado 2ª Discussão",
+        "indicador": "F"
+      },
+      {
+        "id": 14,
+        "__str__": "Aprovado 2ª Votação",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/14",
+        "metadata": {},
+        "sigla": "APROVADO",
+        "descricao": "Aprovado 2ª Votação",
+        "indicador": "F"
+      },
+      {
+        "id": 25,
+        "__str__": "Aprovado pela Inconstitucionalidade",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/25",
+        "metadata": {},
+        "sigla": "IN",
+        "descricao": "Aprovado pela Inconstitucionalidade",
+        "indicador": "F"
+      },
+      {
+        "id": 22,
+        "__str__": "Aprovado pela Inconstitucionalidade",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/22",
+        "metadata": {},
+        "sigla": "AI",
+        "descricao": "Aprovado pela Inconstitucionalidade",
+        "indicador": "F"
+      },
+      {
+        "id": 32,
+        "__str__": "Aprovado pela rejeição",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/32",
+        "metadata": {},
+        "sigla": "AP",
+        "descricao": "Aprovado pela rejeição",
+        "indicador": ""
+      },
+      {
+        "id": 26,
+        "__str__": "Arquivado",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/26",
+        "metadata": {},
+        "sigla": "ARQ",
+        "descricao": "Arquivado",
+        "indicador": "F"
+      },
+      {
+        "id": 24,
+        "__str__": "Arquivado art. 160 RI",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/24",
+        "metadata": {},
+        "sigla": "AR",
+        "descricao": "Arquivado art. 160 RI",
+        "indicador": "F"
+      },
+      {
+        "id": 41,
+        "__str__": "ARQUIVAR",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/41",
+        "metadata": {},
+        "sigla": "ARQ",
+        "descricao": "ARQUIVAR",
+        "indicador": ""
+      },
+      {
+        "id": 30,
+        "__str__": "Autógrafo enviado",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/30",
+        "metadata": {},
+        "sigla": "AE",
+        "descricao": "Autógrafo enviado",
+        "indicador": "F"
+      },
+      {
+        "id": 15,
+        "__str__": "Comissões Conjuntas",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/15",
+        "metadata": {},
+        "sigla": "DISTRIB.",
+        "descricao": "Comissões Conjuntas",
+        "indicador": "R"
+      },
+      {
+        "id": 36,
+        "__str__": "Deferido",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/36",
+        "metadata": {},
+        "sigla": "Deferido",
+        "descricao": "Deferido",
+        "indicador": ""
+      },
+      {
+        "id": 29,
+        "__str__": "DESPACHADO À SECRETARIA EXECUTIVA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/29",
+        "metadata": {},
+        "sigla": "DESPACHADO",
+        "descricao": "DESPACHADO À SECRETARIA EXECUTIVA",
+        "indicador": ""
+      },
+      {
+        "id": 27,
+        "__str__": "Distribuição à Comissão Especial",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/27",
+        "metadata": {},
+        "sigla": "Especial",
+        "descricao": "Distribuição à Comissão Especial",
+        "indicador": ""
+      },
+      {
+        "id": 10,
+        "__str__": "DISTRIBUIÇÃO ÀS COMISSÕES TEMÁTICAS",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/10",
+        "metadata": {},
+        "sigla": "DISTRIB.",
+        "descricao": "DISTRIBUIÇÃO ÀS COMISSÕES TEMÁTICAS",
+        "indicador": "R"
+      },
+      {
+        "id": 17,
+        "__str__": "ENCAMINHADO AO PODER EXECUTIVO PARA SANÇÃO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/17",
+        "metadata": {},
+        "sigla": "ENC",
+        "descricao": "ENCAMINHADO AO PODER EXECUTIVO PARA SANÇÃO",
+        "indicador": ""
+      },
+      {
+        "id": 31,
+        "__str__": "Encaminhar para sanção",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/31",
+        "metadata": {},
+        "sigla": "ES",
+        "descricao": "Encaminhar para sanção",
+        "indicador": "F"
+      },
+      {
+        "id": 35,
+        "__str__": "Encaminhar para Secretaria Executiva para Providências",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/35",
+        "metadata": {},
+        "sigla": "E",
+        "descricao": "Encaminhar para Secretaria Executiva para Providências",
+        "indicador": ""
+      },
+      {
+        "id": 18,
+        "__str__": "Expedição do Autógrafo",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/18",
+        "metadata": {},
+        "sigla": "EA",
+        "descricao": "Expedição do Autógrafo",
+        "indicador": ""
+      },
+      {
+        "id": 3,
+        "__str__": "Incluído na Ordem do Dia",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/3",
+        "metadata": {},
+        "sigla": "INCOD",
+        "descricao": "Incluído na Ordem do Dia",
+        "indicador": ""
+      },
+      {
+        "id": 20,
+        "__str__": "Não tramitou",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/20",
+        "metadata": {},
+        "sigla": "N/T",
+        "descricao": "Não tramitou",
+        "indicador": ""
+      },
+      {
+        "id": 38,
+        "__str__": "Ofício expedido - Presidência",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/38",
+        "metadata": {},
+        "sigla": "Ofício",
+        "descricao": "Ofício expedido - Presidência",
+        "indicador": ""
+      },
+      {
+        "id": 39,
+        "__str__": "Ofício Recebido",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/39",
+        "metadata": {},
+        "sigla": "OR",
+        "descricao": "Ofício Recebido",
+        "indicador": ""
+      },
+      {
+        "id": 7,
+        "__str__": "Parecer Favoravel",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/7",
+        "metadata": {},
+        "sigla": "PAR-FAVORA",
+        "descricao": "Parecer Favoravel",
+        "indicador": ""
+      },
+      {
+        "id": 19,
+        "__str__": "Parecer pela inconstitucionalidade",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/19",
+        "metadata": {},
+        "sigla": "PRCER-INCO",
+        "descricao": "Parecer pela inconstitucionalidade",
+        "indicador": ""
+      },
+      {
+        "id": 40,
+        "__str__": "PEDIDO DE VISTA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/40",
+        "metadata": {},
+        "sigla": "VISTA",
+        "descricao": "PEDIDO DE VISTA",
+        "indicador": ""
+      },
+      {
+        "id": 23,
+        "__str__": "Redistribuído",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/23",
+        "metadata": {},
+        "sigla": "RR",
+        "descricao": "Redistribuído",
+        "indicador": "R"
+      },
+      {
+        "id": 9,
+        "__str__": "Rejeitado",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/9",
+        "metadata": {},
+        "sigla": "REJEITADO",
+        "descricao": "Rejeitado",
+        "indicador": "F"
+      },
+      {
+        "id": 28,
+        "__str__": "Retirado de Pauta",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/28",
+        "metadata": {},
+        "sigla": "RR",
+        "descricao": "Retirado de Pauta",
+        "indicador": "F"
+      },
+      {
+        "id": 21,
+        "__str__": "Retirado mediante requerimento",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/21",
+        "metadata": {},
+        "sigla": "RR",
+        "descricao": "Retirado mediante requerimento",
+        "indicador": "F"
+      },
+      {
+        "id": 34,
+        "__str__": "Servi publico e Cof",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/34",
+        "metadata": {},
+        "sigla": "SP - COF",
+        "descricao": "Servi publico e Cof",
+        "indicador": "F"
+      },
+      {
+        "id": 42,
+        "__str__": "VETO TOTAL",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/42",
+        "metadata": {},
+        "sigla": "VETO",
+        "descricao": "VETO TOTAL",
+        "indicador": "F"
+      }
+    ]
+  }
+}

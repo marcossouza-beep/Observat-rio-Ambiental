@@ -1,0 +1,21 @@
+{
+  "url": "https://sapl.al.to.leg.br/api/base/autor/184/",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T23:46:34.463Z",
+  "corpo": {
+    "id": 184,
+    "__str__": "WANDERLEI BARBOSA CASTRO - Governador do Estado",
+    "metadata": {},
+    "autor_related": null,
+    "object_id": null,
+    "nome": "WANDERLEI BARBOSA CASTRO",
+    "cargo": "Governador do Estado",
+    "tipo": 7,
+    "content_type": null,
+    "operadores": [
+      89,
+      86
+    ]
+  }
+}

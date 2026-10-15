@@ -1,0 +1,22 @@
+{
+  "url": "https://sapl.al.ro.leg.br/api/base/autor/167/",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T23:46:51.194Z",
+  "corpo": {
+    "id": 167,
+    "__str__": "Dra. TAÍSSA",
+    "link_detail_backend": "/sistema/autor/167",
+    "metadata": {},
+    "autor_related": {
+      "value": 293,
+      "text": "Dra. TAÍSSA"
+    },
+    "object_id": 293,
+    "nome": "Dra. TAÍSSA",
+    "cargo": "",
+    "tipo": 1,
+    "content_type": 26,
+    "operadores": []
+  }
+}

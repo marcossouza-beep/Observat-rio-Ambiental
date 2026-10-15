@@ -1,0 +1,347 @@
+{
+  "url": "https://sapl.al.ro.leg.br/api/materia/unidadetramitacao/?page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T23:46:48.882Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 36,
+      "total_entries": 36,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 43,
+        "__str__": "Arquivo - DL - ARQ-DL",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/43",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 26,
+        "parlamentar": null
+      },
+      {
+        "id": 55,
+        "__str__": "CAAPE - Comissão de Atividades Agropecuária e Pesqueira",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/55",
+        "metadata": {},
+        "comissao": 5,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 29,
+        "__str__": "CAAPE - Comissão de Atividades Agropecuária e Pesqueira",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/29",
+        "metadata": {},
+        "comissao": 5,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 53,
+        "__str__": "CAPR - Comissão de Agropecuária e Política Rural",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/53",
+        "metadata": {},
+        "comissao": 18,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 30,
+        "__str__": "CCJR - Comissão de Constituição e Justiça e de Redação",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/30",
+        "metadata": {},
+        "comissao": 1,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 31,
+        "__str__": "CDC - Comissão de Defesa do Consumidor",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/31",
+        "metadata": {},
+        "comissao": 8,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 59,
+        "__str__": "CDC - Comissão de Defesa do Consumidor",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/59",
+        "metadata": {},
+        "comissao": 24,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 61,
+        "__str__": "CDDCAMI - Comissão de Defesa Dos Direitos da Criança,  Adolescente, Mulher e Idoso",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/61",
+        "metadata": {},
+        "comissao": 26,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 54,
+        "__str__": "CDDHC - Comissão de Defesa dos Direitos Humanos e Cidadania",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/54",
+        "metadata": {},
+        "comissao": 19,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 32,
+        "__str__": "CDHC - Comissão de Direitos Humanos e Cidadania",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/32",
+        "metadata": {},
+        "comissao": 14,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 33,
+        "__str__": "CDT - Comissão de Divisão Territorial",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/33",
+        "metadata": {},
+        "comissao": 9,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 68,
+        "__str__": "CEALMA28 - Comissão Especial Agrária Linha MA 28 -   Machadinho D",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/68",
+        "metadata": {},
+        "comissao": 28,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 34,
+        "__str__": "CEC - Comissão de Educação e Cultura",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/34",
+        "metadata": {},
+        "comissao": 4,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 57,
+        "__str__": "CETL - Comissão de Esporte, Turismo e Lazer",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/57",
+        "metadata": {},
+        "comissao": 21,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 69,
+        "__str__": "CFC - Comissão de Fiscalização e Controle",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/69",
+        "metadata": {},
+        "comissao": 15,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 35,
+        "__str__": "CFETOOA - Comissão de Finanç., Econom.Tribut, Orçam. e Organ. Administ",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/35",
+        "metadata": {},
+        "comissao": 3,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 62,
+        "__str__": "CHAM - Comissão de Habitação e Assuntos Municipais",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/62",
+        "metadata": {},
+        "comissao": 16,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 56,
+        "__str__": "CICCT - Comissão de Indústria, Comércio, Ciência e Tecnologia",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/56",
+        "metadata": {},
+        "comissao": 22,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 37,
+        "__str__": "CICME - Comissão de Indústria e comércio, Minas e Energia",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/37",
+        "metadata": {},
+        "comissao": 6,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 42,
+        "__str__": "CMADS - Comissão de Meio Ambiente e Desenvolvimento Sustentável",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/42",
+        "metadata": {},
+        "comissao": 12,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 58,
+        "__str__": "COA - Comissão de Organização Administrativa",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/58",
+        "metadata": {},
+        "comissao": 23,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 67,
+        "__str__": "CAPR - Comissão de Agropecuária e Política Rural - Comissão de Agropecuária e Politicas Rural - CAPR",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/67",
+        "metadata": {},
+        "comissao": 18,
+        "orgao": 31,
+        "parlamentar": null
+      },
+      {
+        "id": 60,
+        "__str__": "CSP - Comissão de Segurança Pública",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/60",
+        "metadata": {},
+        "comissao": 25,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 39,
+        "__str__": "CSPAS - Comissão de Saúde, Previdência e Assistência Social",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/39",
+        "metadata": {},
+        "comissao": 11,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 40,
+        "__str__": "CTOP - Comissão de Transportes e Obras Públicas .",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/40",
+        "metadata": {},
+        "comissao": 13,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 28,
+        "__str__": "Departamento Legislativo - DL",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/28",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 8,
+        "parlamentar": null
+      },
+      {
+        "id": 24,
+        "__str__": "Divisão de Comissões - DIVCO",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/24",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 5,
+        "parlamentar": null
+      },
+      {
+        "id": 23,
+        "__str__": "Divisão de Expediente e Controle - DIVEXC",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/23",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 4,
+        "parlamentar": null
+      },
+      {
+        "id": 52,
+        "__str__": "Gabinete da Secretaria Legislativa - SL",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/52",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 3,
+        "parlamentar": null
+      },
+      {
+        "id": 25,
+        "__str__": "SINTERO - Comissão de Apuração da Ação de Isonomia - Gabinete da Secretaria Legislativa - SL",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/25",
+        "metadata": {},
+        "comissao": 2,
+        "orgao": 3,
+        "parlamentar": null
+      },
+      {
+        "id": 22,
+        "__str__": "Mesa Diretora - MD",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/22",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 2,
+        "parlamentar": null
+      },
+      {
+        "id": 63,
+        "__str__": "PARLAMENTAR QUE SOLICITOU A VISTA  - PARL VISTA - NEODI",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/63",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 28,
+        "parlamentar": 1
+      },
+      {
+        "id": 66,
+        "__str__": "PARLAMENTAR QUE SOLICITOU O ADIAMENTO - AD DIS VOT",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/66",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 30,
+        "parlamentar": null
+      },
+      {
+        "id": 21,
+        "__str__": "Plenário - PLEN",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/21",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 1,
+        "parlamentar": null
+      },
+      {
+        "id": 51,
+        "__str__": "Presidência - PRE",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/51",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 27,
+        "parlamentar": null
+      },
+      {
+        "id": 45,
+        "__str__": "SINTERO - Comissão de Apuração da Ação de Isonomia - Presidência - PRE",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/45",
+        "metadata": {},
+        "comissao": 2,
+        "orgao": 27,
+        "parlamentar": null
+      }
+    ]
+  }
+}
