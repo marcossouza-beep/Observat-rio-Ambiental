@@ -97,11 +97,14 @@ test.describe('Conta do inscrito', () => {
     await page.getByLabel(/Resumo semanal/).uncheck()
     await page.locator('section').filter({ has: page.getByRole('heading', { name: 'Seus interesses' }) }).getByRole('button', { name: 'Licenciamento', exact: true }).click()
     await expect(page.locator('section').filter({ has: page.getByRole('heading', { name: 'Seus interesses' }) }).getByRole('button', { name: 'Licenciamento', exact: true })).toHaveAttribute('aria-pressed', 'true')
-    const a = (await payload.find({ collection: 'assinantes', where: { email: { equals: EMAIL } }, depth: 0 })).docs[0]
-    expect(a.resumoSemanal).toBe(false)
-    expect(a.alertas).toBe(true)
-    expect((a.temas || []).length).toBe(1)
-    expect((a.seguirParlamentares || []).length).toBe(1)
+    // A tela salva em segundo plano: espera o banco refletir as escolhas
+    const conta = async () => (await payload.find({ collection: 'assinantes', where: { email: { equals: EMAIL } }, depth: 0 })).docs[0]
+    await expect
+      .poll(async () => {
+        const a = await conta()
+        return { resumoSemanal: a.resumoSemanal, alertas: a.alertas, temas: (a.temas || []).length, parlamentares: (a.seguirParlamentares || []).length }
+      })
+      .toEqual({ resumoSemanal: false, alertas: true, temas: 1, parlamentares: 1 })
   })
 
   test('download de material: só para inscritos confirmados', async ({ browser }) => {

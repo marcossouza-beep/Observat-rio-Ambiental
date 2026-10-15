@@ -81,7 +81,7 @@ export function MinhaConta({ subperfis, perguntas, temas, biomas }: { subperfis:
             <b>Complete seu perfil</b> — ajuda a enviar só o que interessa a você.
             {sessao.perfil === 'Estudante' ? (
               <div className="linha-acoes" style={{ marginTop: 8 }}>
-                <input className="campo" value={curso} onChange={(e) => setCurso(e.target.value)} placeholder="Seu curso" style={{ flex: 1, padding: 8, borderRadius: 999, border: '1px solid var(--line)' }} />
+                <input className="campo" value={curso} onChange={(e) => setCurso(e.target.value)} placeholder="Seu curso" style={{ flex: 1, minHeight: 40, padding: '8px 12px', borderRadius: 12, border: '1px solid var(--line)', font: 'inherit' }} />
                 <button type="button" className="pill-btn" onClick={() => curso.trim() && salvar({ curso })}>
                   Salvar
                 </button>

@@ -349,11 +349,20 @@ Prazos prometidos (parecer, atualização, correção, imprensa, LGPD) e limite 
 
 ## Padrões visuais
 
+**Design system (forma):** aplicado no site e no painel, mantendo as cores do projeto sem alteração (verde da marca, paleta de caráter, cores das etiquetas e do placar).
+- **Fonte:** Inter (variável), servida pelo próprio site em `web/public/fonts/inter`, sem chamada ao Google. Escala: títulos Semi Bold (48/58, 40/48, 32/38, 24/28), subtítulos 18/28 e 16/24, corpo 16/24 e 14/20, legendas 12/16; botões Semi Bold 16 (grande) e 14 (médio).
+- **Raios:** 6 (etiquetas e caixas de seleção), 8 (botões pequenos), 12 (botões, campos, cartões e alertas), 24 (folha da inscrição no celular). Abas e chaves em pílula.
+- **Sombras:** níveis 100 a 400 do design system, na cor de texto do projeto; cartões com sombra 100 e, ao passar o mouse, 300 ou 400 (sem "pulo" do cartão).
+- **Componentes:** botão principal e de contorno (40 px; 48 px no grande); abas e filtros em pílula, selecionada preenchida; etiquetas retangulares com contorno no tom da própria cor; campos de 48 px com fundo claro, contorno no foco e anel de foco; caixa de seleção de 20 px com raio 6; chave liga/desliga 40×24 nas opções de e-mail; alertas com fundo claro e contorno; trilha com o item atual em destaque.
+- Regras em `web/src/app/(frontend)/styles.css` (site) e `web/src/app/(payload)/custom.scss` (painel), com os tokens no topo de cada arquivo.
+
 - **Setas:** ícones desenhados (traço arredondado), não caracteres de texto. Seta inline após o texto do link; seta em círculo para linhas clicáveis; seta para a esquerda em "voltar". Movem levemente ao passar o mouse.
 - **Gráficos de caráter:** barras finas (10px) com percentuais em texto discreto embaixo; tendência como ponto colorido + texto; números de destaque sem caixa, só com linha superior.
 - **Placar de votação (sim/não):** azul e roxo, para não sugerir que "sim" é bom ou ruim; verde e laranja ficam reservados para o caráter (proteção).
 
 ## Créditos de recursos visuais
+
+- **Fonte Inter:** de Rasmus Andersson ([github.com/rsms/inter](https://github.com/rsms/inter)), licença **SIL Open Font License 1.1** (texto em `web/public/fonts/inter/LICENSE.txt`). Arquivos variáveis (pesos 100–900), subconjuntos latino e latino estendido.
 
 - **Bandeiras dos estados:** pacote [icones-bandeiras-br-uf](https://github.com/pierrelapalu/icones-bandeiras-br-uf), de Pierre Lapalu, licença **CC0 1.0** (domínio público). Estilo usado: `rounded` (proporção 3:2, cantos arredondados). Espírito Santo na versão com o lema "Trabalha e Confia"; Paraíba na versão com "NEGO".
 - Uso no site: etiqueta de estado (bandeira + nome), bandeira do Brasil para leis federais, bandeira grande no painel do estado, seletor de estado (menu do inscrito e inscrição), cabeçalho do parecer e card do Instagram.
