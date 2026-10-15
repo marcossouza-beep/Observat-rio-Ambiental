@@ -72,6 +72,14 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 - **Credenciamento de imprensa** (passo extra na inscrição, fila de verificação no painel, selo e recursos de imprensa).
 - **Padrão de atuação** por UF e por casa da União, e página **Panorama** (casas e estados, biomas, áreas), alimentados pela classificação dos pareceres.
 
+> **Fase 3, parte 1 — feita (código): alertas, resumo semanal, assinaturas e páginas de parlamentar.**
+> - **Alerta diário (19h):** um e-mail por pessoa, só quando uma lei que ela segue entra na pauta, recebe urgência ou substitutivo, é votada, aprovada, sancionada ou vetada; no máximo um por dia; só propostas públicas.
+> - **Resumo semanal (sexta, 17h):** nota do autor (opcional, na tela "E-mails automáticos" do painel), pareceres da semana, o que vai a voto, o que andou nas leis seguidas, "Do seu interesse" (temas e biomas), "Na sua região" (estado e biomas do estado) e os votos dos parlamentares seguidos. Sai sozinho; o autor pode pular uma semana. Não sai e-mail vazio.
+> - **Assinaturas:** na inscrição, alerta diário e resumo semanal aparecem marcados e podem ser desmarcados; na conta, a pessoa muda e-mails, estado, temas e biomas e vê os parlamentares que segue. Quem se inscreveu antes começa com os dois desligados (nunca viu essas opções).
+> - **Páginas de parlamentar** (`/parlamentares` e `/parlamentares/[nome]`): em números, como votou (sentido do voto pelo caráter do parecer, com barra e lista), autorias com o padrão das propostas, relatorias e emendas, método explicado; botão Seguir. Autores e relatores na página da lei levam à página do parlamentar.
+>
+> **Falta na Fase 3 (parte 2):** recursos de imprensa credenciada (envio sob embargo e selo), versões regionais do resumo, Padrão de atuação por UF e por casa e a página Panorama.
+
 **Critério de saída:** base de assinantes em crescimento constante.
 
 ## Fase 4 — Levantamento regional

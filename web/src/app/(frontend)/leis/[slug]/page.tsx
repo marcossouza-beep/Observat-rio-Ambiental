@@ -28,7 +28,7 @@ type Params = Promise<{ slug: string }>
 function autoresDe(lei: NonNullable<Awaited<ReturnType<typeof leiPorSlug>>>['lei']) {
   return (lei.autoria || []).map((a) => {
     const p = a.parlamentar && typeof a.parlamentar === 'object' ? (a.parlamentar as Parlamentar) : null
-    return { nome: p?.nome || a.nomeLivre || '', partido: p?.partido, uf: p?.uf, papel: a.papel || 'autor', orgao: a.orgao }
+    return { nome: p?.nome || a.nomeLivre || '', slug: p?.slug, partido: p?.partido, uf: p?.uf, papel: a.papel || 'autor', orgao: a.orgao }
   })
 }
 
@@ -176,7 +176,7 @@ export default async function PaginaLei({ params }: { params: Params }) {
             <div key={`a${i}`}>
               <b>{i === 0 ? 'Autoria' : ''}</b>
               <span>
-                {a.nome}
+                {a.slug ? <Link href={`/parlamentares/${a.slug}`}>{a.nome}</Link> : a.nome}
                 {a.partido ? ` (${a.partido}${a.uf ? `-${a.uf}` : ''})` : ''}
               </span>
             </div>
@@ -185,7 +185,7 @@ export default async function PaginaLei({ params }: { params: Params }) {
             <div key={`r${i}`}>
               <b>Relatoria</b>
               <span>
-                {a.nome}
+                {a.slug ? <Link href={`/parlamentares/${a.slug}`}>{a.nome}</Link> : a.nome}
                 {a.partido ? ` (${a.partido}${a.uf ? `-${a.uf}` : ''})` : ''}
                 {a.orgao ? ` · ${a.orgao}` : ''}
               </span>

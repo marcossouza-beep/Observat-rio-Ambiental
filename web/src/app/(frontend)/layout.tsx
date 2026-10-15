@@ -43,6 +43,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <nav aria-label="Rodapé">
               <Link href="/leis">Todas as leis</Link>
               <Link href="/temas">Temas e biomas</Link>
+              <Link href="/parlamentares">Parlamentares</Link>
               <Link href="/pareceres">Pareceres</Link>
               <Link href="/artigos">Artigos</Link>
               <Link href="/privacidade">Privacidade</Link>

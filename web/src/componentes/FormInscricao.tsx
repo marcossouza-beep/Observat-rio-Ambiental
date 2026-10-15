@@ -40,7 +40,7 @@ function Check() {
   )
 }
 
-function SeletorUF({ rotulo, valor, vazio, mudar }: { rotulo: string; valor: string; vazio: string; mudar: (uf: string) => void }) {
+export function SeletorUF({ rotulo, valor, vazio, mudar }: { rotulo: string; valor: string; vazio: string; mudar: (uf: string) => void }) {
   return (
     <label className="campo">
       {rotulo}
@@ -59,7 +59,7 @@ function SeletorUF({ rotulo, valor, vazio, mudar }: { rotulo: string; valor: str
   )
 }
 
-function Chips({ titulo, itens, marcados, alternar }: { titulo: string; itens: Item[]; marcados: number[]; alternar: (id: number) => void }) {
+export function Chips({ titulo, itens, marcados, alternar }: { titulo: string; itens: Item[]; marcados: number[]; alternar: (id: number) => void }) {
   return (
     <div className="campo">
       <span className="campo-topo">
@@ -79,7 +79,7 @@ function Chips({ titulo, itens, marcados, alternar }: { titulo: string; itens: I
 
 export function FormInscricao({ perfis, subperfis, temas, biomas, para, prazoImprensa }: Props) {
   const [passo, setPasso] = useState(0)
-  const [d, setD] = useState({ nome: '', email: '', perfil: '', subperfil: '', curso: '', uf: '', temas: [] as number[], biomas: [] as number[], consentimento: false })
+  const [d, setD] = useState({ nome: '', email: '', perfil: '', subperfil: '', curso: '', uf: '', temas: [] as number[], biomas: [] as number[], alertas: true, resumoSemanal: true, consentimento: false })
   const [imp, setImp] = useState({ veiculo: '', tipo: '', funcao: '', link: '', emailProfissional: '', mtb: '', autoriza: false })
   const [erro, setErro] = useState('')
   const [enviado, setEnviado] = useState(false)
@@ -407,7 +407,24 @@ export function FormInscricao({ perfis, subperfis, temas, biomas, para, prazoImp
               </button>
             </div>
           </dl>
-          <p className="nota-fonte">Você recebe um e-mail no dia em que sair o parecer de uma lei que você segue ou pediu para ser avisado, e os comunicados do observatório. Dá para parar com um clique, em qualquer e-mail.</p>
+          <div className="campo">
+            O que você quer receber por e-mail
+            <label className="chave">
+              <span>
+                Alerta diário
+                <small>No fim do dia, quando uma lei que você segue entrar na pauta, for votada, sancionada ou vetada</small>
+              </span>
+              <input type="checkbox" checked={d.alertas} onChange={(e) => setD({ ...d, alertas: e.target.checked })} />
+            </label>
+            <label className="chave">
+              <span>
+                Resumo semanal
+                <small>Às sextas: pareceres da semana, o que vai a voto e o que andou nos seus temas e na sua região</small>
+              </span>
+              <input type="checkbox" checked={d.resumoSemanal} onChange={(e) => setD({ ...d, resumoSemanal: e.target.checked })} />
+            </label>
+          </div>
+          <p className="nota-fonte">Você também recebe o aviso no dia em que sair o parecer de uma lei que você segue ou pediu, e os comunicados do observatório. Dá para mudar em Minha conta e parar com um clique, em qualquer e-mail.</p>
           <label className="check destaque">
             <input type="checkbox" checked={d.consentimento} onChange={(e) => setD({ ...d, consentimento: e.target.checked })} />{' '}
             <span>

@@ -104,8 +104,8 @@ const inscricao: Endpoint = {
         temas: idsValidos(b.temas),
         biomas: idsValidos(b.biomas),
         avisarParecer: avisar,
-        alertas: b.alertas !== false,
-        resumoSemanal: b.resumoSemanal !== false,
+        alertas: b.alertas === true,
+        resumoSemanal: b.resumoSemanal === true,
         aceitaEmails: true,
         consentimentoEm: new Date().toISOString(),
         origemProposicao: avisar[0],
@@ -194,6 +194,9 @@ const sessao: Endpoint = {
       aceitaEmails: a.aceitaEmails,
       seguindo: ids(a.seguindo),
       avisar: ids(a.avisarParecer),
+      temas: ids(a.temas),
+      biomas: ids(a.biomas),
+      seguirParlamentares: ids(a.seguirParlamentares),
       imprensa: cred?.status || null,
     })
   },
@@ -217,18 +220,19 @@ const conta: Endpoint = {
     if ('nome' in b) dados.nome = textoCurto(b.nome, 120)
     if ('perfil' in b || 'subperfil' in b || 'curso' in b || 'uf' in b) Object.assign(dados, p)
     for (const k of ['alertas', 'resumoSemanal', 'aceitaEmails'] as const) if (typeof b[k] === 'boolean') dados[k] = b[k]
+    for (const k of ['temas', 'biomas'] as const) if (Array.isArray(b[k])) dados[k] = idsValidos(b[k])
     await req.payload.update({ collection: 'assinantes', id: a.id, data: dados })
     return json({ ok: true })
   },
 }
 
 const listaDaConta =
-  (campo: 'seguindo' | 'avisarParecer'): Endpoint['handler'] =>
+  (campo: 'seguindo' | 'avisarParecer' | 'seguirParlamentares', chave: 'proposicao' | 'parlamentar' = 'proposicao'): Endpoint['handler'] =>
   async (req) => {
     const a = await assinanteDaSessao(req)
     if (!a) return json({ ok: false, erro: 'Entre para continuar.' }, 401)
     const b = await corpo(req)
-    const id = Number(b.proposicao)
+    const id = Number(b[chave])
     if (!Number.isInteger(id)) return json({ ok: false }, 400)
     const atual = ((a[campo] as unknown[]) || []).map((x) => (x && typeof x === 'object' ? (x as { id: number }).id : x)) as number[]
     const ligar = b.ligar !== false
@@ -239,6 +243,7 @@ const listaDaConta =
 
 const seguir: Endpoint = { path: '/conta/seguir', method: 'post', handler: listaDaConta('seguindo') }
 const avisar: Endpoint = { path: '/conta/avisar', method: 'post', handler: listaDaConta('avisarParecer') }
+const seguirParlamentar: Endpoint = { path: '/conta/seguir-parlamentar', method: 'post', handler: listaDaConta('seguirParlamentares', 'parlamentar') }
 
 const meusDados: Endpoint = {
   path: '/conta/dados',
@@ -343,4 +348,4 @@ const pedidoPublico: Endpoint = {
   },
 }
 
-export const endpointsSite: Endpoint[] = [inscricao, entrar, confirmar, sessao, sair, conta, seguir, avisar, meusDados, excluir, descadastrarGet, descadastrarPost, baixar, pedidoPublico]
+export const endpointsSite: Endpoint[] = [inscricao, entrar, confirmar, sessao, sair, conta, seguir, avisar, seguirParlamentar, meusDados, excluir, descadastrarGet, descadastrarPost, baixar, pedidoPublico]

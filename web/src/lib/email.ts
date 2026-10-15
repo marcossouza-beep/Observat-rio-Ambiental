@@ -15,17 +15,34 @@ export function linkDescadastro(assinanteId: number | string) {
   return `${SITE_URL}/api/descadastrar?t=${encodeURIComponent(tokenDescadastro(assinanteId))}`
 }
 
+export type ItemEmail = { texto: string; url?: string; detalhe?: string }
+export type SecaoEmail = { titulo: string; itens: ItemEmail[] }
+
 /** Monta o HTML (sóbrio, legível em qualquer leitor de e-mail) e o texto puro. */
-export function modelo(a: { titulo: string; paragrafos: string[]; botao?: { texto: string; url: string }; descadastro?: string }) {
+export function modelo(a: { titulo: string; paragrafos: string[]; secoes?: SecaoEmail[]; botao?: { texto: string; url: string }; descadastro?: string; motivo?: string }) {
   const p = a.paragrafos.map((t) => `<p style="margin:0 0 14px;line-height:1.55">${esc(t)}</p>`).join('')
+  const secoes = (a.secoes || [])
+    .filter((s) => s.itens.length)
+    .map(
+      (s) =>
+        `<h2 style="font-size:16px;margin:24px 0 10px">${esc(s.titulo)}</h2>` +
+        s.itens
+          .map(
+            (i) =>
+              `<p style="margin:0 0 12px;line-height:1.5">${i.url ? `<a href="${esc(i.url)}" style="color:#23864F;font-weight:600">${esc(i.texto)}</a>` : `<b>${esc(i.texto)}</b>`}${i.detalhe ? `<br><span style="color:#66726B;font-size:14px">${esc(i.detalhe)}</span>` : ''}</p>`,
+          )
+          .join(''),
+    )
+    .join('')
   const botao = a.botao
     ? `<p style="margin:20px 0"><a href="${esc(a.botao.url)}" style="background:#2FA765;color:#fff;text-decoration:none;padding:11px 18px;border-radius:999px;font-weight:600;display:inline-block">${esc(a.botao.texto)}</a></p><p style="font-size:13px;color:#66726B;word-break:break-all">Ou copie o endereço: ${esc(a.botao.url)}</p>`
     : ''
   const rodape = a.descadastro
-    ? `<p style="font-size:12px;color:#9AA59F;margin-top:28px">Você recebe este e-mail porque se inscreveu em ${esc(NOME_SITE)}. <a href="${esc(a.descadastro)}" style="color:#66726B">Não quero mais receber e-mails</a>.</p>`
+    ? `<p style="font-size:12px;color:#9AA59F;margin-top:28px">${esc(a.motivo || `Você recebe este e-mail porque se inscreveu em ${NOME_SITE}.`)} Ajuste o que recebe em <a href="${esc(`${SITE_URL}/conta`)}" style="color:#66726B">Minha conta</a> ou <a href="${esc(a.descadastro)}" style="color:#66726B">pare de receber e-mails</a>.</p>`
     : ''
-  const html = `<!doctype html><html lang="pt-BR"><body style="margin:0;background:#FBFCFB;font-family:Arial,Helvetica,sans-serif;color:#16201A"><div style="max-width:560px;margin:0 auto;padding:28px 20px"><p style="font-weight:800;font-size:17px;margin:0 0 22px">${esc(NOME_SITE)}</p><h1 style="font-size:21px;margin:0 0 16px">${esc(a.titulo)}</h1>${p}${botao}${rodape}</div></body></html>`
-  const texto = [a.titulo, '', ...a.paragrafos, ...(a.botao ? ['', `${a.botao.texto}: ${a.botao.url}`] : []), ...(a.descadastro ? ['', `Não quero mais receber: ${a.descadastro}`] : [])].join('\n')
+  const html = `<!doctype html><html lang="pt-BR"><body style="margin:0;background:#FBFCFB;font-family:Arial,Helvetica,sans-serif;color:#16201A"><div style="max-width:560px;margin:0 auto;padding:28px 20px"><p style="font-weight:800;font-size:17px;margin:0 0 22px">${esc(NOME_SITE)}</p><h1 style="font-size:21px;margin:0 0 16px">${esc(a.titulo)}</h1>${p}${secoes}${botao}${rodape}</div></body></html>`
+  const textoSecoes = (a.secoes || []).filter((s) => s.itens.length).flatMap((s) => ['', s.titulo.toUpperCase(), ...s.itens.map((i) => `- ${i.texto}${i.detalhe ? ` (${i.detalhe})` : ''}${i.url ? `: ${i.url}` : ''}`)])
+  const texto = [a.titulo, '', ...a.paragrafos, ...textoSecoes, ...(a.botao ? ['', `${a.botao.texto}: ${a.botao.url}`] : []), ...(a.descadastro ? ['', `Ajustar o que recebo: ${SITE_URL}/conta`, `Não quero mais receber: ${a.descadastro}`] : [])].join('\n')
   return { html, texto }
 }
 

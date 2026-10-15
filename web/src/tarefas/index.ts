@@ -4,6 +4,7 @@
 import type { Payload } from 'payload'
 import { enfileirar, enviarRegistro, linkDescadastro, modelo } from '../lib/email'
 import { situacaoFonte } from '../lib/fontes'
+import { alertasDiarios, resumoSemanal } from './automaticos'
 
 type Resumo = Record<string, unknown>
 
@@ -142,4 +143,6 @@ export const TAREFAS: Record<string, (p: Payload) => Promise<Resumo>> = {
   'enviar-fila': enviarFila,
   'quinze-minutos': quinzeMinutos,
   limpeza: limpar,
+  'alertas-diarios': alertasDiarios,
+  'resumo-semanal': resumoSemanal,
 }

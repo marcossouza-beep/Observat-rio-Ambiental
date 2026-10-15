@@ -55,7 +55,23 @@ async function parlamentar(payload: Payload, [nome, partido, uf]: string[], casa
   return c.id
 }
 
+/** Votos fictícios dos parlamentares da demonstração nas votações federais (página "Como votou"). */
+async function votosDeExemplo(payload: Payload) {
+  const parl = await payload.find({ collection: 'parlamentares', where: { chaveOrigem: { like: 'demo:' }, casa: { in: ['camara', 'senado'] } }, limit: 50, depth: 0, sort: 'nome' })
+  const props = await payload.find({ collection: 'proposicoes', where: { chaveOrigem: { like: 'demo:' }, esfera: { equals: 'federal' } }, limit: 50, depth: 0 })
+  const votacoes = await payload.find({ collection: 'votacoes', where: { proposicao: { in: props.docs.map((p) => p.id) } }, limit: 50, depth: 0 })
+  const padrao = ['sim', 'nao', 'sim', 'ausente', 'nao', 'sim'] as const
+  for (const [i, v] of votacoes.docs.entries()) {
+    for (const [j, p] of parl.docs.entries()) {
+      const existe = await payload.count({ collection: 'votos', where: { votacao: { equals: v.id }, parlamentar: { equals: p.id } } })
+      if (!existe.totalDocs) await payload.create({ collection: 'votos', data: { votacao: v.id, parlamentar: p.id, voto: padrao[(i + j) % padrao.length] } })
+    }
+  }
+}
+
 async function limpar(payload: Payload) {
+  const demoParl = await payload.find({ collection: 'parlamentares', where: { chaveOrigem: { like: 'demo:' } }, limit: 200, depth: 0 })
+  if (demoParl.docs.length) await payload.delete({ collection: 'votos', where: { parlamentar: { in: demoParl.docs.map((p) => p.id) } } })
   const props = await payload.find({ collection: 'proposicoes', where: { chaveOrigem: { like: 'demo:' } }, limit: 500, depth: 0 })
   const ids = props.docs.map((d) => d.id)
   if (ids.length) {
@@ -160,6 +176,7 @@ async function criar(payload: Payload) {
   const pant = await payload.find({ collection: 'biomas', where: { nome: { equals: 'Pantanal' } }, limit: 1 })
   if (pant.docs[0] && !pant.docs[0].textoAbertura)
     await payload.update({ collection: 'biomas', id: pant.docs[0].id, data: { textoAbertura: 'Maior planície alagável do mundo. O fogo, a pecuária e o zoneamento das áreas alagáveis dominam a agenda.' } })
+  await votosDeExemplo(payload)
   payload.logger.info(`Demonstração criada: ${n} proposições novas.`)
 }
 

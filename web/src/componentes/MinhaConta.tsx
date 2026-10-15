@@ -2,16 +2,22 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { Chips, SeletorUF } from './FormInscricao'
 import { postar, useSessao } from './useSessao'
 
 type Lei = { id: number; rotulo: string; titulo?: string; slug: string }
+type Item = { id: number; nome: string }
+type Parlamentar = { id: number; nome: string; partido?: string; uf?: string; slug: string }
 
-export function MinhaConta({ subperfis, perguntas }: { subperfis: Record<string, string[]>; perguntas: Record<string, string> }) {
+export function MinhaConta({ subperfis, perguntas, temas, biomas }: { subperfis: Record<string, string[]>; perguntas: Record<string, string>; temas: Item[]; biomas: Item[] }) {
   const { sessao, recarregar } = useSessao()
   const router = useRouter()
   const [leis, setLeis] = useState<Lei[]>([])
+  const [parlamentares, setParlamentares] = useState<Parlamentar[]>([])
   const [curso, setCurso] = useState('')
   const [confirmar, setConfirmar] = useState(false)
+  // A chave muda na hora; o salvamento vem em seguida
+  const [marcado, setMarcado] = useState<Record<string, boolean>>({})
 
   useEffect(() => {
     if (sessao && !sessao.logado) router.replace('/entrar?para=/conta')
@@ -21,6 +27,14 @@ export function MinhaConta({ subperfis, perguntas }: { subperfis: Record<string,
       fetch(`/api/proposicoes?${q}&depth=0&limit=100&select[rotulo]=true&select[titulo]=true&select[slug]=true`)
         .then((r) => r.json())
         .then((j) => setLeis(j.docs || []))
+        .catch(() => {})
+    }
+    const ps = sessao?.seguirParlamentares || []
+    if (ps.length) {
+      const q = ps.map((id, i) => `where[id][in][${i}]=${id}`).join('&')
+      fetch(`/api/parlamentares?${q}&depth=0&limit=100&select[nome]=true&select[partido]=true&select[uf]=true&select[slug]=true`)
+        .then((r) => r.json())
+        .then((j) => setParlamentares(j.docs || []))
         .catch(() => {})
     }
   }, [sessao, router])
@@ -37,10 +51,18 @@ export function MinhaConta({ subperfis, perguntas }: { subperfis: Record<string,
         {titulo}
         <small>{desc}</small>
       </span>
-      <input type="checkbox" checked={!!sessao[k]} onChange={(e) => salvar({ [k]: e.target.checked })} />
+      <input
+        type="checkbox"
+        checked={marcado[k] ?? !!sessao[k]}
+        onChange={(e) => {
+          setMarcado({ ...marcado, [k]: e.target.checked })
+          salvar({ [k]: e.target.checked })
+        }}
+      />
     </label>
   )
   const seguindo = leis.filter((l) => sessao.seguindo?.includes(l.id))
+  const seguidos = parlamentares.filter((p) => sessao.seguirParlamentares?.includes(p.id))
   const avisar = leis.filter((l) => sessao.avisar?.includes(l.id))
 
   return (
@@ -78,10 +100,47 @@ export function MinhaConta({ subperfis, perguntas }: { subperfis: Record<string,
         ) : null}
       </section>
       <section className="caixa">
-        <h2>Avisos por e-mail</h2>
+        <h2>E-mails</h2>
         <div>
           {chave('aceitaEmails', 'Receber e-mails do observatório', 'Aviso no dia em que sai o parecer de uma lei que você segue ou pediu, e comunicados do autor')}
+          {marcado.aceitaEmails ?? sessao.aceitaEmails ? (
+            <>
+              {chave('alertas', 'Alerta diário', 'No fim do dia, quando uma lei que você segue entrar na pauta, for votada, sancionada ou vetada')}
+              {chave('resumoSemanal', 'Resumo semanal', 'Às sextas: pareceres da semana, o que vai a voto e o que andou nos seus temas, na sua região e com os parlamentares que você segue')}
+            </>
+          ) : (
+            <p className="nota-fonte">Com os e-mails desligados, você não recebe alerta nem resumo.</p>
+          )}
         </div>
+      </section>
+      <section className="caixa form">
+        <h2>Seus interesses</h2>
+        <p className="nota-fonte">Usados no resumo semanal (“Do seu interesse” e “Na sua região”).</p>
+        <SeletorUF rotulo="Seu estado" valor={sessao.uf || ''} vazio="Prefiro não informar" mudar={(uf) => salvar({ uf })} />
+        <Chips titulo="Temas" itens={temas} marcados={sessao.temas || []} alternar={(id) => salvar({ temas: (sessao.temas || []).includes(id) ? (sessao.temas || []).filter((x) => x !== id) : [...(sessao.temas || []), id] })} />
+        <Chips titulo="Biomas" itens={biomas} marcados={sessao.biomas || []} alternar={(id) => salvar({ biomas: (sessao.biomas || []).includes(id) ? (sessao.biomas || []).filter((x) => x !== id) : [...(sessao.biomas || []), id] })} />
+      </section>
+      <section className="caixa">
+        <h2>Parlamentares que você segue</h2>
+        {seguidos.length ? (
+          <ul style={{ paddingLeft: '1.1em', display: 'grid', gap: 6 }}>
+            {seguidos.map((p) => (
+              <li key={p.id}>
+                <Link href={`/parlamentares/${p.slug}`}>
+                  {p.nome}
+                  {p.partido ? ` (${p.partido}${p.uf ? `-${p.uf}` : ''})` : ''}
+                </Link>{' '}
+                <button type="button" className="link-btn" onClick={async () => { await postar('/api/conta/seguir-parlamentar', { parlamentar: p.id, ligar: false }); recarregar() }}>
+                  · deixar de seguir
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="nota-fonte">
+            Use “Seguir” na página de um parlamentar (em <Link href="/parlamentares">Parlamentares</Link>). Os votos dele em propostas ambientais entram no seu resumo semanal.
+          </p>
+        )}
       </section>
       <section className="caixa">
         <h2>Leis que você segue</h2>

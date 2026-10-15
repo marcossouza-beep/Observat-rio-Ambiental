@@ -14,6 +14,9 @@ export type Sessao = {
   aceitaEmails?: boolean
   seguindo?: number[]
   avisar?: number[]
+  temas?: number[]
+  biomas?: number[]
+  seguirParlamentares?: number[]
   imprensa?: string | null
 }
 

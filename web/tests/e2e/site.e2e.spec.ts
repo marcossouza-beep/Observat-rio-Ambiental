@@ -101,4 +101,16 @@ test.describe('Site público', () => {
     }
     await ctx.close()
   })
+
+  test('parlamentares: lista, página com votos e método, link a partir da lei', async ({ page }) => {
+    await page.goto('/parlamentares')
+    await expect(page.getByRole('heading', { name: 'Parlamentares', level: 1 })).toBeVisible()
+    await page.getByRole('link', { name: /Dep\. Exemplo F/ }).click()
+    await expect(page.getByRole('heading', { name: 'Dep. Exemplo F', level: 1 })).toBeVisible()
+    await expect(page.locator('#votos')).toContainText('votou no sentido da proteção')
+    await expect(page.locator('#votos')).toContainText('Licenciamento simplificado')
+    await expect(page.locator('#metodo')).toContainText('não avalia a pessoa')
+    await page.goto('/leis/pl-1234-2026-licenciamento-simplificado-para-fazendas-de-medio-porte')
+    await expect(page.locator('#quem').getByRole('link', { name: 'Dep. Exemplo F' })).toHaveAttribute('href', '/parlamentares/dep-exemplo-f-partido-go')
+  })
 })

@@ -292,3 +292,47 @@ a:hover .ico-l { transform: translateX(-3px); }
 @media (max-width: 640px) { .beneficios .lead { display: block; color: var(--green-dk); font-weight: 600; } }
 .leis-citadas { display: flex; flex-wrap: wrap; gap: 6px 14px; }
 .leis-citadas a { color: var(--green-dk); text-decoration: underline; text-underline-offset: 3px; font-size: 0.93rem; }
+.chave input[type='checkbox'] { width: 20px; height: 20px; flex: none; accent-color: var(--green); }
+
+/* parlamentares (Fase 3) */
+.parl-cab { grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 16px; }
+.parl-foto { position: relative; width: 88px; height: 88px; }
+.parl-foto > .parl-img, .parl-foto > span { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; background: var(--green-50); color: var(--green-dk); display: grid; place-items: center; font-weight: 800; font-size: 1.6rem; }
+.parl-flag { position: absolute; right: -2px; bottom: 4px; width: 26px; height: 18px; box-shadow: 0 0 0 2px var(--bg); border-radius: 3px; }
+.parl-txt h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+.parl-txt p { color: var(--gray); }
+.parl-numeros { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
+.parl-numeros div { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; display: grid; gap: 2px; }
+.parl-numeros b { font-size: 1.5rem; font-variant-numeric: tabular-nums; }
+.parl-numeros span { font-size: 0.82rem; color: var(--gray); }
+.barra-sentido, .barra-carater { display: flex; height: 14px; border-radius: 999px; overflow: hidden; background: var(--line); }
+.barra-sentido i, .barra-carater i { display: block; height: 100%; }
+.contra, .c-malefico { background: var(--pol-neg); }
+.semvoto, .c-neutro { background: var(--pol-mid); }
+.afavor, .c-benefico { background: var(--pol-pos); }
+.c-enfraquece_indiretamente { background: var(--pol-ind); }
+.legenda-sentido { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.85rem; color: var(--gray); }
+.legenda-sentido i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; vertical-align: -1px; }
+.votos-lista { display: grid; }
+.votos-lista > div { display: grid; grid-template-columns: 84px minmax(0, 1fr) 76px minmax(0, 0.9fr); gap: 12px; align-items: center; padding: 10px 0; border-top: 1px solid var(--line); font-size: 0.92rem; }
+.votos-lista > div:first-child { border-top: 0; }
+.vl-data { color: var(--gray); font-size: 0.84rem; font-variant-numeric: tabular-nums; }
+.vl-lei a { font-weight: 600; }
+.vl-lei small, .vl-sentido small { display: block; color: var(--soft); font-size: 0.8rem; }
+.vl-voto { font-weight: 700; }
+.vl-sentido { display: grid; gap: 3px; justify-items: start; }
+.vl-sentido small.s-a_favor { color: var(--pol-pos); font-weight: 600; }
+.vl-sentido small.s-contra { color: var(--pol-neg); font-weight: 600; }
+.parl-grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-top: 18px; }
+.parl-item { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 10px; align-items: center; background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; }
+.parl-item:hover { border-color: var(--green); }
+.parl-item small { display: flex; align-items: center; gap: 4px; color: var(--gray); font-size: 0.8rem; }
+.parl-mini img, .parl-mini > span { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; background: var(--green-50); color: var(--green-dk); display: grid; place-items: center; font-weight: 700; }
+@media (max-width: 640px) {
+  .parl-cab { grid-template-columns: auto minmax(0, 1fr); }
+  .parl-cab > :last-child { grid-column: 1 / -1; justify-self: start; }
+  .parl-numeros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .votos-lista > div { grid-template-columns: 70px minmax(0, 1fr) auto; }
+  .vl-sentido { grid-column: 2 / -1; }
+}
+.linhas span a { color: var(--green-dk); text-decoration: underline; text-decoration-color: var(--green-100); text-underline-offset: 3px; }

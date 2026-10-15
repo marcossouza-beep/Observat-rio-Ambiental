@@ -6,7 +6,7 @@ export const revalidate = 3600
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const e = await enderecosParaSitemap()
-  const fixos = ['/', '/leis', '/leis?esfera=federal', '/leis?esfera=estadual', '/pareceres', '/artigos', '/temas'].map((c) => ({ url: url(c), changeFrequency: 'daily' as const }))
+  const fixos = ['/', '/leis', '/leis?esfera=federal', '/leis?esfera=estadual', '/pareceres', '/artigos', '/temas', '/parlamentares'].map((c) => ({ url: url(c), changeFrequency: 'daily' as const }))
   const item = (pref: string) => (d: { slug?: string | null; updatedAt: string }) => ({ url: url(`${pref}/${d.slug}`), lastModified: d.updatedAt })
   return [
     ...fixos,
@@ -16,5 +16,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...e.biomas.filter((d) => d.slug).map(item('/biomas')),
     ...e.artigos.filter((d) => d.slug).map(item('/artigos')),
     ...e.autores.filter((d) => d.slug).map(item('/autores')),
+    ...e.parlamentares.filter((d) => d.slug).map(item('/parlamentares')),
   ]
 }

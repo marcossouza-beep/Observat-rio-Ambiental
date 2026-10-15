@@ -139,9 +139,11 @@ export interface Config {
   fallbackLocale: null;
   globals: {
     ajustes: Ajuste;
+    'emails-automaticos': EmailsAutomatico;
   };
   globalsSelect: {
     ajustes: AjustesSelect<false> | AjustesSelect<true>;
+    'emails-automaticos': EmailsAutomaticosSelect<false> | EmailsAutomaticosSelect<true>;
   };
   locale: null;
   widgets: {
@@ -811,6 +813,7 @@ export interface Assinante {
   temas?: (number | Tema)[] | null;
   biomas?: (number | Bioma)[] | null;
   seguindo?: (number | Proposicao)[] | null;
+  seguirParlamentares?: (number | Parlamentar)[] | null;
   avisarParecer?: (number | Proposicao)[] | null;
   aceitaEmails?: boolean | null;
   alertas?: boolean | null;
@@ -1520,6 +1523,7 @@ export interface AssinantesSelect<T extends boolean = true> {
   temas?: T;
   biomas?: T;
   seguindo?: T;
+  seguirParlamentares?: T;
   avisarParecer?: T;
   aceitaEmails?: T;
   alertas?: T;
@@ -1822,6 +1826,33 @@ export interface Ajuste {
   createdAt?: string | null;
 }
 /**
+ * Alerta diário (19h) para quem segue leis e resumo semanal (sexta, 17h).
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "emails-automaticos".
+ */
+export interface EmailsAutomatico {
+  id: number;
+  resumo?: {
+    /**
+     * Opcional. Entra no topo do resumo desta semana e é apagada depois do envio. Se ficar vazia, o resumo sai assim mesmo.
+     */
+    nota?: string | null;
+    /**
+     * Vale só para a próxima sexta.
+     */
+    pular?: boolean | null;
+    ultimoEnvio?: string | null;
+    ultimoTotal?: number | null;
+  };
+  alertas?: {
+    ultimoEnvio?: string | null;
+    ultimoTotal?: number | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ajustes_select".
  */
@@ -1848,6 +1879,29 @@ export interface AjustesSelect<T extends boolean = true> {
     | {
         email?: T;
         telegramChatId?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "emails-automaticos_select".
+ */
+export interface EmailsAutomaticosSelect<T extends boolean = true> {
+  resumo?:
+    | T
+    | {
+        nota?: T;
+        pular?: T;
+        ultimoEnvio?: T;
+        ultimoTotal?: T;
+      };
+  alertas?:
+    | T
+    | {
+        ultimoEnvio?: T;
+        ultimoTotal?: T;
       };
   updatedAt?: T;
   createdAt?: T;

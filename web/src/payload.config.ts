@@ -22,6 +22,7 @@ import { Compromissos, Correcoes, Pedidos } from './collections/Trabalho'
 import { Users } from './collections/Users'
 import { endpoints } from './endpoints'
 import { Ajustes } from './globals/Ajustes'
+import { EmailsAutomaticos } from './globals/EmailsAutomaticos'
 import { migrations } from './migrations'
 
 /** Datas no formato brasileiro em todos os campos do painel. */
@@ -94,7 +95,7 @@ const config: Config = {
     Materiais,
     Users,
   ],
-  globals: [Ajustes],
+  globals: [Ajustes, EmailsAutomaticos],
   endpoints,
   editor: lexicalEditor(),
   // E-mail pelo Resend em produção; sem chave, os e-mails aparecem no console (desenvolvimento e testes).

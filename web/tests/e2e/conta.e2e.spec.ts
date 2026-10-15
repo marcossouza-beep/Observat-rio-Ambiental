@@ -60,6 +60,8 @@ test.describe('Conta do inscrito', () => {
     const a = (await payload.find({ collection: 'assinantes', where: { email: { equals: EMAIL } } })).docs[0]
     expect(a.subperfil).toBe('Ministério Público')
     expect(a.confirmadoEm).toBeFalsy()
+    // Alerta diário e resumo semanal: opções visíveis e marcadas na inscrição
+    expect([a.alertas, a.resumoSemanal]).toEqual([true, true])
 
     const link = await ultimoLink(EMAIL)
     expect(link).toBeTruthy()
@@ -82,6 +84,24 @@ test.describe('Conta do inscrito', () => {
     await expect(page.getByRole('button', { name: '✓ Seguindo esta lei' })).toBeVisible()
     await page.goto('/conta')
     await expect(page.getByText('PL nº 140/2026').first()).toBeVisible()
+  })
+
+  test('seguir parlamentar; escolher e-mails e interesses na conta', async () => {
+    await page.goto('/parlamentares/dep-exemplo-f-partido-go')
+    await expect(page.getByRole('heading', { name: 'Como votou' })).toBeVisible()
+    await page.getByRole('button', { name: 'Seguir', exact: true }).click()
+    await expect(page.getByRole('button', { name: '✓ Seguindo' })).toBeVisible()
+
+    await page.goto('/conta')
+    await expect(page.locator('section').filter({ has: page.getByRole('heading', { name: 'Parlamentares que você segue' }) })).toContainText('Dep. Exemplo F')
+    await page.getByLabel(/Resumo semanal/).uncheck()
+    await page.locator('section').filter({ has: page.getByRole('heading', { name: 'Seus interesses' }) }).getByRole('button', { name: 'Licenciamento', exact: true }).click()
+    await expect(page.locator('section').filter({ has: page.getByRole('heading', { name: 'Seus interesses' }) }).getByRole('button', { name: 'Licenciamento', exact: true })).toHaveAttribute('aria-pressed', 'true')
+    const a = (await payload.find({ collection: 'assinantes', where: { email: { equals: EMAIL } }, depth: 0 })).docs[0]
+    expect(a.resumoSemanal).toBe(false)
+    expect(a.alertas).toBe(true)
+    expect((a.temas || []).length).toBe(1)
+    expect((a.seguirParlamentares || []).length).toBe(1)
   })
 
   test('download de material: só para inscritos confirmados', async ({ browser }) => {

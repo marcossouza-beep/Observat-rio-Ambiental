@@ -47,13 +47,14 @@ export const Assinantes: CollectionConfig = {
     { name: 'temas', type: 'relationship', relationTo: 'temas', hasMany: true },
     { name: 'biomas', type: 'relationship', relationTo: 'biomas', hasMany: true },
     { name: 'seguindo', label: 'Leis que segue', type: 'relationship', relationTo: 'proposicoes', hasMany: true },
+    { name: 'seguirParlamentares', label: 'Parlamentares que segue', type: 'relationship', relationTo: 'parlamentares', hasMany: true },
     { name: 'avisarParecer', label: 'Pediu aviso de parecer', type: 'relationship', relationTo: 'proposicoes', hasMany: true },
     {
       type: 'row',
       fields: [
         { name: 'aceitaEmails', label: 'Aceita e-mails do observatório', type: 'checkbox', defaultValue: true },
-        { name: 'alertas', label: 'Alertas de tramitação', type: 'checkbox', defaultValue: true },
-        { name: 'resumoSemanal', type: 'checkbox', defaultValue: true },
+        { name: 'alertas', label: 'Alerta diário das leis que segue', type: 'checkbox', defaultValue: false },
+        { name: 'resumoSemanal', label: 'Resumo semanal', type: 'checkbox', defaultValue: false },
       ],
     },
     { name: 'consentimentoEm', type: 'date', required: true },

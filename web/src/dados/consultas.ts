@@ -137,15 +137,16 @@ export async function artigoPorSlug(slug: string): Promise<Artigo | null> {
 /** Para o sitemap: só o que é público e indexável. */
 export async function enderecosParaSitemap() {
   const payload = await payloadSite()
-  const [leis, pareceres, temas, biomas, artigos, autores] = await Promise.all([
+  const [leis, pareceres, temas, biomas, artigos, autores, parlamentares] = await Promise.all([
     payload.find({ collection: 'proposicoes', ...publico, limit: 5000, depth: 0, select: { slug: true, updatedAt: true } }),
     payload.find({ collection: 'pareceres', ...publico, where: { 'seo.indexar': { not_equals: false } }, limit: 5000, depth: 0, select: { slug: true, updatedAt: true } }),
     payload.find({ collection: 'temas', ...publico, where: { textoAbertura: { exists: true } }, limit: 200, depth: 0, select: { slug: true, updatedAt: true, textoAbertura: true } }),
     payload.find({ collection: 'biomas', ...publico, where: { textoAbertura: { exists: true } }, limit: 200, depth: 0, select: { slug: true, updatedAt: true, textoAbertura: true } }),
     payload.find({ collection: 'artigos', ...publico, limit: 2000, depth: 0, select: { slug: true, updatedAt: true } }),
     payload.find({ collection: 'autores', ...publico, limit: 100, depth: 0, select: { slug: true, updatedAt: true } }),
+    listarParlamentares(),
   ])
-  return { leis: leis.docs, pareceres: pareceres.docs, temas: temas.docs.filter((t) => t.textoAbertura), biomas: biomas.docs.filter((b) => b.textoAbertura), artigos: artigos.docs, autores: autores.docs }
+  return { leis: leis.docs, pareceres: pareceres.docs, temas: temas.docs.filter((t) => t.textoAbertura), biomas: biomas.docs.filter((b) => b.textoAbertura), artigos: artigos.docs, autores: autores.docs, parlamentares: parlamentares.map((p) => ({ slug: p.slug, updatedAt: p.updatedAt })) }
 }
 
 export async function autorPorSlug(slug: string) {
@@ -155,4 +156,71 @@ export async function autorPorSlug(slug: string) {
   if (!autor) return null
   const pareceres = await payload.find({ collection: 'pareceres', ...publico, where: { autor: { equals: autor.id } }, sort: '-publicadoEm', limit: 50, depth: 1 })
   return { autor, pareceres: pareceres.docs }
+}
+
+const idDe = (v: unknown) => (v && typeof v === 'object' ? (v as { id: number }).id : (v as number))
+
+/** Página do parlamentar: votos em propostas públicas (com o caráter do parecer), autorias, relatorias e emendas. */
+export async function parlamentarPorSlug(slug: string) {
+  const payload = await payloadSite()
+  const r = await payload.find({ collection: 'parlamentares', ...publico, where: { slug: { equals: slug } }, limit: 1, depth: 0 })
+  const parlamentar = r.docs[0]
+  if (!parlamentar) return null
+  const [votos, autoriasR, emendasR] = await Promise.all([
+    payload.find({ collection: 'votos', ...publico, where: { parlamentar: { equals: parlamentar.id } }, limit: 3000, depth: 0, pagination: false }),
+    payload.find({ collection: 'proposicoes', ...publico, where: { 'autoria.parlamentar': { equals: parlamentar.id } }, limit: 500, depth: 0, sort: '-ultimaMovimentacao' }),
+    payload.find({ collection: 'emendas', ...publico, where: { parlamentar: { equals: parlamentar.id } }, limit: 500, depth: 0 }),
+  ])
+  const votacoes = votos.docs.length
+    ? await payload.find({ collection: 'votacoes', ...publico, where: { id: { in: votos.docs.map((v) => idDe(v.votacao)) } }, limit: 3000, depth: 0, pagination: false })
+    : { docs: [] }
+  const propIds = [...new Set([...votacoes.docs.map((v) => idDe(v.proposicao)), ...emendasR.docs.map((e) => idDe(e.proposicao))])]
+  // Só propostas públicas (a regra de acesso já filtra as da triagem)
+  const props = propIds.length ? await payload.find({ collection: 'proposicoes', ...publico, where: { id: { in: propIds } }, limit: propIds.length, depth: 0 }) : { docs: [] }
+  const leis = new Map<number, Proposicao>([...props.docs, ...autoriasR.docs].map((p) => [p.id, p]))
+  const todas = [...leis.keys()]
+  const pareceres = todas.length ? await payload.find({ collection: 'pareceres', ...publico, where: { proposicao: { in: todas } }, limit: todas.length, depth: 0 }) : { docs: [] }
+  const parecerDe = new Map(pareceres.docs.map((p) => [idDe(p.proposicao), p]))
+  const votacaoDe = new Map(votacoes.docs.map((v) => [v.id, v]))
+
+  const listaVotos = votos.docs
+    .map((v) => {
+      const vot = votacaoDe.get(idDe(v.votacao))
+      const lei = vot ? leis.get(idDe(vot.proposicao)) : undefined
+      if (!vot || !lei) return null
+      const par = parecerDe.get(lei.id)
+      return { id: v.id, voto: v.voto, data: vot.data, orgao: vot.orgao, descricao: vot.descricao, resultado: vot.resultado, lei, carater: (par?.carater as Parecer['carater']) || null, parecerSlug: par?.slug }
+    })
+    .filter((x): x is NonNullable<typeof x> => !!x)
+    .sort((a, b) => b.data.localeCompare(a.data))
+
+  const papelDe = (p: Proposicao) => (p.autoria || []).filter((a) => idDe(a.parlamentar) === parlamentar.id).map((a) => a.papel || 'autor')
+  const autorias = autoriasR.docs.filter((p) => papelDe(p).some((x) => x !== 'relator'))
+  const relatorias = autoriasR.docs.filter((p) => papelDe(p).includes('relator'))
+  const emendas = emendasR.docs.filter((e) => leis.has(idDe(e.proposicao))).map((e) => ({ ...e, lei: leis.get(idDe(e.proposicao))! }))
+  const caraterDe = (id: number) => (parecerDe.get(id)?.carater as Parecer['carater']) || null
+  return { parlamentar, votos: listaVotos, autorias, relatorias, emendas, caraterDe: Object.fromEntries(todas.map((id) => [id, caraterDe(id)])) as Record<number, Parecer['carater'] | null> }
+}
+
+/** Parlamentares com atuação em propostas públicas (autoria, relatoria ou voto). */
+export async function listarParlamentares(f: { casa?: string; uf?: string } = {}) {
+  const payload = await payloadSite()
+  const props = await payload.find({ collection: 'proposicoes', ...publico, limit: 5000, depth: 0, pagination: false, select: { autoria: true } })
+  const atuacao = new Map<number, { votos: number; autorias: number }>()
+  const soma = (id: number, k: 'votos' | 'autorias') => atuacao.set(id, { votos: 0, autorias: 0, ...atuacao.get(id), [k]: (atuacao.get(id)?.[k] || 0) + 1 })
+  for (const p of props.docs) for (const a of p.autoria || []) if (a.parlamentar) soma(idDe(a.parlamentar), 'autorias')
+  const ids = props.docs.map((p) => p.id)
+  if (ids.length) {
+    const votacoes = await payload.find({ collection: 'votacoes', ...publico, where: { proposicao: { in: ids } }, limit: 5000, depth: 0, pagination: false, select: { data: true } })
+    if (votacoes.docs.length) {
+      const votos = await payload.find({ collection: 'votos', ...publico, where: { votacao: { in: votacoes.docs.map((v) => v.id) } }, limit: 200000, depth: 0, pagination: false, select: { parlamentar: true } })
+      for (const v of votos.docs) soma(idDe(v.parlamentar), 'votos')
+    }
+  }
+  if (!atuacao.size) return []
+  const where: Where = { id: { in: [...atuacao.keys()] } }
+  if (f.casa) where.casa = { equals: f.casa }
+  if (f.uf) where.uf = { equals: f.uf.toUpperCase() }
+  const r = await payload.find({ collection: 'parlamentares', ...publico, where, limit: 2000, depth: 0, sort: 'nome', pagination: false })
+  return r.docs.map((p) => ({ ...p, ...atuacao.get(p.id)! }))
 }

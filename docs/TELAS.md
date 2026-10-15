@@ -79,7 +79,11 @@ Ordem dos blocos, de cima para baixo:
 
 Proposições seguidas, temas e regiões assinados, preferências de e-mail, histórico de downloads, exportar e excluir meus dados. **[F3]**
 
+> **Construída em `/conta`:** e-mails (receber e-mails, alerta diário, resumo semanal), interesses (estado, temas, biomas), leis seguidas, aguardando parecer, parlamentares seguidos, baixar e excluir dados.
+
 ## A6. Página de parlamentar **[F3]**
+
+> **Construída em `/parlamentares/[nome]`** (com a lista em `/parlamentares`). Comissões ficam para depois (a coleta ainda não traz a composição das comissões).
 
 Acesso pelos cartões de autor e relator, pelos autores de emendas e pela lista "Parlamentares" em Leis federais.
 

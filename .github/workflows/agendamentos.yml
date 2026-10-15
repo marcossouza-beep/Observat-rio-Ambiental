@@ -7,10 +7,12 @@ on:
     - cron: '7 * * * *' # verificação: a cada hora
     - cron: '*/15 * * * *' # pareceres agendados, comunicados e fila de e-mails: a cada 15 min
     - cron: '41 6 * * *' # limpeza: todo dia, 03:41 em Brasília
+    - cron: '7 22 * * *' # alerta diário das leis seguidas: 19:07 em Brasília
+    - cron: '53 19 * * 5' # resumo semanal: sexta, 16:53 em Brasília (sai na fila das 17h)
   workflow_dispatch:
     inputs:
       tarefa:
-        description: 'verificacao, quinze-minutos, publicar-agendados, comunicados, enviar-fila ou limpeza'
+        description: 'verificacao, quinze-minutos, publicar-agendados, comunicados, enviar-fila, limpeza, alertas-diarios ou resumo-semanal'
         required: true
         default: verificacao
 
@@ -29,6 +31,8 @@ jobs:
             '7 * * * *') echo "nome=verificacao" >> "$GITHUB_OUTPUT" ;;
             '*/15 * * * *') echo "nome=quinze-minutos" >> "$GITHUB_OUTPUT" ;;
             '41 6 * * *') echo "nome=limpeza" >> "$GITHUB_OUTPUT" ;;
+            '7 22 * * *') echo "nome=alertas-diarios" >> "$GITHUB_OUTPUT" ;;
+            '53 19 * * 5') echo "nome=resumo-semanal" >> "$GITHUB_OUTPUT" ;;
             *) echo "nome=${{ github.event.inputs.tarefa }}" >> "$GITHUB_OUTPUT" ;;
           esac
       - name: Chamar o site
