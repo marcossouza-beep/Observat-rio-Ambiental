@@ -8,7 +8,7 @@
  *      pnpm levantamento TO,PA,AM   (só alguns)
  */
 import https from 'node:https'
-import { mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { USER_AGENT } from '../coleta/http'
 import { ESTADOS, saplPadrao, type Candidato } from './candidatos'
@@ -139,8 +139,17 @@ async function main() {
     }),
   )
   orgaos.sort((a, b) => a.uf.localeCompare(b.uf) || a.orgao.localeCompare(b.orgao))
-  const resultado: Resultado = { geradoEm: new Date().toISOString(), ambiente: process.env.GITHUB_ACTIONS ? 'GitHub Actions' : 'local', orgaos }
   const destino = path.resolve(process.cwd(), 'levantamento/resultado.json')
+  // Rodada parcial (só algumas UFs): troca só esses estados no resultado anterior e mantém os demais
+  if (filtro?.length) {
+    const anterior = await readFile(destino, 'utf8').then((t) => JSON.parse(t) as Resultado).catch(() => null)
+    if (anterior) {
+      const novos = new Set(orgaos.map((o) => `${o.uf}:${o.orgao}`))
+      orgaos.push(...anterior.orgaos.filter((o) => !novos.has(`${o.uf}:${o.orgao}`)))
+      orgaos.sort((a, b) => a.uf.localeCompare(b.uf) || a.orgao.localeCompare(b.orgao))
+    }
+  }
+  const resultado: Resultado = { geradoEm: new Date().toISOString(), ambiente: process.env.GITHUB_ACTIONS ? 'GitHub Actions' : 'local', orgaos }
   await mkdir(path.dirname(destino), { recursive: true })
   await writeFile(destino, JSON.stringify(resultado, null, 1) + '\n')
   console.log(`Gravado em ${destino}: ${orgaos.length} órgãos, ${orgaos.reduce((n, o) => n + o.sondagens.length, 0)} endereços.`)
