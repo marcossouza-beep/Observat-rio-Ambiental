@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-10-15T19:48:41.342Z",
+ "geradoEm": "2026-10-15T23:25:41.501Z",
  "ambiente": "GitHub Actions",
  "orgaos": [
   {
@@ -677,7 +677,7 @@
      "url": "https://www.aleam.gov.br/",
      "papel": "site",
      "status": null,
-     "ms": 10467,
+     "ms": 10494,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     },
     {
@@ -686,7 +686,7 @@
      "status": 200,
      "tipo": "application/json",
      "bytes": 1325,
-     "ms": 1195,
+     "ms": 2700,
      "sinais": {
       "json": true,
       "xml": false,
@@ -715,14 +715,14 @@
      "url": "https://diario.imprensaoficial.am.gov.br/",
      "papel": "diario",
      "status": null,
-     "ms": 1238,
+     "ms": 2052,
      "erro": "ECONNRESET"
     },
     {
      "url": "https://www.imprensaoficial.am.gov.br/",
      "papel": "diario",
      "status": null,
-     "ms": 670,
+     "ms": 836,
      "erro": "ECONNRESET"
     }
    ]
@@ -737,21 +737,21 @@
      "url": "https://www.al.ap.leg.br/",
      "papel": "site",
      "status": null,
-     "ms": 10484,
+     "ms": 10527,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     },
     {
      "url": "https://www.al.ap.gov.br/",
      "papel": "site",
      "status": null,
-     "ms": 10491,
+     "ms": 10495,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     },
     {
      "url": "https://sapl.al.ap.leg.br/api/materia/materialegislativa/?page_size=1",
      "papel": "sapl_padrao",
      "status": null,
-     "ms": 238,
+     "ms": 321,
      "erro": "ENOTFOUND"
     }
    ]
@@ -768,7 +768,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 330347,
-     "ms": 2890,
+     "ms": 2157,
      "sinais": {
       "json": false,
       "xml": false,
@@ -790,14 +790,14 @@
      "papel": "link",
      "de": "https://diofe.portal.ap.gov.br/",
      "status": null,
-     "ms": 2471,
+     "ms": 2103,
      "erro": "read ECONNRESET"
     },
     {
      "url": "https://seadantigo.portal.ap.gov.br/diario-oficial",
      "papel": "diario",
      "status": null,
-     "ms": 2492,
+     "ms": 1965,
      "erro": "read ECONNRESET"
     }
    ]
@@ -1340,21 +1340,21 @@
      "url": "https://www.cl.df.gov.br/",
      "papel": "site",
      "status": null,
-     "ms": 10109,
+     "ms": 10491,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     },
     {
      "url": "https://ple.cl.df.gov.br/",
      "papel": "proposicoes",
      "status": null,
-     "ms": 10491,
+     "ms": 10496,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     },
     {
      "url": "https://sapl.al.df.leg.br/api/materia/materialegislativa/?page_size=1",
      "papel": "sapl_padrao",
      "status": null,
-     "ms": 303,
+     "ms": 458,
      "erro": "ENOTFOUND"
     }
    ]
@@ -1369,14 +1369,14 @@
      "url": "https://www.dodf.df.gov.br/",
      "papel": "diario",
      "status": null,
-     "ms": 10293,
+     "ms": 10488,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     },
     {
      "url": "https://www.dodf.df.gov.br/index/jornal-json",
      "papel": "api",
      "status": null,
-     "ms": 10492,
+     "ms": 10496,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     }
    ]
@@ -1391,21 +1391,21 @@
      "url": "https://www.al.es.gov.br/",
      "papel": "site",
      "status": null,
-     "ms": 10254,
+     "ms": 10100,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     },
     {
      "url": "https://www.al.es.gov.br/Transparencia/DadosAbertos",
      "papel": "dados_abertos",
      "status": null,
-     "ms": 10495,
+     "ms": 10497,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     },
     {
      "url": "https://sapl.al.es.leg.br/api/materia/materialegislativa/?page_size=1",
      "papel": "sapl_padrao",
      "status": null,
-     "ms": 299,
+     "ms": 382,
      "erro": "ENOTFOUND"
     }
    ]
@@ -1422,7 +1422,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 11399,
-     "ms": 914,
+     "ms": 1474,
      "sinais": {
       "json": false,
       "xml": false,
@@ -1446,7 +1446,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 18662,
-     "ms": 726,
+     "ms": 638,
      "sinais": {
       "json": false,
       "xml": false,
@@ -1469,7 +1469,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 204231,
-     "ms": 1399,
+     "ms": 874,
      "sinais": {
       "json": false,
       "xml": false,
@@ -1493,7 +1493,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 11356,
-     "ms": 884,
+     "ms": 687,
      "sinais": {
       "json": false,
       "xml": false,
@@ -1807,14 +1807,14 @@
      "url": "https://www.al.ma.leg.br/",
      "papel": "site",
      "status": null,
-     "ms": 9997,
+     "ms": 10082,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     },
     {
      "url": "https://sapl.al.ma.leg.br/api/materia/materialegislativa/?page_size=1",
      "papel": "sapl_padrao",
      "status": null,
-     "ms": 10497,
+     "ms": 10496,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     }
    ]
@@ -1831,7 +1831,7 @@
      "status": 500,
      "tipo": "text/html",
      "bytes": 3858,
-     "ms": 1289,
+     "ms": 771,
      "sinais": {
       "json": false,
       "xml": false,
@@ -3775,21 +3775,21 @@
      "url": "https://www.alepe.pe.gov.br/",
      "papel": "site",
      "status": null,
-     "ms": 10102,
+     "ms": 10020,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     },
     {
      "url": "https://dadosabertos.alepe.pe.gov.br/",
      "papel": "dados_abertos",
      "status": null,
-     "ms": 10486,
+     "ms": 10495,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     },
     {
      "url": "https://sapl.al.pe.leg.br/api/materia/materialegislativa/?page_size=1",
      "papel": "sapl_padrao",
      "status": null,
-     "ms": 285,
+     "ms": 330,
      "erro": "ENOTFOUND"
     }
    ]
@@ -3807,7 +3807,7 @@
      "urlFinal": "https://diariooficial.cepe.com.br/diariooficialweb/",
      "tipo": "text/html",
      "bytes": 1653,
-     "ms": 642,
+     "ms": 448,
      "sinais": {
       "json": false,
       "xml": false,
@@ -3838,7 +3838,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 94619,
-     "ms": 983,
+     "ms": 1042,
      "sinais": {
       "json": false,
       "xml": false,
@@ -3862,7 +3862,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 18480,
-     "ms": 1220,
+     "ms": 1143,
      "sinais": {
       "json": false,
       "xml": false,
@@ -3888,7 +3888,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 14408,
-     "ms": 308,
+     "ms": 340,
      "sinais": {
       "json": false,
       "xml": false,
@@ -3914,7 +3914,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 21997,
-     "ms": 203,
+     "ms": 193,
      "sinais": {
       "json": false,
       "xml": false,
@@ -3940,7 +3940,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 28166,
-     "ms": 236,
+     "ms": 234,
      "sinais": {
       "json": false,
       "xml": false,
@@ -3966,7 +3966,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 172690,
-     "ms": 1582,
+     "ms": 2229,
      "sinais": {
       "json": false,
       "xml": false,
@@ -3992,7 +3992,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 67387,
-     "ms": 734,
+     "ms": 792,
      "sinais": {
       "json": false,
       "xml": false,
@@ -4017,7 +4017,7 @@
      "status": 200,
      "tipo": "application/json",
      "bytes": 1528,
-     "ms": 285,
+     "ms": 300,
      "sinais": {
       "json": true,
       "xml": false,
@@ -4046,7 +4046,7 @@
      "url": "https://www.diariooficial.pi.gov.br/",
      "papel": "diario",
      "status": null,
-     "ms": 594,
+     "ms": 426,
      "erro": "ECONNRESET"
     }
    ]
@@ -5001,21 +5001,21 @@
      "url": "https://ww4.al.rs.gov.br/",
      "papel": "site",
      "status": null,
-     "ms": 10009,
+     "ms": 10035,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     },
     {
      "url": "https://www.al.rs.gov.br/",
      "papel": "site",
      "status": null,
-     "ms": 10486,
+     "ms": 10492,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     },
     {
      "url": "https://sapl.al.rs.leg.br/api/materia/materialegislativa/?page_size=1",
      "papel": "sapl_padrao",
      "status": null,
-     "ms": 10363,
+     "ms": 10012,
      "erro": "EAI_AGAIN"
     }
    ]
@@ -5030,7 +5030,7 @@
      "url": "https://www.diariooficial.rs.gov.br/",
      "papel": "diario",
      "status": null,
-     "ms": 10457,
+     "ms": 10118,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     }
    ]
@@ -6310,7 +6310,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 17139,
-     "ms": 2028,
+     "ms": 1560,
      "sinais": {
       "json": false,
       "xml": false,
@@ -6336,7 +6336,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 37793,
-     "ms": 1834,
+     "ms": 1482,
      "sinais": {
       "json": false,
       "xml": false,
@@ -6362,7 +6362,7 @@
      "status": 200,
      "tipo": "text/html",
      "bytes": 28917,
-     "ms": 646,
+     "ms": 699,
      "sinais": {
       "json": false,
       "xml": false,
@@ -6389,7 +6389,7 @@
      "urlFinal": "https://sapl.al.to.leg.br/",
      "tipo": "text/html",
      "bytes": 17916,
-     "ms": 2787,
+     "ms": 1787,
      "sinais": {
       "json": false,
       "xml": false,
@@ -6414,7 +6414,7 @@
      "status": 404,
      "tipo": "text/html",
      "bytes": 6973,
-     "ms": 233,
+     "ms": 223,
      "sinais": {
       "json": false,
       "xml": false,
@@ -6439,7 +6439,7 @@
      "status": 200,
      "tipo": "application/json",
      "bytes": 1282,
-     "ms": 314,
+     "ms": 423,
      "sinais": {
       "json": true,
       "xml": false,
@@ -6468,7 +6468,7 @@
      "url": "https://diariooficial.to.gov.br/",
      "papel": "diario",
      "status": null,
-     "ms": 10064,
+     "ms": 10388,
      "erro": "UND_ERR_CONNECT_TIMEOUT"
     }
    ]
