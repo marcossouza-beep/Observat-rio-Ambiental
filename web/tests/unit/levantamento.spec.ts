@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { linksPromissores, sinaisDe } from '@/levantamento/sinais'
+import { sugerirNivel } from '@/levantamento/classificacao'
+import { linksPromissores, sinaisDe, type Sinais } from '@/levantamento/sinais'
+import type { ResultadoOrgao, Sondagem } from '@/levantamento/sondar'
 
 const base = 'https://www.al.xx.leg.br/'
 
@@ -40,5 +42,40 @@ describe('sinais do levantamento', () => {
     const html = `<a href="/proposicoes">Proposições</a><a href="https://sapl.al.xx.leg.br/">SAPL</a>
       <a href="https://twitter.com/x">Projeto no Twitter</a><a href="/lei.pdf">Projeto em PDF</a><a href="/noticias">Notícias</a>`
     expect(linksPromissores(html, base)).toEqual(['https://www.al.xx.leg.br/proposicoes', 'https://sapl.al.xx.leg.br/'])
+  })
+})
+
+type Parcial = Omit<Partial<Sondagem>, 'sinais'> & { sinais?: Partial<Sinais> }
+const s = ({ sinais, ...extra }: Parcial): Sondagem => ({
+  url: 'https://www.al.xx.leg.br/',
+  papel: 'site',
+  status: 200,
+  bytes: 5000,
+  ...extra,
+  sinais: sinais
+    ? { json: false, xml: false, sapl: false, citaSapl: false, pdfs: 0, linksProposicao: 0, linksDados: [], citaDadosAbertos: false, spa: false, bloqueio: false, texto: 3000, ...sinais }
+    : undefined,
+})
+const orgao = (o: 'casa' | 'diario', sondagens: Sondagem[]): ResultadoOrgao => ({ uf: 'XX', orgao: o, nome: 'X', sigla: 'X', sondagens })
+
+describe('classificação A–D', () => {
+  it('A: API do SAPL ou dados estruturados', () => {
+    expect(sugerirNivel(orgao('casa', [s({ sinais: {} }), s({ url: 'https://sapl.al.xx.leg.br/api/x', papel: 'sapl_padrao', sinais: { json: true, sapl: true, registros: 900 } })]))).toMatchObject({ nivel: 'A', motivo: 'API do SAPL respondendo (900 matérias)' })
+    expect(sugerirNivel(orgao('casa', [s({ papel: 'api', sinais: { xml: true } })])).nivel).toBe('A')
+  })
+  it('B: página HTML com a lista de proposições', () => {
+    const r = sugerirNivel(orgao('casa', [s({ sinais: { linksProposicao: 2 } }), s({ url: 'https://www.al.xx.leg.br/proposicoes', papel: 'link', sinais: { linksProposicao: 30 } })]))
+    expect(r).toMatchObject({ nivel: 'B', url: 'https://www.al.xx.leg.br/proposicoes' })
+  })
+  it('C: só PDF ou página montada no navegador', () => {
+    expect(sugerirNivel(orgao('casa', [s({ sinais: { pdfs: 4 } })])).nivel).toBe('C')
+    expect(sugerirNivel(orgao('casa', [s({ sinais: { spa: true, texto: 50 } })])).nivel).toBe('C')
+    expect(sugerirNivel(orgao('diario', [s({ sinais: { pdfs: 12 } })]))).toMatchObject({ nivel: 'C', motivo: 'edições em PDF (12 na página)' })
+  })
+  it('D: fora do ar, bloqueado ou sem lista', () => {
+    expect(sugerirNivel(orgao('casa', [s({ status: null, erro: 'ENOTFOUND' })])).motivo).toBe('nenhum endereço respondeu')
+    expect(sugerirNivel(orgao('casa', [s({ status: 200, sinais: { bloqueio: true } })])).motivo).toMatch(/bloqueia/)
+    expect(sugerirNivel(orgao('casa', [s({ sinais: { linksProposicao: 1 } })])).nivel).toBe('D')
+    expect(sugerirNivel(orgao('casa', [s({ status: 404, sinais: { linksProposicao: 50 } })])).nivel).toBe('D')
   })
 })
