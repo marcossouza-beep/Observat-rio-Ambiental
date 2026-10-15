@@ -1,0 +1,54 @@
+{
+  "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83037",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:17.710Z",
+  "corpo": {
+    "dados": {
+      "uriDeputados": null,
+      "uriConvidados": null,
+      "fases": null,
+      "id": 83037,
+      "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83037",
+      "dataHoraInicio": "2026-10-14T10:00",
+      "dataHoraFim": "2026-10-14T10:42",
+      "situacao": "Encerrada (Final)",
+      "descricaoTipo": "Reunião Deliberativa",
+      "descricao": "Discussão e votação de propostas legislativas\r\n Votação de indicações de beneficiários para emendas da comissão à LOA",
+      "localExterno": null,
+      "orgaos": [
+        {
+          "id": 2006,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/2006",
+          "sigla": "CDU",
+          "nome": "Comissão de Desenvolvimento Urbano",
+          "apelido": "Desenvolvimento Urbano",
+          "codTipoOrgao": 2,
+          "tipoOrgao": "Comissão Permanente",
+          "nomePublicacao": "Comissão de Desenvolvimento Urbano",
+          "nomeResumido": "Desenvolvimento Urbano"
+        }
+      ],
+      "requerimentos": [],
+      "localCamara": {
+        "nome": "Anexo II, Plenário 16",
+        "predio": null,
+        "sala": null,
+        "andar": null
+      },
+      "urlDocumentoPauta": "https://dadosabertos.camara.leg.br/api/v2/eventos/83037/pauta",
+      "urlRegistro": "https://www.youtube.com/watch?v=oOLD-FIiZ9o"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos/83037"
+      },
+      {
+        "rel": "related",
+        "href": "https://www.youtube.com/watch?v=oOLD-FIiZ9o",
+        "type": "text/html"
+      }
+    ]
+  }
+}

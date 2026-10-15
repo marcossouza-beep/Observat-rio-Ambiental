@@ -1,0 +1,998 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/comissao/agenda/20261015/20261022",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:31.935Z",
+  "corpo": {
+    "AgendaReuniao": {
+      "Metadados": {
+        "Versao": "15/10/2026 09:51:21",
+        "VersaoServico": "2",
+        "DataVersaoServico": "2020-08-07",
+        "DescricaoDataSet": "Agenda das Reuniões das Comissões no período informado."
+      },
+      "reunioes": {
+        "reuniao": [
+          {
+            "codigo": "14990",
+            "versao": "2026-10-15T08:56:35.028",
+            "descricao": "2ª, Reunião - Semipresencial",
+            "titulo": "2ª Reunião Semipresencial",
+            "colegiadoCriador": {
+              "codigo": "2866",
+              "sigla": "CMMPV 1370/2026",
+              "nome": "Comissão Mista da Medida Provisória n° 1370, de 2026",
+              "siglaCasa": "CN",
+              "codigoTipo": "42",
+              "descricaoTipo": "Comissão de Medida Provisória",
+              "materiasOriginadoras": {
+                "nomeFormatado": "MPV 1370/2026",
+                "sigla": "MPV",
+                "numero": "01370",
+                "ano": "2026",
+                "idProcesso": "9069956",
+                "codMateriaLegado": "174819"
+              }
+            },
+            "dataInicio": "2026-10-15T10:00:00.000",
+            "dataInicioFormatadaComObsHorario": "15/10/2026 às 10h",
+            "isExibirNoPortal": "true",
+            "confirmada": "false",
+            "realizada": "false",
+            "foiAgendadaAposTerSidoSuspensa": "false",
+            "codigoSituacao": "1",
+            "situacao": "Agendada",
+            "status": "Agendada",
+            "secreta": "false",
+            "local": "Anexo II, Ala Senador Alexandre Costa, Plenário nº 3",
+            "numReuniaoConjunta": "2",
+            "urlUltimaPautaSimplesPublicada": "https://legis.senado.leg.br/sdleg-getter/documento/download/8bace236-0176-4383-aae4-7dcd9eadca8f",
+            "urlUltimaPautaCheiaPublicada": "https://legis.senado.leg.br/sdleg-getter/documento/download/ef1e26c5-77a1-4336-8e03-eb17ddeacbb5",
+            "urlSumarioExecutivoMPV": "https://www12.senado.leg.br/publicacoes/estudos-legislativos/tipos-de-estudos/sumarios-de-proposicoes/mpv1370/at_download/file",
+            "idUltimaPublicacaoPautaSimples": "8bace236-0176-4383-aae4-7dcd9eadca8f",
+            "tipoPresenca": "Semipresencial",
+            "continuacaoCancelada": "false",
+            "tipo": {
+              "codigo": "5",
+              "descricao": "Reunião",
+              "sigla": "REU"
+            },
+            "sessaoLegislativa": {
+              "codigo": "874",
+              "numeroLegislatura": "57",
+              "numero": "4",
+              "descricao": "57a. Legislatura (2026) - 4a. Sessão Legislativa Ordinária",
+              "inicio": "2026-02-02",
+              "fim": "2026-12-22"
+            },
+            "permitePresencaApp": "true",
+            "permiteVotacaoSemPresencaFisica": "true",
+            "possuiVotacaoSecreta": "false",
+            "dataReuniao": {
+              "codigo": "69091",
+              "dataEvento": "2026-10-15T10:00:00.000",
+              "codigoSituacao": "1",
+              "descricaoSituacao": "Agendada",
+              "realizada": "false"
+            },
+            "colegiados": {
+              "codigo": "2866",
+              "nome": "Comissão Mista da Medida Provisória n° 1370, de 2026",
+              "sigla": "CMMPV 1370/2026",
+              "siglaCasa": "CN",
+              "codigoTipoColegiado": "42",
+              "nomeTipoColegiado": "Comissão de Medida Provisória",
+              "numeroReuniao": "2",
+              "isSubcomissao": "false",
+              "composicaoPublica": "true",
+              "publicoPortal": "true"
+            },
+            "partes": {
+              "codigo": "19311",
+              "nome": "Deliberativa",
+              "codigoTipo": "2",
+              "descricaoTipo": "Deliberativa",
+              "sequencial": "1",
+              "sequencialFormatado": "1ª PARTE",
+              "isDeliberativa": "true",
+              "finalidade": "Apreciação do relatório.",
+              "itens": {
+                "codigo": "112629",
+                "tipo": "MATE",
+                "ordem": "1",
+                "nome": "MPV 1370/2026",
+                "nomeFormatadoComOrdem": "1 - MPV 1370/2026",
+                "descricao": "MPV 1370/2026",
+                "autorItemPauta": {
+                  "nomeAutoria": "Presidência da República",
+                  "isParlamentar": "false",
+                  "isColegiado": "false",
+                  "possuiOutrosAutores": "false",
+                  "tipoAutoriaDomaSigla": "PRESIDENTE_REPUBLICA",
+                  "tipoAutoriaDomaDescricao": "Presidente da República"
+                },
+                "isTerminativo": "false",
+                "tipoPauta": "Pauta",
+                "categoria": "Matéria",
+                "classificacao": {
+                  "codigo": "1",
+                  "descricao": "Vinculado a uma matéria"
+                },
+                "ordemDeliberacao": "1",
+                "apreciado": "false",
+                "emDeliberacao": "false",
+                "revisado": "false",
+                "resultadoPublico": "false",
+                "cabecalhoParecer": "MPV 1370/2026",
+                "dataHoraEstadoAtual": "2026-10-09T09:40:59.000",
+                "textosPauta": {
+                  "ordemNaPauta": "1",
+                  "idDoma": "10329652",
+                  "identificacao": "Relatório Legislativo",
+                  "descricaoTipoDoma": "Relatório Legislativo",
+                  "siglaTipoDoma": "RELATORIO",
+                  "dataAtualizacao": "2026-10-13",
+                  "codigoColegiado": "2866",
+                  "siglaColegiado": "CMMPV 1370/2026",
+                  "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10329652",
+                  "descricao": "Parecer apresentado na COMISSÃO MISTA DA MEDIDA PROVISÓRIA Nº 1.370, DE 2026"
+                },
+                "doma": {
+                  "idDoma": "10252482",
+                  "idProcesso": "9069956",
+                  "autoria": "Presidência da República",
+                  "idTipoDoma": "65",
+                  "numeroSedol": "SF263298761406",
+                  "descricaoTipoDoma": "Medida Provisória",
+                  "siglaTipoDoma": "MEDIDA_PROVISORIA",
+                  "ementa": "Altera a Lei nº 12.871, de 22 de outubro de 2013, a Lei nº 3.268, de 30 de setembro de 1957, a Lei nº 6.932, de 7 de julho de 1981, a Lei nº 13.959, de 18 de dezembro de 2019, e a Lei nº 10.861, de 14 de abril de 2004, para dispor sobre o Exame Nacional de Avaliação da  Formação Médica.",
+                  "dataApresentacao": "2026-06-19T19:52:53.000",
+                  "sigla": "MPV",
+                  "numero": "01370",
+                  "ano": "2026",
+                  "identificacao": "MPV 1370/2026",
+                  "identificacaoPorExtenso": "Medida Provisória n° 1370, de 2026",
+                  "apelido": "Instituição do Exame Nacional de Avaliação da Formação Médica - Enamed",
+                  "idConteudoInformacional": "7662662",
+                  "codigoMateria": "174819",
+                  "siglaPorExtenso": "Medida Provisória",
+                  "complementar": "false",
+                  "consolidacao": "false",
+                  "proposicao": "true",
+                  "identificado": "true",
+                  "textos": [
+                    {
+                      "idDoma": "10252482",
+                      "idProcesso": "9069956",
+                      "identificacao": "Medida Provisória",
+                      "descricaoTipoDoma": "Medida Provisória",
+                      "siglaTipoDoma": "MEDIDA_PROVISORIA",
+                      "dataAtualizacao": "2026-06-19",
+                      "codigoColegiado": "1616",
+                      "conteudoInformacional": "MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10252482",
+                      "descricao": "Altera a Lei nº 12.871, de 22 de outubro de 2013, a Lei nº 3.268, de 30 de setembro de 1957, a Lei nº 6.932, de 7 de julho de 1981, a Lei nº 13.959, de 18 de dezembro de 2019, e a Lei nº 10.861, de 14 de abril de 2004, para dispor sobre o Exame Nacional de Avaliação da  Formação Médica."
+                    },
+                    {
+                      "idDoma": "10252491",
+                      "identificacao": "Calendário",
+                      "descricaoTipoDoma": "Calendário",
+                      "siglaTipoDoma": "CALENDARIO",
+                      "dataAtualizacao": "2026-06-19",
+                      "codigoColegiado": "1616",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10252491"
+                    },
+                    {
+                      "idDoma": "10252533",
+                      "identificacao": "Avulso inicial da matéria",
+                      "descricaoTipoDoma": "Avulso inicial da matéria",
+                      "siglaTipoDoma": "AVULSO_INICIAL",
+                      "dataAtualizacao": "2026-06-22",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10252533",
+                      "descricao": "-"
+                    },
+                    {
+                      "idDoma": "10253307",
+                      "identificacao": "Quadro Comparativo",
+                      "descricaoTipoDoma": "Quadro Comparativo",
+                      "siglaTipoDoma": "QUADRO_COMPARATIVO",
+                      "dataAtualizacao": "2026-06-23",
+                      "codigoColegiado": "1616",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10253307",
+                      "descricao": "Comparação entre o texto original da MPV e a legislação alterada."
+                    },
+                    {
+                      "idDoma": "10253174",
+                      "identificacao": "Nota Técnica",
+                      "descricaoTipoDoma": "Nota Técnica",
+                      "siglaTipoDoma": "NOTA_TECNICA",
+                      "dataAtualizacao": "2026-06-23",
+                      "codigoColegiado": "2866",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10253174",
+                      "descricao": "Nota Técnica de Adequação Orçamentária e Financeira da MPV 1370/2026"
+                    },
+                    {
+                      "idDoma": "10253392",
+                      "identificacao": "EMENDA 1 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-23",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 1 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10253392",
+                      "descricao": "Altera a Lei nº 12.871, de 22 de outubro de 2013, a Lei nº 3.268, de 30 de setembro de 1957, a Lei nº 6.932, de 7 de julho de 1981, a Lei nº 13.959, de 18 de dezembro de 2019, e a Lei nº 10.861, de 14 de abril de 2004, para dispor sobre o Exame Nacional de Avaliação da Formação Médica."
+                    },
+                    {
+                      "idDoma": "10253464",
+                      "identificacao": "EMENDA 2 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-23",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 2 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10253464",
+                      "descricao": "Dê-se nova redação ao caput do art. 9º-B e aos incisos I e II do caput do art. 9º-B, todos da Lei nº 12.871, de 22 de outubro de 2013, como propostos pelo art. 1º da Medida Provisória, nos termos a seguir:"
+                    },
+                    {
+                      "idDoma": "10253437",
+                      "identificacao": "EMENDA 3 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-23",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 3 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10253437",
+                      "descricao": "Dê-se nova redação ao caput do art. 9º-C, ao inciso V do caput do art. 9º-C e ao § 1º do art. 9º-C, todos da Lei nº 12.871, de 22 de outubro de 2013, na forma proposta pelo art. 1º da Medida Provisória, nos termos a seguir:"
+                    },
+                    {
+                      "idDoma": "10253484",
+                      "identificacao": "EMENDA 4 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-23",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 4 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10253484",
+                      "descricao": "Dispõe sobre a realização de avaliação prática de habilidades clínicas na segunda etapa do Exame Nacional de Avaliação da Formação Médica (Enamed)."
+                    },
+                    {
+                      "idDoma": "10253495",
+                      "identificacao": "EMENDA 5 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-23",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 5 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10253495",
+                      "descricao": "Dispõe sobre aspectos relacionados ao Exame Nacional de Avaliação da Formação Médica (Enamed)."
+                    },
+                    {
+                      "idDoma": "10253713",
+                      "identificacao": "EMENDA 6 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 6 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10253713",
+                      "descricao": "Altera a Lei nº 12.871, de 22 de outubro de 2013, para prever que a segunda etapa do Exame Nacional de Avaliação da Formação Médica, Enamed, será composta de exame teórico e exame prático de habilidades clínico-cirúrgicas."
+                    },
+                    {
+                      "idDoma": "10253717",
+                      "identificacao": "EMENDA 7 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 7 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10253717",
+                      "descricao": "Altera a Lei nº 12.871, de 22 de outubro de 2013, para tornar obrigatória e deliberativa a Comissão de Acompanhamento do Exame Nacional de Avaliação da Formação Médica, Enamed, e estabelecer critérios objetivos para a representação da sociedade civil em sua composição."
+                    },
+                    {
+                      "idDoma": "10254300",
+                      "identificacao": "EMENDA 10 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 10 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10254300",
+                      "descricao": "Altera a Lei nº 12.871, de 22 de outubro de 2013, para substituir o registro da nota individual da segunda etapa do Exame Nacional de Avaliação da Formação Médica (Enamed) pela indicação da situação de regularidade do estudante no exame para fins de histórico escolar."
+                    },
+                    {
+                      "idDoma": "10254326",
+                      "identificacao": "EMENDA 9 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 9 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10254326",
+                      "descricao": "Altera a Lei nº 12.871, de 22 de outubro de 2013, para estabelecer que o histórico escolar do estudante registre apenas sua situação de regularidade quanto à participação na segunda etapa do Exame Nacional de Avaliação da Formação Médica (Enamed), vedado o registro de nota individual, classificação, conceito ou condição de proficiência."
+                    },
+                    {
+                      "idDoma": "10254316",
+                      "identificacao": "EMENDA 8 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 8 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10254316",
+                      "descricao": "Altera o art. 9º-C da Lei nº 12.871, de 22 de outubro de 2013, para conferir caráter permanente e deliberativo à Comissão Nacional de Avaliação da Formação Médica e disciplinar suas competências."
+                    },
+                    {
+                      "idDoma": "10299200",
+                      "identificacao": "Ofício",
+                      "descricaoTipoDoma": "Ofício",
+                      "siglaTipoDoma": "OFICIO",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "1616",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10299200",
+                      "descricao": "OFÍCIO Nº 83/2026/SGM, que comunica à Câmara dos Deputados a designação da Comissão Mista e o calendário de tramitação das Medidas Provisórias nº 1.369 e 1.370, de 2026."
+                    },
+                    {
+                      "idDoma": "10255484",
+                      "identificacao": "EMENDA 21 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 21 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255484",
+                      "descricao": "Emenda 1 MP 1370/2026"
+                    },
+                    {
+                      "idDoma": "10255488",
+                      "identificacao": "EMENDA 22 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 22 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255488",
+                      "descricao": "Emenda 3 MP 1370/2026"
+                    },
+                    {
+                      "idDoma": "10255492",
+                      "identificacao": "EMENDA 23 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 23 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255492",
+                      "descricao": "Emenda  4 MPV 1370_2026"
+                    },
+                    {
+                      "idDoma": "10255496",
+                      "identificacao": "EMENDA 24 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 24 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255496",
+                      "descricao": "Emenda 5 MP 1370/2026"
+                    },
+                    {
+                      "idDoma": "10255500",
+                      "identificacao": "EMENDA 25 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 25 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255500",
+                      "descricao": "Emenda 6 MP 1370/2026"
+                    },
+                    {
+                      "idDoma": "10255480",
+                      "identificacao": "EMENDA 20 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 20 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255480",
+                      "descricao": "EMENDA À MEDIDA PROVISÓRIA Nº 1.370, DE 19 DE JUNHO DE 2026."
+                    },
+                    {
+                      "idDoma": "10255428",
+                      "identificacao": "EMENDA 12 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 12 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255428",
+                      "descricao": "Dê-se nova redação ao inciso VII do caput do art. 2º da Lei nº 12.871, de 22 de outubro de 2013, como proposto pelo art. 1º da Medida Provisória, nos termos a seguir:"
+                    },
+                    {
+                      "idDoma": "10255476",
+                      "identificacao": "EMENDA 19 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 19 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255476",
+                      "descricao": "Acrescente-se § 9º ao art. 9º-B da Lei nº 12.871, de 22 de outubro de 2013, na forma proposta pelo art. 1º da Medida Provisória, nos termos a seguir:"
+                    },
+                    {
+                      "idDoma": "10255472",
+                      "identificacao": "EMENDA 18 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 18 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255472",
+                      "descricao": "Dê-se nova redação ao caput do art. 9º-C e ao inciso V do caput do art. 9º-C; e acrescentem-se incisos VI a IX ao caput do art. 9º-C, todos da Lei nº 12.871, de 22 de outubro de 2013, na forma proposta pelo art. 1º da Medida Provisória, nos termos a seguir:"
+                    },
+                    {
+                      "idDoma": "10255468",
+                      "identificacao": "EMENDA 17 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 17 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255468",
+                      "descricao": "Acrescente-se art. 9º-E à Lei nº 12.871, de 22 de outubro de 2013, na forma proposta pelo art. 1º da Medida Provisória, nos termos a seguir:"
+                    },
+                    {
+                      "idDoma": "10255444",
+                      "identificacao": "EMENDA 16 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 16 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255444",
+                      "descricao": "Dê-se nova redação ao parágrafo único do art. 2º da Lei nº 6.932, de 7 de julho de 1981, como proposto pelo art. 3º da Medida Provisória, nos termos a seguir:"
+                    },
+                    {
+                      "idDoma": "10255440",
+                      "identificacao": "EMENDA 15 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 15 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255440",
+                      "descricao": "Acrescente-se § 9º ao art. 9º-B da Lei nº 12.871, de 22 de outubro de 2013, na forma proposta pelo art. 1º da Medida Provisória, nos termos a seguir:"
+                    },
+                    {
+                      "idDoma": "10255436",
+                      "identificacao": "EMENDA 14 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 14 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255436",
+                      "descricao": "Acrescente-se § 3º ao art. 9º-D da Lei nº 12.871, de 22 de outubro de 2013, na forma proposta pelo art. 1º da Medida Provisória, nos termos a seguir:"
+                    },
+                    {
+                      "idDoma": "10255432",
+                      "identificacao": "EMENDA 13 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 13 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255432",
+                      "descricao": "Acrescente-se art. 9º-E à Lei nº 12.871, de 22 de outubro de 2013, na forma proposta pelo art. 1º da Medida Provisória, nos termos a seguir:"
+                    },
+                    {
+                      "idDoma": "10255447",
+                      "identificacao": "EMENDA 11 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-24",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 11 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255447",
+                      "descricao": "Emenda 2 MP 1370/2026"
+                    },
+                    {
+                      "idDoma": "10255938",
+                      "identificacao": "EMENDA 26 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-25",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 26 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255938",
+                      "descricao": "Emenda a Medida Provisória 1370 de 2026"
+                    },
+                    {
+                      "idDoma": "10256012",
+                      "identificacao": "EMENDA 28 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-25",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 28 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10256012",
+                      "descricao": "Dê-se nova redação ao inciso V do caput do art. 9º-C; e acrescente-se inciso VI ao caput do art. 9º-C, ambos da Lei nº 12.871, de 22 de outubro de 2013, na forma proposta pelo art. 1º da Medida Provisória, nos termos a seguir."
+                    },
+                    {
+                      "idDoma": "10256008",
+                      "identificacao": "EMENDA 27 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-25",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 27 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10256008",
+                      "descricao": "Dê-se nova redação ao § 5º do art. 5º da Lei nº 10.861, de 14 de abril de 2004, na forma proposta pelo art. 5º da Medida Provisória, nos termos a seguir."
+                    },
+                    {
+                      "idDoma": "10256020",
+                      "identificacao": "EMENDA 30 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-25",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 30 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10256020",
+                      "descricao": "Acrescente-se art. 9º-E à Lei nº 12.871, de 22 de outubro de 2013, na forma proposta pelo art. 1º da Medida Provisória, nos termos a seguir."
+                    },
+                    {
+                      "idDoma": "10256016",
+                      "identificacao": "EMENDA 29 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-25",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 29 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10256016",
+                      "descricao": "Dê-se nova redação aos §§ 1º e 2º do art. 9º-D e aos incisos I e II do § 2º do art. 9º-D; e acrescentem-se §§ 3º a 5º ao art. 9º-D, todos da Lei nº 12.871, de 22 de outubro de 2013, na forma proposta pelo art. 1º da Medida Provisória, nos termos a seguir."
+                    },
+                    {
+                      "idDoma": "10256079",
+                      "identificacao": "EMENDA 32 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-25",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 32 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10256079",
+                      "descricao": "Dê-se nova redação à Medida Provisória nos termos dos itens 1, 2 e 3 a seguir."
+                    },
+                    {
+                      "idDoma": "10255997",
+                      "identificacao": "EMENDA 31 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-25",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 31 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10255997",
+                      "descricao": "Esclarece que a obrigatoriedade de celebração do Contrato Organizativo de Ação Pública Ensino Saúde (COAPES) não impede a manutenção ou a celebração de outros instrumentos jurídicos de cooperação entre as instituições de ensino e os entes federativos."
+                    },
+                    {
+                      "idDoma": "10256087",
+                      "identificacao": "EMENDA 33 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-25",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 33 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10256087",
+                      "descricao": "Institui etapa de avaliação prática de habilidades clínicas no Exame Nacional de Proficiência em Medicina (Enamed), como requisito para aferição da proficiência profissional."
+                    },
+                    {
+                      "idDoma": "10256144",
+                      "identificacao": "EMENDA 34 - MPV 1370/2026",
+                      "descricaoTipoDoma": "Emenda",
+                      "siglaTipoDoma": "EMENDA",
+                      "dataAtualizacao": "2026-06-25",
+                      "codigoColegiado": "2866",
+                      "conteudoInformacional": "EMENDA 34 - MPV 1370/2026",
+                      "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10256144",
+                      "descricao": "Altera a Lei nº 12.871, de 22 de outubro de 2013, a Lei nº 3.268, de 30 de setembro de 1957, a Lei nº 6.932, de 7 de julho de 1981, a Lei nº 13.959, de 18 de dezembro de 2019, e a Lei nº 10.861, de 14 de abril de 2004, para dispor sobre o Exame Nacional de Avaliação da Formação Médica."
+                    },
+                    {
+                      "_cortado": "453 itens a mais"
+                    }
+                  ],
+                  "autorias": {
+                    "ordem": "1",
+                    "siglaTipo": "PRESIDENTE_REPUBLICA",
+                    "descricaoTipo": "Presidente da República",
+                    "isAutoriaComOutros": "false",
+                    "nome": "Presidência da República"
+                  },
+                  "relatorias": {
+                    "codigoColegiado": "2866",
+                    "siglaColegiado": "CMMPV 1370/2026",
+                    "relator": {
+                      "id": "10295679",
+                      "idProcesso": "9069956",
+                      "parlamentar": {
+                        "codigo": "6153",
+                        "sexo": "M",
+                        "nomeComCargo": "Deputado Doutor Luizinho",
+                        "casa": "CD",
+                        "ufPartido": "RJ",
+                        "siglaPartido": "PP",
+                        "partido": "Progressistas",
+                        "isSenador": "false",
+                        "isDeputado": "true",
+                        "data": "2026-08-12T00:00:00.000",
+                        "liderancas": [
+                          {
+                            "titulo": "Líder da Câmara dos Deputados",
+                            "siglaPartido": "PP",
+                            "nomePartido": "Progressistas"
+                          },
+                          {
+                            "titulo": "Vice-líder da Câmara dos Deputados",
+                            "bloco": "UNIÃO, PP, PSD, REPUBLICANOS, MDB, Federação PSDB CIDADANIA, PODE"
+                          },
+                          {
+                            "titulo": "Líder da Câmara dos Deputados",
+                            "bloco": "UNIÃO, PP, PSD, REPUBLICANOS, MDB, Federação PSDB CIDADANIA, PODE"
+                          }
+                        ]
+                      },
+                      "dataDesignacao": "2026-08-12T15:31:00.000",
+                      "plenario": "false",
+                      "idTipo": "1",
+                      "descricaoTipo": "Relator",
+                      "casaLegislativa": "CD",
+                      "aberta": "true",
+                      "encerrada": "false",
+                      "relator": "true",
+                      "adhoc": "false",
+                      "revisor": "false"
+                    }
+                  }
+                },
+                "possuiVotacaoSecreta": "false",
+                "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10252482"
+              }
+            },
+            "videos": {
+              "codigo": "8161",
+              "ordem": "1",
+              "url": "https://www.youtube.com/watch?v=zas3JlZ8gIg",
+              "titulo": "2ª Reunião da MPV 1370, de 2026",
+              "dataHoraReuniao": "2026-10-15T10:00:00.000"
+            }
+          },
+          {
+            "codigo": "14968",
+            "versao": "2026-10-15T09:50:36.716",
+            "descricao": "71ª, Extraordinária - Semipresencial",
+            "titulo": "71ª Reunião Extraordinária Semipresencial",
+            "colegiadoCriador": {
+              "codigo": "834",
+              "sigla": "CDH",
+              "nome": "Comissão de Direitos Humanos e Legislação Participativa",
+              "siglaCasa": "SF",
+              "codigoTipo": "21",
+              "descricaoTipo": "Comissão Permanente"
+            },
+            "dataInicio": "2026-10-15T09:00:00.000",
+            "dataInicioFormatadaComObsHorario": "15/10/2026 às 09h",
+            "isExibirNoPortal": "true",
+            "confirmada": "false",
+            "realizada": "false",
+            "foiAgendadaAposTerSidoSuspensa": "false",
+            "codigoSituacao": "3",
+            "situacao": "Aberta",
+            "status": "Aberta",
+            "secreta": "false",
+            "local": "Anexo II, Ala Senador Nilo Coelho, Plenário nº 6",
+            "numReuniaoConjunta": "71",
+            "linkECidadania": "https://www12.senado.leg.br/ecidadania/visualizacaoaudiencia?id=40870",
+            "urlUltimaPautaSimplesPublicada": "https://legis.senado.leg.br/sdleg-getter/documento/download/bbb82fb6-e295-4873-a4e4-74d0d4951770",
+            "urlUltimaPautaCheiaPublicada": "https://legis.senado.leg.br/sdleg-getter/documento/download/9dbba2d9-a650-4f09-afa4-81c977b1aa85",
+            "idUltimaPublicacaoPautaSimples": "bbb82fb6-e295-4873-a4e4-74d0d4951770",
+            "tipoPresenca": "Semipresencial",
+            "continuacaoCancelada": "false",
+            "tipo": {
+              "codigo": "2",
+              "descricao": "Extraordinária",
+              "sigla": "EXT"
+            },
+            "sessaoLegislativa": {
+              "codigo": "874",
+              "numeroLegislatura": "57",
+              "numero": "4",
+              "descricao": "57a. Legislatura (2026) - 4a. Sessão Legislativa Ordinária",
+              "inicio": "2026-02-02",
+              "fim": "2026-12-22"
+            },
+            "permitePresencaApp": "true",
+            "permiteVotacaoSemPresencaFisica": "true",
+            "possuiVotacaoSecreta": "false",
+            "presidente": {
+              "codigo": "5977",
+              "nome": "Leany Barreiro de Sousa Lemos",
+              "nomeParlamentar": "Leany Lemos",
+              "sexo": "F",
+              "cargo": "Senadora",
+              "nomeComCargo": "Senadora Leany Lemos",
+              "nomeComCargoResumido": "Sen. Leany Lemos",
+              "casa": "SF",
+              "ufPartido": "DF",
+              "siglaPartido": "PSB",
+              "partido": "Partido Socialista Brasileiro",
+              "urlFoto": "https://www.senado.gov.br/senadores/img/fotos-oficiais/senador5977.jpg",
+              "urlPagina": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5977",
+              "isSenador": "true",
+              "isDeputado": "false",
+              "data": "2026-10-15T00:00:00.000"
+            },
+            "dataReuniao": [
+              {
+                "codigo": "69095",
+                "dataEvento": "2026-10-15T09:28:00.000",
+                "codigoSituacao": "3",
+                "descricaoSituacao": "Aberta",
+                "realizada": "false"
+              },
+              {
+                "codigo": "69041",
+                "dataEvento": "2026-10-08T09:00:00.000",
+                "codigoSituacao": "1",
+                "descricaoSituacao": "Agendada",
+                "realizada": "false"
+              }
+            ],
+            "colegiados": {
+              "codigo": "834",
+              "nome": "Comissão de Direitos Humanos e Legislação Participativa",
+              "sigla": "CDH",
+              "siglaCasa": "SF",
+              "codigoTipoColegiado": "21",
+              "nomeTipoColegiado": "Comissão Permanente",
+              "numeroReuniao": "71",
+              "isSubcomissao": "false",
+              "composicaoPublica": "true",
+              "publicoPortal": "true"
+            },
+            "partes": {
+              "codigo": "19285",
+              "nome": "Audiência Pública Interativa",
+              "codigoTipo": "1",
+              "descricaoTipo": "Audiência Pública Interativa",
+              "sequencial": "1",
+              "sequencialFormatado": "1ª PARTE",
+              "isDeliberativa": "false",
+              "evento": {
+                "codigo": "10467",
+                "finalidade": "\"Discutir os Direitos da Menina, em alusão ao Dia Internacional da Menina (11 de outubro), instituído pela Organização das Nações Unidas, bem como os desafios, avanços e lacunas das políticas públicas voltadas à proteção integral de meninas no Brasil\".",
+                "isPublicado": "true",
+                "isRealizado": "false",
+                "observacoes": "A reunião será interativa, transmitida ao vivo e aberta à participação dos interessados por meio do portal e-cidadania, na internet, em senado.leg.br/ecidadania ou pelo telefone da ouvidoria 0800 061 22 11.",
+                "convidados": [
+                  {
+                    "codigo": "43660",
+                    "ordem": "1",
+                    "nome": "Ricardo de Lins e Horta",
+                    "sexo": "M",
+                    "cargo": "Diretor de Segurança e Prevenção de Riscos no Ambiente Digital do Ministério da Justiça e Segurança Pública",
+                    "isDepoentePresente": "false",
+                    "isPorVideoConferencia": "false",
+                    "codigoSituacao": "2"
+                  },
+                  {
+                    "codigo": "43662",
+                    "ordem": "2",
+                    "nome": "Juliana Cunha",
+                    "sexo": "F",
+                    "cargo": "Diretora de Projetos Especiais da SaferNet Brasil",
+                    "isDepoentePresente": "false",
+                    "isPorVideoConferencia": "false",
+                    "codigoSituacao": "4"
+                  },
+                  {
+                    "codigo": "43658",
+                    "ordem": "3",
+                    "nome": "Fernanda Souza Carlos",
+                    "sexo": "F",
+                    "cargo": "Coordenadora-Geral de Direitos Humanos da Polícia Rodoviária Federal",
+                    "isDepoentePresente": "false",
+                    "isPorVideoConferencia": "false",
+                    "codigoSituacao": "4"
+                  },
+                  {
+                    "codigo": "43678",
+                    "ordem": "4",
+                    "nome": "Ana Nery Lima",
+                    "sexo": "F",
+                    "cargo": "Especialista em Gênero e Inclusão da Plan International Brasil",
+                    "isDepoentePresente": "false",
+                    "isPorVideoConferencia": "false",
+                    "codigoSituacao": "4"
+                  },
+                  {
+                    "codigo": "43661",
+                    "ordem": "5",
+                    "nome": "Cyntia Cristina de Carvalho e Silva",
+                    "sexo": "F",
+                    "cargo": "Delegada-Chefe Adjunta da Delegacia Especial de Repressão aos Crimes por Discriminação Racial, Religiosa ou por Orientação Sexual ou contra a Pessoa Idosa ou com Deficiência da PCDF",
+                    "isDepoentePresente": "false",
+                    "isPorVideoConferencia": "false",
+                    "codigoSituacao": "2"
+                  },
+                  {
+                    "codigo": "43679",
+                    "ordem": "6",
+                    "nome": "Graziela Larissa da Silva Santos",
+                    "sexo": "F",
+                    "cargo": "Coordenadora de Políticas Educacionais da Associação Serenas",
+                    "isDepoentePresente": "false",
+                    "isPorVideoConferencia": "false",
+                    "codigoSituacao": "4"
+                  },
+                  {
+                    "codigo": "43680",
+                    "ordem": "7",
+                    "nome": "Renata Greco",
+                    "sexo": "F",
+                    "cargo": "Gerente de Comunicação do Instituto Liberta",
+                    "isDepoentePresente": "false",
+                    "isPorVideoConferencia": "false",
+                    "codigoSituacao": "4"
+                  },
+                  {
+                    "codigo": "43659",
+                    "ordem": "8",
+                    "nome": "Tayanne Galeno",
+                    "sexo": "F",
+                    "cargo": "Coordenadora de Relações Governamentais do Instituto ALANA",
+                    "isDepoentePresente": "false",
+                    "isPorVideoConferencia": "false",
+                    "codigoSituacao": "2"
+                  },
+                  {
+                    "codigo": "43663",
+                    "ordem": "9",
+                    "nome": "Manuela Franchini Melani",
+                    "sexo": "F",
+                    "cargo": "Gerente Meal e Estratégia da Organização Visão Mundial",
+                    "isDepoentePresente": "false",
+                    "isPorVideoConferencia": "false",
+                    "codigoSituacao": "4"
+                  }
+                ],
+                "participantes": {
+                  "codigo": "34073",
+                  "ordem": "1",
+                  "nome": "Juliana Cunha",
+                  "sexo": "F",
+                  "cargo": "Diretora de Projetos Especiais da SaferNet Brasil",
+                  "apresentacoes": {
+                    "idEcmSenado": "04e771f0-cc08-41fe-b55b-71ce46e60ebf",
+                    "descricao": "apresentação",
+                    "nome": "Juliana Cunha - (SaferNet Brasil).pdf",
+                    "mimeType": "application/pdf",
+                    "linkDownload": "https://legis.senado.leg.br/sdleg-getter/documento/download/04e771f0-cc08-41fe-b55b-71ce46e60ebf"
+                  },
+                  "codigoConvidado": "43662",
+                  "isDepoentePresente": "false",
+                  "isPorVideoConferencia": "false"
+                },
+                "domasRelacionados": {
+                  "finalidade": "C",
+                  "descricaoFinalidade": "Solicitação de realização de Audiência Pública Interativa",
+                  "ordem": "1",
+                  "doma": {
+                    "idDoma": "10148126",
+                    "idProcesso": "8986788",
+                    "autoria": "Senadora Damares Alves (REPUBLICANOS/DF)",
+                    "idTipoDoma": "87",
+                    "numeroSedol": "SF260073139122",
+                    "descricaoTipoDoma": "Requerimento",
+                    "siglaTipoDoma": "REQUERIMENTO",
+                    "ementa": "Requeiro, nos termos do art. 58, § 2º, II, da Constituição Federal e do art.93, II, do Regimento Interno do Senado Federal, a realização de audiência pública, com o objetivo de discutir os Direitos da Menina, em alusão ao Dia Internacional da Menina (11 de outubro), instituído pela Organização das Nações Unidas, bem como os desafios, avanços e lacunas das políticas públicas voltadas à proteção integral de meninas no Brasil.",
+                    "dataApresentacao": "2026-01-30T09:04:17.000",
+                    "sigla": "REQ",
+                    "numero": "00021",
+                    "ano": "2026",
+                    "identificacao": "REQ 21/2026 - CDH",
+                    "identificacaoPorExtenso": "Requerimento da Comissão de Direitos Humanos e Legislação Participativa n° 21, de 2026",
+                    "idConteudoInformacional": "7644131",
+                    "codigoMateria": "172387",
+                    "siglaPorExtenso": "Requerimento",
+                    "complementar": "false",
+                    "consolidacao": "false",
+                    "proposicao": "true",
+                    "identificado": "true",
+                    "textos": [
+                      {
+                        "idDoma": "10148126",
+                        "idProcesso": "8986788",
+                        "identificacao": "Requerimento",
+                        "descricaoTipoDoma": "Requerimento",
+                        "siglaTipoDoma": "REQUERIMENTO",
+                        "dataAtualizacao": "2026-01-30",
+                        "codigoColegiado": "834",
+                        "conteudoInformacional": "REQ 21/2026 - CDH",
+                        "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10148126",
+                        "descricao": "Requeiro, nos termos do art. 58, § 2º, II, da Constituição Federal e do art.93, II, do Regimento Interno do Senado Federal, a realização de audiência pública, com o objetivo de discutir os Direitos da Menina, em alusão ao Dia Internacional da Menina (11 de outubro), instituído pela Organização das Nações Unidas, bem como os desafios, avanços e lacunas das políticas públicas voltadas à proteção integral de meninas no Brasil."
+                      },
+                      {
+                        "idDoma": "10151834",
+                        "identificacao": "Listagem ou relatório descritivo",
+                        "descricaoTipoDoma": "Listagem ou relatório descritivo",
+                        "siglaTipoDoma": "LISTAGEM_RELATORIO",
+                        "dataAtualizacao": "2026-02-04",
+                        "codigoColegiado": "834",
+                        "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10151834",
+                        "descricao": "Listagem ou relatório descritivo-Lista de Presença da reunião da 1ª Reunião CDH"
+                      },
+                      {
+                        "idDoma": "10327493",
+                        "identificacao": "Correspondência Eletrônica",
+                        "descricaoTipoDoma": "Correspondência Eletrônica",
+                        "siglaTipoDoma": "CORRESPONDENCIA_ELETRONICA",
+                        "dataAtualizacao": "2026-10-06",
+                        "codigoColegiado": "834",
+                        "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10327493",
+                        "descricao": "CONVITE nº 46-26 - para participação em audiência pública para debater sobre o Dia Internacional da Menina - 15102026"
+                      },
+                      {
+                        "idDoma": "10327781",
+                        "identificacao": "Correspondência Eletrônica",
+                        "descricaoTipoDoma": "Correspondência Eletrônica",
+                        "siglaTipoDoma": "CORRESPONDENCIA_ELETRONICA",
+                        "dataAtualizacao": "2026-10-06",
+                        "codigoColegiado": "834",
+                        "urlDownload": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10327781",
+                        "descricao": "CONVITE nº 46-26 - para participação em audiência pública para debater sobre o Dia Internacional da Menina - 15102026"
+                      }
+                    ],
+                    "autorias": {
+                      "ordem": "1",
+                      "siglaTipo": "SENADOR",
+                      "descricaoTipo": "Senador",
+                      "isAutoriaComOutros": "false",
+                      "nome": "Damares Alves",
+                      "tratamento": "Senadora",
+                      "parlamentar": {
+                        "codigo": "6335",
+                        "nome": "Damares Regina Alves",
+                        "nomeParlamentar": "Damares Alves",
+                        "sexo": "F",
+                        "cargo": "Senadora",
+                        "nomeComCargo": "Senadora Damares Alves",
+                        "nomeComCargoResumido": "Sen. Damares Alves",
+                        "casa": "SF",
+                        "ufPartido": "DF",
+                        "siglaPartido": "REPUBLICANOS",
+                        "partido": "REPUBLICANOS",
+                        "urlFoto": "https://www.senado.gov.br/senadores/img/fotos-oficiais/senador6335.jpg",
+                        "urlPagina": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6335",
+                        "isSenador": "true",
+                        "isDeputado": "false",
+                        "data": "2026-01-30T00:00:00.000",
+                        "liderancas": {
+                          "titulo": "Vice-líder do Congresso Nacional",
+                          "nomeUnidadeLideranca": "Liderança da Minoria"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "videos": {
+              "codigo": "8160",
+              "ordem": "1",
+              "url": "https://www.youtube.com/watch?v=oEhbbtbsD4I",
+              "dataHoraReuniao": "2026-10-15T09:00:00.000"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

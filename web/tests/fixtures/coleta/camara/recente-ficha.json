@@ -1,0 +1,52 @@
+{
+  "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637088",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:09.672Z",
+  "corpo": {
+    "dados": {
+      "id": 2637088,
+      "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637088",
+      "siglaTipo": "PL",
+      "codTipo": 139,
+      "numero": 3453,
+      "ano": 2026,
+      "ementa": "Institui a Bolsa Estudantil de Moradia Amazônica, destinada aos estudantes de instituições públicas de ensino superior e das instituições da rede federal de educação profissional, científica e tecnológica situadas na Amazônia Legal, e dá outras providências.",
+      "dataApresentacao": "2026-07-03T16:23",
+      "uriOrgaoNumerador": "https://dadosabertos.camara.leg.br/api/v2/orgaos/2009",
+      "statusProposicao": {
+        "dataHora": "2026-10-15T00:00",
+        "sequencia": 15,
+        "siglaOrgao": "CE",
+        "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/2009",
+        "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "descricaoTramitacao": "Abertura de Prazo",
+        "codTipoTramitacao": "350",
+        "descricaoSituacao": "Aguardando Parecer",
+        "codSituacao": 915,
+        "despacho": "Prazo para Emendas ao Projeto (5 sessões a partir de 16/10/2026)",
+        "url": null,
+        "ambito": "Regimental",
+        "apreciacao": "Proposição Sujeita à Apreciação Conclusiva pelas Comissões - Art. 24 II"
+      },
+      "uriAutores": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637088/autores",
+      "descricaoTipo": "Projeto de Lei",
+      "ementaDetalhada": "",
+      "keywords": "Criação, bolsa de estudo, salário mínimo, estudante, vulnerabilidade social, Instituição de ensino superior pública, Instituição de Ensino Superior (IES), Educação e formação profissional, Amazônia Legal, residente, município, divergência, instituição de ensino, diretrizes.",
+      "uriPropPrincipal": null,
+      "uriPropAnterior": null,
+      "uriPropPosterior": null,
+      "urlInteiroTeor": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3156979",
+      "urnFinal": null,
+      "texto": null,
+      "justificativa": null
+    },
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637088"
+      }
+    ]
+  }
+}

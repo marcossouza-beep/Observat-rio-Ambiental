@@ -1,0 +1,24 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/processo/prazo?idProcesso=8079566",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:24.693Z",
+  "corpo": [
+    {
+      "casa": null,
+      "codigoColegiado": null,
+      "descricaoTipoFase": "Encerrado",
+      "fimPrazo": "2025-08-08",
+      "fundamentoLegal": "Art. 66, § 1º da Constituição Federal",
+      "id": 10004880,
+      "idProcesso": 8079566,
+      "idTipoPrazo": 41969847,
+      "inicioPrazo": "2025-08-08",
+      "nomeColegiado": null,
+      "prorrogado": "Não",
+      "siglaColegiado": null,
+      "siglaTipoFase": "E",
+      "tipoPrazo": "Veto ou Sanção de Projeto de Lei"
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes?codTema=48&dataInicio=2026-10-10&dataFim=2026-10-15&itens=100&ordem=DESC&ordenarPor=id",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:50:59.800Z",
+  "corpo": {
+    "dados": [
+      {
+        "id": 2637088,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637088",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 3453,
+        "ano": 2026,
+        "ementa": "Institui a Bolsa Estudantil de Moradia Amazônica, destinada aos estudantes de instituições públicas de ensino superior e das instituições da rede federal de educação profissional, científica e tecnológica situadas na Amazônia Legal, e dá outras providências.",
+        "dataApresentacao": "2026-07-03T16:23"
+      },
+      {
+        "id": 2632301,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2632301",
+        "siglaTipo": "MPV",
+        "codTipo": 291,
+        "numero": 1367,
+        "ano": 2026,
+        "ementa": "Abre crédito extraordinário, em favor do Ministério do Meio Ambiente e Mudança do Clima, no valor de R$ 337.483.432,00, para os fins que especifica.",
+        "dataApresentacao": "2026-06-15T00:00"
+      },
+      {
+        "id": 2625687,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625687",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 2462,
+        "ano": 2026,
+        "ementa": "Dispõe sobre a Política Nacional de Proteção, Promoção e Garantia de Direitos das Mulheres Ribeirinhas.",
+        "dataApresentacao": "2026-05-19T12:02"
+      },
+      {
+        "id": 2617372,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2617372",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 1895,
+        "ano": 2026,
+        "ementa": "Recategoriza a unidade de conservação Área de Relevante Interesse Ecológico Floresta da Cicuta para Refúgio de Vida Silvestre Floresta da Cicuta, nos Municípios de Volta Redonda e Barra Mansa, Estado do Rio de Janeiro, altera seus limites e dá outras providências.",
+        "dataApresentacao": "2026-04-17T13:28"
+      },
+      {
+        "id": 2614063,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2614063",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 1676,
+        "ano": 2026,
+        "ementa": "Estabelece o saneamento básico como eixo estratégico da segurança hídrica, da adaptação às mudanças climáticas e da proteção da saúde, assegurando o acesso universal à água potável.",
+        "dataApresentacao": "2026-04-07T19:39"
+      },
+      {
+        "id": 2614061,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2614061",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 1674,
+        "ano": 2026,
+        "ementa": "Dispõe sobre a logística reversa e conscientização pública para o descarte de agulhas e dispositivos perfurocortantes de uso medicamentoso domiciliar, e dá outras providências.",
+        "dataApresentacao": "2026-04-07T19:39"
+      },
+      {
+        "id": 2613879,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2613879",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 1649,
+        "ano": 2026,
+        "ementa": "Altera a Lei nº 13.445, de 24 de maio de 2017 (Lei de Migração), dispõe sobre o estatuto do imigrante sazonal.",
+        "dataApresentacao": "2026-04-07T16:19"
+      },
+      {
+        "id": 2606223,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2606223",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 891,
+        "ano": 2026,
+        "ementa": "Cria o Programa Nacional de Contenção de Encostas e Drenagem Urbana em Áreas de Risco, com apoio técnico e financeiro a Estados e Municípios.",
+        "dataApresentacao": "2026-03-03T15:36"
+      },
+      {
+        "id": 2603689,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2603689",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 631,
+        "ano": 2026,
+        "ementa": "Cria o Marco Regulatório dos Planos de Assistência Veterinária (planos de saúde pet) e dá outras providências.",
+        "dataApresentacao": "2026-02-20T17:32"
+      },
+      {
+        "id": 2602953,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2602953",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 553,
+        "ano": 2026,
+        "ementa": "Dispõe sobre a prevenção do abandono, dos maus-tratos e da exploração reprodutiva de cães e gatos, estabelece normas gerais de rastreabilidade, responsabilidade e bem-estar animal na criação e na transferência de guarda, institui o Registro Nacional de Criador Comercial (RNCC) e prevê sanções administrativas pelo descumprimento da norma.",
+        "dataApresentacao": "2026-02-12T16:39"
+      },
+      {
+        "id": 2601715,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2601715",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 407,
+        "ano": 2026,
+        "ementa": "Altera a Lei nº 15.046, de 17 de dezembro de 2024, para estabelecer obrigatoriedade de identificação e microchipagem de cães e gatos e estruturar os deveres e sanções relativas ao Cadastro Nacional de Animais Domésticos.",
+        "dataApresentacao": "2026-02-09T18:18"
+      },
+      {
+        "id": 2599842,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2599842",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 7233,
+        "ano": 2025,
+        "ementa": "Altera a Lei nº 9.985, de 18 de julho de 2000, que institui o Sistema Nacional de Unidades de Conservação da Natureza (SNUC), para garantir e priorizar investimentos em infraestrutura social e habitacional em Áreas Protegidas da Amazônia Legal.",
+        "dataApresentacao": "2025-12-22T23:52"
+      },
+      {
+        "id": 2599758,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2599758",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 7149,
+        "ano": 2025,
+        "ementa": "Dispõe sobre diretrizes nacionais de infraestrutura, higiene, atendimento veterinário e condições de segurança em organizações de proteção animal, canis, gatis e centros de acolhimento, tornando obrigatória a adoção de protocolos mínimos de manejo e cuidado.",
+        "dataApresentacao": "2025-12-22T22:58"
+      },
+      {
+        "id": 2599748,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2599748",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 7139,
+        "ano": 2025,
+        "ementa": "Altera a Lei nº 14.133, de 1º de abril de 2021 (Lei de Licitações e Contratos Administrativos), para incluir a resiliência climática e a sustentabilidade como fatores de preferência nas contratações de saneamento básico.",
+        "dataApresentacao": "2025-12-22T22:58"
+      },
+      {
+        "id": 2599308,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2599308",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 6715,
+        "ano": 2025,
+        "ementa": "Altera a Lei nº 11.445, de 5 de janeiro de 2007, que estabelece as diretrizes nacionais para o saneamento básico, para dispor sobre a transparência de informações relativas ao reúso de água promovido por condomínios edilícios, com divulgação periódica de dados operacionais.",
+        "dataApresentacao": "2025-12-22T17:43"
+      },
+      {
+        "id": 2596640,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2596640",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 6411,
+        "ano": 2025,
+        "ementa": "Altera a Lei nº 9.795, de 27 de abril de 1999, para dispor sobre a empatia aos animais no âmbito da educação ambiental.",
+        "dataApresentacao": "2025-12-15T14:50"
+      },
+      {
+        "id": 2595996,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2595996",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 6361,
+        "ano": 2025,
+        "ementa": "Reconhece o montanhismo como atividade de interesse esportivo, cultural, socioeducativo e ambiental e estabelece diretrizes para sua prática no território nacional.",
+        "dataApresentacao": "2025-12-11T14:09"
+      },
+      {
+        "id": 2595746,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2595746",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 6335,
+        "ano": 2025,
+        "ementa": "Institui a Política Nacional de Pagamento por Serviços Ambientais Urbanos (PSAU), com a finalidade de incentivar a adoção de soluções baseadas na natureza e em energias renováveis no ambiente urbano, promover a mitigação e a adaptação às mudanças climáticas, reduzir ilhas de calor, ampliar a sustentabilidade das cidades e fortalecer a participação cidadã na proteção ambiental.",
+        "dataApresentacao": "2025-12-10T19:02"
+      },
+      {
+        "id": 2594651,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2594651",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 6307,
+        "ano": 2025,
+        "ementa": "Altera a Lei nº 9.250, de 26 de dezembro de 1995, para instituir incentivo fiscal às despesas com saúde preventiva de animais de estimação, no âmbito da Política Nacional de Saúde Única Homem-Animal-Ambiente, e dá outras providências.",
+        "dataApresentacao": "2025-12-09T20:44"
+      },
+      {
+        "id": 2594586,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2594586",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 6299,
+        "ano": 2025,
+        "ementa": "Institui o Programa Cidades Florestais Inteligentes na Amazônia Legal e dá outras providências.",
+        "dataApresentacao": "2025-12-09T19:40"
+      },
+      {
+        "id": 2560757,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2560757",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 4553,
+        "ano": 2025,
+        "ementa": "Institui o Portal Nacional de Informações Estratégicas Socioambientais, Climáticas e Territoriais - “INFOCLIMA-TERRA-BRASIL”, e dá outras providências.",
+        "dataApresentacao": "2025-09-12T13:15"
+      },
+      {
+        "id": 2554345,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2554345",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 4279,
+        "ano": 2025,
+        "ementa": "Dispõe sobre o descarte e destinação final de carcaças de animais mortos em clínicas veterinárias, e dá outras providências.",
+        "dataApresentacao": "2025-08-27T19:18"
+      },
+      {
+        "id": 2536830,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536830",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 3444,
+        "ano": 2025,
+        "ementa": "Institui o Programa de Infraestrutura Sustentável para Comunidades Insulares Amazônicas, com foco em saneamento básico, acesso à água potável e manejo ambiental, e dá outras providências.",
+        "dataApresentacao": "2025-07-15T19:08"
+      },
+      {
+        "id": 2523715,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2523715",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 2791,
+        "ano": 2025,
+        "ementa": "Altera a Lei nº 12.305, de 2 de agosto de 2010 (Política Nacional de Resíduos Sólidos), para minimizar impactos dos resíduos sobre a fauna silvestre.",
+        "dataApresentacao": "2025-06-10T17:39"
+      },
+      {
+        "id": 2515277,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2515277",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 2459,
+        "ano": 2025,
+        "ementa": "Altera o art. 482 da Consolidação das Leis do Trabalho (CLT), para incluir como hipótese de justa causa a prática de crime de maus-tratos contra animais, e dá outras providências.",
+        "dataApresentacao": "2025-05-21T20:17"
+      },
+      {
+        "id": 2491175,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2491175",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 1338,
+        "ano": 2025,
+        "ementa": "Institui o programa “Passaporte Verde” e concede incentivos fiscais a empresas que comprovem o uso exclusivo de energia renovável em suas operações.",
+        "dataApresentacao": "2025-03-31T17:14"
+      },
+      {
+        "id": 2379032,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2379032",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 3904,
+        "ano": 2023,
+        "ementa": "Institui a Política Nacional de Agroecologia e Produção Orgânica.",
+        "dataApresentacao": "2023-08-14T18:06"
+      },
+      {
+        "id": 2346907,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2346907",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 176,
+        "ano": 2023,
+        "ementa": "Fixa a determinação para a proibição de utilização de veículos movidos à tração animal e à exploração animal para esse fim; altera a Lei nº 9.605, de 12 de fevereiro de 1998, para criminalizar tal conduta e dá outras providências.",
+        "dataApresentacao": "2023-02-02T10:40"
+      },
+      {
+        "id": 2319094,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2319094",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 791,
+        "ano": 2022,
+        "ementa": "Altera a Lei nº 9.985, de 18 de julho de 2000, que regulamenta o art. 225, § 1º, incisos I, II, III e VII da Constituição Federal, que institui o Sistema Nacional de Unidades de Conservação da Natureza e dá outras providências.",
+        "dataApresentacao": "2022-03-31T15:14"
+      },
+      {
+        "id": 2265216,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2265216",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 5172,
+        "ano": 2020,
+        "ementa": "Cria a Zona Franca da Biodiversidade da Amazônia Legal, nas condições que especifica.",
+        "dataApresentacao": "2020-11-16T10:37"
+      },
+      {
+        "id": 2259554,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2259554",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 4102,
+        "ano": 2020,
+        "ementa": "Regulamenta a utilização de materiais transparentes em edificações com mais de vinte metros de altura para evitar colisões de aves.",
+        "dataApresentacao": "2020-08-05T17:16"
+      },
+      {
+        "id": 2192984,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2192984",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 1097,
+        "ano": 2019,
+        "ementa": "Dispõe sobre a proibição, em todo o território nacional, da utilização de penas e plumas de origem animal para a produção de fantasias e alegorias e dá outras providências.",
+        "dataApresentacao": "2019-02-25T17:04"
+      }
+    ],
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes?codTema=48&dataInicio=2026-10-10&dataFim=2026-10-15&itens=100&ordem=DESC&ordenarPor=id"
+      },
+      {
+        "rel": "first",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes?codTema=48&dataInicio=2026-10-10&dataFim=2026-10-15&ordem=DESC&ordenarPor=id&pagina=1&itens=100"
+      },
+      {
+        "rel": "last",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes?codTema=48&dataInicio=2026-10-10&dataFim=2026-10-15&ordem=DESC&ordenarPor=id&pagina=1&itens=100"
+      }
+    ]
+  }
+}

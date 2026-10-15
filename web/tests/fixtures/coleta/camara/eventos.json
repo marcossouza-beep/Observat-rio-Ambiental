@@ -1,0 +1,564 @@
+{
+  "url": "https://dadosabertos.camara.leg.br/api/v2/eventos?dataInicio=2026-10-13&dataFim=2026-10-22&itens=100&ordem=ASC&ordenarPor=dataHoraInicio",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:11.224Z",
+  "corpo": {
+    "dados": [
+      {
+        "id": 82880,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/82880",
+        "dataHoraInicio": "2026-10-14T10:00",
+        "dataHoraFim": null,
+        "situacao": "Cancelada",
+        "descricaoTipo": "Reunião Deliberativa",
+        "descricao": "Votação de indicações de beneficiários para emendas da comissão à LOA",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 2017,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/2017",
+            "sigla": "CINDRE",
+            "nome": "Comissão de Integração Nacional e Desenvolvimento Regional",
+            "apelido": "Integração Nacional e Desenvolvimento Regional",
+            "codTipoOrgao": 2,
+            "tipoOrgao": "Comissão Permanente",
+            "nomePublicacao": "Comissão de Integração Nacional e Desenvolvimento Regional",
+            "nomeResumido": "Integração Nacional"
+          }
+        ],
+        "localCamara": {
+          "nome": "Anexo II, Plenário 13",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": null
+      },
+      {
+        "id": 83011,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83011",
+        "dataHoraInicio": "2026-10-15T10:00",
+        "dataHoraFim": null,
+        "situacao": "Convocada",
+        "descricaoTipo": "Reunião Técnica",
+        "descricao": "Sorteio de vagas para o Estágio-Visita\r\n PROGRAMA ESTÁGIO-VISITA DE CURTA DURAÇÃO \r\nSORTEIO DE VAGAS | 2ª EDIÇÃO 2026\r\nPLENÁRIO DECOM Nº 6\r\n(EDOC 1295093/2026 | SILEG nº 83.011)\r\n\r\nNOMINATA\r\n\r\n1)DEPUTADO LULA DA FONTE\r\nSEGUNDO-SECRETÁRIO DA MESA DIRETORA \r\n\r\n2)SABRINA APARECIDA CARNEIRO ALVES \r\nANALISTA LEGISLATIVO\r\nCHEFE DE GABINETE DO SEGUNDO-SECRETÁRIO\r\n\r\n3)GUSTAVO SILVA DE SALLES\r\nANALISTA LEGISLATIVO\r\nMESTRE DE CERIMÔNIAS\r\n\r\n4)ROMMEL GOMES RESENDE\r\nANALISTA LEGISLATIVO\r\nSECRETARIA DE CONTROLE INTERNO\r\n\r\n5)LUCAS JOSÉ MUÑOZ DENTELLO\r\nANALISTA LEGISLATIVO\r\nSECRETARIA DE CONTROLE INTERNO",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 100950,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/100950",
+            "sigla": "EVENTOS",
+            "nome": "Eventos",
+            "apelido": "Outros Eventos",
+            "codTipoOrgao": 12000,
+            "tipoOrgao": "Órgão da Câmara dos Deputados",
+            "nomePublicacao": "Câmara dos Deputados - Outros Eventos",
+            "nomeResumido": null
+          }
+        ],
+        "localCamara": {
+          "nome": "Anexo II, Plenário 04",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": null
+      },
+      {
+        "id": 83031,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83031",
+        "dataHoraInicio": "2026-10-13T10:22",
+        "dataHoraFim": "2026-10-13T11:40",
+        "situacao": "Encerrada",
+        "descricaoTipo": "Sessão Não Deliberativa Solene",
+        "descricao": "Homenagem ao Dia Mundial da Alimentação",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 111,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/111",
+            "sigla": "CN",
+            "nome": "CONGRESSO NACIONAL",
+            "apelido": "CONGRESSO NACIONAL",
+            "codTipoOrgao": 81001,
+            "tipoOrgao": "Órgão do Congresso Nacional",
+            "nomePublicacao": "CN",
+            "nomeResumido": "Congresso Nacional"
+          }
+        ],
+        "localCamara": {
+          "nome": "Plenário do Senado Federal",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": "https://www.youtube.com/watch?v=vxNcfZKleIU"
+      },
+      {
+        "id": 83037,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83037",
+        "dataHoraInicio": "2026-10-14T10:31",
+        "dataHoraFim": "2026-10-14T10:42",
+        "situacao": "Encerrada (Final)",
+        "descricaoTipo": "Reunião Deliberativa",
+        "descricao": "Discussão e votação de propostas legislativas\r\n Votação de indicações de beneficiários para emendas da comissão à LOA",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 2006,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/2006",
+            "sigla": "CDU",
+            "nome": "Comissão de Desenvolvimento Urbano",
+            "apelido": "Desenvolvimento Urbano",
+            "codTipoOrgao": 2,
+            "tipoOrgao": "Comissão Permanente",
+            "nomePublicacao": "Comissão de Desenvolvimento Urbano",
+            "nomeResumido": "Desenvolvimento Urbano"
+          }
+        ],
+        "localCamara": {
+          "nome": "Anexo II, Plenário 16",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": "https://www.youtube.com/watch?v=oOLD-FIiZ9o"
+      },
+      {
+        "id": 83038,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83038",
+        "dataHoraInicio": "2026-10-15T14:00",
+        "dataHoraFim": null,
+        "situacao": "Cancelada",
+        "descricaoTipo": "Reunião Deliberativa",
+        "descricao": "Deliberação das indicações às programações da LOA 2026 oriundas de emendas",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 6066,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/6066",
+            "sigla": "CTUR",
+            "nome": "Comissão de Turismo",
+            "apelido": "Turismo",
+            "codTipoOrgao": 2,
+            "tipoOrgao": "Comissão Permanente",
+            "nomePublicacao": "Comissão de Turismo",
+            "nomeResumido": "Turismo"
+          }
+        ],
+        "localCamara": {
+          "nome": "Anexo II, Plenário 05",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": null
+      },
+      {
+        "id": 83039,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83039",
+        "dataHoraInicio": "2026-10-14T14:20",
+        "dataHoraFim": "2026-10-14T14:26",
+        "situacao": "Encerrada",
+        "descricaoTipo": "Reunião Deliberativa",
+        "descricao": "Discussão e votação de propostas legislativas\r\n Deliberação das Indicações de Beneficiários às programações da LOA - Emendas da Comissão RP-8",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 539387,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/539387",
+            "sigla": "CPASF",
+            "nome": "Comissão de Previdência, Assistência Social, Infância, Adolescência e Família",
+            "apelido": "Previdência, Assis. Social, Infância, Adolescência e Família",
+            "codTipoOrgao": 2,
+            "tipoOrgao": "Comissão Permanente",
+            "nomePublicacao": "Comissão de Previdência, Assistência Social, Infância, Adolescência e Família",
+            "nomeResumido": "Previdência e Assistência"
+          }
+        ],
+        "localCamara": {
+          "nome": "Anexo II, Plenário 07",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": "https://www.youtube.com/watch?v=odAINg0qwG0"
+      },
+      {
+        "id": 83040,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83040",
+        "dataHoraInicio": "2026-10-14T10:00",
+        "dataHoraFim": null,
+        "situacao": "Cancelada",
+        "descricaoTipo": "Reunião Deliberativa",
+        "descricao": "Discussão e votação de propostas legislativas",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 2008,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/2008",
+            "sigla": "CDE",
+            "nome": "Comissão de Desenvolvimento Econômico",
+            "apelido": "Desenvolvimento Econômico",
+            "codTipoOrgao": 2,
+            "tipoOrgao": "Comissão Permanente",
+            "nomePublicacao": "Comissão de Desenvolvimento Econômico",
+            "nomeResumido": "Desenvolvimento Econômico"
+          }
+        ],
+        "localCamara": {
+          "nome": "Anexo II, Plenário 05",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": null
+      },
+      {
+        "id": 83042,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83042",
+        "dataHoraInicio": "2026-10-14T10:15",
+        "dataHoraFim": "2026-10-14T11:07",
+        "situacao": "Encerrada (Final)",
+        "descricaoTipo": "Reunião Deliberativa",
+        "descricao": "Discussão e votação de propostas legislativas",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 2010,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/2010",
+            "sigla": "CFT",
+            "nome": "Comissão de Finanças e Tributação",
+            "apelido": "Finanças e Tributação",
+            "codTipoOrgao": 2,
+            "tipoOrgao": "Comissão Permanente",
+            "nomePublicacao": "Comissão de Finanças e Tributação",
+            "nomeResumido": "Finanças e Tributação"
+          }
+        ],
+        "localCamara": {
+          "nome": "Anexo II, Plenário 04",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": "https://www.youtube.com/watch?v=FphrjklTVOQ"
+      },
+      {
+        "id": 83045,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83045",
+        "dataHoraInicio": "2026-10-14T13:01",
+        "dataHoraFim": "2026-10-14T13:34",
+        "situacao": "Encerrada (Final)",
+        "descricaoTipo": "Reunião Deliberativa",
+        "descricao": "Discussão e votação de propostas legislativas\r\n A - 10ª votação de indicações de beneficiários para emendas da Comissão à LOA 2026 e ratificação de indicação para execução de emenda à LOA 2024",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 537236,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/537236",
+            "sigla": "CESPO",
+            "nome": "Comissão do Esporte",
+            "apelido": "Esporte",
+            "codTipoOrgao": 2,
+            "tipoOrgao": "Comissão Permanente",
+            "nomePublicacao": "Comissão do Esporte",
+            "nomeResumido": "Esportes"
+          }
+        ],
+        "localCamara": {
+          "nome": "Anexo II, Plenário 04",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": "https://www.youtube.com/watch?v=DRH90w-f-Sc"
+      },
+      {
+        "id": 83046,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83046",
+        "dataHoraInicio": "2026-10-13T15:39",
+        "dataHoraFim": "2026-10-13T16:10",
+        "situacao": "Encerrada (Final)",
+        "descricaoTipo": "Reunião Deliberativa",
+        "descricao": "Discussão e votação de propostas legislativas",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 539386,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/539386",
+            "sigla": "CICS",
+            "nome": "Comissão de Indústria, Comércio e Serviços",
+            "apelido": "Indústria, Comércio e Serviços",
+            "codTipoOrgao": 2,
+            "tipoOrgao": "Comissão Permanente",
+            "nomePublicacao": "Comissão de Indústria, Comércio e Serviços",
+            "nomeResumido": "Indústria e Comércio"
+          }
+        ],
+        "localCamara": {
+          "nome": "Anexo II, Plenário 05",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": "https://www.youtube.com/watch?v=ME4RBeCSm94"
+      },
+      {
+        "id": 83047,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83047",
+        "dataHoraInicio": "2026-10-13T14:21",
+        "dataHoraFim": "2026-10-13T18:06",
+        "situacao": "Encerrada",
+        "descricaoTipo": "Sessão Deliberativa",
+        "descricao": "",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 180,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+            "sigla": "PLEN",
+            "nome": "Plenário",
+            "apelido": "Plenário",
+            "codTipoOrgao": 26,
+            "tipoOrgao": "Plenário Virtual",
+            "nomePublicacao": "Plenário",
+            "nomeResumido": "Plenário"
+          }
+        ],
+        "localCamara": {
+          "nome": "Plenário da Câmara dos Deputados",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": "https://www.youtube.com/watch?v=iufPZDJBUho"
+      },
+      {
+        "id": 83048,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83048",
+        "dataHoraInicio": "2026-10-14T14:40",
+        "dataHoraFim": "2026-10-14T14:42",
+        "situacao": "Encerrada",
+        "descricaoTipo": "Reunião Deliberativa",
+        "descricao": "Discussão e votação de propostas legislativas\r\n Deliberação de Requerimentos (estão sujeitos à pauta os requerimentos apresentados até 24 horas antes do início da Reunião).",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 539849,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/539849",
+            "sigla": "CEXEXPLO",
+            "nome": "Comissão Externa de Prevenção e Enfrentamento da Violência Sexual Infantojuvenil.",
+            "apelido": "Prevenção e Enfrentamento da Violência Sexual Infantojuvenil",
+            "codTipoOrgao": 5,
+            "tipoOrgao": "Comissão Externa",
+            "nomePublicacao": "Comissão Externa sobre Prevenção e Enfrentamento da Violência Sexual Infantojuvenil",
+            "nomeResumido": "Violência Sexual Infantojuvenil"
+          }
+        ],
+        "localCamara": {
+          "nome": "Anexo II, Plenário 13",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": "https://www.youtube.com/watch?v=L7qCqLaFxTU"
+      },
+      {
+        "id": 83050,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83050",
+        "dataHoraInicio": "2026-10-14T10:00",
+        "dataHoraFim": null,
+        "situacao": "Cancelada",
+        "descricaoTipo": "Reunião Deliberativa",
+        "descricao": "Deliberação de indicações às programações da LOA 2026",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 2001,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/2001",
+            "sigla": "CAPADR",
+            "nome": "Comissão de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural",
+            "apelido": "Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural",
+            "codTipoOrgao": 2,
+            "tipoOrgao": "Comissão Permanente",
+            "nomePublicacao": "Comissão de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural",
+            "nomeResumido": "Agropecuária"
+          }
+        ],
+        "localCamara": {
+          "nome": "Anexo II, Plenário 06",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": null
+      },
+      {
+        "id": 83053,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83053",
+        "dataHoraInicio": "2026-10-16T18:00",
+        "dataHoraFim": null,
+        "situacao": "Convocada",
+        "descricaoTipo": "Reunião Técnica",
+        "descricao": "Lançamento do Livro da 26ª Edição do Americas Model United\nNations",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 100950,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/100950",
+            "sigla": "EVENTOS",
+            "nome": "Eventos",
+            "apelido": "Outros Eventos",
+            "codTipoOrgao": 12000,
+            "tipoOrgao": "Órgão da Câmara dos Deputados",
+            "nomePublicacao": "Câmara dos Deputados - Outros Eventos",
+            "nomeResumido": null
+          }
+        ],
+        "localCamara": {
+          "nome": "Auditório Nereu Ramos",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": null
+      },
+      {
+        "id": 83057,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83057",
+        "dataHoraInicio": "2026-10-14T14:23",
+        "dataHoraFim": "2026-10-14T20:55",
+        "situacao": "Encerrada",
+        "descricaoTipo": "Sessão Deliberativa",
+        "descricao": "Sessão Deliberativa Extraordinária Semipresencial (AM nº 123/2020)",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 180,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+            "sigla": "PLEN",
+            "nome": "Plenário",
+            "apelido": "Plenário",
+            "codTipoOrgao": 26,
+            "tipoOrgao": "Plenário Virtual",
+            "nomePublicacao": "Plenário",
+            "nomeResumido": "Plenário"
+          }
+        ],
+        "localCamara": {
+          "nome": "Plenário da Câmara dos Deputados",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": "https://www.youtube.com/watch?v=g2grUXO9osc"
+      },
+      {
+        "id": 83062,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83062",
+        "dataHoraInicio": "2026-10-21T10:00",
+        "dataHoraFim": null,
+        "situacao": "Convocada",
+        "descricaoTipo": "Reunião Deliberativa",
+        "descricao": "Discussão e votação de propostas legislativas",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 2016,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/2016",
+            "sigla": "CVT",
+            "nome": "Comissão de Viação e Transportes",
+            "apelido": "Viação e Transportes",
+            "codTipoOrgao": 2,
+            "tipoOrgao": "Comissão Permanente",
+            "nomePublicacao": "Comissão de Viação e Transportes",
+            "nomeResumido": "Viação e Transportes"
+          }
+        ],
+        "localCamara": {
+          "nome": "Anexo II, Plenário 11",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": null
+      },
+      {
+        "id": 83063,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83063",
+        "dataHoraInicio": "2026-10-16T14:00",
+        "dataHoraFim": null,
+        "situacao": "Convocada",
+        "descricaoTipo": "Reunião Deliberativa",
+        "descricao": "Deliberação das indicações às programações da LOA 2026 oriundas de emendas.",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 6066,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/6066",
+            "sigla": "CTUR",
+            "nome": "Comissão de Turismo",
+            "apelido": "Turismo",
+            "codTipoOrgao": 2,
+            "tipoOrgao": "Comissão Permanente",
+            "nomePublicacao": "Comissão de Turismo",
+            "nomeResumido": "Turismo"
+          }
+        ],
+        "localCamara": {
+          "nome": "Anexo II, Plenário 05",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": null
+      },
+      {
+        "id": 83066,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/83066",
+        "dataHoraInicio": "2026-10-15T10:00",
+        "dataHoraFim": null,
+        "situacao": "Convocada",
+        "descricaoTipo": "Sessão Deliberativa",
+        "descricao": "",
+        "localExterno": null,
+        "orgaos": [
+          {
+            "id": 180,
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+            "sigla": "PLEN",
+            "nome": "Plenário",
+            "apelido": "Plenário",
+            "codTipoOrgao": 26,
+            "tipoOrgao": "Plenário Virtual",
+            "nomePublicacao": "Plenário",
+            "nomeResumido": "Plenário"
+          }
+        ],
+        "localCamara": {
+          "nome": "Plenário da Câmara dos Deputados",
+          "predio": null,
+          "sala": null,
+          "andar": null
+        },
+        "urlRegistro": null
+      }
+    ],
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?dataInicio=2026-10-13&dataFim=2026-10-22&itens=100&ordem=ASC&ordenarPor=dataHoraInicio"
+      },
+      {
+        "rel": "first",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?dataInicio=2026-10-13&dataFim=2026-10-22&ordem=ASC&ordenarPor=dataHoraInicio&pagina=1&itens=100"
+      },
+      {
+        "rel": "last",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?dataInicio=2026-10-13&dataFim=2026-10-22&ordem=ASC&ordenarPor=dataHoraInicio&pagina=1&itens=100"
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/processo?dataInicioApresentacao=20260930&dataFimApresentacao=20261015&tramitando=S",
+  "status": 400,
+  "tipo": "",
+  "gravadaEm": "2026-10-15T12:51:25.126Z",
+  "corpo": null,
+  "erro": "HTTP 400 em https://legis.senado.leg.br/dadosabertos/processo?dataInicioApresentacao=20260930&dataFimApresentacao=20261015&tramitando=S"
+}

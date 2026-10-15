@@ -1,0 +1,24 @@
+{
+  "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637088/autores",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:10.000Z",
+  "corpo": {
+    "dados": [
+      {
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204557",
+        "nome": "Sidney Leite",
+        "codTipo": 10000,
+        "tipo": "Deputado(a)",
+        "ordemAssinatura": 1,
+        "proponente": 1
+      }
+    ],
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637088/autores"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1341 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/processo/emenda?idProcesso=8079566",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:23.521Z",
+  "corpo": [
+    {
+      "autoria": "Senador Luis Carlos Heinze (PP/RS)",
+      "casa": "SF",
+      "codigoColegiado": 1998,
+      "dataApresentacao": "2021-06-18",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        },
+        {
+          "casa": "SF",
+          "codigoColegiado": 1307,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Agricultura e Reforma Agrária",
+          "siglaColegiado": "CRA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "EMENDA",
+      "id": 8981833,
+      "idCiEmenda": 7455945,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 8981831,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 1 PLEN - PL 2159/2021",
+      "nomeColegiado": "Plenário do Senado Federal",
+      "numero": "1",
+      "siglaColegiado": "PLEN",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/172e288c-ac16-40fc-b656-ec7e894dfdf6"
+    },
+    {
+      "autoria": "Senador Paulo Paim (PT/RS)",
+      "casa": "SF",
+      "codigoColegiado": 1998,
+      "dataApresentacao": "2021-06-30",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Acolhida",
+          "idTipo": 7,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        },
+        {
+          "casa": "SF",
+          "codigoColegiado": 1307,
+          "data": "2025-05-20",
+          "descricaoTipo": "Acolhida",
+          "idTipo": 7,
+          "nomeColegiado": "Comissão de Agricultura e Reforma Agrária",
+          "siglaColegiado": "CRA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda 5 ao PL 2159/2021",
+      "id": 8984577,
+      "idCiEmenda": 7456828,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 8984575,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 2 PLEN - PL 2159/2021",
+      "nomeColegiado": "Plenário do Senado Federal",
+      "numero": "2",
+      "siglaColegiado": "PLEN",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/046f8db5-5b57-4e7a-8ed5-35ae3ee9d3df"
+    },
+    {
+      "autoria": "Senador Paulo Paim (PT/RS)",
+      "casa": "SF",
+      "codigoColegiado": 1998,
+      "dataApresentacao": "2021-06-30",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Acolhida",
+          "idTipo": 7,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        },
+        {
+          "casa": "SF",
+          "codigoColegiado": 1307,
+          "data": "2025-05-20",
+          "descricaoTipo": "Acolhida",
+          "idTipo": 7,
+          "nomeColegiado": "Comissão de Agricultura e Reforma Agrária",
+          "siglaColegiado": "CRA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda 4 ao PL 2159/2021",
+      "id": 8984580,
+      "idCiEmenda": 7456829,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 8984578,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 3 PLEN - PL 2159/2021",
+      "nomeColegiado": "Plenário do Senado Federal",
+      "numero": "3",
+      "siglaColegiado": "PLEN",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/ee675647-39ab-406d-8428-f8b3f55382b7"
+    },
+    {
+      "autoria": "Senador Paulo Paim (PT/RS)",
+      "casa": "SF",
+      "codigoColegiado": 1998,
+      "dataApresentacao": "2021-06-30",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        },
+        {
+          "casa": "SF",
+          "codigoColegiado": 1307,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Agricultura e Reforma Agrária",
+          "siglaColegiado": "CRA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda 3 ao PL 2159/2021",
+      "id": 8984583,
+      "idCiEmenda": 7456830,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 8984581,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 4 PLEN - PL 2159/2021",
+      "nomeColegiado": "Plenário do Senado Federal",
+      "numero": "4",
+      "siglaColegiado": "PLEN",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/5c4dc85a-f6aa-4aab-be85-460188577ba3"
+    },
+    {
+      "autoria": "Senador Paulo Paim (PT/RS)",
+      "casa": "SF",
+      "codigoColegiado": 1998,
+      "dataApresentacao": "2021-06-30",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        },
+        {
+          "casa": "SF",
+          "codigoColegiado": 1307,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Agricultura e Reforma Agrária",
+          "siglaColegiado": "CRA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda 2 ao PL 2159/2021",
+      "id": 8984586,
+      "idCiEmenda": 7456831,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 8984584,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 5 PLEN - PL 2159/2021",
+      "nomeColegiado": "Plenário do Senado Federal",
+      "numero": "5",
+      "siglaColegiado": "PLEN",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/4f7a7ddc-131e-4840-a380-c9f1bedf2626"
+    },
+    {
+      "autoria": "Senador Paulo Paim (PT/RS)",
+      "casa": "SF",
+      "codigoColegiado": 1998,
+      "dataApresentacao": "2021-06-30",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        },
+        {
+          "casa": "SF",
+          "codigoColegiado": 1307,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Agricultura e Reforma Agrária",
+          "siglaColegiado": "CRA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda 1 ao PL 2159 de 2021",
+      "id": 8984589,
+      "idCiEmenda": 7456832,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 8984587,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 6 PLEN - PL 2159/2021",
+      "nomeColegiado": "Plenário do Senado Federal",
+      "numero": "6",
+      "siglaColegiado": "PLEN",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/926dcd8c-3362-4417-bd98-90d5364093c4"
+    },
+    {
+      "autoria": "Senador Jorginho Mello (PL/SC)",
+      "casa": "SF",
+      "codigoColegiado": 1998,
+      "dataApresentacao": "2021-07-02",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Acolhida",
+          "idTipo": 7,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        },
+        {
+          "casa": "SF",
+          "codigoColegiado": 1307,
+          "data": "2025-05-20",
+          "descricaoTipo": "Acolhida",
+          "idTipo": 7,
+          "nomeColegiado": "Comissão de Agricultura e Reforma Agrária",
+          "siglaColegiado": "CRA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda 2 engenheiros",
+      "id": 8986480,
+      "idCiEmenda": 7457408,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 8986478,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 7 PLEN - PL 2159/2021",
+      "nomeColegiado": "Plenário do Senado Federal",
+      "numero": "7",
+      "siglaColegiado": "PLEN",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/b3c4d64b-6c2f-4e50-a968-7d109f6885e2"
+    },
+    {
+      "autoria": "Senador Jorginho Mello (PL/SC)",
+      "casa": "SF",
+      "codigoColegiado": 1998,
+      "dataApresentacao": "2021-07-02",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        },
+        {
+          "casa": "SF",
+          "codigoColegiado": 1307,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Agricultura e Reforma Agrária",
+          "siglaColegiado": "CRA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda 1 engenheiros",
+      "id": 8986483,
+      "idCiEmenda": 7457409,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 8986481,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 8 PLEN - PL 2159/2021",
+      "nomeColegiado": "Plenário do Senado Federal",
+      "numero": "8",
+      "siglaColegiado": "PLEN",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/ed8a52b1-4145-4efb-88f7-6ad092e36219"
+    },
+    {
+      "autoria": "Senador Luis Carlos Heinze (PP/RS)",
+      "casa": "SF",
+      "codigoColegiado": 1998,
+      "dataApresentacao": "2021-07-05",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        },
+        {
+          "casa": "SF",
+          "codigoColegiado": 1307,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Agricultura e Reforma Agrária",
+          "siglaColegiado": "CRA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "EMENDA BARRAMENTO",
+      "id": 8987209,
+      "idCiEmenda": 7457620,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 8987207,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 9 PLEN - PL 2159/2021",
+      "nomeColegiado": "Plenário do Senado Federal",
+      "numero": "9",
+      "siglaColegiado": "PLEN",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/f8caae8e-e03b-4531-9cb4-e820761e449f"
+    },
+    {
+      "autoria": "Senador Luiz do Carmo (MDB/GO)",
+      "casa": "SF",
+      "codigoColegiado": 1998,
+      "dataApresentacao": "2021-08-06",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Aprovada",
+          "idTipo": 1,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        },
+        {
+          "casa": "SF",
+          "codigoColegiado": 1307,
+          "data": "2025-05-20",
+          "descricaoTipo": "Aprovada",
+          "idTipo": 1,
+          "nomeColegiado": "Comissão de Agricultura e Reforma Agrária",
+          "siglaColegiado": "CRA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Projeto de Lei n° 2159, de 2021",
+      "id": 8997436,
+      "idCiEmenda": 7460402,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 8997434,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 10 PLEN - PL 2159/2021",
+      "nomeColegiado": "Plenário do Senado Federal",
+      "numero": "10",
+      "siglaColegiado": "PLEN",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/f0373ee6-2e73-4f74-8d19-0029b2048e59"
+    },
+    {
+      "autoria": "Senador Jaques Wagner (PT/BA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-08-25",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao Art. 10 do Projeto de Lei nº 2.159 de 2021.",
+      "id": 9009323,
+      "idCiEmenda": 7463540,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9009321,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 11 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "11",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/669d6e9c-2a4a-4d37-a1fd-e15bfc16ac9a"
+    },
+    {
+      "autoria": "Senador Jaques Wagner (PT/BA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-08-25",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Acolhida",
+          "idTipo": 7,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 11 do Projeto de Lei 2.159 de 2021.",
+      "id": 9009327,
+      "idCiEmenda": 7463541,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9009325,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 12 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "12",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/d0d95e77-ddb8-4a44-b475-40918dbc612e"
+    },
+    {
+      "autoria": "Senador Jaques Wagner (PT/BA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-08-25",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 13 do Projeto de Lei nº 2.159, de 2021",
+      "id": 9009331,
+      "idCiEmenda": 7463542,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9009329,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 13 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "13",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/37d7097b-9e01-4828-ba1f-578786e7c639"
+    },
+    {
+      "autoria": "Senador Jaques Wagner (PT/BA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-08-25",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Acolhida",
+          "idTipo": 7,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda supressiva do art. 38 do Projeto de Lei nº 2.159 de 2021",
+      "id": 9009334,
+      "idCiEmenda": 7463543,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9009332,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 14 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "14",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/0a098b16-f0eb-4145-a4e1-5a5041606b3e"
+    },
+    {
+      "autoria": "Senador Jaques Wagner (PT/BA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-08-25",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 39 do Projeto de Lei nº 2.159 de 2021",
+      "id": 9009337,
+      "idCiEmenda": 7463544,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9009335,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 15 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "15",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/779fe2a5-712a-436b-81c8-1e37cc01f618"
+    },
+    {
+      "autoria": "Senador Jaques Wagner (PT/BA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-08-25",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 40 do Projeto de Lei no 2.159 de 2021.",
+      "id": 9009350,
+      "idCiEmenda": 7463546,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9009348,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 16 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "16",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/91a1a81a-b7f0-4605-882b-4c6ce9ed20d7"
+    },
+    {
+      "autoria": "Senador Jaques Wagner (PT/BA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-08-25",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 54 do Projeto de Lei nº 2.159 de 2021.",
+      "id": 9009353,
+      "idCiEmenda": 7463547,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9009351,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 17 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "17",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/6b4e6048-8ec1-48d6-bf2a-a714d951276f"
+    },
+    {
+      "autoria": "Senador Jaques Wagner (PT/BA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-08-25",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 20 do Projeto de Lei no 2.159 de 2021.",
+      "id": 9009356,
+      "idCiEmenda": 7463548,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9009354,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 18 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "18",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/7f4c3b44-e7b7-4893-b885-38fe905a85b6"
+    },
+    {
+      "autoria": "Senador Jaques Wagner (PT/BA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-08-25",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa do art. 21 do Projeto de Lei no 2.159 de 2021.",
+      "id": 9009359,
+      "idCiEmenda": 7463549,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9009357,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 19 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "19",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/1392a1e4-24db-43ca-a79b-c5200b0e8182"
+    },
+    {
+      "autoria": "Senador Jaques Wagner (PT/BA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-08-25",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Acolhida",
+          "idTipo": 7,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao Art. 8º do Projeto de Lei nº 2.159 de 2021.",
+      "id": 9009362,
+      "idCiEmenda": 7463550,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9009360,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 20 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "20",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/745e88b7-0e4a-4f65-a7ec-5c5224fe6a54"
+    },
+    {
+      "autoria": "Senador Jaques Wagner (PT/BA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-08-25",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda supressiva do art. 9º do Projeto de Lei no 2.159 de 2021, renumerando-se artigos subsequentes.",
+      "id": 9009365,
+      "idCiEmenda": 7463551,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9009363,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 21 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "21",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/6d293b70-2657-4912-923d-a9f7404095ca"
+    },
+    {
+      "autoria": "Senador Jaques Wagner (PT/BA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-08-25",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 4º do Projeto de Lei no 2.159 de 2021.",
+      "id": 9009368,
+      "idCiEmenda": 7463552,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9009366,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 22 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "22",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/a26d8375-94c1-4718-bedc-e10036c9fe4d"
+    },
+    {
+      "autoria": "Senador Jaques Wagner (PT/BA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-08-25",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Acolhida",
+          "idTipo": 7,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda aditiva ao art. 12 do Projeto de Lei no 2.159 de 2021 que acrescenta incisos III a VI.",
+      "id": 9009371,
+      "idCiEmenda": 7463553,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9009369,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 23 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "23",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/059230fd-a113-4ef7-9b83-61d2e65bd973"
+    },
+    {
+      "autoria": "Senadora Eliziane Gama (CIDADANIA/MA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-09",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda aditiva ao art. 4º do Projeto de Lei nº 2.159 de 2021.",
+      "id": 9013746,
+      "idCiEmenda": 7464705,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9013744,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 24 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "24",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/32ead5fd-3de4-4dc1-a893-decfc44514f9"
+    },
+    {
+      "autoria": "Senadora Eliziane Gama (CIDADANIA/MA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-09",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 17 do Projeto de Lei nº 2.159 de 2021.",
+      "id": 9013749,
+      "idCiEmenda": 7464706,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9013747,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 25 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "25",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/834f2e7e-6e4a-447d-b484-fa2bf74879f5"
+    },
+    {
+      "autoria": "Senadora Eliziane Gama (CIDADANIA/MA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-09",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa à Seção VII do Capítulo II do Projeto de Lei nº 2.159 de 2021.",
+      "id": 9013772,
+      "idCiEmenda": 7464715,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9013770,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 26 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "26",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/e013cf5c-ba38-475d-b33c-b4974934a7ea"
+    },
+    {
+      "autoria": "Senadora Eliziane Gama (CIDADANIA/MA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-09",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 13 do Projeto de Lei nº 2.159 de 2021.",
+      "id": 9014272,
+      "idCiEmenda": 7464878,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9014270,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 27 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "27",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/3a13f85d-35f0-46df-bbda-b336d000e6b8"
+    },
+    {
+      "autoria": "Senadora Eliziane Gama (CIDADANIA/MA)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-09",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 21 do Projeto de Lei nº 2.159 de 2021.",
+      "id": 9014275,
+      "idCiEmenda": 7464879,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9014273,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 28 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "28",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/0cad749c-8838-491b-a80e-4c87a398c447"
+    },
+    {
+      "autoria": "Senador Carlos Fávaro (PSD/MT)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-15",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa do inciso XI do art. 8º do PL 2159 de 2021.",
+      "id": 9017410,
+      "idCiEmenda": 7465797,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9017408,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 29 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "29",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/c7cafe4b-705f-47ba-9d84-b5fc28df5be6"
+    },
+    {
+      "autoria": "Senador Randolfe Rodrigues (REDE/AP)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-16",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda aditiva no art. 4º do Projeto de Lei nº 2.159, de 2021.",
+      "id": 9017413,
+      "idCiEmenda": 7465798,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9017411,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 30 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "30",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/4b180493-a919-4a2c-b7c6-040f5d479fd1"
+    },
+    {
+      "autoria": "Senador Randolfe Rodrigues (REDE/AP)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-16",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao § 4º do art. 17 do Projeto de Lei nº 2.159 de 2021",
+      "id": 9017416,
+      "idCiEmenda": 7465799,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9017414,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 31 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "31",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/6aad27cd-602d-495f-bfe2-c50486d02886"
+    },
+    {
+      "autoria": "Senador Randolfe Rodrigues (REDE/AP)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-16",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 13 do Projeto de Lei nº 2.159 de 2021.",
+      "id": 9017419,
+      "idCiEmenda": 7465800,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9017417,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 32 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "32",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/ac699890-11ae-4fdf-ac8b-897641c97ad4"
+    },
+    {
+      "autoria": "Senador Randolfe Rodrigues (REDE/AP)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-16",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 21 do Projeto de Lei nº 2.159 de 2021",
+      "id": 9017428,
+      "idCiEmenda": 7465804,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9017426,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 33 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "33",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/29022542-b6ed-4fb2-9d5e-a34583befa76"
+    },
+    {
+      "autoria": "Senador Randolfe Rodrigues (REDE/AP)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-16",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa para a Seção VII do Capítulo II do Projeto de Lei nº 2.159 de 2021",
+      "id": 9017436,
+      "idCiEmenda": 7465807,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9017434,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 34 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "34",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/b0522f8e-676a-4f4b-ab39-4dac0f07d065"
+    },
+    {
+      "autoria": "Senador Fabiano Contarato (REDE/ES)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-16",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 49 do Projeto de Lei nº 2.159 de 2021.",
+      "id": 9017967,
+      "idCiEmenda": 7465908,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9017965,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 41 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "41",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/08c5e53c-fbc7-4b9e-a004-bde8f1d23bed"
+    },
+    {
+      "autoria": "Senador Fabiano Contarato (REDE/ES)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-16",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao § 4º do art. 17 do Projeto de Lei nº 2.159 de 2021.",
+      "id": 9017970,
+      "idCiEmenda": 7465909,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9017968,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 42 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "42",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/ccf1f2f8-199e-4252-9854-52bb295e3977"
+    },
+    {
+      "autoria": "Senador Fabiano Contarato (REDE/ES)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-16",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa da Seção VII do Capítulo II do Projeto de lei 2159 de 2021.",
+      "id": 9017973,
+      "idCiEmenda": 7465910,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9017971,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 43 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "43",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/2919c7a6-1a38-4b56-a707-6af6f07457dc"
+    },
+    {
+      "autoria": "Senador Fabiano Contarato (REDE/ES)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-16",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda aditiva ao art. 16 do Projeto de lei 2159 de 2021.",
+      "id": 9017976,
+      "idCiEmenda": 7465911,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9017974,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 44 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "44",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/b274f9ce-616a-41c3-b0c2-3416dd2a92b2"
+    },
+    {
+      "autoria": "Senador Fabiano Contarato (REDE/ES)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-16",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao art. 10 do Projeto de lei 2159 de 2021.",
+      "id": 9017979,
+      "idCiEmenda": 7465912,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9017977,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 45 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "45",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/e2c12569-f7e4-4b8f-a6b8-eca03cdbdf4a"
+    },
+    {
+      "autoria": "Senador Fabiano Contarato (REDE/ES)",
+      "casa": "SF",
+      "codigoColegiado": 50,
+      "dataApresentacao": "2021-09-20",
+      "decisoes": [
+        {
+          "casa": "SF",
+          "codigoColegiado": 50,
+          "data": "2025-05-20",
+          "descricaoTipo": "Rejeitada ",
+          "idTipo": 3,
+          "nomeColegiado": "Comissão de Meio Ambiente",
+          "siglaColegiado": "CMA"
+        }
+      ],
+      "descricaoDocumentoEmenda": "Emenda modificativa ao § 3º do art. 1º do Projeto de Lei nº 2.159 de 2021.",
+      "id": 9018191,
+      "idCiEmenda": 7465965,
+      "idCiEmendado": 7452571,
+      "idDocumentoEmenda": 9018189,
+      "idProcesso": 8079566,
+      "identificacao": "EMENDA 35 - PL 2159/2021",
+      "nomeColegiado": "Comissão de Meio Ambiente",
+      "numero": "35",
+      "siglaColegiado": "CMA",
+      "subemendas": null,
+      "tipo": "EMENDA_PARCIAL",
+      "turnoApresentacao": "NORMAL",
+      "urlDocumentoEmenda": "http://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/160903a2-39bf-4860-a766-44d0b5ac4792"
+    },
+    {
+      "_cortado": "207 itens a mais"
+    }
+  ]
+}

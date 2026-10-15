@@ -1,0 +1,430 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/votacao?dataInicio=2026-09-15&dataFim=2026-10-15",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:30.567Z",
+  "corpo": [
+    {
+      "ano": 2019,
+      "casaSessao": "SF",
+      "codigoMateria": 174386,
+      "codigoSessao": 591267,
+      "codigoSessaoLegislativa": 874,
+      "codigoSessaoVotacao": 7106,
+      "dataApresentacao": "2026-05-28",
+      "dataSessao": "2026-10-14",
+      "descricaoVotacao": "Votação nominal da Proposta de Emenda à Constituição nº 221, de 2019, em primeiro turno.",
+      "ementa": "Altera o art. 7º da Constituição Federal para reduzir a duração máxima semanal do trabalho e prever 2 (dois) dias de repouso semanal remunerado, sem qualquer redução salarial; e dá outras providências.",
+      "idProcesso": 9056435,
+      "identificacao": "PEC 221/2019",
+      "informeLegislativo": null,
+      "numero": "221",
+      "numeroSessao": 134,
+      "resultadoVotacao": "A",
+      "sequencialSessao": 1,
+      "sequencialVotacao": 4420,
+      "sigla": "PEC",
+      "siglaTipoSessao": "DOR",
+      "totalVotosAbstencao": null,
+      "totalVotosNao": null,
+      "totalVotosSim": null,
+      "votacaoSecreta": "N",
+      "votos": [
+        {
+          "codigoParlamentar": 5672,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Alan Rick",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "REPUBLICANOS",
+          "siglaUFParlamentar": "AC",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 5982,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Alessandro Vieira",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "MDB",
+          "siglaUFParlamentar": "SE",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 6358,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Ana Paula Lobato",
+          "sexoParlamentar": "F",
+          "siglaPartidoParlamentar": "PSB",
+          "siglaUFParlamentar": "MA",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 5967,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Angelo Coronel",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "REPUBLICANOS",
+          "siglaUFParlamentar": "BA",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 6009,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Astronauta Marcos Pontes",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PL",
+          "siglaUFParlamentar": "SP",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 4639,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Beto Faro",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PT",
+          "siglaUFParlamentar": "PA",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 6336,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Camilo Santana",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PT",
+          "siglaUFParlamentar": "CE",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 6295,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Carlos Fávaro",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PSD",
+          "siglaUFParlamentar": "MT",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 5936,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Carlos Portinho",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PL",
+          "siglaUFParlamentar": "RJ",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 5990,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Carlos Viana",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PSD",
+          "siglaUFParlamentar": "MG",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 470,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Chico Rodrigues",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PSB",
+          "siglaUFParlamentar": "RR",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 5973,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Cid Gomes",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PSB",
+          "siglaUFParlamentar": "CE",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 739,
+          "descricaoVotoParlamentar": "Presente – Não registrou voto",
+          "nomeParlamentar": "Ciro Nogueira",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PP",
+          "siglaUFParlamentar": "PI",
+          "siglaVotoParlamentar": "P-NRV"
+        },
+        {
+          "codigoParlamentar": 6337,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Cleitinho",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "REPUBLICANOS",
+          "siglaUFParlamentar": "MG",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 475,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Confúcio Moura",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "MDB",
+          "siglaUFParlamentar": "RO",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 6335,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Damares Alves",
+          "sexoParlamentar": "F",
+          "siglaPartidoParlamentar": "REPUBLICANOS",
+          "siglaUFParlamentar": "DF",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 5998,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Daniella Ribeiro",
+          "sexoParlamentar": "F",
+          "siglaPartidoParlamentar": "PP",
+          "siglaUFParlamentar": "PB",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 3830,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Davi Alcolumbre",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "UNIÃO",
+          "siglaUFParlamentar": "AP",
+          "siglaVotoParlamentar": "Presidente (art. 51 RISF)"
+        },
+        {
+          "codigoParlamentar": 5793,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Dr. Hiran",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PP",
+          "siglaUFParlamentar": "RR",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 5906,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Dra. Eudócia",
+          "sexoParlamentar": "F",
+          "siglaPartidoParlamentar": "PSDB",
+          "siglaUFParlamentar": "AL",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "_cortado": "61 itens a mais"
+        }
+      ]
+    },
+    {
+      "ano": 2019,
+      "casaSessao": "SF",
+      "codigoMateria": 174386,
+      "codigoSessao": 591267,
+      "codigoSessaoLegislativa": 874,
+      "codigoSessaoVotacao": 7107,
+      "dataApresentacao": "2026-05-28",
+      "dataSessao": "2026-10-14",
+      "descricaoVotacao": "Votação nominal da Proposta de Emenda à Constituição nº 221, de 2019, em segundo turno.",
+      "ementa": "Altera o art. 7º da Constituição Federal para reduzir a duração máxima semanal do trabalho e prever 2 (dois) dias de repouso semanal remunerado, sem qualquer redução salarial; e dá outras providências.",
+      "idProcesso": 9056435,
+      "identificacao": "PEC 221/2019",
+      "informeLegislativo": null,
+      "numero": "221",
+      "numeroSessao": 134,
+      "resultadoVotacao": "A",
+      "sequencialSessao": 2,
+      "sequencialVotacao": 4421,
+      "sigla": "PEC",
+      "siglaTipoSessao": "DOR",
+      "totalVotosAbstencao": null,
+      "totalVotosNao": null,
+      "totalVotosSim": null,
+      "votacaoSecreta": "N",
+      "votos": [
+        {
+          "codigoParlamentar": 5672,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Alan Rick",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "REPUBLICANOS",
+          "siglaUFParlamentar": "AC",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 5982,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Alessandro Vieira",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "MDB",
+          "siglaUFParlamentar": "SE",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 6358,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Ana Paula Lobato",
+          "sexoParlamentar": "F",
+          "siglaPartidoParlamentar": "PSB",
+          "siglaUFParlamentar": "MA",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 5967,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Angelo Coronel",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "REPUBLICANOS",
+          "siglaUFParlamentar": "BA",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 6009,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Astronauta Marcos Pontes",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PL",
+          "siglaUFParlamentar": "SP",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 4639,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Beto Faro",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PT",
+          "siglaUFParlamentar": "PA",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 6336,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Camilo Santana",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PT",
+          "siglaUFParlamentar": "CE",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 6295,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Carlos Fávaro",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PSD",
+          "siglaUFParlamentar": "MT",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 5936,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Carlos Portinho",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PL",
+          "siglaUFParlamentar": "RJ",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 5990,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Carlos Viana",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PSD",
+          "siglaUFParlamentar": "MG",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 470,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Chico Rodrigues",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PSB",
+          "siglaUFParlamentar": "RR",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 5973,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Cid Gomes",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PSB",
+          "siglaUFParlamentar": "CE",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 739,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Ciro Nogueira",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PP",
+          "siglaUFParlamentar": "PI",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 6337,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Cleitinho",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "REPUBLICANOS",
+          "siglaUFParlamentar": "MG",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 475,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Confúcio Moura",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "MDB",
+          "siglaUFParlamentar": "RO",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 6335,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Damares Alves",
+          "sexoParlamentar": "F",
+          "siglaPartidoParlamentar": "REPUBLICANOS",
+          "siglaUFParlamentar": "DF",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 5998,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Daniella Ribeiro",
+          "sexoParlamentar": "F",
+          "siglaPartidoParlamentar": "PP",
+          "siglaUFParlamentar": "PB",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "codigoParlamentar": 3830,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Davi Alcolumbre",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "UNIÃO",
+          "siglaUFParlamentar": "AP",
+          "siglaVotoParlamentar": "Presidente (art. 51 RISF)"
+        },
+        {
+          "codigoParlamentar": 5793,
+          "descricaoVotoParlamentar": "Presente – Não registrou voto",
+          "nomeParlamentar": "Dr. Hiran",
+          "sexoParlamentar": "M",
+          "siglaPartidoParlamentar": "PP",
+          "siglaUFParlamentar": "RR",
+          "siglaVotoParlamentar": "P-NRV"
+        },
+        {
+          "codigoParlamentar": 5906,
+          "descricaoVotoParlamentar": null,
+          "nomeParlamentar": "Dra. Eudócia",
+          "sexoParlamentar": "F",
+          "siglaPartidoParlamentar": "PSDB",
+          "siglaUFParlamentar": "AL",
+          "siglaVotoParlamentar": "Sim"
+        },
+        {
+          "_cortado": "61 itens a mais"
+        }
+      ]
+    }
+  ]
+}

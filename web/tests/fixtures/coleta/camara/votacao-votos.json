@@ -1,0 +1,15 @@
+{
+  "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-127/votos",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:08.296Z",
+  "corpo": {
+    "dados": [],
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-127/votos"
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-127",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:07.689Z",
+  "corpo": {
+    "dados": {
+      "id": "257161-127",
+      "uri": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-127",
+      "data": "2016-03-22",
+      "dataHoraRegistro": "2016-03-22T13:24:13",
+      "siglaOrgao": "PLEN",
+      "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+      "idOrgao": 180,
+      "uriEvento": null,
+      "idEvento": null,
+      "descricao": "Alteração do Regime de Tramitação desta proposição em virtude da aprovação do REQ 3565/2015 que alterou o regime do PL 1700/2011, apensado.",
+      "aprovacao": 1,
+      "descUltimaAberturaVotacao": null,
+      "dataHoraUltimaAberturaVotacao": null,
+      "ultimaApresentacaoProposicao": {
+        "dataHoraRegistro": "2015-06-18T18:20:24",
+        "descricao": "Apresentação do Requerimento n. 2207/2015, pelos Deputados Ronaldo Benedet (PMDB-SC) e outros, que: \"Requeremos o desapensamento do Projeto de Lei n° 1546/2015\".",
+        "uriProposicaoCitada": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/1513916"
+      },
+      "efeitosRegistrados": [],
+      "objetosPossiveis": [
+        {
+          "id": 1513916,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/1513916",
+          "siglaTipo": "REQ",
+          "codTipo": 147,
+          "numero": 2207,
+          "ano": 2015,
+          "ementa": "Requeremos o desapensamento do Projeto de Lei n° 1546/2015",
+          "dataApresentacao": "2015-06-18T14:21"
+        },
+        {
+          "id": 1279443,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/1279443",
+          "siglaTipo": "REQ",
+          "codTipo": 304,
+          "numero": 1892,
+          "ano": 2015,
+          "ementa": "Requer a apensação do Projeto de Lei n.º 1546, de 2015, ao Projeto de Lei n.º 3729 de 2004.",
+          "dataApresentacao": "2015-05-19T15:58"
+        },
+        {
+          "id": 602674,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/602674",
+          "siglaTipo": "REQ",
+          "codTipo": 308,
+          "numero": 9153,
+          "ano": 2013,
+          "ementa": "Requer a revisão do despacho aposto ao Projeto de Lei nº 3.729/2004, para que se inclua a Comissão de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural na análise de mérito.",
+          "dataApresentacao": "2013-11-28T15:14"
+        },
+        {
+          "id": 548167,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/548167",
+          "siglaTipo": "REQ",
+          "codTipo": 304,
+          "numero": 5544,
+          "ano": 2012,
+          "ementa": "Requer a apensação do Projeto de Lei nº. 358, de 2011, ao Projeto de Lei nº. 3.729, de 2004.",
+          "dataApresentacao": "2012-06-14T15:15"
+        },
+        {
+          "id": 539139,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/539139",
+          "siglaTipo": "REQ",
+          "codTipo": 339,
+          "numero": 4766,
+          "ano": 2012,
+          "ementa": "Requer a reconstituição de proposição",
+          "dataApresentacao": "2012-03-28T15:19"
+        },
+        {
+          "id": 372313,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/372313",
+          "siglaTipo": "REQ",
+          "codTipo": 305,
+          "numero": 1864,
+          "ano": 2007,
+          "ementa": "Solicita à Presidência da Câmara dos Deputados o desapensamento da Projeto de Lei N.º 2029/2007 do Projeto de Lei N.º 3729/2004, com base no art. 142, contrario sensu do Regimento Interno da Câmara dos Deputados.",
+          "dataApresentacao": "2007-10-17T16:31"
+        }
+      ],
+      "proposicoesAfetadas": [
+        {
+          "id": 257161,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/257161",
+          "siglaTipo": "PL",
+          "codTipo": 139,
+          "numero": 2159,
+          "ano": 2021,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.  NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+          "dataApresentacao": "2004-06-08T00:00"
+        }
+      ]
+    },
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-127"
+      }
+    ]
+  }
+}

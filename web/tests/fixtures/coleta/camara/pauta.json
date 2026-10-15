@@ -1,0 +1,918 @@
+{
+  "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83037/pauta",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:12.991Z",
+  "corpo": {
+    "dados": [
+      {
+        "ordem": 1,
+        "topico": "Urgente",
+        "regime": "Urgência (Art. 155, RICD)",
+        "codRegime": 21,
+        "titulo": "PL 2665/2022",
+        "proposicao_": {
+          "id": 2637743,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637743",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 2,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação do PL 2665/22, e dos PLs 417/23, 5196/25 e 165/26, apensados, com substitutivo.",
+          "dataApresentacao": "2022-10-24T11:53"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação do PL 2665/22, e dos PLs 417/23, 5196/25, 165/26, apensados, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2336218,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2336218",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "2665",
+          "ano": "2022",
+          "ementa": "Dispõe sobre a instalação obrigatória de dispositivos de segurança nas piscinas coletivas.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 2,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 4102/2020",
+        "proposicao_": {
+          "id": 2637846,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637846",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação do PL 4102/20, e do PL 877/21, apensado, na forma do Substitutivo Adotado pela Comissão de Meio Ambiente e Desenvolvimento Sustentável.",
+          "dataApresentacao": "2020-08-05T17:16"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação do PL 4102/20, e do PL 877/21, apensado, na forma do Substitutivo Adotado pela Comissão de Meio Ambiente e Desenvolvimento Sustentável.",
+        "proposicaoRelacionada_": {
+          "id": 2259554,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2259554",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "4102",
+          "ano": "2020",
+          "ementa": "Regulamenta a utilização de materiais transparentes em edificações com mais de vinte metros de altura para evitar colisões de aves.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 3,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 791/2022",
+        "proposicao_": {
+          "id": 2635095,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2635095",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+          "dataApresentacao": "2022-03-31T15:14"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2319094,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2319094",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "791",
+          "ano": "2022",
+          "ementa": "Altera a Lei nº 9.985, de 18 de julho de 2000, que regulamenta o art. 225, § 1º, incisos I, II, III e VII da Constituição Federal, que institui o Sistema Nacional de Unidades de Conservação da Natureza e dá outras providências.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 4,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 2492/2022",
+        "proposicao_": {
+          "id": 2631527,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2631527",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação do PL 2492/22, e do PL 5163/25, apensado, com substitutivo.",
+          "dataApresentacao": "2022-09-19T12:10"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação do PL 2492/22, e do PL 5163/2025, apensado, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2335097,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2335097",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "2492",
+          "ano": "2022",
+          "ementa": "Altera a Lei nº 12.587, de 3 de janeiro de 2012, que institui as diretrizes da Política Nacional de Mobilidade Urbana, para dispor sobre a disponibilização de aplicativos gratuitos para os usuários do Sistema Nacional de Mobilidade Urbana.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 5,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 378/2023",
+        "proposicao_": {
+          "id": 2637856,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637856",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação do PL 378/23, e dos PLs 2904/23, 3154/23, 4247/24 e 992/25, apensados, com substitutivo; e pela rejeição do PL 2986/24, apensado.",
+          "dataApresentacao": "2023-02-08T16:10"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação do PL 378/23, e dos PLs 2904/23, 3154/23, 4247/24, e 992/25, apensados, com substitutivo; e pela rejeição do PL 2986/24, apensado.",
+        "proposicaoRelacionada_": {
+          "id": 2347315,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2347315",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "378",
+          "ano": "2023",
+          "ementa": "Altera a Lei nº 11.124, de 2005, que dispõe sobre o Sistema Nacional de Habitação de Interesse Social – SNHIS e dá outras providências.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 6,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 4985/2023",
+        "proposicao_": {
+          "id": 2637834,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637834",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+          "dataApresentacao": "2023-10-16T10:38"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2395802,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2395802",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "4985",
+          "ano": "2023",
+          "ementa": "Institui, nos programas habitacionais públicos ou financiados com recursos públicos, prioridade de atendimento às famílias de que façam parte pessoas com neoplasia maligna.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 7,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 5621/2023",
+        "proposicao_": {
+          "id": 2643124,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2643124",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer da Relatora, Dep. Denise Pessôa (PT-RS), pela aprovação, na forma do Substitutivo da Comissão de Previdência, Assistência Social, Infância, Adolescência e Família.",
+          "dataApresentacao": "2023-11-21T22:04"
+        },
+        "relator": {
+          "id": 220553,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220553",
+          "nome": "Denise Pessôa",
+          "siglaPartido": "PT",
+          "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+          "siglaUf": "RS",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220553.jpg",
+          "email": "dep.denisepessoa@camara.leg.br"
+        },
+        "textoParecer": "Parecer da Relatora, Dep. Denise Pessôa (PT-RS), pela aprovação, na forma do Substitutivo da Comissão de Previdência, Assistência Social, Infância, Adolescência e Família.",
+        "proposicaoRelacionada_": {
+          "id": 2405324,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2405324",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "5621",
+          "ano": "2023",
+          "ementa": "Estabelece prioridade no acesso ao Programa Minha Casa, Minha Vida algumas categorias de famílias, especialmente aquelas com crianças e adolescentes e com pessoas com câncer",
+          "dataApresentacao": null
+        },
+        "uriVotacao": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2405324-43/",
+        "situacaoItem": "Lido o Parecer pela Relatora. Aprovado o Parecer."
+      },
+      {
+        "ordem": 8,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 2675/2024",
+        "proposicao_": {
+          "id": 2637512,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637512",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 3,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+          "dataApresentacao": "2024-07-02T18:17"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2444817,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2444817",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "2675",
+          "ano": "2024",
+          "ementa": "Institui o Programa Bairro +Perto (BAIRRO + PERTO) e dá outras providências.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 9,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 3286/2024",
+        "proposicao_": {
+          "id": 2635090,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2635090",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+          "dataApresentacao": "2024-08-23T10:39"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2454684,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2454684",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "3286",
+          "ano": "2024",
+          "ementa": "Altera a Lei nº 13.146, de 06 de julho de 2015, que institui a Lei Brasileira de Inclusão da Pessoa com Deficiência - Estatuto da Pessoa com Deficiência.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 10,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 4896/2025",
+        "proposicao_": {
+          "id": 2641474,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2641474",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+          "dataApresentacao": "2025-10-01T14:17"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2566414,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2566414",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "4896",
+          "ano": "2025",
+          "ementa": "Dispõe sobre a priorização de projetos de infraestrutura e serviços essenciais nos estados oriundos de ex-territórios federais em seleções federais de investimentos.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 11,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 5174/2025",
+        "proposicao_": {
+          "id": 2635097,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2635097",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação do PL 5174/25, e do PL 6343/25, apensado, com substitutivo.",
+          "dataApresentacao": "2025-10-15T10:00"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação do PL 5174/25, e do PL 6343/25, apensado, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2572038,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2572038",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "5174",
+          "ano": "2025",
+          "ementa": "Dispõe Sobre a Obrigatoriedade de Parada Dos Veículos De Transporte Público Para Pessoas Idosas e Estabelece Penalidades Para as Empresas de Transporte Público que Descumprirem Essa Obrigação.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 12,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 6117/2025",
+        "proposicao_": {
+          "id": 2637807,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637807",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+          "dataApresentacao": "2025-12-02T20:19"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2591153,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2591153",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "6117",
+          "ano": "2025",
+          "ementa": "Institui a Política Nacional de Cidades Antiviolência, com o objetivo de prevenir a violência e a criminalidade a partir do espaço urbano e da inteligência territorial; e altera as Leis nºs 10.257, de 10 de julho de 2001 (Estatuto da Cidade), 13.675, de 11 de junho de 2018, e 13.756, de 12 de dezembro de 2018, que institui o Fundo Nacional de Segurança Pública (FNSP).",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 13,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 6299/2025",
+        "proposicao_": {
+          "id": 2637814,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637814",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação.",
+          "dataApresentacao": "2025-12-09T19:40"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação.",
+        "proposicaoRelacionada_": {
+          "id": 2594586,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2594586",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "6299",
+          "ano": "2025",
+          "ementa": "Institui o Programa Cidades Florestais Inteligentes na Amazônia Legal e dá outras providências.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 14,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 6715/2025",
+        "proposicao_": {
+          "id": 2637506,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637506",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+          "dataApresentacao": "2025-12-22T17:43"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2599308,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2599308",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "6715",
+          "ano": "2025",
+          "ementa": "Altera a Lei nº 11.445, de 5 de janeiro de 2007, que estabelece as diretrizes nacionais para o saneamento básico, para dispor sobre a transparência de informações relativas ao reúso de água promovido por condomínios edilícios, com divulgação periódica de dados operacionais.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 15,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 7139/2025",
+        "proposicao_": {
+          "id": 2637823,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637823",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação do PL 7139/25, e do PL 7205/25, apensado, com substitutivo.",
+          "dataApresentacao": "2025-12-22T22:58"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação do PL 7139/25, e do PL 7205/25, apensado, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2599748,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2599748",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "7139",
+          "ano": "2025",
+          "ementa": "Altera a Lei nº 14.133, de 1º de abril de 2021 (Lei de Licitações e Contratos Administrativos), para incluir a resiliência climática e a sustentabilidade como fatores de preferência nas contratações de saneamento básico.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 16,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 7219/2025",
+        "proposicao_": {
+          "id": 2641469,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2641469",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+          "dataApresentacao": "2025-12-22T23:41"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2599828,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2599828",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "7219",
+          "ano": "2025",
+          "ementa": "Altera a Lei nº 11.445, de 5 de janeiro de 2007, que estabelece diretrizes nacionais para o saneamento básico, a fim de instituir a resiliência e adaptação climática como princípio fundamental.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 17,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 341/2026",
+        "proposicao_": {
+          "id": 2637785,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637785",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+          "dataApresentacao": "2026-02-05T14:45"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2601147,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2601147",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "341",
+          "ano": "2026",
+          "ementa": "Dispõe sobre a observância de normas da Associação Brasileira de Normas Técnicas na instalação, operação e manutenção de sistemas de iluminação de áreas externas em locais públicos que utilizem postes metálicos.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 18,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 620/2026",
+        "proposicao_": {
+          "id": 2641477,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2641477",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação.",
+          "dataApresentacao": "2026-02-20T14:53"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação.",
+        "proposicaoRelacionada_": {
+          "id": 2603630,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2603630",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "620",
+          "ano": "2026",
+          "ementa": "Institui a Política Nacional de Comunidades de Vida e Moradia Colaborativa da Pessoa Idosa, cria o Fundo Nacional de Comunidades de Vida da Pessoa Idosa (FNCVPI), estabelece metas nacionais de desinstitucionalização responsável, altera a Lei nº 10.741, de 1º de outubro de 2003, e dá outras providências.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 19,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 741/2026",
+        "proposicao_": {
+          "id": 2637640,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637640",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Eli Borges (REPUBLIC-TO), pela aprovação.",
+          "dataApresentacao": "2026-02-25T11:25"
+        },
+        "relator": {
+          "id": 204364,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204364",
+          "nome": "Eli Borges",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "TO",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204364.jpg",
+          "email": "dep.eliborges@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Eli Borges (REPUBLIC-TO), pela aprovação.",
+        "proposicaoRelacionada_": {
+          "id": 2604625,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2604625",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "741",
+          "ano": "2026",
+          "ementa": "Altera a Lei nº 13.146, de 6 de julho de 2015, para aumentar o percentual de vagas de estacionamento reservadas para veículos que transportem pessoa com deficiência com comprometimento de mobilidade.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 20,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 1035/2026",
+        "proposicao_": {
+          "id": 2641472,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2641472",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+          "dataApresentacao": "2026-03-09T15:24"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2607551,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2607551",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "1035",
+          "ano": "2026",
+          "ementa": "Altera a Lei nº 10.257, de 10 de julho de 2001, e a Lei nº 13.146, de 6 de julho de 2015, para dispor sobre a implantação de espaços de acomodação sensorial em áreas e equipamentos públicos urbanos.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 21,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 1092/2026",
+        "proposicao_": {
+          "id": 2637633,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637633",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Eli Borges (REPUBLIC-TO), pela aprovação.",
+          "dataApresentacao": "2026-03-10T20:37"
+        },
+        "relator": {
+          "id": 204364,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204364",
+          "nome": "Eli Borges",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "TO",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204364.jpg",
+          "email": "dep.eliborges@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Eli Borges (REPUBLIC-TO), pela aprovação.",
+        "proposicaoRelacionada_": {
+          "id": 2607963,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2607963",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "1092",
+          "ano": "2026",
+          "ementa": "Dá nova redação ao art. 8º da Lei nº 14.620, de 13 de julho de 2023 (Dispõe sobre o Programa Minha Casa, Minha Vida), para incluir líderes religiosos com reconhecida atuação comunitária entre os grupos prioritários de atendimento no Programa Minha Casa, Minha Vida.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      },
+      {
+        "ordem": 22,
+        "topico": "Tramitação Ordinária",
+        "regime": "Ordinário (Art. 151, III, RICD)",
+        "codRegime": 14,
+        "titulo": "PL 1233/2026",
+        "proposicao_": {
+          "id": 2635093,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2635093",
+          "siglaTipo": "PRL",
+          "codTipo": 190,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+          "dataApresentacao": "2026-03-17T18:12"
+        },
+        "relator": {
+          "id": 220540,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220540",
+          "nome": "Duda Ramos",
+          "siglaPartido": null,
+          "uriPartido": null,
+          "siglaUf": "RR",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg",
+          "email": "dep.dudaramos@camara.leg.br"
+        },
+        "textoParecer": "Parecer do Relator, Dep. Duda Ramos (PODE-RR), pela aprovação, com substitutivo.",
+        "proposicaoRelacionada_": {
+          "id": 2609696,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2609696",
+          "siglaTipo": "PL",
+          "codTipo": "139",
+          "numero": "1233",
+          "ano": "2026",
+          "ementa": "Altera a Lei nº 13.146, de 6 de julho de 2015 (Estatuto da Pessoa com Deficiência), para instituir a obrigatoriedade de sistemas de orientação por proximidade e realidade aumentada nos edifícios públicos federais, visando à ampliação da autonomia das pessoas com deficiência e pessoas idosas.",
+          "dataApresentacao": null
+        },
+        "uriVotacao": null,
+        "situacaoItem": "Retirado de pauta, de ofício, em razão da ausência do Relator."
+      }
+    ],
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos/83037/pauta"
+      }
+    ]
+  }
+}

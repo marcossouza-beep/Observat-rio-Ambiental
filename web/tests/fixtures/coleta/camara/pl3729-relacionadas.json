@@ -1,0 +1,419 @@
+{
+  "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/257161/relacionadas",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:05.112Z",
+  "corpo": {
+    "dados": [
+      {
+        "id": 615270,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/615270",
+        "siglaTipo": "PAR",
+        "codTipo": "187",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Aprovado por Unanimidade o Parecer.. \r\nParecer do Relator, Dep. Moreira Mendes (PSD-RO), pela aprovação deste, do PL 3957/2004, do PL 5576/2005, do PL 1700/2011, do PL 5716/2013, e do PL 2941/2011, apensados, com SUBSTITUTIVO, e pela rejeição do PL 5435/2005, do PL 1147/2007, do PL 2029/2007, do PL 358/2011, do PL 6908/2013, e do PL 5918/2013, apensados.",
+        "dataApresentacao": "2014-05-14T10:00"
+      },
+      {
+        "id": 2282756,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282756",
+        "siglaTipo": "PEP",
+        "codTipo": "442",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Parecer às Emendas de Plenário proferido pelo Relator, Dep. Neri Geller (PP-MT), pela Comissão de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural, que conclui pela aprovação das Emendas de Plenário nºs 6, 29, 56, 60, 66, 81, 82, 89 e 96, na forma da Subemenda Substitutiva adotada pelo Relator da CMADS, e pela rejeição das demais emendas com apoiamento regimental.",
+        "dataApresentacao": "2021-05-12T19:14"
+      },
+      {
+        "id": 613740,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/613740",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Moreira Mendes (PSD-RO), pela aprovação deste, do PL 3957/2004, do PL 5576/2005, do PL 1700/2011, do PL 5716/2013, e do PL 2941/2011, apensados, com SUBSTITUTIVO, e pela rejeição do PL 5435/2005, do PL 1147/2007, do PL 2029/2007, do PL 358/2011, do PL 6908/2013, e do PL 5918/2013, apensados.",
+        "dataApresentacao": "2014-04-29T18:22"
+      },
+      {
+        "id": 2282758,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282758",
+        "siglaTipo": "PEP",
+        "codTipo": "442",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Parecer às Emendas de Plenário proferido pelo Relator, Dep. Neri Geller (PP-MT), pela Comissão de Constituição e Justiça e de Cidadania, que conclui pela constitucionalidade, juridicidade e técnica legislativa.",
+        "dataApresentacao": "2021-05-12T19:14"
+      },
+      {
+        "id": 2282709,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282709",
+        "siglaTipo": "PPP",
+        "codTipo": "192",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Parecer proferido em Plenário pelo Relator, Dep. Neri Geller (PP-MT), pela Comissão de Constituição e Justiça e de Cidadania, que conclui pela constitucionalidade, juridicidade e técnica legislativa.",
+        "dataApresentacao": "2021-05-12T13:55"
+      },
+      {
+        "id": 2187276,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2187276",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Marcos Rogério.",
+        "dataApresentacao": "2018-11-26T14:11"
+      },
+      {
+        "id": 2282757,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282757",
+        "siglaTipo": "PEP",
+        "codTipo": "442",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Parecer às Emendas de Plenário proferido pelo Relator, Dep. Neri Geller (PP-MT), pela Comissão de Finanças e Tributação, que conclui pela não implicação da matéria em aumento ou diminuição da receita ou da despesa públicas, não cabendo pronunciamento quanto à adequação financeira e orçamentária; e, no mérito, pela aprovação das Emendas nºs 6, 29, 56, 60, 66, 81, 82, 89 e 96, na forma da Subemenda Substitutiva adotada pelo Relator da CMADS, e pela rejeição das demais emendas com apoiamento regimental.",
+        "dataApresentacao": "2021-05-12T19:14"
+      },
+      {
+        "id": 2282708,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282708",
+        "siglaTipo": "PPP",
+        "codTipo": "192",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Parecer proferido em Plenário pelo Relator, Dep. Neri Geller (PP-MT), pela Comissão de Finanças e Tributação, que conclui pela não implicação da matéria em aumento ou diminuição da receita ou da despesa públicas, não cabendo pronunciamento quanto à adequação financeira e orçamentária; e, no mérito, pela rejeição dos Projetos de Lei 3829/2015, 5435/2005, 5918/2013, 1147/2007, 2029/2007, 5246/2019, 1700/2011, 5716/2013, 4093/2019, 6908/2013 e 5818/2016, e pela aprovação dos Projetos de Lei 3729/2004, 3957/2004, 5576/2015, 2941/2011, 358/2011, 10238/2018, 8062/2014, 1546/2015, 4429/2016, 7143/2017, 877/2017, 6411/2016, e 9177/2017 na forma do Substitutivo adotado.",
+        "dataApresentacao": "2021-05-12T13:55"
+      },
+      {
+        "id": 2089990,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2089990",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Mauro Pereira (pendente de análise)",
+        "dataApresentacao": "2016-07-05T10:30"
+      },
+      {
+        "id": 2092383,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2092383",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "2",
+        "ano": "0",
+        "ementa": "Parecer do relator, Dep. Mauro Pereira, pela adequação financeira e orçamentária do Projeto de Lei nº 3.729/2004 e dos PL's nºs 3.957/2004, 5.576/2005, 358/2011, 1.700/2011, 2.941/2011, 5.716/2013, 8.062/2014, 1.546/2015, 4.429/2016, 5.435/2005, 1.147/2007, 2.029/2007, 5.918/2013, 6.908/2013, e 3.829/2015, apensados, e dos Substitutivos da Comissão  de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural e da Comissão de Meio Ambiente e Desenvolvimento Sustentável; e, no mérito, pela aprovação dos PL nº 3.729/2004 e dos PL's nºs 3.957/2004, 5.576/2005, 358/2011, 1.700/2011, 5.716/2013, 8.062/2014, 4.429/2016, 2.941/2011, e 1.546/2015, apensados, na forma do Substitutivo apresentado, e pela rejeição dos PL's nºs 5.435/2005, 1.147/2007, 2.029/2007, 6.908/2013, 3.829/2015, e 5.918/2013, apensados.",
+        "dataApresentacao": "2016-07-27T13:21"
+      },
+      {
+        "id": 2110739,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2110739",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "3",
+        "ano": "0",
+        "ementa": "Parecer do relator, Dep. Mauro Pereira, pela adequação financeira e orçamentária do Projeto de Lei nº 3.729/2004 e dos PL's nºs 3.957/2004, 5.576/2005, 2.029/2007, 358/2011, 1.700/2011, 2.941/2011, 5.716/2013, 8.062/2014, 1.546/2015, 4.429/2016, 5.435/2005, 1.147/2007, 5.918/2013, 6.908/2013, 3.829/2015 e 5.818/2016, apensados, e dos Substitutivos da Comissão de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural e da Comissão de Meio Ambiente e Desenvolvimento Sustentável; e, no mérito, pela aprovação do PL nº 3.729/2004, e dos PL´s nºs 3.957/2004, 5.576/2005, 358/2011, 1.700/2011, 2.941/2011, 5.716/2013, 8.062/2014, 1.546/2015 e 4.429/2016, apensados, com Substitutivo, e pela rejeição dos PL´S nºs 5.435/2005, 1.147/2007, 2.029/2007, 5.918/2013, 6.908/2013, 3.829/2015 e 5.818/2016, apensados.",
+        "dataApresentacao": "2016-09-01T10:57"
+      },
+      {
+        "id": 2112038,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2112038",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "4",
+        "ano": "0",
+        "ementa": "Parecer do relator, Dep. Mauro Pereira, pela adequação financeira e orçamentária do Projeto de Lei nº 3.729/2004 e dos PL's nºs 3.957/2004, 5.576/2005, 2.029/2007, 358/2011, 1.700/2011, 2.941/2011, 5.716/2013, 8.062/2014, 1.546/2015, 4.429/2016, 5.435/2005, 1.147/2007, 5.918/2013, 6.908/2013, 3.829/2015 e 5.818/2016, apensados, do Substitutivo da Comissão de Meio Ambiente e Desenvolvimento Sustentável e do Substitutivo da Comissão de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural; e, no mérito, pela aprovação do PL nº 3.729/2004, e dos PL´s nºs 3.957/2004, 5.576/2005, 358/2011, 1.700/2011, 2.941/2011, 5.716/2013, 8.062/2014, 1.546/2015 e 4.429/2016, apensados, com Substitutivo, e pela rejeição dos PL´S nºs 5.435/2005, 1.147/2007, 2.029/2007, 5.918/2013, 6.908/2013, 3.829/2015 e 5.818/2016, apensados.",
+        "dataApresentacao": "2016-09-15T17:49"
+      },
+      {
+        "id": 2120610,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2120610",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "5",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Mauro Pereira (PMDB-RS), pela adequação financeira e orçamentária do Projeto de Lei nº 3729/2004, e dos PL's nºs 3957/2004, 5576/2005, 2029/2007, 358/2011, 1700/2011, 2941/2011, 5716/2013, 8062/2014, 1546/2015, 4429/2016, 5435/2005, 1147/2007, 5918/2013, 6908/2013, 3829/2015 e 5818/2016, apensados e dos Substitutivos das Comissões de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural e de Meio Ambiente e Desenvolvimento Sustentável; e no mérito pela aprovação do PL nº 3729/2004, e dos PL's nºs 3957/2004, 5576/2005, 358/2011, 1700/2011, 2941/2011, 5716/2013, 8062/2014, 1546/2015 e 4429/2016, apensados, com Substitutivo, e pela rejeição dos PL's nºs 5435/2005, 1147/2007, 2029/2007, 5918/2013, 3829/2015 e 5818/2016, apensados.",
+        "dataApresentacao": "2016-12-12T11:12"
+      },
+      {
+        "id": 2130008,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2130008",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "6",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Mauro Pereira (PMDB-RS), pela adequação financeira e orçamentária do Projeto de Lei 3729/2004 e dos PL's 3957/2004, 5576/2005, 358/2011, 1700/2011, 5716/2013, 8062/2014, 4429/2016, 6877/2017, 2941/2011, 1546/2015, 7143/2017, apensados, e dos Substitutivos das Comissões de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural e de Meio Ambiente e Desenvolvimento Sustentável; e, no mérito, pela aprovação dos PL's 3729/2004, 3957/2004, 5576/2005, 358/11, 1700/2011, 2941/2011, 5716/13, 8062/2014, 1546/2015, 4429/2016, 6877/2017 e 7143/2017, apensados, com Substitutivo, e pela rejeição dos PL's 5435/2005, 1147/2007, 2029/2007, 5918/2013, 6908/2013, 3829/2015 e 5818/2016, apensados.",
+        "dataApresentacao": "2017-04-19T14:51"
+      },
+      {
+        "id": 2132588,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2132588",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "7",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Mauro Pereira (PMDB-RS), pela adequação financeira e orçamentária do Projeto de Lei 3729/2004 e dos PL's 3957/2004, 5576/2005, 2029/2007, 358/2011, 1700/2011, 2941/2011, 5716/2013, 8062/2014, 1546/2015, 4429/2016, 5435/2005, 1147/2007, 5918/2013, 6908/2013, 3829/2015, 5818/2016, 6877/2017 e 7143/2017, apensados, e dos Substitutivos das Comissões de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural e de Meio Ambiente e Desenvolvimento Sustentável; e, no mérito, pela aprovação dos PL's 3729/2004, 3957/2004, 5576/2005, 358/11, 1700/2011, 2941/2011, 5716/13, 8062/2014, 1546/2015, 4429/2016, 6877/2017 e 7143/2017, apensados, com Substitutivo, e pela rejeição dos PL's 5435/2005, 1147/2007, 2029/2007, 5918/2013, 6908/2013, 3829/2015 e 5818/2016, apensados.",
+        "dataApresentacao": "2017-04-27T15:20"
+      },
+      {
+        "id": 2140142,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2140142",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "9",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Mauro Pereira (PMDB-RS), pela adequação financeira e orçamentária do Projeto de Lei 3729/2004, e dos PL's 3957/2004, 5435/2005, 5576/2005, 1147/2007, 2029/2007, 358/2011, 1700/2011, 2941/2011, 5716/2013, 5918/2013, 6908/2013, 8062/2014, 1546/2015, 3829/2015, 4429/2016, 5818/2016, 6877/2017 e 7143/2017, apensados, e dos Substitutivos das Comissões de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural e de Meio Ambiente e Desenvolvimento Sustentável; e no mérito, pela aprovação do PL 3729/2004 e dos PL's 3957/2004, 5435/2005, 358/2011, 1700/2011, 5716/2013, 5918/2013, 8062/2014, 1546/2015, 4429/2016, 6877/2017 e 7143/2017, com Substitutivo; e pela rejeição dos PL's 5576/2005, 1147/2007, 2029/2007, 2941/2011, 6908/2013, 3829/2015 e 5818/2016.",
+        "dataApresentacao": "2017-06-05T13:08"
+      },
+      {
+        "id": 2146550,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2146550",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "10",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Mauro Pereira (pendente de análise)",
+        "dataApresentacao": "2017-08-04T11:38"
+      },
+      {
+        "id": 2146786,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2146786",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "11",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Mauro Pereira (pendente de análise)",
+        "dataApresentacao": "2017-08-08T18:36"
+      },
+      {
+        "id": 2146810,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2146810",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "12",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Mauro Pereira (PMDB-RS), pela adequação financeira e orçamentária do Projeto de Lei 3729/2004, e dos PL's 3957/2004, 5435/2005, 5576/2005, 1147/2007, 2029/2007, 358/2011, 1700/2011, 2941/2011, 5716/2013, 5918/2013, 6908/2013, 8062/2014, 1546/2015, 3829/2015, 4429/2016, 5818/2016, 6411/2016, 6877/2017 e 7143/2017, apensados, e dos Substitutivos das Comissões de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural e de Meio Ambiente e Desenvolvimento Sustentável; e, no mérito, pela aprovação do Projeto 3729/2004 e dos PL's 3957/2004, 5435/2005, 358/2011, 1700/2011, 2941/2011, 5716/2013, 5918/2013, 8062/2014, 1546/2015, 3829/2015, 4429/2016, 6411/2016, 6877/2017 e 7143/2017, com Substitutivo; e pela rejeição dos PL's 5576/2005, 1147/2007, 2029/2007,  6908/2013 e 5818/2016.",
+        "dataApresentacao": "2017-08-08T19:40"
+      },
+      {
+        "id": 2149446,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2149446",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "13",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Mauro Pereira (PMDB-RS), pela adequação financeira e orçamentária; do Projeto de Lei 3729/2004, e dos PL's 3957/2004, 5435/2005, 5576/2005, 1147/2007, 2029/2007, 358/2011, 1700/2011, 2941/2011, 5716/2013, 5918/2013, 6908/2013, 8062/2014, 1546/2015, 3829/2015, 4429/2016, 5818/2016, 6411/2016, 6877/2017, 7143/2017, apensados, e dos Substitutivos das Comissões de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural e de Meio Ambiente e Desenvolvimento Sustentável; e no mérito pela aprovação dos PL's 3729/2044, 3957/2004, 5435/2005, 358/2011, 1700/2011, 2941/2011, 5716/2013, 5918/2013, 8062/2014, 5146/2015, 3829/2015, 4429/2016, 6411/2016, 6877/2017 e 7143/2017, com Substitutivo; e pela rejeição dos PL's 5576/2005, 1147/2007, 2029/2007, 6908/2013 e 5818/2016, apensados.",
+        "dataApresentacao": "2017-08-29T11:38"
+      },
+      {
+        "id": 2017989,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2017989",
+        "siglaTipo": "CVO",
+        "codTipo": "195",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Parecer com Complementação de Voto, Dep. Ricardo Tripoli (PSDB-SP), pela aprovação, com substitutivo, deste, do PL 3957/2004, do PL 5435/2005, do PL 1147/2007, do PL 358/2011, do PL 1700/2011, do PL 5716/2013, do PL 6908/2013, do PL 8062/2014, do PL 5918/2013, e do PL 1546/2015, apensados, e pela rejeição do PL 5576/2005, do PL 2029/2007, e do PL 2941/2011, apensados.",
+        "dataApresentacao": "2015-10-14T18:33"
+      },
+      {
+        "id": 2017870,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2017870",
+        "siglaTipo": "PAR",
+        "codTipo": "187",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Aprovado, por unanimidade, o Parecer, nos termos da Complementação de Voto.. \r\nParecer do Relator, Dep. Ricardo Tripoli (PSDB-SP), pela aprovação deste, do PL 3957/2004, do PL 5435/2005, do PL 1147/2007, do PL 358/2011, do PL 1700/2011, do PL 5716/2013, do PL 6908/2013, do PL 8062/2014, do PL 5918/2013, e do PL 1546/2015, apensados, com substitutivo, e pela rejeição do PL 5576/2005, do PL 2029/2007, e do PL 2941/2011, apensados.",
+        "dataApresentacao": "2015-10-14T10:00"
+      },
+      {
+        "id": 2282755,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282755",
+        "siglaTipo": "PEP",
+        "codTipo": "442",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Parecer às Emendas de Plenário proferido pelo Relator, Dep. Neri Geller (PP-MT), pela Comissão de Meio Ambiente e Desenvolvimento Sustentável, que conclui pela aprovação das Emendas de Plenário nºs 6, 29, 56, 60, 66, 81, 82, 89 e 96, na forma da Subemenda Substitutiva apresentada, e pela rejeição das demais emendas com apoiamento regimental.",
+        "dataApresentacao": "2021-05-12T19:14"
+      },
+      {
+        "id": 425004,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/425004",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Ricardo Tripoli (PSDB-SP), pela aprovação deste, do PL 3957/2004, do PL 5435/2005, do PL 5576/2005, do PL 1147/2007, e do PL 2029/2007, apensados, com substitutivo.",
+        "dataApresentacao": "2009-01-30T15:18"
+      },
+      {
+        "id": 464832,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/464832",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "2",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. André de Paula (DEM-PE), pela aprovação deste e dos PL's nºs 3957/2004, 5435/2005 e 1147/2007,  e pela rejeição do PL 5576/2005, e do PL 2029/2007, apensados, com substitutivo.",
+        "dataApresentacao": "2009-12-16T17:13"
+      },
+      {
+        "id": 597814,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/597814",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "3",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Valdir Colatto (PMDB-SC), pela aprovação deste, do PL 3957/2004, do PL 5435/2005, do PL 5576/2005, do PL 1147/2007, do PL 2029/2007, do PL 358/2011, do PL 1700/2011, do PL 5716/2013, do PL 5918/2013, e do PL 2941/2011, apensados, com substitutivo.",
+        "dataApresentacao": "2013-10-23T09:34"
+      },
+      {
+        "id": 603559,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/603559",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "4",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Penna (PV-SP), pela aprovação deste, do PL 3957/2004, do PL 5435/2005, do PL 1147/2007, do PL 358/2011, do PL 1700/2011, do PL 5716/2013, e do PL 5918/2013, apensados, com substitutivo, e pela rejeição do PL 5576/2005, do PL 2029/2007, e do PL 2941/2011, apensados.",
+        "dataApresentacao": "2013-12-06T12:36"
+      },
+      {
+        "id": 604589,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/604589",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "5",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Penna (PV-SP), pela aprovação deste, do PL 3957/2004, do PL 5435/2005, do PL 1147/2007, do PL 358/2011, do PL 1700/2011, do PL 5716/2013, do PL 6908/2013, e do PL 5918/2013, apensados, com substitutivo, e pela rejeição do PL 5576/2005, do PL 2029/2007, e do PL 2941/2011, apensados.",
+        "dataApresentacao": "2013-12-17T15:08"
+      },
+      {
+        "id": 1741187,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/1741187",
+        "siglaTipo": "PRL",
+        "codTipo": "190",
+        "numero": "6",
+        "ano": "0",
+        "ementa": "Parecer do Relator, Dep. Ricardo Tripoli (PSDB-SP), pela aprovação deste, do PL 3957/2004, do PL 5435/2005, do PL 1147/2007, do PL 358/2011, do PL 1700/2011, do PL 5716/2013, do PL 6908/2013, do PL 8062/2014, do PL 5918/2013, e do PL 1546/2015, apensados, com substitutivo, e pela rejeição do PL 5576/2005, do PL 2029/2007, e do PL 2941/2011, apensados.",
+        "dataApresentacao": "2015-09-23T17:48"
+      },
+      {
+        "id": 2283228,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2283228",
+        "siglaTipo": "AA",
+        "codTipo": "506",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "",
+        "dataApresentacao": "2021-05-18T10:44"
+      },
+      {
+        "id": 2282750,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282750",
+        "siglaTipo": "PRLE",
+        "codTipo": "1001",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+        "dataApresentacao": "2021-05-12T21:27"
+      },
+      {
+        "id": 2282158,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282158",
+        "siglaTipo": "PRLP",
+        "codTipo": "891",
+        "numero": "1",
+        "ano": "0",
+        "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+        "dataApresentacao": "2021-05-10T15:49"
+      },
+      {
+        "id": 2533431,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2533431",
+        "siglaTipo": "PRLP",
+        "codTipo": "891",
+        "numero": "2",
+        "ano": "0",
+        "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+        "dataApresentacao": "2025-07-08T21:42"
+      },
+      {
+        "id": 2535202,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535202",
+        "siglaTipo": "PRLP",
+        "codTipo": "891",
+        "numero": "3",
+        "ano": "0",
+        "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+        "dataApresentacao": "2025-07-11T13:36"
+      },
+      {
+        "id": 2535467,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535467",
+        "siglaTipo": "PRLP",
+        "codTipo": "891",
+        "numero": "4",
+        "ano": "0",
+        "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+        "dataApresentacao": "2025-07-14T14:26"
+      },
+      {
+        "id": 2535490,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535490",
+        "siglaTipo": "PRLP",
+        "codTipo": "891",
+        "numero": "5",
+        "ano": "0",
+        "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+        "dataApresentacao": "2025-07-14T15:10"
+      },
+      {
+        "id": 2536021,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536021",
+        "siglaTipo": "PRLP",
+        "codTipo": "891",
+        "numero": "6",
+        "ano": "0",
+        "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+        "dataApresentacao": "2025-07-14T22:43"
+      },
+      {
+        "id": 2536560,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536560",
+        "siglaTipo": "PRLP",
+        "codTipo": "891",
+        "numero": "7",
+        "ano": "0",
+        "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+        "dataApresentacao": "2025-07-15T13:52"
+      },
+      {
+        "id": 2537182,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537182",
+        "siglaTipo": "PRLP",
+        "codTipo": "891",
+        "numero": "8",
+        "ano": "0",
+        "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+        "dataApresentacao": "2025-07-16T11:38"
+      },
+      {
+        "id": 2537819,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537819",
+        "siglaTipo": "PSS",
+        "codTipo": "443",
+        "numero": "2",
+        "ano": "0",
+        "ementa": "Parecer às Emendas do Senado Federal proferido pelo Relator, Dep. Zé Vitor (PL-MG) pela:\r\n• Comissão de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural, que conclui pela aprovação, nos termos do Parecer da Comissão de Meio Ambiente e Desenvolvimento Sustentável.\r\n• Comissão de Meio Ambiente e Desenvolvimento Sustentável, que conclui pela aprovação das Emendas nº 1 a 8, 10 a 13, e 15 a 31 do Senado Federal ao Projeto de Lei nº 2.159, de 2021; pela aprovação parcial da Emenda nº 9, rejeitando a alteração promovida no inciso IV do art. 8º, mantendo os incisos IX e XIII aprovados na Câmara dos Deputados, e acolhendo todo o restante da emenda; pela aprovação parcial também da Emenda nº 32, excluindo-se a expressão \"em até 24 (vinte e quatro) horas\"; e pela rejeição da Emenda nº 14.\r\n• Comissão de Finanças e Tributação, que conclui pela adequação financeira e orçamentária de todas as Emendas; e, no mérito, pela aprovação nos termos do Parecer da Comissão de Meio Ambiente e Desenvolvimento Sustentável.\r\n• Comissão de Constituição e Justiça e de Cidadania, que conclui pela constitucionalidade, juridicidade e boa técnica legislativa das Emendas do Senado Federal ao Projeto de Lei nº 2.159, de 2021.",
+        "dataApresentacao": "2025-07-16T10:00"
+      },
+      {
+        "_cortado": "207 itens a mais"
+      }
+    ],
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/257161/relacionadas"
+      }
+    ]
+  }
+}

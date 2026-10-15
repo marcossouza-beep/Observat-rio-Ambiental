@@ -1,0 +1,21 @@
+{
+  "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/257161/temas",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:04.822Z",
+  "corpo": {
+    "dados": [
+      {
+        "codTema": 48,
+        "tema": "Meio Ambiente e Desenvolvimento Sustentável",
+        "relevancia": 0
+      }
+    ],
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/257161/temas"
+      }
+    ]
+  }
+}

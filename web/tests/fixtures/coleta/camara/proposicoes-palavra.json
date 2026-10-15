@@ -1,0 +1,114 @@
+{
+  "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes?keywords=licenciamento%20ambiental&dataInicio=2026-08-16&dataFim=2026-10-15&itens=30&ordem=DESC&ordenarPor=id",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:51:01.373Z",
+  "corpo": {
+    "dados": [
+      {
+        "id": 2647275,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2647275",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 5504,
+        "ano": 2026,
+        "ementa": "Dispõe sobre o incentivo e a regulamentação da Mineração Urbana; institui a prioridade de aproveitamento de recursos de fontes secundárias; estabelece a obrigatoriedade de se considerar a disponibilidade de minerais a partir de fontes secundárias; e, estabelece a restrição de concessão de lavra e de licença ambiental para a extração de minerais disponíveis no passivo urbano.",
+        "dataApresentacao": "2026-10-01T12:27"
+      },
+      {
+        "id": 2646284,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2646284",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 5326,
+        "ano": 2026,
+        "ementa": "Dispõe sobre vedação aos empreendedores minerários de patrocinarem e apoiarem eventos e iniciativas culturais, esportivas, educacionais e comunitárias, promovidas por entidades públicas e/ou privadas, durante a tramitação do licenciamento ambiental.",
+        "dataApresentacao": "2026-09-09T15:03"
+      },
+      {
+        "id": 2645110,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645110",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 5247,
+        "ano": 2026,
+        "ementa": "Estabelece normas de proteção dos mananciais e de eficiência hídrica para a instalação, a ampliação e a operação de centros de processamento de dados.",
+        "dataApresentacao": "2026-09-01T13:33"
+      },
+      {
+        "id": 2644764,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2644764",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 5209,
+        "ano": 2026,
+        "ementa": "Estabelece normas gerais específicas para o licenciamento ambiental de centros de dados.",
+        "dataApresentacao": "2026-08-28T11:01"
+      },
+      {
+        "id": 2644723,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2644723",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 5198,
+        "ano": 2026,
+        "ementa": "Altera a Lei nº 15.190, de 8 de agosto de 2025, para dispor sobre a não sujeição a licenciamento ambiental da instalação e da operação de centrais de microgeração e minigeração distribuída de energia elétrica a partir de fonte solar fotovoltaica caracterizadas como de baixo impacto ambiental.",
+        "dataApresentacao": "2026-08-27T12:06"
+      },
+      {
+        "id": 2632611,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2632611",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 3132,
+        "ano": 2026,
+        "ementa": "Institui a Política Nacional dos Minerais Estratégicos para Fertilizantes, estabelece procedimentos especiais para o licenciamento ambiental de empreendimentos destinados à pesquisa, lavra, beneficiamento e processamento de minerais essenciais à produção de fertilizantes, cria mecanismos de segurança estratégica para o abastecimento nacional e dá outras providências.",
+        "dataApresentacao": "2026-06-16T11:50"
+      },
+      {
+        "id": 2613430,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2613430",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 1598,
+        "ano": 2026,
+        "ementa": "Dispõe sobre a obrigatoriedade de instalação de dispositivos de escape para fauna em canais artificiais e dá outras providências.",
+        "dataApresentacao": "2026-04-06T13:53"
+      },
+      {
+        "id": 2613301,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2613301",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 1582,
+        "ano": 2026,
+        "ementa": "Dispõe sobre normas nacionais para licenciamento, implantação, operação, monitoramento e fiscalização de Usinas de Recuperação Energética (URE), que utilizam o tratamento térmico de resíduos sólidos urbanos para geração de energia elétrica, e dá outras providências.",
+        "dataApresentacao": "2026-04-01T17:33"
+      },
+      {
+        "id": 2578811,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2578811",
+        "siglaTipo": "PL",
+        "codTipo": 139,
+        "numero": 5481,
+        "ano": 2025,
+        "ementa": "Estabelece moratória para implantação de usinas de incineração e outras formas de geração de energia a partir da queima de resíduos sólidos urbanos, e dá outras providências.",
+        "dataApresentacao": "2025-10-29T14:53"
+      }
+    ],
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes?keywords=licenciamento%20ambiental&dataInicio=2026-08-16&dataFim=2026-10-15&itens=30&ordem=DESC&ordenarPor=id"
+      },
+      {
+        "rel": "first",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes?keywords=licenciamento%20ambiental&dataInicio=2026-08-16&dataFim=2026-10-15&ordem=DESC&ordenarPor=id&pagina=1&itens=30"
+      },
+      {
+        "rel": "last",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes?keywords=licenciamento%20ambiental&dataInicio=2026-08-16&dataFim=2026-10-15&ordem=DESC&ordenarPor=id&pagina=1&itens=30"
+      }
+    ]
+  }
+}
