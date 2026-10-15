@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 test.describe('Site público', () => {
   test('página inicial', async ({ page }) => {
     await page.goto('/')
-    await expect(page).toHaveTitle(/Observatório Ambiental/)
+    await expect(page).toHaveTitle(/leis ambientais explicadas/)
     await expect(page.locator('h1')).toContainText('ambientais')
   })
 

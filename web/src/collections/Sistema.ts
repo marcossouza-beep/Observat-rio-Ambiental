@@ -6,6 +6,7 @@ const soEquipe = { read: equipe, create: equipe, update: equipe, delete: equipe 
 
 export const Fontes: CollectionConfig = {
   slug: 'fontes',
+  typescript: { interface: 'Fonte' },
   labels: { singular: 'Fonte', plural: 'Fontes' },
   admin: { group: 'Sistema', useAsTitle: 'nome', defaultColumns: ['nome', 'nivel', 'ultimaColetaOk', 'situacao', 'ativa'] },
   access: { ...soEquipe, read: () => true },
@@ -55,6 +56,7 @@ export const Fontes: CollectionConfig = {
 /** Registro de cada coleta, com amostra da resposta bruta (guardada por 90 dias). */
 export const Coletas: CollectionConfig = {
   slug: 'coletas',
+  typescript: { interface: 'Coleta' },
   labels: { singular: 'Coleta', plural: 'Coletas' },
   admin: { group: 'Sistema', defaultColumns: ['fonte', 'inicio', 'ok', 'itens'] },
   access: soEquipe,
@@ -72,6 +74,7 @@ export const Coletas: CollectionConfig = {
 
 export const Verificacoes: CollectionConfig = {
   slug: 'verificacoes',
+  typescript: { interface: 'Verificacao' },
   labels: { singular: 'Verificação', plural: 'Verificações' },
   admin: { group: 'Sistema', defaultColumns: ['tipo', 'resultado', 'detalhe', 'createdAt'] },
   access: soEquipe,

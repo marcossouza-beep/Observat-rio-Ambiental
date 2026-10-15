@@ -1,6 +1,7 @@
 import { APIError, type CollectionConfig, type Field } from 'payload'
 import { equipe, publicadoOuEquipe } from '../access'
 import { mudarCompromissos } from '../hooks/compromissos'
+import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
 import { checarPublicacao, SECOES_PARECER } from '../lib/publicacao'
 
 const idDe = (v: unknown) => (v && typeof v === 'object' ? (v as { id: unknown }).id : v) ?? null
@@ -9,6 +10,7 @@ const secoes: Field[] = SECOES_PARECER.map((s) => ({ name: s.nome, label: s.rotu
 
 export const Pareceres: CollectionConfig = {
   slug: 'pareceres',
+  typescript: { interface: 'Parecer' },
   labels: { singular: 'Parecer', plural: 'Pareceres' },
   admin: {
     group: 'Trabalho',
@@ -60,7 +62,9 @@ export const Pareceres: CollectionConfig = {
         await mudarCompromissos(req, { alvo: 'pareceres', alvoId: doc.id, tipos: ['atualizacao'], status: 'cumprido' })
         return doc
       },
+      revalidarAoMudar,
     ],
+    afterDelete: [revalidarAoApagar],
   },
   fields: [
     { name: 'titulo', type: 'text' },

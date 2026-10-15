@@ -144,3 +144,14 @@ describe('ajustes', () => {
     await payload.updateGlobal({ slug: 'ajustes', data: { prazos: { parecer: 7 } } })
   })
 })
+
+describe('o que o visitante vê', () => {
+  it('proposição na triagem ou descartada não é pública; ativa e acompanhada são', async () => {
+    const t = await novaProposicao({ situacaoEditorial: 'triagem' })
+    const d = await novaProposicao({ situacaoEditorial: 'descartada' })
+    const a = await novaProposicao({ situacaoEditorial: 'ativa' })
+    const m = await novaProposicao({ situacaoEditorial: 'monitorada' })
+    const r = await payload.find({ collection: 'proposicoes', overrideAccess: false, where: { id: { in: [t.id, d.id, a.id, m.id] } }, limit: 10 })
+    expect(r.docs.map((x) => x.id).sort()).toEqual([a.id, m.id].sort())
+  })
+})

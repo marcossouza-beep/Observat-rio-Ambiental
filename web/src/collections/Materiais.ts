@@ -4,6 +4,7 @@ import { equipe } from '../access'
 /** Nota técnica e Quadro comparativo (PDF). Entregues a inscritos por link temporário (Sprint 4). */
 export const Materiais: CollectionConfig = {
   slug: 'materiais',
+  typescript: { interface: 'Material' },
   labels: { singular: 'Material (PDF)', plural: 'Materiais (PDF)' },
   admin: { group: 'Conteúdo', useAsTitle: 'titulo' },
   access: { read: equipe, create: equipe, update: equipe, delete: equipe },

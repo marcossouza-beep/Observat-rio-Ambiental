@@ -2,11 +2,13 @@ import type { CollectionConfig } from 'payload'
 import { equipe, publico } from '../access'
 import { TIPOS_COMPROMISSO, ROTULO_COMPROMISSO } from '../lib/compromissos'
 import { abrirCompromisso, mudarCompromissos } from '../hooks/compromissos'
+import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
 
 const soEquipe = { read: equipe, create: equipe, update: equipe, delete: equipe }
 
 export const Compromissos: CollectionConfig = {
   slug: 'compromissos',
+  typescript: { interface: 'Compromisso' },
   labels: { singular: 'Compromisso', plural: 'Compromissos' },
   admin: {
     group: 'Trabalho',
@@ -64,6 +66,7 @@ export const Compromissos: CollectionConfig = {
 /** Pedidos do público com prazo: correções e dados pessoais (LGPD). */
 export const Pedidos: CollectionConfig = {
   slug: 'pedidos',
+  typescript: { interface: 'Pedido' },
   labels: { singular: 'Pedido', plural: 'Pedidos' },
   admin: { group: 'Trabalho', useAsTitle: 'resumo', defaultColumns: ['resumo', 'tipo', 'decisao', 'createdAt'] },
   access: soEquipe,
@@ -124,10 +127,12 @@ export const Pedidos: CollectionConfig = {
 /** Registro público de correções, exibido no parecer e na página de Correções. */
 export const Correcoes: CollectionConfig = {
   slug: 'correcoes',
+  typescript: { interface: 'Correcao' },
   labels: { singular: 'Correção', plural: 'Correções' },
   admin: { group: 'Trabalho', useAsTitle: 'descricao', defaultColumns: ['descricao', 'parecer', 'feitaEm'] },
   access: { read: publico, create: equipe, update: equipe, delete: equipe },
   defaultSort: '-feitaEm',
+  hooks: { afterChange: [revalidarAoMudar], afterDelete: [revalidarAoApagar] },
   fields: [
     { name: 'parecer', type: 'relationship', relationTo: 'pareceres', required: true },
     { name: 'descricao', label: 'O que foi corrigido', type: 'text', required: true },

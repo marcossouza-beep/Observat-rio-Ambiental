@@ -1,14 +1,18 @@
 import type { CollectionConfig } from 'payload'
 import { equipe, publico } from '../access'
 import { slugify } from '../lib/texto'
+import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
 
 export const Autores: CollectionConfig = {
   slug: 'autores',
+  typescript: { interface: 'Autor' },
   labels: { singular: 'Autor', plural: 'Autores' },
   admin: { group: 'Conteúdo', useAsTitle: 'nome' },
   access: { read: publico, create: equipe, update: equipe, delete: equipe },
   hooks: {
     beforeValidate: [({ data }) => (data && !data.slug && data.nome ? { ...data, slug: slugify(data.nome) } : data)],
+    afterChange: [revalidarAoMudar],
+    afterDelete: [revalidarAoApagar],
   },
   fields: [
     { name: 'nome', type: 'text', required: true },

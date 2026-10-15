@@ -1,9 +1,11 @@
 import type { CollectionConfig } from 'payload'
 import { equipe, publico } from '../access'
 import { abrirCompromisso } from '../hooks/compromissos'
+import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
 import { slugify } from '../lib/texto'
 
 const acesso = { read: publico, create: equipe, update: equipe, delete: equipe }
+const revalidar = { afterChange: [revalidarAoMudar], afterDelete: [revalidarAoApagar] }
 const chaveOrigem = {
   name: 'chaveOrigem',
   label: 'Identificador na fonte',
@@ -16,10 +18,12 @@ const proposicao = { name: 'proposicao', label: 'Proposição', type: 'relations
 
 export const Tramitacoes: CollectionConfig = {
   slug: 'tramitacoes',
+  typescript: { interface: 'Tramitacao' },
   labels: { singular: 'Tramitação', plural: 'Tramitações' },
   admin: { group: 'Legislativo', useAsTitle: 'descricao', defaultColumns: ['data', 'proposicao', 'orgao', 'tipoEvento'] },
   access: acesso,
   defaultSort: '-data',
+  hooks: revalidar,
   fields: [
     proposicao,
     { name: 'data', type: 'date', required: true, index: true },
@@ -53,6 +57,7 @@ export const Tramitacoes: CollectionConfig = {
  */
 export const Versoes: CollectionConfig = {
   slug: 'versoes',
+  typescript: { interface: 'Versao' },
   labels: { singular: 'Versão do texto', plural: 'Versões do texto' },
   admin: { group: 'Legislativo', useAsTitle: 'rotulo', defaultColumns: ['data', 'proposicao', 'tipo'] },
   access: acesso,
@@ -88,7 +93,9 @@ export const Versoes: CollectionConfig = {
         })
         return doc
       },
+      revalidarAoMudar,
     ],
+    afterDelete: [revalidarAoApagar],
   },
   fields: [
     proposicao,
@@ -118,6 +125,7 @@ export const Versoes: CollectionConfig = {
 
 export const Parlamentares: CollectionConfig = {
   slug: 'parlamentares',
+  typescript: { interface: 'Parlamentar' },
   labels: { singular: 'Parlamentar', plural: 'Parlamentares' },
   admin: { group: 'Legislativo', useAsTitle: 'nome', defaultColumns: ['nome', 'partido', 'uf', 'casa'] },
   access: acesso,
@@ -153,9 +161,11 @@ export const Parlamentares: CollectionConfig = {
 
 export const Votacoes: CollectionConfig = {
   slug: 'votacoes',
+  typescript: { interface: 'Votacao' },
   labels: { singular: 'Votação', plural: 'Votações' },
   admin: { group: 'Legislativo', useAsTitle: 'descricao', defaultColumns: ['data', 'proposicao', 'orgao', 'resultado'] },
   access: acesso,
+  hooks: revalidar,
   defaultSort: '-data',
   fields: [
     proposicao,
@@ -186,6 +196,7 @@ export const Votacoes: CollectionConfig = {
 
 export const Votos: CollectionConfig = {
   slug: 'votos',
+  typescript: { interface: 'Voto' },
   labels: { singular: 'Voto', plural: 'Votos' },
   admin: { group: 'Legislativo', defaultColumns: ['votacao', 'parlamentar', 'voto'] },
   access: acesso,
@@ -220,9 +231,11 @@ export const Votos: CollectionConfig = {
 
 export const Emendas: CollectionConfig = {
   slug: 'emendas',
+  typescript: { interface: 'Emenda' },
   labels: { singular: 'Emenda', plural: 'Emendas' },
   admin: { group: 'Legislativo', useAsTitle: 'numero', defaultColumns: ['numero', 'proposicao', 'parlamentar', 'data'] },
   access: acesso,
+  hooks: revalidar,
   fields: [
     proposicao,
     { name: 'numero', label: 'Número', type: 'text' },

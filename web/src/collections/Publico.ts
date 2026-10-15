@@ -26,6 +26,7 @@ export const SUBPERFIS: Record<string, string[]> = {
 
 export const Assinantes: CollectionConfig = {
   slug: 'assinantes',
+  typescript: { interface: 'Assinante' },
   labels: { singular: 'Inscrito', plural: 'Inscritos' },
   admin: { group: 'Público', useAsTitle: 'email', defaultColumns: ['email', 'nome', 'perfil', 'subperfil', 'uf', 'confirmadoEm'] },
   access: soEquipe,
@@ -61,6 +62,7 @@ export const Assinantes: CollectionConfig = {
 
 export const Credenciamentos: CollectionConfig = {
   slug: 'credenciamentos',
+  typescript: { interface: 'Credenciamento' },
   labels: { singular: 'Credenciamento de imprensa', plural: 'Credenciamentos de imprensa' },
   admin: { group: 'Público', useAsTitle: 'veiculo', defaultColumns: ['veiculo', 'assinante', 'status', 'createdAt'] },
   access: soEquipe,
@@ -116,6 +118,7 @@ export const Credenciamentos: CollectionConfig = {
 
 export const Comunicados: CollectionConfig = {
   slug: 'comunicados',
+  typescript: { interface: 'Comunicado' },
   labels: { singular: 'Comunicado', plural: 'Comunicados' },
   admin: { group: 'Público', useAsTitle: 'assunto', defaultColumns: ['assunto', 'status', 'totalPrevisto', 'enviadoEm'] },
   access: soEquipe,
@@ -144,6 +147,7 @@ export const Comunicados: CollectionConfig = {
 
 export const Envios: CollectionConfig = {
   slug: 'envios',
+  typescript: { interface: 'Envio' },
   labels: { singular: 'Envio de e-mail', plural: 'Envios de e-mail' },
   admin: { group: 'Público', defaultColumns: ['tipo', 'assinante', 'status', 'createdAt'] },
   access: soEquipe,

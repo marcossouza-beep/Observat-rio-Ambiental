@@ -1,15 +1,53 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
 import React from 'react'
+import { NOME_SITE, SITE_URL } from '@/lib/rotulos'
 import './styles.css'
 
-export const metadata = {
-  description: 'Observatório da legislação ambiental brasileira, com pareceres técnicos assinados.',
-  title: 'Observatório Ambiental',
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: { default: `${NOME_SITE} — leis ambientais explicadas`, template: `%s | ${NOME_SITE}` },
+  description: 'Observatório da legislação ambiental brasileira: o que está em votação no Congresso e nos estados, com parecer técnico assinado.',
+  openGraph: { type: 'website', locale: 'pt_BR', siteName: NOME_SITE },
+  robots: { index: true, follow: true },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <header className="head">
+          <div className="wrap">
+            <Link className="brand" href="/">
+              <i aria-hidden="true" />
+              {NOME_SITE}
+            </Link>
+            <nav className="nav" aria-label="Principal">
+              <Link href="/leis?esfera=federal">Federais</Link>
+              <Link href="/leis?esfera=estadual">Estaduais</Link>
+              <Link href="/pareceres">Opinião</Link>
+              <Link href="/artigos">Artigos</Link>
+              <Link href="/temas">Temas e biomas</Link>
+            </nav>
+          </div>
+        </header>
+        <main>{children}</main>
+        <footer className="foot">
+          <div className="wrap">
+            <span className="brand">
+              <i aria-hidden="true" />
+              {NOME_SITE}
+            </span>
+            <nav aria-label="Rodapé">
+              <Link href="/leis">Todas as leis</Link>
+              <Link href="/temas">Temas e biomas</Link>
+              <Link href="/pareceres">Pareceres</Link>
+              <Link href="/artigos">Artigos</Link>
+            </nav>
+            <small>Pareceres escritos e assinados pelo autor. Textos de lei com link para a fonte oficial.</small>
+          </div>
+        </footer>
+      </body>
     </html>
   )
 }

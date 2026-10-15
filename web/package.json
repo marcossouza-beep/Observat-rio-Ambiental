@@ -19,7 +19,8 @@
     "typecheck": "tsc --noEmit",
     "seed": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed/index.ts",
     "migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
-    "fumaca": "tsx src/coleta/fumaca/index.ts"
+    "fumaca": "tsx src/coleta/fumaca/index.ts",
+    "seed:demo": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed/demo.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.90.2",
@@ -35,6 +36,7 @@
     "payload": "3.90.2",
     "react": "19.2.6",
     "react-dom": "19.2.6",
+    "server-only": "^0.0.1",
     "sharp": "0.35.4"
   },
   "devDependencies": {

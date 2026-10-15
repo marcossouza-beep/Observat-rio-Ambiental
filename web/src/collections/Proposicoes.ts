@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
-import { campoSoEquipe, equipe, publico } from '../access'
+import { campoSoEquipe, equipe, proposicaoPublicaOuEquipe } from '../access'
 import { abrirCompromisso, mudarCompromissos } from '../hooks/compromissos'
+import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
 import { rotuloProposicao, slugProposicao } from '../lib/texto'
 
 export const SITUACOES_EDITORIAIS = [
@@ -12,6 +13,7 @@ export const SITUACOES_EDITORIAIS = [
 
 export const Proposicoes: CollectionConfig = {
   slug: 'proposicoes',
+  typescript: { interface: 'Proposicao' },
   labels: { singular: 'Proposição', plural: 'Proposições' },
   admin: {
     group: 'Trabalho',
@@ -19,7 +21,7 @@ export const Proposicoes: CollectionConfig = {
     defaultColumns: ['rotulo', 'titulo', 'casa', 'statusSimplificado', 'situacaoEditorial', 'relevancia'],
     listSearchableFields: ['rotulo', 'titulo', 'ementa'],
   },
-  access: { read: publico, create: equipe, update: equipe, delete: equipe },
+  access: { read: proposicaoPublicaOuEquipe, create: equipe, update: equipe, delete: equipe },
   hooks: {
     beforeChange: [
       ({ data, originalDoc }) => {
@@ -56,7 +58,9 @@ export const Proposicoes: CollectionConfig = {
         }
         return doc
       },
+      revalidarAoMudar,
     ],
+    afterDelete: [revalidarAoApagar],
   },
   fields: [
     {

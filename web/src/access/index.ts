@@ -16,3 +16,9 @@ export const publicadoOuEquipe: Access = ({ req: { user } }) => {
   if (ehUsuario(user)) return true
   return { status: { equals: 'publicado' } }
 }
+
+/** Proposições na triagem ou descartadas nunca aparecem para o visitante. */
+export const proposicaoPublicaOuEquipe: Access = ({ req: { user } }) => {
+  if (ehUsuario(user)) return true
+  return { situacaoEditorial: { in: ['ativa', 'monitorada'] } }
+}

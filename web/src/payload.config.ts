@@ -7,6 +7,7 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
+import { Artigos } from './collections/Artigos'
 import { Autores } from './collections/Autores'
 import { Biomas, PalavrasChave, Temas } from './collections/Classificacao'
 import { Emendas, Parlamentares, Tramitacoes, Versoes, Votacoes, Votos } from './collections/Legislativo'
@@ -61,6 +62,7 @@ export default buildConfig({
     Coletas,
     Verificacoes,
     // Conteúdo e equipe
+    Artigos,
     Autores,
     Media,
     Materiais,

@@ -3,6 +3,7 @@ import { admin, equipe } from '../access'
 
 export const Users: CollectionConfig = {
   slug: 'users',
+  typescript: { interface: 'User' },
   labels: { singular: 'Pessoa da equipe', plural: 'Equipe' },
   admin: { useAsTitle: 'email', group: 'Ajustes', defaultColumns: ['email', 'nome', 'papel'] },
   auth: true,

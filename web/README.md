@@ -25,6 +25,7 @@ pnpm dev                        # http://localhost:3000 e http://localhost:3000/
 | `pnpm migrate` | Aplica as migrações do banco |
 | `pnpm payload migrate:create <nome>` | Cria migração depois de mudar uma coleção (o CI falha se esquecer) |
 | `pnpm seed` | Carga inicial idempotente: áreas, biomas, fontes, palavras-chave e (opcional) o primeiro administrador |
+| `pnpm seed:demo` | Conteúdo fictício do protótipo para ver o site no computador (`--limpar` remove). Bloqueado em produção |
 | `pnpm test:unit` | Regras de negócio (prazos, fontes, relevância, indicadores, publicação, cliente HTTP) |
 | `pnpm test:int` | Regras que dependem do banco (compromissos, publicação, desatualização, tarefas) |
 | `pnpm test:e2e` | Site e painel no navegador (rode `pnpm build` antes) |
@@ -44,6 +45,22 @@ pnpm dev                        # http://localhost:3000 e http://localhost:3000/
 | `src/migrations` | Migrações do banco (geradas) |
 | `src/seed` | Carga inicial |
 | `tests/` | `unit`, `int` (com banco) e `e2e` (navegador) |
+
+## Site público (Sprint 2)
+
+| Endereço | Página |
+|---|---|
+| `/` | Início: busca, em votação esta semana, explore, mais recentes |
+| `/leis` (`?esfera=`, `?situacao=`, `?uf=`) | Lista de leis com filtros |
+| `/leis/<slug>` | Lei: texto e fonte oficial, quem está por trás, votações, parecer (ou "em preparação" com "O que já se sabe", ou "acompanhando"), tramitação |
+| `/pareceres` e `/pareceres/<slug>` | Opinião e parecer: assinatura no topo, 7 seções, versão analisada, correções |
+| `/temas`, `/temas/<slug>`, `/biomas/<slug>` | Temas e biomas (fora da busca do Google até ter texto de abertura) |
+| `/artigos`, `/artigos/<slug>` | Artigos |
+| `/autores/<slug>` | Página do autor (credenciais para o Google) |
+| `/busca?q=` | Busca (não indexada) |
+| `/sitemap.xml`, `/robots.txt` | Para os buscadores |
+
+As páginas são geradas no servidor, guardadas em cache e refeitas a cada 5 minutos ou na hora em que o conteúdo muda no painel. Proposições na triagem ou descartadas nunca aparecem. Cada página tem título, descrição, endereço canônico e dados estruturados (docs/SEO.md).
 
 ## Regras automáticas já ativas
 

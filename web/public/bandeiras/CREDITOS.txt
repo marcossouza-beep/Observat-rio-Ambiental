@@ -1,0 +1,2 @@
+Bandeiras dos estados: pacote icones-bandeiras-br-uf, de Pierre Lapalu
+https://github.com/pierrelapalu/icones-bandeiras-br-uf — licença CC0 1.0 (domínio público). Estilo "rounded".

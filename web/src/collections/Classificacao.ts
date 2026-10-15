@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import { equipe, publico } from '../access'
 import { slugify } from '../lib/texto'
+import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
 
 const comSlug = ({ data }: { data?: Record<string, unknown> }) =>
   data && !data.slug && typeof data.nome === 'string' ? { ...data, slug: slugify(data.nome) } : data
@@ -19,24 +20,27 @@ const camposTexto = [
 
 export const Temas: CollectionConfig = {
   slug: 'temas',
+  typescript: { interface: 'Tema' },
   labels: { singular: 'Tema', plural: 'Temas' },
   admin: { group: 'Classificação', useAsTitle: 'nome' },
   access: { read: publico, create: equipe, update: equipe, delete: equipe },
-  hooks: { beforeValidate: [comSlug] },
+  hooks: { beforeValidate: [comSlug], afterChange: [revalidarAoMudar], afterDelete: [revalidarAoApagar] },
   fields: camposTexto,
 }
 
 export const Biomas: CollectionConfig = {
   slug: 'biomas',
+  typescript: { interface: 'Bioma' },
   labels: { singular: 'Bioma', plural: 'Biomas' },
   admin: { group: 'Classificação', useAsTitle: 'nome' },
   access: { read: publico, create: equipe, update: equipe, delete: equipe },
-  hooks: { beforeValidate: [comSlug] },
+  hooks: { beforeValidate: [comSlug], afterChange: [revalidarAoMudar], afterDelete: [revalidarAoApagar] },
   fields: [...camposTexto, { name: 'ufs', label: 'Estados que abrange', type: 'text', hasMany: true }],
 }
 
 export const PalavrasChave: CollectionConfig = {
   slug: 'palavras-chave',
+  typescript: { interface: 'PalavraChave' },
   labels: { singular: 'Palavra-chave', plural: 'Palavras-chave' },
   admin: { group: 'Classificação', useAsTitle: 'termo', defaultColumns: ['termo', 'grupo', 'peso', 'exclusao'] },
   access: { read: equipe, create: equipe, update: equipe, delete: equipe },

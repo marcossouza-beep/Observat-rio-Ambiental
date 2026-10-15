@@ -67,30 +67,31 @@ export interface Config {
   };
   blocks: {};
   collections: {
-    proposicoes: Proposicoe;
-    pareceres: Parecere;
+    proposicoes: Proposicao;
+    pareceres: Parecer;
     compromissos: Compromisso;
     pedidos: Pedido;
-    correcoes: Correcoe;
-    tramitacoes: Tramitacoe;
-    versoes: Versoe;
-    parlamentares: Parlamentare;
-    votacoes: Votacoe;
+    correcoes: Correcao;
+    tramitacoes: Tramitacao;
+    versoes: Versao;
+    parlamentares: Parlamentar;
+    votacoes: Votacao;
     votos: Voto;
     emendas: Emenda;
     temas: Tema;
     biomas: Bioma;
-    'palavras-chave': PalavrasChave;
+    'palavras-chave': PalavraChave;
     assinantes: Assinante;
     credenciamentos: Credenciamento;
     comunicados: Comunicado;
     envios: Envio;
     fontes: Fonte;
     coletas: Coleta;
-    verificacoes: Verificacoe;
-    autores: Autore;
+    verificacoes: Verificacao;
+    artigos: Artigo;
+    autores: Autor;
     media: Media;
-    materiais: Materiai;
+    materiais: Material;
     users: User;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
@@ -120,6 +121,7 @@ export interface Config {
     fontes: FontesSelect<false> | FontesSelect<true>;
     coletas: ColetasSelect<false> | ColetasSelect<true>;
     verificacoes: VerificacoesSelect<false> | VerificacoesSelect<true>;
+    artigos: ArtigosSelect<false> | ArtigosSelect<true>;
     autores: AutoresSelect<false> | AutoresSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     materiais: MateriaisSelect<false> | MateriaisSelect<true>;
@@ -171,7 +173,7 @@ export interface UserAuthOperations {
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "proposicoes".
  */
-export interface Proposicoe {
+export interface Proposicao {
   id: number;
   /**
    * PL, PLP, PEC, MPV, PDL, Decreto, Lei…
@@ -209,7 +211,7 @@ export interface Proposicoe {
   urlFonte?: string | null;
   autoria?:
     | {
-        parlamentar?: (number | null) | Parlamentare;
+        parlamentar?: (number | null) | Parlamentar;
         nomeLivre?: string | null;
         papel?: ('autor' | 'coautor' | 'relator') | null;
         orgao?: string | null;
@@ -238,7 +240,7 @@ export interface Proposicoe {
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "parlamentares".
  */
-export interface Parlamentare {
+export interface Parlamentar {
   id: number;
   nome: string;
   slug?: string | null;
@@ -315,10 +317,10 @@ export interface Fonte {
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pareceres".
  */
-export interface Parecere {
+export interface Parecer {
   id: number;
   titulo?: string | null;
-  proposicao: number | Proposicoe;
+  proposicao: number | Proposicao;
   secoes?: {
     resumo?: {
       root: {
@@ -451,15 +453,15 @@ export interface Parecere {
     indexar?: boolean | null;
   };
   materiais?: {
-    notaTecnica?: (number | null) | Materiai;
-    quadroComparativo?: (number | null) | Materiai;
+    notaTecnica?: (number | null) | Material;
+    quadroComparativo?: (number | null) | Material;
   };
   status: 'rascunho' | 'em_revisao' | 'agendado' | 'publicado';
   agendadoPara?: string | null;
   embargo?: boolean | null;
-  autor?: (number | null) | Autore;
+  autor?: (number | null) | Autor;
   versao?: number | null;
-  versaoTexto?: (number | null) | Versoe;
+  versaoTexto?: (number | null) | Versao;
   notaDaVersao?: string | null;
   /**
    * Preenchido sozinho quando chega uma versão nova do texto
@@ -475,7 +477,7 @@ export interface Parecere {
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "materiais".
  */
-export interface Materiai {
+export interface Material {
   id: number;
   titulo: string;
   tipo: 'nota_tecnica' | 'quadro_comparativo' | 'outro';
@@ -498,7 +500,7 @@ export interface Materiai {
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "autores".
  */
-export interface Autore {
+export interface Autor {
   id: number;
   nome: string;
   slug?: string | null;
@@ -543,9 +545,9 @@ export interface Media {
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "versoes".
  */
-export interface Versoe {
+export interface Versao {
   id: number;
-  proposicao: number | Proposicoe;
+  proposicao: number | Proposicao;
   data: string;
   tipo?:
     | (
@@ -582,7 +584,7 @@ export interface Compromisso {
   descricao: string;
   alvo: 'proposicoes' | 'pareceres' | 'pedidos' | 'credenciamentos';
   alvoId: string;
-  proposicao?: (number | null) | Proposicoe;
+  proposicao?: (number | null) | Proposicao;
   abertoEm: string;
   prazoEm: string;
   encerradoEm?: string | null;
@@ -600,7 +602,7 @@ export interface Pedido {
   resumo?: string | null;
   nome?: string | null;
   email: string;
-  parecer?: (number | null) | Parecere;
+  parecer?: (number | null) | Parecer;
   texto: string;
   decisao?: ('pendente' | 'procede' | 'nao_procede' | 'atendido') | null;
   resposta?: string | null;
@@ -612,9 +614,9 @@ export interface Pedido {
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "correcoes".
  */
-export interface Correcoe {
+export interface Correcao {
   id: number;
-  parecer: number | Parecere;
+  parecer: number | Parecer;
   descricao: string;
   feitaEm: string;
   pedido?: (number | null) | Pedido;
@@ -625,9 +627,9 @@ export interface Correcoe {
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "tramitacoes".
  */
-export interface Tramitacoe {
+export interface Tramitacao {
   id: number;
-  proposicao: number | Proposicoe;
+  proposicao: number | Proposicao;
   data: string;
   orgao?: string | null;
   descricao: string;
@@ -654,9 +656,9 @@ export interface Tramitacoe {
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "votacoes".
  */
-export interface Votacoe {
+export interface Votacao {
   id: number;
-  proposicao: number | Proposicoe;
+  proposicao: number | Proposicao;
   data: string;
   orgao?: string | null;
   descricao?: string | null;
@@ -685,8 +687,8 @@ export interface Votacoe {
  */
 export interface Voto {
   id: number;
-  votacao: number | Votacoe;
-  parlamentar: number | Parlamentare;
+  votacao: number | Votacao;
+  parlamentar: number | Parlamentar;
   voto: 'sim' | 'nao' | 'abstencao' | 'obstrucao' | 'ausente' | 'outro';
   /**
    * votação:parlamentar
@@ -701,9 +703,9 @@ export interface Voto {
  */
 export interface Emenda {
   id: number;
-  proposicao: number | Proposicoe;
+  proposicao: number | Proposicao;
   numero?: string | null;
-  parlamentar?: (number | null) | Parlamentare;
+  parlamentar?: (number | null) | Parlamentar;
   data?: string | null;
   resumo?: string | null;
   url?: string | null;
@@ -715,7 +717,7 @@ export interface Emenda {
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "palavras-chave".
  */
-export interface PalavrasChave {
+export interface PalavraChave {
   id: number;
   termo: string;
   /**
@@ -762,14 +764,14 @@ export interface Assinante {
   uf?: string | null;
   temas?: (number | Tema)[] | null;
   biomas?: (number | Bioma)[] | null;
-  seguindo?: (number | Proposicoe)[] | null;
-  avisarParecer?: (number | Proposicoe)[] | null;
+  seguindo?: (number | Proposicao)[] | null;
+  avisarParecer?: (number | Proposicao)[] | null;
   aceitaEmails?: boolean | null;
   alertas?: boolean | null;
   resumoSemanal?: boolean | null;
   consentimentoEm: string;
   confirmadoEm?: string | null;
-  origemProposicao?: (number | null) | Proposicoe;
+  origemProposicao?: (number | null) | Proposicao;
   updatedAt: string;
   createdAt: string;
 }
@@ -805,7 +807,7 @@ export interface User {
   /**
    * Perfil público usado na assinatura dos pareceres
    */
-  autor?: (number | null) | Autore;
+  autor?: (number | null) | Autor;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -872,7 +874,7 @@ export interface Envio {
   id: number;
   tipo: 'acesso' | 'aviso_publicacao' | 'alerta' | 'resumo' | 'embargo' | 'comunicado' | 'resposta_pedido';
   assinante?: (number | null) | Assinante;
-  parecer?: (number | null) | Parecere;
+  parecer?: (number | null) | Parecer;
   comunicado?: (number | null) | Comunicado;
   status?: ('fila' | 'enviado' | 'entregue' | 'retorno' | 'erro') | null;
   erro?: string | null;
@@ -907,7 +909,7 @@ export interface Coleta {
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "verificacoes".
  */
-export interface Verificacoe {
+export interface Verificacao {
   id: number;
   tipo: 'fonte' | 'site' | 'paginas' | 'email' | 'backup' | 'links' | 'sitemap' | 'compromissos';
   resultado: 'ok' | 'alerta' | 'falha';
@@ -921,6 +923,43 @@ export interface Verificacoe {
     | number
     | boolean
     | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "artigos".
+ */
+export interface Artigo {
+  id: number;
+  titulo: string;
+  /**
+   * Uma ou duas frases; aparece na lista e na busca do Google
+   */
+  resumo?: string | null;
+  tipo?: ('tendencia' | 'explicador' | 'dados') | null;
+  corpo?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  temas?: (number | Tema)[] | null;
+  biomas?: (number | Bioma)[] | null;
+  proposicoes?: (number | Proposicao)[] | null;
+  status?: ('rascunho' | 'publicado') | null;
+  autor?: (number | null) | Autor;
+  publicadoEm?: string | null;
+  slug?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -950,11 +989,11 @@ export interface PayloadLockedDocument {
   document?:
     | ({
         relationTo: 'proposicoes';
-        value: number | Proposicoe;
+        value: number | Proposicao;
       } | null)
     | ({
         relationTo: 'pareceres';
-        value: number | Parecere;
+        value: number | Parecer;
       } | null)
     | ({
         relationTo: 'compromissos';
@@ -966,23 +1005,23 @@ export interface PayloadLockedDocument {
       } | null)
     | ({
         relationTo: 'correcoes';
-        value: number | Correcoe;
+        value: number | Correcao;
       } | null)
     | ({
         relationTo: 'tramitacoes';
-        value: number | Tramitacoe;
+        value: number | Tramitacao;
       } | null)
     | ({
         relationTo: 'versoes';
-        value: number | Versoe;
+        value: number | Versao;
       } | null)
     | ({
         relationTo: 'parlamentares';
-        value: number | Parlamentare;
+        value: number | Parlamentar;
       } | null)
     | ({
         relationTo: 'votacoes';
-        value: number | Votacoe;
+        value: number | Votacao;
       } | null)
     | ({
         relationTo: 'votos';
@@ -1002,7 +1041,7 @@ export interface PayloadLockedDocument {
       } | null)
     | ({
         relationTo: 'palavras-chave';
-        value: number | PalavrasChave;
+        value: number | PalavraChave;
       } | null)
     | ({
         relationTo: 'assinantes';
@@ -1030,11 +1069,15 @@ export interface PayloadLockedDocument {
       } | null)
     | ({
         relationTo: 'verificacoes';
-        value: number | Verificacoe;
+        value: number | Verificacao;
+      } | null)
+    | ({
+        relationTo: 'artigos';
+        value: number | Artigo;
       } | null)
     | ({
         relationTo: 'autores';
-        value: number | Autore;
+        value: number | Autor;
       } | null)
     | ({
         relationTo: 'media';
@@ -1042,7 +1085,7 @@ export interface PayloadLockedDocument {
       } | null)
     | ({
         relationTo: 'materiais';
-        value: number | Materiai;
+        value: number | Material;
       } | null)
     | ({
         relationTo: 'users';
@@ -1495,6 +1538,25 @@ export interface VerificacoesSelect<T extends boolean = true> {
   resultado?: T;
   detalhe?: T;
   dados?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "artigos_select".
+ */
+export interface ArtigosSelect<T extends boolean = true> {
+  titulo?: T;
+  resumo?: T;
+  tipo?: T;
+  corpo?: T;
+  temas?: T;
+  biomas?: T;
+  proposicoes?: T;
+  status?: T;
+  autor?: T;
+  publicadoEm?: T;
+  slug?: T;
   updatedAt?: T;
   createdAt?: T;
 }

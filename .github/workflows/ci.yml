@@ -66,8 +66,10 @@ jobs:
           fi
       - name: Testes com banco (integração)
         run: pnpm test:int
-      - name: Carga inicial
-        run: pnpm seed
+      - name: Carga inicial e conteúdo de demonstração (só no CI)
+        run: |
+          pnpm seed
+          pnpm seed:demo
       - name: Build
         run: pnpm build
       - name: Navegador para testes

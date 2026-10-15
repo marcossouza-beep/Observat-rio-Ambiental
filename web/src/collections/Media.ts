@@ -3,6 +3,7 @@ import { equipe, publico } from '../access'
 
 export const Media: CollectionConfig = {
   slug: 'media',
+  typescript: { interface: 'Media' },
   labels: { singular: 'Imagem', plural: 'Imagens' },
   admin: { group: 'Conteúdo' },
   access: { read: publico, create: equipe, update: equipe, delete: equipe },
