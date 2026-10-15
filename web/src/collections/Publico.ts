@@ -96,7 +96,7 @@ export const Credenciamentos: CollectionConfig = {
           const aid = typeof doc.assinante === 'object' ? doc.assinante.id : doc.assinante
           const a = await req.payload.findByID({ collection: 'assinantes', id: aid, req, depth: 0 })
           const textos: Record<string, [string, string[]]> = {
-            verificado: ['Credenciamento de imprensa aprovado', ['Seu credenciamento foi verificado. A partir de agora você recebe os pareceres antes da publicação, sob embargo, e pode falar com o autor para entrevistas.']],
+            verificado: ['Credenciamento de imprensa aprovado', ['Seu credenciamento foi verificado. Sua conta passa a aparecer como imprensa verificada.']],
             recusado: ['Credenciamento de imprensa', ['Não conseguimos confirmar seu vínculo com um veículo de imprensa.', doc.motivo ? `Motivo: ${doc.motivo}` : '', 'Você continua inscrito e recebe tudo o que os inscritos recebem.'].filter(Boolean)],
             mais_info: ['Precisamos de mais uma informação', ['Para concluir seu credenciamento de imprensa, precisamos de mais uma informação.', doc.motivo || '', 'Basta responder este e-mail.'].filter(Boolean)],
           }
@@ -173,7 +173,7 @@ export const Envios: CollectionConfig = {
       name: 'tipo',
       type: 'select',
       required: true,
-      options: ['acesso', 'aviso_publicacao', 'alerta', 'resumo', 'embargo', 'comunicado', 'resposta_pedido'].map((v) => ({ label: v.replace('_', ' '), value: v })),
+      options: ['acesso', 'aviso_publicacao', 'alerta', 'resumo', 'comunicado', 'resposta_pedido'].map((v) => ({ label: v.replace('_', ' '), value: v })),
     },
     { name: 'para', type: 'email', required: true },
     { name: 'assunto', type: 'text', required: true },

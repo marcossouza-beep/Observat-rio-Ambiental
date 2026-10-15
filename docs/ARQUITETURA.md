@@ -123,7 +123,7 @@ Correcao        id, parecer_id, pedido_id, descricao, feita_em          -- lista
 Verificacao     id, tipo (fonte|site|paginas|email|backup|links|sitemap), resultado, detalhe, em
 Comunicado      id, assunto, mensagem, filtro_perfis[], filtro_subperfis[], filtro_uf, total_previsto,
                 status (rascunho|agendado|enviado), agendado_para, enviado_em
-Envio           id, tipo (aviso_publicacao|alerta|resumo|embargo|acesso|comunicado), comunicado_id, assinante_id, parecer_id,
+Envio           id, tipo (aviso_publicacao|alerta|resumo|acesso|comunicado|resposta_pedido), comunicado_id, assinante_id, parecer_id,
                 status (fila|enviado|entregue|retorno), em
 ```
 
@@ -161,7 +161,7 @@ Paleta de polaridade (validada para daltonismo): maléfico `#C2551F`, enfraquece
 - O perfil "Jornalista" abre um passo extra na inscrição: veículo, tipo de veículo, função, link de comprovação (obrigatórios), e-mail profissional e registro MTb (opcionais) e autorização de verificação.
 - Verificação manual no painel (fila "Credenciamento"), em até 2 dias úteis; e-mail do domínio do veículo agiliza.
 - Status: em análise → verificado (selo "Imprensa verificada") ou recusado (com motivo).
-- Recursos liberados: pareceres sob embargo antes da publicação, pedido de entrevista com o autor, gráficos em PNG e dados em CSV.
+- O que entrega hoje: verificação do vínculo e status "imprensa verificada" na conta. Envio de pareceres sob embargo ficou fora do escopo inicial; pedido de entrevista, gráficos em PNG e dados em CSV só entram se o autor decidir.
 - LGPD: finalidade específica (credenciamento), consentimento separado, dados não compartilhados, exclusão a pedido.
 
 ## Dados de parlamentares: o que automatizar (e o que não fazer)

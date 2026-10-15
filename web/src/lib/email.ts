@@ -46,7 +46,7 @@ export function modelo(a: { titulo: string; paragrafos: string[]; secoes?: Secao
   return { html, texto }
 }
 
-type TipoEnvio = 'acesso' | 'aviso_publicacao' | 'alerta' | 'resumo' | 'embargo' | 'comunicado' | 'resposta_pedido'
+type TipoEnvio = 'acesso' | 'aviso_publicacao' | 'alerta' | 'resumo' | 'comunicado' | 'resposta_pedido'
 
 /** Coloca um e-mail na fila. */
 export async function enfileirar(

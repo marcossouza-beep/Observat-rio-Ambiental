@@ -143,7 +143,6 @@ export const Pareceres: CollectionConfig = {
       admin: { position: 'sidebar' },
     },
     { name: 'agendadoPara', type: 'date', admin: { position: 'sidebar', date: { pickerAppearance: 'dayAndTime' }, condition: (d) => d.status === 'agendado' } },
-    { name: 'embargo', label: 'Enviar antes à imprensa credenciada', type: 'checkbox', defaultValue: false, admin: { position: 'sidebar' } },
     { name: 'autor', type: 'relationship', relationTo: 'autores', admin: { position: 'sidebar' } },
     { name: 'versao', label: 'Versão do parecer', type: 'number', defaultValue: 1, admin: { position: 'sidebar', readOnly: true } },
     { name: 'versaoTexto', label: 'Versão do texto analisada', type: 'relationship', relationTo: 'versoes', admin: { position: 'sidebar' } },

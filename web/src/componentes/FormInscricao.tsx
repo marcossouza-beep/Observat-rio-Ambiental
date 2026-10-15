@@ -17,7 +17,7 @@ const DESC: Record<string, string> = {
   Empresa: 'Setor produtivo e consultorias',
   'ONG / movimento': 'Sociedade civil organizada',
   'Pesquisador(a)': 'Universidades e institutos',
-  Jornalista: 'Inclui credenciamento de imprensa',
+  Jornalista: 'Com verificação do veículo',
   'Cidadão(ã)': 'Quero acompanhar as leis',
 }
 const PERGUNTA: Record<string, string> = {
@@ -318,7 +318,7 @@ export function FormInscricao({ perfis, subperfis, temas, biomas, para, prazoImp
                 </div>
               </div>
             ) : jornalista ? (
-              <p className="alerta">No próximo passo: credenciamento de imprensa, para receber pareceres sob embargo.</p>
+              <p className="alerta">No próximo passo: dados do veículo, para verificarmos seu credenciamento de imprensa.</p>
             ) : null}
           </div>
         </>
@@ -326,7 +326,7 @@ export function FormInscricao({ perfis, subperfis, temas, biomas, para, prazoImp
 
       {atual === 'imprensa' ? (
         <>
-          <p className="nota-fonte">Libera pareceres antes da publicação (sob embargo) e contato direto com o autor. Verificamos em até {prazoImprensa} dias úteis.</p>
+          <p className="nota-fonte">Confirmamos seu vínculo com o veículo em até {prazoImprensa} dias úteis. Depois disso, sua conta aparece como imprensa verificada.</p>
           <label className="campo">
             Veículo *
             <input value={imp.veiculo} onChange={(e) => setImp({ ...imp, veiculo: e.target.value })} autoComplete="organization" enterKeyHint="next" />

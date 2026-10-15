@@ -225,7 +225,7 @@ Fluxo próprio para telas pequenas (no computador, a página `#inscricao-celular
 
 ## A18. Credenciamento de imprensa
 
-Passo extra quando o perfil é Jornalista: o que o credenciamento libera; veículo*, tipo de veículo, função, link de comprovação*, e-mail profissional, registro MTb, autorização de verificação*. Depois: selo no avatar, status no menu ("Em análise" / "✓ Verificada") e bloco **Para a imprensa** no parecer (pedir entrevista, gráficos PNG, dados CSV). Visitantes veem "É jornalista? Faça o credenciamento".
+Passo extra quando o perfil é Jornalista: o que o credenciamento faz (verifica o vínculo com o veículo; sem envio antecipado de pareceres, fora do escopo inicial); veículo*, tipo de veículo, função, link de comprovação*, e-mail profissional, registro MTb, autorização de verificação*. Depois: status em Minha conta ("em análise" / "verificada"). Fica para depois, se o autor decidir: selo no avatar, bloco **Para a imprensa** no parecer (pedir entrevista, gráficos PNG, dados CSV) e envio sob embargo.
 
 ## A19. Padrão de atuação (em Leis federais e no painel de cada estado)
 
@@ -309,7 +309,7 @@ Abas: **A atualizar** · Em preparação · Em revisão · Agendados · Publicad
 | Classificação | Impacto, caráter (4 categorias com definição), áreas, biomas. Alimenta os gráficos ao publicar |
 | SEO | Prévia do Google, palavra-chave, nome popular, título (≤ 60), descrição (≤ 155), endereço; checklist ao vivo (ver `docs/SEO.md`) |
 | Materiais | Nota técnica e Quadro comparativo em PDF; visibilidade (padrão: só inscritos) |
-| Publicar | Agora ou agendar; embargo para imprensa credenciada; travas (seções, impacto, caráter, nota de versão) e avisos (nota técnica, SEO); lista do que o sistema faz sozinho ao publicar: troca o aviso pelo parecer no mesmo endereço, envia os e-mails, atualiza gráficos, Timeline, sitemap e buscadores, gera imagem e PDF |
+| Publicar | Agora ou agendar; travas (seções, impacto, caráter, nota de versão) e avisos (nota técnica, SEO); lista do que o sistema faz sozinho ao publicar: troca o aviso pelo parecer no mesmo endereço, envia os e-mails, atualiza gráficos, Timeline, sitemap e buscadores, gera imagem e PDF |
 
 ## B5. Pedidos **[F1 / F3]**
 
@@ -323,7 +323,7 @@ Tabela de fontes: nível A–D, última coleta bem-sucedida, itens contra a méd
 
 **Comunicado aos inscritos [F1]:** um campo para escrever ao público inscrito. Para: Todos ou Por perfil (um ou mais perfis e, dentro de cada um, subgrupos opcionais; estudantes por curso); filtro por estado; assunto, mensagem com `{nome}`; contagem ao vivo de quem recebe (só quem aceitou e-mails do observatório); enviar teste para mim, agendar ou enviar. Todo comunicado leva o descadastro em um clique. Na tela Inscritos, cada perfil tem o atalho "Escrever para este perfil".
 
-Resumo semanal montado sozinho, com nota opcional do autor (sai mesmo sem ela); envios do dia (alertas agrupados, embargos, avisos de publicação); números de entrega; regras (no máximo 1 alerta por pessoa por dia, só eventos relevantes, descadastro em um clique).
+Resumo semanal montado sozinho, com nota opcional do autor (sai mesmo sem ela); envios do dia (alertas agrupados, avisos de publicação); números de entrega; regras (no máximo 1 alerta por pessoa por dia, só eventos relevantes, descadastro em um clique).
 
 ## B8. Textos do site **[F1]**
 

@@ -498,7 +498,6 @@ export interface Parecer {
   };
   status: 'rascunho' | 'em_revisao' | 'agendado' | 'publicado';
   agendadoPara?: string | null;
-  embargo?: boolean | null;
   autor?: (number | null) | Autor;
   versao?: number | null;
   versaoTexto?: (number | null) | Versao;
@@ -926,7 +925,7 @@ export interface Comunicado {
  */
 export interface Envio {
   id: number;
-  tipo: 'acesso' | 'aviso_publicacao' | 'alerta' | 'resumo' | 'embargo' | 'comunicado' | 'resposta_pedido';
+  tipo: 'acesso' | 'aviso_publicacao' | 'alerta' | 'resumo' | 'comunicado' | 'resposta_pedido';
   para: string;
   assunto: string;
   html?: string | null;
@@ -1309,7 +1308,6 @@ export interface PareceresSelect<T extends boolean = true> {
       };
   status?: T;
   agendadoPara?: T;
-  embargo?: T;
   autor?: T;
   versao?: T;
   versaoTexto?: T;

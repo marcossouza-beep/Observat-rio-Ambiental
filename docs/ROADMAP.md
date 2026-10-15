@@ -78,7 +78,9 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 > - **Assinaturas:** na inscrição, alerta diário e resumo semanal aparecem marcados e podem ser desmarcados; na conta, a pessoa muda e-mails, estado, temas e biomas e vê os parlamentares que segue. Quem se inscreveu antes começa com os dois desligados (nunca viu essas opções).
 > - **Páginas de parlamentar** (`/parlamentares` e `/parlamentares/[nome]`): em números, como votou (sentido do voto pelo caráter do parecer, com barra e lista), autorias com o padrão das propostas, relatorias e emendas, método explicado; botão Seguir. Autores e relatores na página da lei levam à página do parlamentar.
 >
-> **Falta na Fase 3 (parte 2):** recursos de imprensa credenciada (envio sob embargo e selo), versões regionais do resumo, Padrão de atuação por UF e por casa e a página Panorama.
+> **Falta na Fase 3 (parte 2):** versões regionais do resumo, Padrão de atuação por UF e por casa e a página Panorama.
+>
+> **Fora do escopo inicial (decisão do autor):** envio de pareceres sob embargo à imprensa credenciada. O credenciamento continua (cadastro, verificação no painel e status na conta), sem promessa de envio antecipado.
 
 **Critério de saída:** base de assinantes em crescimento constante.
 

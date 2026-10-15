@@ -49,7 +49,7 @@ A coexistência, na mesma página, de:
 
 ## Públicos com recursos próprios
 
-- **Imprensa credenciada:** jornalistas verificados (veículo, função, comprovação) recebem pareceres sob embargo, contato com o autor, gráficos e dados.
+- **Imprensa credenciada:** jornalistas verificados (veículo, função, comprovação). No início, o credenciamento só confirma o vínculo; envio de pareceres sob embargo ficou fora do escopo inicial.
 
 ## Princípios de produto
 
