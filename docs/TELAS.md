@@ -253,7 +253,7 @@ Acesso: rodapé, Panorama (nome do bioma e "Ver página do tema") e "Assuntos" d
 
 # Parte B — Painel do autor
 
-> Protótipo: `prototipo/painel.html`. O painel existe para cumprir o que o site promete, no prazo, sem nada desatualizado (ver `docs/ENTREGA.md`). Funciona no computador (menu lateral) e no celular (barra inferior: Hoje, Triagem, Pareceres, Pedidos, Mais).
+> Protótipo: `prototipo/painel.html`. **Implementado em `web/`** (Sprint 3): Hoje (`/admin`), Triagem (`/admin/triagem`), Fila (`/admin/fila`) e o editor com dossiê, checagem e prévia do Google. E-mails e Inscritos completos chegam com a Sprint 4. O painel existe para cumprir o que o site promete, no prazo, sem nada desatualizado (ver `docs/ENTREGA.md`). Funciona no computador (menu lateral) e no celular (barra inferior: Hoje, Triagem, Pareceres, Pedidos, Mais).
 
 Menu: **Trabalho** (Hoje, Triagem, Pareceres, Pedidos) · **Sistema** (Fontes e saúde, E-mails) · **Conteúdo** (Textos do site, Palavras-chave, Inscritos, Ajustes).
 

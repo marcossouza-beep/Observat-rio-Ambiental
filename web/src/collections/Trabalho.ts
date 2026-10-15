@@ -87,6 +87,16 @@ export const Pedidos: CollectionConfig = {
         } else if (doc.decisao !== 'pendente' && previousDoc?.decisao === 'pendente') {
           await mudarCompromissos(req, { alvo: 'pedidos', alvoId: doc.id, status: 'cumprido' })
         }
+        // Correção que procede vira registro público no parecer e na página de Correções (uma vez só).
+        const parecerId = doc.parecer && typeof doc.parecer === 'object' ? doc.parecer.id : doc.parecer
+        if (doc.tipo === 'correcao' && doc.decisao === 'procede' && parecerId && doc.correcaoPublica?.trim() && !doc.correcao) {
+          const c = await req.payload.create({
+            collection: 'correcoes',
+            req,
+            data: { parecer: parecerId, descricao: doc.correcaoPublica.trim(), pedido: doc.id, feitaEm: new Date().toISOString() },
+          })
+          await req.payload.update({ collection: 'pedidos', id: doc.id, req, data: { correcao: c.id } })
+        }
         return doc
       },
     ],
@@ -119,7 +129,17 @@ export const Pedidos: CollectionConfig = {
         { label: 'Atendido (LGPD)', value: 'atendido' },
       ],
     },
-    { name: 'resposta', type: 'textarea' },
+    { name: 'resposta', label: 'Resposta à pessoa (e-mail)', type: 'textarea' },
+    {
+      name: 'correcaoPublica',
+      label: 'O que foi corrigido (registro público)',
+      type: 'text',
+      admin: {
+        condition: (d) => d.tipo === 'correcao' && d.decisao === 'procede',
+        description: 'Aparece no rodapé do parecer e na página de Correções. Ex.: "Placar da votação na Comissão corrigido para 21 a 12."',
+      },
+    },
+    { name: 'correcao', label: 'Correção registrada', type: 'relationship', relationTo: 'correcoes', admin: { readOnly: true, condition: (d) => !!d.correcao } },
     { name: 'respondidoEm', type: 'date', admin: { readOnly: true } },
   ],
 }

@@ -1,7 +1,7 @@
 /**
  * Conteúdo de DEMONSTRAÇÃO (fictício, o mesmo do protótipo) para ver o site e rodar os testes.
  *   pnpm seed:demo            cria (idempotente)
- *   pnpm seed:demo --limpar   remove tudo o que é de demonstração
+ *   DEMO_LIMPAR=1 pnpm seed:demo   remove tudo o que é de demonstração
  * Trava: não roda em produção nem em banco do Supabase, salvo DEMO_FORCAR=1.
  */
 import { getPayload, type Payload } from 'payload'
@@ -103,7 +103,8 @@ async function criar(payload: Payload) {
     if (l.votacao)
       await payload.create({ collection: 'votacoes', data: { proposicao: prop.id, data: dias(l.votacao[0]), orgao: l.votacao[1], placarSim: l.votacao[2], placarNao: l.votacao[3], resultado: 'Aprovado' } })
     for (let i = 0; i < (l.emendas || 0); i++) await payload.create({ collection: 'emendas', data: { proposicao: prop.id, numero: String(i + 1), data: dias(-60 + i) } })
-    const v = await payload.create({ collection: 'versoes', data: { proposicao: prop.id, data: dias(-120), tipo: 'original', rotulo: 'Texto original' } })
+    const textoV1 = l.id === 'lic' ? 'Art. 3º Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até 15 módulos fiscais. Art. 7º O órgão estadual poderá exigir estudo complementar em caso de dano ambiental comprovado.' : undefined
+    const v = await payload.create({ collection: 'versoes', data: { proposicao: prop.id, data: dias(-120), tipo: 'original', rotulo: 'Texto original', texto: textoV1 } })
     if (l.parecer) {
       await payload.create({
         collection: 'pareceres',
@@ -121,7 +122,31 @@ async function criar(payload: Payload) {
         } as never,
       })
     }
+    if (l.id === 'lic') {
+      // Substitutivo depois do parecer: o sistema marca o parecer como desatualizado e abre o prazo de atualização.
+      await payload.create({
+        collection: 'versoes',
+        data: {
+          proposicao: prop.id,
+          data: dias(-2),
+          tipo: 'substitutivo',
+          rotulo: 'Substitutivo do relator (Plenário)',
+          texto: 'Art. 3º Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até 30 módulos fiscais. § 2º A dispensa não se aplica a imóveis situados em zona de amortecimento de unidade de conservação. Art. 7º O órgão municipal ou estadual poderá exigir estudo complementar em caso de dano ambiental comprovado.',
+        },
+      })
+    }
     n++
+  }
+
+  const TRIAGEM: [string, number, string][] = [
+    ['t1', 4877, 'Altera a Lei nº 9.985, de 2000, para permitir a recategorização de unidades de conservação por ato do Poder Executivo.'],
+    ['t2', 2301, 'Dispõe sobre a criação de tilápia e de outras espécies exóticas em reservatórios de usinas hidrelétricas.'],
+    ['t3', 5120, 'Institui o Dia Nacional do Ipê, a ser celebrado anualmente em 15 de agosto.'],
+  ]
+  for (const [id, numero, ementa] of TRIAGEM) {
+    const chave = `demo:${id}`
+    const e = await payload.find({ collection: 'proposicoes', where: { chaveOrigem: { equals: chave } }, limit: 1, depth: 0 })
+    if (!e.docs[0]) await payload.create({ collection: 'proposicoes', data: { sigla: 'PL', numero, ano: 2026, esfera: 'federal', casa: 'camara', ementa, situacaoEditorial: 'triagem', chaveOrigem: chave, origem: 'manual' } as never })
   }
 
   const artigos = [
@@ -139,6 +164,6 @@ async function criar(payload: Payload) {
 }
 
 const payload = await getPayload({ config: await config })
-if (process.argv.includes('--limpar')) await limpar(payload)
+if (process.argv.includes('--limpar') || process.env.DEMO_LIMPAR === '1') await limpar(payload)
 else await criar(payload)
 process.exit(0)

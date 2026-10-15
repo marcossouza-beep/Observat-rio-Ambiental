@@ -21,6 +21,7 @@ export const Ajustes: GlobalConfig = {
       ],
     },
     { name: 'limitePrometidos', label: 'Limite de pareceres prometidos em aberto', type: 'number', min: 1, defaultValue: LIMITE_PROMETIDOS_PADRAO },
+    { name: 'metaSemanal', label: 'Meta de pareceres por semana', type: 'number', min: 1, max: 20, defaultValue: 6, admin: { description: 'Indicador interno; não aparece no site.' } },
     {
       name: 'alertas',
       label: 'Alertas para o autor',

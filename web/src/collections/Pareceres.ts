@@ -67,11 +67,13 @@ export const Pareceres: CollectionConfig = {
     afterDelete: [revalidarAoApagar],
   },
   fields: [
-    { name: 'titulo', type: 'text' },
+    { name: 'faixa', type: 'ui', admin: { components: { Field: '/painel/FaixaParecer#FaixaParecer' } } },
+    { name: 'titulo', label: 'Título', type: 'text' },
     { name: 'proposicao', label: 'Proposição', type: 'relationship', relationTo: 'proposicoes', required: true, unique: true },
     {
       type: 'tabs',
       tabs: [
+        { label: 'Dossiê', fields: [{ name: 'dossie', type: 'ui', admin: { components: { Field: '/painel/Dossie#Dossie' } } }] },
         { label: 'Parecer', name: 'secoes', fields: secoes },
         {
           label: 'Classificação',
@@ -105,8 +107,9 @@ export const Pareceres: CollectionConfig = {
           label: 'SEO',
           name: 'seo',
           fields: [
+            { name: 'previa', type: 'ui', admin: { components: { Field: '/painel/PreviaGoogle#PreviaGoogle' } } },
             { name: 'palavraChave', label: 'Palavra-chave principal', type: 'text' },
-            { name: 'nomePopular', type: 'text', admin: { description: 'Como a imprensa chama a proposta' } },
+            { name: 'nomePopular', label: 'Nome popular', type: 'text', admin: { description: 'Como a imprensa chama a proposta' } },
             { name: 'secundarias', label: 'Palavras secundárias', type: 'text', hasMany: true },
             { name: 'tituloSeo', label: 'Título SEO', type: 'text', admin: { description: 'Até 60 caracteres' } },
             { name: 'metaDescricao', label: 'Descrição', type: 'textarea', admin: { description: 'Até 155 caracteres' } },
@@ -123,6 +126,7 @@ export const Pareceres: CollectionConfig = {
         },
       ],
     },
+    { name: 'checagem', type: 'ui', admin: { position: 'sidebar', components: { Field: '/painel/Checagem#Checagem' } } },
     {
       name: 'status',
       type: 'select',

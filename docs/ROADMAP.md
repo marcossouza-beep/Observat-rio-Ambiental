@@ -17,6 +17,9 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 > **Sprint 2 — feita (código).** Início, lista de leis com filtros, página da lei (com os três estados: parecer, parecer em preparação com "O que já se sabe", acompanhando), parecer, opinião, temas e biomas, artigos, autor, busca, sitemap e robots; títulos, descrições, canônicos e dados estruturados; páginas atualizadas na hora em que o conteúdo muda. Ficam para depois, como previsto: inscrição e "Avise-me" (Sprint 4), Panorama e padrão de atuação (Fase 3), mapa dos estados, Timeline e Metodologia.
 
 | 3. Painel | Hoje, Pareceres (com prazos e fila "A atualizar"), editor com dossiê ao lado e modelo de 7 seções, classificação, SEO, materiais, publicação com tudo o que o sistema faz sozinho, Pedidos (correções, LGPD), Textos do site, Ajustes de prazos. Protótipo: `prototipo/painel.html` |
+
+> **Sprint 3 — feita (código).** Hoje, Triagem, Fila de pareceres, editor com dossiê (incluindo a marcação do que mudou entre versões), checagem de publicação ao vivo, prévia do Google, nota de relevância automática, correção pública a partir do pedido, meta semanal e datas no formato brasileiro. O envio de e-mails (respostas, alertas, comunicados) entra na Sprint 4, junto com a inscrição.
+
 | 4. Freemium e lançamento | Cadastro com confirmação de e-mail e link mágico, download dos materiais (PDF) para inscritos, política de privacidade e termos, SEO (endereços, títulos e descrições, dados estruturados, sitemaps, Search Console, página e quadro do autor; ver `docs/SEO.md`) |
 
 **Critério de saída:** 4 a 6 semanas publicando no ritmo de 3 a 10 pareceres por semana, com o checklist de `docs/ENTREGA.md` cumprido e nenhum compromisso público vencido.

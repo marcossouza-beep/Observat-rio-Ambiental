@@ -10,7 +10,7 @@ export const testUser = {
 /**
  * Seeds a test user for e2e admin tests.
  */
-export async function seedTestUser(): Promise<void> {
+export async function seedTestUser(user: { email: string; password: string; papel: 'admin' } = testUser): Promise<void> {
   const payload = await getPayload({ config })
 
   // Delete existing test user if any
@@ -18,7 +18,7 @@ export async function seedTestUser(): Promise<void> {
     collection: 'users',
     where: {
       email: {
-        equals: testUser.email,
+        equals: user.email,
       },
     },
   })
@@ -26,21 +26,21 @@ export async function seedTestUser(): Promise<void> {
   // Create fresh test user
   await payload.create({
     collection: 'users',
-    data: testUser,
+    data: user,
   })
 }
 
 /**
  * Cleans up test user after tests
  */
-export async function cleanupTestUser(): Promise<void> {
+export async function cleanupTestUser(user: { email: string } = testUser): Promise<void> {
   const payload = await getPayload({ config })
 
   await payload.delete({
     collection: 'users',
     where: {
       email: {
-        equals: testUser.email,
+        equals: user.email,
       },
     },
   })

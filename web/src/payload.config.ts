@@ -3,7 +3,7 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { s3Storage } from '@payloadcms/storage-s3'
 import { pt } from '@payloadcms/translations/languages/pt'
 import path from 'path'
-import { buildConfig } from 'payload'
+import { buildConfig, type Config } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
@@ -23,14 +23,37 @@ import { endpoints } from './endpoints'
 import { Ajustes } from './globals/Ajustes'
 import { migrations } from './migrations'
 
+/** Datas no formato brasileiro em todos os campos do painel. */
+type CampoQualquer = { type?: string; admin?: Record<string, unknown>; fields?: CampoQualquer[]; tabs?: { fields: CampoQualquer[] }[] }
+function datasEmPortugues(campos: CampoQualquer[]): void {
+  for (const c of campos) {
+    if (c.type === 'date') {
+      const adm = (c.admin ||= {}) as { date?: { pickerAppearance?: string; displayFormat?: string } }
+      adm.date = { ...(adm.date || {}) }
+      if (!adm.date.displayFormat) adm.date.displayFormat = adm.date.pickerAppearance === 'dayAndTime' ? 'dd/MM/yyyy HH:mm' : 'dd/MM/yyyy'
+    }
+    if (c.fields) datasEmPortugues(c.fields)
+    if (c.tabs) c.tabs.forEach((t) => datasEmPortugues(t.fields))
+  }
+}
+
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-export default buildConfig({
+const config: Config = {
   admin: {
     user: Users.slug,
     importMap: { baseDir: path.resolve(dirname) },
     meta: { titleSuffix: ' · Painel do Observatório' },
+    components: {
+      beforeDashboard: ['/painel/Hoje#Hoje'],
+      beforeNavLinks: ['/painel/Navegacao#Navegacao'],
+      graphics: { Icon: '/painel/Marca#Icone', Logo: '/painel/Marca#Logo' },
+      views: {
+        triagem: { Component: '/painel/Triagem#Triagem', path: '/triagem', meta: { title: 'Triagem' } },
+        fila: { Component: '/painel/Fila#Fila', path: '/fila', meta: { title: 'Fila de pareceres' } },
+      },
+    },
     dateFormat: 'dd/MM/yyyy HH:mm',
   },
   i18n: { supportedLanguages: { pt }, fallbackLanguage: 'pt' },
@@ -101,4 +124,8 @@ export default buildConfig({
       },
     }),
   ],
-})
+}
+
+;[...(config.collections ?? []), ...(config.globals ?? [])].forEach((c) => datasEmPortugues(c.fields as CampoQualquer[]))
+
+export default buildConfig(config)

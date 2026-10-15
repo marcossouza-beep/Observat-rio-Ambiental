@@ -155,3 +155,27 @@ describe('o que o visitante vê', () => {
     expect(r.docs.map((x) => x.id).sort()).toEqual([a.id, m.id].sort())
   })
 })
+
+describe('apoio ao trabalho do autor', () => {
+  it('calcula a nota de relevância pelo dicionário', async () => {
+    await payload.delete({ collection: 'palavras-chave', where: { termo: { in: ['garimpo', 'dia nacional'] } } })
+    await payload.create({ collection: 'palavras-chave', data: { termo: 'garimpo', peso: 9, grupo: 'Mineração' } })
+    await payload.create({ collection: 'palavras-chave', data: { termo: 'dia nacional', peso: 0, exclusao: true } })
+    const p = await novaProposicao({ ementa: 'Cria licença para garimpo de pequeno porte.' })
+    expect(p.relevancia).toBeGreaterThan(50)
+    expect(p.termosEncontrados).toEqual(['garimpo'])
+    const h = await novaProposicao({ ementa: 'Institui o Dia Nacional do Garimpo.' })
+    expect(h.relevancia).toBe(0)
+  })
+
+  it('correção que procede vira registro público, uma vez só', async () => {
+    const prop = await novaProposicao()
+    const par = await payload.create({ collection: 'pareceres', data: { proposicao: prop.id, status: 'rascunho' } })
+    const ped = await payload.create({ collection: 'pedidos', data: { tipo: 'correcao', email: 'x@exemplo.com', texto: 'Placar errado na comissão.', parecer: par.id } })
+    await payload.update({ collection: 'pedidos', id: ped.id, data: { decisao: 'procede', correcaoPublica: 'Placar corrigido para 21 a 12.' } })
+    await payload.update({ collection: 'pedidos', id: ped.id, data: { resposta: 'Obrigado.' } })
+    const c = await payload.find({ collection: 'correcoes', where: { pedido: { equals: ped.id } } })
+    expect(c.totalDocs).toBe(1)
+    expect(c.docs[0].descricao).toBe('Placar corrigido para 21 a 12.')
+  })
+})

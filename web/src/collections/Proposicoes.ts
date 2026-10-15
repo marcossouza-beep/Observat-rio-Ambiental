@@ -2,6 +2,7 @@ import type { CollectionConfig } from 'payload'
 import { campoSoEquipe, equipe, proposicaoPublicaOuEquipe } from '../access'
 import { abrirCompromisso, mudarCompromissos } from '../hooks/compromissos'
 import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
+import { pontuar, type Termo } from '../lib/relevancia'
 import { rotuloProposicao, slugProposicao } from '../lib/texto'
 
 export const SITUACOES_EDITORIAIS = [
@@ -24,7 +25,16 @@ export const Proposicoes: CollectionConfig = {
   access: { read: proposicaoPublicaOuEquipe, create: equipe, update: equipe, delete: equipe },
   hooks: {
     beforeChange: [
-      ({ data, originalDoc }) => {
+      async ({ data, originalDoc, req }) => {
+        // Nota de relevância pelo dicionário de palavras-chave, quando o texto de busca muda.
+        const texto = [data.titulo, data.ementa, data.art1].filter(Boolean).join(' ')
+        const anterior = [originalDoc?.titulo, originalDoc?.ementa, originalDoc?.art1].filter(Boolean).join(' ')
+        if (texto && (texto !== anterior || data.relevancia == null)) {
+          const dic = await req.payload.find({ collection: 'palavras-chave', limit: 1000, depth: 0, req, pagination: false })
+          const r = pontuar(texto, dic.docs.map((d) => ({ termo: d.termo, peso: d.peso, exclusao: !!d.exclusao, grupo: d.grupo || undefined }) as Termo))
+          data.relevancia = r.nota
+          data.termosEncontrados = r.encontrados
+        }
         if (data.sigla && data.numero && data.ano) {
           data.rotulo = rotuloProposicao(data.sigla, data.numero, data.ano)
           if (!data.slug) data.slug = slugProposicao(data.sigla, data.numero, data.ano, data.titulo || undefined)

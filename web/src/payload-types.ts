@@ -606,6 +606,11 @@ export interface Pedido {
   texto: string;
   decisao?: ('pendente' | 'procede' | 'nao_procede' | 'atendido') | null;
   resposta?: string | null;
+  /**
+   * Aparece no rodapé do parecer e na página de Correções. Ex.: "Placar da votação na Comissão corrigido para 21 a 12."
+   */
+  correcaoPublica?: string | null;
+  correcao?: (number | null) | Correcao;
   respondidoEm?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -1263,6 +1268,8 @@ export interface PedidosSelect<T extends boolean = true> {
   texto?: T;
   decisao?: T;
   resposta?: T;
+  correcaoPublica?: T;
+  correcao?: T;
   respondidoEm?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -1706,6 +1713,10 @@ export interface Ajuste {
     lgpd?: number | null;
   };
   limitePrometidos?: number | null;
+  /**
+   * Indicador interno; não aparece no site.
+   */
+  metaSemanal?: number | null;
   alertas?: {
     email?: string | null;
     telegramChatId?: string | null;
@@ -1728,6 +1739,7 @@ export interface AjustesSelect<T extends boolean = true> {
         lgpd?: T;
       };
   limitePrometidos?: T;
+  metaSemanal?: T;
   alertas?:
     | T
     | {
