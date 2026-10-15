@@ -17,8 +17,9 @@ on:
         required: false
         default: ''
 
+# O INLABS recusa dois logins ao mesmo tempo: Coleta, Teste das APIs e Gravar amostras fazem fila.
 concurrency:
-  group: coleta
+  group: inlabs
   cancel-in-progress: false
 
 jobs:

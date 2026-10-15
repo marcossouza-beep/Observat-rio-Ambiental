@@ -15,9 +15,10 @@ on:
 permissions:
   contents: write
 
+# O INLABS recusa dois logins ao mesmo tempo: Coleta, Teste das APIs e Gravar amostras fazem fila.
 concurrency:
-  group: amostras-${{ github.ref }}
-  cancel-in-progress: true
+  group: inlabs
+  cancel-in-progress: false
 
 jobs:
   gravar:
