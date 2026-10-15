@@ -35,7 +35,7 @@ export function modelo(a: { titulo: string; paragrafos: string[]; secoes?: Secao
     )
     .join('')
   const botao = a.botao
-    ? `<p style="margin:20px 0"><a href="${esc(a.botao.url)}" style="background:#2FA765;color:#fff;text-decoration:none;padding:12px 20px;border-radius:12px;font-weight:600;display:inline-block">${esc(a.botao.texto)}</a></p><p style="font-size:13px;color:#66726B;word-break:break-all">Ou copie o endereço: ${esc(a.botao.url)}</p>`
+    ? `<p style="margin:20px 0"><a href="${esc(a.botao.url)}" style="background:#2FA765;color:#fff;text-decoration:none;padding:11px 18px;border-radius:999px;font-weight:600;display:inline-block">${esc(a.botao.texto)}</a></p><p style="font-size:13px;color:#66726B;word-break:break-all">Ou copie o endereço: ${esc(a.botao.url)}</p>`
     : ''
   const rodape = a.descadastro
     ? `<p style="font-size:12px;color:#9AA59F;margin-top:28px">${esc(a.motivo || `Você recebe este e-mail porque se inscreveu em ${NOME_SITE}.`)} Ajuste o que recebe em <a href="${esc(`${SITE_URL}/conta`)}" style="color:#66726B">Minha conta</a> ou <a href="${esc(a.descadastro)}" style="color:#66726B">pare de receber e-mails</a>.</p>`
