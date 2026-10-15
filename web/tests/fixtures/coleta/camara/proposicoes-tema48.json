@@ -2,7 +2,7 @@
   "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes?codTema=48&dataInicio=2026-10-10&dataFim=2026-10-15&itens=100&ordem=DESC&ordenarPor=id",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:50:59.800Z",
+  "gravadaEm": "2026-10-15T12:54:32.801Z",
   "corpo": {
     "dados": [
       {

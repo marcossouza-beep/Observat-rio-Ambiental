@@ -1,14 +1,71 @@
 {
-  "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-127/orientacoes",
+  "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-483/orientacoes",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:08.987Z",
+  "gravadaEm": "2026-10-15T12:54:40.557Z",
   "corpo": {
-    "dados": [],
+    "dados": [
+      {
+        "orientacaoVoto": "Liberado",
+        "codTipoLideranca": "B",
+        "siglaPartidoBloco": "Maioria",
+        "codPartidoBloco": null,
+        "uriPartidoBloco": null
+      },
+      {
+        "orientacaoVoto": "Não",
+        "codTipoLideranca": "B",
+        "siglaPartidoBloco": "Governo",
+        "codPartidoBloco": null,
+        "uriPartidoBloco": null
+      },
+      {
+        "orientacaoVoto": "Obstrução",
+        "codTipoLideranca": "B",
+        "siglaPartidoBloco": "Fdr PSOL-REDE",
+        "codPartidoBloco": null,
+        "uriPartidoBloco": null
+      },
+      {
+        "orientacaoVoto": "Sim",
+        "codTipoLideranca": "B",
+        "siglaPartidoBloco": "Oposição",
+        "codPartidoBloco": null,
+        "uriPartidoBloco": null
+      },
+      {
+        "orientacaoVoto": "",
+        "codTipoLideranca": "B",
+        "siglaPartidoBloco": "Bl PlFdrPtUniPp...",
+        "codPartidoBloco": null,
+        "uriPartidoBloco": null
+      },
+      {
+        "orientacaoVoto": "Sim",
+        "codTipoLideranca": "B",
+        "siglaPartidoBloco": "Minoria",
+        "codPartidoBloco": null,
+        "uriPartidoBloco": null
+      },
+      {
+        "orientacaoVoto": "Sim",
+        "codTipoLideranca": "P",
+        "siglaPartidoBloco": "NOVO",
+        "codPartidoBloco": 37901,
+        "uriPartidoBloco": "https://dadosabertos.camara.leg.br/api/v2/partidos/37901"
+      },
+      {
+        "orientacaoVoto": "",
+        "codTipoLideranca": "B",
+        "siglaPartidoBloco": "Bl AvanSolidPrd...",
+        "codPartidoBloco": null,
+        "uriPartidoBloco": null
+      }
+    ],
     "links": [
       {
         "rel": "self",
-        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-127/orientacoes"
+        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-483/orientacoes"
       }
     ]
   }

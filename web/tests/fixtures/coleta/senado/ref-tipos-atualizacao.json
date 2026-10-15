@@ -1,0 +1,41 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/processo/tipos-atualizacao",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:54:57.210Z",
+  "corpo": [
+    {
+      "tipoAtualizacao": "ALTERACAO_GERAL"
+    },
+    {
+      "tipoAtualizacao": "ASSUNTO"
+    },
+    {
+      "tipoAtualizacao": "DADOS_BASICOS_PROCESSO"
+    },
+    {
+      "tipoAtualizacao": "DELIBERACAO"
+    },
+    {
+      "tipoAtualizacao": "DESPACHOS"
+    },
+    {
+      "tipoAtualizacao": "DOCUMENTO"
+    },
+    {
+      "tipoAtualizacao": "EMENDA"
+    },
+    {
+      "tipoAtualizacao": "EVENTO_LEGISLATIVO"
+    },
+    {
+      "tipoAtualizacao": "PRAZOS"
+    },
+    {
+      "tipoAtualizacao": "PUBLICACAO_OFICIAL"
+    },
+    {
+      "tipoAtualizacao": "RELATORIA"
+    }
+  ]
+}

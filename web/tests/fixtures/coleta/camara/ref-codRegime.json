@@ -2,7 +2,7 @@
   "url": "https://dadosabertos.camara.leg.br/api/v2/referencias/proposicoes/codRegime",
   "status": 405,
   "tipo": "",
-  "gravadaEm": "2026-10-15T12:51:19.094Z",
+  "gravadaEm": "2026-10-15T12:54:48.794Z",
   "corpo": null,
   "erro": "HTTP 405 em https://dadosabertos.camara.leg.br/api/v2/referencias/proposicoes/codRegime"
 }

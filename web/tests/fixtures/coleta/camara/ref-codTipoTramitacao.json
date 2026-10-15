@@ -2,7 +2,7 @@
   "url": "https://dadosabertos.camara.leg.br/api/v2/referencias/proposicoes/codTipoTramitacao",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:18.504Z",
+  "gravadaEm": "2026-10-15T12:54:48.246Z",
   "corpo": {
     "dados": [
       {

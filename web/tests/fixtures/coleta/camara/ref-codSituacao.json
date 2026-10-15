@@ -2,7 +2,7 @@
   "url": "https://dadosabertos.camara.leg.br/api/v2/referencias/proposicoes/codSituacao",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:17.894Z",
+  "gravadaEm": "2026-10-15T12:54:47.608Z",
   "corpo": {
     "dados": [
       {

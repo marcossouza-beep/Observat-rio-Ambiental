@@ -1,0 +1,1112 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/processo/siglas",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:54:58.422Z",
+  "corpo": [
+    {
+      "sigla": "ACE",
+      "descricao": "Aviso da Comissão de Educação",
+      "dataInicio": "2017-01-01T00:00:00",
+      "dataFim": "2024-09-18T00:00:00"
+    },
+    {
+      "sigla": "ACL",
+      "descricao": "Ato Conjunto Legislativo",
+      "dataInicio": "2023-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "ADF",
+      "descricao": "Anteprojeto de Lei do DF",
+      "dataInicio": "1940-01-01T00:00:00",
+      "dataFim": "2005-05-24T00:00:00"
+    },
+    {
+      "sigla": "ADL",
+      "descricao": "Anteprojeto de Decreto Legislativo",
+      "dataInicio": "1970-01-01T00:00:00",
+      "dataFim": "1990-07-27T00:00:00"
+    },
+    {
+      "sigla": "ADV",
+      "descricao": "Advertencia",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "AFC",
+      "descricao": "Aviso da Comissão de Transparência, Governança, Fiscalização e Controle e Defesa do Consumidor",
+      "dataInicio": "2017-01-01T00:00:00",
+      "dataFim": "2024-09-18T00:00:00"
+    },
+    {
+      "sigla": "AFS",
+      "descricao": "Afastamento do Exercício do Mandato",
+      "dataInicio": "2008-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "AJECN",
+      "descricao": "Ajuste de emenda orçamentária",
+      "dataInicio": "2015-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "AMA",
+      "descricao": "Aviso da Comissão de Meio Ambiente, Defesa do Cons. e Fisc. e Controle",
+      "dataInicio": "2012-02-13T00:00:00",
+      "dataFim": "2024-09-18T00:00:00"
+    },
+    {
+      "sigla": "AP.",
+      "descricao": "Anteprojeto",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "APR",
+      "descricao": "Anteprojeto de Resolução do Senado",
+      "dataInicio": "1970-01-01T00:00:00",
+      "dataFim": "2005-05-24T00:00:00"
+    },
+    {
+      "sigla": "ATC",
+      "descricao": "Ato Convocatório",
+      "dataInicio": "2003-12-15T00:00:00",
+      "dataFim": "2024-09-27T00:00:00"
+    },
+    {
+      "sigla": "ATCN",
+      "descricao": "Ato do Presidente da Mesa do Congresso Nacional",
+      "dataInicio": "2016-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "ATD",
+      "descricao": "Ato da Comissão Diretora",
+      "dataInicio": "2015-08-18T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "ATM",
+      "descricao": "Ato do Presidente da Mesa do Congresso Nacional",
+      "dataInicio": "2007-11-01T00:00:00",
+      "dataFim": "2022-12-21T00:00:00"
+    },
+    {
+      "sigla": "ATN",
+      "descricao": "Ato Conjunto dos Presidentes do Senado e da Câmara",
+      "dataInicio": "2003-01-01T00:00:00",
+      "dataFim": "2022-12-21T00:00:00"
+    },
+    {
+      "sigla": "ATS",
+      "descricao": "Ato do Presidente do Senado Federal",
+      "dataInicio": "2005-01-03T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "AUT",
+      "descricao": "Escolha de Autoridade para o Conselho da República",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2024-09-27T00:00:00"
+    },
+    {
+      "sigla": "AV.",
+      "descricao": "Aviso",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "AVE",
+      "descricao": "Aviso da Comissão de Assuntos Econômicos",
+      "dataInicio": "2015-03-18T00:00:00",
+      "dataFim": "2024-09-18T00:00:00"
+    },
+    {
+      "sigla": "AVN",
+      "descricao": "Aviso (CN)",
+      "dataInicio": "2000-05-11T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "AVS",
+      "descricao": " Aviso",
+      "dataInicio": "1999-08-11T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "CAR",
+      "descricao": "Carta",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "1970-01-01T00:00:00"
+    },
+    {
+      "sigla": "CCC",
+      "descricao": "Consulta do Conselho de Comunicação Social",
+      "dataInicio": "2004-08-04T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "CCN",
+      "descricao": "Consulta do Congresso Nacional",
+      "dataInicio": "2005-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "CCS",
+      "descricao": "Conselho Comunicação Social (SF)",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "CEN",
+      "descricao": "Censura",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "CEP",
+      "descricao": "Conselho de Ética e Decoro Parlamentar (SF)",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "COM",
+      "descricao": "Comunicação",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "1970-01-01T00:00:00"
+    },
+    {
+      "sigla": "CON",
+      "descricao": "Consulta (SF)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "COP",
+      "descricao": "Corregedoria Parlamentar (SF)",
+      "dataInicio": "1970-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "DAI",
+      "descricao": "Denúncia perante a CCAI",
+      "dataInicio": "2013-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "DAS",
+      "descricao": "Denúncia da Comissão de Assuntos Sociais",
+      "dataInicio": "1997-11-11T00:00:00",
+      "dataFim": "2023-05-23T00:00:00"
+    },
+    {
+      "sigla": "DCR",
+      "descricao": "Diversos Comissão Representativa",
+      "dataInicio": "1999-07-26T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "DEN",
+      "descricao": "Denúncia",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "DIV",
+      "descricao": "Diversos",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2024-09-18T00:00:00"
+    },
+    {
+      "sigla": "DLG",
+      "descricao": "Decreto Legislativo",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "DTQ",
+      "descricao": "Destaque",
+      "dataInicio": "2020-08-13T00:00:00",
+      "dataFim": "2024-06-03T00:00:00"
+    },
+    {
+      "sigla": "DVN",
+      "descricao": "Diversos (CN)",
+      "dataInicio": "1970-01-01T00:00:00",
+      "dataFim": "2024-09-18T00:00:00"
+    },
+    {
+      "sigla": "ECD",
+      "descricao": "Emenda(s) da Câmara dos Deputados a Projeto de Lei do Senado",
+      "dataInicio": "1988-10-05T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "ECR",
+      "descricao": "Emenda Constitucional de Revisão",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "EDS",
+      "descricao": "Emenda(s) da Câmara dos Deputados a Projeto de Decreto Legislativo",
+      "dataInicio": "2011-05-11T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "EMENDA",
+      "descricao": "Emenda a Projeto de Lei ",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "ESC",
+      "descricao": "Estudo do Conselho de Comunicação Social",
+      "dataInicio": "2004-08-04T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "GTJ",
+      "descricao": "Grupo de Trabalho",
+      "dataInicio": "2007-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "IAN",
+      "descricao": "Indicação Assembleia Constituinte",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "IED",
+      "descricao": "Indicação do Cons. de Ética e Decoro Parlamentar",
+      "dataInicio": "2001-09-13T00:00:00",
+      "dataFim": "2005-05-24T00:00:00"
+    },
+    {
+      "sigla": "INA",
+      "descricao": "Indicação de Autoridade",
+      "dataInicio": "1970-01-01T00:00:00",
+      "dataFim": "2005-05-24T00:00:00"
+    },
+    {
+      "sigla": "INC",
+      "descricao": "Indicação (CD)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1968-06-21T00:00:00"
+    },
+    {
+      "sigla": "INQ",
+      "descricao": "Inquerito (SF)",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "INS",
+      "descricao": "Indicação",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "MCN",
+      "descricao": "Mensagem (CN)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "MCR",
+      "descricao": "Mensagem da Comissão Representativa do Congresso Nacional",
+      "dataInicio": "2010-01-21T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "MDF",
+      "descricao": "Mensagem do Distrito Federal",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1990-12-12T00:00:00"
+    },
+    {
+      "sigla": "MEM",
+      "descricao": "Memorial",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "1970-01-01T00:00:00"
+    },
+    {
+      "sigla": "MOS",
+      "descricao": "Moção do Senado Federal",
+      "dataInicio": "2001-09-18T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "MPCN",
+      "descricao": "Mensagem do Presidente do CN",
+      "dataInicio": "2017-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "MPSF",
+      "descricao": "Mensagem do Presidente do SF",
+      "dataInicio": "2017-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "MPV",
+      "descricao": "Medida Provisória",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "MSC",
+      "descricao": "Mensagem (CD)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "2024-09-27T00:00:00"
+    },
+    {
+      "sigla": "MSF",
+      "descricao": "Mensagem (SF)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "MSG",
+      "descricao": "Mensagem",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "OCS",
+      "descricao": "Ofício da Comissão de Assuntos Sociais",
+      "dataInicio": "2012-04-10T00:00:00",
+      "dataFim": "2019-06-27T00:00:00"
+    },
+    {
+      "sigla": "OF",
+      "descricao": "Ofício SF (Interno)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "OF.",
+      "descricao": "Ofício (Externo)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "OFC",
+      "descricao": "Ofício (CD)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1999-01-31T00:00:00"
+    },
+    {
+      "sigla": "OFCN",
+      "descricao": "Ofício expedido pelo CN",
+      "dataInicio": "2017-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "OFE",
+      "descricao": "Ofício da Comissão de Assuntos Econômicos",
+      "dataInicio": "2002-10-01T00:00:00",
+      "dataFim": "2019-06-27T00:00:00"
+    },
+    {
+      "sigla": "OFICIO",
+      "descricao": "Ofício",
+      "dataInicio": "2018-05-16T00:00:00",
+      "dataFim": "2024-09-18T00:00:00"
+    },
+    {
+      "sigla": "OFJ",
+      "descricao": "Ofício da Comissão de Constituição, Justiça e Cidadania",
+      "dataInicio": "2002-10-01T00:00:00",
+      "dataFim": "2019-06-27T00:00:00"
+    },
+    {
+      "sigla": "OFN",
+      "descricao": "Ofício (CN)",
+      "dataInicio": "1970-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "OFS",
+      "descricao": "Ofício \"S\"",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "OFSF",
+      "descricao": "Ofício expedido pelo SF",
+      "dataInicio": "2017-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "OFTFC",
+      "descricao": "Ofício da Comissão de Transparência, Fiscalização, Controle e Defesa do Consumidor",
+      "dataInicio": "2017-01-01T00:00:00",
+      "dataFim": "2019-06-27T00:00:00"
+    },
+    {
+      "sigla": "P.C",
+      "descricao": "Parecer (CD)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1984-03-16T00:00:00"
+    },
+    {
+      "sigla": "P.S",
+      "descricao": "Parecer (SF)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PAC",
+      "descricao": "Parecer do Conselho de Comunicação Social",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PAR",
+      "descricao": "Parecer (CN)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PCA",
+      "descricao": "Parecer da Assembleia Constituinte",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1999-01-31T00:00:00"
+    },
+    {
+      "sigla": "PCE",
+      "descricao": "Petição do Conselho de Ética e Decoro Parlamentar (SF)",
+      "dataInicio": "2006-04-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PCJ",
+      "descricao": "Petição Comissão de Constituição, Justiça e Cidadania",
+      "dataInicio": "2007-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PCS",
+      "descricao": "Parecer do Conselho de Comunicação Social",
+      "dataInicio": "2012-09-11T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PDA",
+      "descricao": "Projeto de Decisão da Assembleia",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PDC",
+      "descricao": "Projeto de Decreto Legislativo (CD)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "PDF",
+      "descricao": "Projeto de Lei do DF",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1990-11-21T00:00:00"
+    },
+    {
+      "sigla": "PDG",
+      "descricao": "Proposta Delegação Legisl. (CN)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1985-06-11T00:00:00"
+    },
+    {
+      "sigla": "PDH",
+      "descricao": "Petição da Comissão de Direitos Humanos e Legislação Participativa",
+      "dataInicio": "2007-03-26T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PDL",
+      "descricao": "Projeto de Decreto Legislativo",
+      "dataInicio": "2018-08-02T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PDN",
+      "descricao": "Projeto de Decreto Legislativo (CN)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PDR",
+      "descricao": "Projeto de Decreto Legislativo (CR - CN)",
+      "dataInicio": "2001-01-16T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PDS",
+      "descricao": "Projeto de Decreto Legislativo (SF)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "PEC",
+      "descricao": "Proposta de Emenda à Constituição",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PER",
+      "descricao": "Proposta de Emenda Revisional",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PET",
+      "descricao": "Petição (SF)",
+      "dataInicio": "1940-08-14T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PFC",
+      "descricao": "Proposta de Fiscalização e Controle(CD)",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2024-09-27T00:00:00"
+    },
+    {
+      "sigla": "PFS",
+      "descricao": "Proposta de Fiscalização e Controle",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PL",
+      "descricao": "Projeto de Lei",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PL.",
+      "descricao": "PL-CR (Comissão Representativa-CN)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "2005-05-24T00:00:00"
+    },
+    {
+      "sigla": "PLC",
+      "descricao": "Projeto de Lei da Câmara",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "PLCNC",
+      "descricao": "Projeto de Lei do Congresso - Complementar (1946 - 1970)",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "1970-01-01T00:00:00"
+    },
+    {
+      "sigla": "PLD",
+      "descricao": "Projeto de Lei Delegada",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PLN",
+      "descricao": "Projeto de Lei do Congresso Nacional",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PLP",
+      "descricao": "Projeto de Lei Complementar",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PLS",
+      "descricao": "Projeto de Lei do Senado",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "PLV",
+      "descricao": "Projeto de Lei de Conversão (CN)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "POR",
+      "descricao": "Portaria",
+      "dataInicio": "2005-08-16T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "PR",
+      "descricao": "PR-CR (Comissão Representativa-CN)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1992-01-16T00:00:00"
+    },
+    {
+      "sigla": "PR.",
+      "descricao": "Projeto Resolução (Conselho de Etica e Decoro Parlamentar)",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "PRA",
+      "descricao": "Projeto de Resolução da Assembleia Constituinte",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "PRC",
+      "descricao": "Projeto de Resolução (CD)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1999-01-31T00:00:00"
+    },
+    {
+      "sigla": "PRF",
+      "descricao": "Projeto de Resolução do SF",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "PRFC",
+      "descricao": "Projeto de Reforma Constitucional",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "1970-01-01T00:00:00"
+    },
+    {
+      "sigla": "PRM",
+      "descricao": "Premiação",
+      "dataInicio": "2017-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PRN",
+      "descricao": "Projeto de Resolução do Congresso Nacional",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PROJ",
+      "descricao": "Projeto (1946 - 1970)",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "1970-01-01T00:00:00"
+    },
+    {
+      "sigla": "PROP",
+      "descricao": "Proposição (1946-1970)",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "1970-01-01T00:00:00"
+    },
+    {
+      "sigla": "PRP",
+      "descricao": "Procuradoria Parlamentar (SF)",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PRR",
+      "descricao": "Projeto de Resolução de Revisão Constitucional",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1994-05-26T00:00:00"
+    },
+    {
+      "sigla": "PRS",
+      "descricao": "Projeto de Resolução do Senado",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "PTN",
+      "descricao": "Petição (CN)",
+      "dataInicio": "2001-12-05T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "QCN",
+      "descricao": "Questão de Ordem do Congresso Nacional",
+      "dataInicio": "2000-01-26T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "QED",
+      "descricao": "Questão de Ordem do Conselho de Ética",
+      "dataInicio": "2001-09-24T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "QSF",
+      "descricao": "Questão de Ordem do Senado Federal",
+      "dataInicio": "2000-01-26T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "R.C",
+      "descricao": "Recurso (Congresso Nacional)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "R.S",
+      "descricao": "Recurso (SF)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "RAE",
+      "descricao": "Representação da Comissão de Assuntos Econômicos",
+      "dataInicio": "2002-03-13T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "RAI",
+      "descricao": "Requerimento da Comissão de Atividades de Inteligência",
+      "dataInicio": "2000-11-21T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RAN",
+      "descricao": "Resolução da Assembleia Nacional",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "RAS",
+      "descricao": "Requerimento da Comissão de Assuntos Sociais",
+      "dataInicio": "2003-03-13T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RCD",
+      "descricao": "Resolução (CD)",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "RCE",
+      "descricao": "Requerimento da Comissão de Educação",
+      "dataInicio": "2001-08-29T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RCJ",
+      "descricao": "Representação Comissão Constituição e Justiça",
+      "dataInicio": "2002-05-08T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "RCM",
+      "descricao": "Requerimento de Comissão Mista",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RCN",
+      "descricao": "Resolução do Congresso Nacional",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1990-04-20T00:00:00"
+    },
+    {
+      "sigla": "RCP",
+      "descricao": "Requerimento da Comissão Parlamentar",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RCS",
+      "descricao": "Requerimento do Conselho de Comunicação Social",
+      "dataInicio": "2001-07-11T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RCT",
+      "descricao": "Requerimento da Comissão de Ciência, Tec., Inov., Com. e Informática",
+      "dataInicio": "2007-04-04T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RDH",
+      "descricao": "Requerimento Comissão de Direitos Humanos e Legislação Participativa",
+      "dataInicio": "2005-03-10T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RDR",
+      "descricao": "Requerimento da Comissão de Desenvolvimento Regional e Turismo",
+      "dataInicio": "2009-03-30T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "REC",
+      "descricao": "Recurso (CD)",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "RED",
+      "descricao": "Requerimento do Conselho de Ética e Decoro Parlamentar",
+      "dataInicio": "2000-12-12T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RELA",
+      "descricao": "Relatório",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "RELA*",
+      "descricao": "Relatório",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "1970-01-01T00:00:00"
+    },
+    {
+      "sigla": "RELAT",
+      "descricao": "Relatório",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "REN",
+      "descricao": "Renúncia",
+      "dataInicio": "2000-12-14T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "REP",
+      "descricao": "Representação",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "REQ",
+      "descricao": "Requerimento",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "RFF",
+      "descricao": "Requerimento da Comissão Senado do Futuro",
+      "dataInicio": "2013-10-01T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RIC",
+      "descricao": "Requerimento de  Informação (CD)",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "RMA",
+      "descricao": "Requerimento da Comissão de Meio Ambiente",
+      "dataInicio": "2005-02-23T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RMC",
+      "descricao": "Comissão Mista Permanente sobre Mudanças Climáticas",
+      "dataInicio": "2009-04-07T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RPD",
+      "descricao": "Ressalva ao Primeiro PND (CN)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1972-04-02T00:00:00"
+    },
+    {
+      "sigla": "RPF",
+      "descricao": "Requerimento da Comissão para o Aprimoramento do Pacto Federativo",
+      "dataInicio": "2016-02-02T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RQA",
+      "descricao": "Requerimento Assembleia Nacional",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "RQC",
+      "descricao": "Requerimento (CD)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1999-01-31T00:00:00"
+    },
+    {
+      "sigla": "RQD",
+      "descricao": "Requerimento da Comissão Diretora",
+      "dataInicio": "2016-01-01T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RQE",
+      "descricao": "Requerimento da Comissão de Assuntos Econômicos",
+      "dataInicio": "2000-10-04T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RQF",
+      "descricao": "Requerimento da Comissão de Fiscal. e Controle",
+      "dataInicio": "2001-04-18T00:00:00",
+      "dataFim": "2005-02-23T00:00:00"
+    },
+    {
+      "sigla": "RQI",
+      "descricao": "Requerimento da Comissão de Serviços de Infraestrutura",
+      "dataInicio": "2000-11-07T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RQJ",
+      "descricao": "Requerimento  da Comissão de Constituição, Justiça e Cidadania",
+      "dataInicio": "1999-12-15T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RQM",
+      "descricao": "Requerimento da Mesa do Senado",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RQN",
+      "descricao": "Requerimento (CN)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "RQR",
+      "descricao": "Requerimento da Comissão Representativa",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RQS",
+      "descricao": "Requerimento",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "RRA",
+      "descricao": "Requerimento da Comissão de Agricultura e Reforma Agrária",
+      "dataInicio": "2007-01-01T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RRC",
+      "descricao": "Recomendação do Conselho de Comunicação Social",
+      "dataInicio": "2004-08-04T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "RRE",
+      "descricao": "Requerimento da Comissão de Relações Exteriores e Defesa Nacional",
+      "dataInicio": "2001-10-03T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RSF",
+      "descricao": "Resolução (SF)",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1992-12-31T00:00:00"
+    },
+    {
+      "sigla": "RSJ",
+      "descricao": "Requerimento da Subcomissão do Judiciário - CCJ",
+      "dataInicio": "2000-09-01T00:00:00",
+      "dataFim": "2001-12-31T00:00:00"
+    },
+    {
+      "sigla": "RTG",
+      "descricao": "Requerimento da Comissão de Transparência, Governança, Fiscalização e Controle e Defesa do Consumidor",
+      "dataInicio": "2015-09-22T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "RVM",
+      "descricao": "Requerimento da Comissão Mista de Combate à Violência contra a Mulher",
+      "dataInicio": "2015-03-23T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "SCD",
+      "descricao": "Substitutivo da Câmara dos Deputados a Projeto de Lei do Senado",
+      "dataInicio": "1999-02-16T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "SDS",
+      "descricao": "Substitutivo da Câmara dos Deputados a Projeto de Decreto Legislativo",
+      "dataInicio": "2011-05-11T00:00:00",
+      "dataFim": "2018-12-31T00:00:00"
+    },
+    {
+      "sigla": "SIN",
+      "descricao": "Sindicância",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "SIT",
+      "descricao": "Solicitação de Informação ao TCU (CD)",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "SOL",
+      "descricao": "Solenidade de Entrega das Propostas de Reformas Constitucionais",
+      "dataInicio": "2003-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "SUBEMENDA",
+      "descricao": "Subemenda",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "SUG",
+      "descricao": "Sugestão",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "TEL",
+      "descricao": "Telex",
+      "dataInicio": "1900-01-01T00:00:00",
+      "dataFim": "1986-08-13T00:00:00"
+    },
+    {
+      "sigla": "TELG",
+      "descricao": "Telegrama",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "1970-01-01T00:00:00"
+    },
+    {
+      "sigla": "TLX",
+      "descricao": "Telex",
+      "dataInicio": "1946-01-01T00:00:00",
+      "dataFim": "2018-12-21T00:00:00"
+    },
+    {
+      "sigla": "TVR",
+      "descricao": "Ato de Concessão e Renovação de Concessão de Emissora de Rádio e Televisão",
+      "dataInicio": "1948-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "VET",
+      "descricao": "Veto",
+      "dataInicio": "1901-01-01T00:00:00",
+      "dataFim": null
+    },
+    {
+      "sigla": "VETDF",
+      "descricao": "Veto do Prefeito do Distrito Federal",
+      "dataInicio": "1948-01-01T00:00:00",
+      "dataFim": "1960-12-31T00:00:00"
+    }
+  ]
+}

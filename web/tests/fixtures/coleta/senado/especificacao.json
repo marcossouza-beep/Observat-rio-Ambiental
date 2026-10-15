@@ -2,7 +2,7 @@
   "url": "https://legis.senado.leg.br/dadosabertos/v3/api-docs",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:20.306Z",
+  "gravadaEm": "2026-10-15T12:54:50.145Z",
   "corpo": {
     "info": {
       "title": "Dados Abertos Legislativos do Senado Federal e Congresso Nacional",

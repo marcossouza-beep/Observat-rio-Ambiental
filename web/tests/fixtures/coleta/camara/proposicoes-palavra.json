@@ -2,7 +2,7 @@
   "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes?keywords=licenciamento%20ambiental&dataInicio=2026-08-16&dataFim=2026-10-15&itens=30&ordem=DESC&ordenarPor=id",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:01.373Z",
+  "gravadaEm": "2026-10-15T12:54:33.958Z",
   "corpo": {
     "dados": [
       {

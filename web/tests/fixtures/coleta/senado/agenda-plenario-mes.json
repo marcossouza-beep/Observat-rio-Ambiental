@@ -2,7 +2,7 @@
   "url": "https://legis.senado.leg.br/dadosabertos/plenario/agenda/mes/20261015",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:31.347Z",
+  "gravadaEm": "2026-10-15T12:55:00.198Z",
   "corpo": {
     "AgendaPlenario": {
       "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/AgendaPlenariov2.xsd",

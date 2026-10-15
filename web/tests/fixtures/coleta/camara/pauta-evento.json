@@ -2,7 +2,7 @@
   "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83037",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:17.710Z",
+  "gravadaEm": "2026-10-15T12:54:46.997Z",
   "corpo": {
     "dados": {
       "uriDeputados": null,

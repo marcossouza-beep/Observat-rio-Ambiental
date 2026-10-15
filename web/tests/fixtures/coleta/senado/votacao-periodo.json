@@ -2,7 +2,7 @@
   "url": "https://legis.senado.leg.br/dadosabertos/votacao?dataInicio=2026-09-15&dataFim=2026-10-15",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:30.567Z",
+  "gravadaEm": "2026-10-15T12:54:59.003Z",
   "corpo": [
     {
       "ano": 2019,

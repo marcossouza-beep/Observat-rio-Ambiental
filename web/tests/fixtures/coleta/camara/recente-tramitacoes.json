@@ -2,7 +2,7 @@
   "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637088/tramitacoes",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:10.605Z",
+  "gravadaEm": "2026-10-15T12:54:44.010Z",
   "corpo": {
     "dados": [
       {

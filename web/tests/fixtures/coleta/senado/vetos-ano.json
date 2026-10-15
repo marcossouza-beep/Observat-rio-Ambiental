@@ -2,7 +2,7 @@
   "url": "https://legis.senado.leg.br/dadosabertos/materia/vetos/2026",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:32.538Z",
+  "gravadaEm": "2026-10-15T12:55:01.405Z",
   "corpo": {
     "ListaVetosAnoCN": {
       "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/cn/ListaVetosAnoCNv7.xsd",

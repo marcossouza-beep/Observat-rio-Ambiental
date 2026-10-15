@@ -2,7 +2,7 @@
   "url": "https://dadosabertos.camara.leg.br/api/v2/eventos?dataInicio=2026-10-13&dataFim=2026-10-22&itens=100&ordem=ASC&ordenarPor=dataHoraInicio",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:11.224Z",
+  "gravadaEm": "2026-10-15T12:54:44.594Z",
   "corpo": {
     "dados": [
       {

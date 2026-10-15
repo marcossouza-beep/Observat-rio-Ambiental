@@ -1,0 +1,403 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/processo/assuntos",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-15T12:54:57.806Z",
+  "corpo": [
+    {
+      "id": 81,
+      "assuntoGeral": "Administrativo",
+      "assuntoEspecifico": "Administrativo",
+      "dataInicio": "2009-11-25",
+      "dataFim": "2009-12-22"
+    },
+    {
+      "id": 101,
+      "assuntoGeral": "Administrativo",
+      "assuntoEspecifico": "Administração pública: órgãos públicos",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 102,
+      "assuntoGeral": "Administrativo",
+      "assuntoEspecifico": "Licitação e contratos",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 103,
+      "assuntoGeral": "Administrativo",
+      "assuntoEspecifico": "Militares dos estados, DF e territórios",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 104,
+      "assuntoGeral": "Administrativo",
+      "assuntoEspecifico": "Organização político-administrativa do Estado",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 105,
+      "assuntoGeral": "Administrativo",
+      "assuntoEspecifico": "Servidores públicos",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 106,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Agricultura, pecuária e abastecimento",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 107,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Desenvolvimento regional",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 82,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Econômico",
+      "dataInicio": "2009-11-25",
+      "dataFim": "2009-12-22"
+    },
+    {
+      "id": 108,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Fiscalização e controle",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 109,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Indústria, comércio e serviço",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 111,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Minas e energia",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 113,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Pesca e aquicultura",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 110,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Planejamento e orçamento",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 114,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Política econômica e sistema financeiro",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 115,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Política fundiária e reforma agrária",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 116,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Política urbana",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 112,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Recursos hídricos",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 117,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Tributação",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 118,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Turismo",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 119,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Viação e transportes",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 120,
+      "assuntoGeral": "Econômico",
+      "assuntoEspecifico": "Zona de processamento de exportação",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 121,
+      "assuntoGeral": "Honorífico",
+      "assuntoEspecifico": "Data comemorativa",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 122,
+      "assuntoGeral": "Honorífico",
+      "assuntoEspecifico": "Homenagem cívica",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 85,
+      "assuntoGeral": "Honorífico",
+      "assuntoEspecifico": "Honorífico",
+      "dataInicio": "2009-11-25",
+      "dataFim": "2009-12-22"
+    },
+    {
+      "id": 123,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Defesa do consumidor",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 124,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Defesa nacional e forças armadas",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 125,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Direito aeronáutico e direito espacial",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 126,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Direito civil e processual civil",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 127,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Direito comercial e econômico",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 131,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Direito dos estrangeiros",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 128,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Direito eleitoral e partidos políticos",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 129,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Direito marítimo",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 130,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Direito penal e processual penal",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 132,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Direitos políticos, nacionalidade e cidadania",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 83,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Jurídico",
+      "dataInicio": "2009-11-25",
+      "dataFim": "2009-12-22"
+    },
+    {
+      "id": 133,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Processo legislativo",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 134,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Relações internacionais",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 135,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Segurança pública",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 136,
+      "assuntoGeral": "Jurídico",
+      "assuntoEspecifico": "Trânsito",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 166,
+      "assuntoGeral": "Orçamentário",
+      "assuntoEspecifico": "Alteração da Lei Orçamentária Anual",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 164,
+      "assuntoGeral": "Orçamentário",
+      "assuntoEspecifico": "Alteração da Lei de Diretrizes Orçamentárias",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 165,
+      "assuntoGeral": "Orçamentário",
+      "assuntoEspecifico": "Alteração do Plano Plurianual",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 182,
+      "assuntoGeral": "Orçamentário",
+      "assuntoEspecifico": "Alteração do Plano Plurianual e da Lei de Diretrizes Orçamentárias",
+      "dataInicio": "2000-01-01"
+    },
+    {
+      "id": 168,
+      "assuntoGeral": "Orçamentário",
+      "assuntoEspecifico": "Crédito Especial",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 181,
+      "assuntoGeral": "Orçamentário",
+      "assuntoEspecifico": "Crédito Especial e Suplementar",
+      "dataInicio": "1990-01-01"
+    },
+    {
+      "id": 169,
+      "assuntoGeral": "Orçamentário",
+      "assuntoEspecifico": "Crédito Extraordinário",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 167,
+      "assuntoGeral": "Orçamentário",
+      "assuntoEspecifico": "Crédito Suplementar",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 163,
+      "assuntoGeral": "Orçamentário",
+      "assuntoEspecifico": "Projeto da Lei Orçamentária Anual",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 161,
+      "assuntoGeral": "Orçamentário",
+      "assuntoEspecifico": "Projeto de Lei de Diretrizes Orçamentárias",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 162,
+      "assuntoGeral": "Orçamentário",
+      "assuntoEspecifico": "Projeto de Lei do Plano Plurianual",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 137,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Arte e cultura",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 138,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Assistência social",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 139,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Ciência, tecnologia e informática",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 140,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Comunicações",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 142,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Desenvolvimento social e combate à fome",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 141,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Desporto e lazer",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 143,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Direitos humanos e minorias",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 144,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Educação",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 145,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Família, proteção a crianças, adolescentes, mulheres e idosos",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 146,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Meio ambiente",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 147,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Previdência social",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 149,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Saúde",
+      "dataInicio": "1900-01-01"
+    },
+    {
+      "id": 84,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Social",
+      "dataInicio": "2009-11-25",
+      "dataFim": "2009-12-22"
+    },
+    {
+      "id": 148,
+      "assuntoGeral": "Social",
+      "assuntoEspecifico": "Trabalho e emprego",
+      "dataInicio": "1900-01-01"
+    }
+  ]
+}

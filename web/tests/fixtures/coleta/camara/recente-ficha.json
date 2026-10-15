@@ -2,7 +2,7 @@
   "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2637088",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:09.672Z",
+  "gravadaEm": "2026-10-15T12:54:42.800Z",
   "corpo": {
     "dados": {
       "id": 2637088,

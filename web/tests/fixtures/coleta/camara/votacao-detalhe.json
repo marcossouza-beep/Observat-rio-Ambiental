@@ -1,30 +1,1800 @@
 {
-  "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-127",
+  "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-483",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:07.689Z",
+  "gravadaEm": "2026-10-15T12:54:38.980Z",
   "corpo": {
     "dados": {
-      "id": "257161-127",
-      "uri": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-127",
-      "data": "2016-03-22",
-      "dataHoraRegistro": "2016-03-22T13:24:13",
+      "id": "257161-483",
+      "uri": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-483",
+      "data": "2025-07-16",
+      "dataHoraRegistro": "2025-07-17T03:37:38",
       "siglaOrgao": "PLEN",
       "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
       "idOrgao": 180,
-      "uriEvento": null,
-      "idEvento": null,
-      "descricao": "Alteração do Regime de Tramitação desta proposição em virtude da aprovação do REQ 3565/2015 que alterou o regime do PL 1700/2011, apensado.",
+      "uriEvento": "https://dadosabertos.camara.leg.br/api/v2/eventos/77363",
+      "idEvento": 77363,
+      "descricao": "Aprovada a Redação Final assinada pelo Relator, Dep. Zé Vitor (PL-MG). Sim: 231; Não: 87; Total: 318.",
       "aprovacao": 1,
-      "descUltimaAberturaVotacao": null,
-      "dataHoraUltimaAberturaVotacao": null,
+      "descUltimaAberturaVotacao": "Votação da Redação Final.",
+      "dataHoraUltimaAberturaVotacao": "2025-07-17T03:30:02",
       "ultimaApresentacaoProposicao": {
-        "dataHoraRegistro": "2015-06-18T18:20:24",
-        "descricao": "Apresentação do Requerimento n. 2207/2015, pelos Deputados Ronaldo Benedet (PMDB-SC) e outros, que: \"Requeremos o desapensamento do Projeto de Lei n° 1546/2015\".",
-        "uriProposicaoCitada": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/1513916"
+        "dataHoraRegistro": "2025-07-17T00:16:29",
+        "descricao": "Parecer às Emendas do Senado Federal proferido pelo Relator, Dep. Zé Vitor (PL-MG) pela:\r\n• Comissão de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural, que conclui pela aprovação, nos termos do Parecer da Comissão de Meio Ambiente e Desenvolvimento Sustentável.\r\n• Comissão de Meio Ambiente e Desenvolvimento Sustentável, que conclui pela aprovação das Emendas nº 1 a 8, 10 a 13, e 15 a 31 do Senado Federal ao Projeto de Lei nº 2.159, de 2021; pela aprovação parcial da Emenda nº 9, rejeitando a alteração promovida no inciso IV do art. 8º, mantendo os incisos IX e XIII aprovados na Câmara dos Deputados, e acolhendo todo o restante da emenda; pela aprovação parcial também da Emenda nº 32, excluindo-se a expressão \"em até 24 (vinte e quatro) horas\"; e pela rejeição da Emenda nº 14.\r\n• Comissão de Finanças e Tributação, que conclui pela adequação financeira e orçamentária de todas as Emendas; e, no mérito, pela aprovação nos termos do Parecer da Comissão de Meio Ambiente e Desenvolvimento Sustentável.\r\n• Comissão de Constituição e Justiça e de Cidadania, que conclui pela constitucionalidade, juridicidade e boa técnica legislativa das Emendas do Senado Federal ao Projeto de Lei nº 2.159, de 2021.",
+        "uriProposicaoCitada": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537819"
       },
       "efeitosRegistrados": [],
       "objetosPossiveis": [
+        {
+          "id": 2537824,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537824",
+          "siglaTipo": "RPD",
+          "codTipo": 332,
+          "numero": 35,
+          "ano": 0,
+          "ementa": "Requerimento de Votação Nominal - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-17T03:23"
+        },
+        {
+          "id": 2537820,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537820",
+          "siglaTipo": "RPD",
+          "codTipo": 1054,
+          "numero": 33,
+          "ano": 0,
+          "ementa": "Votação Nominal do Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-17T00:29"
+        },
+        {
+          "id": 2537821,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537821",
+          "siglaTipo": "RPD",
+          "codTipo": 1000,
+          "numero": 34,
+          "ano": 0,
+          "ementa": "Requerimento de Encerramento da Discussão e do Encaminhamento da Votação - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T23:49"
+        },
+        {
+          "id": 2537763,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537763",
+          "siglaTipo": "RPD",
+          "codTipo": 890,
+          "numero": 32,
+          "ano": 0,
+          "ementa": "Requerimento Procedimental Genérico - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T20:47"
+        },
+        {
+          "id": 2537597,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537597",
+          "siglaTipo": "RPD",
+          "codTipo": 1054,
+          "numero": 31,
+          "ano": 0,
+          "ementa": "Votação Nominal do Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T17:46"
+        },
+        {
+          "id": 2537595,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537595",
+          "siglaTipo": "DTQ",
+          "codTipo": 1011,
+          "numero": 11,
+          "ano": 0,
+          "ementa": "Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T17:46"
+        },
+        {
+          "id": 2537594,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537594",
+          "siglaTipo": "RPD",
+          "codTipo": 890,
+          "numero": 30,
+          "ano": 0,
+          "ementa": "Requerimento Procedimental Genérico - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T17:46"
+        },
+        {
+          "id": 2537295,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537295",
+          "siglaTipo": "RPD",
+          "codTipo": 1054,
+          "numero": 29,
+          "ano": 0,
+          "ementa": "Votação Nominal do Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T13:02"
+        },
+        {
+          "id": 2537294,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537294",
+          "siglaTipo": "DTQ",
+          "codTipo": 1011,
+          "numero": 10,
+          "ano": 0,
+          "ementa": "Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T13:02"
+        },
+        {
+          "id": 2537291,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537291",
+          "siglaTipo": "RPD",
+          "codTipo": 890,
+          "numero": 28,
+          "ano": 0,
+          "ementa": "Requerimento para Retirada de Tramitação de RPD/DTQ - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T12:53"
+        },
+        {
+          "id": 2537182,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537182",
+          "siglaTipo": "PRLP",
+          "codTipo": 891,
+          "numero": 8,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+          "dataApresentacao": "2025-07-16T11:38"
+        },
+        {
+          "id": 2537147,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537147",
+          "siglaTipo": "RPD",
+          "codTipo": 1051,
+          "numero": 27,
+          "ano": 0,
+          "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Requerimento de Retirada de Matéria da Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T11:25"
+        },
+        {
+          "id": 2537145,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537145",
+          "siglaTipo": "RPD",
+          "codTipo": 328,
+          "numero": 26,
+          "ano": 0,
+          "ementa": "Requerimento de Retirada de Matéria da Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T11:25"
+        },
+        {
+          "id": 2537142,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537142",
+          "siglaTipo": "RPD",
+          "codTipo": 332,
+          "numero": 25,
+          "ano": 0,
+          "ementa": "Requerimento de Votação Nominal - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T11:18"
+        },
+        {
+          "id": 2537819,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537819",
+          "siglaTipo": "PSS",
+          "codTipo": 443,
+          "numero": 2,
+          "ano": 0,
+          "ementa": "Parecer às Emendas do Senado Federal proferido pelo Relator, Dep. Zé Vitor (PL-MG) pela: • Comissão de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural, que conclui pela aprovação, nos termos do Parecer da Comissão de Meio Ambiente e Desenvolvimento Sustentável. • Comissão de Meio Ambiente e Desenvolvimento Sustentável, que conclui pela aprovação das Emendas nº 1 a 8, 10 a 13, e 15 a 31 do Senado Federal ao Projeto de Lei nº 2.159, de 2021; pela aprovação parcial da Emenda nº 9, rejeitando a alteração promovida no inciso IV do art. 8º, mantendo os incisos IX e XIII aprovados na Câmara dos Deputados, e acolhendo todo o restante da emenda; pela aprovação parcial também da Emenda nº 32, excluindo-se a expressão \"em até 24 (vinte e quatro) horas\"; e pela rejeição da Emenda nº 14. • Comissão de Finanças e Tributação, que conclui pela adequação financeira e orçamentária de todas as Emendas; e, no mérito, pela aprovação nos termos do Parecer da Comissão de Meio Ambiente e Desenvolvimento Sustentável. • Comissão de Constituição e Justiça e de Cidadania, que conclui pela constitucionalidade, juridicidade e boa técnica legislativa das Emendas do Senado Federal ao Projeto de Lei nº 2.159, de 2021.",
+          "dataApresentacao": "2025-07-16T10:00"
+        },
+        {
+          "id": 2537007,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537007",
+          "siglaTipo": "RPD",
+          "codTipo": 1051,
+          "numero": 24,
+          "ano": 0,
+          "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Requerimento de Retirada de Matéria da Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T09:03"
+        },
+        {
+          "id": 2537006,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2537006",
+          "siglaTipo": "RPD",
+          "codTipo": 328,
+          "numero": 23,
+          "ano": 0,
+          "ementa": "Requerimento de Retirada de Matéria da Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T09:03"
+        },
+        {
+          "id": 2538242,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2538242",
+          "siglaTipo": "RDF",
+          "codTipo": 197,
+          "numero": 2,
+          "ano": 0,
+          "ementa": "Redação Final ao PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-16T00:00"
+        },
+        {
+          "id": 2536823,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536823",
+          "siglaTipo": "RPD",
+          "codTipo": 1054,
+          "numero": 22,
+          "ano": 0,
+          "ementa": "Votação Nominal do Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Destaque de Emenda",
+          "dataApresentacao": "2025-07-15T18:38"
+        },
+        {
+          "id": 2536822,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536822",
+          "siglaTipo": "DTQ",
+          "codTipo": 1011,
+          "numero": 9,
+          "ano": 0,
+          "ementa": "Destaque de Emenda",
+          "dataApresentacao": "2025-07-15T18:38"
+        },
+        {
+          "id": 2536820,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536820",
+          "siglaTipo": "RPD",
+          "codTipo": 890,
+          "numero": 21,
+          "ano": 0,
+          "ementa": "Requerimento Procedimental Genérico - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T18:38"
+        },
+        {
+          "id": 2536768,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536768",
+          "siglaTipo": "RPD",
+          "codTipo": 892,
+          "numero": 16,
+          "ano": 0,
+          "ementa": "Requerimento de Adiamento da Discussão Matéria Urgente",
+          "dataApresentacao": "2025-07-15T17:10"
+        },
+        {
+          "id": 2536769,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536769",
+          "siglaTipo": "RPD",
+          "codTipo": 467,
+          "numero": 17,
+          "ano": 0,
+          "ementa": "Requerimento de Adiamento da Votação Matéria Urgente",
+          "dataApresentacao": "2025-07-15T17:10"
+        },
+        {
+          "id": 2536770,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536770",
+          "siglaTipo": "RPD",
+          "codTipo": 332,
+          "numero": 18,
+          "ano": 0,
+          "ementa": "Requerimento de Votação Nominal",
+          "dataApresentacao": "2025-07-15T17:10"
+        },
+        {
+          "id": 2536772,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536772",
+          "siglaTipo": "RPD",
+          "codTipo": 1041,
+          "numero": 19,
+          "ano": 0,
+          "ementa": "Requerimento de Votação Nominal",
+          "dataApresentacao": "2025-07-15T17:10"
+        },
+        {
+          "id": 2536773,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536773",
+          "siglaTipo": "RPD",
+          "codTipo": 1043,
+          "numero": 20,
+          "ano": 0,
+          "ementa": "Requerimento de Votação Nominal",
+          "dataApresentacao": "2025-07-15T17:10"
+        },
+        {
+          "id": 2536756,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536756",
+          "siglaTipo": "DTQ",
+          "codTipo": 1011,
+          "numero": 8,
+          "ano": 0,
+          "ementa": "Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T17:02"
+        },
+        {
+          "id": 2536745,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536745",
+          "siglaTipo": "RPD",
+          "codTipo": 1054,
+          "numero": 15,
+          "ano": 0,
+          "ementa": "Votação Nominal do Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T16:48"
+        },
+        {
+          "id": 2536744,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536744",
+          "siglaTipo": "DTQ",
+          "codTipo": 1011,
+          "numero": 7,
+          "ano": 0,
+          "ementa": "Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T16:48"
+        },
+        {
+          "id": 2536740,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536740",
+          "siglaTipo": "RPD",
+          "codTipo": 1054,
+          "numero": 14,
+          "ano": 0,
+          "ementa": "Votação Nominal do Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T16:38"
+        },
+        {
+          "id": 2536739,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536739",
+          "siglaTipo": "DTQ",
+          "codTipo": 1011,
+          "numero": 6,
+          "ano": 0,
+          "ementa": "Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T16:38"
+        },
+        {
+          "id": 2536675,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536675",
+          "siglaTipo": "RPD",
+          "codTipo": 1054,
+          "numero": 13,
+          "ano": 0,
+          "ementa": "Votação Nominal do Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T15:42"
+        },
+        {
+          "id": 2536673,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536673",
+          "siglaTipo": "DTQ",
+          "codTipo": 1011,
+          "numero": 5,
+          "ano": 0,
+          "ementa": "Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T15:42"
+        },
+        {
+          "id": 2536634,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536634",
+          "siglaTipo": "RPD",
+          "codTipo": 1054,
+          "numero": 12,
+          "ano": 0,
+          "ementa": "Votação Nominal do Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T14:30"
+        },
+        {
+          "id": 2536633,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536633",
+          "siglaTipo": "DTQ",
+          "codTipo": 1011,
+          "numero": 4,
+          "ano": 0,
+          "ementa": "Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T14:30"
+        },
+        {
+          "id": 2536560,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536560",
+          "siglaTipo": "PRLP",
+          "codTipo": 891,
+          "numero": 7,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+          "dataApresentacao": "2025-07-15T13:52"
+        },
+        {
+          "id": 2536309,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536309",
+          "siglaTipo": "DTQ",
+          "codTipo": 1011,
+          "numero": 3,
+          "ano": 0,
+          "ementa": "Destaque de Emenda",
+          "dataApresentacao": "2025-07-15T12:59"
+        },
+        {
+          "id": 2536263,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536263",
+          "siglaTipo": "RPD",
+          "codTipo": 1054,
+          "numero": 11,
+          "ano": 0,
+          "ementa": "Votação Nominal do Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T11:42"
+        },
+        {
+          "id": 2536261,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536261",
+          "siglaTipo": "DTQ",
+          "codTipo": 1011,
+          "numero": 2,
+          "ano": 0,
+          "ementa": "Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T11:42"
+        },
+        {
+          "id": 2536229,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536229",
+          "siglaTipo": "RPD",
+          "codTipo": 1051,
+          "numero": 10,
+          "ano": 0,
+          "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Requerimento de Retirada de Matéria da Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T11:15"
+        },
+        {
+          "id": 2536228,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536228",
+          "siglaTipo": "RPD",
+          "codTipo": 328,
+          "numero": 9,
+          "ano": 0,
+          "ementa": "Requerimento de Retirada de Matéria da Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-15T11:15"
+        },
+        {
+          "id": 2536021,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2536021",
+          "siglaTipo": "PRLP",
+          "codTipo": 891,
+          "numero": 6,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+          "dataApresentacao": "2025-07-14T22:43"
+        },
+        {
+          "id": 2535781,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535781",
+          "siglaTipo": "RPD",
+          "codTipo": 1051,
+          "numero": 8,
+          "ano": 0,
+          "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Requerimento de Retirada de Matéria da Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-14T19:55"
+        },
+        {
+          "id": 2535779,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535779",
+          "siglaTipo": "RPD",
+          "codTipo": 328,
+          "numero": 7,
+          "ano": 0,
+          "ementa": "Requerimento de Retirada de Matéria da Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-14T19:55"
+        },
+        {
+          "id": 2535565,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535565",
+          "siglaTipo": "DTQ",
+          "codTipo": 1011,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-14T17:07"
+        },
+        {
+          "id": 2535567,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535567",
+          "siglaTipo": "RPD",
+          "codTipo": 1054,
+          "numero": 6,
+          "ano": 0,
+          "ementa": "Votação Nominal do Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Destaque de Emenda - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-14T17:07"
+        },
+        {
+          "id": 2535504,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535504",
+          "siglaTipo": "RPD",
+          "codTipo": 1051,
+          "numero": 5,
+          "ano": 0,
+          "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Requerimento de Retirada de Matéria da Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-14T15:41"
+        },
+        {
+          "id": 2535501,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535501",
+          "siglaTipo": "RPD",
+          "codTipo": 328,
+          "numero": 4,
+          "ano": 0,
+          "ementa": "Requerimento de Retirada de Matéria da Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-14T15:41"
+        },
+        {
+          "id": 2535490,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535490",
+          "siglaTipo": "PRLP",
+          "codTipo": 891,
+          "numero": 5,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+          "dataApresentacao": "2025-07-14T15:10"
+        },
+        {
+          "id": 2535467,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535467",
+          "siglaTipo": "PRLP",
+          "codTipo": 891,
+          "numero": 4,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+          "dataApresentacao": "2025-07-14T14:26"
+        },
+        {
+          "id": 2535451,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535451",
+          "siglaTipo": "RPD",
+          "codTipo": 1051,
+          "numero": 3,
+          "ano": 0,
+          "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)-Requerimento de Retirada de Matéria da Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-14T13:31"
+        },
+        {
+          "id": 2535450,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535450",
+          "siglaTipo": "RPD",
+          "codTipo": 332,
+          "numero": 2,
+          "ano": 0,
+          "ementa": "Requerimento de Votação Nominal - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-14T13:31"
+        },
+        {
+          "id": 2535449,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535449",
+          "siglaTipo": "RPD",
+          "codTipo": 328,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Requerimento de Retirada de Matéria da Pauta - PL 2159/2021 (Nº Anterior: PL 3729/2004)",
+          "dataApresentacao": "2025-07-14T13:31"
+        },
+        {
+          "id": 2535202,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2535202",
+          "siglaTipo": "PRLP",
+          "codTipo": 891,
+          "numero": 3,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+          "dataApresentacao": "2025-07-11T13:36"
+        },
+        {
+          "id": 2533431,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2533431",
+          "siglaTipo": "PRLP",
+          "codTipo": 891,
+          "numero": 2,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências. NOVA EMENTA: Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de 12 de fevereiro de 1998, e 9.985, de 18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+          "dataApresentacao": "2025-07-08T21:42"
+        },
+        {
+          "id": 2284001,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2284001",
+          "siglaTipo": "DVT",
+          "codTipo": 270,
+          "numero": 27,
+          "ano": 0,
+          "ementa": "DECLARAÇÃO ESCRITA DE VOTO EM REQUERIMENTO DE RETIRADA DE PAUTA DO PROJETO DE LEI 3729/2004",
+          "dataApresentacao": "2021-05-21T17:14"
+        },
+        {
+          "id": 2283970,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2283970",
+          "siglaTipo": "DVT",
+          "codTipo": 270,
+          "numero": 26,
+          "ano": 0,
+          "ementa": "DECLARAÇÃO DE VOTO: NÃO - ITEM REQUERIMENTO DE RETIRADA DE PAUTA",
+          "dataApresentacao": "2021-05-21T13:43"
+        },
+        {
+          "id": 2283353,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2283353",
+          "siglaTipo": "RDF",
+          "codTipo": 197,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental; regulamenta o inciso IV do\n§ 1º do art. 225 da Constituição Federal; altera as Leis nºs 9.605, de\n12 de fevereiro de 1998, e 9.985, de\n18 de julho de 2000; revoga dispositivo da Lei nº 7.661, de 16 de maio de 1988; e dá outras providências.",
+          "dataApresentacao": "2021-05-13T17:50"
+        },
+        {
+          "id": 2282759,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282759",
+          "siglaTipo": "SSP",
+          "codTipo": 509,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "",
+          "dataApresentacao": "2021-05-12T22:01"
+        },
+        {
+          "id": 2282750,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282750",
+          "siglaTipo": "PRLE",
+          "codTipo": 1001,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T21:27"
+        },
+        {
+          "id": 2282737,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282737",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 100,
+          "ano": 0,
+          "ementa": "A presente emenda retira do texto os artigos que impactam os povos indígenas, ao flexibilizar as regras de licenciamento ambiental em terras indígenas.",
+          "dataApresentacao": "2021-05-12T20:29"
+        },
+        {
+          "id": 2282728,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282728",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 99,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T19:39"
+        },
+        {
+          "id": 2282758,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282758",
+          "siglaTipo": "PEP",
+          "codTipo": 442,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer às Emendas de Plenário proferido pelo Relator, Dep. Neri Geller (PP-MT), pela Comissão de Constituição e Justiça e de Cidadania, que conclui pela constitucionalidade, juridicidade e técnica legislativa.",
+          "dataApresentacao": "2021-05-12T19:14"
+        },
+        {
+          "id": 2282757,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282757",
+          "siglaTipo": "PEP",
+          "codTipo": 442,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer às Emendas de Plenário proferido pelo Relator, Dep. Neri Geller (PP-MT), pela Comissão de Finanças e Tributação, que conclui pela não implicação da matéria em aumento ou diminuição da receita ou da despesa públicas, não cabendo pronunciamento quanto à adequação financeira e orçamentária; e, no mérito, pela aprovação das Emendas nºs 6, 29, 56, 60, 66, 81, 82, 89 e 96, na forma da Subemenda Substitutiva adotada pelo Relator da CMADS, e pela rejeição das demais emendas com apoiamento regimental.",
+          "dataApresentacao": "2021-05-12T19:14"
+        },
+        {
+          "id": 2282756,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282756",
+          "siglaTipo": "PEP",
+          "codTipo": 442,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer às Emendas de Plenário proferido pelo Relator, Dep. Neri Geller (PP-MT), pela Comissão de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural, que conclui pela aprovação das Emendas de Plenário nºs 6, 29, 56, 60, 66, 81, 82, 89 e 96, na forma da Subemenda Substitutiva adotada pelo Relator da CMADS, e pela rejeição das demais emendas com apoiamento regimental.",
+          "dataApresentacao": "2021-05-12T19:14"
+        },
+        {
+          "id": 2282755,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282755",
+          "siglaTipo": "PEP",
+          "codTipo": 442,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer às Emendas de Plenário proferido pelo Relator, Dep. Neri Geller (PP-MT), pela Comissão de Meio Ambiente e Desenvolvimento Sustentável, que conclui pela aprovação das Emendas de Plenário nºs 6, 29, 56, 60, 66, 81, 82, 89 e 96, na forma da Subemenda Substitutiva apresentada, e pela rejeição das demais emendas com apoiamento regimental.",
+          "dataApresentacao": "2021-05-12T19:14"
+        },
+        {
+          "id": 2282713,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282713",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 98,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T19:10"
+        },
+        {
+          "id": 2282711,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282711",
+          "siglaTipo": "SBT",
+          "codTipo": 255,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "",
+          "dataApresentacao": "2021-05-12T18:58"
+        },
+        {
+          "id": 2282710,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282710",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 97,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T18:50"
+        },
+        {
+          "id": 2282668,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282668",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 96,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do §1º do art.225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T16:29"
+        },
+        {
+          "id": 2282666,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282666",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 95,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do §1º do art.225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T16:25"
+        },
+        {
+          "id": 2282656,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282656",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 94,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências",
+          "dataApresentacao": "2021-05-12T16:06"
+        },
+        {
+          "id": 2282650,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282650",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 93,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências",
+          "dataApresentacao": "2021-05-12T15:59"
+        },
+        {
+          "id": 2282641,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282641",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 92,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T15:30"
+        },
+        {
+          "id": 2282635,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282635",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 91,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T15:18"
+        },
+        {
+          "id": 2282634,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282634",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 90,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T15:18"
+        },
+        {
+          "id": 2282631,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282631",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 89,
+          "ano": 0,
+          "ementa": "Exclui o licenciamento ambiental de empreendimentos minerários.",
+          "dataApresentacao": "2021-05-12T15:12"
+        },
+        {
+          "id": 2282630,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282630",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 88,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental em geral e o específico de empreendimentos minerários, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T15:05"
+        },
+        {
+          "id": 2282624,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282624",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 87,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T14:42"
+        },
+        {
+          "id": 2282709,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282709",
+          "siglaTipo": "PPP",
+          "codTipo": 192,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer proferido em Plenário pelo Relator, Dep. Neri Geller (PP-MT), pela Comissão de Constituição e Justiça e de Cidadania, que conclui pela constitucionalidade, juridicidade e técnica legislativa.",
+          "dataApresentacao": "2021-05-12T13:55"
+        },
+        {
+          "id": 2282708,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282708",
+          "siglaTipo": "PPP",
+          "codTipo": 192,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer proferido em Plenário pelo Relator, Dep. Neri Geller (PP-MT), pela Comissão de Finanças e Tributação, que conclui pela não implicação da matéria em aumento ou diminuição da receita ou da despesa públicas, não cabendo pronunciamento quanto à adequação financeira e orçamentária; e, no mérito, pela rejeição dos Projetos de Lei 3829/2015, 5435/2005, 5918/2013, 1147/2007, 2029/2007, 5246/2019, 1700/2011, 5716/2013, 4093/2019, 6908/2013 e 5818/2016, e pela aprovação dos Projetos de Lei 3729/2004, 3957/2004, 5576/2015, 2941/2011, 358/2011, 10238/2018, 8062/2014, 1546/2015, 4429/2016, 7143/2017, 877/2017, 6411/2016, e 9177/2017 na forma do Substitutivo adotado.",
+          "dataApresentacao": "2021-05-12T13:55"
+        },
+        {
+          "id": 2282602,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282602",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 86,
+          "ano": 0,
+          "ementa": "Adiciona artigo que determina distribuição de processos por ordem cronológica",
+          "dataApresentacao": "2021-05-12T13:01"
+        },
+        {
+          "id": 2282589,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282589",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 85,
+          "ano": 0,
+          "ementa": "Altera o art. 8º do substitutivo ao PL nº 3.729/2004, para manter a iniciativa de facilitar a manutenção e melhoramento da infraestrutura de instalações pré-existentes, sem, contudo, abrir a possibilidade de dispensa de licenciamento ambiental de empreendimentos de alto impacto ambiental.",
+          "dataApresentacao": "2021-05-12T12:42"
+        },
+        {
+          "id": 2282588,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282588",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 84,
+          "ano": 0,
+          "ementa": "Suprima-se o art. 29 do substitutivo ao PL nº 3.729/2004, que traz insegurança jurídica aos novos empreendimentos que poderão ser questionados por falta de estudos ambientais adequados.",
+          "dataApresentacao": "2021-05-12T12:41"
+        },
+        {
+          "id": 2282587,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282587",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 83,
+          "ano": 0,
+          "ementa": "Altera o artigo 29 para que, independentemente da titularidade de atividade ou empreendimento sujeito a licenciamento ambiental, no caso de implantação na área de estudo de outro já licenciado, possa ser aproveitado o diagnóstico constante no estudo ambiental anterior, desde que elaborado a menos de 4 (quatro) anos.",
+          "dataApresentacao": "2021-05-12T12:41"
+        },
+        {
+          "id": 2282583,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282583",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 82,
+          "ano": 0,
+          "ementa": "Altera o § 6º, do art. 5º, do PL 3729/2004.",
+          "dataApresentacao": "2021-05-12T12:26"
+        },
+        {
+          "id": 2282581,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282581",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 81,
+          "ano": 0,
+          "ementa": "Insere o art. 11 no PL 3729/2004, para simplificar o licenciamento de novos empreendimentos ou atividades, na mesma área de influência direta de empreendimentos similares já licenciados.",
+          "dataApresentacao": "2021-05-12T12:25"
+        },
+        {
+          "id": 2282578,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282578",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 80,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T12:09"
+        },
+        {
+          "id": 2282576,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282576",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 79,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T12:09"
+        },
+        {
+          "id": 2282573,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282573",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 78,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T12:09"
+        },
+        {
+          "id": 2282572,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282572",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 77,
+          "ano": 0,
+          "ementa": "Suprime o art. 9º",
+          "dataApresentacao": "2021-05-12T12:03"
+        },
+        {
+          "id": 2282571,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282571",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 76,
+          "ano": 0,
+          "ementa": "Adiciona o art. 39-A no substitutivo",
+          "dataApresentacao": "2021-05-12T12:03"
+        },
+        {
+          "id": 2282570,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282570",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 75,
+          "ano": 0,
+          "ementa": "Suprime os arts. 38 e 39 e altera a redação do art. 38",
+          "dataApresentacao": "2021-05-12T12:03"
+        },
+        {
+          "id": 2282568,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282568",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 74,
+          "ano": 0,
+          "ementa": "Suprime o art. 40, § 4º.",
+          "dataApresentacao": "2021-05-12T12:03"
+        },
+        {
+          "id": 2282567,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282567",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 73,
+          "ano": 0,
+          "ementa": "Adiciona Capítulo referente a Avaliação Ambiental Estratégica e ao Zoneamento Ecológico-Econômico",
+          "dataApresentacao": "2021-05-12T12:02"
+        },
+        {
+          "id": 2282565,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282565",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 72,
+          "ano": 0,
+          "ementa": "Acrescenta artigo para adequar o pl à ADIn 3378",
+          "dataApresentacao": "2021-05-12T12:02"
+        },
+        {
+          "id": 2282563,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282563",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 71,
+          "ano": 0,
+          "ementa": "Altera a redação do art. 60",
+          "dataApresentacao": "2021-05-12T12:02"
+        },
+        {
+          "id": 2282562,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282562",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 70,
+          "ano": 0,
+          "ementa": "Altera a redação do art. 21",
+          "dataApresentacao": "2021-05-12T12:01"
+        },
+        {
+          "id": 2282560,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282560",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 69,
+          "ano": 0,
+          "ementa": "Altera a redação do art. 20",
+          "dataApresentacao": "2021-05-12T12:01"
+        },
+        {
+          "id": 2282559,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282559",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 68,
+          "ano": 0,
+          "ementa": "Altera a redação do art. 17, §1º",
+          "dataApresentacao": "2021-05-12T12:01"
+        },
+        {
+          "id": 2282558,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282558",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 67,
+          "ano": 0,
+          "ementa": "Inclui o inciso IV no art. 15",
+          "dataApresentacao": "2021-05-12T12:01"
+        },
+        {
+          "id": 2282556,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282556",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 66,
+          "ano": 0,
+          "ementa": "Altera a redação do art. 11, caput.",
+          "dataApresentacao": "2021-05-12T12:01"
+        },
+        {
+          "id": 2282554,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282554",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 65,
+          "ano": 0,
+          "ementa": "Suprime os incisos VI, VII, IX e X, do art. 8º",
+          "dataApresentacao": "2021-05-12T12:01"
+        },
+        {
+          "id": 2282516,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282516",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 64,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T10:42"
+        },
+        {
+          "id": 2282505,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282505",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 63,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental e a avaliação ambiental estratégica, e dá outras providências.",
+          "dataApresentacao": "2021-05-12T09:49"
+        },
+        {
+          "id": 2282480,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282480",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 62,
+          "ano": 0,
+          "ementa": "Suprima-se o art. 54 do Substitutivo apresentado pelo Relator.",
+          "dataApresentacao": "2021-05-11T19:56"
+        },
+        {
+          "id": 2282479,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282479",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 61,
+          "ano": 0,
+          "ementa": "Dê-se ao art. 17 do Substitutivo apresentado pelo Relatora seguinte redação:",
+          "dataApresentacao": "2021-05-11T19:56"
+        },
+        {
+          "id": 2282478,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282478",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 60,
+          "ano": 0,
+          "ementa": "Classifica as Barragens de Irrigação como de utilidade pública federal",
+          "dataApresentacao": "2021-05-11T19:42"
+        },
+        {
+          "id": 2282363,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282363",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 59,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Modificativa Artigo 17 (versão 2)",
+          "dataApresentacao": "2021-05-11T15:46"
+        },
+        {
+          "id": 2282360,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282360",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 58,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T15:33"
+        },
+        {
+          "id": 2282355,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282355",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 53,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T15:27"
+        },
+        {
+          "id": 2282356,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282356",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 54,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T15:27"
+        },
+        {
+          "id": 2282357,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282357",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 55,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T15:27"
+        },
+        {
+          "id": 2282358,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282358",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 56,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T15:27"
+        },
+        {
+          "id": 2282359,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282359",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 57,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T15:27"
+        },
+        {
+          "id": 2282353,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282353",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 52,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T15:26"
+        },
+        {
+          "id": 2282345,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282345",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 51,
+          "ano": 0,
+          "ementa": "Suprima-se o art. 21 do Substitutivo apresentado pelo Relator.",
+          "dataApresentacao": "2021-05-11T14:46"
+        },
+        {
+          "id": 2282344,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282344",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 50,
+          "ano": 0,
+          "ementa": "Suprima-se o art. 9º do Substitutivo apresentado pelo Relator.",
+          "dataApresentacao": "2021-05-11T14:46"
+        },
+        {
+          "id": 2282343,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282343",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 49,
+          "ano": 0,
+          "ementa": "Suprima-se o § 5º do art. 13 do Substitutivo apresentado pelo Relator.",
+          "dataApresentacao": "2021-05-11T14:46"
+        },
+        {
+          "id": 2282342,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282342",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 48,
+          "ano": 0,
+          "ementa": "O inciso X do art. 3º do Substitutivo apresentado pelo Relator passa a vigorar com a seguinte redação:",
+          "dataApresentacao": "2021-05-11T14:46"
+        },
+        {
+          "id": 2282340,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282340",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 47,
+          "ano": 0,
+          "ementa": "O inciso III do art. 2º do Substitutivo apresentado pelo Relator passa a vigorar com a seguinte redação:",
+          "dataApresentacao": "2021-05-11T14:46"
+        },
+        {
+          "id": 2282338,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282338",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 46,
+          "ano": 0,
+          "ementa": "Dê-se ao art. 21 do Substitutivo apresentado pelo Relator a seguinte redação:",
+          "dataApresentacao": "2021-05-11T14:46"
+        },
+        {
+          "id": 2282337,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282337",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 45,
+          "ano": 0,
+          "ementa": "O § 2º do art. 1º do Substitutivo apresentado pelo Relator passa a vigorar com a seguinte redação:",
+          "dataApresentacao": "2021-05-11T14:46"
+        },
+        {
+          "id": 2282336,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282336",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 44,
+          "ano": 0,
+          "ementa": "O art. 39 do Substitutivo apresentado pelo Relator passa a vigorar com a seguinte redação:",
+          "dataApresentacao": "2021-05-11T14:45"
+        },
+        {
+          "id": 2282335,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282335",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 43,
+          "ano": 0,
+          "ementa": "O art. 4º do Substitutivo apresentado pelo Relator passa a ter a seguinte redação:",
+          "dataApresentacao": "2021-05-11T14:45"
+        },
+        {
+          "id": 2282334,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282334",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 42,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:45"
+        },
+        {
+          "id": 2282333,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282333",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 41,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:45"
+        },
+        {
+          "id": 2282332,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282332",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 40,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:45"
+        },
+        {
+          "id": 2282331,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282331",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 39,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:45"
+        },
+        {
+          "id": 2282330,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282330",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 38,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:45"
+        },
+        {
+          "id": 2282329,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282329",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 37,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:45"
+        },
+        {
+          "id": 2282328,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282328",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 36,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:45"
+        },
+        {
+          "id": 2282327,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282327",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 35,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:45"
+        },
+        {
+          "id": 2282326,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282326",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 34,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:44"
+        },
+        {
+          "id": 2282325,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282325",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 33,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:44"
+        },
+        {
+          "id": 2282324,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282324",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 32,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:43"
+        },
+        {
+          "id": 2282319,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282319",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 28,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:42"
+        },
+        {
+          "id": 2282321,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282321",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 29,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:42"
+        },
+        {
+          "id": 2282322,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282322",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 30,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:42"
+        },
+        {
+          "id": 2282323,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282323",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 31,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T14:42"
+        },
+        {
+          "id": 2282301,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282301",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 27,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T13:57"
+        },
+        {
+          "id": 2282300,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282300",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 26,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T13:57"
+        },
+        {
+          "id": 2282299,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282299",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 25,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T13:56"
+        },
+        {
+          "id": 2282297,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282297",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 24,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir o item V do Art 5°",
+          "dataApresentacao": "2021-05-11T13:05"
+        },
+        {
+          "id": 2282274,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282274",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 7,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Modificativa Inciso III do Art. 3º",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282275,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282275",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 8,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Modificativa Artigo 21",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282280,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282280",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 9,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Modificativa Artigo 17",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282282,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282282",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 10,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Modificativa Artigo 4°",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282283,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282283",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 11,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir Artigo 58",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282284,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282284",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 12,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir Artigo 54",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282285,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282285",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 13,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir Artigo 49",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282286,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282286",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 14,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir Artigo 22 §§ 1°, 2° e 5°",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282287,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282287",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 15,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir Artigo 21",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282288,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282288",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 16,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir Artigo 17 alínea c do inciso II, e o inciso III",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282289,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282289",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 17,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir Artigo 16",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282290,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282290",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 18,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir Artigo 13° §§ 1°, 2° e 5°",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282291,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282291",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 19,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir Artigo 11",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282292,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282292",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 20,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir Artigo 9°",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282293,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282293",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 21,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir Artigo 8°",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282295,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282295",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 22,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir § 4º do Artigo 7°",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282296,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282296",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 23,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Suprimir §§ 4º e 5º do Artigo 5°",
+          "dataApresentacao": "2021-05-11T13:04"
+        },
+        {
+          "id": 2282273,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282273",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 6,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Modificativa Inciso III Art. 6º",
+          "dataApresentacao": "2021-05-11T13:03"
+        },
+        {
+          "id": 2282272,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282272",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 5,
+          "ano": 0,
+          "ementa": "Emenda PL 3729-2004 - Modificativa Arts. 38, 39, 40, 41 e 42",
+          "dataApresentacao": "2021-05-11T13:03"
+        },
+        {
+          "id": 2282249,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282249",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 4,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-11T11:44"
+        },
+        {
+          "id": 2282223,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282223",
+          "siglaTipo": "EMP",
+          "codTipo": 131,
+          "numero": 3,
+          "ano": 0,
+          "ementa": "Acrescente-se ao Projeto de Lei nº 3729, de 2004, ao artigo 12, os seguintes parágrafos...",
+          "dataApresentacao": "2021-05-11T10:03"
+        },
+        {
+          "id": 2282222,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282222",
+          "siglaTipo": "EMP",
+          "codTipo": 131,
+          "numero": 2,
+          "ano": 0,
+          "ementa": "Acrescente-se ao Projeto de Lei nº 3729, de 2004, ao artigo 4º do presente relatório apresentado, os seguintes parágrafos, renumerando os §3º ao 9º :",
+          "dataApresentacao": "2021-05-11T10:03"
+        },
+        {
+          "id": 2282219,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282219",
+          "siglaTipo": "EMP",
+          "codTipo": 131,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Acrescente-se ao Projeto de Lei nº 3729, de 2004, onde couber, o seguinte artigo",
+          "dataApresentacao": "2021-05-11T10:03"
+        },
+        {
+          "id": 2282158,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2282158",
+          "siglaTipo": "PRLP",
+          "codTipo": 891,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Dispõe sobre o licenciamento ambiental, regulamenta o inciso IV do § 1º do art. 225 da Constituição Federal, e dá outras providências.",
+          "dataApresentacao": "2021-05-10T15:49"
+        },
+        {
+          "id": 2209244,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2209244",
+          "siglaTipo": "REQ",
+          "codTipo": 305,
+          "numero": 1821,
+          "ano": 2019,
+          "ementa": "Requer a desapensação do PL nº 3.729/2004, apensado ao PL nº 2.942/2019.",
+          "dataApresentacao": "2019-06-25T18:03"
+        },
+        {
+          "id": 2208558,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2208558",
+          "siglaTipo": "REQ",
+          "codTipo": 304,
+          "numero": 1779,
+          "ano": 2019,
+          "ementa": "Requer a apensação do Projeto de Lei nº 9.746/2018 ao Projeto de Lei nº 3.729/2004.",
+          "dataApresentacao": "2019-06-18T16:14"
+        },
+        {
+          "id": 2155898,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2155898",
+          "siglaTipo": "REQ",
+          "codTipo": 305,
+          "numero": 7438,
+          "ano": 2017,
+          "ementa": "Requer a desapensação do Projeto de Lei nº 2.163 de 2011, de autoria do parlamentar que subscreve, do Projeto de Lei nº 3.729 de 2004.",
+          "dataApresentacao": "2017-10-11T15:16"
+        },
+        {
+          "id": 2148576,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2148576",
+          "siglaTipo": "REQ",
+          "codTipo": 304,
+          "numero": 7058,
+          "ano": 2017,
+          "ementa": "Solicita a apensação do Projeto de Lei nº 2.163 de 2011 ao Projeto de Lei nº 3.729 de 2004.",
+          "dataApresentacao": "2017-08-22T15:57"
+        },
+        {
+          "id": 2146869,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2146869",
+          "siglaTipo": "REQ",
+          "codTipo": 304,
+          "numero": 6961,
+          "ano": 2017,
+          "ementa": "Solicita a apensação do Projeto de Lei nº 4.663 de 2016 ao Projeto de Lei nº 3.729 de 2004.",
+          "dataApresentacao": "2017-08-09T11:11"
+        },
+        {
+          "id": 2139865,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2139865",
+          "siglaTipo": "REQ",
+          "codTipo": 304,
+          "numero": 6634,
+          "ano": 2017,
+          "ementa": "Solicita a apensação do Projeto de Lei  nº 6.411 de 2016  ao Projeto de Lei nº 3.729 de 2004.",
+          "dataApresentacao": "2017-05-31T18:13"
+        },
+        {
+          "id": 2128233,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2128233",
+          "siglaTipo": "REQ",
+          "codTipo": 392,
+          "numero": 6212,
+          "ano": 2017,
+          "ementa": "Requer regime de urgência na apreciação do Projeto de Lei nº 3.729, de 2004, e seus apensos.",
+          "dataApresentacao": "2017-04-04T18:10"
+        },
+        {
+          "id": 2121081,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2121081",
+          "siglaTipo": "REQ",
+          "codTipo": 305,
+          "numero": 5703,
+          "ano": 2016,
+          "ementa": "Requer a desapensação do PL n° 1.700/2011, que encontra-se apensado ao PL n° 3.729/2004.",
+          "dataApresentacao": "2016-12-13T20:44"
+        },
+        {
+          "id": 2093435,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2093435",
+          "siglaTipo": "REQ",
+          "codTipo": 308,
+          "numero": 5020,
+          "ano": 2016,
+          "ementa": "Requer o reexame do despacho inicial ao Projeto de Lei nº 3.729, de 2004, para incluir o exame de mérito pela Comissão de Constituição e Justiça e de Cidadania.",
+          "dataApresentacao": "2016-08-09T17:36"
+        },
         {
           "id": 1513916,
           "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/1513916",
@@ -102,7 +1872,7 @@
     "links": [
       {
         "rel": "self",
-        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-127"
+        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes/257161-483"
       }
     ]
   }

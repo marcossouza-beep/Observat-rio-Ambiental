@@ -2,7 +2,7 @@
   "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/257161/temas",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-15T12:51:04.822Z",
+  "gravadaEm": "2026-10-15T12:54:37.037Z",
   "corpo": {
     "dados": [
       {
