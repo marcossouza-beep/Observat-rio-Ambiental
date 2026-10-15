@@ -108,6 +108,70 @@ export function filtrarEspecificacao(spec: Record<string, unknown>, padrao: RegE
 
 type Passo = { fonte: string; nome: string; rodar: (ctx: Ctx) => Promise<void> }
 
+/** Assembleias do Norte com o SAPL (Interlegis) respondendo — Fase 5 (docs/LEVANTAMENTO.md). */
+const SAPL_NORTE: Record<string, string> = {
+  to: 'https://sapl.al.to.leg.br',
+  ac: 'https://sapl.al.ac.leg.br',
+  am: 'https://sapl.al.am.leg.br',
+  ro: 'https://sapl.al.ro.leg.br',
+  rr: 'https://sapl.al.rr.leg.br',
+}
+
+const resultados = (g: Gravada) => (((g.corpo as { results?: unknown })?.results as Record<string, unknown>[]) || [])
+
+const PASSOS_SAPL: Passo[] = [
+  {
+    fonte: 'sapl',
+    nome: 'especificacao',
+    async rodar() {
+      // Especificação da API (drf-spectacular), reduzida às partes que o conector usa
+      for (const url of [`${SAPL_NORTE.to}/api/schema/?format=json`, `${SAPL_NORTE.to}/api/schema/`]) {
+        const g = await buscar(url, 100000)
+        if (g.status === 200 && g.corpo && typeof g.corpo === 'object') {
+          g.corpo = filtrarEspecificacao(g.corpo as Record<string, unknown>, /^\/api\/(materia|base\/autor|parlamentares\/parlamentar|norma)/)
+          await salvar('sapl', 'especificacao', g)
+          return
+        }
+        await salvar('sapl', 'especificacao-tentativa', g)
+      }
+    },
+  },
+  ...Object.entries(SAPL_NORTE).map(
+    ([uf, base]): Passo => ({
+      fonte: 'sapl',
+      nome: `${uf}-materias`,
+      async rodar(ctx) {
+        const g = await salvar('sapl', `${uf}-materias`, await buscar(`${base}/api/materia/materialegislativa/?page_size=20&ano=${new Date().getFullYear()}`))
+        await salvar('sapl', `${uf}-materias-padrao`, await buscar(`${base}/api/materia/materialegislativa/?page_size=5`))
+        ctx[`sapl_${uf}`] = resultados(g)
+          .slice(0, 3)
+          .map((m) => m.id)
+      },
+    }),
+  ),
+  {
+    fonte: 'sapl',
+    nome: 'detalhes',
+    async rodar(ctx) {
+      for (const [uf, base] of Object.entries(SAPL_NORTE)) {
+        const ids = (ctx[`sapl_${uf}`] as number[] | undefined) || []
+        if (!ids.length) continue
+        await salvar('sapl', `${uf}-tipos`, await buscar(`${base}/api/materia/tipomaterialegislativa/?page_size=100`, 100))
+        await salvar('sapl', `${uf}-status`, await buscar(`${base}/api/materia/statustramitacao/?page_size=100`, 100))
+        await salvar('sapl', `${uf}-unidades`, await buscar(`${base}/api/materia/unidadetramitacao/?page_size=100`, 100))
+        for (const [i, id] of ids.slice(0, uf === 'to' ? 3 : 1).entries()) {
+          await salvar('sapl', `${uf}-materia-${i}`, await buscar(`${base}/api/materia/materialegislativa/${id}/`))
+          await salvar('sapl', `${uf}-tramitacao-${i}`, await buscar(`${base}/api/materia/tramitacao/?materia=${id}&page_size=100`))
+          const aut = await salvar('sapl', `${uf}-autoria-${i}`, await buscar(`${base}/api/materia/autoria/?materia=${id}`))
+          const autor = resultados(aut)[0]?.autor
+          if (autor && i === 0) await salvar('sapl', `${uf}-autor`, await buscar(`${base}/api/base/autor/${autor}/`))
+        }
+        if (uf === 'to') await salvar('sapl', 'to-parlamentares', await buscar(`${base}/api/parlamentares/parlamentar/?page_size=40`))
+      }
+    },
+  },
+]
+
 const PASSOS: Passo[] = [
   // ---------------- Câmara ----------------
   {
@@ -390,7 +454,7 @@ async function main() {
   const ctx: Ctx = {}
   await mkdir(saida, { recursive: true })
   const fontes = filtro ? filtro.split(',') : null
-  for (const p of PASSOS.filter((x) => !fontes || fontes.includes(x.fonte))) {
+  for (const p of [...PASSOS, ...PASSOS_SAPL].filter((x) => !fontes || fontes.includes(x.fonte))) {
     try {
       await p.rodar(ctx)
     } catch (e) {
