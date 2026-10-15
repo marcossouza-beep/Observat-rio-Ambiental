@@ -138,8 +138,9 @@ const PASSOS: Passo[] = [
       async rodar(ctx) {
         const g = await salvar('camara', `pl3729${sufixo.replace('/', '-') || '-ficha'}`, await buscar(`${CAMARA}/proposicoes/${ctx.camaraLic}${sufixo}`, sufixo === '/tramitacoes' ? 400 : CORTE))
         if (sufixo === '/votacoes') {
-          const v = ((dados(g) as { id: string; siglaOrgao: string }[]) || []).filter((x) => x.siglaOrgao === 'PLEN')
-          ctx.camaraVotacao = v[v.length - 1]?.id ?? v[0]?.id
+          // Uma votação nominal (com placar na descrição), para gravar os votos individuais
+          const v = ((dados(g) as { id: string; siglaOrgao: string; descricao?: string }[]) || []).filter((x) => x.siglaOrgao === 'PLEN')
+          ctx.camaraVotacao = v.find((x) => /Sim: \d+/.test(x.descricao || ''))?.id ?? v[0]?.id
         }
       },
     }),
@@ -250,8 +251,11 @@ const PASSOS: Passo[] = [
     fonte: 'senado',
     nome: 'processo-recentes',
     async rodar() {
-      await salvar('senado', 'processo-recentes', await buscar(`${SENADO}/processo?dataInicioApresentacao=${compacto(dia(-15))}&dataFimApresentacao=${compacto(dia())}&tramitando=S`))
-      await salvar('senado', 'processo-tramitando-recentes', await buscar(`${SENADO}/processo?tramitando=S&dataInicioTramitacao=${dia(-3)}`))
+      // "numdias": atualizados nos últimos N dias (máximo 30), segundo a especificação
+      await salvar('senado', 'processo-atualizados', await buscar(`${SENADO}/processo?numdias=2&tramitando=S`, 60))
+      await salvar('senado', 'processo-assunto-meio-ambiente', await buscar(`${SENADO}/processo?codAssuntoEspecifico=146&tramitando=S&numdias=30`, 60))
+      await salvar('senado', 'processo-termo', await buscar(`${SENADO}/processo?termo=ambiental&tramitando=S&numdias=30`, 60))
+      for (const ref of ['tipos-situacao', 'tipos-atualizacao', 'assuntos', 'siglas']) await salvar('senado', `ref-${ref}`, await buscar(`${SENADO}/processo/${ref}`, 2000))
     },
   },
   {
