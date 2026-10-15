@@ -182,10 +182,10 @@ describe('coleta da Câmara e do Senado', () => {
     expect(r.avisos).toEqual([])
     expect(r.ok).toBe(true)
     expect(r.itens).toBe(4)
-    const t = await payload.find({ collection: 'tramitacoes', where: { chaveOrigem: { in: ['dou:9000001:publicacao', 'dou:9000002'] } }, depth: 0 })
+    const t = await payload.find({ collection: 'tramitacoes', where: { chaveOrigem: { in: ['dou:9000001:publicacao', 'dou:9000002:veto:PL-2159-2021'] } }, depth: 0 })
     expect(t.docs.map((x) => [x.chaveOrigem, x.tipoEvento, x.proposicao]).sort()).toEqual([
       ['dou:9000001:publicacao', 'sancao', lic],
-      ['dou:9000002', 'veto', lic],
+      ['dou:9000002:veto:PL-2159-2021', 'veto', lic],
     ])
     const lei = (await payload.find({ collection: 'versoes', where: { chaveOrigem: { equals: 'dou:9000001' } } })).docs[0]
     expect(lei).toMatchObject({ tipo: 'norma' })

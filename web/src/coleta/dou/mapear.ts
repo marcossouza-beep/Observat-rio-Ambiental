@@ -109,15 +109,32 @@ export function numeroEAno(a: AtoDou): { numero: number; ano: number } | null {
   return numero && ano ? { numero, ano } : null
 }
 
-/** Mensagem de veto: "…decidi vetar parcialmente… o Projeto de Lei nº 2.951, de 2024…" */
-export function vetoDaMensagem(a: AtoDou): { total: boolean; identificacao: string } | null {
+/**
+ * Mensagens de veto: "…decidi vetar parcialmente… o Projeto de Lei nº 2.951, de 2024…".
+ * O Diário Oficial publica várias mensagens num só ato ("Despachos do Presidente da República"): devolve todas.
+ */
+export function vetosDaMensagem(a: AtoDou): { total: boolean; identificacao: string; mensagem?: string }[] {
   const t = `${a.identifica}\n${a.texto}`
-  const veto = /vetar\s+(total|parcial)mente/i.exec(t)
-  if (!veto) return null
-  const pl = /Projeto de Lei( Complementar| de Convers[ãa]o)?\s+n[º°o]\s*([\d.]+),?\s+de\s+(\d{4})/i.exec(t)
-  if (!pl) return null
-  const sigla = /complementar/i.test(pl[1] || '') ? 'PLP' : /convers/i.test(pl[1] || '') ? 'PLV' : 'PL'
-  return { total: /total/i.test(veto[1]), identificacao: `${sigla} ${Number(pl[2].replace(/\./g, ''))}/${pl[3]}` }
+  // Cada mensagem começa em "MENSAGEM Nº 123" ou, na lista de despachos, em "Nº 123, de …"
+  const partes = t.split(/(?=\bMENSAGEM\s+N[º°o.]*\s*[\d.]+|(?:^|\n)N[º°o.]*\s*[\d.]+,\s+de\s)/i)
+  const achados = new Map<string, { total: boolean; identificacao: string; mensagem?: string }>()
+  for (const parte of partes) {
+    const veto = /vetar\s+(total|parcial)mente/i.exec(parte)
+    if (!veto) continue
+    const pl = /Projeto de Lei( Complementar| de Convers[ãa]o)?\s+n[º°o]\s*([\d.]+),?\s+de\s+(\d{4})/i.exec(parte.slice(veto.index))
+    if (!pl) continue
+    const sigla = /complementar/i.test(pl[1] || '') ? 'PLP' : /convers/i.test(pl[1] || '') ? 'PLV' : 'PL'
+    const identificacao = `${sigla} ${Number(pl[2].replace(/\./g, ''))}/${pl[3]}`
+    const mensagem = /N[º°o.]*\s*([\d.]+)/i.exec(parte)?.[1]?.replace(/\./g, '')
+    if (!achados.has(identificacao)) achados.set(identificacao, { total: /total/i.test(veto[1]), identificacao, mensagem })
+  }
+  return [...achados.values()]
+}
+
+/** A primeira mensagem de veto do ato (atalho para os testes e para atos de uma mensagem só). */
+export const vetoDaMensagem = (a: AtoDou) => {
+  const v = vetosDaMensagem(a)[0]
+  return v ? { total: v.total, identificacao: v.identificacao } : null
 }
 
 const onde = (a: AtoDou) => [a.secao === 'DO1E' || /extra/i.test(a.secao || '') ? 'edição extra' : 'Seção 1', a.edicao ? `ed. ${a.edicao}` : '', a.pagina ? `p. ${a.pagina}` : ''].filter(Boolean).join(', ')
@@ -126,28 +143,29 @@ const onde = (a: AtoDou) => [a.secao === 'DO1E' || /extra/i.test(a.secao || '') 
 export function classificarAto(
   a: AtoDou,
   ctx: { acompanhadas: Set<string>; descartadas: Set<string>; relevancia: (t: string) => number; notaMinima: number },
-): { evento?: EventoColetado; pacote?: PacoteProposicao; nota?: number } {
+): { eventos?: EventoColetado[]; pacote?: PacoteProposicao; nota?: number } {
   const chave = `dou:${a.id}`
   if (ctx.descartadas.has(chave)) return {}
-  const veto = vetoDaMensagem(a)
-  if (veto) {
-    if (!ctx.acompanhadas.has(veto.identificacao)) return {}
-    const msg = numeroEAno(a)
-    return {
-      evento: {
-        alvo: { chaves: [], identificacoes: [veto.identificacao] },
-        tramitacoes: [
-          {
-            chave,
-            data: a.data,
-            orgao: 'PR',
-            descricao: `Veto ${veto.total ? 'total' : 'parcial'} publicado no Diário Oficial${msg ? ` (Mensagem nº ${msg.numero}/${msg.ano})` : ''}, ${onde(a)}`,
-            tipoEvento: 'veto',
-            urlDocumento: a.url,
-          },
-        ],
-      },
-    }
+  const vetos = vetosDaMensagem(a)
+  if (vetos.length) {
+    const eventos = vetos
+      .filter((v) => ctx.acompanhadas.has(v.identificacao))
+      .map(
+        (v): EventoColetado => ({
+          alvo: { chaves: [], identificacoes: [v.identificacao] },
+          tramitacoes: [
+            {
+              chave: `${chave}:veto:${v.identificacao.replace(/\W+/g, '-')}`,
+              data: a.data,
+              orgao: 'PR',
+              descricao: `Veto ${v.total ? 'total' : 'parcial'} publicado no Diário Oficial${v.mensagem ? ` (Mensagem nº ${v.mensagem}/${a.data.slice(0, 4)})` : ''}, ${onde(a)}`,
+              tipoEvento: 'veto',
+              urlDocumento: a.url,
+            },
+          ],
+        }),
+      )
+    return { eventos }
   }
   const sigla = siglaDoAto(a)
   const na = numeroEAno(a)
@@ -166,7 +184,7 @@ export function classificarAto(
   // Lei de proposta acompanhada (pela lei gerada) ou medida provisória já acompanhada (pelo número)
   const conhecida = (norma && ctx.acompanhadas.has(norma)) || (sigla === 'MPV' && ctx.acompanhadas.has(ident)) || ctx.acompanhadas.has(chave)
   if (conhecida) {
-    return { evento: { alvo: { chaves: [norma, chave].filter((c): c is string => !!c), identificacoes: sigla === 'MPV' ? [ident] : [] }, tramitacoes: [publicacao], versoes: a.url ? [textoNovo] : [] } }
+    return { eventos: [{ alvo: { chaves: [norma, chave].filter((c): c is string => !!c), identificacoes: sigla === 'MPV' ? [ident] : [] }, tramitacoes: [publicacao], versoes: a.url ? [textoNovo] : [] }] }
   }
   const nota = ctx.relevancia(`${a.identifica} ${a.ementa} ${a.texto.slice(0, 3000)}`)
   if (nota < ctx.notaMinima) return { nota }

@@ -36,7 +36,7 @@ export function criarConectorDou(opcoes: { email?: string; senha?: string; baixa
             if (!ato) continue
             atos++
             const r = classificarAto(ato, ctx)
-            if (r.evento) eventos.push(r.evento)
+            if (r.eventos) eventos.push(...r.eventos)
             if (r.pacote) candidatos.push({ pacote: r.pacote, nota: r.nota ?? 0 })
           }
         }

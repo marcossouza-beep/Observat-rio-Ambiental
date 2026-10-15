@@ -13,18 +13,28 @@ export type Baixar = typeof fetch
 
 export class ErroInlabs extends Error {}
 
-/** Entra no INLABS e devolve o cookie de sessão. */
-export async function entrarInlabs(email: string, senha: string, baixar: Baixar = fetch): Promise<string> {
-  const r = await baixar(`${INLABS}/logar.php`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'text/html,application/xhtml+xml', 'User-Agent': USER_AGENT },
-    body: new URLSearchParams({ email, password: senha }).toString(),
-    redirect: 'manual',
-  })
-  const cookies = (r.headers.getSetCookie?.() || []).map((c) => c.split(';')[0]).filter(Boolean)
-  const sessao = cookies.find((c) => c.startsWith('inlabs_session_cookie='))
-  if (!sessao) throw new ErroInlabs(`INLABS recusou o login (HTTP ${r.status}). Confira os segredos INLABS_EMAIL e INLABS_SENHA.`)
-  return cookies.join('; ')
+/**
+ * Entra no INLABS e devolve o cookie de sessão. O INLABS às vezes recusa um login logo depois de outro
+ * (ex.: dois fluxos ao mesmo tempo): tenta de novo, com espera.
+ */
+export async function entrarInlabs(email: string, senha: string, baixar: Baixar = fetch, dormir = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))): Promise<string> {
+  let motivo = ''
+  for (let tentativa = 0; tentativa < 3; tentativa++) {
+    if (tentativa) await dormir(10_000 * tentativa)
+    const r = await baixar(`${INLABS}/logar.php`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'text/html,application/xhtml+xml', 'User-Agent': USER_AGENT },
+      body: new URLSearchParams({ email, password: senha }).toString(),
+      redirect: 'manual',
+    })
+    const cookies = (r.headers.getSetCookie?.() || []).map((c) => c.split(';')[0]).filter(Boolean)
+    if (cookies.some((c) => c.startsWith('inlabs_session_cookie='))) return cookies.join('; ')
+    // Mensagem da página de login (sem dados da conta), para entender a recusa
+    const corpo = r.status === 200 ? await r.text().catch(() => '') : ''
+    const aviso = /class="[^"]*(?:alert|erro|error)[^"]*"[^>]*>([^<]{3,200})</i.exec(corpo)?.[1] || /<title>([^<]{1,120})<\/title>/i.exec(corpo)?.[1] || ''
+    motivo = `HTTP ${r.status}${aviso ? `, página: "${aviso.trim()}"` : ''}`
+  }
+  throw new ErroInlabs(`INLABS recusou o login (${motivo}). Confira os segredos INLABS_EMAIL e INLABS_SENHA.`)
 }
 
 /**
