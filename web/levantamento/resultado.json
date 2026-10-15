@@ -1,0 +1,5192 @@
+{
+ "geradoEm": "2026-10-15T19:44:40.206Z",
+ "ambiente": "GitHub Actions",
+ "orgaos": [
+  {
+   "uf": "AC",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa do Acre",
+   "sigla": "Aleac",
+   "sondagens": [
+    {
+     "url": "https://www.al.ac.leg.br/",
+     "papel": "site",
+     "status": null,
+     "ms": 664,
+     "erro": "ECONNREFUSED"
+    },
+    {
+     "url": "https://aleac.ac.leg.br/",
+     "papel": "site",
+     "status": null,
+     "ms": 2118,
+     "erro": "ENOTFOUND"
+    },
+    {
+     "url": "https://sapl.al.ac.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": 200,
+     "tipo": "application/json",
+     "bytes": 1588,
+     "ms": 2625,
+     "sinais": {
+      "json": true,
+      "xml": false,
+      "sapl": true,
+      "citaSapl": false,
+      "registros": 19341,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 0
+     }
+    }
+   ]
+  },
+  {
+   "uf": "AC",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Acre",
+   "sigla": "DOE-AC",
+   "sondagens": [
+    {
+     "url": "https://www.diario.ac.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 8107,
+     "ms": 1489,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": true,
+      "bloqueio": false,
+      "titulo": "Di�rio Oficial do Estado do Acre",
+      "texto": 364
+     }
+    },
+    {
+     "url": "https://diario.ac.gov.br/",
+     "papel": "link",
+     "de": "https://www.diario.ac.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 8107,
+     "ms": 2544,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": true,
+      "bloqueio": false,
+      "titulo": "Di�rio Oficial do Estado do Acre",
+      "texto": 364
+     }
+    },
+    {
+     "url": "https://diario.ac.gov.br/normas.php",
+     "papel": "link",
+     "de": "https://www.diario.ac.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 8134,
+     "ms": 206,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 2,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Di�rio Oficial do Estado do Acre",
+      "texto": 3044
+     }
+    },
+    {
+     "url": "https://diario.ac.gov.br/recebimento/",
+     "papel": "link",
+     "de": "https://www.diario.ac.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 3807,
+     "ms": 211,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "",
+      "texto": 98
+     }
+    },
+    {
+     "url": "https://diario.ac.gov.br/ajuda.php",
+     "papel": "link",
+     "de": "https://www.diario.ac.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 13491,
+     "ms": 207,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 1,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Ajuda - Di�rio Oficial do Estado do Acre",
+      "texto": 5159
+     }
+    },
+    {
+     "url": "https://diario.ac.gov.br/contato.php",
+     "papel": "link",
+     "de": "https://www.diario.ac.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 4805,
+     "ms": 206,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": true,
+      "bloqueio": false,
+      "titulo": "Di�rio Oficial do Estado do Acre",
+      "texto": 235
+     }
+    },
+    {
+     "url": "https://diario.ac.gov.br/download.php?arquivo=KEQxQHI3IyEpRE8xNzkyMDY5MTQzMTY4NS5wZGY=",
+     "papel": "link",
+     "de": "https://www.diario.ac.gov.br/",
+     "status": 200,
+     "tipo": "application/pdf",
+     "bytes": 1911511,
+     "ms": 3913,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 846385
+     }
+    }
+   ]
+  },
+  {
+   "uf": "AL",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa de Alagoas",
+   "sigla": "ALE-AL",
+   "sondagens": [
+    {
+     "url": "https://www.al.al.leg.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 66356,
+     "ms": 2180,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 15,
+      "linksDados": [
+       "https://www.al.al.leg.br/rss-info"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Página Inicial — Assembleia Legislativa de Alagoas",
+      "texto": 3120
+     }
+    },
+    {
+     "url": "http://sapl.al.al.leg.br/",
+     "papel": "link",
+     "de": "https://www.al.al.leg.br/",
+     "status": 200,
+     "urlFinal": "https://sapl.al.al.leg.br/",
+     "tipo": "text/html",
+     "bytes": 18408,
+     "ms": 3297,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [
+       "https://sapl.al.al.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa de Alagoas",
+      "texto": 3295
+     }
+    },
+    {
+     "url": "https://www.al.al.leg.br/processo-legislativo/materias-legislativas",
+     "papel": "link",
+     "de": "https://www.al.al.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 49077,
+     "ms": 167,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 15,
+      "linksDados": [
+       "https://www.al.al.leg.br/rss-info"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Matérias Legislativas — Assembleia Legislativa de Alagoas",
+      "texto": 2447
+     }
+    },
+    {
+     "url": "https://www.al.al.leg.br/comunicacao/diario-oficial-eletronico-do-poder-legislativo",
+     "papel": "link",
+     "de": "https://www.al.al.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 64717,
+     "ms": 166,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 12,
+      "linksDados": [
+       "https://www.al.al.leg.br/rss-info",
+       "https://www.al.al.leg.br/comunicacao/diario-oficial-eletronico-do-poder-legislativo/RSS"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial Eletrônico da Assembleia Legislativa de Alagoas — Assembleia Legislativa de Alagoas",
+      "texto": 2869
+     }
+    },
+    {
+     "url": "http://sapl.al.al.leg.br/sapl_documentos/norma_juridica/2_texto_integral",
+     "papel": "link",
+     "de": "https://www.al.al.leg.br/",
+     "status": 200,
+     "urlFinal": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/1989/2/2_texto_integral.pdf",
+     "tipo": "application/pdf",
+     "bytes": 1905661,
+     "ms": 2466,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 981150
+     }
+    },
+    {
+     "url": "https://www.al.al.leg.br/comunicacao/noticias/ordem-do-dia_13-10-2026",
+     "papel": "link",
+     "de": "https://www.al.al.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 60448,
+     "ms": 166,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 34,
+      "linksDados": [
+       "https://www.al.al.leg.br/rss-info"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Aprovado em 1º turno projeto que prevê garantia de direitos a alunas grávidas nos cursos de formação da PM e do Corpo de",
+      "texto": 9116
+     }
+    },
+    {
+     "url": "https://www.al.al.leg.br/comunicacao/noticias/ordem-do-dia_08-10-2026",
+     "papel": "link",
+     "de": "https://www.al.al.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 54467,
+     "ms": 166,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 16,
+      "linksDados": [
+       "https://www.al.al.leg.br/rss-info"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Discutido em 1º turno projeto que denomina Hospital Regional de Palmeira dos Índios como Professor Marcos Moraes — Assem",
+      "texto": 4482
+     }
+    },
+    {
+     "url": "https://sapl.al.al.leg.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 18408,
+     "ms": 187,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [
+       "https://sapl.al.al.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa de Alagoas",
+      "texto": 3295
+     }
+    },
+    {
+     "url": "https://sapl.al.al.leg.br/mesa-diretora/",
+     "papel": "link",
+     "de": "https://sapl.al.al.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 21435,
+     "ms": 238,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl.al.al.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa de Alagoas",
+      "texto": 1702
+     }
+    },
+    {
+     "url": "https://sapl.al.al.leg.br/sistema/bancada/",
+     "papel": "link",
+     "de": "https://sapl.al.al.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 11512,
+     "ms": 215,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl.al.al.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa de Alagoas",
+      "texto": 779
+     }
+    },
+    {
+     "url": "https://sapl.al.al.leg.br/sistema/bloco/",
+     "papel": "link",
+     "de": "https://sapl.al.al.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 11510,
+     "ms": 216,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl.al.al.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa de Alagoas",
+      "texto": 777
+     }
+    },
+    {
+     "url": "https://sapl.al.al.leg.br/comissao/",
+     "papel": "link",
+     "de": "https://sapl.al.al.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 22140,
+     "ms": 214,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl.al.al.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa de Alagoas",
+      "texto": 2027
+     }
+    },
+    {
+     "url": "https://sapl.al.al.leg.br/sistema/frente/",
+     "papel": "link",
+     "de": "https://sapl.al.al.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 11422,
+     "ms": 199,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl.al.al.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa de Alagoas",
+      "texto": 778
+     }
+    },
+    {
+     "url": "https://sapl.al.al.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": 200,
+     "tipo": "application/json",
+     "bytes": 1739,
+     "ms": 276,
+     "sinais": {
+      "json": true,
+      "xml": false,
+      "sapl": true,
+      "citaSapl": false,
+      "registros": 15578,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 0
+     }
+    }
+   ]
+  },
+  {
+   "uf": "AL",
+   "orgao": "diario",
+   "nome": "Diário Oficial de Alagoas",
+   "sigla": "DOE-AL",
+   "sondagens": [
+    {
+     "url": "https://diario.imprensaoficial.al.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 962,
+     "ms": 2464,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Sistema de Publicação Oficial",
+      "texto": 29
+     }
+    },
+    {
+     "url": "https://www.imprensaoficial.al.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 60981,
+     "ms": 2936,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 2,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Imprensa Oficial do Estado de Alagoas",
+      "texto": 5728
+     }
+    },
+    {
+     "url": "http://diario.imprensaoficial.al.gov.br/",
+     "papel": "link",
+     "de": "https://www.imprensaoficial.al.gov.br/",
+     "status": 200,
+     "urlFinal": "https://diario.imprensaoficial.al.gov.br/",
+     "tipo": "text/html",
+     "bytes": 962,
+     "ms": 2919,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Sistema de Publicação Oficial",
+      "texto": 29
+     }
+    }
+   ]
+  },
+  {
+   "uf": "AM",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa do Amazonas",
+   "sigla": "Aleam",
+   "sondagens": [
+    {
+     "url": "https://www.aleam.gov.br/",
+     "papel": "site",
+     "status": null,
+     "ms": 10096,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://sapl.al.am.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "api",
+     "status": 200,
+     "tipo": "application/json",
+     "bytes": 1325,
+     "ms": 8737,
+     "sinais": {
+      "json": true,
+      "xml": false,
+      "sapl": true,
+      "citaSapl": false,
+      "registros": 79222,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 0
+     }
+    }
+   ]
+  },
+  {
+   "uf": "AM",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Amazonas",
+   "sigla": "DOE-AM",
+   "sondagens": [
+    {
+     "url": "https://diario.imprensaoficial.am.gov.br/",
+     "papel": "diario",
+     "status": null,
+     "ms": 1271,
+     "erro": "ECONNRESET"
+    },
+    {
+     "url": "https://www.imprensaoficial.am.gov.br/",
+     "papel": "diario",
+     "status": null,
+     "ms": 10388,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    }
+   ]
+  },
+  {
+   "uf": "AP",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa do Amapá",
+   "sigla": "Alap",
+   "sondagens": [
+    {
+     "url": "https://www.al.ap.leg.br/",
+     "papel": "site",
+     "status": null,
+     "ms": 10487,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://www.al.ap.gov.br/",
+     "papel": "site",
+     "status": null,
+     "ms": 10492,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://sapl.al.ap.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 7792,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "AP",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Amapá",
+   "sigla": "DOE-AP",
+   "sondagens": [
+    {
+     "url": "https://diofe.portal.ap.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 330347,
+     "ms": 3831,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 1,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial / Home",
+      "texto": 1110
+     }
+    },
+    {
+     "url": "https://sead.portal.ap.gov.br/diario_oficial",
+     "papel": "link",
+     "de": "https://diofe.portal.ap.gov.br/",
+     "status": null,
+     "ms": 3208,
+     "erro": "read ECONNRESET"
+    },
+    {
+     "url": "https://seadantigo.portal.ap.gov.br/diario-oficial",
+     "papel": "diario",
+     "status": null,
+     "ms": 2458,
+     "erro": "read ECONNRESET"
+    }
+   ]
+  },
+  {
+   "uf": "BA",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa da Bahia",
+   "sigla": "Alba",
+   "sondagens": [
+    {
+     "url": "https://www.al.ba.gov.br/",
+     "papel": "site",
+     "status": null,
+     "ms": 10194,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://www.al.ba.gov.br/atividade-legislativa/proposicoes",
+     "papel": "proposicoes",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 127451,
+     "ms": 5548,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 50,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa da Bahia",
+      "texto": 11579
+     }
+    },
+    {
+     "url": "https://egbanet.egba.ba.gov.br/alba",
+     "papel": "link",
+     "de": "https://www.al.ba.gov.br/atividade-legislativa/proposicoes",
+     "status": null,
+     "ms": 10441,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicoes",
+     "papel": "link",
+     "de": "https://www.al.ba.gov.br/atividade-legislativa/proposicoes",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 130210,
+     "ms": 8268,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 30,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa da Bahia",
+      "texto": 10992
+     }
+    },
+    {
+     "url": "https://www.al.ba.gov.br/atividade-legislativa/proposicoes-por-ano",
+     "papel": "link",
+     "de": "https://www.al.ba.gov.br/atividade-legislativa/proposicoes",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 46997,
+     "ms": 1145,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 4,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa da Bahia",
+      "texto": 3869
+     }
+    },
+    {
+     "url": "https://www.al.ba.gov.br/atividade-legislativa/proposicao/REQ-9.698-2021",
+     "papel": "link",
+     "de": "https://www.al.ba.gov.br/atividade-legislativa/proposicoes",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 48953,
+     "ms": 706,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 18,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa da Bahia",
+      "texto": 4330
+     }
+    },
+    {
+     "url": "https://www.al.ba.gov.br/fserver/:docs:Proposicoes2021:REQ_9_698_2021_1.rtf",
+     "papel": "link",
+     "de": "https://www.al.ba.gov.br/atividade-legislativa/proposicoes",
+     "status": 200,
+     "tipo": "image/jpeg",
+     "bytes": 70642,
+     "ms": 690,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 70067
+     }
+    },
+    {
+     "url": "https://sapl.al.ba.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 623,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "BA",
+   "orgao": "diario",
+   "nome": "Diário Oficial da Bahia",
+   "sigla": "DOE-BA",
+   "sondagens": [
+    {
+     "url": "https://dool.egba.ba.gov.br/",
+     "papel": "diario",
+     "status": null,
+     "ms": 10480,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://www.egba.ba.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "urlFinal": "https://www.ba.gov.br/egba/",
+     "tipo": "text/html",
+     "bytes": 101055,
+     "ms": 14501,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Início | EGBA - Empresa Gráfica da Bahia",
+      "texto": 6515
+     }
+    },
+    {
+     "url": "https://www.ba.gov.br/egba/noticias/2025-01/331/diario-oficial-online",
+     "papel": "link",
+     "de": "https://www.egba.ba.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 89945,
+     "ms": 236,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial On-Line democratiza acesso a informações oficiais | EGBA - Empresa Gráfica da Bahia",
+      "texto": 6567
+     }
+    },
+    {
+     "url": "http://www.ba.gov.br/egba/noticias/2025-01/331/diario-oficial-online",
+     "papel": "link",
+     "de": "https://www.egba.ba.gov.br/",
+     "status": 200,
+     "urlFinal": "https://www.ba.gov.br/egba/noticias/2025-01/331/diario-oficial-online",
+     "tipo": "text/html",
+     "bytes": 89945,
+     "ms": 1191,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial On-Line democratiza acesso a informações oficiais | EGBA - Empresa Gráfica da Bahia",
+      "texto": 6567
+     }
+    }
+   ]
+  },
+  {
+   "uf": "CE",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa do Ceará",
+   "sigla": "Alece",
+   "sondagens": [
+    {
+     "url": "https://www.al.ce.gov.br/",
+     "papel": "site",
+     "status": null,
+     "ms": 10308,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://www.al.ce.gov.br/proposicoes",
+     "papel": "proposicoes",
+     "status": 404,
+     "tipo": "text/html",
+     "bytes": 10918,
+     "ms": 8260,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Not Found",
+      "texto": 310
+     }
+    },
+    {
+     "url": "https://sapl.al.ce.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 1616,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "CE",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Ceará",
+   "sigla": "DOE-CE",
+   "sondagens": [
+    {
+     "url": "https://www.ceara.gov.br/diario-oficial/",
+     "papel": "diario",
+     "status": 200,
+     "urlFinal": "https://www.ce.gov.br/diario-oficial/",
+     "tipo": "text/html",
+     "bytes": 144752,
+     "ms": 16665,
+     "certificadoInvalido": true,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 2,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial - Governo do Estado do Ceará",
+      "texto": 3575
+     }
+    },
+    {
+     "url": "https://www.ce.gov.br/diario-oficial/",
+     "papel": "link",
+     "de": "https://www.ceara.gov.br/diario-oficial/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 144752,
+     "ms": 1046,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 2,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial - Governo do Estado do Ceará",
+      "texto": 3575
+     }
+    },
+    {
+     "url": "http://imagens.seplag.ce.gov.br/",
+     "papel": "diario",
+     "status": 403,
+     "tipo": "text/html",
+     "bytes": 1014,
+     "ms": 1026,
+     "sinais": {
+      "json": false,
+      "xml": true,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 0
+     }
+    }
+   ]
+  },
+  {
+   "uf": "DF",
+   "orgao": "casa",
+   "nome": "Câmara Legislativa do Distrito Federal",
+   "sigla": "CLDF",
+   "sondagens": [
+    {
+     "url": "https://www.cl.df.gov.br/",
+     "papel": "site",
+     "status": null,
+     "ms": 10252,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://ple.cl.df.gov.br/",
+     "papel": "proposicoes",
+     "status": null,
+     "ms": 10487,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://sapl.al.df.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 346,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "DF",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Distrito Federal",
+   "sigla": "DODF",
+   "sondagens": [
+    {
+     "url": "https://www.dodf.df.gov.br/",
+     "papel": "diario",
+     "status": null,
+     "ms": 10194,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://www.dodf.df.gov.br/index/jornal-json",
+     "papel": "api",
+     "status": null,
+     "ms": 10489,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    }
+   ]
+  },
+  {
+   "uf": "ES",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa do Espírito Santo",
+   "sigla": "Ales",
+   "sondagens": [
+    {
+     "url": "https://www.al.es.gov.br/",
+     "papel": "site",
+     "status": null,
+     "ms": 10107,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://www.al.es.gov.br/Transparencia/DadosAbertos",
+     "papel": "dados_abertos",
+     "status": null,
+     "ms": 10491,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://sapl.al.es.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 529,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "ES",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Espírito Santo",
+   "sigla": "DIO-ES",
+   "sondagens": [
+    {
+     "url": "https://ioes.dio.es.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 11399,
+     "ms": 1271,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial / Home",
+      "texto": 449
+     }
+    },
+    {
+     "url": "https://ioes.dio.es.gov.br/portal/visualizacoes/diario_oficial",
+     "papel": "link",
+     "de": "https://ioes.dio.es.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 18662,
+     "ms": 942,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial / Visualizacoes",
+      "texto": 717
+     }
+    },
+    {
+     "url": "https://dio.es.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 204231,
+     "ms": 1522,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 13,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "DIO/ES - Imprensa Oficial do Esp&#xED;rito Santo",
+      "texto": 7105
+     }
+    },
+    {
+     "url": "https://ioes.dio.es.gov.br/diariodaserra",
+     "papel": "link",
+     "de": "https://dio.es.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 11356,
+     "ms": 978,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial Prefeitura Municipal da Serra / Home Vinculado",
+      "texto": 401
+     }
+    }
+   ]
+  },
+  {
+   "uf": "GO",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa de Goiás",
+   "sigla": "Alego",
+   "sondagens": [
+    {
+     "url": "https://portal.al.go.leg.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 133956,
+     "ms": 1547,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 6,
+      "linksProposicao": 2,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Portal da Alego",
+      "texto": 12474
+     }
+    },
+    {
+     "url": "https://portal.al.go.leg.br/materias-especiais",
+     "papel": "link",
+     "de": "https://portal.al.go.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 97534,
+     "ms": 236,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 2,
+      "linksProposicao": 4,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Matérias Especiais | Portal da Alego",
+      "texto": 7159
+     }
+    },
+    {
+     "url": "https://portal.al.go.leg.br/noticias-dos-gabinetes/167740/antonio-gomide-lidera-forca-tarefa-na-comissao-de-meio-ambiente-da-alego-e-avanca-com-projeto-do-proclima",
+     "papel": "link",
+     "de": "https://portal.al.go.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 102370,
+     "ms": 219,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 2,
+      "linksProposicao": 2,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Antônio Gomide lidera força-tarefa na Comissão de Meio Ambiente da Alego e avança com projeto do Proclima | Portal da Al",
+      "texto": 9230
+     }
+    },
+    {
+     "url": "https://www.al.go.leg.br/",
+     "papel": "site",
+     "status": 200,
+     "urlFinal": "https://portal.al.go.leg.br/",
+     "tipo": "text/html",
+     "bytes": 133956,
+     "ms": 2050,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 6,
+      "linksProposicao": 2,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Portal da Alego",
+      "texto": 12474
+     }
+    },
+    {
+     "url": "https://sapl.al.go.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 1709,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "GO",
+   "orgao": "diario",
+   "nome": "Diário Oficial de Goiás",
+   "sigla": "DOE-GO",
+   "sondagens": [
+    {
+     "url": "https://diariooficial.abc.go.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 17230,
+     "ms": 1460,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "ABC - Agência Brasil Central / Home",
+      "texto": 1323
+     }
+    },
+    {
+     "url": "https://diariooficial.abc.go.gov.br/canal/institucional",
+     "papel": "link",
+     "de": "https://diariooficial.abc.go.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 11679,
+     "ms": 431,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": 3414
+     }
+    },
+    {
+     "url": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+     "papel": "link",
+     "de": "https://diariooficial.abc.go.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 11394,
+     "ms": 373,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": 2888
+     }
+    },
+    {
+     "url": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+     "papel": "link",
+     "de": "https://diariooficial.abc.go.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 9649,
+     "ms": 356,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": 929
+     }
+    },
+    {
+     "url": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+     "papel": "link",
+     "de": "https://diariooficial.abc.go.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 11600,
+     "ms": 357,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": 890
+     }
+    },
+    {
+     "url": "https://diariooficial.abc.go.gov.br/canal/normas-para-acesso",
+     "papel": "link",
+     "de": "https://diariooficial.abc.go.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 24028,
+     "ms": 353,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": 14895
+     }
+    },
+    {
+     "url": "https://diariooficial.abc.go.gov.br/canal/termos-de-uso",
+     "papel": "link",
+     "de": "https://diariooficial.abc.go.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 12745,
+     "ms": 345,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": 2510
+     }
+    }
+   ]
+  },
+  {
+   "uf": "MA",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa do Maranhão",
+   "sigla": "Alema",
+   "sondagens": [
+    {
+     "url": "https://www.al.ma.leg.br/",
+     "papel": "site",
+     "status": null,
+     "ms": 10145,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://sapl.al.ma.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 10484,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    }
+   ]
+  },
+  {
+   "uf": "MA",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Maranhão",
+   "sigla": "DOE-MA",
+   "sondagens": [
+    {
+     "url": "https://www.diariooficial.ma.gov.br/",
+     "papel": "diario",
+     "status": 500,
+     "tipo": "text/html",
+     "bytes": 3855,
+     "ms": 1257,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Acesso bloqueado",
+      "texto": 314
+     }
+    }
+   ]
+  },
+  {
+   "uf": "MG",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa de Minas Gerais",
+   "sigla": "ALMG",
+   "sondagens": [
+    {
+     "url": "https://www.almg.gov.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 289001,
+     "ms": 1347,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 10,
+      "linksDados": [
+       "https://www.almg.gov.br/transparencia/dados-abertos/",
+       "https://www.almg.gov.br/sites-da-almg/Dados-Abertos",
+       "https://dadosabertos.almg.gov.br/"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Portal da Assembleia Legislativa de Minas Gerais",
+      "texto": 10722
+     }
+    },
+    {
+     "url": "https://www.almg.gov.br/atividade-parlamentar/projetos-de-lei/",
+     "papel": "link",
+     "de": "https://www.almg.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 166303,
+     "ms": 217,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 11,
+      "linksDados": [
+       "https://www.almg.gov.br/transparencia/dados-abertos/",
+       "https://www.almg.gov.br/sites-da-almg/Dados-Abertos"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Projetos de lei - Assembleia Legislativa de Minas Gerais",
+      "texto": 14146
+     }
+    },
+    {
+     "url": "https://www.almg.gov.br/participacao/opine-sobre-projetos-de-lei/",
+     "papel": "link",
+     "de": "https://www.almg.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 110842,
+     "ms": 219,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 1,
+      "linksProposicao": 12,
+      "linksDados": [
+       "https://www.almg.gov.br/transparencia/dados-abertos/",
+       "https://www.almg.gov.br/sites-da-almg/Dados-Abertos"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Opine sobre projetos de lei - Assembleia Legislativa de Minas Gerais",
+      "texto": 7805
+     }
+    },
+    {
+     "url": "https://www.almg.gov.br/participacao/proponha-um-projeto-de-lei/",
+     "papel": "link",
+     "de": "https://www.almg.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 100063,
+     "ms": 204,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 15,
+      "linksDados": [
+       "https://www.almg.gov.br/transparencia/dados-abertos/",
+       "https://www.almg.gov.br/sites-da-almg/Dados-Abertos"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Proponha um projeto de lei - Assembleia Legislativa de Minas Gerais",
+      "texto": 5863
+     }
+    },
+    {
+     "url": "https://www.almg.gov.br/transparencia/diario-do-legislativo/",
+     "papel": "link",
+     "de": "https://www.almg.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 151201,
+     "ms": 255,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 12,
+      "linksProposicao": 9,
+      "linksDados": [
+       "https://www.almg.gov.br/transparencia/dados-abertos/",
+       "https://www.almg.gov.br/sites-da-almg/Dados-Abertos"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário do Legislativo - Assembleia Legislativa de Minas Gerais",
+      "texto": 8562
+     }
+    },
+    {
+     "url": "https://www.almg.gov.br/transparencia/dados-abertos/",
+     "papel": "link",
+     "de": "https://www.almg.gov.br/",
+     "status": 200,
+     "urlFinal": "http://dadosabertos.almg.gov.br/documentacao/index",
+     "tipo": "text/html",
+     "bytes": 27980,
+     "ms": 3080,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [
+       "https://www.almg.gov.br/sites-da-almg/Dados-Abertos",
+       "http://dadosabertos.almg.gov.br/documentacao/index",
+       "http://dadosabertos.almg.gov.br/documentacao/arquivos",
+       "http://dadosabertos.almg.gov.br/documentacao/paginas/historico-de-versoes",
+       "https://dadosabertos.almg.gov.br/documentacao/arquivos/atas-de-registro-de-precos",
+       "https://dadosabertos.almg.gov.br/api/v2/comissoes/1/reunioes/2/2013/04/11/09:30",
+       "https://dadosabertos.almg.gov.br/api/v2/comissoes/1270/composicoes/2025/05/06",
+       "https://dadosabertos.almg.gov.br/documentacao/arquivos/legislacao-mineira",
+       "https://dadosabertos.almg.gov.br/ws/ajuda/sobre",
+       "https://dadosabertosn.almg.gov.br/api/v2/pronunciamentos/tipos",
+       "https://dadosabertos.almg.gov.br/ws/pronunciamentos/tipos",
+       "https://www.almg.gov.br/comunicacao/noticias/arquivos/Assembleia-aprimora-plataforma-de-dados-abertos/"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Dados Abertos - ALMG",
+      "texto": 6690
+     }
+    },
+    {
+     "url": "https://www.almg.gov.br/sites-da-almg/Dados-Abertos",
+     "papel": "link",
+     "de": "https://www.almg.gov.br/",
+     "status": 200,
+     "urlFinal": "http://dadosabertos.almg.gov.br/documentacao/index",
+     "tipo": "text/html",
+     "bytes": 27980,
+     "ms": 524,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [
+       "https://www.almg.gov.br/sites-da-almg/Dados-Abertos",
+       "http://dadosabertos.almg.gov.br/documentacao/index",
+       "http://dadosabertos.almg.gov.br/documentacao/arquivos",
+       "http://dadosabertos.almg.gov.br/documentacao/paginas/historico-de-versoes",
+       "https://dadosabertos.almg.gov.br/documentacao/arquivos/atas-de-registro-de-precos",
+       "https://dadosabertos.almg.gov.br/api/v2/comissoes/1/reunioes/2/2013/04/11/09:30",
+       "https://dadosabertos.almg.gov.br/api/v2/comissoes/1270/composicoes/2025/05/06",
+       "https://dadosabertos.almg.gov.br/documentacao/arquivos/legislacao-mineira",
+       "https://dadosabertos.almg.gov.br/ws/ajuda/sobre",
+       "https://dadosabertosn.almg.gov.br/api/v2/pronunciamentos/tipos",
+       "https://dadosabertos.almg.gov.br/ws/pronunciamentos/tipos",
+       "https://www.almg.gov.br/comunicacao/noticias/arquivos/Assembleia-aprimora-plataforma-de-dados-abertos/"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Dados Abertos - ALMG",
+      "texto": 6690
+     }
+    },
+    {
+     "url": "https://dadosabertos.almg.gov.br/",
+     "papel": "dados_abertos",
+     "status": 200,
+     "urlFinal": "http://dadosabertos.almg.gov.br/documentacao/index",
+     "tipo": "text/html",
+     "bytes": 27980,
+     "ms": 381,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [
+       "https://www.almg.gov.br/sites-da-almg/Dados-Abertos",
+       "http://dadosabertos.almg.gov.br/documentacao/index",
+       "http://dadosabertos.almg.gov.br/documentacao/arquivos",
+       "http://dadosabertos.almg.gov.br/documentacao/paginas/historico-de-versoes",
+       "https://dadosabertos.almg.gov.br/documentacao/arquivos/atas-de-registro-de-precos",
+       "https://dadosabertos.almg.gov.br/api/v2/comissoes/1/reunioes/2/2013/04/11/09:30",
+       "https://dadosabertos.almg.gov.br/api/v2/comissoes/1270/composicoes/2025/05/06",
+       "https://dadosabertos.almg.gov.br/documentacao/arquivos/legislacao-mineira",
+       "https://dadosabertos.almg.gov.br/ws/ajuda/sobre",
+       "https://dadosabertosn.almg.gov.br/api/v2/pronunciamentos/tipos",
+       "https://dadosabertos.almg.gov.br/ws/pronunciamentos/tipos",
+       "https://www.almg.gov.br/comunicacao/noticias/arquivos/Assembleia-aprimora-plataforma-de-dados-abertos/"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Dados Abertos - ALMG",
+      "texto": 6690
+     }
+    },
+    {
+     "url": "https://dadosabertos.almg.gov.br/ws/proposicoes/pesquisa/direcionada?tp=1&formato=json&ano=2026",
+     "papel": "api",
+     "status": 500,
+     "urlFinal": "https://dadosabertos.almg.gov.br/api/v2/proposicoes/pesquisa/direcionada?tp=1&formato=json&ano=2026",
+     "tipo": "text/html",
+     "bytes": 18242,
+     "ms": 1569,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [
+       "https://www.almg.gov.br/sites-da-almg/Dados-Abertos",
+       "https://dadosabertos.almg.gov.br/documentacao/index",
+       "https://dadosabertos.almg.gov.br/documentacao/arquivos",
+       "https://dadosabertos.almg.gov.br/documentacao/paginas/historico-de-versoes",
+       "https://dadosabertos.almg.gov.br/portal-da-almg/termos-de-uso-e-politica-de-privacidade/"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Dados Abertos - ALMG",
+      "texto": 589
+     }
+    },
+    {
+     "url": "https://sapl.al.mg.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 334,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "MG",
+   "orgao": "diario",
+   "nome": "Diário Oficial de Minas Gerais",
+   "sigla": "DOMG",
+   "sondagens": [
+    {
+     "url": "https://www.jornalminasgerais.mg.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 27709,
+     "ms": 1082,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": true,
+      "bloqueio": false,
+      "titulo": "Jornal Minas Gerais",
+      "texto": 19
+     }
+    }
+   ]
+  },
+  {
+   "uf": "MS",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa de Mato Grosso do Sul",
+   "sigla": "ALEMS",
+   "sondagens": [
+    {
+     "url": "https://www.al.ms.gov.br/",
+     "papel": "site",
+     "status": 200,
+     "urlFinal": "https://al.ms.gov.br/",
+     "tipo": "text/html",
+     "bytes": 73620,
+     "ms": 1744,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 4,
+      "linksProposicao": 4,
+      "linksDados": [
+       "https://al.ms.gov.br/RSS"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa de Mato Grosso do Sul",
+      "texto": 5710
+     }
+    },
+    {
+     "url": "https://diariooficial.al.ms.gov.br/",
+     "papel": "link",
+     "de": "https://www.al.ms.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 9070,
+     "ms": 1196,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": true,
+      "bloqueio": false,
+      "titulo": "- Diário Oficial da ALMS",
+      "texto": 143
+     }
+    },
+    {
+     "url": "https://al.ms.gov.br/Noticias/145935/b-ordem-do-dia-b-alems-aprova-20-projetos-de-homenagem-e-proposta-sobre-peri",
+     "papel": "link",
+     "de": "https://www.al.ms.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 70223,
+     "ms": 349,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [
+       "https://al.ms.gov.br/RSS"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "&lt;b&gt; Ordem do Dia:&lt;/b&gt; ALEMS aprova 20 projetos de homenagem e proposta sobre... - Assembleia Legislativa de ",
+      "texto": 1584
+     }
+    },
+    {
+     "url": "https://al.ms.gov.br/Noticias/145920/b-ordem-do-dia-b-aprovado-projeto-que-inclui-abril-verde-e-amarelo-em-calend",
+     "papel": "link",
+     "de": "https://www.al.ms.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 59119,
+     "ms": 180,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [
+       "https://al.ms.gov.br/RSS"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "&lt;b&gt; Ordem do Dia:&lt;/b&gt; Aprovado projeto que inclui Abril Verde e Amarelo em C... - Assembleia Legislativa de ",
+      "texto": 1615
+     }
+    },
+    {
+     "url": "https://al.ms.gov.br/Noticias/145935/ordem-do-dia-alems-aprova-20-projetos-de-homenagem-e-proposta-sobre-pericia-fac",
+     "papel": "link",
+     "de": "https://www.al.ms.gov.br/",
+     "status": 200,
+     "urlFinal": "https://al.ms.gov.br/Noticias/145935/b-ordem-do-dia-b-alems-aprova-20-projetos-de-homenagem-e-proposta-sobre-peri",
+     "tipo": "text/html",
+     "bytes": 70223,
+     "ms": 886,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [
+       "https://al.ms.gov.br/RSS"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "&lt;b&gt; Ordem do Dia:&lt;/b&gt; ALEMS aprova 20 projetos de homenagem e proposta sobre... - Assembleia Legislativa de ",
+      "texto": 1584
+     }
+    },
+    {
+     "url": "https://al.ms.gov.br/Noticias/145932/alems-vota-20-projetos-de-homenagem-e-redacao-final-de-proposta-sobre-pericia-fac",
+     "papel": "link",
+     "de": "https://www.al.ms.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 40777,
+     "ms": 186,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [
+       "https://al.ms.gov.br/RSS"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "ALEMS vota 20 projetos de homenagem e reda&#xE7;&#xE3;o final de proposta sobre per&#xED;ci... - Assembleia Legislativa ",
+      "texto": 1605
+     }
+    },
+    {
+     "url": "https://sapl.al.ms.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 9992,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    }
+   ]
+  },
+  {
+   "uf": "MS",
+   "orgao": "diario",
+   "nome": "Diário Oficial de Mato Grosso do Sul",
+   "sigla": "DOE-MS",
+   "sondagens": [
+    {
+     "url": "https://www.spdo.ms.gov.br/diariodoe",
+     "papel": "diario",
+     "status": 200,
+     "urlFinal": "https://www.diariooficial.ms.gov.br/",
+     "tipo": "text/html",
+     "bytes": 73781,
+     "ms": 2584,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 10,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial",
+      "texto": 2151
+     }
+    }
+   ]
+  },
+  {
+   "uf": "MT",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa de Mato Grosso",
+   "sigla": "ALMT",
+   "sondagens": [
+    {
+     "url": "https://www.al.mt.gov.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 94687,
+     "ms": 4977,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [
+       "https://api.al.mt.gov.br/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Estado de Mato Grosso",
+      "texto": 5405
+     }
+    },
+    {
+     "url": "http://diariooficial.al.mt.gov.br/",
+     "papel": "link",
+     "de": "https://www.al.mt.gov.br/",
+     "status": 200,
+     "urlFinal": "https://diariooficial.al.mt.gov.br/",
+     "tipo": "text/html",
+     "bytes": 10258,
+     "ms": 2100,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 5,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial Eletrônico da ALMT",
+      "texto": 918
+     }
+    },
+    {
+     "url": "https://www.al.mt.gov.br/proposicao",
+     "papel": "link",
+     "de": "https://www.al.mt.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 114943,
+     "ms": 3020,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 10,
+      "linksProposicao": 29,
+      "linksDados": [
+       "https://api.al.mt.gov.br/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Projetos em Tramitação",
+      "texto": 8899
+     }
+    },
+    {
+     "url": "https://api.al.mt.gov.br/",
+     "papel": "link",
+     "de": "https://www.al.mt.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 11195,
+     "ms": 2118,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 4,
+      "linksDados": [
+       "https://api.al.mt.gov.br/api/v1/agenda/documentation",
+       "https://api.al.mt.gov.br/api/v1/midia/arquivo/documentation",
+       "https://api.al.mt.gov.br/api/v1/midia/audio/documentation",
+       "https://api.al.mt.gov.br/api/v1/midia/album/documentation",
+       "https://api.al.mt.gov.br/api/v1/midia/texto/documentation",
+       "https://api.al.mt.gov.br/api/v1/midia/periodico/documentation",
+       "https://api.al.mt.gov.br/api/v1/midia/wallpaper/documentation",
+       "https://api.al.mt.gov.br/api/v1/ssl/audiencia-publica/documentation",
+       "https://api.al.mt.gov.br/api/v1/ssl/parlamentar/documentation",
+       "https://api.al.mt.gov.br/api/v1/ssl/comissao/documentation",
+       "https://api.al.mt.gov.br/api/v1/ssl/legislatura/documentation",
+       "https://api.al.mt.gov.br/api/v1/ssl/sessao-legislativa/documentation"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Estado de Mato Grosso",
+      "texto": 4057
+     }
+    },
+    {
+     "url": "https://www.al.mt.gov.br/proposicao/",
+     "papel": "proposicoes",
+     "status": 200,
+     "urlFinal": "https://www.al.mt.gov.br/proposicao",
+     "tipo": "text/html",
+     "bytes": 114943,
+     "ms": 3733,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 10,
+      "linksProposicao": 29,
+      "linksDados": [
+       "https://api.al.mt.gov.br/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Projetos em Tramitação",
+      "texto": 8899
+     }
+    },
+    {
+     "url": "https://www.al.mt.gov.br/proposicao/cpdoc/172857/visualizar",
+     "papel": "link",
+     "de": "https://www.al.mt.gov.br/proposicao/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 79411,
+     "ms": 524,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 2,
+      "linksProposicao": 4,
+      "linksDados": [
+       "https://api.al.mt.gov.br/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Veto nº 1/2026 Mensagem nº 170/2025 - Projeto em Tramitação",
+      "texto": 4660
+     }
+    },
+    {
+     "url": "https://www.al.mt.gov.br/proposicao/cpdoc/124509/visualizar",
+     "papel": "link",
+     "de": "https://www.al.mt.gov.br/proposicao/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 120152,
+     "ms": 412,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 6,
+      "linksProposicao": 5,
+      "linksDados": [
+       "https://api.al.mt.gov.br/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Projeto de lei nº 864/2023 Dep. Diego Guimarães - Projeto em Tramitação",
+      "texto": 14912
+     }
+    },
+    {
+     "url": "https://www.al.mt.gov.br/proposicao/cpdoc/171138/visualizar",
+     "papel": "link",
+     "de": "https://www.al.mt.gov.br/proposicao/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 82282,
+     "ms": 345,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 2,
+      "linksProposicao": 5,
+      "linksDados": [
+       "https://api.al.mt.gov.br/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Projeto de lei complementar nº 1/2026 Mensagem nº 6/2026 - Projeto em Tramitação",
+      "texto": 5207
+     }
+    },
+    {
+     "url": "https://www.al.mt.gov.br/proposicao/cpdoc/171137/visualizar",
+     "papel": "link",
+     "de": "https://www.al.mt.gov.br/proposicao/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 80529,
+     "ms": 760,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 1,
+      "linksProposicao": 5,
+      "linksDados": [
+       "https://api.al.mt.gov.br/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Proposta de emenda à Constituição nº 1/2026 Lideranças Partidárias - Projeto em Tramitação",
+      "texto": 4940
+     }
+    },
+    {
+     "url": "https://sapl.al.mt.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": 200,
+     "tipo": "application/json",
+     "bytes": 1162,
+     "ms": 1595,
+     "sinais": {
+      "json": true,
+      "xml": false,
+      "sapl": true,
+      "citaSapl": false,
+      "registros": 1,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 0
+     }
+    }
+   ]
+  },
+  {
+   "uf": "MT",
+   "orgao": "diario",
+   "nome": "Diário Oficial de Mato Grosso",
+   "sigla": "Iomat",
+   "sondagens": [
+    {
+     "url": "https://www.iomat.mt.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 31923,
+     "ms": 1268,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial / Home",
+      "texto": 1982
+     }
+    },
+    {
+     "url": "https://www.iomat.mt.gov.br/legislacao/diario_oficial",
+     "papel": "link",
+     "de": "https://www.iomat.mt.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 1999455,
+     "ms": 1163,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Legislação",
+      "texto": 38091
+     }
+    },
+    {
+     "url": "https://www.iomat.mt.gov.br/legislacao/diario_justica",
+     "papel": "link",
+     "de": "https://www.iomat.mt.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 9823,
+     "ms": 837,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": true,
+      "bloqueio": false,
+      "titulo": "Legislação",
+      "texto": 198
+     }
+    },
+    {
+     "url": "https://www.iomat.mt.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1788678",
+     "papel": "link",
+     "de": "https://www.iomat.mt.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 10055,
+     "ms": 1018,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 2740
+     }
+    },
+    {
+     "url": "https://www.iomat.mt.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1659495",
+     "papel": "link",
+     "de": "https://www.iomat.mt.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 9584,
+     "ms": 713,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 2564
+     }
+    },
+    {
+     "url": "https://www.iomat.mt.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1531758",
+     "papel": "link",
+     "de": "https://www.iomat.mt.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 9258,
+     "ms": 2434,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 2459
+     }
+    },
+    {
+     "url": "https://www.iomat.mt.gov.br/apifront/portal/edicoes/publicacoes_ver_conteudo/1412878",
+     "papel": "link",
+     "de": "https://www.iomat.mt.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 7925,
+     "ms": 1352,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 2329
+     }
+    }
+   ]
+  },
+  {
+   "uf": "PA",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa do Pará",
+   "sigla": "Alepa",
+   "sondagens": [
+    {
+     "url": "https://www.alepa.pa.gov.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 167242,
+     "ms": 1031,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 6,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Estado do Pará",
+      "texto": 4195
+     }
+    },
+    {
+     "url": "https://www.alepa.pa.gov.br/Home/Page/DiarioOficial",
+     "papel": "link",
+     "de": "https://www.alepa.pa.gov.br/",
+     "status": 200,
+     "urlFinal": "https://www.alepa.pa.gov.br/Comunicacao/Diarios",
+     "tipo": "text/html",
+     "bytes": 148022,
+     "ms": 1434,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 6,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Di&#225;rio Oficial - ALEPA",
+      "texto": 4178
+     }
+    },
+    {
+     "url": "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
+     "papel": "link",
+     "de": "https://www.alepa.pa.gov.br/",
+     "status": 200,
+     "urlFinal": "https://www.alepa.pa.gov.br/Legislativo/Proposicoes",
+     "tipo": "text/html",
+     "bytes": 144354,
+     "ms": 317,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 6,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Proposi&#231;&#245;es - ALEPA",
+      "texto": 3966
+     }
+    },
+    {
+     "url": "https://www.alepa.pa.gov.br/Comunicacao/Diarios",
+     "papel": "link",
+     "de": "https://www.alepa.pa.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 148023,
+     "ms": 654,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 6,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Di&#225;rio Oficial - ALEPA",
+      "texto": 4178
+     }
+    },
+    {
+     "url": "https://sapl.al.pa.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 1049,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "PA",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Pará",
+   "sigla": "IOEPA",
+   "sondagens": [
+    {
+     "url": "https://www.ioepa.com.br/",
+     "papel": "diario",
+     "status": 200,
+     "urlFinal": "http://www.ioepa.com.br/portal/",
+     "tipo": "text/html",
+     "bytes": 16386,
+     "ms": 4711,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 2,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "",
+      "texto": 576
+     }
+    },
+    {
+     "url": "https://www.ioepa.com.br/pages/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 2267,
+     "ms": 247,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "www.ioepa.com.br - /pages/",
+      "texto": 860
+     }
+    }
+   ]
+  },
+  {
+   "uf": "PB",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa da Paraíba",
+   "sigla": "ALPB",
+   "sondagens": [
+    {
+     "url": "https://www.al.pb.leg.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 148127,
+     "ms": 4952,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 11,
+      "linksProposicao": 4,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa da Paraíba -",
+      "texto": 5332
+     }
+    },
+    {
+     "url": "https://www.al.pb.leg.br/projetos-em-tramitacao",
+     "papel": "link",
+     "de": "https://www.al.pb.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 68769,
+     "ms": 486,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 5,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Projetos em tramitação - Assembleia Legislativa da Paraíba",
+      "texto": 2828
+     }
+    },
+    {
+     "url": "https://sapl.al.pb.leg.br/",
+     "papel": "link",
+     "de": "https://www.al.pb.leg.br/",
+     "status": null,
+     "ms": 10375,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://www.al.pb.leg.br/categoria/dpl-on-line",
+     "papel": "link",
+     "de": "https://www.al.pb.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 61694,
+     "ms": 1473,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 12,
+      "linksProposicao": 2,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário do Poder Legislativo (DPL) Archives - Assembleia Legislativa da Paraíba",
+      "texto": 2116
+     }
+    },
+    {
+     "url": "https://sapl3.al.pb.leg.br/materia/pesquisar-materia",
+     "papel": "link",
+     "de": "https://www.al.pb.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 51822,
+     "ms": 4108,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl3.al.pb.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Sistema de Apoio ao Processo Legislativo",
+      "texto": 12314
+     }
+    },
+    {
+     "url": "https://www.al.pb.leg.br/69479/alpb-aprova-projetos-que-aprimoram-administracao-tributaria-do-estado.html",
+     "papel": "link",
+     "de": "https://www.al.pb.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 81749,
+     "ms": 1436,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 4,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "ALPB aprova projetos que aprimoram Administração Tributária do Estado - Assembleia Legislativa da Paraíba",
+      "texto": 7943
+     }
+    },
+    {
+     "url": "https://sapl3.al.pb.leg.br/parlamentar/?iframe=0",
+     "papel": "link",
+     "de": "https://www.al.pb.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 14463,
+     "ms": 428,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl3.al.pb.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Sistema de Apoio ao Processo Legislativo",
+      "texto": 1114
+     }
+    },
+    {
+     "url": "https://sapl.al.pb.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": 200,
+     "tipo": "application/json",
+     "bytes": 1428,
+     "ms": 1211,
+     "sinais": {
+      "json": true,
+      "xml": false,
+      "sapl": true,
+      "citaSapl": false,
+      "registros": 151350,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 0
+     }
+    }
+   ]
+  },
+  {
+   "uf": "PB",
+   "orgao": "diario",
+   "nome": "Diário Oficial da Paraíba",
+   "sigla": "DOE-PB",
+   "sondagens": [
+    {
+     "url": "https://auniao.pb.gov.br/doe",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 111361,
+     "ms": 1076,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 4,
+      "linksProposicao": 1,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial do Estado — A União - Jornal, Editora e Gráfica",
+      "texto": 4950
+     }
+    },
+    {
+     "url": "https://cooperar.pb.gov.br/",
+     "papel": "link",
+     "de": "https://auniao.pb.gov.br/doe",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 46780,
+     "ms": 2040,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": true,
+      "texto": 210
+     }
+    },
+    {
+     "url": "https://auniao.pb.gov.br/institucional/diario-oficial-do-estado",
+     "papel": "link",
+     "de": "https://auniao.pb.gov.br/doe",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 103898,
+     "ms": 321,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial do Estado — A União - Jornal, Editora e Gráfica",
+      "texto": 4944
+     }
+    },
+    {
+     "url": "https://auniao.pb.gov.br/servicos/doe",
+     "papel": "link",
+     "de": "https://auniao.pb.gov.br/doe",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 128075,
+     "ms": 163,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial do Estado — A União - Jornal, Editora e Gráfica",
+      "texto": 5560
+     }
+    },
+    {
+     "url": "https://auniao.pb.gov.br/resolveuid/5f8fc43a2f4847bf96e487d18e0f5178",
+     "papel": "link",
+     "de": "https://auniao.pb.gov.br/doe",
+     "status": 200,
+     "urlFinal": "https://auniao.pb.gov.br/mais-uniao/fale-conosco/diario-oficial",
+     "tipo": "text/html",
+     "bytes": 113916,
+     "ms": 1284,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial — A União - Jornal, Editora e Gráfica",
+      "texto": 5022
+     }
+    }
+   ]
+  },
+  {
+   "uf": "PE",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa de Pernambuco",
+   "sigla": "Alepe",
+   "sondagens": [
+    {
+     "url": "https://www.alepe.pe.gov.br/",
+     "papel": "site",
+     "status": null,
+     "ms": 10192,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://dadosabertos.alepe.pe.gov.br/",
+     "papel": "dados_abertos",
+     "status": null,
+     "ms": 10495,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://sapl.al.pe.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 875,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "PE",
+   "orgao": "diario",
+   "nome": "Diário Oficial de Pernambuco",
+   "sigla": "DOE-PE",
+   "sondagens": [
+    {
+     "url": "https://diariooficial.cepe.com.br/",
+     "papel": "diario",
+     "status": 200,
+     "urlFinal": "https://diariooficial.cepe.com.br/diariooficialweb/",
+     "tipo": "text/html",
+     "bytes": 1653,
+     "ms": 2664,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": true,
+      "bloqueio": false,
+      "titulo": "CEPE",
+      "texto": 38
+     }
+    }
+   ]
+  },
+  {
+   "uf": "PI",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa do Piauí",
+   "sigla": "Alepi",
+   "sondagens": [
+    {
+     "url": "https://www.al.pi.leg.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 94619,
+     "ms": 2969,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 2,
+      "linksProposicao": 4,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Início — Assembleia Legislativa do Piauí",
+      "texto": 4956
+     }
+    },
+    {
+     "url": "https://sapl.al.pi.leg.br/",
+     "papel": "link",
+     "de": "https://www.al.pi.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 18480,
+     "ms": 1567,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [
+       "https://sapl.al.pi.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa do Estado do Piauí",
+      "texto": 3324
+     }
+    },
+    {
+     "url": "https://sapl.al.pi.leg.br/parlamentar/",
+     "papel": "link",
+     "de": "https://www.al.pi.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 14408,
+     "ms": 275,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl.al.pi.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa do Estado do Piauí",
+      "texto": 1124
+     }
+    },
+    {
+     "url": "https://sapl.al.pi.leg.br/comissao/",
+     "papel": "link",
+     "de": "https://www.al.pi.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 21997,
+     "ms": 218,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl.al.pi.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa do Estado do Piauí",
+      "texto": 1840
+     }
+    },
+    {
+     "url": "https://sapl.al.pi.leg.br/sessao/pesquisar-sessao?data_inicio__year=2025",
+     "papel": "link",
+     "de": "https://www.al.pi.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 28166,
+     "ms": 261,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 16,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl.al.pi.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa do Estado do Piauí",
+      "texto": 3815
+     }
+    },
+    {
+     "url": "https://sapl.al.pi.leg.br/materia/pesquisar-materia?tipo=&amp;ementa=&amp;numero=&amp;numeracao__numero_materia=&amp;numero_protocolo=&amp;ano=&amp;autoria__autor=&amp;autoria__primeiro_autor=unknown&amp;autoria__autor__tipo=&amp;autoria__autor__parlamentar_set__filiacao__partido=&amp;o=&amp;tipo_listagem=1&amp;tipo_origem_externa=&amp;numero_origem_externa=&amp;ano_origem_externa=&amp;data_origem_externa_0=&amp;data_origem_externa_1=&amp;local_origem_externa=&amp;data_apresentacao_0=&amp;data_apresentacao_1=&amp;data_publicacao_0=&amp;data_publicacao_1=&amp;relatoria__parlamentar_id=&amp;em_tram",
+     "papel": "link",
+     "de": "https://www.al.pi.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 172690,
+     "ms": 1640,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 50,
+      "linksProposicao": 218,
+      "linksDados": [
+       "https://sapl.al.pi.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa do Estado do Piauí",
+      "texto": 38315
+     }
+    },
+    {
+     "url": "https://sapl.al.pi.leg.br/norma/pesquisar?tipo=&amp;numero=&amp;ano=&amp;data_0=&amp;data_1=&amp;data_publicacao_0=&amp;data_publicacao_1=&amp;ementa=&amp;assuntos=&amp;data_vigencia_0=&amp;data_vigencia_1=&amp;orgao=&amp;o=&amp;indexacao=&amp;autorianorma__autor=&amp;autorianorma__primeiro_autor=unknown&amp;autorianorma__autor__tipo=&amp;autorianorma__autor__parlamentar_set__filiacao__partido=&amp;salvar=Pesquisar",
+     "papel": "link",
+     "de": "https://www.al.pi.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 67387,
+     "ms": 746,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 50,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl.al.pi.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa do Estado do Piauí",
+      "texto": 13025
+     }
+    },
+    {
+     "url": "https://sapl.al.pi.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": 200,
+     "tipo": "application/json",
+     "bytes": 1528,
+     "ms": 342,
+     "sinais": {
+      "json": true,
+      "xml": false,
+      "sapl": true,
+      "citaSapl": false,
+      "registros": 21421,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 0
+     }
+    }
+   ]
+  },
+  {
+   "uf": "PI",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Piauí",
+   "sigla": "DOE-PI",
+   "sondagens": [
+    {
+     "url": "https://www.diariooficial.pi.gov.br/",
+     "papel": "diario",
+     "status": null,
+     "ms": 2620,
+     "erro": "ECONNRESET"
+    }
+   ]
+  },
+  {
+   "uf": "PR",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa do Paraná",
+   "sigla": "Alep",
+   "sondagens": [
+    {
+     "url": "https://www.assembleia.pr.leg.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 317996,
+     "ms": 2468,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 27,
+      "linksProposicao": 0,
+      "linksDados": [
+       "https://transparencia.assembleia.pr.leg.br/servicos/dados-abertos"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Paraná",
+      "texto": 9612
+     }
+    },
+    {
+     "url": "https://transparencia.assembleia.pr.leg.br/servicos/dados-abertos",
+     "papel": "link",
+     "de": "https://www.assembleia.pr.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 198255,
+     "ms": 2056,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 5,
+      "linksProposicao": 0,
+      "linksDados": [
+       "https://transparencia.assembleia.pr.leg.br/servicos/dados-abertos"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Portal da Transparência ALEP",
+      "texto": 17386
+     }
+    },
+    {
+     "url": "https://consultas.assembleia.pr.leg.br/",
+     "papel": "proposicoes",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 4214,
+     "ms": 3343,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": true,
+      "titulo": "Portal de Serviços",
+      "texto": 1549
+     }
+    },
+    {
+     "url": "https://sapl.al.pr.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 322,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "PR",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Paraná",
+   "sigla": "DIOE-PR",
+   "sondagens": [
+    {
+     "url": "https://www.documentos.dioe.pr.gov.br/dioe/consultaPublicaPDF.do",
+     "papel": "diario",
+     "status": 404,
+     "tipo": "application/json",
+     "bytes": 23,
+     "ms": 1855,
+     "certificadoInvalido": true,
+     "sinais": {
+      "json": true,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 0
+     }
+    },
+    {
+     "url": "https://www.dioe.pr.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 28303,
+     "ms": 934,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial / Home",
+      "texto": 811
+     }
+    }
+   ]
+  },
+  {
+   "uf": "RJ",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa do Rio de Janeiro",
+   "sigla": "Alerj",
+   "sondagens": [
+    {
+     "url": "https://www.alerj.rj.gov.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 97063,
+     "ms": 4682,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 5,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembléia Legislativa do Estado do Rio de Janeiro",
+      "texto": 5537
+     }
+    },
+    {
+     "url": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144",
+     "papel": "link",
+     "de": "https://www.alerj.rj.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 123215,
+     "ms": 3245,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "ALERJ - Assembléia Legislativa do Estado do Rio de Janeiro",
+      "texto": 13727
+     }
+    },
+    {
+     "url": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=161",
+     "papel": "link",
+     "de": "https://www.alerj.rj.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 123574,
+     "ms": 4605,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "ALERJ - Assembléia Legislativa do Estado do Rio de Janeiro",
+      "texto": 14092
+     }
+    },
+    {
+     "url": "https://www.alerj.rj.gov.br/Visualizar/Noticia/88539",
+     "papel": "link",
+     "de": "https://www.alerj.rj.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 56325,
+     "ms": 1058,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 6,
+      "linksDados": [
+       "https://api.whatsapp.com/send?text=Confira%20essa%20Noticia:%20https://www.alerj.rj.gov.br/Visualizar/Noticia/88539"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembléia Legislativa do Estado do Rio de Janeiro",
+      "texto": 4650
+     }
+    },
+    {
+     "url": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial",
+     "papel": "link",
+     "de": "https://www.alerj.rj.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 38444,
+     "ms": 890,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 4,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembléia Legislativa do Estado do Rio de Janeiro",
+      "texto": 2284
+     }
+    },
+    {
+     "url": "http://alerjln1.alerj.rj.gov.br/scpro2327.nsf/Internet/LeiInt?OpenForm",
+     "papel": "proposicoes",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 17016,
+     "ms": 1613,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 6329
+     }
+    },
+    {
+     "url": "http://alerjln1.alerj.rj.gov.br/scpro2327.nsf/deputadosint?OpenForm&amp;ExpandView",
+     "papel": "link",
+     "de": "http://alerjln1.alerj.rj.gov.br/scpro2327.nsf/Internet/LeiInt?OpenForm",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 28249,
+     "ms": 165,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 1520
+     }
+    },
+    {
+     "url": "https://sapl.al.rj.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 642,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "RJ",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Rio de Janeiro",
+   "sigla": "Ioerj",
+   "sondagens": [
+    {
+     "url": "https://www.ioerj.com.br/",
+     "papel": "diario",
+     "status": 200,
+     "urlFinal": "https://www.ioerj.com.br/portal/",
+     "tipo": "text/html",
+     "bytes": 34331,
+     "ms": 1648,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Imprensa Oficial do Estado do Rio de Janeiro : Nosso papel é servir a sociedade",
+      "texto": 848
+     }
+    }
+   ]
+  },
+  {
+   "uf": "RN",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa do Rio Grande do Norte",
+   "sigla": "ALRN",
+   "sondagens": [
+    {
+     "url": "https://www.al.rn.leg.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 87402,
+     "ms": 2907,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 6,
+      "linksProposicao": 8,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Rio Grande do Norte",
+      "texto": 5625
+     }
+    },
+    {
+     "url": "https://www.al.rn.leg.br/diariooficial",
+     "papel": "link",
+     "de": "https://www.al.rn.leg.br/",
+     "status": 200,
+     "urlFinal": "https://dle.al.rn.leg.br/",
+     "tipo": "text/html",
+     "bytes": 33066,
+     "ms": 1740,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial - Consulta Pública",
+      "texto": 773
+     }
+    },
+    {
+     "url": "https://www.al.rn.leg.br/noticia/33813/alrn-aprova-projetos-que-reconhecem-patrimonios-culturais-e-naturais-do-rn",
+     "papel": "link",
+     "de": "https://www.al.rn.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 47813,
+     "ms": 466,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 2,
+      "linksProposicao": 2,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Rio Grande do Norte",
+      "texto": 4486
+     }
+    },
+    {
+     "url": "https://www.al.rn.gov.br/",
+     "papel": "site",
+     "status": 200,
+     "urlFinal": "https://www.al.rn.leg.br/",
+     "tipo": "text/html",
+     "bytes": 87402,
+     "ms": 5130,
+     "certificadoInvalido": true,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 6,
+      "linksProposicao": 8,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Rio Grande do Norte",
+      "texto": 5625
+     }
+    },
+    {
+     "url": "https://sapl.al.rn.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 402,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "RN",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Rio Grande do Norte",
+   "sigla": "DOE-RN",
+   "sondagens": [
+    {
+     "url": "https://www.diariooficial.rn.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 235,
+     "ms": 778,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Redirecionando ...",
+      "texto": 18
+     }
+    },
+    {
+     "url": "http://diariooficial.rn.gov.br/dei/dorn3/",
+     "papel": "diario",
+     "status": 404,
+     "tipo": "text/plain",
+     "bytes": 19,
+     "ms": 633,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 18
+     }
+    }
+   ]
+  },
+  {
+   "uf": "RO",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa de Rondônia",
+   "sigla": "ALE-RO",
+   "sondagens": [
+    {
+     "url": "https://www.al.ro.leg.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 148099,
+     "ms": 1913,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 4,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Estado de Rondônia",
+      "texto": 6854
+     }
+    },
+    {
+     "url": "https://sapl.al.ro.leg.br/comissao/",
+     "papel": "link",
+     "de": "https://www.al.ro.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 23116,
+     "ms": 1036,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl.al.ro.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa do Estado de Rondônia",
+      "texto": 1923
+     }
+    },
+    {
+     "url": "https://sapl.al.ro.leg.br/sistema/frente/",
+     "papel": "link",
+     "de": "https://www.al.ro.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 14770,
+     "ms": 217,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [
+       "https://sapl.al.ro.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa do Estado de Rondônia",
+      "texto": 1201
+     }
+    },
+    {
+     "url": "https://transparencia.al.ro.leg.br/Diario/",
+     "papel": "link",
+     "de": "https://www.al.ro.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 91103,
+     "ms": 1120,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 219,
+      "linksProposicao": 0,
+      "linksDados": [
+       "https://transparencia.al.ro.leg.br/DadosAbertos/"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Portal da transparência - ALE RO",
+      "texto": 5734
+     }
+    },
+    {
+     "url": "https://sapl.al.ro.leg.br/norma/pesquisar",
+     "papel": "link",
+     "de": "https://www.al.ro.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 27053,
+     "ms": 287,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl.al.ro.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa do Estado de Rondônia",
+      "texto": 4553
+     }
+    },
+    {
+     "url": "https://sapl.al.ro.leg.br/materia/pesquisar-materia",
+     "papel": "link",
+     "de": "https://www.al.ro.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 54564,
+     "ms": 910,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://sapl.al.ro.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Assembleia Legislativa do Estado de Rondônia",
+      "texto": 13415
+     }
+    },
+    {
+     "url": "https://www.al.ro.leg.br/atividade-parlamentar/proposicoes-recebidas/",
+     "papel": "link",
+     "de": "https://www.al.ro.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 66105,
+     "ms": 230,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 10,
+      "linksProposicao": 16,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Estado de Rondônia",
+      "texto": 2576
+     }
+    },
+    {
+     "url": "https://sapl.al.ro.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": 200,
+     "tipo": "application/json",
+     "bytes": 1413,
+     "ms": 421,
+     "sinais": {
+      "json": true,
+      "xml": false,
+      "sapl": true,
+      "citaSapl": false,
+      "registros": 57115,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 0
+     }
+    }
+   ]
+  },
+  {
+   "uf": "RO",
+   "orgao": "diario",
+   "nome": "Diário Oficial de Rondônia",
+   "sigla": "Diof-RO",
+   "sondagens": [
+    {
+     "url": "https://diof.ro.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 120278,
+     "ms": 1458,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 15,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Imprensa Oficial do Governo do Estado de Rondônia - Diário Oficial",
+      "texto": 13781
+     }
+    },
+    {
+     "url": "https://diof.ro.gov.br/diarios/historia",
+     "papel": "link",
+     "de": "https://diof.ro.gov.br/",
+     "status": 200,
+     "urlFinal": "https://diof.ro.gov.br/diarios/historia/",
+     "tipo": "text/html",
+     "bytes": 101084,
+     "ms": 1153,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "História - Imprensa Oficial do Governo do Estado de Rondônia",
+      "texto": 12951
+     }
+    },
+    {
+     "url": "https://diof.ro.gov.br/diarios/equipe",
+     "papel": "link",
+     "de": "https://diof.ro.gov.br/",
+     "status": 200,
+     "urlFinal": "https://diof.ro.gov.br/diarios/equipe/",
+     "tipo": "text/html",
+     "bytes": 99422,
+     "ms": 590,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Equipe - Imprensa Oficial do Governo do Estado de Rondônia",
+      "texto": 13071
+     }
+    },
+    {
+     "url": "https://diof.ro.gov.br/diarios/missao",
+     "papel": "link",
+     "de": "https://diof.ro.gov.br/",
+     "status": 200,
+     "urlFinal": "https://diof.ro.gov.br/diarios/missao/",
+     "tipo": "text/html",
+     "bytes": 98156,
+     "ms": 598,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Missão - Imprensa Oficial do Governo do Estado de Rondônia",
+      "texto": 12947
+     }
+    },
+    {
+     "url": "https://diof.ro.gov.br/diarios/quanto-custa-publicar",
+     "papel": "link",
+     "de": "https://diof.ro.gov.br/",
+     "status": 200,
+     "urlFinal": "https://diof.ro.gov.br/diarios/quanto-custa-publicar/",
+     "tipo": "text/html",
+     "bytes": 98493,
+     "ms": 590,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Quanto custa publicar? - Imprensa Oficial do Governo do Estado de Rondônia",
+      "texto": 12979
+     }
+    },
+    {
+     "url": "https://www.gov.br/imprensanacional/pt-br",
+     "papel": "link",
+     "de": "https://diof.ro.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 320144,
+     "ms": 1484,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 1,
+      "linksDados": [
+       "https://api.whatsapp.com/send?text=https://www.gov.br/imprensanacional/pt-br",
+       "https://www.gov.br/imprensanacional/pt-br/acesso-a-informacao/dados-abertos"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Imprensa Nacional",
+      "texto": 2185
+     }
+    }
+   ]
+  },
+  {
+   "uf": "RR",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa de Roraima",
+   "sigla": "ALE-RR",
+   "sondagens": [
+    {
+     "url": "https://www.al.rr.leg.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 163,
+     "ms": 1446,
+     "certificadoInvalido": true,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 0
+     }
+    },
+    {
+     "url": "https://sapl.al.rr.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": 403,
+     "tipo": "text/html",
+     "bytes": 199,
+     "ms": 1872,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "403 Forbidden",
+      "texto": 74
+     }
+    }
+   ]
+  },
+  {
+   "uf": "RR",
+   "orgao": "diario",
+   "nome": "Diário Oficial de Roraima",
+   "sigla": "DOE-RR",
+   "sondagens": [
+    {
+     "url": "https://www.imprensaoficial.rr.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 362,
+     "ms": 1387,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": ":: IMPRENSA OFICIAL - GOVERNO DO ESTADO DE RORAIMA ::",
+      "texto": 53
+     }
+    }
+   ]
+  },
+  {
+   "uf": "RS",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa do Rio Grande do Sul",
+   "sigla": "ALRS",
+   "sondagens": [
+    {
+     "url": "https://ww4.al.rs.gov.br/",
+     "papel": "site",
+     "status": null,
+     "ms": 10304,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://www.al.rs.gov.br/",
+     "papel": "site",
+     "status": null,
+     "ms": 10494,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    },
+    {
+     "url": "https://sapl.al.rs.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 10030,
+     "erro": "EAI_AGAIN"
+    }
+   ]
+  },
+  {
+   "uf": "RS",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Rio Grande do Sul",
+   "sigla": "DOE-RS",
+   "sondagens": [
+    {
+     "url": "https://www.diariooficial.rs.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 2685,
+     "ms": 1628,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": true,
+      "bloqueio": false,
+      "titulo": "Diário Oficial do Rio Grande do Sul",
+      "texto": 109
+     }
+    }
+   ]
+  },
+  {
+   "uf": "SC",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa de Santa Catarina",
+   "sigla": "Alesc",
+   "sondagens": [
+    {
+     "url": "https://www.alesc.sc.gov.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 424646,
+     "ms": 1605,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 6,
+      "linksDados": [
+       "https://api.whatsapp.com/send?1=pt_BR&phone=5548999601127"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Bem-vindo à Assembleia Legislativa do Estado de Santa Catarina",
+      "texto": 7241
+     }
+    },
+    {
+     "url": "https://portalelegis.alesc.sc.gov.br/",
+     "papel": "link",
+     "de": "https://www.alesc.sc.gov.br/",
+     "status": 200,
+     "urlFinal": "https://portalelegis.alesc.sc.gov.br/proposicoes/processo-legislativo",
+     "tipo": "text/html",
+     "bytes": 66376,
+     "ms": 3216,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 42,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Processo Legislativo / Proposições / e-Legis / ALESC",
+      "texto": 12062
+     }
+    },
+    {
+     "url": "https://www.alesc.sc.gov.br/sugira-um-projeto-de-lei/",
+     "papel": "link",
+     "de": "https://www.alesc.sc.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 364291,
+     "ms": 757,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 6,
+      "linksDados": [
+       "https://api.whatsapp.com/send?1=pt_BR&phone=5548999601127"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Sugira um projeto de lei - Assembleia Legislativa do Estado de Santa Catarina",
+      "texto": 3859
+     }
+    },
+    {
+     "url": "https://www.alesc.sc.gov.br/diario-da-assembleia/",
+     "papel": "link",
+     "de": "https://www.alesc.sc.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 389837,
+     "ms": 560,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 15,
+      "linksProposicao": 6,
+      "linksDados": [
+       "https://api.whatsapp.com/send?1=pt_BR&phone=5548999601127"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário da Assembleia - Assembleia Legislativa do Estado de Santa Catarina",
+      "texto": 3566
+     }
+    },
+    {
+     "url": "https://www.alesc.sc.gov.br/legislativo/tramitacao-de-materia",
+     "papel": "proposicoes",
+     "status": 200,
+     "urlFinal": "https://portalelegis.alesc.sc.gov.br/proposicoes/processo-legislativo",
+     "tipo": "text/html",
+     "bytes": 66376,
+     "ms": 1258,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 42,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Processo Legislativo / Proposições / e-Legis / ALESC",
+      "texto": 12062
+     }
+    },
+    {
+     "url": "https://portalelegis.alesc.sc.gov.br/proposicoes/processo-legislativo",
+     "papel": "link",
+     "de": "https://www.alesc.sc.gov.br/legislativo/tramitacao-de-materia",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 66376,
+     "ms": 976,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 42,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Processo Legislativo / Proposições / e-Legis / ALESC",
+      "texto": 12062
+     }
+    },
+    {
+     "url": "https://portalelegis.alesc.sc.gov.br/proposicoes/atividade-parlamentar",
+     "papel": "link",
+     "de": "https://www.alesc.sc.gov.br/legislativo/tramitacao-de-materia",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 66121,
+     "ms": 921,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 42,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Atividade Parlamentar / Proposições / e-Legis / ALESC",
+      "texto": 11473
+     }
+    },
+    {
+     "url": "https://portalelegis.alesc.sc.gov.br/proposicoes/NQeb8",
+     "papel": "link",
+     "de": "https://www.alesc.sc.gov.br/legislativo/tramitacao-de-materia",
+     "status": 200,
+     "urlFinal": "https://portalelegis.alesc.sc.gov.br/proposicoes/NQeb8/tramitacoes",
+     "tipo": "text/html",
+     "bytes": 28445,
+     "ms": 1296,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 1,
+      "linksProposicao": 10,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Tramitações / PL./0640/2026 / Proposições / e-Legis / ALESC",
+      "texto": 1829
+     }
+    },
+    {
+     "url": "https://portalelegis.alesc.sc.gov.br/proposicoes/NQeb8/documentos",
+     "papel": "link",
+     "de": "https://www.alesc.sc.gov.br/legislativo/tramitacao-de-materia",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 19390,
+     "ms": 356,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 10,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Documentos / PL./0640/2026 / Proposições / e-Legis / ALESC",
+      "texto": 1300
+     }
+    },
+    {
+     "url": "https://portalelegis.alesc.sc.gov.br/proposicoes/K9reB",
+     "papel": "link",
+     "de": "https://www.alesc.sc.gov.br/legislativo/tramitacao-de-materia",
+     "status": 200,
+     "urlFinal": "https://portalelegis.alesc.sc.gov.br/proposicoes/K9reB/tramitacoes",
+     "tipo": "text/html",
+     "bytes": 28442,
+     "ms": 1344,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 1,
+      "linksProposicao": 10,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Tramitações / PL./0639/2026 / Proposições / e-Legis / ALESC",
+      "texto": 1826
+     }
+    },
+    {
+     "url": "https://portalelegis.alesc.sc.gov.br/proposicoes/K9reB/documentos",
+     "papel": "link",
+     "de": "https://www.alesc.sc.gov.br/legislativo/tramitacao-de-materia",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 19527,
+     "ms": 358,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 10,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Documentos / PL./0639/2026 / Proposições / e-Legis / ALESC",
+      "texto": 1437
+     }
+    },
+    {
+     "url": "https://sapl.al.sc.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 2389,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "SC",
+   "orgao": "diario",
+   "nome": "Diário Oficial de Santa Catarina",
+   "sigla": "DOE-SC",
+   "sondagens": [
+    {
+     "url": "https://www.doe.sea.sc.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "urlFinal": "https://doe.sea.sc.gov.br/",
+     "tipo": "text/html",
+     "bytes": 2386,
+     "ms": 3731,
+     "certificadoInvalido": true,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Redirect",
+      "texto": 40
+     }
+    },
+    {
+     "url": "https://portal.doe.sea.sc.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 2386,
+     "ms": 1137,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Redirect",
+      "texto": 40
+     }
+    }
+   ]
+  },
+  {
+   "uf": "SE",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa de Sergipe",
+   "sigla": "Alese",
+   "sondagens": [
+    {
+     "url": "https://www.al.se.leg.br/",
+     "papel": "site",
+     "status": 200,
+     "urlFinal": "https://al.se.leg.br/",
+     "tipo": "text/html",
+     "bytes": 304085,
+     "ms": 9306,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Principal - Assembleia Legislativa de Sergipe",
+      "texto": 9779
+     }
+    },
+    {
+     "url": "https://al.se.leg.br/categoria/campanhas/",
+     "papel": "link",
+     "de": "https://www.al.se.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 197894,
+     "ms": 178,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Arquivo de Campanhas - Assembleia Legislativa de Sergipe",
+      "texto": 4190
+     }
+    },
+    {
+     "url": "https://sapl.al.se.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 2916,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "SE",
+   "orgao": "diario",
+   "nome": "Diário Oficial de Sergipe",
+   "sigla": "DOE-SE",
+   "sondagens": [
+    {
+     "url": "https://www.segrase.se.gov.br/",
+     "papel": "diario",
+     "status": null,
+     "ms": 683,
+     "erro": "ENOTFOUND"
+    },
+    {
+     "url": "https://iose.se.gov.br/",
+     "papel": "diario",
+     "status": 403,
+     "tipo": "text/html",
+     "bytes": 199,
+     "ms": 2034,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "403 Forbidden",
+      "texto": 74
+     }
+    }
+   ]
+  },
+  {
+   "uf": "SP",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa de São Paulo",
+   "sigla": "Alesp",
+   "sondagens": [
+    {
+     "url": "https://www.al.sp.gov.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 82993,
+     "ms": 2876,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 13,
+      "linksDados": [
+       "https://www.al.sp.gov.br/dados-abertos/"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Estado de S. Paulo",
+      "texto": 11664
+     }
+    },
+    {
+     "url": "https://www.al.sp.gov.br/propositura/",
+     "papel": "link",
+     "de": "https://www.al.sp.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 7455,
+     "ms": 992,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Alesp - Processo Legislativo",
+      "texto": 413
+     }
+    },
+    {
+     "url": "https://www.al.sp.gov.br/leis/notificacoes",
+     "papel": "link",
+     "de": "https://www.al.sp.gov.br/",
+     "status": 200,
+     "urlFinal": "https://www.al.sp.gov.br/leis/notificacoes/",
+     "tipo": "text/html",
+     "bytes": 46376,
+     "ms": 2820,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 9,
+      "linksDados": [
+       "https://www.al.sp.gov.br/dados-abertos/"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Notifica��o de Normas e Proposi��es",
+      "texto": 7286
+     }
+    },
+    {
+     "url": "https://www.al.sp.gov.br/dados-abertos/",
+     "papel": "link",
+     "de": "https://www.al.sp.gov.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 37694,
+     "ms": 6358,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 4,
+      "linksDados": [
+       "https://www.al.sp.gov.br/dados-abertos/;jsessionid=3095F70FF9F6816FA10592B63DB433F1",
+       "https://www.al.sp.gov.br/dados-abertos/sobre;jsessionid=3095F70FF9F6816FA10592B63DB433F1",
+       "https://www.al.sp.gov.br/dados-abertos/lai;jsessionid=3095F70FF9F6816FA10592B63DB433F1",
+       "https://www.al.sp.gov.br/dados-abertos/dadosabertos;jsessionid=3095F70FF9F6816FA10592B63DB433F1",
+       "https://www.al.sp.gov.br/dados-abertos/planejamento;jsessionid=3095F70FF9F6816FA10592B63DB433F1",
+       "https://www.al.sp.gov.br/dados-abertos/catalogo;jsessionid=3095F70FF9F6816FA10592B63DB433F1",
+       "https://www.al.sp.gov.br/dados-abertos/grupo/1;jsessionid=3095F70FF9F6816FA10592B63DB433F1",
+       "https://www.al.sp.gov.br/dados-abertos/grupo/2;jsessionid=3095F70FF9F6816FA10592B63DB433F1",
+       "https://www.al.sp.gov.br/dados-abertos/grupo/21;jsessionid=3095F70FF9F6816FA10592B63DB433F1",
+       "https://www.al.sp.gov.br/dados-abertos/grupo/41;jsessionid=3095F70FF9F6816FA10592B63DB433F1",
+       "https://www.al.sp.gov.br/dados-abertos/grupo/81;jsessionid=3095F70FF9F6816FA10592B63DB433F1",
+       "https://www.al.sp.gov.br/dados-abertos/perguntas;jsessionid=3095F70FF9F6816FA10592B63DB433F1"
+      ],
+      "citaDadosAbertos": true,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Portal dos Dados Abertos da Alesp",
+      "texto": 2768
+     }
+    },
+    {
+     "url": "https://www.al.sp.gov.br/propositura/?id=1000620315",
+     "papel": "link",
+     "de": "https://www.al.sp.gov.br/",
+     "status": 200,
+     "urlFinal": "https://www.al.sp.gov.br/propositura/1000620315",
+     "tipo": "text/html",
+     "bytes": 7458,
+     "ms": 3380,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Alesp - Processo Legislativo",
+      "texto": 413
+     }
+    },
+    {
+     "url": "https://www.al.sp.gov.br/propositura/?id=1248582",
+     "papel": "link",
+     "de": "https://www.al.sp.gov.br/",
+     "status": 200,
+     "urlFinal": "https://www.al.sp.gov.br/propositura/1248582",
+     "tipo": "text/html",
+     "bytes": 7457,
+     "ms": 1572,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Alesp - Processo Legislativo",
+      "texto": 413
+     }
+    },
+    {
+     "url": "https://www.al.sp.gov.br/propositura/?id=1000682212",
+     "papel": "link",
+     "de": "https://www.al.sp.gov.br/",
+     "status": 200,
+     "urlFinal": "https://www.al.sp.gov.br/propositura/1000682212",
+     "tipo": "text/html",
+     "bytes": 7459,
+     "ms": 2173,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Alesp - Processo Legislativo",
+      "texto": 413
+     }
+    },
+    {
+     "url": "https://www.al.sp.gov.br/repositorioDados/processo_legislativo/proposituras.xml",
+     "papel": "dados_abertos",
+     "status": 404,
+     "tipo": "text/html",
+     "bytes": 1479,
+     "ms": 520,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Apache Tomcat/7.0.47 - Error report",
+      "texto": 266
+     }
+    },
+    {
+     "url": "https://sapl.al.sp.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": null,
+     "ms": 5341,
+     "erro": "ENOTFOUND"
+    }
+   ]
+  },
+  {
+   "uf": "SP",
+   "orgao": "diario",
+   "nome": "Diário Oficial de São Paulo",
+   "sigla": "DOE-SP",
+   "sondagens": [
+    {
+     "url": "https://www.doe.sp.gov.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 68713,
+     "ms": 993,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial do Estado de São Paulo",
+      "texto": 624
+     }
+    },
+    {
+     "url": "https://www.imprensaoficial.com.br/",
+     "papel": "diario",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 39141,
+     "ms": 2452,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 1,
+      "linksProposicao": 1,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": ":: Diário Oficial ::",
+      "texto": 2663
+     }
+    },
+    {
+     "url": "https://doe.sp.gov.br/",
+     "papel": "link",
+     "de": "https://www.imprensaoficial.com.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 68714,
+     "ms": 1308,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Diário Oficial do Estado de São Paulo",
+      "texto": 624
+     }
+    }
+   ]
+  },
+  {
+   "uf": "TO",
+   "orgao": "casa",
+   "nome": "Assembleia Legislativa do Tocantins",
+   "sigla": "Aleto",
+   "sondagens": [
+    {
+     "url": "https://www.al.to.leg.br/",
+     "papel": "site",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 17139,
+     "ms": 2910,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [
+       "https://www.al.to.leg.br/rss"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Estado do Tocantins",
+      "texto": 2289
+     }
+    },
+    {
+     "url": "https://www.al.to.leg.br/diario",
+     "papel": "link",
+     "de": "https://www.al.to.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 37793,
+     "ms": 4031,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [
+       "https://www.al.to.leg.br/rss"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Estado do Tocantins",
+      "texto": 15909
+     }
+    },
+    {
+     "url": "https://www.al.to.leg.br/materiasLegislativas",
+     "papel": "link",
+     "de": "https://www.al.to.leg.br/",
+     "status": 200,
+     "tipo": "text/html",
+     "bytes": 28917,
+     "ms": 3049,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 42,
+      "linksDados": [
+       "https://www.al.to.leg.br/rss"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Estado do Tocantins",
+      "texto": 8556
+     }
+    },
+    {
+     "url": "https://www.al.to.leg.br/sapl",
+     "papel": "link",
+     "de": "https://www.al.to.leg.br/",
+     "status": 200,
+     "urlFinal": "https://sapl.al.to.leg.br/",
+     "tipo": "text/html",
+     "bytes": 17916,
+     "ms": 2392,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": true,
+      "pdfs": 0,
+      "linksProposicao": 2,
+      "linksDados": [
+       "https://sapl.al.to.leg.br/api/schema/swagger-ui/"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "SAPL - Sistema de Apoio ao Processo Legislativo",
+      "texto": 3289
+     }
+    },
+    {
+     "url": "https://www.al.to.leg.br/materias",
+     "papel": "proposicoes",
+     "status": 404,
+     "tipo": "text/html",
+     "bytes": 6973,
+     "ms": 235,
+     "sinais": {
+      "json": false,
+      "xml": false,
+      "sapl": false,
+      "citaSapl": false,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [
+       "https://www.al.to.leg.br/rss"
+      ],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "titulo": "Assembleia Legislativa do Estado do Tocantins",
+      "texto": 470
+     }
+    },
+    {
+     "url": "https://sapl.al.to.leg.br/api/materia/materialegislativa/?page_size=1",
+     "papel": "sapl_padrao",
+     "status": 200,
+     "tipo": "application/json",
+     "bytes": 1282,
+     "ms": 399,
+     "sinais": {
+      "json": true,
+      "xml": false,
+      "sapl": true,
+      "citaSapl": false,
+      "registros": 14533,
+      "pdfs": 0,
+      "linksProposicao": 0,
+      "linksDados": [],
+      "citaDadosAbertos": false,
+      "spa": false,
+      "bloqueio": false,
+      "texto": 0
+     }
+    }
+   ]
+  },
+  {
+   "uf": "TO",
+   "orgao": "diario",
+   "nome": "Diário Oficial do Tocantins",
+   "sigla": "DOE-TO",
+   "sondagens": [
+    {
+     "url": "https://diariooficial.to.gov.br/",
+     "papel": "diario",
+     "status": null,
+     "ms": 10345,
+     "erro": "UND_ERR_CONNECT_TIMEOUT"
+    }
+   ]
+  }
+ ]
+}
