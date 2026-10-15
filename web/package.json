@@ -21,6 +21,7 @@
     "migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
     "fumaca": "tsx src/coleta/fumaca/index.ts",
     "amostras": "tsx src/coleta/amostras/index.ts",
+    "levantamento": "tsx src/levantamento/sondar.ts",
     "coleta": "cross-env NODE_OPTIONS=--no-deprecation payload run src/coleta/rodar.ts",
     "seed:demo": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed/demo.ts"
   },

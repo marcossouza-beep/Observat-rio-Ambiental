@@ -1,0 +1,49 @@
+# Fase 4 — levantamento regional: sonda os sites das 27 casas legislativas estaduais e dos
+# 27 Diários Oficiais e grava as evidências em web/levantamento/resultado.json.
+# Roda só sob demanda; o resultado vira um commit no mesmo ramo.
+name: Levantamento regional
+
+on:
+  workflow_dispatch:
+    inputs:
+      ufs:
+        description: 'UFs separadas por vírgula (ex.: TO,PA) ou vazio para todas'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: levantamento
+  cancel-in-progress: false
+
+jobs:
+  sondar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - name: Sondar os sites
+        run: pnpm levantamento ${{ github.event.inputs.ufs }}
+      - name: Salvar no repositório
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add levantamento
+          if git diff --cached --quiet; then echo "Nada mudou."; exit 0; fi
+          git commit -m "Levantamento regional: sondagem dos sites ($(date -u +%Y-%m-%d))"
+          for i in 1 2 3; do git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0; sleep 5; done
+          exit 1
