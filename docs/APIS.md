@@ -129,7 +129,7 @@
 
 - **Situação:** não há padrão nacional. Há casas com API (ex.: ALMG), casas com dados abertos em arquivos (ex.: ALESP), casas que usam o **SAPL** do Interlegis (que tem API REST, ex.: `/api/materia/materialegislativa/`) e casas só com site ou diário em PDF.
 - **Votos nominais:** raramente publicados em formato aberto (por isso o site não mostra votos estaduais).
-- **Plano:** o levantamento da Fase 4 classifica as 27 casas em níveis A–D (API, site estruturado, PDF, manual) e começa pela região-piloto. Onde houver SAPL, um único conector serve a várias casas.
+- **Plano:** o levantamento da Fase 4 classifica as 27 casas em níveis A–D (API, site estruturado, PDF, manual) e começa pela região-piloto. Onde houver SAPL, um único conector serve a várias casas. **Feito:** resultado em [LEVANTAMENTO.md](LEVANTAMENTO.md) — 7 casas com a API do SAPL aberta (AC, AL, AM, PB, PI, RO, TO), ALMG e Alesp com dados abertos; 11 sites não respondem de fora do Brasil.
 
 ### 2.8 Querido Diário (Fase 7)
 

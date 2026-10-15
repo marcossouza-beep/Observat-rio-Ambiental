@@ -33,6 +33,9 @@ async function main() {
   const ufs = [...new Set(r.orgaos.map((o) => o.uf))].sort()
   const conta = { casa: { A: 0, B: 0, C: 0, D: 0 }, diario: { A: 0, B: 0, C: 0, D: 0 } } as Record<'casa' | 'diario', Record<Nivel, number>>
   const linhas: Record<string, string[]> = Object.fromEntries(REGIOES.map((g) => [g, []]))
+  const porRegiao: Record<string, Record<Nivel, string[]>> = Object.fromEntries(REGIOES.map((g) => [g, { A: [], B: [], C: [], D: [] }]))
+  const sapl: string[] = []
+  const semResposta: string[] = []
   for (const uf of ufs) {
     const casa = por.get(`${uf}:casa`)
     const diario = por.get(`${uf}:diario`)
@@ -41,6 +44,9 @@ async function main() {
     const cd = classificar(diario)
     conta.casa[cc.nivel]++
     conta.diario[cd.nivel]++
+    porRegiao[REGIAO[uf]][cc.nivel].push(uf)
+    if (casa.sondagens.some((s) => s.sinais?.sapl && (s.sinais.registros || 0) > 100)) sapl.push(uf)
+    for (const [o, c] of [[casa, cc], [diario, cd]] as const) if (/fora do Brasil/.test(c.motivo)) semResposta.push(`${uf} (${o.orgao === 'casa' ? o.sigla : 'diário'})`)
     linhas[REGIAO[uf]].push(`| ${uf} | ${casa.sigla} | ${celula(cc)} | ${link(cc)} | ${resumo(casa)} | ${celula(cd)} | ${link(cd)} | ${resumo(diario)} |`)
   }
   const data = new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', dateStyle: 'long', timeStyle: 'short' }).format(new Date(r.geradoEm))
@@ -72,6 +78,19 @@ async function main() {
     '|---|---|---|---|---|',
     `| Casas legislativas | ${conta.casa.A} | ${conta.casa.B} | ${conta.casa.C} | ${conta.casa.D} |`,
     `| Diários Oficiais | ${conta.diario.A} | ${conta.diario.B} | ${conta.diario.C} | ${conta.diario.D} |`,
+    '',
+    '## Por região (casas legislativas)',
+    '',
+    '| Região | A | B | C | D |',
+    '|---|---|---|---|---|',
+    ...REGIOES.map((g) => `| ${g} | ${(['A', 'B', 'C', 'D'] as Nivel[]).map((n) => (porRegiao[g][n].length ? `${porRegiao[g][n].length} (${porRegiao[g][n].join(', ')})` : '0')).join(' | ')} |`),
+    '',
+    '## O que os números dizem',
+    '',
+    `- **SAPL (Interlegis):** ${sapl.length} casas respondem pela mesma API (${sapl.join(', ')}). Um único conector do SAPL cobre todas, com o mesmo formato de matéria, tramitação e autoria.`,
+    `- **Diários Oficiais:** nenhum tem API; todos publicam edições em PDF ou em consulta por data. Para os estados, o diário é fonte de confirmação (lei publicada, veto), não de acompanhamento diário.`,
+    `- **Sem resposta de fora do Brasil (${semResposta.length}):** ${semResposta.join(', ')}. Falharam nas duas sondagens por tempo esgotado ou conexão recusada, o que costuma indicar bloqueio de acesso estrangeiro. A coleta desses estados precisa rodar de um servidor no Brasil; a confirmação vem do teste a partir de lá.`,
+    `- **Região-piloto (Fase 5):** a região com mais casas em nível A é ${REGIOES.slice().sort((a, b) => porRegiao[b].A.length - porRegiao[a].A.length)[0]}.`,
     '',
     ...REGIOES.flatMap((g) => [
       `## ${g}`,

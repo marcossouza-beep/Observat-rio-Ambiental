@@ -26,7 +26,15 @@ export function sugerirNivel(o: ResultadoOrgao): Classificacao {
   const paginas = boas.filter((s) => s.sinais && !s.sinais.json && !s.sinais.xml)
   if (!paginas.length) {
     const bloqueada = o.sondagens.find((s) => s.sinais?.bloqueio)
-    return { nivel: 'D', motivo: bloqueada ? 'site bloqueia acesso automático (captcha ou desafio)' : 'nenhum endereço respondeu', url: o.sondagens[0]?.url }
+    if (bloqueada) return { nivel: 'D', motivo: 'site bloqueia acesso automático (captcha ou desafio)', url: bloqueada.url }
+    const semResposta = o.sondagens.every((s) => s.status === null && /TIMEOUT|ECONNRESET|ECONNREFUSED|EAI_AGAIN|ENOTFOUND/.test(s.erro || ''))
+    return {
+      nivel: 'D',
+      motivo: semResposta
+        ? 'não respondeu a partir dos servidores do GitHub (fora do Brasil); pode ser bloqueio de acesso estrangeiro: testar de um servidor no Brasil'
+        : 'nenhum endereço respondeu com conteúdo',
+      url: o.sondagens[0]?.url,
+    }
   }
   const legivel = (s: Sondagem) => !s.sinais!.spa && s.sinais!.texto > 400
   if (o.orgao === 'casa') {
@@ -34,7 +42,7 @@ export function sugerirNivel(o: ResultadoOrgao): Classificacao {
       || paginas.find((s) => legivel(s) && s.sinais!.linksProposicao >= 10)
     if (lista) return { nivel: 'B', motivo: `página com lista de proposições em HTML (${lista.sinais!.linksProposicao} links)`, url: lista.urlFinal || lista.url }
     const pdf = paginas.find((s) => s.sinais!.pdfs > 0)
-    if (pdf) return { nivel: 'C', motivo: `proposições só em PDF (${pdf.sinais!.pdfs} PDFs na página)`, url: pdf.urlFinal || pdf.url }
+    if (pdf) return { nivel: 'C', motivo: `lista de proposições não encontrada em HTML; o site publica documentos em PDF (${pdf.sinais!.pdfs} na página)`, url: pdf.urlFinal || pdf.url }
     const spa = paginas.find((s) => s.sinais!.spa)
     if (spa) return { nivel: 'C', motivo: 'página montada no navegador (precisa de navegador automatizado)', url: spa.urlFinal || spa.url }
     return { nivel: 'D', motivo: 'site no ar, mas sem lista de proposições encontrada; cadastro manual até achar a fonte', url: paginas[0].urlFinal || paginas[0].url }
@@ -47,8 +55,47 @@ export function sugerirNivel(o: ResultadoOrgao): Classificacao {
   return { nivel: 'C', motivo: 'site no ar; edições sem link direto na página inicial (consulta por data)', url: paginas[0].urlFinal || paginas[0].url }
 }
 
-/** Correções de quem revisou o resultado, por "UF:casa" ou "UF:diario". */
-export const AJUSTES: Record<string, Omit<Classificacao, 'ajustado'>> = {}
+/**
+ * Correções de quem revisou o resultado, por "UF:casa" ou "UF:diario". Cada uma diz o que a sondagem mostrou.
+ * Revisão de 15/10/2026 sobre a segunda rodada da sondagem.
+ */
+export const AJUSTES: Record<string, Omit<Classificacao, 'ajustado'>> = {
+  'MT:casa': {
+    nivel: 'B',
+    motivo: 'SAPL instalado mas sem uso (1 matéria); API própria (api.al.mt.gov.br) exige chave (resposta 401): pedir acesso; até lá, lista de proposições em HTML',
+    url: 'https://www.al.mt.gov.br/proposicao/',
+  },
+  'MG:casa': {
+    nivel: 'A',
+    motivo: 'portal de dados abertos com API documentada (dadosabertos.almg.gov.br); as consultas testadas responderam erro 500: acertar os parâmetros pela documentação antes do conector',
+    url: 'https://dadosabertos.almg.gov.br/documentacao/index',
+  },
+  'RR:casa': {
+    nivel: 'D',
+    motivo: 'usa o SAPL, mas a API recusa o acesso (403) e o site não mostra conteúdo sem o navegador; pedir liberação à ALE-RR',
+    url: 'https://sapl.al.rr.leg.br/',
+  },
+  'CE:casa': {
+    nivel: 'D',
+    motivo: 'site responde de forma intermitente e a página de proposições testada não existe (404); falta localizar a consulta de proposições',
+    url: 'https://www.al.ce.gov.br/',
+  },
+  'PA:casa': {
+    nivel: 'D',
+    motivo: 'site no ar, mas a página de proposições não traz a lista no HTML; falta localizar a consulta',
+    url: 'https://www.alepa.pa.gov.br/Home/Page/Proposicoes',
+  },
+  'RJ:casa': {
+    nivel: 'B',
+    motivo: 'consulta de proposições no sistema Lotus Notes da Alerj (páginas HTML, sem API); falta testar a listagem',
+    url: 'http://alerjln1.alerj.rj.gov.br/scpro2327.nsf/Internet/LeiInt?OpenForm',
+  },
+  'PR:casa': {
+    nivel: 'C',
+    motivo: 'a consulta de proposições é protegida por captcha; o portal de dados abertos não traz proposições; resta a leitura dos documentos em PDF',
+    url: 'https://consultas.assembleia.pr.leg.br/',
+  },
+}
 
 export function classificar(o: ResultadoOrgao): Classificacao {
   const a = AJUSTES[`${o.uf}:${o.orgao}`]

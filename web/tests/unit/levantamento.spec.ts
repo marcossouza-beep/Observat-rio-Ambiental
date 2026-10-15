@@ -73,7 +73,8 @@ describe('classificação A–D', () => {
     expect(sugerirNivel(orgao('diario', [s({ sinais: { pdfs: 12 } })]))).toMatchObject({ nivel: 'C', motivo: 'edições em PDF (12 na página)' })
   })
   it('D: fora do ar, bloqueado ou sem lista', () => {
-    expect(sugerirNivel(orgao('casa', [s({ status: null, erro: 'ENOTFOUND' })])).motivo).toBe('nenhum endereço respondeu')
+    expect(sugerirNivel(orgao('casa', [s({ status: null, erro: 'UND_ERR_CONNECT_TIMEOUT' })])).motivo).toMatch(/fora do Brasil/)
+    expect(sugerirNivel(orgao('casa', [s({ status: 500 })])).motivo).toBe('nenhum endereço respondeu com conteúdo')
     expect(sugerirNivel(orgao('casa', [s({ status: 200, sinais: { bloqueio: true } })])).motivo).toMatch(/bloqueia/)
     expect(sugerirNivel(orgao('casa', [s({ sinais: { linksProposicao: 1 } })])).nivel).toBe('D')
     expect(sugerirNivel(orgao('casa', [s({ status: 404, sinais: { linksProposicao: 50 } })])).nivel).toBe('D')
