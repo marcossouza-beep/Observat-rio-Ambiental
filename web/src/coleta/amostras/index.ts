@@ -3,14 +3,17 @@
  * Roda no GitHub Actions (.github/workflows/amostras.yml), que salva o resultado em
  * tests/fixtures/coleta/ no próprio repositório.
  *
- * Uso: pnpm amostras            (todas)
- *      pnpm amostras senado     (só as do Senado)
+ * Uso: pnpm amostras                 (todas)
+ *      pnpm amostras senado          (só as do Senado)
+ *      pnpm amostras vetos,pdf,dou   (várias)
  *
  * Listas longas são cortadas (ver CORTE) para os arquivos ficarem pequenos.
  */
 import { mkdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { ErroHttp, obter } from '../http'
+import { baixarEdicao, entrarInlabs } from '../dou/inlabs'
+import { lerZip } from '../zip'
 
 const CAMARA = 'https://dadosabertos.camara.leg.br/api/v2'
 const SENADO = 'https://legis.senado.leg.br/dadosabertos'
@@ -168,7 +171,9 @@ const PASSOS: Passo[] = [
       fonte: 'camara',
       nome: `recente${sufixo.replace('/', '-') || '-ficha'}`,
       async rodar(ctx) {
-        if (ctx.camaraRecente) await salvar('camara', `recente${sufixo.replace('/', '-') || '-ficha'}`, await buscar(`${CAMARA}/proposicoes/${ctx.camaraRecente}${sufixo}`))
+        if (!ctx.camaraRecente) return
+        const g = await salvar('camara', `recente${sufixo.replace('/', '-') || '-ficha'}`, await buscar(`${CAMARA}/proposicoes/${ctx.camaraRecente}${sufixo}`))
+        if (!sufixo) ctx.camaraRecenteTeor = (dados(g) as { urlInteiroTeor?: string } | null)?.urlInteiroTeor
       },
     }),
   ),
@@ -281,12 +286,111 @@ const PASSOS: Passo[] = [
       await salvar('senado', 'vetos-ano', await buscar(`${SENADO}/materia/vetos/${new Date().getFullYear()}`))
     },
   },
+  {
+    fonte: 'vetos',
+    nome: 'veto-resultado',
+    async rodar() {
+      // Um veto já apreciado (para o resultado) e a agenda do Congresso
+      const g = await buscar(`${SENADO}/materia/vetos/${new Date().getFullYear()}`, 1000)
+      const vetos = primeiraLista(g.corpo) as { Materia?: { Codigo?: string; EmTramitacao?: string }; Codigo?: string }[]
+      const apreciado = vetos.find((v) => v.Materia?.EmTramitacao === 'Não') || vetos[vetos.length - 1]
+      if (apreciado?.Materia?.Codigo) {
+        await salvar('senado', 'veto-resultado-materia', await buscar(`${SENADO}/plenario/resultado/veto/materia/${apreciado.Materia.Codigo}`))
+        await salvar('senado', 'veto-processo-busca', await buscar(`${SENADO}/processo?codigoMateria=${apreciado.Materia.Codigo}`))
+      }
+      await salvar('senado', 'agenda-congresso', await buscar(`${SENADO}/plenario/agenda/cn/${compacto(dia(-20))}/${compacto(dia(10))}`))
+    },
+  },
+  // ---------------- PDFs (texto integral) ----------------
+  {
+    fonte: 'pdf',
+    nome: 'pdfs',
+    async rodar(ctx) {
+      await mkdir(path.join(saida, 'pdf'), { recursive: true })
+      const urls: [string, string | undefined][] = [
+        ['camara-recente', ctx.camaraRecenteTeor as string | undefined],
+        ['senado-documento', 'https://legis.senado.gov.br/sdleg-getter/dadosabertos/documento/d663bfce-d4fd-442c-b44f-6c337bf5ba5e'],
+      ]
+      for (const [nome, url] of urls) {
+        if (!url) continue
+        try {
+          const r = await obter(url, { tentativas: 3, tempoLimiteMs: 60_000 })
+          const buf = Buffer.from(await r.arrayBuffer())
+          await writeFile(path.join(saida, 'pdf', `${nome}.pdf`), buf)
+          console.log(`✅ pdf/${nome} · ${r.headers.get('content-type')} · ${Math.round(buf.length / 1024)} KB · começa com ${buf.subarray(0, 5).toString()}`)
+        } catch (e) {
+          console.log(`⚠️ pdf/${nome} · ${(e as Error).message}`)
+        }
+      }
+    },
+  },
+  // ---------------- DOU (INLABS) ----------------
+  {
+    fonte: 'dou',
+    nome: 'inlabs',
+    async rodar() {
+      const email = process.env.INLABS_EMAIL
+      const senha = process.env.INLABS_SENHA
+      await mkdir(path.join(saida, 'dou'), { recursive: true })
+      const relatorio: Record<string, unknown> = { gravadoEm: new Date().toISOString() }
+      if (!email || !senha) {
+        relatorio.erro = 'sem os segredos INLABS_EMAIL e INLABS_SENHA'
+        console.log('⚠️ dou · sem os segredos INLABS_EMAIL e INLABS_SENHA')
+        await writeFile(path.join(saida, 'dou', 'relatorio.json'), JSON.stringify(relatorio, null, 2) + '\n')
+        return
+      }
+      try {
+        const cookie = await entrarInlabs(email, senha)
+        relatorio.login = 'ok'
+        for (let n = 0; n < 7; n++) {
+          const data = dia(-n)
+          const zip = await baixarEdicao(cookie, data, 'DO1')
+          if (!zip) continue
+          const xmls = lerZip(zip, (nome) => nome.toLowerCase().endsWith('.xml'))
+          const tipos: Record<string, number> = {}
+          const escolhidos: { nome: string; xml: string }[] = []
+          const porTipo: Record<string, number> = {}
+          for (const a of xmls) {
+            const xml = a.conteudo.toString('utf8')
+            const tipo = /artType="([^"]*)"/.exec(xml)?.[1] || '?'
+            const categoria = /artCategory="([^"]*)"/.exec(xml)?.[1] || ''
+            tipos[tipo] = (tipos[tipo] || 0) + 1
+            const interessa =
+              /^(Lei|Lei Complementar|Decreto|Medida Provis[óo]ria|Mensagem|Decreto Legislativo)$/i.test(tipo) ||
+              (/Meio Ambiente|Ibama|Chico Mendes|Servi[çc]o Florestal|[ÁA]guas/i.test(categoria) && /Portaria|Instru[çc][ãa]o Normativa|Resolu[çc][ãa]o/i.test(tipo))
+            porTipo[tipo] = porTipo[tipo] || 0
+            if ((interessa && porTipo[tipo] < 8) || escolhidos.length < 3) {
+              porTipo[tipo]++
+              escolhidos.push({ nome: a.nome, xml })
+            }
+          }
+          relatorio.data = data
+          relatorio.secao = 'DO1'
+          relatorio.tamanhoZip = zip.length
+          relatorio.arquivos = xmls.length
+          relatorio.tipos = tipos
+          relatorio.gravados = escolhidos.map((e) => e.nome)
+          for (const e of escolhidos.slice(0, 60)) await writeFile(path.join(saida, 'dou', e.nome.replace(/[^\w.-]/g, '_')), e.xml)
+          // Edição extra do mesmo dia, se houver
+          const extra = await baixarEdicao(cookie, data, 'DO1E')
+          relatorio.extra = extra ? lerZip(extra, (nome) => nome.toLowerCase().endsWith('.xml')).length : 0
+          break
+        }
+        console.log(`✅ dou · ${JSON.stringify({ data: relatorio.data, arquivos: relatorio.arquivos, extra: relatorio.extra })}`)
+      } catch (e) {
+        relatorio.erro = (e as Error).message
+        console.log(`❌ dou · ${(e as Error).message}`)
+      }
+      await writeFile(path.join(saida, 'dou', 'relatorio.json'), JSON.stringify(relatorio, null, 2) + '\n')
+    },
+  },
 ]
 
 async function main() {
   const ctx: Ctx = {}
   await mkdir(saida, { recursive: true })
-  for (const p of PASSOS.filter((x) => !filtro || x.fonte === filtro)) {
+  const fontes = filtro ? filtro.split(',') : null
+  for (const p of PASSOS.filter((x) => !fontes || fontes.includes(x.fonte))) {
     try {
       await p.rodar(ctx)
     } catch (e) {

@@ -1,15 +1,14 @@
 # Grava respostas reais das APIs da Câmara e do Senado em web/tests/fixtures/coleta/,
 # para os testes dos conectores rodarem sem rede e sobre dados de verdade.
-# Roda sob demanda e quando o gravador muda; o resultado vira um commit no mesmo ramo.
+# Roda só sob demanda (as amostras mudam de propósito, porque os testes dependem delas);
+# o resultado vira um commit no mesmo ramo.
 name: Gravar amostras das APIs
 
 on:
-  push:
-    paths: ['web/src/coleta/amostras/**', '.github/workflows/amostras.yml']
   workflow_dispatch:
     inputs:
       fonte:
-        description: 'camara, senado ou vazio para todas'
+        description: 'camara, senado, vetos, pdf, dou (separadas por vírgula) ou vazio para todas'
         required: false
         default: ''
 
@@ -39,6 +38,9 @@ jobs:
           cache-dependency-path: web/pnpm-lock.yaml
       - run: pnpm install --frozen-lockfile
       - name: Chamar as APIs e gravar
+        env:
+          INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
+          INLABS_SENHA: ${{ secrets.INLABS_SENHA }}
         run: pnpm amostras ${{ github.event.inputs.fonte }}
       - name: Salvar no repositório
         run: |
