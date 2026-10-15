@@ -131,6 +131,8 @@ describe('coleta da Câmara e do Senado', () => {
     expect((await payload.count({ collection: 'proposicoes', where: { sigla: { equals: 'PL' }, numero: { equals: 2159 }, ano: { equals: 2021 } } })).totalDocs).toBe(1)
     const p = await payload.findByID({ collection: 'proposicoes', id: lic, depth: 0 })
     expect(p.chavesExtras).toEqual(expect.arrayContaining(['camara:257161', 'senado:8079566', 'senado:materia:148785']))
+    // Para o padrão de atuação vale a casa onde a proposta começou, mesmo depois de andar no Senado
+    expect(p.casaOrigem).toBe('camara')
     // A agenda do Plenário do Senado cita a matéria pelo código antigo: acha pela chave extra
     expect((await acharProposicao(payload, ['senado:materia:148785']))?.id).toBe(lic)
     const v = (await payload.find({ collection: 'votacoes', where: { chaveOrigem: { equals: 'senado:votacao:6935' } } })).docs[0]

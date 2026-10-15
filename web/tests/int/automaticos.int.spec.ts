@@ -88,4 +88,32 @@ describe('resumo semanal', () => {
     expect(await resumoSemanal(payload, AGORA)).toEqual({ ignorado: 'o autor pediu para não enviar esta semana' })
     expect((await payload.findGlobal({ slug: 'emails-automaticos' })).resumo?.pular).toBe(false)
   })
+
+  it('edição regional: nota da região e leis dos estados da região para quem informou o estado', async () => {
+    await payload.delete({ collection: 'envios', where: { id: { exists: true } } })
+    const para = (await payload.create({ collection: 'proposicoes', data: { esfera: 'estadual', uf: 'PA', sigla: 'PL', numero: 77, ano: 2026, titulo: 'Reserva extrativista no Pará', situacaoEditorial: 'monitorada' } })).id
+    await payload.create({ collection: 'tramitacoes', data: { proposicao: para, data: horas(-3), orgao: 'PLEN', descricao: 'Votação (Plenário): Aprovado em primeiro turno', tipoEvento: 'votacao' } })
+    const base = { aceitaEmails: true, consentimentoEm: AGORA.toISOString(), confirmadoEm: AGORA.toISOString(), resumoSemanal: true }
+    await payload.create({ collection: 'assinantes', data: { ...base, email: 'norte@exemplo.com', uf: 'TO' } })
+    await payload.create({ collection: 'assinantes', data: { ...base, email: 'sul@exemplo.com', uf: 'RS' } })
+    await payload.updateGlobal({
+      slug: 'emails-automaticos',
+      data: { resumo: { ultimoEnvio: null, nota: '', notasRegionais: [{ regiao: 'Norte', nota: 'Semana de votações na Alepa.' }] } },
+    })
+
+    const r = await resumoSemanal(payload, AGORA)
+    expect(r).toMatchObject({ porEdicao: { Nacional: 1, Norte: 1, Sul: 1 } })
+    const todos = await envios('resumo')
+    const norte = todos.find((e) => e.para === 'norte@exemplo.com')!
+    expect(norte.assunto).toMatch(/^Resumo da semana \(Norte\)/)
+    expect(norte.texto).toContain('Semana de votações na Alepa.')
+    expect(norte.texto).toContain('NA SUA REGIÃO (NORTE)')
+    expect(norte.texto).toContain('Reserva extrativista no Pará')
+    const sul = todos.find((e) => e.para === 'sul@exemplo.com')!
+    expect(sul.assunto).toMatch(/^Resumo da semana \(Sul\)/)
+    expect(sul.texto).not.toContain('Alepa')
+    expect(sul.texto).not.toContain('Reserva extrativista no Pará')
+    // As notas regionais também somem depois do envio
+    expect((await payload.findGlobal({ slug: 'emails-automaticos' })).resumo?.notasRegionais).toEqual([])
+  })
 })

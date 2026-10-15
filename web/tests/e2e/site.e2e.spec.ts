@@ -21,6 +21,59 @@ test.describe('Site público', () => {
     await expect(page.locator('.law').first()).toBeVisible()
   })
 
+  test('Panorama: casas e estados, só aprovadas, biomas, áreas e método', async ({ page }) => {
+    await page.goto('/')
+    await expect(page.locator('.pano-chamada')).toContainText('4 pareceres')
+    await page.locator('.pano-chamada').click()
+    await expect(page).toHaveURL(/\/panorama$/)
+    await expect(page.locator('h1')).toHaveText('Panorama')
+    const linha = (nome: string) => page.locator('.ranking-linha', { hasText: nome })
+    await expect(linha('União')).toContainText('2 pareceres')
+    await expect(linha('Câmara dos Deputados')).toContainText('1 parecer')
+    await expect(linha('Senado Federal')).toContainText('0 pareceres')
+    await expect(linha('Presidência da República')).toContainText('1 parecer')
+    await expect(linha('Pará')).toContainText('1 parecer')
+    await expect(linha('Amazonas')).toContainText('0 pareceres · 1 proposta acompanhada')
+    // Amostra pequena: nenhum grupo da demonstração tem 5 pareceres
+    await expect(linha('União')).toContainText('Amostra pequena')
+    await expect(linha('Pará').getByRole('img')).toHaveAttribute('aria-label', 'Benéfico 100%')
+    await page.getByRole('link', { name: 'Só aprovadas' }).click()
+    await expect(page).toHaveURL(/so=aprovadas/)
+    await expect(linha('União')).toContainText('1 parecer')
+    await expect(linha('Pará')).toContainText('0 pareceres')
+    await page.locator('.como-tabela').first().locator('summary').click()
+    await expect(page.locator('.como-tabela table').first()).toContainText('Presidência da República')
+
+    await page.getByRole('link', { name: 'Biomas', exact: true }).click()
+    await expect(page.locator('.pano-card', { hasText: 'Cerrado' })).toContainText('2 pareceres')
+    await expect(page.locator('.pano-card', { hasText: 'Cerrado' })).toContainText('100% de alto impacto')
+    await page.getByRole('link', { name: 'Áreas', exact: true }).click()
+    await expect(page.locator('.area-linha', { hasText: 'Licenciamento' }).locator('.qtd b')).toHaveText('1')
+    await expect(page.locator('#metodo')).toContainText('Amostra mínima')
+    await expect(page.locator('#metodo')).toContainText('Enfraquece indiretamente')
+  })
+
+  test('Leis federais: padrão de atuação acompanha o filtro de casa; estado tem o seu', async ({ page }) => {
+    await page.goto('/leis?esfera=federal')
+    await expect(page.locator('.padrao h2')).toHaveText('Padrão de atuação · União')
+    await expect(page.locator('.padrao')).toContainText('2 pareceres')
+    await page.getByRole('link', { name: 'Câmara', exact: true }).click()
+    await expect(page).toHaveURL(/casa=camara/)
+    await expect(page.locator('h1')).toHaveText('Leis ambientais federais: Câmara dos Deputados')
+    await expect(page.locator('.padrao h2')).toHaveText('Padrão de atuação · Câmara dos Deputados')
+    await expect(page.locator('.padrao .padrao-linhas').getByRole('img').first()).toHaveAttribute('aria-label', 'Maléfico 100%')
+    // Só as que começaram na Câmara (o teste do painel pode tornar pública mais uma da triagem)
+    await expect(page.locator('.list')).toContainText('Licenciamento simplificado')
+    await expect(page.locator('.list')).not.toContainText('Regras de proteção do Pantanal')
+    await page.goto('/leis?uf=TO')
+    await expect(page.locator('.padrao h2')).toHaveText('Padrão de atuação · Tocantins')
+    await expect(page.locator('.padrao')).toContainText('Só o que foi aprovado')
+    await page.goto('/biomas/cerrado')
+    await expect(page.locator('.numeros')).toContainText('2pareceres')
+    await page.goto('/temas')
+    await expect(page.locator('.tb-card', { hasText: 'Cerrado' })).toContainText('2 pareceres')
+  })
+
   test('lei com parecer', async ({ page }) => {
     await page.goto(LIC)
     await expect(page).toHaveTitle(/texto, tramitação e votação/)
@@ -86,6 +139,7 @@ test.describe('Site público', () => {
     const sm = await (await request.get('/sitemap.xml')).text()
     expect(sm).toContain(LIC)
     expect(sm).toContain(PARECER)
+    expect(sm).toContain('/panorama')
     const rb = await (await request.get('/robots.txt')).text()
     expect(rb).toMatch(/Disallow: \/admin/)
     const r = await page.goto('/leis/nao-existe')
@@ -95,7 +149,7 @@ test.describe('Site público', () => {
   test('celular sem rolagem lateral', async ({ browser }) => {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } })
     const page = await ctx.newPage()
-    for (const c of ['/', PANT, PARECER]) {
+    for (const c of ['/', PANT, PARECER, '/panorama', '/panorama?aba=areas', '/leis?esfera=federal']) {
       await page.goto(c)
       expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390)
     }

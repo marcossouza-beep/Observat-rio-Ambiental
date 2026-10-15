@@ -2,11 +2,18 @@
  * Conteúdo dos e-mails automáticos (docs/ENTREGA.md, seção "E-mails"):
  * - alerta diário: o que andou nas leis que a pessoa segue (no máximo 1 e-mail por dia);
  * - resumo semanal (sexta): nota do autor, pareceres da semana, pauta, o que andou, interesses, região e parlamentares seguidos.
+ *   Quem informou o estado recebe a edição da sua região (Norte, Nordeste, Centro-Oeste, Sudeste, Sul): nota regional do autor,
+ *   se houver, e o bloco "Na sua região" com as leis dos estados da região e dos biomas que a cobrem. Sem estado, edição nacional.
  * Funções puras: recebem os dados já buscados e devolvem título, parágrafos e seções.
  */
 import type { SecaoEmail } from './email'
 import { ROTULO_CARATER, votoAFavorDaProtecao, type Carater } from './indicadores'
-import { SITE_URL } from './rotulos'
+import { REGIAO, SITE_URL } from './rotulos'
+
+export const REGIOES = ['Norte', 'Nordeste', 'Centro-Oeste', 'Sudeste', 'Sul'] as const
+export type Regiao = (typeof REGIOES)[number]
+export const regiaoDe = (uf?: string | null) => (uf ? (REGIAO[uf.toUpperCase()] as Regiao | undefined) : undefined)
+const ufsDaRegiao = (r: Regiao) => Object.keys(REGIAO).filter((uf) => REGIAO[uf] === r)
 
 export type TipoEventoPublico = 'pauta' | 'urgencia' | 'substitutivo' | 'votacao' | 'aprovacao' | 'sancao' | 'veto'
 export const EVENTOS_PUBLICOS: TipoEventoPublico[] = ['pauta', 'urgencia', 'substitutivo', 'votacao', 'aprovacao', 'sancao', 'veto']
@@ -65,8 +72,17 @@ export function montarAlerta(inscrito: Pick<InscritoResumo, 'nome'>, porLei: { l
 }
 
 const interessa = (l: LeiResumo, i: InscritoResumo) => l.temas.some((t) => i.temas.includes(t)) || l.biomas.some((b) => i.biomas.includes(b))
-const daRegiao = (l: LeiResumo, i: InscritoResumo, ufsDoBioma: Map<number, string[]>) =>
-  !!i.uf && (l.uf?.toUpperCase() === i.uf.toUpperCase() || l.biomas.some((b) => (ufsDoBioma.get(b) || []).includes(i.uf!.toUpperCase())))
+/** Lei da região de quem recebe: do próprio estado (0), de outro estado da região (1) ou de bioma que cobre a região (2). */
+function pesoDaRegiao(l: LeiResumo, i: InscritoResumo, ufsDoBioma: Map<number, string[]>): number | null {
+  const regiao = regiaoDe(i.uf)
+  if (!regiao) return null
+  const ufs = ufsDaRegiao(regiao)
+  const uf = l.uf?.toUpperCase()
+  if (uf && uf === i.uf!.toUpperCase()) return 0
+  if (uf && ufs.includes(uf)) return 1
+  if (l.biomas.some((b) => (ufsDoBioma.get(b) || []).some((x) => ufs.includes(x.toUpperCase())))) return 2
+  return null
+}
 
 export type DadosResumo = {
   inicio: string
@@ -80,6 +96,8 @@ export type DadosResumo = {
   /** Caráter do parecer publicado de cada lei (para o sentido do voto). */
   carater: Map<number, Carater>
   ufsDoBioma: Map<number, string[]>
+  /** Nota do autor para cada edição regional desta semana (opcional). */
+  notasRegionais?: Partial<Record<Regiao, string>>
 }
 
 /** Resumo semanal de um inscrito. Devolve null quando não há o que contar (o e-mail não sai vazio). */
@@ -87,9 +105,13 @@ export function montarResumo(i: InscritoResumo, d: DadosResumo) {
   const secoes: SecaoEmail[] = []
   const ja = new Set<number>()
   const lei = (id: number) => d.leis.get(id)
+  const regiao = regiaoDe(i.uf)
+  const daRegiao = (id: number) => (lei(id) ? pesoDaRegiao(lei(id)!, i, d.ufsDoBioma) !== null : false)
+  // Ordem de destaque: seguidas, da região, do interesse, o resto
+  const ordem = (id: number) => (i.seguindo.includes(id) ? 0 : daRegiao(id) ? 1 : lei(id) && interessa(lei(id)!, i) ? 2 : 3)
 
-  // 1. Pareceres publicados na semana (os seguidos e de interesse primeiro)
-  const pareceres = [...d.pareceres].sort((a, b) => Number(i.seguindo.includes(b.leiId)) - Number(i.seguindo.includes(a.leiId)))
+  // 1. Pareceres publicados na semana (os seguidos, da região e de interesse primeiro)
+  const pareceres = [...d.pareceres].sort((a, b) => ordem(a.leiId) - ordem(b.leiId))
   secoes.push({
     titulo: 'Pareceres publicados',
     itens: pareceres.slice(0, 10).map((p) => ({
@@ -100,7 +122,6 @@ export function montarResumo(i: InscritoResumo, d: DadosResumo) {
   })
 
   // 2. Em votação nos próximos dias
-  const ordem = (id: number) => (i.seguindo.includes(id) ? 0 : lei(id) && interessa(lei(id)!, i) ? 1 : 2)
   const pauta = d.pauta.filter((e) => lei(e.leiId)).sort((a, b) => ordem(a.leiId) - ordem(b.leiId) || a.data.localeCompare(b.data))
   secoes.push({
     titulo: 'Em votação nos próximos dias',
@@ -111,14 +132,17 @@ export function montarResumo(i: InscritoResumo, d: DadosResumo) {
   const porLei = new Map<number, EventoResumo[]>()
   for (const e of d.eventos) if (lei(e.leiId)) porLei.set(e.leiId, [...(porLei.get(e.leiId) || []), e])
   const ultimo = (id: number) => [...(porLei.get(id) || [])].sort((a, b) => b.data.localeCompare(a.data))[0]
-  const bloco = (titulo: string, filtro: (l: LeiResumo) => boolean, max: number) => {
-    const ids = [...porLei.keys()].filter((id) => !ja.has(id) && filtro(lei(id)!)).slice(0, max)
+  const bloco = (titulo: string, filtro: (l: LeiResumo) => boolean, max: number, peso: (l: LeiResumo) => number = () => 0) => {
+    const ids = [...porLei.keys()]
+      .filter((id) => !ja.has(id) && filtro(lei(id)!))
+      .sort((a, b) => peso(lei(a)!) - peso(lei(b)!))
+      .slice(0, max)
     ids.forEach((id) => ja.add(id))
     secoes.push({ titulo, itens: ids.map((id) => ({ ...itemDeEvento(ultimo(id), lei(id)!), texto: nomeDaLei(lei(id)!), detalhe: itemDeEvento(ultimo(id), lei(id)!).texto })) })
   }
   bloco('O que andou nas leis que você segue', (l) => i.seguindo.includes(l.id), 10)
   bloco('Do seu interesse', (l) => interessa(l, i), 6)
-  bloco(i.uf ? `Na sua região (${i.uf.toUpperCase()})` : 'Na sua região', (l) => daRegiao(l, i, d.ufsDoBioma), 5)
+  bloco(`Na sua região${regiao ? ` (${regiao})` : ''}`, (l) => pesoDaRegiao(l, i, d.ufsDoBioma) !== null, 6, (l) => pesoDaRegiao(l, i, d.ufsDoBioma) ?? 9)
 
   // 6. Parlamentares que você segue
   const votos = d.votos.filter((v) => i.seguirParlamentares.includes(v.parlamentarId) && lei(v.leiId))
@@ -137,12 +161,14 @@ export function montarResumo(i: InscritoResumo, d: DadosResumo) {
   })
 
   const comConteudo = secoes.filter((s) => s.itens.length)
-  if (!comConteudo.length && !d.nota?.trim()) return null
+  const notaRegional = regiao ? d.notasRegionais?.[regiao]?.trim() : undefined
+  if (!comConteudo.length && !d.nota?.trim() && !notaRegional) return null
   const ola = primeiroNome(i.nome)
+  const paragrafos = (t?: string | null) => (t?.trim() ? t.trim().split(/\n{2,}/) : [])
   return {
-    titulo: `Resumo da semana · ${dataCurta(d.inicio)} a ${dataCurta(d.fim)}`,
-    assunto: `Resumo da semana: ${comConteudo.length ? comConteudo.map((s) => s.titulo.split(' (')[0].toLowerCase()).slice(0, 2).join(', ') : 'nota do autor'}`,
-    paragrafos: [...(d.nota?.trim() ? d.nota.trim().split(/\n{2,}/) : []), `${ola ? `${ola}, ` : ''}o que aconteceu nas leis ambientais esta semana.`],
+    titulo: `Resumo da semana · ${regiao ? `edição ${regiao} · ` : ''}${dataCurta(d.inicio)} a ${dataCurta(d.fim)}`,
+    assunto: `Resumo da semana${regiao ? ` (${regiao})` : ''}: ${comConteudo.length ? comConteudo.map((s) => s.titulo.split(' (')[0].toLowerCase()).slice(0, 2).join(', ') : 'nota do autor'}`,
+    paragrafos: [...paragrafos(d.nota), ...paragrafos(notaRegional), `${ola ? `${ola}, ` : ''}o que aconteceu nas leis ambientais esta semana${regiao ? `, com destaque para a região ${regiao}` : ''}.`],
     secoes: comConteudo,
   }
 }

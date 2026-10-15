@@ -244,6 +244,10 @@ export interface Proposicao {
   motivoDescarte?: string | null;
   fonte?: (number | null) | Fonte;
   /**
+   * Só federal. Preenchida sozinha (pela fonte ou pela sigla MPV); usada no padrão de atuação por casa.
+   */
+  casaOrigem?: ('camara' | 'senado' | 'congresso' | 'presidencia') | null;
+  /**
    * Ex.: camara:2345678
    */
   chaveOrigem?: string | null;
@@ -286,6 +290,10 @@ export interface Tema {
    */
   textoAbertura?: string | null;
   revisarEm?: string | null;
+  /**
+   * Leitura do autor sobre as propostas desta área. Aparece no Panorama e na página do tema; vazio, o bloco não aparece.
+   */
+  oQueTemosVisto?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -303,6 +311,14 @@ export interface Bioma {
   textoAbertura?: string | null;
   revisarEm?: string | null;
   ufs?: string[] | null;
+  /**
+   * Leitura do autor. Aparece no Panorama e na página do bioma; vazio, o bloco não aparece.
+   */
+  pressoes?: string | null;
+  /**
+   * Leitura do autor. Mesmas regras de "Principais pressões".
+   */
+  avancos?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1246,6 +1262,7 @@ export interface ProposicoesSelect<T extends boolean = true> {
   termosEncontrados?: T;
   motivoDescarte?: T;
   fonte?: T;
+  casaOrigem?: T;
   chaveOrigem?: T;
   chavesExtras?: T;
   temasOficiais?: T;
@@ -1478,6 +1495,7 @@ export interface TemasSelect<T extends boolean = true> {
   slug?: T;
   textoAbertura?: T;
   revisarEm?: T;
+  oQueTemosVisto?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1491,6 +1509,8 @@ export interface BiomasSelect<T extends boolean = true> {
   textoAbertura?: T;
   revisarEm?: T;
   ufs?: T;
+  pressoes?: T;
+  avancos?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1837,6 +1857,16 @@ export interface EmailsAutomatico {
      */
     nota?: string | null;
     /**
+     * Opcional. Cada nota vai só para quem mora na região (pelo estado informado), depois da nota nacional. Apagadas depois do envio.
+     */
+    notasRegionais?:
+      | {
+          regiao: 'Norte' | 'Nordeste' | 'Centro-Oeste' | 'Sudeste' | 'Sul';
+          nota: string;
+          id?: string | null;
+        }[]
+      | null;
+    /**
      * Vale só para a próxima sexta.
      */
     pular?: boolean | null;
@@ -1891,6 +1921,13 @@ export interface EmailsAutomaticosSelect<T extends boolean = true> {
     | T
     | {
         nota?: T;
+        notasRegionais?:
+          | T
+          | {
+              regiao?: T;
+              nota?: T;
+              id?: T;
+            };
         pular?: T;
         ultimoEnvio?: T;
         ultimoTotal?: T;

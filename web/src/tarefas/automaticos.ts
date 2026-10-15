@@ -7,7 +7,7 @@ import type { Payload } from 'payload'
 import { enfileirar, linkDescadastro, modelo } from '../lib/email'
 import type { Carater } from '../lib/indicadores'
 import { textoDe } from '../lib/publicacao'
-import { EVENTOS_PUBLICOS, montarAlerta, montarResumo, type EventoResumo, type LeiResumo, type TipoEventoPublico } from '../lib/resumo'
+import { EVENTOS_PUBLICOS, montarAlerta, montarResumo, regiaoDe, type EventoResumo, type LeiResumo, type Regiao, type TipoEventoPublico } from '../lib/resumo'
 import type { Proposicao } from '../payload-types'
 
 const PUBLICAS = ['ativa', 'monitorada']
@@ -132,16 +132,24 @@ export async function resumoSemanal(payload: Payload, agora = new Date()) {
     votos,
     carater,
     ufsDoBioma: new Map(biomas.docs.map((b) => [b.id, (b.ufs || []).map((u) => u.toUpperCase())])),
+    notasRegionais: Object.fromEntries((r.notasRegionais || []).filter((n) => n.nota?.trim()).map((n) => [n.regiao, n.nota])) as Partial<Record<Regiao, string>>,
   }
 
   let enviados = 0
+  const porEdicao: Record<string, number> = {}
   for (const a of pessoas) {
     const c = montarResumo({ nome: a.nome, uf: a.uf, temas: ids(a.temas), biomas: ids(a.biomas), seguindo: ids(a.seguindo), seguirParlamentares: ids(a.seguirParlamentares) }, dados)
     if (!c) continue
-    const m = modelo({ ...c, descadastro: linkDescadastro(a.id), motivo: 'Você recebe o resumo semanal porque pediu na sua inscrição.' })
+    const regiao = regiaoDe(a.uf)
+    const m = modelo({
+      ...c,
+      descadastro: linkDescadastro(a.id),
+      motivo: `Você recebe o resumo semanal porque pediu na sua inscrição${regiao ? `; a edição ${regiao} vem do estado informado na sua conta` : ''}.`,
+    })
     await enfileirar(payload, { tipo: 'resumo', para: a.email, assunto: c.assunto, ...m, assinante: a.id })
     enviados++
+    porEdicao[regiao || 'Nacional'] = (porEdicao[regiao || 'Nacional'] || 0) + 1
   }
-  await payload.updateGlobal({ slug: 'emails-automaticos', data: { resumo: { nota: '', pular: false, ultimoEnvio: agora.toISOString(), ultimoTotal: enviados } } })
-  return { pareceres: dados.pareceres.length, andou: dados.eventos.length, pauta: dados.pauta.length, votos: votos.length, pessoas: enviados }
+  await payload.updateGlobal({ slug: 'emails-automaticos', data: { resumo: { nota: '', notasRegionais: [], pular: false, ultimoEnvio: agora.toISOString(), ultimoTotal: enviados } } })
+  return { pareceres: dados.pareceres.length, andou: dados.eventos.length, pauta: dados.pauta.length, votos: votos.length, pessoas: enviados, porEdicao }
 }

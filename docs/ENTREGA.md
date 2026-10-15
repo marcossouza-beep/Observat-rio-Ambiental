@@ -44,13 +44,13 @@
 
 ### E-mails (o sistema envia, o painel registra)
 
-> Estado (Fase 3, parte 1): link de acesso, aviso de publicação, alerta diário das leis seguidas, resumo semanal, respostas a pedidos, credenciamento e comunicados funcionando, com fila e descadastro. Alerta e resumo são escolhas explícitas da pessoa (na inscrição e em Minha conta). O envio de pareceres sob embargo à imprensa credenciada saiu do escopo inicial: o credenciamento só verifica o vínculo com o veículo.
+> Estado (Fase 3, partes 1 e 2): link de acesso, aviso de publicação, alerta diário das leis seguidas, resumo semanal (edição nacional e edições regionais pelo estado da pessoa), respostas a pedidos, credenciamento e comunicados funcionando, com fila e descadastro. Alerta e resumo são escolhas explícitas da pessoa (na inscrição e em Minha conta). O envio de pareceres sob embargo à imprensa credenciada saiu do escopo inicial: o credenciamento só verifica o vínculo com o veículo.
 
 | Promessa | Quando sai | Garantia |
 |---|---|---|
 | "Você recebe um e-mail no dia da publicação" (Avise-me) | No ato da publicação do parecer | Fila de envio com nova tentativa; registro por pessoa |
 | "Um e-mail quando a lei que você segue andar" | Depois de cada coleta, agrupado (no máximo 1 e-mail por pessoa por dia) | Só eventos relevantes: pauta, votação, aprovação, sanção, veto, novo parecer |
-| "Resumo semanal" | Sexta, 17h, montado automaticamente; o autor pode acrescentar uma nota até a hora do envio | Se o autor não mexer, sai assim mesmo |
+| "Resumo semanal" | Sexta, 17h, montado automaticamente; o autor pode acrescentar uma nota nacional e uma por região até a hora do envio | Se o autor não mexer, sai assim mesmo; quem informou o estado recebe a edição da sua região |
 | Confirmação e link de acesso | Na hora | Monitoramento de entrega e de retorno (bounce) |
 | Comunicados do autor (por perfil, subgrupo e estado) | Quando o autor envia ou agenda | Só para quem aceitou e-mails do observatório; descadastro em um clique; registro de cada envio |
 

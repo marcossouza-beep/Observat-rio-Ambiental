@@ -3,6 +3,7 @@ import { campoSoEquipe, equipe, proposicaoPublicaOuEquipe } from '../access'
 import { abrirCompromisso, mudarCompromissos } from '../hooks/compromissos'
 import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
 import { leisCitadas } from '../lib/leis'
+import { casaDeOrigem } from '../lib/panorama'
 import { pontuar, type Termo } from '../lib/relevancia'
 import { rotuloProposicao, slugProposicao } from '../lib/texto'
 
@@ -43,6 +44,11 @@ export const Proposicoes: CollectionConfig = {
         if (data.sigla && data.numero && data.ano) {
           data.rotulo = rotuloProposicao(data.sigla, data.numero, data.ano)
           if (!data.slug) data.slug = slugProposicao(data.sigla, data.numero, data.ano, data.titulo || undefined)
+        }
+        // Casa de origem (para o padrão de atuação por casa); fica a que o autor escolher, se escolher.
+        if (!data.casaOrigem && !originalDoc?.casaOrigem) {
+          const v = (k: string) => (data[k] !== undefined ? data[k] : originalDoc?.[k])
+          data.casaOrigem = casaDeOrigem({ esfera: v('esfera'), sigla: v('sigla'), chaveOrigem: v('chaveOrigem'), casa: v('casa') })
         }
         if (data.situacaoEditorial === 'ativa' && originalDoc?.situacaoEditorial !== 'ativa') {
           data.ativadaEm = new Date().toISOString()
@@ -221,6 +227,18 @@ export const Proposicoes: CollectionConfig = {
     { name: 'termosEncontrados', label: 'Termos encontrados', type: 'text', hasMany: true, admin: { position: 'sidebar' }, access: { read: campoSoEquipe } },
     { name: 'motivoDescarte', type: 'text', admin: { position: 'sidebar', condition: (d) => d.situacaoEditorial === 'descartada' }, access: { read: campoSoEquipe } },
     { name: 'fonte', type: 'relationship', relationTo: 'fontes', admin: { position: 'sidebar' } },
+    {
+      name: 'casaOrigem',
+      label: 'Casa de origem',
+      type: 'select',
+      options: [
+        { label: 'Câmara dos Deputados', value: 'camara' },
+        { label: 'Senado Federal', value: 'senado' },
+        { label: 'Congresso Nacional', value: 'congresso' },
+        { label: 'Presidência da República', value: 'presidencia' },
+      ],
+      admin: { position: 'sidebar', description: 'Só federal. Preenchida sozinha (pela fonte ou pela sigla MPV); usada no padrão de atuação por casa.', condition: (d) => d.esfera === 'federal' },
+    },
     { name: 'chaveOrigem', label: 'Identificador na fonte', type: 'text', unique: true, index: true, admin: { position: 'sidebar', description: 'Ex.: camara:2345678' } },
     {
       name: 'chavesExtras',

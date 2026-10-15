@@ -29,6 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/pareceres">Opinião</Link>
               <Link href="/artigos">Artigos</Link>
               <Link href="/temas">Temas e biomas</Link>
+              <Link href="/panorama">Panorama</Link>
             </nav>
             <ContaCabecalho />
           </div>
@@ -44,6 +45,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/leis">Todas as leis</Link>
               <Link href="/temas">Temas e biomas</Link>
               <Link href="/parlamentares">Parlamentares</Link>
+              <Link href="/panorama">Panorama</Link>
               <Link href="/pareceres">Pareceres</Link>
               <Link href="/artigos">Artigos</Link>
               <Link href="/privacidade">Privacidade</Link>

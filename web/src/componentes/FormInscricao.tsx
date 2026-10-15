@@ -419,7 +419,7 @@ export function FormInscricao({ perfis, subperfis, temas, biomas, para, prazoImp
             <label className="chave">
               <span>
                 Resumo semanal
-                <small>Às sextas: pareceres da semana, o que vai a voto e o que andou nos seus temas e na sua região</small>
+                <small>Às sextas: pareceres da semana, o que vai a voto e o que andou nos seus temas, na edição da sua região</small>
               </span>
               <input type="checkbox" checked={d.resumoSemanal} onChange={(e) => setD({ ...d, resumoSemanal: e.target.checked })} />
             </label>

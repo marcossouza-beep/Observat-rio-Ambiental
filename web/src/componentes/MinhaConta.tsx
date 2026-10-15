@@ -115,7 +115,7 @@ export function MinhaConta({ subperfis, perguntas, temas, biomas }: { subperfis:
       </section>
       <section className="caixa form">
         <h2>Seus interesses</h2>
-        <p className="nota-fonte">Usados no resumo semanal (“Do seu interesse” e “Na sua região”).</p>
+        <p className="nota-fonte">Usados no resumo semanal (“Do seu interesse” e “Na sua região”). O estado define a edição regional do resumo (Norte, Nordeste, Centro-Oeste, Sudeste ou Sul); sem estado, vem a edição nacional.</p>
         <SeletorUF rotulo="Seu estado" valor={sessao.uf || ''} vazio="Prefiro não informar" mudar={(uf) => salvar({ uf })} />
         <Chips titulo="Temas" itens={temas} marcados={sessao.temas || []} alternar={(id) => salvar({ temas: (sessao.temas || []).includes(id) ? (sessao.temas || []).filter((x) => x !== id) : [...(sessao.temas || []), id] })} />
         <Chips titulo="Biomas" itens={biomas} marcados={sessao.biomas || []} alternar={(id) => salvar({ biomas: (sessao.biomas || []).includes(id) ? (sessao.biomas || []).filter((x) => x !== id) : [...(sessao.biomas || []), id] })} />

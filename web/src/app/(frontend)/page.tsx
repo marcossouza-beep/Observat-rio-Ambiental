@@ -3,7 +3,9 @@ import { CartaoLei } from '@/componentes/CartaoLei'
 import { Local } from '@/componentes/Etiquetas'
 import { IconeArtigos, IconeEstadual, IconeFederal, IconeOpiniao, Lupa, Seta } from '@/componentes/Icones'
 import { JsonLd } from '@/componentes/JsonLd'
-import { contagens, emVotacao, listarLeis, pareceresDe } from '@/dados/consultas'
+import { BarraCarater, SeloTendencia } from '@/componentes/Padrao'
+import { contagens, dadosDoPanorama, emVotacao, listarLeis, pareceresDe } from '@/dados/consultas'
+import { padrao } from '@/lib/panorama'
 import { jsonLdSite } from '@/lib/seo'
 import type { Proposicao } from '@/payload-types'
 
@@ -13,8 +15,9 @@ const curta = (iso: string) =>
   new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', day: 'numeric', month: 'short' }).format(new Date(iso)).replace('.', '')
 
 export default async function Inicio() {
-  const [agenda, n, recentes] = await Promise.all([emVotacao(7), contagens(), listarLeis({}, 6)])
+  const [agenda, n, recentes, panorama] = await Promise.all([emVotacao(7), contagens(), listarLeis({}, 6), dadosDoPanorama()])
   const pareceres = await pareceresDe(recentes.docs.map((l) => l.id))
+  const geral = padrao(panorama.itens)
   const explore = [
     { href: '/leis?esfera=federal', icone: <IconeFederal />, titulo: 'Leis federais', desc: 'Câmara, Senado e Presidência', n: `${n.federais} ${n.federais === 1 ? 'lei acompanhada' : 'leis acompanhadas'}` },
     { href: '/leis?esfera=estadual', icone: <IconeEstadual />, titulo: 'Leis estaduais', desc: 'Assembleias Legislativas', n: `${n.estaduais} ${n.estaduais === 1 ? 'lei' : 'leis'} · ${n.estados} ${n.estados === 1 ? 'estado' : 'estados'}` },
@@ -122,6 +125,18 @@ export default async function Inicio() {
           </Link>
         ) : null}
       </section>
+
+      {geral.total ? (
+        <Link className="pano-chamada" href="/panorama">
+          <span className="pc-t">
+            <b>Panorama</b> · para que lado vão as propostas ({geral.total} {geral.total === 1 ? 'parecer' : 'pareceres'})
+          </span>
+          <BarraCarater d={geral.tudo} fina />
+          <span className="pc-s">
+            <SeloTendencia t={geral.tendencia} /> Ver Panorama <Seta />
+          </span>
+        </Link>
+      ) : null}
 
       <section className="cta">
         <div>

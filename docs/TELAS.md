@@ -231,6 +231,8 @@ Passo extra quando o perfil é Jornalista: o que o credenciamento faz (verifica 
 
 Barras 100% com Maléfico · Enfraquece indiretamente · Neutro · Benéfico, em duas linhas (tudo que tramitou / só o que foi aprovado), tendência (tende a proteger / equilibrada / tende a enfraquecer / amostra pequena), temas mais frequentes e nota de método. Em Leis federais acompanha o filtro de casa (Todas = União).
 
+> **Construído** em `/leis?esfera=federal` (filtro Todas · Câmara · Senado · Presidência pela casa de origem), em `/leis?uf=XX` e, como "Para que lado vão as propostas", nas páginas de tema e de bioma (`web/src/componentes/Padrao.tsx`, cálculo em `web/src/lib/panorama.ts`).
+
 ## A20. Panorama
 
 | Aba | Conteúdo |
@@ -239,6 +241,8 @@ Barras 100% com Maléfico · Enfraquece indiretamente · Neutro · Benéfico, em
 | Biomas | Cartão por bioma (pareceres, propostas, barra, % alto impacto); detalhe com principais pressões e avanços, temas e leis do bioma |
 | Áreas | Linha por área com quantidade (barra) e caráter (barra 100%); tocar abre "O que temos visto" |
 | Todas | Legenda única, definição de "enfraquece indiretamente", "Ver como tabela", método e amostra mínima |
+
+> **Construído em `/panorama`** (abas por endereço: `?aba=biomas`, `?aba=areas`, `?so=aprovadas`). As leituras qualitativas ("principais pressões", "principais avanços", "o que temos visto") são campos dos biomas e temas no painel, escritos pelo autor; vazios, não aparecem. Chamada na home ("Panorama") e no menu.
 
 ## A21. Temas e biomas
 
@@ -323,7 +327,7 @@ Tabela de fontes: nível A–D, última coleta bem-sucedida, itens contra a méd
 
 **Comunicado aos inscritos [F1]:** um campo para escrever ao público inscrito. Para: Todos ou Por perfil (um ou mais perfis e, dentro de cada um, subgrupos opcionais; estudantes por curso); filtro por estado; assunto, mensagem com `{nome}`; contagem ao vivo de quem recebe (só quem aceitou e-mails do observatório); enviar teste para mim, agendar ou enviar. Todo comunicado leva o descadastro em um clique. Na tela Inscritos, cada perfil tem o atalho "Escrever para este perfil".
 
-Resumo semanal montado sozinho, com nota opcional do autor (sai mesmo sem ela); envios do dia (alertas agrupados, avisos de publicação); números de entrega; regras (no máximo 1 alerta por pessoa por dia, só eventos relevantes, descadastro em um clique).
+Resumo semanal montado sozinho, com nota opcional do autor (sai mesmo sem ela) e notas opcionais por região (Norte, Nordeste, Centro-Oeste, Sudeste, Sul), que vão só para quem mora na região; envios do dia (alertas agrupados, avisos de publicação); números de entrega; regras (no máximo 1 alerta por pessoa por dia, só eventos relevantes, descadastro em um clique).
 
 ## B8. Textos do site **[F1]**
 

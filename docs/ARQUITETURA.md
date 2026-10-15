@@ -78,7 +78,7 @@ Assembleias Legislativas (26) + Câmara Legislativa do DF, Diários Oficiais est
 Jurisdicao      id, esfera (federal|estadual|municipal), uf, regiao, nome
 Fonte           id, jurisdicao_id, nome, conector, nivel (A–D), frequencia, ultima_coleta, ultima_coleta_ok,
                 itens_ultima_coleta, media_itens_30d, status (ok|atrasada|fora|volume_baixo|manual), erro
-Proposicao      id, fonte_id, casa, tipo, numero, ano, ementa, art1, url_inteiro_teor, texto,
+Proposicao      id, fonte_id, casa, casa_origem, tipo, numero, ano, ementa, art1, url_inteiro_teor, texto,
                 status_simplificado, status_oficial, data_apresentacao, ultima_movimentacao,
                 regime (normal|prioridade|urgencia), relevancia, origem (api|manual),
                 situacao_editorial (capturada|triagem|ativa|monitorada|descartada), motivo_descarte,

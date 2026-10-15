@@ -3,21 +3,25 @@
  * (só pareceres publicados, só proposições públicas) valham também aqui.
  */
 import 'server-only'
+import { cache } from 'react'
 import { getPayload, type Where } from 'payload'
 import config from '@payload-config'
+import type { Carater } from '@/lib/indicadores'
+import type { CasaFederal, ItemPanorama } from '@/lib/panorama'
 import type { Artigo, Bioma, Parecer, Proposicao, Tema } from '@/payload-types'
 
 export const payloadSite = async () => getPayload({ config: await config })
 
 const publico = { overrideAccess: false } as const
 
-export type FiltrosLeis = { esfera?: string; situacao?: string; tema?: string; bioma?: string; uf?: string; q?: string; pagina?: number }
+export type FiltrosLeis = { esfera?: string; casa?: string; situacao?: string; tema?: string; bioma?: string; uf?: string; q?: string; pagina?: number }
 
 export async function listarLeis(f: FiltrosLeis = {}, limite = 20) {
   const payload = await payloadSite()
   const and: Where[] = []
   if (f.esfera) and.push({ esfera: { equals: f.esfera } })
   if (f.uf) and.push({ uf: { equals: f.uf.toUpperCase() } })
+  if (f.casa) and.push({ casaOrigem: { equals: f.casa } })
   if (f.situacao === 'em_tramitacao') and.push({ statusSimplificado: { equals: 'em_tramitacao' } })
   if (f.situacao === 'aprovada') and.push({ statusSimplificado: { in: ['aprovada', 'norma'] } })
   if (f.tema) and.push({ temas: { in: [f.tema] } })
@@ -224,3 +228,54 @@ export async function listarParlamentares(f: { casa?: string; uf?: string } = {}
   const r = await payload.find({ collection: 'parlamentares', ...publico, where, limit: 2000, depth: 0, sort: 'nome', pagination: false })
   return r.docs.map((p) => ({ ...p, ...atuacao.get(p.id)! }))
 }
+
+const idsDe = (v: unknown) => (Array.isArray(v) ? v.map(idDe).filter((x) => typeof x === 'number') : [])
+
+/**
+ * Base do Padrão de atuação e do Panorama: um item por parecer publicado (com caráter), já com os dados da proposta,
+ * mais as propostas públicas (para as contagens). Áreas e biomas: os do parecer; sem eles, os da proposta.
+ * Uma consulta por requisição (cache do React), usada pela home, Leis, Panorama, temas e biomas.
+ */
+export const dadosDoPanorama = cache(async () => {
+  const payload = await payloadSite()
+  const [pareceres, props, temas, biomas] = await Promise.all([
+    payload.find({ collection: 'pareceres', ...publico, limit: 10000, depth: 0, pagination: false, select: { proposicao: true, carater: true, impacto: true, areas: true, biomas: true } }),
+    payload.find({
+      collection: 'proposicoes',
+      ...publico,
+      limit: 20000,
+      depth: 0,
+      pagination: false,
+      select: { esfera: true, uf: true, casaOrigem: true, statusSimplificado: true, temas: true, biomas: true },
+    }),
+    payload.find({ collection: 'temas', ...publico, sort: 'nome', limit: 200, depth: 0, pagination: false }),
+    payload.find({ collection: 'biomas', ...publico, sort: 'nome', limit: 200, depth: 0, pagination: false }),
+  ])
+  const prop = new Map(props.docs.map((p) => [p.id, p]))
+  const itens: (ItemPanorama & { leiId: number })[] = []
+  for (const par of pareceres.docs) {
+    const p = prop.get(idDe(par.proposicao))
+    if (!p || !par.carater) continue
+    itens.push({
+      leiId: p.id,
+      carater: par.carater as Carater,
+      impacto: par.impacto,
+      aprovada: p.statusSimplificado === 'aprovada' || p.statusSimplificado === 'norma',
+      esfera: p.esfera,
+      uf: p.uf,
+      casaOrigem: (p.casaOrigem as CasaFederal | null) || null,
+      areas: idsDe(par.areas).length ? idsDe(par.areas) : idsDe(p.temas),
+      biomas: idsDe(par.biomas).length ? idsDe(par.biomas) : idsDe(p.biomas),
+    })
+  }
+  const propostas = props.docs.map((p) => ({
+    id: p.id,
+    esfera: p.esfera,
+    uf: p.uf,
+    casaOrigem: (p.casaOrigem as CasaFederal | null) || null,
+    emTramitacao: p.statusSimplificado === 'em_tramitacao',
+    temas: idsDe(p.temas),
+    biomas: idsDe(p.biomas),
+  }))
+  return { itens, propostas, temas: temas.docs, biomas: biomas.docs }
+})

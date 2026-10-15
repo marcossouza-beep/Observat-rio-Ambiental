@@ -25,7 +25,15 @@ export const Temas: CollectionConfig = {
   admin: { group: 'Classificação', useAsTitle: 'nome' },
   access: { read: publico, create: equipe, update: equipe, delete: equipe },
   hooks: { beforeValidate: [comSlug], afterChange: [revalidarAoMudar], afterDelete: [revalidarAoApagar] },
-  fields: camposTexto,
+  fields: [
+    ...camposTexto,
+    {
+      name: 'oQueTemosVisto',
+      label: 'O que temos visto',
+      type: 'textarea',
+      admin: { description: 'Leitura do autor sobre as propostas desta área. Aparece no Panorama e na página do tema; vazio, o bloco não aparece.' },
+    },
+  ],
 }
 
 export const Biomas: CollectionConfig = {
@@ -35,7 +43,17 @@ export const Biomas: CollectionConfig = {
   admin: { group: 'Classificação', useAsTitle: 'nome' },
   access: { read: publico, create: equipe, update: equipe, delete: equipe },
   hooks: { beforeValidate: [comSlug], afterChange: [revalidarAoMudar], afterDelete: [revalidarAoApagar] },
-  fields: [...camposTexto, { name: 'ufs', label: 'Estados que abrange', type: 'text', hasMany: true }],
+  fields: [
+    ...camposTexto,
+    { name: 'ufs', label: 'Estados que abrange', type: 'text', hasMany: true },
+    {
+      name: 'pressoes',
+      label: 'Principais pressões',
+      type: 'textarea',
+      admin: { description: 'Leitura do autor. Aparece no Panorama e na página do bioma; vazio, o bloco não aparece.' },
+    },
+    { name: 'avancos', label: 'Principais avanços', type: 'textarea', admin: { description: 'Leitura do autor. Mesmas regras de "Principais pressões".' } },
+  ],
 }
 
 export const PalavrasChave: CollectionConfig = {
