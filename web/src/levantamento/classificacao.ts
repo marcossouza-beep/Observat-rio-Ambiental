@@ -17,8 +17,11 @@ export function sugerirNivel(o: ResultadoOrgao): Classificacao {
   const boas = o.sondagens.filter(ok)
   const sapl = boas.find((s) => s.sinais?.sapl)
   if (sapl) return { nivel: 'A', motivo: `API do SAPL respondendo${sapl.sinais?.registros ? ` (${sapl.sinais.registros} matérias)` : ''}`, url: sapl.urlFinal || sapl.url }
-  const estruturada = boas.find((s) => (s.sinais?.json || s.sinais?.xml) && (s.bytes || 0) > 200)
-  if (estruturada) return { nivel: 'A', motivo: `dados estruturados (${estruturada.sinais?.json ? 'JSON' : 'XML'})`, url: estruturada.urlFinal || estruturada.url }
+  const estruturada = boas.find((s) => (s.sinais?.json || s.sinais?.xml || s.sinais?.arquivo) && (s.bytes || 0) > 200)
+  if (estruturada) {
+    const forma = estruturada.sinais?.json ? 'JSON' : estruturada.sinais?.xml ? 'XML' : 'arquivo para baixar'
+    return { nivel: 'A', motivo: `dados estruturados (${forma})`, url: estruturada.urlFinal || estruturada.url }
+  }
 
   const paginas = boas.filter((s) => s.sinais && !s.sinais.json && !s.sinais.xml)
   if (!paginas.length) {

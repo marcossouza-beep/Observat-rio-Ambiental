@@ -7,6 +7,8 @@ export type Sinais = {
   json: boolean
   /** XML, RSS ou Atom. */
   xml: boolean
+  /** Arquivo de dados para baixar (ZIP, CSV, planilha). */
+  arquivo?: boolean
   /** Resposta da API do SAPL (Interlegis): JSON com "pagination" e "results". */
   sapl: boolean
   /** A página cita o SAPL ou aponta para uma instância dele. */
@@ -64,7 +66,8 @@ export function sinaisDe(corpo: string, tipo: string, base: string): Sinais {
     }
   }
   const xml = !json && (/xml|rss|atom/i.test(tipo) || /^<\?xml|^<rss|^<feed/i.test(t))
-  const html = !json && !xml ? corpo : ''
+  const arquivo = !json && !xml && /zip|csv|octet-stream|spreadsheet|excel/i.test(tipo)
+  const html = !json && !xml && !arquivo ? corpo : ''
   const links = html ? linksDe(html, base) : []
   const textoVisivel = html
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
@@ -76,6 +79,7 @@ export function sinaisDe(corpo: string, tipo: string, base: string): Sinais {
   return {
     json,
     xml,
+    arquivo,
     sapl,
     citaSapl: /sapl/i.test(html) || links.some((l) => /\/\/sapl\./i.test(l.href)),
     registros,

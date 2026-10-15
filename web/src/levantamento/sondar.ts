@@ -108,7 +108,7 @@ async function sondarOrgao(uf: string, orgao: 'casa' | 'diario', nome: string, s
     const { s, corpo } = await sondar(c.url, c.papel)
     sondagens.push(s)
     // Segue os links mais promissores das páginas principais (um nível só)
-    if (corpo && s.sinais && !s.sinais.json && !s.sinais.xml && (c.papel === 'site' || c.papel === 'diario' || c.papel === 'proposicoes')) {
+    if (corpo && s.sinais && !s.sinais.json && !s.sinais.xml && c.papel !== 'sapl_padrao') {
       for (const l of linksPromissores(corpo, s.urlFinal || c.url, 6)) {
         if (feitos.has(l)) continue
         feitos.add(l)
