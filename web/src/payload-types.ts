@@ -68,6 +68,7 @@ export interface Config {
   blocks: {};
   collections: {
     proposicoes: Proposicao;
+    alertas: Alerta;
     pareceres: Parecer;
     compromissos: Compromisso;
     pedidos: Pedido;
@@ -101,6 +102,7 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     proposicoes: ProposicoesSelect<false> | ProposicoesSelect<true>;
+    alertas: AlertasSelect<false> | AlertasSelect<true>;
     pareceres: PareceresSelect<false> | PareceresSelect<true>;
     compromissos: CompromissosSelect<false> | CompromissosSelect<true>;
     pedidos: PedidosSelect<false> | PedidosSelect<true>;
@@ -232,6 +234,11 @@ export interface Proposicao {
    * Ex.: camara:2345678
    */
   chaveOrigem?: string | null;
+  /**
+   * A mesma proposta na outra casa (ex.: senado:8079566)
+   */
+  chavesExtras?: string[] | null;
+  temasOficiais?: string[] | null;
   origem?: ('api' | 'manual') | null;
   updatedAt: string;
   createdAt: string;
@@ -310,6 +317,26 @@ export interface Fonte {
   mediaItens30d?: number | null;
   erro?: string | null;
   situacao?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "alertas".
+ */
+export interface Alerta {
+  id: number;
+  proposicao: number | Proposicao;
+  tipo:
+    'pauta' | 'urgencia' | 'substitutivo' | 'votacao' | 'aprovacao' | 'sancao' | 'veto' | 'nova_versao' | 'situacao';
+  titulo: string;
+  data: string;
+  link?: string | null;
+  visto?: boolean | null;
+  /**
+   * Evita alerta repetido
+   */
+  chave?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -653,6 +680,7 @@ export interface Tramitacao {
         | 'outro'
       )
     | null;
+  urlDocumento?: string | null;
   chaveOrigem?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -1007,6 +1035,10 @@ export interface PayloadLockedDocument {
         value: number | Proposicao;
       } | null)
     | ({
+        relationTo: 'alertas';
+        value: number | Alerta;
+      } | null)
+    | ({
         relationTo: 'pareceres';
         value: number | Parecer;
       } | null)
@@ -1192,7 +1224,24 @@ export interface ProposicoesSelect<T extends boolean = true> {
   motivoDescarte?: T;
   fonte?: T;
   chaveOrigem?: T;
+  chavesExtras?: T;
+  temasOficiais?: T;
   origem?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "alertas_select".
+ */
+export interface AlertasSelect<T extends boolean = true> {
+  proposicao?: T;
+  tipo?: T;
+  titulo?: T;
+  data?: T;
+  link?: T;
+  visto?: T;
+  chave?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1306,6 +1355,7 @@ export interface TramitacoesSelect<T extends boolean = true> {
   orgao?: T;
   descricao?: T;
   tipoEvento?: T;
+  urlDocumento?: T;
   chaveOrigem?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -1734,6 +1784,13 @@ export interface Ajuste {
    * Indicador interno; não aparece no site.
    */
   metaSemanal?: number | null;
+  coleta?: {
+    /**
+     * Propostas novas abaixo desta nota (dicionário de palavras-chave) não entram na triagem. Tema oficial de meio ambiente soma 30.
+     */
+    notaMinima?: number | null;
+    maxNovas?: number | null;
+  };
   alertas?: {
     email?: string | null;
     telegramChatId?: string | null;
@@ -1757,6 +1814,12 @@ export interface AjustesSelect<T extends boolean = true> {
       };
   limitePrometidos?: T;
   metaSemanal?: T;
+  coleta?:
+    | T
+    | {
+        notaMinima?: T;
+        maxNovas?: T;
+      };
   alertas?:
     | T
     | {

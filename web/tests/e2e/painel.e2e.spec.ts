@@ -47,6 +47,19 @@ test.describe('Painel do autor', () => {
     await expect(page.locator('.obs-nav')).toContainText('Triagem')
   })
 
+  test('Radar: novidades da coleta e marcar como visto', async () => {
+    const p = (await payload.find({ collection: 'proposicoes', where: { chaveOrigem: { equals: TILAPIA } }, limit: 1 })).docs[0]
+    await payload.delete({ collection: 'alertas', where: { chave: { like: 'e2e:' } } })
+    await payload.create({ collection: 'alertas', data: { proposicao: p.id, tipo: 'pauta', titulo: 'Na pauta da CMADS (Reunião Deliberativa)', data: new Date().toISOString(), chave: 'e2e:radar' } })
+    await page.goto('/admin/radar')
+    await expect(page.getByRole('heading', { name: 'Radar' })).toBeVisible()
+    await expect(page.locator('.obs-linhas')).toContainText('Na pauta da CMADS')
+    await expect(page.locator('.obs-nav')).toContainText('Radar')
+    await page.getByRole('button', { name: 'Marcar tudo como visto' }).click()
+    await expect(page.locator('.obs-faixa')).toContainText('Nada novo')
+    await payload.delete({ collection: 'alertas', where: { chave: { like: 'e2e:' } } })
+  })
+
   test('Triagem: ativar com prazo publica o aviso e cria o compromisso', async () => {
     await page.goto('/admin/triagem')
     const linha = page.locator('.obs-tri', { hasText: 'tilápia' })

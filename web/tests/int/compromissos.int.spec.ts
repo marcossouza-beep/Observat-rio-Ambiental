@@ -91,6 +91,11 @@ describe('publicação e desatualização', () => {
     const visto = await payload.find({ collection: 'pareceres', overrideAccess: false, where: { id: { equals: par.id } } })
     expect(visto.docs).toHaveLength(1)
 
+    // A coleta traz uma versão antiga (histórico): não marca nada
+    await payload.create({ collection: 'versoes', data: { proposicao: p.id, data: '2026-09-20T12:00:00.000Z', tipo: 'parecer_relator', rotulo: 'Parecer de 20/09' } })
+    expect((await payload.findByID({ collection: 'pareceres', id: par.id })).desatualizadoDesde).toBeFalsy()
+    expect(await compromissos('pareceres', par.id)).toHaveLength(0)
+
     // Chega um substitutivo
     const v2 = await payload.create({ collection: 'versoes', data: { proposicao: p.id, data: '2026-10-12T12:00:00.000Z', tipo: 'substitutivo', rotulo: 'Substitutivo de 12/10' } })
     const desat = await payload.findByID({ collection: 'pareceres', id: par.id })

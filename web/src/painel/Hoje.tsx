@@ -8,7 +8,7 @@ import { ADMIN, Chip, ChipPrazo, dataCurta, inicioDaSemana, linkDoc } from './ut
 export async function Hoje({ payload, user }: ServerProps) {
   if (!user) return null
   const agora = new Date()
-  const [compromissos, fontes, pauta, publicadosSemana, agendados, revisao, ajustes] = await Promise.all([
+  const [compromissos, fontes, pauta, publicadosSemana, agendados, revisao, ajustes, radar] = await Promise.all([
     payload.find({ collection: 'compromissos', where: { status: { in: ['aberto', 'suspenso'] } }, sort: 'prazoEm', limit: 60, depth: 0 }),
     payload.find({ collection: 'fontes', where: { ativa: { equals: true } }, limit: 100, depth: 0 }),
     payload.find({
@@ -22,6 +22,7 @@ export async function Hoje({ payload, user }: ServerProps) {
     payload.count({ collection: 'pareceres', where: { status: { equals: 'agendado' } } }),
     payload.count({ collection: 'pareceres', where: { status: { equals: 'em_revisao' } } }),
     payload.findGlobal({ slug: 'ajustes', depth: 0 }),
+    payload.count({ collection: 'alertas', where: { visto: { equals: false } } }),
   ])
   const propIds = pauta.docs.map((t) => (typeof t.proposicao === 'object' ? t.proposicao.id : t.proposicao))
   const pareceres = propIds.length
@@ -50,6 +51,7 @@ export async function Hoje({ payload, user }: ServerProps) {
           {prometidos} {prometidos === 1 ? 'parecer prometido' : 'pareceres prometidos'} em aberto
         </span>
         <span>·</span>
+        <a href={`${ADMIN}/radar`}>Radar{radar.totalDocs ? ` (${radar.totalDocs} sem ver)` : ''}</a>
         <a href={`${ADMIN}/triagem`}>Triagem</a>
         <a href={`${ADMIN}/fila`}>Fila de pareceres</a>
       </div>

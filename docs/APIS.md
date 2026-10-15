@@ -23,6 +23,20 @@
 | IBGE | ⚠️ O certificado do servidor do IBGE vem incompleto (`UNABLE_TO_VERIFY_LEAF_SIGNATURE`). Decisão: tabela de UFs e regiões fixa no código; municípios (Fase 7) por arquivo baixado uma vez ou incluindo o certificado intermediário |
 | Querido Diário | ✅ No endereço novo **`api.queridodiario.org.br`** (2.632 diários de Palmas com "ambiental"). O endereço antigo `api.queridodiario.ok.org.br` não responde mais |
 
+### 0.1 O que a construção dos conectores confirmou (15/10/2026)
+
+| Ponto | Resultado |
+|---|---|
+| Câmara: o que tramitou num período | `/proposicoes?siglaTipo=…&dataInicio=…&dataFim=…` lista o que **tramitou** no período (não só o que foi apresentado). É a base da coleta incremental |
+| Câmara: andamentos | Cada andamento traz `codTipoTramitacao` (tabela `/referencias/proposicoes/codTipoTramitacao`, 235 tipos). O Radar usa o código (ex.: 196 = urgência, 1013 = vetado totalmente) e o texto do despacho |
+| Câmara: votações | Votação nominal traz o placar na descrição ("Sim: 231; Não: 87") e os votos em `/votos`; votação simbólica vem sem votos |
+| Câmara: pauta | O item de pauta costuma ser o **parecer** (PRL); a proposta principal vem em `proposicaoRelacionada_`. Itens "retirados de pauta" vêm marcados em `situacaoItem` |
+| Câmara: número | Proposta que voltou do Senado passa a usar o número único (o PL 3729/2004 aparece como PL 2159/2021) |
+| Senado: o que mudou | `/processo?numdias=N&tramitando=S` (máximo 30 dias). `dataInicioApresentacao` com data compacta dá erro 400 |
+| Senado: processo | `/processo/{id}` traz tudo: andamentos (`autuacoes[].informesLegislativos`, com documentos associados), situação, ordem do dia, deliberação, lei gerada, classificação temática e outros números da proposta |
+| Senado: votações | `/votacao?idProcesso=` traz os 81 votos; os totais vêm vazios e são contados pelos votos |
+| Senado: agendas | Plenário em formato antigo (`AgendaPlenario.Sessoes.Sessao`, matérias pelo código antigo); comissões em `AgendaReuniao.reunioes.reuniao[].partes.itens[].doma.idProcesso`. Um item sozinho vem como objeto, vários como lista |
+
 ## 1. Resumo
 
 | Fonte | Para quê | Formato | Acesso | Avaliação | Fase |

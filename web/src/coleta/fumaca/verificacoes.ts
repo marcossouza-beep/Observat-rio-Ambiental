@@ -4,6 +4,10 @@
  * "Essencial" = se falhar, o teste falha (a coleta federal depende disso).
  */
 import { obter, obterJson } from '../http'
+import { conectorCamara } from '../camara/conector'
+import { buscarNaRede, type Conector } from '../conector'
+import { pontuar } from '../../lib/relevancia'
+import { conectorSenado } from '../senado/conector'
 
 export type Resultado = { ok: boolean; notas: string[]; amostra?: unknown; contexto?: Record<string, unknown> }
 export type Verificacao = {
@@ -296,6 +300,45 @@ export const VERIFICACOES: Verificacao[] = [
       return { ok: false, notas }
     },
   },
+  // ---------------- Conectores (sem banco) ----------------
+  ...([conectorCamara, conectorSenado] as Conector[]).map(
+    (c): Verificacao => ({
+      id: `conector-${c.slug}`,
+      fonte: c.nome,
+      descricao: 'Conector de ponta a ponta contra a API ao vivo (último dia, até 2 propostas abertas)',
+      essencial: true,
+      async rodar() {
+        const agora = new Date()
+        const dic = [
+          { termo: 'ambiental', peso: 10 },
+          { termo: 'meio ambiente', peso: 10 },
+          { termo: 'florestal', peso: 8 },
+          { termo: 'clima', peso: 6 },
+        ]
+        const r = await c.coletar({
+          desde: new Date(agora.getTime() - 864e5),
+          agora,
+          acompanhadas: new Set(),
+          descartadas: new Set(),
+          relevancia: (t) => pontuar(t, dic).nota,
+          notaMinima: 50,
+          maxNovas: 2,
+          buscar: buscarNaRede(rapido),
+        })
+        const p = r.pacotes[0]
+        return {
+          ok: r.itensListados > 0,
+          notas: [
+            `${r.itensListados} propostas movimentadas listadas`,
+            `${r.pacotes.length} abertas: ${r.pacotes.map((x) => `${x.proposicao.sigla} ${x.proposicao.numero}/${x.proposicao.ano} (${x.tramitacoes.length} andamentos, ${x.versoes.length} versões, ${x.votacoes.length} votações)`).join('; ') || 'nenhuma relevante no período'}`,
+            `${r.pautas.length} itens de pauta nos próximos 7 dias`,
+            ...r.avisos,
+          ],
+          amostra: { proposicao: p?.proposicao, tramitacoes: p?.tramitacoes.slice(-5), pautas: r.pautas.slice(0, 5) },
+        }
+      },
+    }),
+  ),
   // ---------------- DOU, LexML, TSE, IBGE, Querido Diário ----------------
   {
     id: 'dou-inlabs',

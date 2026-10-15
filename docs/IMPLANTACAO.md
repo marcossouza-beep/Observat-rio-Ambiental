@@ -56,10 +56,13 @@
 |---|---|
 | `SITE_URL` e `CRON_SECRET` | Agendamentos (verificação horária; a cada 15 min: pareceres agendados, comunicados e fila de e-mails; limpeza diária) |
 | `BACKUP_DATABASE_URL` e `BACKUP_SENHA` | Cópia diária cifrada do banco, com teste de restauração |
+| `PAYLOAD_SECRET` (o mesmo da Vercel) e, se quiser separar, `COLETA_DATABASE_URL` | **Coleta da Câmara e do Senado** 4 vezes ao dia (6h, 12h, 18h e 23h). Sem `COLETA_DATABASE_URL`, usa a `BACKUP_DATABASE_URL` (conexão direta, porta 5432) |
 | `INLABS_EMAIL` e `INLABS_SENHA` | Teste do Diário Oficial no teste de fumaça (e, na Fase 2, a coleta) |
 
 Guarde a `BACKUP_SENHA` fora do GitHub: sem ela, as cópias não abrem. Para abrir uma cópia:
 `gpg --decrypt banco-AAAAMMDD.dump.gpg > banco.dump` e `pg_restore -d <banco> banco.dump`.
+
+Depois de cadastrar os segredos, rode a coleta uma vez à mão para conferir: GitHub → Actions → **Coleta** → *Run workflow*. O resumo mostra, por casa, quantas propostas foram listadas, quantas entraram na triagem e quantos andamentos, versões, votações e itens de pauta foram gravados. No painel, a tela **Radar** passa a mostrar as novidades.
 
 ## 4. INLABS (Diário Oficial da União)
 

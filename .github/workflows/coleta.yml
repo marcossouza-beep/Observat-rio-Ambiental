@@ -1,0 +1,56 @@
+# Coleta automática da Câmara e do Senado (docs/APIS.md e docs/ENTREGA.md):
+# 06h, 12h, 18h e 23h em Brasília. Grava direto no banco; o site mostra a data da última coleta.
+# Precisa dos segredos COLETA_DATABASE_URL (ou BACKUP_DATABASE_URL: conexão direta do Supabase, porta 5432)
+# e PAYLOAD_SECRET. Sem eles, não faz nada.
+name: Coleta
+
+on:
+  schedule:
+    - cron: '3 9 * * *' # 06:03 em Brasília
+    - cron: '3 15 * * *' # 12:03
+    - cron: '3 21 * * *' # 18:03
+    - cron: '3 2 * * *' # 23:03
+  workflow_dispatch:
+    inputs:
+      fontes:
+        description: 'camara,senado (vazio = todas)'
+        required: false
+        default: ''
+
+concurrency:
+  group: coleta
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: web
+    env:
+      DATABASE_URL: ${{ secrets.COLETA_DATABASE_URL || secrets.BACKUP_DATABASE_URL }}
+      PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
+      COLETA_FONTES: ${{ github.event.inputs.fontes }}
+    steps:
+      - name: Banco ainda não configurado
+        if: env.DATABASE_URL == '' || env.PAYLOAD_SECRET == ''
+        working-directory: .
+        run: echo "Defina COLETA_DATABASE_URL (ou BACKUP_DATABASE_URL) e PAYLOAD_SECRET para ativar a coleta."
+      - uses: actions/checkout@v4
+        if: env.DATABASE_URL != '' && env.PAYLOAD_SECRET != ''
+      - uses: pnpm/action-setup@v4
+        if: env.DATABASE_URL != '' && env.PAYLOAD_SECRET != ''
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        if: env.DATABASE_URL != '' && env.PAYLOAD_SECRET != ''
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - if: env.DATABASE_URL != '' && env.PAYLOAD_SECRET != ''
+        run: pnpm install --frozen-lockfile
+      - name: Coletar e gravar
+        if: env.DATABASE_URL != '' && env.PAYLOAD_SECRET != ''
+        run: pnpm coleta

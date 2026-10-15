@@ -275,6 +275,10 @@ Menu: **Trabalho** (Hoje, Triagem, Pareceres, Pedidos) · **Sistema** (Fontes e 
 | Fontes e sistema | Resumo da saúde das fontes |
 | Promessas no ar | Quantas páginas mostram "Parecer em preparação" e "Atualização em preparação"; quantas pessoas aguardam aviso |
 
+## B1b. Radar **[F2]** — construído
+
+Tela `/admin/radar` e atalho no menu com contador. Lista o que a coleta trouxe nas propostas acompanhadas e na triagem: entrou na pauta (vermelho), urgência, votação com placar, veto (vermelho), substitutivo e texto novo (amarelo), aprovação e sanção (verde), mudança de situação. Filtros "Sem ver" e "Últimos 30 dias"; botão "Marcar tudo como visto". O histórico antigo de uma proposta recém-captada não vira alerta.
+
 ## B2. Triagem **[F2]**
 
 | Elemento | Funcionalidade |

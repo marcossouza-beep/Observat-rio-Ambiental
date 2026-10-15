@@ -1,4 +1,4 @@
-import type { CollectionConfig } from 'payload'
+import { APIError, type CollectionConfig } from 'payload'
 import { campoSoEquipe, equipe, proposicaoPublicaOuEquipe } from '../access'
 import { abrirCompromisso, mudarCompromissos } from '../hooks/compromissos'
 import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
@@ -69,6 +69,19 @@ export const Proposicoes: CollectionConfig = {
         return doc
       },
       revalidarAoMudar,
+    ],
+    beforeDelete: [
+      // Apagar uma proposição leva junto o que é dela (andamentos, versões, votações, Radar).
+      // Com parecer, não: o parecer é do autor e precisa ser apagado de propósito antes.
+      async ({ id, req }) => {
+        const pareceres = await req.payload.count({ collection: 'pareceres', where: { proposicao: { equals: id } }, req })
+        if (pareceres.totalDocs) throw new APIError('Esta proposição tem parecer. Apague o parecer antes de apagar a proposição.', 400, null, true)
+        const votacoes = await req.payload.find({ collection: 'votacoes', where: { proposicao: { equals: id } }, limit: 0, depth: 0, req, select: {} })
+        const ids = votacoes.docs.map((v) => v.id)
+        if (ids.length) await req.payload.delete({ collection: 'votos', where: { votacao: { in: ids } }, req })
+        for (const c of ['votacoes', 'tramitacoes', 'versoes', 'emendas', 'alertas'] as const)
+          await req.payload.delete({ collection: c, where: { proposicao: { equals: id } }, req, context: { semRevalidar: true } })
+      },
     ],
     afterDelete: [revalidarAoApagar],
   },
@@ -193,6 +206,16 @@ export const Proposicoes: CollectionConfig = {
     { name: 'motivoDescarte', type: 'text', admin: { position: 'sidebar', condition: (d) => d.situacaoEditorial === 'descartada' }, access: { read: campoSoEquipe } },
     { name: 'fonte', type: 'relationship', relationTo: 'fontes', admin: { position: 'sidebar' } },
     { name: 'chaveOrigem', label: 'Identificador na fonte', type: 'text', unique: true, index: true, admin: { position: 'sidebar', description: 'Ex.: camara:2345678' } },
+    {
+      name: 'chavesExtras',
+      label: 'Outros identificadores',
+      type: 'text',
+      hasMany: true,
+      index: true,
+      admin: { position: 'sidebar', readOnly: true, description: 'A mesma proposta na outra casa (ex.: senado:8079566)' },
+      access: { read: campoSoEquipe },
+    },
+    { name: 'temasOficiais', label: 'Temas oficiais da casa', type: 'text', hasMany: true, admin: { position: 'sidebar', readOnly: true }, access: { read: campoSoEquipe } },
     {
       name: 'origem',
       type: 'select',

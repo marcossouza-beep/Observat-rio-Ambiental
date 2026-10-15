@@ -17,7 +17,7 @@ import { Media } from './collections/Media'
 import { Pareceres } from './collections/Pareceres'
 import { Proposicoes } from './collections/Proposicoes'
 import { Assinantes, Comunicados, Credenciamentos, Envios } from './collections/Publico'
-import { Coletas, Fontes, Verificacoes } from './collections/Sistema'
+import { Alertas, Coletas, Fontes, Verificacoes } from './collections/Sistema'
 import { Compromissos, Correcoes, Pedidos } from './collections/Trabalho'
 import { Users } from './collections/Users'
 import { endpoints } from './endpoints'
@@ -53,6 +53,7 @@ const config: Config = {
       views: {
         triagem: { Component: '/painel/Triagem#Triagem', path: '/triagem', meta: { title: 'Triagem' } },
         fila: { Component: '/painel/Fila#Fila', path: '/fila', meta: { title: 'Fila de pareceres' } },
+        radar: { Component: '/painel/Radar#Radar', path: '/radar', meta: { title: 'Radar' } },
       },
     },
     dateFormat: 'dd/MM/yyyy HH:mm',
@@ -61,6 +62,7 @@ const config: Config = {
   collections: [
     // Trabalho
     Proposicoes,
+    Alertas,
     Pareceres,
     Compromissos,
     Pedidos,

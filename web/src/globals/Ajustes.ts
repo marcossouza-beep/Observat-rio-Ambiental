@@ -23,6 +23,24 @@ export const Ajustes: GlobalConfig = {
     { name: 'limitePrometidos', label: 'Limite de pareceres prometidos em aberto', type: 'number', min: 1, defaultValue: LIMITE_PROMETIDOS_PADRAO },
     { name: 'metaSemanal', label: 'Meta de pareceres por semana', type: 'number', min: 1, max: 20, defaultValue: 6, admin: { description: 'Indicador interno; não aparece no site.' } },
     {
+      name: 'coleta',
+      label: 'Coleta automática (Radar)',
+      type: 'group',
+      access: { read: campoSoEquipe },
+      fields: [
+        {
+          name: 'notaMinima',
+          label: 'Nota mínima para entrar na triagem',
+          type: 'number',
+          min: 0,
+          max: 100,
+          defaultValue: 40,
+          admin: { description: 'Propostas novas abaixo desta nota (dicionário de palavras-chave) não entram na triagem. Tema oficial de meio ambiente soma 30.' },
+        },
+        { name: 'maxNovas', label: 'Máximo de propostas novas por coleta e por casa', type: 'number', min: 1, max: 200, defaultValue: 40 },
+      ],
+    },
+    {
       name: 'alertas',
       label: 'Alertas para o autor',
       type: 'group',

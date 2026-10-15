@@ -47,6 +47,7 @@ export const Tramitacoes: CollectionConfig = {
         'outro',
       ].map((v) => ({ label: v.replace('_', ' '), value: v })),
     },
+    { name: 'urlDocumento', label: 'Documento citado', type: 'text' },
     chaveOrigem,
   ],
 }
@@ -70,14 +71,17 @@ export const Versoes: CollectionConfig = {
         const pareceres = await req.payload.find({
           collection: 'pareceres',
           req,
-          depth: 0,
+          depth: 1,
           limit: 1,
           where: { proposicao: { equals: propId }, status: { equals: 'publicado' } },
         })
         const parecer = pareceres.docs[0]
         if (!parecer) return doc
-        const analisada = parecer.versaoTexto && typeof parecer.versaoTexto === 'object' ? parecer.versaoTexto.id : parecer.versaoTexto
-        if (analisada === doc.id) return doc
+        const analisada = parecer.versaoTexto && typeof parecer.versaoTexto === 'object' ? parecer.versaoTexto : null
+        if ((analisada?.id ?? parecer.versaoTexto) === doc.id) return doc
+        // Só texto posterior ao analisado conta. A coleta pode trazer versões antigas (histórico) que o autor já conhecia.
+        const referencia = analisada?.data || parecer.atualizadoEm || parecer.publicadoEm
+        if (referencia && new Date(doc.data).getTime() <= new Date(referencia).getTime()) return doc
         await req.payload.update({
           collection: 'pareceres',
           id: parecer.id,

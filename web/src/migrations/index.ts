@@ -3,6 +3,7 @@ import * as migration_20261015_020002_armazenamento from './20261015_020002_arma
 import * as migration_20261015_023339_artigos from './20261015_023339_artigos';
 import * as migration_20261015_030548_sprint3 from './20261015_030548_sprint3';
 import * as migration_20261015_032840_sprint4 from './20261015_032840_sprint4';
+import * as migration_20261015_130006_fase2 from './20261015_130006_fase2';
 
 export const migrations = [
   {
@@ -28,6 +29,11 @@ export const migrations = [
   {
     up: migration_20261015_032840_sprint4.up,
     down: migration_20261015_032840_sprint4.down,
-    name: '20261015_032840_sprint4'
+    name: '20261015_032840_sprint4',
+  },
+  {
+    up: migration_20261015_130006_fase2.up,
+    down: migration_20261015_130006_fase2.down,
+    name: '20261015_130006_fase2'
   },
 ];

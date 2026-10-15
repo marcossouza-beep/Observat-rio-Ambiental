@@ -38,6 +38,18 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 - **Detecção de nova versão do texto** em proposta com parecer: fila "A atualizar" e faixa pública automática.
 - **Fontes e saúde**: coleta 4 vezes ao dia, limites de atraso e de volume, nota pública quando a fonte cai, teste diário contra as APIs ao vivo.
 
+> **Fase 2, parte 1 — feita (código): conectores Câmara e Senado e Radar.**
+> - Respostas reais das APIs gravadas no repositório (`pnpm amostras`, fluxo "Gravar amostras das APIs") e usadas nos testes: os conectores são testados sobre dados de verdade, sem depender da rede.
+> - Conector da Câmara: lista o que tramitou desde a última coleta (PL, PLP, PEC, MPV, PDL, mais o tema oficial 48, Meio Ambiente), abre a ficha completa do que o site acompanha e do que passa da nota mínima do dicionário; traz autoria, andamentos (tipo pelo código oficial), versões do texto (substitutivo, redação final, texto enviado ao Senado), votações com votos individuais e orientação das bancadas, e a pauta das reuniões deliberativas da semana.
+> - Conector do Senado sobre os serviços novos de "processo": atualizados nos últimos dias, processo completo (andamentos, documentos, relatoria, lei gerada), votações nominais e a agenda do Plenário e das comissões.
+> - A mesma proposta nas duas casas vira **uma só** no site (chaves extras e número da proposta, ex.: PL 2159/2021 = PL 3729/2004).
+> - Gravação sem duplicar; propostas novas entram na **Triagem** com a nota de relevância; o que sai de pauta sai de "Em votação esta semana".
+> - **Radar** no painel: entrou na pauta, urgência, substitutivo, votação (com placar), aprovação, sanção, veto, texto novo e mudança de situação. Versões antigas trazidas pela coleta não marcam o parecer como desatualizado; só texto posterior ao analisado.
+> - Saúde das fontes: cada coleta fica registrada (com amostra por 90 dias), a fonte guarda a última coleta bem-sucedida, o volume e o erro; formato mudou → a coleta daquela casa para e avisa no painel.
+> - Coleta 4 vezes ao dia pelo GitHub Actions (fluxo "Coleta"), e o teste diário das APIs agora roda os dois conectores de ponta a ponta contra a API ao vivo.
+>
+> **Falta na Fase 2:** Diário Oficial (INLABS, depende da conta), vetos do Congresso, texto integral dos PDFs no dossiê (extração de texto) e lei afetada (LexML), ajuste fino do dicionário de palavras-chave com o uso real.
+
 **Critério de saída:** a pauta semanal é definida pelo Radar.
 
 ## Fase 3 — Alertas e recorrência

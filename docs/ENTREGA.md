@@ -2,6 +2,8 @@
 
 > Regra de ouro: **o site só promete o que o sistema consegue garantir ou o que o painel cobra do autor com prazo.** Cada promessa abaixo tem um mecanismo, um prazo, um alarme e um comportamento previsto para quando falhar. Nada fica "parado e errado" em silêncio.
 
+> Estado (Fase 2, parte 1): tramitação, status, votos, versões do texto e "Em votação esta semana" já vêm da Câmara e do Senado, 4 vezes ao dia, com a data da última coleta e a nota de fonte fora do ar. DOU e vetos do Congresso entram na parte 2.
+
 ## 1. Seis regras contra a desatualização
 
 1. **Nada que a máquina calcula é digitado.** Contagens, gráficos, padrão de atuação, "Em votação esta semana", status das leis e números da home saem do banco a cada atualização. Não existe número escrito à mão no site.

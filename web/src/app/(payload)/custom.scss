@@ -109,3 +109,10 @@ ul.obs-checagem li { margin-left: 0 !important; }
 .obs-google .u { font-size: 0.78rem; color: #4d5156; }
 .obs-google .t { color: #1a0dab; font-size: 1.08rem; margin: 2px 0; }
 .obs-google .d { font-size: 0.84rem; color: #4d5156; }
+
+/* Radar (Fase 2) */
+.obs-filtros a[aria-current='page'] { color: var(--theme-text); text-decoration: underline; }
+.obs-btn { border: 1px solid var(--obs-linha); background: var(--theme-elevation-0); color: var(--theme-text); border-radius: 999px; padding: 5px 12px; font: inherit; font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+.obs-btn:hover { border-color: var(--obs-verde); }
+.obs-btn:disabled { opacity: 0.6; cursor: wait; }
+.obs-linhas a.obs-visto { opacity: 0.6; }

@@ -14,11 +14,12 @@ export async function revalidarSite() {
   }
 }
 
-export const revalidarAoMudar: CollectionAfterChangeHook = async ({ doc }) => {
-  await revalidarSite()
+// A coleta grava centenas de itens de uma vez: pede silêncio (context.semRevalidar) e revalida uma vez no fim.
+export const revalidarAoMudar: CollectionAfterChangeHook = async ({ doc, context }) => {
+  if (!context?.semRevalidar) await revalidarSite()
   return doc
 }
-export const revalidarAoApagar: CollectionAfterDeleteHook = async ({ doc }) => {
-  await revalidarSite()
+export const revalidarAoApagar: CollectionAfterDeleteHook = async ({ doc, context }) => {
+  if (!context?.semRevalidar) await revalidarSite()
   return doc
 }

@@ -10,6 +10,10 @@ export const Fontes: CollectionConfig = {
   labels: { singular: 'Fonte', plural: 'Fontes' },
   admin: { group: 'Sistema', useAsTitle: 'nome', defaultColumns: ['nome', 'nivel', 'ultimaColetaOk', 'situacao', 'ativa'] },
   access: { ...soEquipe, read: () => true },
+  hooks: {
+    // O registro das coletas é da fonte: sai junto.
+    beforeDelete: [async ({ id, req }) => void (await req.payload.delete({ collection: 'coletas', where: { fonte: { equals: id } }, req }))],
+  },
   fields: [
     { name: 'nome', type: 'text', required: true },
     { name: 'slug', type: 'text', required: true, unique: true, index: true },
@@ -98,5 +102,36 @@ export const Verificacoes: CollectionConfig = {
     },
     { name: 'detalhe', type: 'text' },
     { name: 'dados', type: 'json' },
+  ],
+}
+
+export const TIPOS_ALERTA = [
+  { label: 'Entrou na pauta', value: 'pauta' },
+  { label: 'Urgência aprovada', value: 'urgencia' },
+  { label: 'Substitutivo', value: 'substitutivo' },
+  { label: 'Votação', value: 'votacao' },
+  { label: 'Aprovação', value: 'aprovacao' },
+  { label: 'Sanção', value: 'sancao' },
+  { label: 'Veto', value: 'veto' },
+  { label: 'Nova versão do texto', value: 'nova_versao' },
+  { label: 'Mudou de situação', value: 'situacao' },
+]
+
+/** Radar: o que mudou nas propostas acompanhadas, para o autor decidir a pauta. Só o painel vê. */
+export const Alertas: CollectionConfig = {
+  slug: 'alertas',
+  typescript: { interface: 'Alerta' },
+  labels: { singular: 'Alerta do Radar', plural: 'Radar' },
+  admin: { group: 'Trabalho', useAsTitle: 'titulo', defaultColumns: ['data', 'tipo', 'titulo', 'proposicao', 'visto'] },
+  access: soEquipe,
+  defaultSort: '-data',
+  fields: [
+    { name: 'proposicao', label: 'Proposição', type: 'relationship', relationTo: 'proposicoes', required: true, index: true },
+    { name: 'tipo', type: 'select', required: true, options: TIPOS_ALERTA, index: true },
+    { name: 'titulo', label: 'O que aconteceu', type: 'text', required: true },
+    { name: 'data', type: 'date', required: true, index: true, admin: { date: { pickerAppearance: 'dayAndTime' } } },
+    { name: 'link', type: 'text' },
+    { name: 'visto', type: 'checkbox', defaultValue: false, index: true },
+    { name: 'chave', type: 'text', unique: true, index: true, admin: { readOnly: true, description: 'Evita alerta repetido' } },
   ],
 }

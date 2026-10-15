@@ -31,6 +31,7 @@ import { Hoje as Hoje_16dfd8c5de80ec68d5f9966eb73c3d29 } from '../../../painel/H
 import { Navegacao as Navegacao_72bc54f482a9a2fe7de492cbb28c072b } from '../../../painel/Navegacao'
 import { Triagem as Triagem_e6dfb2dca7b111957842704524f36f60 } from '../../../painel/Triagem'
 import { Fila as Fila_b7aa265b378436bd67bf658354bd4650 } from '../../../painel/Fila'
+import { Radar as Radar_74f7add637582f06b5dc94e22ecea03d } from '../../../painel/Radar'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
 import { S3ClientUploadHandler as S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24 } from '@payloadcms/storage-s3/client'
 
@@ -69,6 +70,7 @@ export const importMap = {
   "/painel/Navegacao#Navegacao": Navegacao_72bc54f482a9a2fe7de492cbb28c072b,
   "/painel/Triagem#Triagem": Triagem_e6dfb2dca7b111957842704524f36f60,
   "/painel/Fila#Fila": Fila_b7aa265b378436bd67bf658354bd4650,
+  "/painel/Radar#Radar": Radar_74f7add637582f06b5dc94e22ecea03d,
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1,
   "@payloadcms/storage-s3/client#S3ClientUploadHandler": S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24
 }
