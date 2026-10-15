@@ -3,7 +3,7 @@
  * As chaves ("camara:2345678", "senado:processo:123") são estáveis: coletar duas vezes não duplica nada.
  */
 
-export type Casa = 'camara' | 'senado' | 'congresso' | 'presidencia'
+export type Casa = 'camara' | 'senado' | 'congresso' | 'presidencia' | 'assembleia'
 
 export type TipoEvento =
   | 'apresentacao'
@@ -28,7 +28,7 @@ export type ParlamentarColetado = {
   nome: string
   partido?: string
   uf?: string
-  casa: 'camara' | 'senado'
+  casa: 'camara' | 'senado' | 'assembleia'
   fotoUrl?: string
 }
 
@@ -37,6 +37,9 @@ export type AutorColetado = { parlamentar?: ParlamentarColetado; nomeLivre?: str
 export type ProposicaoColetada = {
   chave: string
   casa: Casa
+  /** Federal quando omitido. Propostas estaduais trazem a UF. */
+  esfera?: 'federal' | 'estadual'
+  uf?: string
   sigla: string
   numero: number
   ano: number

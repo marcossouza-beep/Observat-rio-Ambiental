@@ -42,12 +42,22 @@ const ROTULO_ALERTA: Partial<Record<TipoEvento, string>> = {
   veto: 'Veto',
 }
 
-/** Acha a proposição pela chave da fonte, por uma chave extra ou pelo número da proposta. */
-export async function acharProposicao(payload: Payload, chaves: string[], identificacoes: string[] = []): Promise<Proposicao | null> {
+/**
+ * Acha a proposição pela chave da fonte, por uma chave extra ou pelo número da proposta.
+ * O número ("PL 12/2026") só junta propostas da mesma esfera e, nas estaduais, do mesmo estado.
+ */
+export async function acharProposicao(payload: Payload, chaves: string[], identificacoes: string[] = [], local: { esfera?: string; uf?: string } = {}): Promise<Proposicao | null> {
   const ou: Record<string, unknown>[] = [{ chaveOrigem: { in: chaves } }, { chavesExtras: { in: chaves } }]
+  const esfera = local.esfera || 'federal'
   for (const id of identificacoes) {
     const m = /^([A-Z]+)\s+0*(\d+)\/(\d{4})$/.exec(id.trim())
-    if (m) ou.push({ and: [{ sigla: { equals: m[1] } }, { numero: { equals: Number(m[2]) } }, { ano: { equals: Number(m[3]) } }, { esfera: { equals: 'federal' } }] })
+    if (!m) continue
+    const mesmo: Record<string, unknown>[] = [{ sigla: { equals: m[1] } }, { numero: { equals: Number(m[2]) } }, { ano: { equals: Number(m[3]) } }, { esfera: { equals: esfera } }]
+    if (esfera !== 'federal') {
+      if (!local.uf) continue
+      mesmo.push({ uf: { equals: local.uf } })
+    }
+    ou.push({ and: mesmo })
   }
   const r = await payload.find({ collection: 'proposicoes', where: { or: ou } as never, limit: 1, depth: 0 })
   return (r.docs[0] as Proposicao) || null
@@ -91,7 +101,7 @@ const novasChaves = (atual: Proposicao, p: ProposicaoColetada) =>
 /** Cria ou atualiza a proposição. Devolve a proposição e se ela é nova. */
 async function gravarProposicao(o: Opcoes, p: ProposicaoColetada): Promise<{ doc: Proposicao; nova: boolean }> {
   const identificacoes = [identificacaoDe(p.sigla, p.numero, p.ano), ...(p.outrasIdentificacoes || [])]
-  const atual = await acharProposicao(o.payload, [p.chave, ...(p.chavesExtras || [])], identificacoes)
+  const atual = await acharProposicao(o.payload, [p.chave, ...(p.chavesExtras || [])], identificacoes, { esfera: p.esfera, uf: p.uf })
   const ficha = {
     statusOficial: p.statusOficial,
     statusSimplificado: p.statusSimplificado,
@@ -109,7 +119,8 @@ async function gravarProposicao(o: Opcoes, p: ProposicaoColetada): Promise<{ doc
         sigla: p.sigla,
         numero: p.numero,
         ano: p.ano,
-        esfera: 'federal',
+        esfera: p.esfera || 'federal',
+        uf: p.esfera === 'estadual' ? p.uf : undefined,
         ementa: p.ementa,
         dataApresentacao: p.dataApresentacao,
         urlInteiroTeor: p.urlInteiroTeor,

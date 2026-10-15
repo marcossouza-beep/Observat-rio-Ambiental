@@ -40,6 +40,8 @@ export type ResultadoColeta = {
 export type Conector = {
   slug: string
   nome: string
+  /** Fontes estaduais: a UF (para as palavras-chave do estado). */
+  uf?: string
   /** Motivo para não rodar (ex.: faltam credenciais); null quando está pronto. */
   naoConfigurado?: () => string | null
   coletar: (ctx: ContextoColeta) => Promise<ResultadoColeta>

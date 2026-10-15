@@ -35,7 +35,7 @@ async function fonteDe(payload: Payload, slug: string): Promise<Fonte> {
   return payload.create({ collection: 'fontes', data: { slug, conector: slug, nome: slug, ...FONTES_PADRAO[slug], frequencia: '6h, 12h, 18h, 23h' } as never })
 }
 
-/** O que o site já acompanha e o que foi descartado, por chave e por número ("PL 2159/2021"). */
+/** O que o site já acompanha e o que foi descartado, por chave e, nas federais, por número ("PL 2159/2021"). */
 async function propostasConhecidas(payload: Payload) {
   const acompanhadas = new Set<string>()
   const descartadas = new Set<string>()
@@ -43,15 +43,16 @@ async function propostasConhecidas(payload: Payload) {
   for (;;) {
     const r = await payload.find({
       collection: 'proposicoes',
-      where: { esfera: { equals: 'federal' } },
       limit: 500,
       page: pagina,
       depth: 0,
-      select: { chaveOrigem: true, chavesExtras: true, sigla: true, numero: true, ano: true, situacaoEditorial: true },
+      select: { chaveOrigem: true, chavesExtras: true, sigla: true, numero: true, ano: true, situacaoEditorial: true, esfera: true },
     })
     for (const p of r.docs) {
       const alvo = p.situacaoEditorial === 'descartada' ? descartadas : acompanhadas
-      for (const c of [p.chaveOrigem, ...(p.chavesExtras || []), p.sigla && p.numero && p.ano ? identificacaoDe(p.sigla, p.numero, p.ano) : null]) if (c) alvo.add(c)
+      // O número só identifica sozinho as federais ("PL 12/2026" existe em vários estados)
+      const numero = p.esfera === 'federal' && p.sigla && p.numero && p.ano ? identificacaoDe(p.sigla, p.numero, p.ano) : null
+      for (const c of [p.chaveOrigem, ...(p.chavesExtras || []), numero]) if (c) alvo.add(c)
     }
     if (!r.hasNextPage) break
     pagina++
@@ -59,8 +60,11 @@ async function propostasConhecidas(payload: Payload) {
   return { acompanhadas, descartadas }
 }
 
-async function relevancia(payload: Payload) {
-  const dic = await payload.find({ collection: 'palavras-chave', where: { or: [{ uf: { exists: false } }, { uf: { equals: '' } }] }, limit: 2000, depth: 0, pagination: false })
+/** Dicionário nacional e, para uma fonte estadual, também as palavras-chave do estado. */
+async function relevancia(payload: Payload, uf?: string) {
+  const ou: Record<string, unknown>[] = [{ uf: { exists: false } }, { uf: { equals: '' } }]
+  if (uf) ou.push({ uf: { equals: uf.toUpperCase() } })
+  const dic = await payload.find({ collection: 'palavras-chave', where: { or: ou } as never, limit: 2000, depth: 0, pagination: false })
   const termos = dic.docs.map((d) => ({ termo: d.termo, peso: d.peso, exclusao: !!d.exclusao, grupo: d.grupo || undefined }) as Termo)
   return (texto: string) => pontuar(texto, termos).nota
 }
@@ -96,7 +100,7 @@ export async function coletarFonte(payload: Payload, slug: string, opcoes: { ago
     agora,
     acompanhadas,
     descartadas,
-    relevancia: await relevancia(payload),
+    relevancia: await relevancia(payload, conector.uf),
     notaMinima: ajustes.coleta?.notaMinima ?? 40,
     maxNovas: ajustes.coleta?.maxNovas ?? 40,
     buscar: opcoes.buscar || buscarNaRede(),
