@@ -20,6 +20,7 @@
     "seed": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed/index.ts",
     "migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
     "fumaca": "tsx src/coleta/fumaca/index.ts",
+    "amostras": "tsx src/coleta/amostras/index.ts",
     "seed:demo": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed/demo.ts"
   },
   "dependencies": {

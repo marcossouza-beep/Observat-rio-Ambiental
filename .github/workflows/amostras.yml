@@ -1,0 +1,51 @@
+# Grava respostas reais das APIs da Câmara e do Senado em web/tests/fixtures/coleta/,
+# para os testes dos conectores rodarem sem rede e sobre dados de verdade.
+# Roda sob demanda e quando o gravador muda; o resultado vira um commit no mesmo ramo.
+name: Gravar amostras das APIs
+
+on:
+  push:
+    paths: ['web/src/coleta/amostras/**', '.github/workflows/amostras.yml']
+  workflow_dispatch:
+    inputs:
+      fonte:
+        description: 'camara, senado ou vazio para todas'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amostras-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gravar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - name: Chamar as APIs e gravar
+        run: pnpm amostras ${{ github.event.inputs.fonte }}
+      - name: Salvar no repositório
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tests/fixtures/coleta
+          if git diff --cached --quiet; then echo "Nada mudou."; exit 0; fi
+          git commit -m "Amostras reais das APIs ($(date -u +%Y-%m-%d))"
+          for i in 1 2 3; do git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0; sleep 5; done
+          exit 1
