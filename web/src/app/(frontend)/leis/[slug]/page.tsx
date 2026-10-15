@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { AviseMe } from '@/componentes/AviseMe'
 import { Carater, Impacto, Local, Situacao } from '@/componentes/Etiquetas'
+import { SeguirLei } from '@/componentes/SeguirLei'
 import { Relogio, Seta } from '@/componentes/Icones'
 import { JsonLd } from '@/componentes/JsonLd'
 import { Rico } from '@/componentes/Rico'
@@ -103,6 +105,7 @@ export default async function PaginaLei({ params }: { params: Params }) {
           {lei.rotulo}
           {lei.casa ? ` · ${CASA[lei.casa]}` : ''}
         </span>
+        <SeguirLei proposicao={lei.id} caminho={`/leis/${lei.slug}`} />
       </header>
 
       <nav className="steps" aria-label="Seções da página">
@@ -234,6 +237,7 @@ export default async function PaginaLei({ params }: { params: Params }) {
             <p>{frase}</p>
             {nota ? <small>{nota}</small> : null}
           </div>
+          <AviseMe proposicao={lei.id} caminho={`/leis/${lei.slug}`} />
         </section>
       ) : (
         <section className="block b-pend" id="parecer">

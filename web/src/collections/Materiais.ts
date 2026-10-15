@@ -1,3 +1,4 @@
+import path from 'path'
 import type { CollectionConfig } from 'payload'
 import { equipe } from '../access'
 
@@ -30,5 +31,6 @@ export const Materiais: CollectionConfig = {
       ],
     },
   ],
-  upload: { mimeTypes: ['application/pdf'] },
+  // Sem S3 (desenvolvimento), os PDFs ficam em arquivos/materiais; o download passa por /api/baixar/:id.
+  upload: { mimeTypes: ['application/pdf'], staticDir: path.resolve(process.cwd(), 'arquivos', 'materiais') },
 }

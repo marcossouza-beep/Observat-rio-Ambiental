@@ -3,6 +3,7 @@ import { equipe, publico } from '../access'
 import { TIPOS_COMPROMISSO, ROTULO_COMPROMISSO } from '../lib/compromissos'
 import { abrirCompromisso, mudarCompromissos } from '../hooks/compromissos'
 import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
+import { enfileirar, modelo } from '../lib/email'
 
 const soEquipe = { read: equipe, create: equipe, update: equipe, delete: equipe }
 
@@ -82,10 +83,15 @@ export const Pedidos: CollectionConfig = {
       async ({ doc, previousDoc, operation, req }) => {
         const tipo = doc.tipo === 'lgpd' ? 'lgpd' : doc.tipo === 'correcao' ? 'correcao' : null
         if (!tipo) return doc
-        if (operation === 'create') {
+        if (operation === 'create' && doc.decisao === 'pendente') {
           await abrirCompromisso(req, { tipo, alvo: 'pedidos', alvoId: doc.id, descricao: doc.resumo || '' })
         } else if (doc.decisao !== 'pendente' && previousDoc?.decisao === 'pendente') {
           await mudarCompromissos(req, { alvo: 'pedidos', alvoId: doc.id, status: 'cumprido' })
+        }
+        // A resposta escrita no painel vai por e-mail à pessoa (uma vez, quando a decisão é tomada).
+        if (doc.decisao !== 'pendente' && previousDoc?.decisao === 'pendente' && doc.resposta?.trim() && doc.email) {
+          const m = modelo({ titulo: doc.tipo === 'lgpd' ? 'Seu pedido sobre dados pessoais' : 'Resposta ao seu pedido de correção', paragrafos: doc.resposta.trim().split(/\n{2,}/) })
+          await enfileirar(req.payload, { tipo: 'resposta_pedido', para: doc.email, assunto: doc.tipo === 'lgpd' ? 'Seu pedido sobre dados pessoais' : 'Resposta ao seu pedido de correção', ...m }, req)
         }
         // Correção que procede vira registro público no parecer e na página de Correções (uma vez só).
         const parecerId = doc.parecer && typeof doc.parecer === 'object' ? doc.parecer.id : doc.parecer

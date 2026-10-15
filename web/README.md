@@ -72,6 +72,19 @@ As páginas são geradas no servidor, guardadas em cache e refeitas a cada 5 min
 | Editor do parecer | Faixa de prazo ou de "texto mudou"; aba **Dossiê** (texto, versões com marcação mecânica do que entrou e saiu, autoria, votações, tramitação); checagem de publicação ao vivo; prévia do Google na aba SEO |
 | Pedidos | Correção que procede vira registro público no parecer ao preencher "O que foi corrigido" |
 
+## Inscritos e e-mails (Sprint 4)
+
+| Endereço | O quê |
+|---|---|
+| `/inscricao` | Inscrição em passos (perfil e subgrupo; estudante informa curso e estado; jornalista pede credenciamento) |
+| `/entrar` | Acesso sem senha: link mágico de uso único, válido por 1 hora |
+| `/conta` | Minha conta: completar perfil, e-mails, leis seguidas, baixar dados (JSON), excluir inscrição |
+| `/privacidade`, `/termos` | Textos-base para o autor revisar |
+| `/api/baixar/:id` | Download de PDF; só para inscritos confirmados (ou material marcado como aberto) |
+| `/api/descadastrar?t=` | Descadastro em um clique (também como cabeçalho List-Unsubscribe) |
+
+E-mails: link de acesso sai na hora; avisos de publicação, respostas, credenciamento e comunicados entram na fila (coleção Envios) e saem a cada 15 minutos, com até 4 tentativas. Sem `RESEND_API_KEY`, aparecem no console.
+
 ## Regras automáticas já ativas
 
 - **Parecer prometido:** ao marcar uma proposição como "Parecer prometido (ativa)", nasce um compromisso com prazo (padrão 7 dias, ajustável em Ajustes) e a data vai para a proposição. Se ela passar a "Acompanhando", o compromisso é retirado. Ao publicar o parecer, é cumprido.

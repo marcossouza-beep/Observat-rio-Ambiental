@@ -37,7 +37,9 @@ a:hover .ico-l { transform: translateX(-3px); }
 .foot small { margin-left: auto; color: var(--soft); }
 @media (max-width: 640px) {
   .head .wrap { flex-wrap: wrap; padding-block: 10px 6px; gap: 6px; }
-  .nav { width: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: -10px; }
+  .conta-cab { order: 2; }
+  .conta-cab .pill-btn { padding: 7px 12px; font-size: 0.82rem; }
+  .nav { order: 3; width: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: -10px; }
   .nav a { white-space: nowrap; padding: 6px 10px; }
   .steps { top: 88px; }
   .foot small { margin-left: 0; }
@@ -178,3 +180,45 @@ a:hover .ico-l { transform: translateX(-3px); }
 /* paginação */
 .pag { display: flex; justify-content: space-between; gap: 10px; margin-top: 8px; }
 .pag a { font-weight: 600; color: var(--green-dk); }
+
+/* conta e formulários (Sprint 4) */
+.conta-cab { display: flex; align-items: center; gap: 8px; }
+.conta-cab .entrar { font-weight: 600; font-size: 0.9rem; color: var(--ink); padding: 6px 8px; }
+.pill-btn.claro { background: var(--green-50); color: var(--green-dk); }
+.avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--green-50); color: var(--green-dk); display: grid; place-items: center; font-weight: 700; font-size: 0.8rem; box-shadow: 0 0 0 1.5px var(--green-100); }
+.form { display: grid; gap: 14px; }
+.campo { display: grid; gap: 6px; font-size: 0.88rem; font-weight: 600; }
+.campo input, .campo select, .campo textarea { font: inherit; font-weight: 400; width: 100%; border: 1.5px solid var(--line); border-radius: 12px; padding: 11px 12px; background: var(--white); color: var(--ink); }
+.campo input:focus, .campo select:focus, .campo textarea:focus { outline: 0; border-color: var(--green); }
+.campo small { font-weight: 400; color: var(--soft); }
+.opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+.opcao { border: 1.5px solid var(--line); background: var(--white); border-radius: 999px; padding: 7px 14px; font: inherit; font-size: 0.88rem; cursor: pointer; }
+.opcao[aria-pressed='true'] { background: var(--green-50); border-color: var(--green); color: var(--green-dk); font-weight: 600; }
+.cartoes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.cartao { text-align: left; border: 1.5px solid var(--line); background: var(--white); border-radius: 14px; padding: 11px 14px; font: inherit; cursor: pointer; display: grid; gap: 2px; }
+.cartao b { font-size: 0.95rem; }
+.cartao span { font-size: 0.8rem; color: var(--gray); }
+.cartao[aria-checked='true'] { border-color: var(--green); background: var(--green-50); }
+@media (max-width: 520px) { .cartoes { grid-template-columns: 1fr; } }
+.caixa { background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: clamp(20px, 4vw, 30px); display: grid; gap: 16px; margin-top: 18px; }
+.passos { display: flex; gap: 6px; }
+.passos span { flex: 1; height: 4px; border-radius: 999px; background: var(--line); }
+.passos span.on { background: var(--green); }
+.linha-acoes { display: flex; justify-content: space-between; gap: 10px; align-items: center; flex-wrap: wrap; }
+.link-btn { background: none; border: 0; font: inherit; color: var(--gray); cursor: pointer; padding: 6px 0; }
+.check { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9rem; font-weight: 400; }
+.check input { margin-top: 3px; width: auto; }
+.chave { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 0.93rem; }
+.chave:first-child { border-top: 0; }
+.chave span small { display: block; color: var(--soft); font-size: 0.8rem; }
+.erro { color: var(--rose-ink); font-size: 0.88rem; }
+.ok { background: var(--green-50); color: var(--green-dk); border-radius: 14px; padding: 14px 16px; }
+.alerta { background: var(--sun); color: var(--sun-ink); border-radius: 14px; padding: 12px 14px; font-size: 0.92rem; }
+.oculto { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.cta { margin-block: 20px 8px; background: var(--green); color: #fff; border-radius: 24px; padding: 26px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+.cta h2 { font-size: 1.3rem; }
+.cta p { opacity: 0.9; font-size: 0.95rem; }
+.cta .pill-btn { background: #fff; color: var(--green-dk); }
+.texto-legal { display: grid; gap: 12px; font-size: 0.98rem; color: #2b352f; }
+.texto-legal h2 { font-size: 1.15rem; margin-top: 10px; }
+.texto-legal ul { padding-left: 1.2em; display: grid; gap: 4px; }

@@ -122,6 +122,16 @@ export default async function Inicio() {
           </Link>
         ) : null}
       </section>
+
+      <section className="cta">
+        <div>
+          <h2>Notas técnicas e quadros comparativos</h2>
+          <p>Grátis para inscritos, com aviso no dia em que sai o parecer das leis que você segue.</p>
+        </div>
+        <Link className="pill-btn" href="/inscricao">
+          Se inscreva grátis
+        </Link>
+      </section>
     </div>
   )
 }

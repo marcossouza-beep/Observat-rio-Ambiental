@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import React from 'react'
+import { ContaCabecalho } from '@/componentes/ContaCabecalho'
 import { NOME_SITE, SITE_URL } from '@/lib/rotulos'
 import './styles.css'
 
@@ -29,6 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/artigos">Artigos</Link>
               <Link href="/temas">Temas e biomas</Link>
             </nav>
+            <ContaCabecalho />
           </div>
         </header>
         <main>{children}</main>
@@ -43,6 +45,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/temas">Temas e biomas</Link>
               <Link href="/pareceres">Pareceres</Link>
               <Link href="/artigos">Artigos</Link>
+              <Link href="/privacidade">Privacidade</Link>
+              <Link href="/termos">Termos de uso</Link>
             </nav>
             <small>Pareceres escritos e assinados pelo autor. Textos de lei com link para a fonte oficial.</small>
           </div>

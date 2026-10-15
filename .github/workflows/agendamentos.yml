@@ -5,12 +5,12 @@ name: Agendamentos
 on:
   schedule:
     - cron: '7 * * * *' # verificação: a cada hora
-    - cron: '*/15 * * * *' # pareceres agendados: a cada 15 min
+    - cron: '*/15 * * * *' # pareceres agendados, comunicados e fila de e-mails: a cada 15 min
     - cron: '41 6 * * *' # limpeza: todo dia, 03:41 em Brasília
   workflow_dispatch:
     inputs:
       tarefa:
-        description: 'verificacao, publicar-agendados ou limpeza'
+        description: 'verificacao, quinze-minutos, publicar-agendados, comunicados, enviar-fila ou limpeza'
         required: true
         default: verificacao
 
@@ -27,7 +27,7 @@ jobs:
         run: |
           case "${{ github.event.schedule }}" in
             '7 * * * *') echo "nome=verificacao" >> "$GITHUB_OUTPUT" ;;
-            '*/15 * * * *') echo "nome=publicar-agendados" >> "$GITHUB_OUTPUT" ;;
+            '*/15 * * * *') echo "nome=quinze-minutos" >> "$GITHUB_OUTPUT" ;;
             '41 6 * * *') echo "nome=limpeza" >> "$GITHUB_OUTPUT" ;;
             *) echo "nome=${{ github.event.inputs.tarefa }}" >> "$GITHUB_OUTPUT" ;;
           esac

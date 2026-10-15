@@ -2,6 +2,7 @@ import * as migration_20261015_015215_inicial from './20261015_015215_inicial';
 import * as migration_20261015_020002_armazenamento from './20261015_020002_armazenamento';
 import * as migration_20261015_023339_artigos from './20261015_023339_artigos';
 import * as migration_20261015_030548_sprint3 from './20261015_030548_sprint3';
+import * as migration_20261015_032840_sprint4 from './20261015_032840_sprint4';
 
 export const migrations = [
   {
@@ -22,6 +23,11 @@ export const migrations = [
   {
     up: migration_20261015_030548_sprint3.up,
     down: migration_20261015_030548_sprint3.down,
-    name: '20261015_030548_sprint3'
+    name: '20261015_030548_sprint3',
+  },
+  {
+    up: migration_20261015_032840_sprint4.up,
+    down: migration_20261015_032840_sprint4.down,
+    name: '20261015_032840_sprint4'
   },
 ];

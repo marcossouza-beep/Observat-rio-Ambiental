@@ -1,5 +1,6 @@
 import type { Endpoint } from 'payload'
 import { situacaoFonte } from './lib/fontes'
+import { endpointsSite } from './endpoints-site'
 import { TAREFAS } from './tarefas'
 
 /** GET /api/saude — usado pelo monitor externo. Não expõe dados pessoais. */
@@ -57,4 +58,4 @@ const cron: Endpoint = {
   },
 }
 
-export const endpoints = [saude, cron]
+export const endpoints = [saude, cron, ...endpointsSite]

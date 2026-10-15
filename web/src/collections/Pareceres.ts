@@ -2,6 +2,7 @@ import { APIError, type CollectionConfig, type Field } from 'payload'
 import { equipe, publicadoOuEquipe } from '../access'
 import { mudarCompromissos } from '../hooks/compromissos'
 import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
+import { avisarPublicacao } from '../hooks/avisos'
 import { checarPublicacao, SECOES_PARECER } from '../lib/publicacao'
 
 const idDe = (v: unknown) => (v && typeof v === 'object' ? (v as { id: unknown }).id : v) ?? null
@@ -26,9 +27,9 @@ export const Pareceres: CollectionConfig = {
         if (originalDoc?.publicadoEm && idDe(data.versaoTexto) !== idDe(originalDoc.versaoTexto) && (data.versao ?? 1) <= (originalDoc.versao ?? 1)) {
           data.versao = (originalDoc.versao ?? 1) + 1
         }
-        const publicando =
-          data.status === 'publicado' &&
-          (originalDoc?.status !== 'publicado' || (data.versao ?? 1) > (originalDoc?.versao ?? 1) || !!originalDoc?.desatualizadoDesde)
+        // Só conta como (re)publicação a primeira publicação ou uma versão nova; salvar outra coisa
+        // (anexar PDF, corrigir SEO) não tira a faixa de "texto mudou".
+        const publicando = data.status === 'publicado' && (originalDoc?.status !== 'publicado' || (data.versao ?? 1) > (originalDoc?.versao ?? 1))
         if (publicando) {
           const r = checarPublicacao({
             secoes: data.secoes,
@@ -60,6 +61,7 @@ export const Pareceres: CollectionConfig = {
         if (!acabouDePublicar) return doc
         await mudarCompromissos(req, { alvo: 'proposicoes', alvoId: idDe(doc.proposicao) as number, tipos: ['parecer_prometido'], status: 'cumprido' })
         await mudarCompromissos(req, { alvo: 'pareceres', alvoId: doc.id, tipos: ['atualizacao'], status: 'cumprido' })
+        await avisarPublicacao(req, doc, (previousDoc?.versao ?? 1) < (doc.versao ?? 1) || !!previousDoc?.desatualizadoDesde)
         return doc
       },
       revalidarAoMudar,

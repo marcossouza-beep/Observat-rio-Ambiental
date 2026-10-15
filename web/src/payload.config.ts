@@ -1,4 +1,5 @@
 import { postgresAdapter } from '@payloadcms/db-postgres'
+import { resendAdapter } from '@payloadcms/email-resend'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { s3Storage } from '@payloadcms/storage-s3'
 import { pt } from '@payloadcms/translations/languages/pt'
@@ -94,6 +95,16 @@ const config: Config = {
   globals: [Ajustes],
   endpoints,
   editor: lexicalEditor(),
+  // E-mail pelo Resend em produção; sem chave, os e-mails aparecem no console (desenvolvimento e testes).
+  ...(process.env.RESEND_API_KEY
+    ? {
+        email: resendAdapter({
+          apiKey: process.env.RESEND_API_KEY,
+          defaultFromAddress: process.env.EMAIL_REMETENTE || 'avisos@exemplo.com',
+          defaultFromName: process.env.NEXT_PUBLIC_NOME_SITE || 'Nome do Site',
+        }),
+      }
+    : {}),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: { outputFile: path.resolve(dirname, 'payload-types.ts') },
   db: postgresAdapter({

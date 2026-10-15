@@ -42,6 +42,8 @@
 
 ### E-mails (o sistema envia, o painel registra)
 
+> Estado (Sprint 4): link de acesso, aviso de publicação, respostas a pedidos, credenciamento e comunicados funcionando, com fila e descadastro. Alertas de tramitação e resumo semanal entram com os conectores (Fases 2 e 3); até lá, o site não oferece essas opções.
+
 | Promessa | Quando sai | Garantia |
 |---|---|---|
 | "Você recebe um e-mail no dia da publicação" (Avise-me) | No ato da publicação do parecer | Fila de envio com nova tentativa; registro por pessoa |

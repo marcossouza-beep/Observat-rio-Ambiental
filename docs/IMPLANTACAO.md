@@ -36,11 +36,25 @@
    Depois disso, novas migrações rodam sozinhas quando o site inicia (`prodMigrations`).
 4. Entrar em `SITE_URL/admin` com o e-mail e a senha do passo anterior e trocar a senha.
 
+## 2.1 E-mails — Resend
+
+1. Criar conta no Resend e **verificar o domínio** do site (registros DNS que o Resend mostra). Sem domínio verificado, os e-mails caem no spam ou não saem.
+2. Gerar uma chave de API e cadastrar na Vercel:
+
+| Variável | Valor |
+|---|---|
+| `RESEND_API_KEY` | chave do Resend |
+| `EMAIL_REMETENTE` | ex.: `avisos@seudominio.com.br` (do domínio verificado) |
+| `NEXT_PUBLIC_NOME_SITE` | nome definitivo do site |
+| `NEXT_PUBLIC_SITE_URL` | mesmo valor de `SITE_URL` |
+
+3. Os links de acesso saem na hora. Avisos de publicação, respostas a pedidos e comunicados saem pela fila, a cada 15 minutos (agendamento "quinze-minutos"), com até 4 tentativas. Todo e-mail para inscrito leva o descadastro em um clique.
+
 ## 3. Segredos do GitHub (Settings → Secrets and variables → Actions)
 
 | Segredo | Para quê |
 |---|---|
-| `SITE_URL` e `CRON_SECRET` | Agendamentos (verificação horária, pareceres agendados, limpeza) |
+| `SITE_URL` e `CRON_SECRET` | Agendamentos (verificação horária; a cada 15 min: pareceres agendados, comunicados e fila de e-mails; limpeza diária) |
 | `BACKUP_DATABASE_URL` e `BACKUP_SENHA` | Cópia diária cifrada do banco, com teste de restauração |
 | `INLABS_EMAIL` e `INLABS_SENHA` | Teste do Diário Oficial no teste de fumaça (e, na Fase 2, a coleta) |
 
@@ -61,3 +75,5 @@ Num serviço gratuito (UptimeRobot, Better Stack ou similar), monitorar `SITE_UR
 - [ ] `SITE_URL/api/saude` responde `"ok": true`.
 - [ ] Aba **Actions** do GitHub: "CI" verde; "Teste das APIs" com o relatório; "Agendamentos" chamando o site; "Backup do banco" com o arquivo cifrado.
 - [ ] O monitor externo mostra o site no ar.
+- [ ] Inscrever-se com o seu e-mail: o link chega, abre "Minha conta" e o PDF de um parecer baixa.
+- [ ] Revisar os textos de `/privacidade` e `/termos` (texto-base escrito para você ajustar).

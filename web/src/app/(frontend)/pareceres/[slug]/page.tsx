@@ -2,12 +2,13 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Assinatura, redesDe } from '@/componentes/Autor'
+import { FormCorrecao } from '@/componentes/FormCorrecao'
 import { Carater, Impacto, Local, Situacao } from '@/componentes/Etiquetas'
 import { IconePdf, Seta } from '@/componentes/Icones'
 import { JsonLd } from '@/componentes/JsonLd'
 import { Rico } from '@/componentes/Rico'
 import { Trilha } from '@/componentes/Trilha'
-import { parecerPorSlug } from '@/dados/consultas'
+import { parecerPorSlug, payloadSite } from '@/dados/consultas'
 import { SECOES_PARECER, textoDe } from '@/lib/publicacao'
 import { dataBR, dataLonga } from '@/lib/rotulos'
 import { descricaoParecer, jsonLdParecer, jurisdicao, tituloParecer } from '@/lib/seo'
@@ -43,6 +44,7 @@ export default async function PaginaParecer({ params }: { params: Params }) {
   const materiais = [parecer.materiais?.notaTecnica, parecer.materiais?.quadroComparativo].filter((m): m is Material => !!m && typeof m === 'object')
   const titulo = tituloParecer(parecer, lei)
   const foto = autor?.foto && typeof autor.foto === 'object' ? (autor.foto as Media).url : null
+  const ajustes = await (await payloadSite()).findGlobal({ slug: 'ajustes', depth: 0 })
 
   return (
     <div className="wrap">
@@ -110,15 +112,15 @@ export default async function PaginaParecer({ params }: { params: Params }) {
         <section className="block b-mat">
           <h2>Material de aprofundamento</h2>
           {materiais.map((m) => (
-            <div key={m.id} className="mat-card">
+            <a key={m.id} className="mat-card" href={`/api/baixar/${m.id}`} rel="nofollow">
               <span className="ic">
                 <IconePdf />
               </span>
               <div>
                 <b>{m.titulo}</b>
-                <div className="nota-fonte">{m.visibilidade === 'publico' ? 'PDF aberto a todos' : 'PDF para inscritos'}</div>
+                <div className="nota-fonte">{m.visibilidade === 'publico' ? 'Baixar PDF' : 'Baixar PDF · grátis para inscritos'}</div>
               </div>
-            </div>
+            </a>
           ))}
         </section>
       ) : null}
@@ -136,6 +138,10 @@ export default async function PaginaParecer({ params }: { params: Params }) {
           </div>
         </section>
       ) : null}
+
+      <section className="block b-who">
+        <FormCorrecao parecer={parecer.id} prazoDiasUteis={ajustes.prazos?.correcao || 3} />
+      </section>
 
       <p style={{ marginTop: 18 }}>
         <Link className="arrow" href={`/leis/${lei.slug}`}>

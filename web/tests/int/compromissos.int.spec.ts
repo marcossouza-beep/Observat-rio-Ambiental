@@ -99,6 +99,11 @@ describe('publicação e desatualização', () => {
     expect(atualizacao.tipo).toBe('atualizacao')
     expect(atualizacao.status).toBe('aberto')
 
+    // Salvar outra coisa sem apontar a nova versão não tira a faixa
+    const outra = await payload.update({ collection: 'pareceres', id: par.id, data: { seo: { tituloSeo: 'Novo título' } } })
+    expect(outra.desatualizadoDesde).toBeTruthy()
+    expect((await compromissos('pareceres', par.id))[0].status).toBe('aberto')
+
     // Autor aponta a nova versão: vira v2 e exige a nota do que mudou
     await expect(payload.update({ collection: 'pareceres', id: par.id, data: { versaoTexto: v2.id } })).rejects.toThrow(/o que mudou/)
     const pv2 = await payload.update({ collection: 'pareceres', id: par.id, data: { versaoTexto: v2.id, notaDaVersao: 'O substitutivo dobrou o limite.' } })

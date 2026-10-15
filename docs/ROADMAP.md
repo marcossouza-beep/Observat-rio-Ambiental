@@ -22,6 +22,9 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 
 | 4. Freemium e lançamento | Cadastro com confirmação de e-mail e link mágico, download dos materiais (PDF) para inscritos, política de privacidade e termos, SEO (endereços, títulos e descrições, dados estruturados, sitemaps, Search Console, página e quadro do autor; ver `docs/SEO.md`) |
 
+> **Sprint 4 — feita (código). Fase 1 concluída no código.** Inscrição em passos com perfil e subgrupo (estudante: curso e estado) e credenciamento de imprensa; acesso sem senha por link mágico (uso único, 1 hora); Minha conta (completar perfil, e-mails, leis seguidas, baixar dados, excluir inscrição); "Avise-me" e "Seguir esta lei"; download de PDF só para inscritos confirmados; formulário público de correção com prazo; e-mails por fila (aviso de publicação, respostas, credenciamento, comunicados) com descadastro em um clique; Política de Privacidade e Termos (texto-base). Alertas de tramitação e resumo semanal dependem dos conectores (Fases 2 e 3) e não são oferecidos no site até lá.
+
+
 **Critério de saída:** 4 a 6 semanas publicando no ritmo de 3 a 10 pareceres por semana, com o checklist de `docs/ENTREGA.md` cumprido e nenhum compromisso público vencido.
 
 ## Fase 2 — Radar de votação federal (≈ 4–6 semanas)

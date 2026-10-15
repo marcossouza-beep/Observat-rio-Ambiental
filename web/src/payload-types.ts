@@ -777,6 +777,8 @@ export interface Assinante {
   consentimentoEm: string;
   confirmadoEm?: string | null;
   origemProposicao?: (number | null) | Proposicao;
+  tokenHash?: string | null;
+  tokenExpira?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -864,7 +866,10 @@ export interface Comunicado {
    */
   subperfis?: string[] | null;
   uf?: string | null;
-  status?: ('rascunho' | 'agendado' | 'enviando' | 'enviado') | null;
+  status?: ('rascunho' | 'agendado' | 'enviado') | null;
+  /**
+   * Vazio = na próxima rodada
+   */
   agendadoPara?: string | null;
   totalPrevisto?: number | null;
   enviadoEm?: string | null;
@@ -878,6 +883,11 @@ export interface Comunicado {
 export interface Envio {
   id: number;
   tipo: 'acesso' | 'aviso_publicacao' | 'alerta' | 'resumo' | 'embargo' | 'comunicado' | 'resposta_pedido';
+  para: string;
+  assunto: string;
+  html?: string | null;
+  texto?: string | null;
+  tentativas?: number | null;
   assinante?: (number | null) | Assinante;
   parecer?: (number | null) | Parecer;
   comunicado?: (number | null) | Comunicado;
@@ -1444,6 +1454,8 @@ export interface AssinantesSelect<T extends boolean = true> {
   consentimentoEm?: T;
   confirmadoEm?: T;
   origemProposicao?: T;
+  tokenHash?: T;
+  tokenExpira?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1490,6 +1502,11 @@ export interface ComunicadosSelect<T extends boolean = true> {
  */
 export interface EnviosSelect<T extends boolean = true> {
   tipo?: T;
+  para?: T;
+  assunto?: T;
+  html?: T;
+  texto?: T;
+  tentativas?: T;
   assinante?: T;
   parecer?: T;
   comunicado?: T;
