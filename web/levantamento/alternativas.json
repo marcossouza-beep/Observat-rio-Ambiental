@@ -1,0 +1,675 @@
+{
+  "geradoEm": "2026-10-16T02:02:05.849Z",
+  "ambiente": "GitHub Actions (fora do Brasil)",
+  "PA": {
+    "proposicoes": {
+      "url": "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
+      "status": 200,
+      "titulo": "Proposições - ALEPA",
+      "texto": "Acessibilidade INÍCIO TRANSPARÊNCIA RADAR DA TRANSPARÊNCIA DIÁRIO OFICIAL E-SIC / FALE CONOSCO INSTITUCIONAL Deputados Mesa Diretora Comissões e Representações Relatórios Condecorações e Medalhas Planejamento Estratégico Organograma Comissão de Legislação Participativa Banco de Leis COMUNICAÇÃO Fotos Logos Notícias Fundação Rádio e TV Alepa SERVIÇOS Biblioteca Newton Miranda Memorial Legislativo Legislações FELEPA Procuradoria da Mulher PROCESSO LEGISLATIVO O Processo Legislativo Proposições Pautas do Plenário Votações Nominais Pautas das Comissões Resumo do Plenário Atas das Sessões SERVIDOR Apollo Webmail Contra-Cheque Você está em: Portal Alepa / Proposições Pesquisar Limpar ATENÇÃO: Todos os filtros são opcionais! Setor responsável pelas informações: DIVISÃO DE EXPEDIENTE - DIDEX GERAL Início Portal da Transparência Ouvidoria SIC - Serviço de informação ao Cidadão Carta de Serviços LGPD Radar da Transparência Diário Oficial e-SIC / Fale Conosco INSTITUCIONAL Deputados Mesa Diretora Comissões e Representações Relatórios Condecorações e Medalhas Planejamento Estratégico Organograma Comissão de Legislação Participativa Banco de Leis COMUNICAÇÃO Fotos Logos Notícias Fundação Rádio e TV Alepa SERVIÇOS Biblioteca Newton Miranda Memorial Legislativo Legislações FELEPA Procuradoria da Mulher PROCESSO LEGISLATIVO O Processo Legislativo Proposições Pautas do Plenário Votações Nominais Pautas das Comissões Resumo do Plenário Atas das Sessões SERVIDOR Apollo Webmail Contra-Cheque Pal",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/DiarioOficial",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/ComissaoLegislacaoPart",
+          "texto": "Comissão de Legislação Participativa"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/MemorialLegislativo",
+          "texto": "Memorial Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Legislacoes",
+          "texto": "Legislações"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/OProcessoLegislativo",
+          "texto": "O Processo Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
+          "texto": "Proposições"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/DiarioOficial",
+          "texto": "DIÁRIO OFICIAL"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/ComissaoLegislacaoPart",
+          "texto": "Comissão de Legislação Participativa"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/MemorialLegislativo",
+          "texto": "Memorial Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Legislacoes",
+          "texto": "Legislações"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/OProcessoLegislativo",
+          "texto": "O Processo Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
+          "texto": "Proposições"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/DiarioOficial",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/ComissaoLegislacaoPart",
+          "texto": "Comissão de Legislação Participativa"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/MemorialLegislativo",
+          "texto": "Memorial Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Legislacoes",
+          "texto": "Legislações"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/OProcessoLegislativo",
+          "texto": "O Processo Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
+          "texto": "Proposições"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.alepa.pa.gov.br/Legislativo/GetTipoProposicoes",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 600,
+          "inicio": "[{\"codigo\":1,\"nome\":\"PROJETO DE DECRETO LEGISLATIVO\",\"situacao\":1},{\"codigo\":2,\"nome\":\"PROJETO DE EMENDA CONSTITUCIONAL\",\"situacao\":1},{\"codigo\":3,\"nome\":\"PROJETO DE LEI ORDIN\\u00C1RIA\",\"situacao\":0},{\"codigo\":4,\"nome\":\"PROJETO DE LEI COMPLEMENTAR\",\"situacao\":0},{\"codigo\":5,\"nome\":\"PROJETO DE RESOLU\\u00C7\\u00C3O\",\"situacao\":1},{\"codigo\":7,\"nome\":\"PROCESSO\",\"situacao\":1},{\"codigo\":8,\"nome\":\"PROJETO"
+        },
+        {
+          "url": "https://www.alepa.pa.gov.br/Legislativo/GetTipoAutores",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 110,
+          "inicio": "[{\"codigo\":1,\"nome\":\"DEPUTADO(A) ESTADUAL\"},{\"codigo\":2,\"nome\":\"EX-DEPUTADO(A)\"},{\"codigo\":3,\"nome\":\"OUTROS\"}]"
+        }
+      ]
+    },
+    "diarioOficial": {
+      "url": "https://www.alepa.pa.gov.br/Home/Page/DiarioOficial",
+      "status": 200,
+      "titulo": "Diário Oficial - ALEPA",
+      "texto": "Acessibilidade INÍCIO TRANSPARÊNCIA RADAR DA TRANSPARÊNCIA DIÁRIO OFICIAL E-SIC / FALE CONOSCO INSTITUCIONAL Deputados Mesa Diretora Comissões e Representações Relatórios Condecorações e Medalhas Planejamento Estratégico Organograma Comissão de Legislação Participativa Banco de Leis COMUNICAÇÃO Fotos Logos Notícias Fundação Rádio e TV Alepa SERVIÇOS Biblioteca Newton Miranda Memorial Legislativo Legislações FELEPA Procuradoria da Mulher PROCESSO LEGISLATIVO O Processo Legislativo Proposições Pautas do Plenário Votações Nominais Pautas das Comissões Resumo do Plenário Atas das Sessões SERVIDOR Apollo Webmail Contra-Cheque Você está em: Portal Alepa / Diário Oficial Diário Oficial Diário de número 2676 - EDIÇÃO EXTRA Válido de quarta-feira, 14 de outubro de 2026 Até quarta-feira, 14 de outubro de 2026 Visualizar o arquivo Pesquisa Avançada Pesquisar Nenhum registro encontrado GERAL Início Portal da Transparência Ouvidoria SIC - Serviço de informação ao Cidadão Carta de Serviços LGPD Radar da Transparência Diário Oficial e-SIC / Fale Conosco INSTITUCIONAL Deputados Mesa Diretora Comissões e Representações Relatórios Condecorações e Medalhas Planejamento Estratégico Organograma Comissão de Legislação Participativa Banco de Leis COMUNICAÇÃO Fotos Logos Notícias Fundação Rádio e TV Alepa SERVIÇOS Biblioteca Newton Miranda Memorial Legislativo Legislações FELEPA Procuradoria da Mulher PROCESSO LEGISLATIVO O Processo Legislativo Proposições Pautas do Plenário Votações Nominais Pautas",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/DiarioOficial",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/ComissaoLegislacaoPart",
+          "texto": "Comissão de Legislação Participativa"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/MemorialLegislativo",
+          "texto": "Memorial Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Legislacoes",
+          "texto": "Legislações"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/OProcessoLegislativo",
+          "texto": "O Processo Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
+          "texto": "Proposições"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/DiarioOficial",
+          "texto": "DIÁRIO OFICIAL"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/ComissaoLegislacaoPart",
+          "texto": "Comissão de Legislação Participativa"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/MemorialLegislativo",
+          "texto": "Memorial Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Legislacoes",
+          "texto": "Legislações"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/OProcessoLegislativo",
+          "texto": "O Processo Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
+          "texto": "Proposições"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/DiarioOficial",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/ComissaoLegislacaoPart",
+          "texto": "Comissão de Legislação Participativa"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/MemorialLegislativo",
+          "texto": "Memorial Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Legislacoes",
+          "texto": "Legislações"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/OProcessoLegislativo",
+          "texto": "O Processo Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
+          "texto": "Proposições"
+        }
+      ],
+      "chamadas": []
+    },
+    "diarios": {
+      "url": "https://www.alepa.pa.gov.br/Comunicacao/Diarios",
+      "status": 200,
+      "titulo": "Diário Oficial - ALEPA",
+      "texto": "Acessibilidade INÍCIO TRANSPARÊNCIA RADAR DA TRANSPARÊNCIA DIÁRIO OFICIAL E-SIC / FALE CONOSCO INSTITUCIONAL Deputados Mesa Diretora Comissões e Representações Relatórios Condecorações e Medalhas Planejamento Estratégico Organograma Comissão de Legislação Participativa Banco de Leis COMUNICAÇÃO Fotos Logos Notícias Fundação Rádio e TV Alepa SERVIÇOS Biblioteca Newton Miranda Memorial Legislativo Legislações FELEPA Procuradoria da Mulher PROCESSO LEGISLATIVO O Processo Legislativo Proposições Pautas do Plenário Votações Nominais Pautas das Comissões Resumo do Plenário Atas das Sessões SERVIDOR Apollo Webmail Contra-Cheque Você está em: Portal Alepa / Diário Oficial Diário Oficial Diário de número 2676 - EDIÇÃO EXTRA Válido de quarta-feira, 14 de outubro de 2026 Até quarta-feira, 14 de outubro de 2026 Visualizar o arquivo Pesquisa Avançada Pesquisar Nenhum registro encontrado GERAL Início Portal da Transparência Ouvidoria SIC - Serviço de informação ao Cidadão Carta de Serviços LGPD Radar da Transparência Diário Oficial e-SIC / Fale Conosco INSTITUCIONAL Deputados Mesa Diretora Comissões e Representações Relatórios Condecorações e Medalhas Planejamento Estratégico Organograma Comissão de Legislação Participativa Banco de Leis COMUNICAÇÃO Fotos Logos Notícias Fundação Rádio e TV Alepa SERVIÇOS Biblioteca Newton Miranda Memorial Legislativo Legislações FELEPA Procuradoria da Mulher PROCESSO LEGISLATIVO O Processo Legislativo Proposições Pautas do Plenário Votações Nominais Pautas",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/DiarioOficial",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/ComissaoLegislacaoPart",
+          "texto": "Comissão de Legislação Participativa"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/MemorialLegislativo",
+          "texto": "Memorial Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Legislacoes",
+          "texto": "Legislações"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/OProcessoLegislativo",
+          "texto": "O Processo Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
+          "texto": "Proposições"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/DiarioOficial",
+          "texto": "DIÁRIO OFICIAL"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/ComissaoLegislacaoPart",
+          "texto": "Comissão de Legislação Participativa"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/MemorialLegislativo",
+          "texto": "Memorial Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Legislacoes",
+          "texto": "Legislações"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/OProcessoLegislativo",
+          "texto": "O Processo Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
+          "texto": "Proposições"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/DiarioOficial",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/ComissaoLegislacaoPart",
+          "texto": "Comissão de Legislação Participativa"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/MemorialLegislativo",
+          "texto": "Memorial Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Legislacoes",
+          "texto": "Legislações"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/OProcessoLegislativo",
+          "texto": "O Processo Legislativo"
+        },
+        {
+          "href": "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
+          "texto": "Proposições"
+        }
+      ],
+      "chamadas": []
+    },
+    "bancoDeLeis": {
+      "url": "https://bancodeleis.alepa.pa.gov.br/",
+      "status": 200,
+      "titulo": "Banco de Leis — Assembleia Legislativa do Pará",
+      "texto": "Banco de Leis – Assembleia Legislativa do Pará Sistema de Legislação 📚 Banco de Leis 🔗 Dados Abertos API LEGISLAÇÃO ESTADUAL Banco de Leis & Normas 30.118 Leis registradas 236 Emendas Const. 2026 Ano mais recente NÚMERO / CÓDIGO ANO TIPO DE NORMA Todos os tipos Decreto Estadual Decreto Legislativo Emendas Constitucionais Estaduais Emendas Constitucionais Federais Lei Complementar Lei Ordinária Resoluções ASSUNTO / EMENTA Pesquisar Limpar Acesso rápido: Ordinárias Complementares 2026 2025 Emendas Resoluções 30.118 resultado(s) encontrado(s) Mais recentes Mais antigas Número maior Número menor NÚMERO TIPO ANO EMENTA AÇÕES Nº 11666 2026 Lei Ordinária 2026 Dispõe sobre as diretrizes para a elaboração e a execução da Lei Orçamentária Anual de 2027. ↓ PDF Ver Nº 11665 2026 Lei Ordinária 2026 Cria a Área de Proteção Ambiental Bacajaí APA Bacajaí, nos Municípios de Altamira e Senador José Porfírio, Estado do Pará. ↓ PDF Ver Nº 11664 2026 Lei Ordinária 2026 Declara e reconhece como de utilidade pública para o Estado do Pará, o Clube Atlético Central Park. ↓ PDF Ver Nº 11663 2026 Lei Ordinária 2026 Altera e acrescenta dispositivos à Lei nº 8.107, de 19 de fevereiro de 2015, que dispõe sobre o Plano de Cargos, Carreiras e Remuneração dos Servidores da Defensoria Pública do Estado do Pará. ↓ PDF Ver Nº 11662 2026 Lei Ordinária 2026 Estabelece diretrizes para a oferta na rede pública estadual de saúde de consultas médicas e terapêuticas por videoconferência para pessoas com deficiência,",
+      "pdfs": [
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260805105738_151029fb.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260901102051_67fa9497.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092828_8dcdac09.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260901101839_0a41c333.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092721_6d0981f9.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092647_47fa63f3.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092559_0d86fc30.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092457_38dd0969.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092410_1f6b5de5.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092107_4ee90bfb_LEI_N_11.657_DE_09_DE_JULHO_DE_2026.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/especificas/c_federallei__68373.pdf",
+          "texto": "🇧🇷\n        \n          Federal\n          Constituição Federal\n          Última "
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/especificas/c_estaduallei__84635.pdf",
+          "texto": "🏛️\n        \n          Estadual\n          Constituição do Pará\n          Última "
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/especificas/reg_interno_alepalei__89698.pdf",
+          "texto": "📜\n        \n          Institucional\n          Regimento Interno\n          Regime"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/especificas/rjulei__57216.pdf",
+          "texto": "📋\n        \n          Funcional\n          Regime Jurídico Único\n          RJU — "
+        }
+      ],
+      "interessantes": [],
+      "chamadas": []
+    }
+  },
+  "RR": {
+    "saplComoRobo": {
+      "url": "https://sapl.al.rr.leg.br/api/materia/materialegislativa/?page_size=1",
+      "comoNavegador": false,
+      "status": 403,
+      "tipo": "text/html; charset=iso-8859-1",
+      "servidor": "Apache",
+      "bytes": 199,
+      "inicio": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\"> <html><head> <title>403 Forbidden</title> </head><body> <h1>Forbidden</h1> <p>You don't have permission to access this resource.</p> </body></html>"
+    },
+    "saplComoNavegador": {
+      "url": "https://sapl.al.rr.leg.br/api/materia/materialegislativa/?page_size=1",
+      "comoNavegador": true,
+      "status": 403,
+      "tipo": "text/html; charset=iso-8859-1",
+      "servidor": "Apache",
+      "bytes": 199,
+      "inicio": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\"> <html><head> <title>403 Forbidden</title> </head><body> <h1>Forbidden</h1> <p>You don't have permission to access this resource.</p> </body></html>"
+    },
+    "saplNoNavegador": {
+      "url": "https://sapl.al.rr.leg.br/api/materia/materialegislativa/?page_size=1",
+      "status": 403,
+      "titulo": "403 Forbidden",
+      "texto": "Forbidden You don't have permission to access this resource.",
+      "pdfs": [],
+      "interessantes": [],
+      "chamadas": []
+    },
+    "saplPesquisa": {
+      "url": "https://sapl.al.rr.leg.br/materia/pesquisar-materia",
+      "status": 403,
+      "titulo": "403 Forbidden",
+      "texto": "Forbidden You don't have permission to access this resource.",
+      "pdfs": [],
+      "interessantes": [],
+      "chamadas": []
+    },
+    "wpMidia": {
+      "url": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media?per_page=5&mime_type=application/pdf",
+      "comoNavegador": true,
+      "status": 200,
+      "tipo": "application/json; charset=UTF-8",
+      "servidor": "openresty",
+      "bytes": 15580,
+      "inicio": "[{\"id\":12042,\"date\":\"2026-10-15T15:26:09\",\"date_gmt\":\"2026-10-15T19:26:09\",\"guid\":{\"rendered\":\"http:\\/\\/diarios.al.rr.leg.br\\/wp-content\\/uploads\\/2026\\/10\\/DIARIO-ALE-RR-ED.-4743-06.10.2026.pdf\"},\"modified\":\"2026-10-15T15:26:09\",\"modified_gmt\":\"2026-10-15T19:26:09\",\"slug\":\"diario-ale-rr-ed-4743-06-"
+    },
+    "wpPosts": {
+      "url": "https://diarios.al.rr.leg.br/wp-json/wp/v2/posts?per_page=5",
+      "comoNavegador": true,
+      "status": 200,
+      "tipo": "application/json; charset=UTF-8",
+      "servidor": "openresty",
+      "bytes": 2,
+      "inicio": "[]"
+    },
+    "diarios": {
+      "url": "https://diarios.al.rr.leg.br/",
+      "status": 200,
+      "titulo": "Diário Oficial da ALE-RR | Assembleia Legislativa de Roraima – Página do Diário Oficial da ALE-RR",
+      "texto": "INÍCIO ASSEMBLEIA ATIVIDADE LEGISLATIVA PROGRAMAS SOCIAIS TRANSPARÊNCIA CIDADANIA COMUNICAÇÃO DIÁRIO OFICIAL Da Assembleia Legislativa de Roraima Nessa página você pode pesquisar os Diários Oficiais por dia, mês e ano de publicação. janeiro fevereiro março abril maio junho julho agosto setembro outubro novembro dezembro 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 2027 2028 2029 2030 SETEMBRO OUTUBRO 2026 NOVEMBRO SEG TER QUA QUI SEX SAB DOM 28 29 30 1 EDIÇÃO Nº 4741 2 EDIÇÃO Nº 4742 3 4 5 6 EDIÇÃO Nº 4743 7 EDIÇÃO Nº 4744 8 EDIÇÃO Nº 4745 9 EDIÇÃO Nº 4746 10 11 12 13 EDIÇÃO Nº 4747 14 EDIÇÃO Nº 4748 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 1 © Copyright 2019. Desenvolvido por Arcus Consultoria",
+      "pdfs": [
+        {
+          "href": "http://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4741-01.10.2026.pdf",
+          "texto": "edição nº 4741"
+        },
+        {
+          "href": "http://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4742-02.10.2026.pdf",
+          "texto": "edição nº 4742"
+        },
+        {
+          "href": "http://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4743-06.10.2026.pdf",
+          "texto": "edição nº 4743"
+        },
+        {
+          "href": "http://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4744-07.10.2026.pdf",
+          "texto": "edição nº 4744"
+        },
+        {
+          "href": "http://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4745-08.10.2026.pdf",
+          "texto": "edição nº 4745"
+        },
+        {
+          "href": "http://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4746-09.10.2026.pdf",
+          "texto": "edição nº 4746"
+        },
+        {
+          "href": "http://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4747-13.10.2026.pdf",
+          "texto": "edição nº 4747"
+        },
+        {
+          "href": "http://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4748-14.10.2026.pdf",
+          "texto": "Edição nº 4748"
+        }
+      ],
+      "interessantes": [
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": ""
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "ASSEMBLEIA"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Deputados"
+        },
+        {
+          "href": "https://al.rr.leg.br/deputados-estaduais-2023/",
+          "texto": "Legislatura Atual"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Legislaturas Anteriores"
+        },
+        {
+          "href": "https://al.rr.leg.br/deputados-estaduais-2019/",
+          "texto": "8ª Legislatura"
+        },
+        {
+          "href": "https://al.rr.leg.br/deputadoslegislaturas-anteriores/",
+          "texto": "1ª a 7ª Legislatura"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Documentos Oficiais"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Servidor"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Formulário Caixa"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "ATIVIDADE LEGISLATIVA"
+        },
+        {
+          "href": "http://sapl.al.rr.leg.br/",
+          "texto": "Sistema de Apoio ao Processo Legislativo"
+        },
+        {
+          "href": "https://sapl.al.rr.leg.br/norma/pesquisar",
+          "texto": "Leis Estaduais"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "PROGRAMAS SOCIAIS"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Escola do Legislativo"
+        },
+        {
+          "href": "https://escola.al.rr.leg.br/",
+          "texto": "Site Escola do Legislativo"
+        },
+        {
+          "href": "https://al.rr.leg.br/escola-do-legislativo-escolegis/",
+          "texto": "Sobre a Escola do Legislativo"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Procon Assembleia"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Programa Fiscaliza"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "TRANSPARÊNCIA"
+        },
+        {
+          "href": "http://diarios.al.rr.leg.br/",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "CIDADANIA"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "COMUNICAÇÃO"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "ASSEMBLEIA"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Deputados"
+        },
+        {
+          "href": "https://al.rr.leg.br/deputados-estaduais-2023/",
+          "texto": "Legislatura Atual"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Legislaturas Anteriores"
+        },
+        {
+          "href": "https://al.rr.leg.br/deputados-estaduais-2019/",
+          "texto": "8ª Legislatura"
+        },
+        {
+          "href": "https://al.rr.leg.br/deputadoslegislaturas-anteriores/",
+          "texto": "1ª a 7ª Legislatura"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Documentos Oficiais"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Servidor"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Formulário Caixa"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "ATIVIDADE LEGISLATIVA"
+        },
+        {
+          "href": "http://sapl.al.rr.leg.br/",
+          "texto": "Sistema de Apoio ao Processo Legislativo"
+        },
+        {
+          "href": "https://sapl.al.rr.leg.br/norma/pesquisar",
+          "texto": "Leis Estaduais"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "PROGRAMAS SOCIAIS"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Escola do Legislativo"
+        },
+        {
+          "href": "https://escola.al.rr.leg.br/",
+          "texto": "Site Escola do Legislativo"
+        },
+        {
+          "href": "https://al.rr.leg.br/escola-do-legislativo-escolegis/",
+          "texto": "Sobre a Escola do Legislativo"
+        },
+        {
+          "href": "https://diarios.al.rr.leg.br/#",
+          "texto": "Procon Assembleia"
+        }
+      ],
+      "chamadas": []
+    },
+    "wpUltimos": [
+      {
+        "data": "2026-10-15T15:26:09",
+        "titulo": "DIARIO-ALE-RR-ED.-4743-06.10.2026",
+        "url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4743-06.10.2026.pdf"
+      },
+      {
+        "data": "2026-10-15T08:20:39",
+        "titulo": "DIARIO-ALE-RR-ED.-4748-14.10.2026",
+        "url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4748-14.10.2026.pdf"
+      },
+      {
+        "data": "2026-10-14T10:23:44",
+        "titulo": "DIARIO-ALE-RR-ED.-4746-09.10.2026",
+        "url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4746-09.10.2026.pdf"
+      },
+      {
+        "data": "2026-10-14T09:32:59",
+        "titulo": "DIARIO-ALE-RR-ED.-4747-13.10.2026",
+        "url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4747-13.10.2026.pdf"
+      },
+      {
+        "data": "2026-10-09T08:50:21",
+        "titulo": "DIARIO-ALE-RR-ED.-4745-08.10.2026",
+        "url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4745-08.10.2026.pdf"
+      }
+    ],
+    "pdfDiario": {
+      "url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4743-06.10.2026.pdf",
+      "paginas": 3,
+      "caracteres": 14209,
+      "projetosDeLei": 0,
+      "exemplos": [],
+      "ambientais": [
+        "e) Deputado Odilon. XIII - Comissão de Meio Ambiente e Desenvolvimento Sustentável: a) Deputado Eder Lourinho – Presidente; b) Deputada Joilma Teodora – Vice-Presidente; c) Deputado Rárison Barbosa; d) Deputado Rogério Borges; e) Deputado Armando Neto. XIV -"
+      ]
+    }
+  },
+  "AP": {
+    "siteComoNavegador": {
+      "url": "https://www.al.ap.leg.br/",
+      "comoNavegador": true,
+      "erro": "fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+    },
+    "siteNoNavegador": {
+      "url": "https://www.al.ap.leg.br/",
+      "erro": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.al.ap.leg.br/\", waiting until \"networkidle\"\n",
+      "chamadas": []
+    },
+    "diarioDoEstado": {
+      "url": "https://diofe.portal.ap.gov.br/",
+      "status": 200,
+      "titulo": "Diário Oficial / Home",
+      "texto": "RECEBA O DIÁRIO OFICIAL PELO TELEGRAM ÁREA DO PUBLICADOR Usuário Senha LOGIN Esqueceu a senha? Início Cadastre-se Estrutura de Governo Valores de Referência Normas de envio DOWNLOAD CLIQUE AQUI E FAÇA O DOWNLOAD DA ÚLTIMA EDIÇÃO Nº 8.762 CLIQUE AQUI E VISUALIZE A PÁGINA EM PDF CLIQUE AQUI E ACESSE A VERSÃO HTML CLIQUE AQUI E VISUALIZE A VERSÃO JORNAL CLIQUE AQUI E ACESSE O ACERVO DA IMPRENSA PESQUISA POR EDIÇÃO Selecione ou digite a data do diário oficial OK OU PESQUISA POR PALAVRAS A pesquisa pode ser feita em um período especifico ou em todas as edições disponíveis OK CONSULTA POR PERÍODO ESPECÍFICO Data Inicial Data Final OK OU NÚMERO DA EDIÇÃO Número OK OU ÚLTIMAS EDIÇÕES Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Extraordinária Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diário Oficial Diári",
+      "pdfs": [
+        {
+          "href": "https://editor.amapa.gov.br/arquivos_portais/publicacoes/SEAD_fccce5c2a8961f73601d3d35267ba793.pdf",
+          "texto": "Normas de envio"
+        }
+      ],
+      "interessantes": [
+        {
+          "href": "https://t.me/amapabot",
+          "texto": "RECEBA O DIÁRIO OFICIAL\n                            PELO TELEGRAM"
+        },
+        {
+          "href": "https://sead.portal.ap.gov.br/diario_oficial",
+          "texto": "CLIQUE AQUI\n                            E ACESSE O ACERVO DA IMPRENSA"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1h1v9101483413za208zd9101483413xf1&_p=1792116232710&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1160436977.1792116233&frm=0&ngs=1&pscdl=noapi&rcb=13&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938466~115938468~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792116232&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=2358",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1h1v9101483413za200zd9101483413xf1&_p=1792116232710&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1160436977.1792116233&frm=0&ngs=1&pscdl=noapi&rcb=13&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=2&tag_exp=115938466~115938468~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792116232&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=scroll&epn.percent_scrolled=90&_et=7&tfd=7367",
+          "status": 204,
+          "tipo": "text/plain"
+        }
+      ]
+    }
+  }
+}
