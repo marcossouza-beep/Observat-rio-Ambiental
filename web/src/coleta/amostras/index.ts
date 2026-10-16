@@ -313,6 +313,58 @@ const PASSOS_CO: Passo[] = [
   },
 ]
 
+/** Sudeste (Fase 6): API de dados abertos da ALMG, arquivos de dados abertos da Alesp, consulta da Alerj. */
+const PASSOS_SE: Passo[] = [
+  {
+    fonte: 'almg',
+    nome: 'api',
+    async rodar() {
+      const api = 'https://dadosabertos.almg.gov.br'
+      await gravarHtml('almg', 'documentacao', `${api}/documentacao/index`)
+      await gravarHtml('almg', 'documentacao-proposicoes', `${api}/documentacao/paginas/proposicoes`)
+      const ano = new Date().getFullYear()
+      const candidatos: [string, string][] = [
+        ['direcionada-tipo-ano', `${api}/ws/proposicoes/pesquisa/direcionada?tp=1&ano=${ano}&formato=json`],
+        ['direcionada-sigla', `${api}/ws/proposicoes/pesquisa/direcionada?tipo=PL&ano=${ano}&formato=json`],
+        ['avancada-expr', `${api}/ws/proposicoes/pesquisa/avancada?expr=ambiental&ano=${ano}&formato=json`],
+        ['v2-direcionada', `${api}/api/v2/proposicoes/pesquisa/direcionada?tipo=PL&ano=${ano}&formato=json`],
+        ['detalhe', `${api}/ws/proposicoes/PL/1/${ano}?formato=json`],
+        ['v2-detalhe', `${api}/api/v2/proposicoes/PL/1/${ano}?formato=json`],
+      ]
+      for (const [nome, url] of candidatos) await gravarHtml('almg', nome, url)
+    },
+  },
+  {
+    fonte: 'alesp',
+    nome: 'dados-abertos',
+    async rodar() {
+      await gravarHtml('alesp', 'catalogo', 'https://www.al.sp.gov.br/dados-abertos/grupo/1')
+      await gravarHtml('alesp', 'catalogo-geral', 'https://www.al.sp.gov.br/dados-abertos/catalogo')
+      await gravarHtml('alesp', 'propositura', 'https://www.al.sp.gov.br/propositura/?id=1000682212')
+      // Arquivo de proposituras: tamanho, arquivos dentro e o começo de cada um (não grava o arquivo inteiro)
+      try {
+        const url = 'https://www.al.sp.gov.br/repositorioDados/processo_legislativo/proposituras.zip'
+        const r = await obter(url, { tentativas: 2, tempoLimiteMs: 120_000 })
+        const zip = Buffer.from(await r.arrayBuffer())
+        const arquivos = lerZip(zip).map((a) => ({ nome: a.nome, bytes: a.conteudo.length, inicio: a.conteudo.subarray(0, 6000).toString('utf8'), fim: a.conteudo.subarray(Math.max(0, a.conteudo.length - 4000)).toString('utf8') }))
+        await salvar('alesp', 'proposituras-zip', { url, status: r.status, tipo: r.headers.get('content-type') || '', gravadaEm: new Date().toISOString(), corpo: { bytes: zip.length, arquivos } })
+      } catch (e) {
+        console.log(`⚠️ alesp proposituras.zip · ${(e as Error).message}`)
+      }
+    },
+  },
+  {
+    fonte: 'alerj',
+    nome: 'proposicoes',
+    async rodar() {
+      const ln = 'http://alerjln1.alerj.rj.gov.br/scpro2327.nsf'
+      await gravarHtml('alerj', 'lei-int', `${ln}/Internet/LeiInt?OpenForm`)
+      await gravarHtml('alerj', 'lei-int-visao', `${ln}/Internet/LeiInt?OpenView&Start=1&Count=30`)
+      await gravarHtml('alerj', 'inicio', 'https://www.alerj.rj.gov.br/')
+    },
+  },
+]
+
 /** Pará e Roraima sem SAPL aberto: Diário da ALE-RR (WordPress + PDF) e Banco de Leis da Alepa (API JSON). */
 const PASSOS_NORTE: Passo[] = [
   {
@@ -678,7 +730,7 @@ async function main() {
   const ctx: Ctx = {}
   await mkdir(saida, { recursive: true })
   const fontes = filtro ? filtro.split(',') : null
-  for (const p of [...PASSOS, ...PASSOS_SAPL, ...passosSapl('sapl-ne', SAPL_NE), ...PASSOS_NORTE, ...PASSOS_NE, ...PASSOS_CO].filter((x) => !fontes || fontes.includes(x.fonte))) {
+  for (const p of [...PASSOS, ...PASSOS_SAPL, ...passosSapl('sapl-ne', SAPL_NE), ...PASSOS_NORTE, ...PASSOS_NE, ...PASSOS_CO, ...PASSOS_SE].filter((x) => !fontes || fontes.includes(x.fonte))) {
     try {
       await p.rodar(ctx)
     } catch (e) {
