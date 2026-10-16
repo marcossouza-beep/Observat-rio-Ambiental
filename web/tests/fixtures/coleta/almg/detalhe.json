@@ -1,9 +1,0 @@
-{
-  "url": "https://dadosabertos.almg.gov.br/api/v2/proposicoes/PL/1/2026?formato=json",
-  "status": 200,
-  "tipo": "application/json",
-  "gravadaEm": "2026-10-16T20:06:52.340Z",
-  "corpo": {
-    "html": "{\n  \"resultado\" : {\n    \"banco\" : \"MATE\",\n    \"consulta\" : \"(PL)[TIPO]  E  (1)[NUME]  E  (2026)[ANO]\",\n    \"noOcorrencias\" : 0,\n    \"noDocumentos\" : 0,\n    \"tamanhoPagina\" : 20,\n    \"numPagina\" : 1,\n    \"ordenacao\" : \"-@publ,tipo,-@nume\",\n    \"dataHora\" : {\n      \"date\" : \"2026-10-16\"\n    },\n    \"erro\" : false\n  }\n}"
-  }
-}

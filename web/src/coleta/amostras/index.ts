@@ -320,16 +320,16 @@ const PASSOS_SE: Passo[] = [
     nome: 'api',
     async rodar() {
       const api = 'https://dadosabertos.almg.gov.br'
-      await gravarHtml('almg', 'documentacao', `${api}/documentacao/index`)
-      await gravarHtml('almg', 'documentacao-proposicoes', `${api}/documentacao/paginas/proposicoes`)
       const ano = new Date().getFullYear()
+      const d = `${api}/ws/proposicoes/pesquisa/direcionada?formato=json`
+      // tp = tamanho da página (confirmado); p = página?; num = número?; outros tipos
       const candidatos: [string, string][] = [
-        ['direcionada-tipo-ano', `${api}/ws/proposicoes/pesquisa/direcionada?tp=1&ano=${ano}&formato=json`],
-        ['direcionada-sigla', `${api}/ws/proposicoes/pesquisa/direcionada?tipo=PL&ano=${ano}&formato=json`],
-        ['avancada-expr', `${api}/ws/proposicoes/pesquisa/avancada?expr=ambiental&ano=${ano}&formato=json`],
-        ['v2-direcionada', `${api}/api/v2/proposicoes/pesquisa/direcionada?tipo=PL&ano=${ano}&formato=json`],
-        ['detalhe', `${api}/ws/proposicoes/PL/1/${ano}?formato=json`],
-        ['v2-detalhe', `${api}/api/v2/proposicoes/PL/1/${ano}?formato=json`],
+        ['pl-ano', `${d}&tipo=PL&ano=${ano}&tp=20`],
+        ['pl-ano-p2', `${d}&tipo=PL&ano=${ano}&tp=20&p=2`],
+        ['pl-numero', `${d}&tipo=PL&num=6187&ano=${ano}`],
+        ['plc-ano', `${d}&tipo=PLC&ano=${ano}&tp=5`],
+        ['pec-ano', `${d}&tipo=PEC&ano=${ano}&tp=5`],
+        ['pl-data', `${d}&tipo=PL&dataInicial=${ano}-10-10&tp=5`],
       ]
       for (const [nome, url] of candidatos) await gravarHtml('almg', nome, url)
     },
@@ -338,19 +338,13 @@ const PASSOS_SE: Passo[] = [
     fonte: 'alesp',
     nome: 'dados-abertos',
     async rodar() {
-      await gravarHtml('alesp', 'catalogo', 'https://www.al.sp.gov.br/dados-abertos/grupo/1')
-      await gravarHtml('alesp', 'catalogo-geral', 'https://www.al.sp.gov.br/dados-abertos/catalogo')
-      await gravarHtml('alesp', 'propositura', 'https://www.al.sp.gov.br/propositura/?id=1000682212')
-      // Arquivo de proposituras: tamanho, arquivos dentro e o começo de cada um (não grava o arquivo inteiro)
-      try {
-        const url = 'https://www.al.sp.gov.br/repositorioDados/processo_legislativo/proposituras.zip'
-        const r = await obter(url, { tentativas: 2, tempoLimiteMs: 120_000 })
-        const zip = Buffer.from(await r.arrayBuffer())
-        const arquivos = lerZip(zip).map((a) => ({ nome: a.nome, bytes: a.conteudo.length, inicio: a.conteudo.subarray(0, 6000).toString('utf8'), fim: a.conteudo.subarray(Math.max(0, a.conteudo.length - 4000)).toString('utf8') }))
-        await salvar('alesp', 'proposituras-zip', { url, status: r.status, tipo: r.headers.get('content-type') || '', gravadaEm: new Date().toISOString(), corpo: { bytes: zip.length, arquivos } })
-      } catch (e) {
-        console.log(`⚠️ alesp proposituras.zip · ${(e as Error).message}`)
-      }
+      // A página da propositura é uma aplicação; o script mostra a API por trás
+      const pag = await gravarHtml('alesp', 'propositura', 'https://www.al.sp.gov.br/propositura/?id=1000682212')
+      const ph = ((pag.corpo as { html?: string } | null)?.html || '') as string
+      const js = /src="(\/legis-web-files\/main-[^"]+\.js)"/.exec(ph)?.[1]
+      if (js) await gravarHtml('alesp', 'legis-web-main', `https://www.al.sp.gov.br${js}`)
+      await gravarHtml('alesp', 'dataset-tramitacao', 'https://www.al.sp.gov.br/dados-abertos/dataset/82')
+      // O arquivo de proposituras (proposituras.zip: 17 MB, XML de 132 MB, sem ordem) fica de fora: pesado para 4 vezes ao dia
     },
   },
   {
@@ -358,9 +352,11 @@ const PASSOS_SE: Passo[] = [
     nome: 'proposicoes',
     async rodar() {
       const ln = 'http://alerjln1.alerj.rj.gov.br/scpro2327.nsf'
-      await gravarHtml('alerj', 'lei-int', `${ln}/Internet/LeiInt?OpenForm`)
-      await gravarHtml('alerj', 'lei-int-visao', `${ln}/Internet/LeiInt?OpenView&Start=1&Count=30`)
-      await gravarHtml('alerj', 'inicio', 'https://www.alerj.rj.gov.br/')
+      const lista = await gravarHtml('alerj', 'lei-int', `${ln}/Internet/LeiInt?OpenForm&Start=1&Count=60`)
+      const lh = ((lista.corpo as { html?: string } | null)?.html || '') as string
+      const det = /href="(\/scpro2327\.nsf\/[0-9a-f]+\/[0-9a-f]+\?OpenDocument)"/.exec(lh)?.[1]
+      if (det) await gravarHtml('alerj', 'detalhe', `http://alerjln1.alerj.rj.gov.br${det}`)
+      await gravarHtml('alerj', 'pesquisa', `${ln}/18c1dd68f96be3e7832566ec0018d833/$searchForm?SearchView`)
     },
   },
 ]
