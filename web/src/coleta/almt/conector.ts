@@ -8,12 +8,26 @@
  */
 import { dia, identificacaoDe, type Conector, type ResultadoColeta } from '../conector'
 import type { EventoColetado, PacoteProposicao } from '../tipos'
-import { ALMT, chaveMT, eventoDoVeto, lerPesquisa, lerTramitacoes, pacoteAlmt, TIPOS_ALMT, urlPesquisa, type CartaoAlmt } from './mapear'
+import {
+  ALMT,
+  chaveMT,
+  eventoDoVeto,
+  lerPesquisa,
+  lerTramitacoes,
+  pacoteAlmt,
+  TIPOS_ALMT,
+  urlPesquisa,
+  type CartaoAlmt,
+} from './mapear'
 
 export type ObterPagina = (url: string) => Promise<string>
-const NAVEGADOR = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36'
+const NAVEGADOR =
+  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36'
 const obterNaRede: ObterPagina = async (url) => {
-  const r = await fetch(url, { headers: { 'User-Agent': NAVEGADOR, 'Accept-Language': 'pt-BR' }, signal: AbortSignal.timeout(45_000) })
+  const r = await fetch(url, {
+    headers: { 'User-Agent': NAVEGADOR, 'Accept-Language': 'pt-BR' },
+    signal: AbortSignal.timeout(45_000),
+  })
   if (!r.ok) throw new Error(`HTTP ${r.status} em ${url}`)
   return r.text()
 }
@@ -27,7 +41,8 @@ export function acompanhadasDeMatoGrosso(acompanhadas: Set<string>) {
   const r: { sigla: string; numero: number; ano: number }[] = []
   for (const a of acompanhadas) {
     const m = /^MT:([A-Z]+) (\d+)\/(\d{4})$/.exec(a)
-    if (m && TIPOS_ALMT.some((t) => t.sigla === m[1])) r.push({ sigla: m[1], numero: Number(m[2]), ano: Number(m[3]) })
+    if (m && TIPOS_ALMT.some((t) => t.sigla === m[1]))
+      r.push({ sigla: m[1], numero: Number(m[2]), ano: Number(m[3]) })
   }
   return r
 }
@@ -45,7 +60,8 @@ export function criarConectorAlmt(opcoes: { obter?: ObterPagina } = {}): Conecto
       // Em janeiro, as do ano anterior protocoladas no fim de dezembro ainda contam
       const anos = Number(dia(ctx.agora).slice(5, 7)) === 1 ? [ano - 1, ano] : [ano]
       const acompanhada = (c: { sigla: string; numero: number; ano: number; id?: number }) =>
-        (c.id !== undefined && ctx.acompanhadas.has(chaveMT(c.id))) || ctx.acompanhadas.has(`MT:${identificacaoDe(c.sigla, c.numero, c.ano)}`)
+        (c.id !== undefined && ctx.acompanhadas.has(chaveMT(c.id))) ||
+        ctx.acompanhadas.has(`MT:${identificacaoDe(c.sigla, c.numero, c.ano)}`)
 
       // 1. Cartões recentes de cada tipo (o fim da lista crescente)
       const recentes: CartaoAlmt[] = []
@@ -56,8 +72,14 @@ export function criarConectorAlmt(opcoes: { obter?: ObterPagina } = {}): Conecto
             const primeira = lerPesquisa(await obter(urlPesquisa({ tipo: t.codigo, ano: a })))
             paginasLidas++
             let cartoes = primeira.paginas === 1 ? primeira.cartoes : []
-            for (let p = primeira.paginas; p > 1 && p > primeira.paginas - MAX_PAGINAS_POR_TIPO; p--) {
-              const pg = lerPesquisa(await obter(urlPesquisa({ tipo: t.codigo, ano: a, pagina: p })))
+            for (
+              let p = primeira.paginas;
+              p > 1 && p > primeira.paginas - MAX_PAGINAS_POR_TIPO;
+              p--
+            ) {
+              const pg = lerPesquisa(
+                await obter(urlPesquisa({ tipo: t.codigo, ano: a, pagina: p })),
+              )
               paginasLidas++
               cartoes = [...pg.cartoes, ...cartoes]
               // Parou de vir proposta nova: as anteriores são mais antigas ainda
@@ -78,14 +100,17 @@ export function criarConectorAlmt(opcoes: { obter?: ObterPagina } = {}): Conecto
         try {
           return lerTramitacoes(await obter(`${ALMT}/proposicao/${c.id}/tramitacoes`))
         } catch (e) {
-          avisos.push(`andamentos de ${c.sigla} ${c.numero}/${c.ano}: ${(e as Error).message}`.slice(0, 200))
+          avisos.push(
+            `andamentos de ${c.sigla} ${c.numero}/${c.ano}: ${(e as Error).message}`.slice(0, 200),
+          )
           return []
         }
       }
       for (const c of recentes) {
         if (c.sigla === 'VET') {
           const ev = eventoDoVeto(c)
-          if (ev && ev.alvo.identificacoes?.some((i) => ctx.acompanhadas.has(`MT:${i}`))) eventos.push(ev)
+          if (ev && ev.alvo.identificacoes?.some((i) => ctx.acompanhadas.has(`MT:${i}`)))
+            eventos.push(ev)
           continue
         }
         const chave = chaveMT(c.id)
@@ -96,17 +121,33 @@ export function criarConectorAlmt(opcoes: { obter?: ObterPagina } = {}): Conecto
         }
         pacotes.set(chave, pacoteAlmt(c, await andamentos(c)))
       }
-      if (novas >= ctx.maxNovas) avisos.push(`limite de ${ctx.maxNovas} propostas novas por rodada atingido; o restante entra nas próximas`)
+      if (novas >= ctx.maxNovas)
+        avisos.push(
+          `limite de ${ctx.maxNovas} propostas novas por rodada atingido; o restante entra nas próximas`,
+        )
 
       // 3. Acompanhadas fora das recentes: pesquisa pelo número
       const alvos = acompanhadasDeMatoGrosso(ctx.acompanhadas).filter((a) => a.sigla !== 'VET')
-      if (alvos.length > MAX_ACOMPANHADAS) avisos.push(`${alvos.length} propostas acompanhadas; atualizadas ${MAX_ACOMPANHADAS} nesta rodada`)
+      if (alvos.length > MAX_ACOMPANHADAS)
+        avisos.push(
+          `${alvos.length} propostas acompanhadas; atualizadas ${MAX_ACOMPANHADAS} nesta rodada`,
+        )
       let achadas = 0
       for (const a of alvos.slice(0, MAX_ACOMPANHADAS)) {
-        if ([...pacotes.values()].some((p) => p.proposicao.sigla === a.sigla && p.proposicao.numero === a.numero && p.proposicao.ano === a.ano)) continue
+        if (
+          [...pacotes.values()].some(
+            (p) =>
+              p.proposicao.sigla === a.sigla &&
+              p.proposicao.numero === a.numero &&
+              p.proposicao.ano === a.ano,
+          )
+        )
+          continue
         try {
           const tipo = TIPOS_ALMT.find((t) => t.sigla === a.sigla)!.codigo
-          const c = lerPesquisa(await obter(urlPesquisa({ tipo, numero: a.numero, ano: a.ano }))).cartoes.find((x) => x.numero === a.numero && x.ano === a.ano && x.sigla === a.sigla)
+          const c = lerPesquisa(
+            await obter(urlPesquisa({ tipo, numero: a.numero, ano: a.ano })),
+          ).cartoes.find((x) => x.numero === a.numero && x.ano === a.ano && x.sigla === a.sigla)
           if (!c) continue
           achadas++
           pacotes.set(chaveMT(c.id), pacoteAlmt(c, await andamentos(c)))
@@ -120,7 +161,12 @@ export function criarConectorAlmt(opcoes: { obter?: ObterPagina } = {}): Conecto
         pautas: [],
         eventos,
         itensListados: recentes.length,
-        amostra: { recentes: recentes.length, paginasLidas, acompanhadasAchadas: `${achadas}/${Math.min(alvos.length, MAX_ACOMPANHADAS)}`, abertos: [...pacotes.keys()] },
+        amostra: {
+          recentes: recentes.length,
+          paginasLidas,
+          acompanhadasAchadas: `${achadas}/${Math.min(alvos.length, MAX_ACOMPANHADAS)}`,
+          abertos: [...pacotes.keys()],
+        },
         avisos,
       }
     },

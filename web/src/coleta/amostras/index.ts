@@ -302,8 +302,13 @@ const PASSOS_CO: Passo[] = [
     fonte: 'alems',
     nome: 'portal',
     async rodar() {
-      await gravarComLinks('alems', 'https://al.ms.gov.br/', /proposi|projeto|legislativ|materia|tramit|Proposicao|Projetos/i)
-      await gravarHtml('alems', 'rss', 'https://al.ms.gov.br/RSS')
+      // SGPL público (aplicação Angular): a página e os scripts, para ver as chamadas da busca e quais pedem o desafio
+      const base = 'https://sgpl.consulta.al.ms.gov.br/sgpl-publico/'
+      const g = await gravarHtml('alems', 'sgpl-index', base)
+      const html = ((g.corpo as { html?: string } | null)?.html || '') as string
+      const scripts = [...html.matchAll(/<script[^>]+src="([^"]+\.js)"/g)].map((m) => new URL(m[1], base).toString()).filter((u) => /main|app|chunk|scripts/i.test(u)).slice(0, 3)
+      for (const [i, u] of scripts.entries()) await gravarHtml('alems', `sgpl-js-${i + 1}`, u)
+      await salvar('alems', 'sgpl-tipos', await buscar('https://sgpl.consulta.al.ms.gov.br/sgpl/sgpl-api/public/tipoProposicao'))
     },
   },
 ]

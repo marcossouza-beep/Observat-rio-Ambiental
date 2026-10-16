@@ -9,7 +9,14 @@
  */
 import { slugify } from '../../lib/texto'
 import { tipoDoAndamento } from '../classificar'
-import { ErroFormato, type AutorColetado, type EventoColetado, type PacoteProposicao, type StatusSimplificado, type TipoEvento } from '../tipos'
+import {
+  ErroFormato,
+  type AutorColetado,
+  type EventoColetado,
+  type PacoteProposicao,
+  type StatusSimplificado,
+  type TipoEvento,
+} from '../tipos'
 
 export const ALMT = 'https://www.al.mt.gov.br'
 
@@ -25,7 +32,14 @@ export const TIPOS_ALMT: { codigo: number; sigla: string; nome: RegExp }[] = [
 const campo = (k: string) => `almt_form_proposicao_search_proposicao[${k}]`
 
 /** Endereço da pesquisa com os filtros pedidos (só os preenchidos). */
-export function urlPesquisa(f: { tipo?: number; numero?: number; ano?: number; desde?: string; palavra?: string; pagina?: number }): string {
+export function urlPesquisa(f: {
+  tipo?: number
+  numero?: number
+  ano?: number
+  desde?: string
+  palavra?: string
+  pagina?: number
+}): string {
   const q = new URLSearchParams()
   if (f.tipo) q.set(campo('tipoPropositura'), String(f.tipo))
   if (f.palavra) q.set(campo('palavraChave'), f.palavra)
@@ -67,13 +81,20 @@ export type CartaoAlmt = {
   pdf?: string
 }
 
-export const siglaAlmt = (tipo: string) => TIPOS_ALMT.find((t) => t.nome.test(tipo.trim()))?.sigla || null
+export const siglaAlmt = (tipo: string) =>
+  TIPOS_ALMT.find((t) => t.nome.test(tipo.trim()))?.sigla || null
 
 /** Cartões de uma página da pesquisa (só os tipos que interessam) e o número de páginas. */
-export function lerPesquisa(html: string): { cartoes: CartaoAlmt[]; paginas: number; brutos: number } {
+export function lerPesquisa(html: string): {
+  cartoes: CartaoAlmt[]
+  paginas: number
+  brutos: number
+} {
   const cartoes: CartaoAlmt[] = []
   let brutos = 0
-  for (const m of html.matchAll(/<h3 class="fs-16">([\s\S]*?)<\/h3>\s*<div class="text-muted mb-2">([\s\S]*?)<\/div>\s*<div id="collapse-group-(\d+)">([\s\S]*?)(?=<h3 class="fs-16">|<nav|$)/g)) {
+  for (const m of html.matchAll(
+    /<h3 class="fs-16">([\s\S]*?)<\/h3>\s*<div class="text-muted mb-2">([\s\S]*?)<\/div>\s*<div id="collapse-group-(\d+)">([\s\S]*?)(?=<h3 class="fs-16">|<nav|$)/g,
+  )) {
     brutos++
     const cab = decodificar(m[2]).replace(/\s+/g, ' ')
     const c = /^(.+?) n[º°o]\s*(\d+)\/(\d{4})\s*(.*?)\s*-\s*Protocolo n[º°o]\s*([\d/]+)/i.exec(cab)
@@ -96,8 +117,12 @@ export function lerPesquisa(html: string): { cartoes: CartaoAlmt[]; paginas: num
       pdf: pdf ? `${ALMT}${pdf}` : undefined,
     })
   }
-  const paginas = Math.max(1, ...[...html.matchAll(/(?:[?&]|&amp;)page=(\d+)/g)].map((m) => Number(m[1])))
-  if (/Projetos em Tramita/.test(html) && /collapse-group-\d+/.test(html) && !brutos) throw new ErroFormato('almt', 'cartão de proposição', '/proposicao')
+  const paginas = Math.max(
+    1,
+    ...[...html.matchAll(/(?:[?&]|&amp;)page=(\d+)/g)].map((m) => Number(m[1])),
+  )
+  if (/Projetos em Tramita/.test(html) && /collapse-group-\d+/.test(html) && !brutos)
+    throw new ErroFormato('almt', 'cartão de proposição', '/proposicao')
   return { cartoes, paginas, brutos }
 }
 
@@ -116,21 +141,50 @@ export function autorAlmt(autor: string): AutorColetado | null {
   const dep = /^Dep(?:utad[oa])?\.?\s+(.+)$/i.exec(a)
   if (!dep) return { papel: 'autor', nomeLivre: a }
   // "Fabio Tardin - Fabinho": fica o nome parlamentar
-  const nome = capitalizar(dep[1].split(/\s+-\s+/)[0].split(/,| e /)[0].trim())
-  return { papel: 'autor', parlamentar: { chave: `almt:parlamentar:${slugify(nome)}`, nome, uf: 'MT', casa: 'assembleia' } }
+  const nome = capitalizar(
+    dep[1]
+      .split(/\s+-\s+/)[0]
+      .split(/,| e /)[0]
+      .trim(),
+  )
+  return {
+    papel: 'autor',
+    parlamentar: { chave: `almt:parlamentar:${slugify(nome)}`, nome, uf: 'MT', casa: 'assembleia' },
+  }
 }
 
 export const chaveMT = (id: number) => `almt:proposicao:${id}`
 
 /** Veto (cartão próprio na ALMT) → andamento da proposta vetada: "VETO PARCIAL APOSTO AO PROJETO DE LEI Nº 864/2023". */
 export function eventoDoVeto(c: CartaoAlmt): EventoColetado | null {
-  const m = /VETO (TOTAL|PARCIAL)?\s*APOSTO AO PROJETO DE (LEI COMPLEMENTAR|LEI)\s*N[º°O]\s*(\d+)\/(\d{4})/i.exec(c.ementa)
+  const m =
+    /VETO (TOTAL|PARCIAL)?\s*APOSTO AO PROJETO DE (LEI COMPLEMENTAR|LEI)\s*N[º°O]\s*(\d+)\/(\d{4})/i.exec(
+      c.ementa,
+    )
   if (!m) return null
   const sigla = /COMPLEMENTAR/i.test(m[2]) ? 'PLC' : 'PL'
   const data = c.data || `${c.ano}-01-01`
   return {
-    alvo: { chaves: [], identificacoes: [`${sigla} ${Number(m[3])}/${m[4]}`], esfera: 'estadual', uf: 'MT' },
-    tramitacoes: [{ chave: `almt:veto:${c.id}`, data, orgao: 'Governo do Estado', descricao: `Veto ${(m[1] || '').toLowerCase()} nº ${c.numero}/${c.ano} (${c.autor})`.replace('  ', ' '), tipoEvento: 'veto', urlDocumento: c.pdf }],
+    alvo: {
+      chaves: [],
+      identificacoes: [`${sigla} ${Number(m[3])}/${m[4]}`],
+      esfera: 'estadual',
+      uf: 'MT',
+    },
+    tramitacoes: [
+      {
+        chave: `almt:veto:${c.id}`,
+        data,
+        orgao: 'Governo do Estado',
+        descricao:
+          `Veto ${(m[1] || '').toLowerCase()} nº ${c.numero}/${c.ano} (${c.autor})`.replace(
+            '  ',
+            ' ',
+          ),
+        tipoEvento: 'veto',
+        urlDocumento: c.pdf,
+      },
+    ],
   }
 }
 
@@ -139,10 +193,14 @@ export type AndamentoAlmt = { data: string; descricao: string; orgao?: string; d
 /** Andamentos de /proposicao/<id>/tramitacoes ("16/04/2025 - Lido: 20ª Sessão Ordinária", com o PDF do parecer). */
 export function lerTramitacoes(html: string): AndamentoAlmt[] {
   const r: AndamentoAlmt[] = []
-  for (const m of html.matchAll(/<div class="mb-1">\s*(\d{2})\/(\d{2})\/(\d{4})\s*-\s*([\s\S]*?)<\/div>/g)) {
+  for (const m of html.matchAll(
+    /<div class="mb-1">\s*(\d{2})\/(\d{2})\/(\d{4})\s*-\s*([\s\S]*?)<\/div>/g,
+  )) {
     const corpo = m[4]
     const documento = /href="([^"]+\.pdf)"/i.exec(corpo)?.[1]
-    const descricao = decodificar(corpo.replace(/<a[\s\S]*?<\/a>/g, '')).replace(/\s+/g, ' ').trim()
+    const descricao = decodificar(corpo.replace(/<a[\s\S]*?<\/a>/g, ''))
+      .replace(/\s+/g, ' ')
+      .trim()
     if (!descricao) continue
     r.push({ data: `${m[3]}-${m[2]}-${m[1]}`, descricao, ...(documento ? { documento } : {}) })
   }
@@ -172,7 +230,12 @@ export function statusAlmt(andamentos: AndamentoAlmt[]): StatusSimplificado {
   if (/VETAD[OA] TOTAL/.test(t)) return 'vetada'
   if (/ARQUIVAD/.test(andamentos.at(-1)?.descricao.toUpperCase() || '')) return 'arquivada'
   if (/REJEITAD/.test(t)) return 'rejeitada'
-  if (/AGUARDANDO SAN[ÇC][ÃA]O|APROV(?:AD[OA]|\.) EM (2|SEGUNDA|[ÚU]NICA)|REDA[ÇC][ÃA]O FINAL APROVADA|AUT[ÓO]GRAFO/.test(t)) return 'aprovada'
+  if (
+    /AGUARDANDO SAN[ÇC][ÃA]O|APROV(?:AD[OA]|\.) EM (2|SEGUNDA|[ÚU]NICA)|REDA[ÇC][ÃA]O FINAL APROVADA|AUT[ÓO]GRAFO/.test(
+      t,
+    )
+  )
+    return 'aprovada'
   return 'em_tramitacao'
 }
 
@@ -191,7 +254,16 @@ export function pacoteAlmt(c: CartaoAlmt, andamentos: AndamentoAlmt[] = []): Pac
         tipoEvento: eventoAlmt(a.descricao),
         ...(a.documento ? { urlDocumento: a.documento } : {}),
       }))
-    : [{ chave: `almt:protocolo:${c.id}`, proposicao: chave, data, orgao: 'Secretaria de Serviços Legislativos', descricao: `Protocolado (protocolo nº ${c.protocolo || '?'})`, tipoEvento: 'apresentacao' as const }]
+    : [
+        {
+          chave: `almt:protocolo:${c.id}`,
+          proposicao: chave,
+          data,
+          orgao: 'Secretaria de Serviços Legislativos',
+          descricao: `Protocolado (protocolo nº ${c.protocolo || '?'})`,
+          tipoEvento: 'apresentacao' as const,
+        },
+      ]
   const ultima = andamentos.at(-1)
   return {
     proposicao: {
@@ -209,11 +281,26 @@ export function pacoteAlmt(c: CartaoAlmt, andamentos: AndamentoAlmt[] = []): Pac
       etapa: ultima?.orgao,
       ultimaMovimentacao: ultima?.data || data,
       urlInteiroTeor: c.pdf,
-      urlFonte: urlPesquisa({ tipo: TIPOS_ALMT.find((t) => t.sigla === c.sigla)?.codigo, numero: c.numero, ano: c.ano }),
+      urlFonte: urlPesquisa({
+        tipo: TIPOS_ALMT.find((t) => t.sigla === c.sigla)?.codigo,
+        numero: c.numero,
+        ano: c.ano,
+      }),
       autoria: autor ? [autor] : [],
     },
     tramitacoes,
-    versoes: c.pdf ? [{ chave: `almt:texto:${c.id}`, proposicao: chave, data, tipo: 'original', rotulo: 'Texto da proposição (ALMT)', url: c.pdf }] : [],
+    versoes: c.pdf
+      ? [
+          {
+            chave: `almt:texto:${c.id}`,
+            proposicao: chave,
+            data,
+            tipo: 'original',
+            rotulo: 'Texto da proposição (ALMT)',
+            url: c.pdf,
+          },
+        ]
+      : [],
     votacoes: [],
   }
 }
