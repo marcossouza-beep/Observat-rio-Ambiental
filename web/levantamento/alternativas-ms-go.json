@@ -1,0 +1,836 @@
+{
+  "geradoEm": "2026-10-16T19:06:17.894Z",
+  "ambiente": "GitHub Actions (fora do Brasil)",
+  "MS": {
+    "casa": "ALEMS",
+    "diario": "DOE-MS",
+    "http://sgpl.consulta.al.ms.gov.br/sgpl-publico/#/busca-proposicoes": {
+      "url": "http://sgpl.consulta.al.ms.gov.br/sgpl-publico/#/busca-proposicoes",
+      "status": 200,
+      "titulo": "SGPL",
+      "texto": "Validando acesso...",
+      "pdfs": [],
+      "interessantes": [],
+      "chamadas": [
+        {
+          "url": "https://sgpl.consulta.al.ms.gov.br/sgpl-publico/hal/public/parametrosSistema?prefixo=az.plugins.frontend",
+          "status": 200,
+          "tipo": "application/json;charset=UTF-8",
+          "bytes": 174,
+          "inicio": "{\"az.usuario.entidades.brasilId\":\"30\",\"az.siga.naturezaDespesa.habilitada\":\"SIM\",\"az.usuario.entidades.paisDefaultId\":\"30\",\"az.siga.naturezaDespesa.tamanhoCodigoDespesa\":\"4\"}"
+        },
+        {
+          "url": "https://sgpl.consulta.al.ms.gov.br/sgpl-publico/hal/public/metadados?productId=6",
+          "status": 200,
+          "tipo": "application/json;charset=UTF-8",
+          "bytes": 544,
+          "inicio": "{\"metadata\":{},\"properties\":[{\"label\":\"Rótulo\",\"name\":\"label\",\"type\":\"string\",\"translate\":true},{\"label\":\"Requerido\",\"name\":\"required\",\"type\":\"boolean\",\"translate\":false},{\"label\":\"Visível\",\"name\":\"visible\",\"type\":\"boolean\",\"translate\":false},{\"label\":\"Desabilitado\",\"name\":\"disabled\",\"type\":\"boolean\",\"translate\":false},{\"label\":\"Posições\",\"name\":\"childrenPosition\",\"type\":\"position\",\"translate\":fal"
+        },
+        {
+          "url": "https://sgpl.consulta.al.ms.gov.br/sgpl/sgpl-api/public/captcha/challenge",
+          "status": 200,
+          "tipo": "application/json;charset=UTF-8",
+          "bytes": 132,
+          "inicio": "{\"challengeId\":\"f0e90fce5813abcc9ead01d0aac7596b\",\"prefix\":\"c1be3391a67729a1e1d0401e7f2b5901\",\"complexity\":16,\"algorithm\":\"SHA-256\"}"
+        },
+        {
+          "url": "https://sgpl.consulta.al.ms.gov.br/sgpl/sgpl-api/public/proponente/autoria",
+          "status": 200,
+          "tipo": "application/json;charset=UTF-8",
+          "bytes": 95514,
+          "inicio": "[{\"id\":52,\"nome\":\"Admin Notes\",\"situacao\":\"INATIVO\",\"observacao\":null,\"unidadeOrganizacional\":null,\"usuario\":null,\"cpfCnpj\":\"27576250046\",\"razaoSocial\":null,\"tipoEntidadeExterna\":null,\"logradouro\":null,\"numero\":null,\"complemento\":null,\"bairro\":null,\"cep\":null,\"municipio\":null,\"telefone\":null,\"celular\":null,\"email\":\"adminnotes@azi.com.br\"},{\"id\":155,\"nome\":\"AGEPAN\",\"situacao\":\"INATIVO\",\"observacao\""
+        },
+        {
+          "url": "https://sgpl.consulta.al.ms.gov.br/sgpl/sgpl-api/public/captcha/challenge",
+          "status": 200,
+          "tipo": "application/json;charset=UTF-8",
+          "bytes": 132,
+          "inicio": "{\"challengeId\":\"1169616018b68e956df86c4b0f121471\",\"prefix\":\"157d761e7e0b1f8d30a1799f26b847bf\",\"complexity\":16,\"algorithm\":\"SHA-256\"}"
+        },
+        {
+          "url": "https://sgpl.consulta.al.ms.gov.br/sgpl/sgpl-api/public/tipoProposicao",
+          "status": 200,
+          "tipo": "application/json;charset=UTF-8",
+          "bytes": 9121,
+          "inicio": "[{\"id\":1,\"qtdSessao\":3,\"descricao\":\"Indicação\",\"acessoSigiloso\":false,\"geraProtocolo\":true,\"geraProcesso\":false,\"geraProjeto\":false,\"geraEmenda\":true,\"geraEmenta\":false,\"geraMsg\":false,\"situacao\":\"ATIVO\",\"tipo\":\"PROPOSICAO\",\"sigla\":\"IND\",\"modoVotacao\":\"SIMBOLICA\"},{\"id\":2,\"qtdSessao\":3,\"descricao\":\"Emenda Aditiva\",\"acessoSigiloso\":false,\"geraProtocolo\":true,\"geraProcesso\":true,\"geraProjeto\":true,\""
+        },
+        {
+          "url": "https://sgpl.consulta.al.ms.gov.br/sgpl/sgpl-api/public/captcha/challenge",
+          "status": 200,
+          "tipo": "application/json;charset=UTF-8",
+          "bytes": 132,
+          "inicio": "{\"challengeId\":\"bab5983d18dabb3355ae9000f69f349e\",\"prefix\":\"38d559ee0c5a3234861a7ebc687bee1b\",\"complexity\":16,\"algorithm\":\"SHA-256\"}"
+        }
+      ]
+    },
+    "https://www.al.ms.gov.br/": {
+      "url": "https://www.al.ms.gov.br/",
+      "erro": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.al.ms.gov.br/\", waiting until \"networkidle\"\n",
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-VL9HN6W5VF&gtm=45je6ae1v889065291za20oxf1&_p=1792177585051&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAI&are=1&cid=2025473694.1792177586&frm=0&ngs=1&pscdl=noapi&rcb=2&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792177585&sct=1&seg=0&dl=https%3A%2F%2Fal.ms.gov.br%2F&dt=Assembleia%20Legislativa%20de%20Mato%20Grosso%20do%20Sul&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=1430",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://al.ms.gov.br/api/v2/menu",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 6511,
+          "inicio": "[{\"title\":\"Institucional\",\"items\":[{\"title\":\"Hist\\u00F3ria\",\"url\":\"https://al.ms.gov.br/Paginas/1\",\"target\":\"_blank\"},{\"title\":\"Estrutura Organizacional\",\"url\":\"https://al.ms.gov.br/Paginas/2\",\"target\":\"_blank\"},{\"title\":\"Carta de Servi\\u00E7os\",\"url\":\"https://al.ms.gov.br/img/CARTA_DE_SERVICOS_ALEMS.pdf\",\"target\":\"_blank\"},{\"title\":\"Concursos\",\"url\":\"https://al.ms.gov.br/Paginas/53\",\"target\":\"_bl"
+        },
+        {
+          "url": "https://al.ms.gov.br/Calendars/GetCalendarJson/?startDate=15/10/2026&endDate=21/10/2026&_=1792177586023",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 1268,
+          "inicio": "[{\"id\":19607,\"dateEvent\":\"2026-10-15T13:30:00\",\"timeEvent\":\"13h30\",\"event\":\"Reuni\\u00E3o do Gabinete Parlamentar \",\"localEvent\":\"Sala Deputado Onevan de Matos\",\"proponent\":\"Deputado Paulo Duarte\",\"typeEvent\":\"Reuni\\u00E3o\",\"creationDate\":\"0001-01-01T00:00:00\"},{\"id\":19359,\"dateEvent\":\"2026-10-16T00:00:00\",\"timeEvent\":\"8h30 \\u00E0s 10h\",\"event\":\"Ensaio do Coral dos Servidores ALEMS\",\"localEvent\":\"P"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02.m3u8",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02.m3u8",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=a5dCMcscCMiZZuLrEQ8wtJ",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=kJjSHmiYmmiWsh9xDGxBXg",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-VL9HN6W5VF&gtm=45je6ae1v889065291za20gxf1&_p=1792177585051&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAIAAQ&ae=a&are=1&cid=2025473694.1792177586&frm=0&ngs=1&pscdl=noapi&rcb=2&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=2&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792177585&sct=1&seg=0&dl=https%3A%2F%2Fal.ms.gov.br%2F&dt=Assembleia%20Legislativa%20de%20Mato%20Grosso%20do%20Sul&en=scroll&epn.percent_scrolled=90&_et=15&tfd=6447",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=a5dCMcscCMiZZuLrEQ8wtJ",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=kJjSHmiYmmiWsh9xDGxBXg",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=a5dCMcscCMiZZuLrEQ8wtJ",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=kJjSHmiYmmiWsh9xDGxBXg",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=a5dCMcscCMiZZuLrEQ8wtJ",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=kJjSHmiYmmiWsh9xDGxBXg",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=a5dCMcscCMiZZuLrEQ8wtJ",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=kJjSHmiYmmiWsh9xDGxBXg",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=a5dCMcscCMiZZuLrEQ8wtJ",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=kJjSHmiYmmiWsh9xDGxBXg",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=a5dCMcscCMiZZuLrEQ8wtJ",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://live.stream.al.ms.gov.br/memfs/33b4fef9-32fb-4248-ab5f-fffe30037d02_output_0.m3u8?session=kJjSHmiYmmiWsh9xDGxBXg",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        }
+      ]
+    },
+    "https://www.spdo.ms.gov.br/diariodoe": {
+      "url": "https://www.spdo.ms.gov.br/diariodoe",
+      "status": 200,
+      "titulo": "Diário Oficial",
+      "texto": "Pular para conteúdo principal DIÁRIO OFICIAL Buscar por: Número do diário Data inicial Data final Texto ou palavra Busca Exata Ao menos uma palavra Busca por texto do Diário Oficial somente em publicações a partir de janeiro de 2007 Buscar Limpar filtros Últimas Edições Publicadas Descrição: Diário Oficial Eletrônico n. 12.308 Data: 16/10/2026 Descrição: Diário Oficial Eletrônico n. 12.307 Data: 15/10/2026 Descrição: Suplemento DOE n. 12307 - SES Data: 15/10/2026 Descrição: Diário Oficial Eletrônico n. 12.306 Data: 14/10/2026 Descrição: Suplemento DOE n. 12306 - Detran Data: 14/10/2026 Descrição: Diário Oficial Eletrônico n. 12.305 - Edição Extra Data: 13/10/2026 Descrição: Diário Oficial Eletrônico n. 12.304 Data: 13/10/2026 Descrição: Diário Oficial Eletrônico n. 12.303 Data: 09/10/2026 Descrição: Diário Oficial Eletrônico n. 12.302 Data: 08/10/2026 Descrição: Suplemento DOE n. 12302 - Detran Data: 08/10/2026 SECRETARIA DE ESTADO DE ADMINISTRAÇÃO COORDENADORIA DO DIÁRIO OFICIAL ELETRÔNICO 02.940.523/0001-43 Endereço Av. Des. José Nunes da Cunha, S/N, Bloco I - Parque dos Poderes - Campo Grande - MS, 79031-310 Atendimento (67) 3318-1480 - Municipalidade e Publicação a pedido (67) 3318-1481 - Recebimento de matérias do Poder Executivo (67) 3318-1420 - Demais assuntos Utilizamos cookies para permitir uma melhor experiência em nosso website e para nos ajudar a compreender quais informações são mais úteis e relevantes para você. Conforme Decreto Estadual 15.572/2020 que trata da",
+      "pdfs": [
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/16/DO12308_16_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.308"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/15/DO12307_15_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.307"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/15/DO12307_15_10_2026_SUP_1.pdf",
+          "texto": "Suplemento DOE n. 12307 - SES"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/14/DO12306_14_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.306"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/14/DO12306_14_10_2026_SUP_1.pdf",
+          "texto": "Suplemento DOE n. 12306 - Detran"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/13/DO12305_13_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.305 - Edição Extra"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/13/DO12304_13_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.304"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/09/DO12303_09_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.303"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/08/DO12302_08_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.302"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/08/DO12302_08_10_2026_SUP_1.pdf",
+          "texto": "Suplemento DOE n. 12302 - Detran"
+        }
+      ],
+      "interessantes": [
+        {
+          "href": "https://www.diariooficial.ms.gov.br/#conteudo-principal",
+          "texto": "Pular para conteúdo principal"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/16/DO12308_16_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.308"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/15/DO12307_15_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.307"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/15/DO12307_15_10_2026_SUP_1.pdf",
+          "texto": "Suplemento DOE n. 12307 - SES"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/14/DO12306_14_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.306"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/14/DO12306_14_10_2026_SUP_1.pdf",
+          "texto": "Suplemento DOE n. 12306 - Detran"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/13/DO12305_13_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.305 - Edição Extra"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/13/DO12304_13_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.304"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/09/DO12303_09_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.303"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/08/DO12302_08_10_2026.pdf",
+          "texto": "Diário Oficial Eletrônico n. 12.302"
+        },
+        {
+          "href": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/10/08/DO12302_08_10_2026_SUP_1.pdf",
+          "texto": "Suplemento DOE n. 12302 - Detran"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://cdn.cookielaw.org/consent/019c7663-b22f-74a1-a9f6-1deb59007500/019c7663-b22f-74a1-a9f6-1deb59007500.json",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 4972,
+          "inicio": "{\"CookieSPAEnabled\":false,\"CookieSameSiteNoneEnabled\":false,\"CookieV2CSPEnabled\":false,\"MultiVariantTestingEnabled\":false,\"UseV2\":true,\"MobileSDK\":false,\"SkipGeolocation\":false,\"ScriptType\":\"PRODUCTION\",\"Version\":\"202606.1.0\",\"OptanonDataJSON\":\"019c7663-b22f-74a1-a9f6-1deb59007500\",\"GeolocationUrl\":\"https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location\",\"BulkDomainCheckUrl\":\"https://co"
+        },
+        {
+          "url": "https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 65,
+          "inicio": "{\"country\":\"US\",\"state\":\"IA\",\"stateName\":\"Iowa\",\"continent\":\"NA\"}"
+        },
+        {
+          "url": "https://cdn.cookielaw.org/consent/019c7663-b22f-74a1-a9f6-1deb59007500/0191fc75-15fd-7776-a316-98028f6a5f8a/pt.json",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 49882,
+          "inicio": "{\"DomainData\":{\"pclifeSpanYr\":\"Ano\",\"pclifeSpanYrs\":\"Anos\",\"pclifeSpanSecs\":\"Alguns segundos\",\"pclifeSpanWk\":\"Semana\",\"pclifeSpanWks\":\"Semanas\",\"pccontinueWithoutAcceptText\":\"Continue sem aceitar\",\"pccloseButtonType\":\"Icon\",\"MainText\":\"Centro de preferências de privacidade\",\"MainInfoText\":\"Ao visitar qualquer site, ele pode armazenar ou recuperar informações no seu navegador, principalmente na for"
+        },
+        {
+          "url": "https://cdn.cookielaw.org/scripttemplates/202606.1.0/assets/otCookieSettingsButton.json",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 6011,
+          "inicio": "{ \"name\": \"otCookieSettingsButton\", \"html\": \"PGRpdiBpZD0ib3Qtc2RrLWJ0bi1mbG9hdGluZyIgY2xhc3M9Im90LWZsb2F0aW5nLWJ1dHRvbiBvdC1oaWRlIj48ZGl2IGNsYXNzPSJvdC1mbG9hdGluZy1idXR0b25fX2Zyb250Ij48YnV0dG9uIHR5cGU9ImJ1dHRvbiIgY2xhc3M9Im90LWZsb2F0aW5nLWJ1dHRvbl9fb3BlbiI+PC9idXR0b24+PC9kaXY+PGRpdiBjbGFzcz0ib3QtZmxvYXRpbmctYnV0dG9uX19iYWNrIj48YnV0dG9uIHR5cGU9ImJ1dHRvbiIgY2xhc3M9Im90LWZsb2F0aW5nLWJ1dHRvbl9fY2xvc2U"
+        },
+        {
+          "url": "https://cdn.cookielaw.org/scripttemplates/202606.1.0/assets/otCommonStyles.css",
+          "status": 200,
+          "tipo": "text/css",
+          "bytes": 27866,
+          "inicio": "#onetrust-banner-sdk .onetrust-vendors-list-handler{cursor:pointer;color:#1f96db;font-size:inherit;font-weight:bold;text-decoration:none;margin-left:5px;white-space:normal;word-wrap:break-word;text-align:left}#onetrust-banner-sdk .onetrust-vendors-list-handler:hover{color:#1f96db}#onetrust-banner-sdk:focus{outline:2px solid #000;outline-offset:-2px}#onetrust-banner-sdk a:focus{outline:2px solid #0"
+        },
+        {
+          "url": "https://cdn.cookielaw.org/scripttemplates/202606.1.0/assets/v2/otPcCenter.json",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 68849,
+          "inicio": "{ \"name\": \"otPcCenter\", \"html\": \"PGRpdiBpZD0ib25ldHJ1c3QtcGMtc2RrIiBjbGFzcz0ib3RQY0NlbnRlciBvdC1oaWRlIG90LWZhZGUtaW4iPjxkaXYgcm9sZT0iZGlhbG9nIiBhcmlhLW1vZGFsPSJ0cnVlIj48IS0tIENsb3NlIEJ1dHRvbiAtLT48ZGl2IGNsYXNzPSJvdC1wYy1oZWFkZXIiPjwhLS0gTG9nbyBUYWcgLS0+PGRpdiBjbGFzcz0ib3QtcGMtbG9nbyI+PC9kaXY+PGJ1dHRvbiBpZD0iY2xvc2UtcGMtYnRuLWhhbmRsZXIiIGNsYXNzPSJvdC1jbG9zZS1pY29uIiBhcmlhLWxhYmVsPSJDbG9zZSI+PC9idXR"
+        },
+        {
+          "url": "https://cdn.cookielaw.org/scripttemplates/202606.1.0/assets/otFlat.json",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 15298,
+          "inicio": "{ \"name\": \"otFlat\", \"html\": \"PGRpdiBpZD0ib25ldHJ1c3QtYmFubmVyLXNkayIgY2xhc3M9Im90RmxhdCI+PGRpdiByb2xlPSJkaWFsb2ciPjxkaXYgY2xhc3M9Im90LXNkay1jb250YWluZXIiPjxkaXYgY2xhc3M9Im90LXNkay1yb3ciPjxkaXYgaWQ9Im9uZXRydXN0LWdyb3VwLWNvbnRhaW5lciIgY2xhc3M9Im90LXNkay1laWdodCBvdC1zZGstY29sdW1ucyI+PGRpdiBjbGFzcz0iYmFubmVyX2xvZ28iPjwvZGl2PjxkaXYgaWQ9Im9uZXRydXN0LXBvbGljeSI+PGgyIGlkPSJvbmV0cnVzdC1wb2xpY3ktdGl0bGUiPlR"
+        },
+        {
+          "url": "https://cdn.cookielaw.org/logos/static/ot_guard_logo.svg",
+          "status": 200,
+          "tipo": "image/svg+xml",
+          "bytes": 497,
+          "inicio": "<svg xmlns=\"http://www.w3.org/2000/svg\"><path class=\"ot-floating-button__svg-fill\" d=\"M14.588 0l.445.328c1.807 1.303 3.961 2.533 6.461 3.688 2.015.93 4.576 1.746 7.682 2.446 0 14.178-4.73 24.133-14.19 29.864l-.398.236C4.863 30.87 0 20.837 0 6.462c3.107-.7 5.668-1.516 7.682-2.446 2.709-1.251 5.01-2.59 6.906-4.016zm5.87 13.88a.75.75 0 00-.974.159l-5.475 6.625-3.005-2.997-.077-.067a.75.75 0 00-.983 1"
+        }
+      ]
+    },
+    "saplComoNavegador": {
+      "url": "https://sapl.al.ms.leg.br/api/materia/materialegislativa/?page_size=1",
+      "comoNavegador": true,
+      "erro": "fetch failed (EAI_AGAIN)"
+    }
+  },
+  "GO": {
+    "casa": "Alego",
+    "diario": "DOE-GO",
+    "https://portal.al.go.leg.br/": {
+      "url": "https://portal.al.go.leg.br/",
+      "erro": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://portal.al.go.leg.br/\", waiting until \"networkidle\"\n",
+      "chamadas": []
+    },
+    "https://www.al.go.leg.br/": {
+      "url": "https://www.al.go.leg.br/",
+      "erro": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.al.go.leg.br/\", waiting until \"networkidle\"\n",
+      "chamadas": []
+    },
+    "https://diariooficial.abc.go.gov.br/": {
+      "url": "https://diariooficial.abc.go.gov.br/",
+      "status": 200,
+      "titulo": "ABC - Agência Brasil Central / Home",
+      "texto": "INSTITUCIONAL COMO PUBLICAR LEGISLAÇÃO ACESSO À INFORMAÇÃO FALE CONOSCO NORMAS PARA ACESSO TERMOS DE USO POLÍTICA DE PRIVACIDADE 19h9 | Sexta-feira, 16 de outubro de 2026 LOGIN ESQUECI MINHA SENHA CADASTRE-SE DIÁRIO OFICIAL DO ESTADO DE GOIÁS 24.887 BUSCAR POR DATA Buscar por nome completo ou palavra-chave Início Fim ÚLTIMAS EDIÇÕES Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado ",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/institucional",
+          "texto": "INSTITUCIONAL"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+          "texto": "COMO PUBLICAR"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+          "texto": "LEGISLAÇÃO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+          "texto": "FALE CONOSCO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/normas-para-acesso",
+          "texto": "NORMAS PARA ACESSO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/termos-de-uso",
+          "texto": "TERMOS DE USO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/politica-de-privacidade",
+          "texto": "POLÍTICA DE PRIVACIDADE"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/",
+          "texto": ""
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/usuarios/recupera_senha",
+          "texto": "ESQUECI MINHA SENHA"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/cadastro",
+          "texto": "CADASTRE-SE"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/portal/visualizacoes/pdf/7409/#e:7409",
+          "texto": "PDF"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/portal/visualizacoes/html/7409/#e:7409",
+          "texto": "HTML"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/portal/visualizacoes/jornal/7409/#e:7409",
+          "texto": "FLIP"
+        },
+        {
+          "href": "javascript:void(0)",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "javascript:void(0)",
+          "texto": "Diário Oficial -"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/portal/edicoes/download/7409",
+          "texto": "DOWNLOAD"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/declaraCAo-de-uso-de-cookies",
+          "texto": "Declaração de Cookies"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-S0NTPR1FDP&gtm=45je6ae1h1v9119036903za20oxf1&_p=1792177741793&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAI&are=1&cid=1131672296.1792177743&frm=0&ir=1&ngs=1&pscdl=noapi&rcb=1&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1792177742&sct=1&seg=0&dl=https%3A%2F%2Fdiariooficial.abc.go.gov.br%2F&dt=ABC%20-%20Ag%C3%AAncia%20Brasil%20Central%20%2F%20Home&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=4699",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://diariooficial.abc.go.gov.br/apifront/portal/edicoes/ultimas_edicoes.json?subtheme=false",
+          "status": 200,
+          "tipo": "application/json; charset=UTF-8",
+          "bytes": 8729,
+          "inicio": "{\"erro\":false,\"msg\":\"\",\"itens\":[{\"id\":7409,\"data\":\"16\\/10\\/2026\",\"suplemento\":0,\"suplemento_nome\":\"\",\"numero\":24887,\"tipo_edicao_id\":1,\"tipo_edicao_nome\":\"Di\\u00e1rio Oficial do Estado de Goi\\u00e1s\",\"tipo_edicao_posicao\":1,\"capa\":1},{\"id\":7408,\"data\":\"15\\/10\\/2026\",\"suplemento\":1,\"suplemento_nome\":\"Suplemento\",\"numero\":24886,\"tipo_edicao_id\":1,\"tipo_edicao_nome\":\"Di\\u00e1rio Oficial do Estado de "
+        },
+        {
+          "url": "https://diariooficial.abc.go.gov.br/apifront/portal/edicoes/edicoes_from_data.json?subtheme=false",
+          "status": 200,
+          "tipo": "application/json; charset=UTF-8",
+          "bytes": 239,
+          "inicio": "{\"erro\":false,\"msg\":\"\",\"data\":null,\"numero\":null,\"ano\":\"\",\"itens\":[{\"id\":7409,\"data\":\"16\\/10\\/2026\",\"suplemento\":\"\",\"numero\":24887,\"tipo_edicao_id\":1,\"tipo_edicao_nome\":\"Di\\u00e1rio Oficial do Estado de Goi\\u00e1s\",\"capa\":1,\"paginas\":79}]}"
+        }
+      ]
+    },
+    "seguido:https://diariooficial.abc.go.gov.br/canal/institucional": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/institucional",
+      "status": 200,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": "INSTITUCIONAL COMO PUBLICAR LEGISLAÇÃO ACESSO À INFORMAÇÃO FALE CONOSCO NORMAS PARA ACESSO TERMOS DE USO POLÍTICA DE PRIVACIDADE Institucional A Agência Brasil Central (denominação e finalidades decretadas na lei 18.746/14), surgiu em 1999 – conforme consta na lei 13.550/99, porém com o antigo nome AGECOM (Agência Goiana de Comunicação), no intuito de substituir a Secretaria de Comunicação Social do Estado de Goiás. Cumprindo o importante papel público e social da comunicação, a agência conta com duas emissoras de rádio, emissora de TV, Diário Oficial e site que disponibiliza grande volume de conteúdos gerados exclusivamente para a internet. Todos, totalmente integrados à ABC. Fazem parte da Agência Brasil Central: Diário Oficial do Estado de Goiás; Rádio Brasil Central (AM 1270); RBC (FM 90,1); Televisão Brasil Central (TBC); e o Site de Notícias Goiás Agora. Breve história dos veículos da ABC O grande primeiro passo da comunicação oficial se deu com o início do Diário Oficial do Estado de Goiás, antes mesmo de existirem as emissoras de rádio e televisão. A Imprensa Oficial de Goiás foi fundada pela Lei Provincial, de 16 de março de 1836. No dia 03 de junho de 1837, circulou pela primeira vez o Correio Oficial de Goiás. O Diário Oficial tem como objetivo a divulgação de decretos, portarias, convocações e tudo que esteja oficialmente relacionado ao Governo do Estado de Goiás. A Rádio Brasil Central foi criada em 1950 e, desde então, tornou-se um marco na história do povo goia",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/institucional",
+          "texto": "INSTITUCIONAL"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+          "texto": "COMO PUBLICAR"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+          "texto": "LEGISLAÇÃO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+          "texto": "FALE CONOSCO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/normas-para-acesso",
+          "texto": "NORMAS PARA ACESSO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/termos-de-uso",
+          "texto": "TERMOS DE USO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/politica-de-privacidade",
+          "texto": "POLÍTICA DE PRIVACIDADE"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/",
+          "texto": ""
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-S0NTPR1FDP&gtm=45je6ae1v9119036903za20oxf1&_p=1792177752595&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAI&are=1&cid=720790599.1792177754&frm=0&ir=1&ngs=1&pscdl=noapi&rcb=5&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938465~115938469~118012009~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792177753&sct=1&seg=0&dl=https%3A%2F%2Fdiariooficial.abc.go.gov.br%2Fcanal%2Finstitucional&dt=ABC%20-%20Ag%C3%AAncia%20Brasil%20Central%20%2F%20Canais&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=2783",
+          "status": 204,
+          "tipo": "text/plain"
+        }
+      ]
+    },
+    "enderecos:https://diariooficial.abc.go.gov.br/canal/institucional": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/institucional",
+      "caminhos": [],
+      "trechos": [
+        "ajax-loader.gif) center center no-repeat rgba(255,255,255,.7)'",
+        "ajax({",
+        "url: url,",
+        "ajaxSettings.flatOptions||{};for(n in t)void 0!==t[n]&&((i[n]?e:r||(r={}))[n]=t[n]);return r&&w.extend(!0,e,r),e}function Xt(e,t,n){var r,i,o,a,s=e.contents,u=e.dataTypes;while(\"*\"===u[0])u.shift(),void 0",
+        "ajaxSettings:{url:Ct.href,type:\"GET\",isLocal:Pt.test(Ct.protocol),global:!0,processData:!0,async:!0,contentType:\"application/x-www-form-urlencoded; charset=UTF-8\",accepts:{\"*\":$t,text:\"text/plain\",html:\"t",
+        "url:!0,context:!0}},ajaxSetup:function(e,t){return t?zt(zt(e,w.ajaxSettings),t):zt(w.ajaxSettings,e)},ajaxPrefilter:Ft(It),ajaxTransport:Ft(Wt),ajax:function(t,n){\"object\"==typeof t&&(n=t,t=void 0),n=n||{",
+        "ajaxSetup({},n),g=h.context||h,y=h.context&&(g.nodeType||g.jquery)?w(g):w.event,v=w.Deferred(),m=w.Callbacks(\"once memory\"),x=h.statusCode||{},b={},T={},C=\"canceled\",E={readyState:0,getResponseHeader:func",
+        "ajaxStart\"),h.type=h.type.toUpperCase(),h.hasContent=!Mt.test(h.type),o=h.url.replace(Lt,\"\"),h.hasContent?h.data&&h.processData&&0===(h.contentType||\"\").indexOf(\"application/x-www-form-urlencoded\")&&(h.da",
+        "ajaxSend\",[E,h]),c)return E;h.async&&h.timeout>0&&(u=e.setTimeout(function(){E.abort(\"timeout\")},h.timeout));try{c=!1,i.send(b,k)}catch(e){if(c)throw e;k(-1,e)}}else k(-1,\"No Transport\");function k(t,n,r,",
+        "ajaxSuccess\":\"ajaxError\",[E,h,l?p:d]),m.fireWith(g,[E,C]),f&&(y.trigger(\"ajaxComplete\",[E,h]),--w.active||w.event.trigger(\"ajaxStop\")))}return E},getJSON:function(e,t,n){return w.get(e,t,n,\"json\")},getScr",
+        "ajax(w.extend({url:e,type:t,dataType:i,data:n,success:r},w.isPlainObject(e)&&e))}}),w._evalUrl=function(e){return w.ajax({url:e,type:\"GET\",dataType:\"script\",cache:!0,async:!1,global:!1,\"throws\":!0})},w.fn",
+        "ajaxSettings.xhr=function(){try{return new e.XMLHttpRequest}catch(e){}};var Vt={0:200,1223:204},Gt=w.ajaxSettings.xhr();h.cors=!!Gt&&\"withCredentials\"in Gt,h.ajax=Gt=!!Gt,w.ajaxTransport(function(t){var n",
+        "ajaxPrefilter(function(e){e.crossDomain&&(e.contents.script=!1)}),w.ajaxSetup({accepts:{script:\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"},contents:{script",
+        "ajaxPrefilter(\"script\",function(e){void 0===e.cache&&(e.cache=!1),e.crossDomain&&(e.type=\"GET\")}),w.ajaxTransport(\"script\",function(e){if(e.crossDomain){var t,n;return{send:function(i,o){t=w(\"<script>\").p",
+        "ajaxSetup({jsonp:\"callback\",jsonpCallback:function(){var e=Yt.pop()||w.expando+\"_\"+Et++;return this[e]=!0,e}}),w.ajaxPrefilter(\"json jsonp\",function(t,n,r){var i,o,a,s=!1!==t.jsonp&&(Qt.test(t.url)?\"url\":",
+        "ajax({url:e,type:i||\"GET\",dataType:\"html\",data:t}).done(function(e){o=arguments,a.html(r?w(\"<div>\").append(w.parseHTML(e)).find(r):e)}).always(n&&function(e,t){a.each(function(){n.apply(this,o||[e.respons",
+        "ajaxStart\",\"ajaxStop\",\"ajaxComplete\",\"ajaxError\",\"ajaxSuccess\",\"ajaxSend\"],function(e,t){w.fn[t]=function(e){return this.on(t,e)}}),w.expr.pseudos.animated=function(e){return w.grep(w.timers,function(t){r"
+      ],
+      "campos": [
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Toggle navigation"
+        }
+      ]
+    },
+    "seguido:https://diariooficial.abc.go.gov.br/canal/como-publicar": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+      "status": 200,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": "INSTITUCIONAL COMO PUBLICAR LEGISLAÇÃO ACESSO À INFORMAÇÃO FALE CONOSCO NORMAS PARA ACESSO TERMOS DE USO POLÍTICA DE PRIVACIDADE Como Publicar Entrou em funcionamento no último dia 16 de janeiro de 2017 o Sistema de Automação do Diário Oficial, e a partir de agora o Diário Oficial é totalmente eletrônico, não possuindo mais a sua versão impressa. A versão eletrônica do Diário Oficial contará com assinatura digital para os devidos efeitos legais as suas publicações. Para envio de publicações para o Diário Oficial, será necessário enviar as matérias através do Sistema de Publicações da ABC, disponibilizado através de login e senha , que deve ser cadastrado a partir do contato com o setor de suporte da ABC, através do e-mail: diariooficial@goias.gov.br Para os órgãos da Administração Pública Estadual que possuem regime de pagamento faturado, enviará as suas publicações através do sistema que já irão ser recebidas de maneira aprovada pelo sistema automaticamente. Para os órgãos da Administração Pública Municipal que possuem contrato com a Agência Brasil Central, também serão enquadrados no regime de pagamento faturado, enviando as suas publicações utilizando o sistema, e já irão ser recebidas de maneira aprovada pelo sistema automaticamente. Para os órgãos da Administração Pública Municipal, Associações, Fundações e Empresas Particulares, que possuem regime de pagamento a vista, enviará suas publicações pelo sistema, aonde será possível gerar o seu orçamento, para posterior aprov",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/institucional",
+          "texto": "INSTITUCIONAL"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+          "texto": "COMO PUBLICAR"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+          "texto": "LEGISLAÇÃO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+          "texto": "FALE CONOSCO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/normas-para-acesso",
+          "texto": "NORMAS PARA ACESSO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/termos-de-uso",
+          "texto": "TERMOS DE USO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/politica-de-privacidade",
+          "texto": "POLÍTICA DE PRIVACIDADE"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/",
+          "texto": ""
+        },
+        {
+          "href": "https://outlook.live.com/mail/",
+          "texto": "diariooficial@goias.gov.br"
+        },
+        {
+          "href": "mailto:diariooficial@goias.gov.br",
+          "texto": "diariooficial@goias.gov.br"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-S0NTPR1FDP&gtm=45je6ae1v9119036903za20oxf1&_p=1792177762139&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAI&are=1&cid=1086753134.1792177763&frm=0&ir=1&ngs=1&pscdl=noapi&rcb=8&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1792177763&sct=1&seg=0&dl=https%3A%2F%2Fdiariooficial.abc.go.gov.br%2Fcanal%2Fcomo-publicar&dt=ABC%20-%20Ag%C3%AAncia%20Brasil%20Central%20%2F%20Canais&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=3715",
+          "status": 204,
+          "tipo": "text/plain"
+        }
+      ]
+    },
+    "enderecos:https://diariooficial.abc.go.gov.br/canal/como-publicar": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+      "caminhos": [],
+      "trechos": [
+        "ajax-loader.gif) center center no-repeat rgba(255,255,255,.7)'",
+        "ajax({",
+        "url: url,",
+        "ajaxSettings.flatOptions||{};for(n in t)void 0!==t[n]&&((i[n]?e:r||(r={}))[n]=t[n]);return r&&w.extend(!0,e,r),e}function Xt(e,t,n){var r,i,o,a,s=e.contents,u=e.dataTypes;while(\"*\"===u[0])u.shift(),void 0",
+        "ajaxSettings:{url:Ct.href,type:\"GET\",isLocal:Pt.test(Ct.protocol),global:!0,processData:!0,async:!0,contentType:\"application/x-www-form-urlencoded; charset=UTF-8\",accepts:{\"*\":$t,text:\"text/plain\",html:\"t",
+        "url:!0,context:!0}},ajaxSetup:function(e,t){return t?zt(zt(e,w.ajaxSettings),t):zt(w.ajaxSettings,e)},ajaxPrefilter:Ft(It),ajaxTransport:Ft(Wt),ajax:function(t,n){\"object\"==typeof t&&(n=t,t=void 0),n=n||{",
+        "ajaxSetup({},n),g=h.context||h,y=h.context&&(g.nodeType||g.jquery)?w(g):w.event,v=w.Deferred(),m=w.Callbacks(\"once memory\"),x=h.statusCode||{},b={},T={},C=\"canceled\",E={readyState:0,getResponseHeader:func",
+        "ajaxStart\"),h.type=h.type.toUpperCase(),h.hasContent=!Mt.test(h.type),o=h.url.replace(Lt,\"\"),h.hasContent?h.data&&h.processData&&0===(h.contentType||\"\").indexOf(\"application/x-www-form-urlencoded\")&&(h.da",
+        "ajaxSend\",[E,h]),c)return E;h.async&&h.timeout>0&&(u=e.setTimeout(function(){E.abort(\"timeout\")},h.timeout));try{c=!1,i.send(b,k)}catch(e){if(c)throw e;k(-1,e)}}else k(-1,\"No Transport\");function k(t,n,r,",
+        "ajaxSuccess\":\"ajaxError\",[E,h,l?p:d]),m.fireWith(g,[E,C]),f&&(y.trigger(\"ajaxComplete\",[E,h]),--w.active||w.event.trigger(\"ajaxStop\")))}return E},getJSON:function(e,t,n){return w.get(e,t,n,\"json\")},getScr",
+        "ajax(w.extend({url:e,type:t,dataType:i,data:n,success:r},w.isPlainObject(e)&&e))}}),w._evalUrl=function(e){return w.ajax({url:e,type:\"GET\",dataType:\"script\",cache:!0,async:!1,global:!1,\"throws\":!0})},w.fn",
+        "ajaxSettings.xhr=function(){try{return new e.XMLHttpRequest}catch(e){}};var Vt={0:200,1223:204},Gt=w.ajaxSettings.xhr();h.cors=!!Gt&&\"withCredentials\"in Gt,h.ajax=Gt=!!Gt,w.ajaxTransport(function(t){var n",
+        "ajaxPrefilter(function(e){e.crossDomain&&(e.contents.script=!1)}),w.ajaxSetup({accepts:{script:\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"},contents:{script",
+        "ajaxPrefilter(\"script\",function(e){void 0===e.cache&&(e.cache=!1),e.crossDomain&&(e.type=\"GET\")}),w.ajaxTransport(\"script\",function(e){if(e.crossDomain){var t,n;return{send:function(i,o){t=w(\"<script>\").p",
+        "ajaxSetup({jsonp:\"callback\",jsonpCallback:function(){var e=Yt.pop()||w.expando+\"_\"+Et++;return this[e]=!0,e}}),w.ajaxPrefilter(\"json jsonp\",function(t,n,r){var i,o,a,s=!1!==t.jsonp&&(Qt.test(t.url)?\"url\":",
+        "ajax({url:e,type:i||\"GET\",dataType:\"html\",data:t}).done(function(e){o=arguments,a.html(r?w(\"<div>\").append(w.parseHTML(e)).find(r):e)}).always(n&&function(e,t){a.each(function(){n.apply(this,o||[e.respons",
+        "ajaxStart\",\"ajaxStop\",\"ajaxComplete\",\"ajaxError\",\"ajaxSuccess\",\"ajaxSend\"],function(e,t){w.fn[t]=function(e){return this.on(t,e)}}),w.expr.pseudos.animated=function(e){return w.grep(w.timers,function(t){r"
+      ],
+      "campos": [
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Toggle navigation"
+        }
+      ]
+    },
+    "seguido:https://diariooficial.abc.go.gov.br/canal/legislacao": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+      "status": 200,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": "INSTITUCIONAL COMO PUBLICAR LEGISLAÇÃO ACESSO À INFORMAÇÃO FALE CONOSCO NORMAS PARA ACESSO TERMOS DE USO POLÍTICA DE PRIVACIDADE Legislação * Criação AGECOM: Lei 13.550/99 Decreto nº. 6.910 * Alteração da denominação para ABC (Agência Brasil Central): Lei 18746/14 * Competências: DECRETO Nº 8.578, DE 24 DE FEVEREIRO DE 2016 * Normas para o acesso, publicação e envio de matérias para o Diário Oficial do Estado de Goiás: Resolução Direx 001, de 02 de janeiro de 2017. ABC- Agência Brasil Central. Rua SC-01, nº 299, Parque Santa Cruz, Goiânia - GO CEP: 74.860-270 Fone: (62) 3235-3398 / (62) 3235-3399 / (62) 99218-9816 (WhatsApp) © Copyright 2015. Todos os direitos reservados. Desenvolvido pela Agência Brasil Central.",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/institucional",
+          "texto": "INSTITUCIONAL"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+          "texto": "COMO PUBLICAR"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+          "texto": "LEGISLAÇÃO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+          "texto": "FALE CONOSCO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/normas-para-acesso",
+          "texto": "NORMAS PARA ACESSO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/termos-de-uso",
+          "texto": "TERMOS DE USO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/politica-de-privacidade",
+          "texto": "POLÍTICA DE PRIVACIDADE"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/",
+          "texto": ""
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/normas-para-acesso",
+          "texto": "Resolução Direx 001, de 02 de janeiro de 2017"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-S0NTPR1FDP&gtm=45je6ae1v9119036903za20oxf1&_p=1792177773689&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAI&are=1&cid=1148426189.1792177775&frm=0&ir=1&ngs=1&pscdl=noapi&rcb=15&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115616985~115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792177774&sct=1&seg=0&dl=https%3A%2F%2Fdiariooficial.abc.go.gov.br%2Fcanal%2Flegislacao&dt=ABC%20-%20Ag%C3%AAncia%20Brasil%20Central%20%2F%20Canais&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=3967",
+          "status": 204,
+          "tipo": "text/plain"
+        }
+      ]
+    },
+    "enderecos:https://diariooficial.abc.go.gov.br/canal/legislacao": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+      "caminhos": [],
+      "trechos": [
+        "ajax-loader.gif) center center no-repeat rgba(255,255,255,.7)'",
+        "ajax({",
+        "url: url,",
+        "ajaxSettings.flatOptions||{};for(n in t)void 0!==t[n]&&((i[n]?e:r||(r={}))[n]=t[n]);return r&&w.extend(!0,e,r),e}function Xt(e,t,n){var r,i,o,a,s=e.contents,u=e.dataTypes;while(\"*\"===u[0])u.shift(),void 0",
+        "ajaxSettings:{url:Ct.href,type:\"GET\",isLocal:Pt.test(Ct.protocol),global:!0,processData:!0,async:!0,contentType:\"application/x-www-form-urlencoded; charset=UTF-8\",accepts:{\"*\":$t,text:\"text/plain\",html:\"t",
+        "url:!0,context:!0}},ajaxSetup:function(e,t){return t?zt(zt(e,w.ajaxSettings),t):zt(w.ajaxSettings,e)},ajaxPrefilter:Ft(It),ajaxTransport:Ft(Wt),ajax:function(t,n){\"object\"==typeof t&&(n=t,t=void 0),n=n||{",
+        "ajaxSetup({},n),g=h.context||h,y=h.context&&(g.nodeType||g.jquery)?w(g):w.event,v=w.Deferred(),m=w.Callbacks(\"once memory\"),x=h.statusCode||{},b={},T={},C=\"canceled\",E={readyState:0,getResponseHeader:func",
+        "ajaxStart\"),h.type=h.type.toUpperCase(),h.hasContent=!Mt.test(h.type),o=h.url.replace(Lt,\"\"),h.hasContent?h.data&&h.processData&&0===(h.contentType||\"\").indexOf(\"application/x-www-form-urlencoded\")&&(h.da",
+        "ajaxSend\",[E,h]),c)return E;h.async&&h.timeout>0&&(u=e.setTimeout(function(){E.abort(\"timeout\")},h.timeout));try{c=!1,i.send(b,k)}catch(e){if(c)throw e;k(-1,e)}}else k(-1,\"No Transport\");function k(t,n,r,",
+        "ajaxSuccess\":\"ajaxError\",[E,h,l?p:d]),m.fireWith(g,[E,C]),f&&(y.trigger(\"ajaxComplete\",[E,h]),--w.active||w.event.trigger(\"ajaxStop\")))}return E},getJSON:function(e,t,n){return w.get(e,t,n,\"json\")},getScr",
+        "ajax(w.extend({url:e,type:t,dataType:i,data:n,success:r},w.isPlainObject(e)&&e))}}),w._evalUrl=function(e){return w.ajax({url:e,type:\"GET\",dataType:\"script\",cache:!0,async:!1,global:!1,\"throws\":!0})},w.fn",
+        "ajaxSettings.xhr=function(){try{return new e.XMLHttpRequest}catch(e){}};var Vt={0:200,1223:204},Gt=w.ajaxSettings.xhr();h.cors=!!Gt&&\"withCredentials\"in Gt,h.ajax=Gt=!!Gt,w.ajaxTransport(function(t){var n",
+        "ajaxPrefilter(function(e){e.crossDomain&&(e.contents.script=!1)}),w.ajaxSetup({accepts:{script:\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"},contents:{script",
+        "ajaxPrefilter(\"script\",function(e){void 0===e.cache&&(e.cache=!1),e.crossDomain&&(e.type=\"GET\")}),w.ajaxTransport(\"script\",function(e){if(e.crossDomain){var t,n;return{send:function(i,o){t=w(\"<script>\").p",
+        "ajaxSetup({jsonp:\"callback\",jsonpCallback:function(){var e=Yt.pop()||w.expando+\"_\"+Et++;return this[e]=!0,e}}),w.ajaxPrefilter(\"json jsonp\",function(t,n,r){var i,o,a,s=!1!==t.jsonp&&(Qt.test(t.url)?\"url\":",
+        "ajax({url:e,type:i||\"GET\",dataType:\"html\",data:t}).done(function(e){o=arguments,a.html(r?w(\"<div>\").append(w.parseHTML(e)).find(r):e)}).always(n&&function(e,t){a.each(function(){n.apply(this,o||[e.respons",
+        "ajaxStart\",\"ajaxStop\",\"ajaxComplete\",\"ajaxError\",\"ajaxSuccess\",\"ajaxSend\"],function(e,t){w.fn[t]=function(e){return this.on(t,e)}}),w.expr.pseudos.animated=function(e){return w.grep(w.timers,function(t){r"
+      ],
+      "campos": [
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Toggle navigation"
+        }
+      ]
+    },
+    "seguido:https://diariooficial.abc.go.gov.br/canal/fale-conosco": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+      "status": 200,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": "INSTITUCIONAL COMO PUBLICAR LEGISLAÇÃO ACESSO À INFORMAÇÃO FALE CONOSCO NORMAS PARA ACESSO TERMOS DE USO POLÍTICA DE PRIVACIDADE Fale Conosco Seja bem-vindo(a) à Central de Relacionamento. Telefones: PUBLICAÇÃO (62) 3235-3398 / (62) 3235 3399 (62) 99218-9816 (WhatsApp) FATURAMENTO (62)99233-0958 Endereço: Rua SC-01, nº 299, Parque Santa Cruz, Goiânia – GO CEP: 74.860-270 Envie-nos um e-mail: diariooficial@goias.gov.br ENVIAR LIMPAR ABC- Agência Brasil Central. Rua SC-01, nº 299, Parque Santa Cruz, Goiânia - GO CEP: 74.860-270 Fone: (62) 3235-3398 / (62) 3235-3399 / (62) 99218-9816 (WhatsApp) © Copyright 2015. Todos os direitos reservados. Desenvolvido pela Agência Brasil Central.",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/institucional",
+          "texto": "INSTITUCIONAL"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+          "texto": "COMO PUBLICAR"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+          "texto": "LEGISLAÇÃO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+          "texto": "FALE CONOSCO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/normas-para-acesso",
+          "texto": "NORMAS PARA ACESSO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/termos-de-uso",
+          "texto": "TERMOS DE USO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/politica-de-privacidade",
+          "texto": "POLÍTICA DE PRIVACIDADE"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/",
+          "texto": ""
+        },
+        {
+          "href": "mailto:diariooficial@goias.gov.br",
+          "texto": "diariooficial@goias.gov.br"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-S0NTPR1FDP&gtm=45je6ae1v9119036903za20oxf1&_p=1792177783574&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAI&are=1&cid=774698716.1792177785&frm=0&ir=1&ngs=1&pscdl=noapi&rcb=10&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115616986~115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1792177784&sct=1&seg=0&dl=https%3A%2F%2Fdiariooficial.abc.go.gov.br%2Fcanal%2Ffale-conosco&dt=ABC%20-%20Ag%C3%AAncia%20Brasil%20Central%20%2F%20Canais&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=3079",
+          "status": 204,
+          "tipo": "text/plain"
+        }
+      ]
+    },
+    "enderecos:https://diariooficial.abc.go.gov.br/canal/fale-conosco": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+      "caminhos": [],
+      "trechos": [
+        "ajax-loader.gif) center center no-repeat rgba(255,255,255,.7)'",
+        "ajax({",
+        "url: url,",
+        "ajaxSettings.flatOptions||{};for(n in t)void 0!==t[n]&&((i[n]?e:r||(r={}))[n]=t[n]);return r&&w.extend(!0,e,r),e}function Xt(e,t,n){var r,i,o,a,s=e.contents,u=e.dataTypes;while(\"*\"===u[0])u.shift(),void 0",
+        "ajaxSettings:{url:Ct.href,type:\"GET\",isLocal:Pt.test(Ct.protocol),global:!0,processData:!0,async:!0,contentType:\"application/x-www-form-urlencoded; charset=UTF-8\",accepts:{\"*\":$t,text:\"text/plain\",html:\"t",
+        "url:!0,context:!0}},ajaxSetup:function(e,t){return t?zt(zt(e,w.ajaxSettings),t):zt(w.ajaxSettings,e)},ajaxPrefilter:Ft(It),ajaxTransport:Ft(Wt),ajax:function(t,n){\"object\"==typeof t&&(n=t,t=void 0),n=n||{",
+        "ajaxSetup({},n),g=h.context||h,y=h.context&&(g.nodeType||g.jquery)?w(g):w.event,v=w.Deferred(),m=w.Callbacks(\"once memory\"),x=h.statusCode||{},b={},T={},C=\"canceled\",E={readyState:0,getResponseHeader:func",
+        "ajaxStart\"),h.type=h.type.toUpperCase(),h.hasContent=!Mt.test(h.type),o=h.url.replace(Lt,\"\"),h.hasContent?h.data&&h.processData&&0===(h.contentType||\"\").indexOf(\"application/x-www-form-urlencoded\")&&(h.da",
+        "ajaxSend\",[E,h]),c)return E;h.async&&h.timeout>0&&(u=e.setTimeout(function(){E.abort(\"timeout\")},h.timeout));try{c=!1,i.send(b,k)}catch(e){if(c)throw e;k(-1,e)}}else k(-1,\"No Transport\");function k(t,n,r,",
+        "ajaxSuccess\":\"ajaxError\",[E,h,l?p:d]),m.fireWith(g,[E,C]),f&&(y.trigger(\"ajaxComplete\",[E,h]),--w.active||w.event.trigger(\"ajaxStop\")))}return E},getJSON:function(e,t,n){return w.get(e,t,n,\"json\")},getScr",
+        "ajax(w.extend({url:e,type:t,dataType:i,data:n,success:r},w.isPlainObject(e)&&e))}}),w._evalUrl=function(e){return w.ajax({url:e,type:\"GET\",dataType:\"script\",cache:!0,async:!1,global:!1,\"throws\":!0})},w.fn",
+        "ajaxSettings.xhr=function(){try{return new e.XMLHttpRequest}catch(e){}};var Vt={0:200,1223:204},Gt=w.ajaxSettings.xhr();h.cors=!!Gt&&\"withCredentials\"in Gt,h.ajax=Gt=!!Gt,w.ajaxTransport(function(t){var n",
+        "ajaxPrefilter(function(e){e.crossDomain&&(e.contents.script=!1)}),w.ajaxSetup({accepts:{script:\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"},contents:{script",
+        "ajaxPrefilter(\"script\",function(e){void 0===e.cache&&(e.cache=!1),e.crossDomain&&(e.type=\"GET\")}),w.ajaxTransport(\"script\",function(e){if(e.crossDomain){var t,n;return{send:function(i,o){t=w(\"<script>\").p",
+        "ajaxSetup({jsonp:\"callback\",jsonpCallback:function(){var e=Yt.pop()||w.expando+\"_\"+Et++;return this[e]=!0,e}}),w.ajaxPrefilter(\"json jsonp\",function(t,n,r){var i,o,a,s=!1!==t.jsonp&&(Qt.test(t.url)?\"url\":",
+        "ajax({url:e,type:i||\"GET\",dataType:\"html\",data:t}).done(function(e){o=arguments,a.html(r?w(\"<div>\").append(w.parseHTML(e)).find(r):e)}).always(n&&function(e,t){a.each(function(){n.apply(this,o||[e.respons",
+        "ajaxStart\",\"ajaxStop\",\"ajaxComplete\",\"ajaxError\",\"ajaxSuccess\",\"ajaxSend\"],function(e,t){w.fn[t]=function(e){return this.on(t,e)}}),w.expr.pseudos.animated=function(e){return w.grep(w.timers,function(t){r"
+      ],
+      "campos": [
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Toggle navigation"
+        },
+        {
+          "tag": "input",
+          "id": "",
+          "nome": "_method",
+          "tipo": "hidden",
+          "valor": "POST"
+        },
+        {
+          "tag": "input",
+          "id": "nome",
+          "nome": "data[Contato][nome]",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "email",
+          "nome": "data[Contato][email]",
+          "tipo": "email",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "nome",
+          "nome": "data[Contato][assunto]",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "textarea",
+          "id": "mensagem",
+          "nome": "data[Contato][mensagem]",
+          "tipo": "textarea",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "submit",
+          "valor": "ENVIAR"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "reset",
+          "valor": "LIMPAR"
+        }
+      ]
+    },
+    "saplComoNavegador": {
+      "url": "https://sapl.al.go.leg.br/api/materia/materialegislativa/?page_size=1",
+      "comoNavegador": true,
+      "erro": "fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+    }
+  }
+}
