@@ -68,6 +68,7 @@ export const PALAVRAS: [string, string, number, boolean?][] = [
   ['unidade de conservação', 'Unidades de conservação', 9],
   ['unidades de conservação', 'Unidades de conservação', 9],
   ['reserva extrativista', 'Unidades de conservação', 8],
+  ['área de proteção ambiental', 'Unidades de conservação', 9],
   ['SNUC', 'Unidades de conservação', 8],
   ['terra indígena', 'Povos e comunidades', 8],
   ['terras indígenas', 'Povos e comunidades', 8],

@@ -135,7 +135,8 @@ export function exigir<T>(valor: T | null | undefined, fonte: string, campo: str
  * Só é gravado se a proposta for encontrada por uma das chaves ou números.
  */
 export type EventoColetado = {
-  alvo: { chaves: string[]; identificacoes?: string[] }
+  /** Nas estaduais, esfera e UF limitam a busca pelo número. */
+  alvo: { chaves: string[]; identificacoes?: string[]; esfera?: 'federal' | 'estadual'; uf?: string }
   /** Chaves que passam a apontar para a proposta (ex.: o código do veto, para a agenda do Congresso). */
   chavesExtras?: string[]
   tramitacoes: Omit<TramitacaoColetada, 'proposicao'>[]

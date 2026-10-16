@@ -9,14 +9,14 @@ import type { Fonte } from '../payload-types'
 import { conectorCamara } from './camara/conector'
 import { conectorCongresso } from './congresso/conector'
 import { conectorDou } from './dou/conector'
+import { CONECTORES_ESTADUAIS, FONTES_ESTADUAIS } from './estaduais'
 import { buscarNaRede, identificacaoDe, type Buscar, type Conector, type ContextoColeta } from './conector'
 import { balancoVazio, gravarEventos, gravarPacote, gravarPautas, type Balanco } from './gravar'
-import { CONECTORES_SAPL, SAPL_NORTE } from './sapl/conector'
 import { conectorSenado } from './senado/conector'
 import { preencherTextos, type Baixador } from './textos'
 import { ErroFormato } from './tipos'
 
-export const CONECTORES: Record<string, Conector> = { camara: conectorCamara, senado: conectorSenado, congresso: conectorCongresso, dou: conectorDou, ...CONECTORES_SAPL }
+export const CONECTORES: Record<string, Conector> = { camara: conectorCamara, senado: conectorSenado, congresso: conectorCongresso, dou: conectorDou, ...CONECTORES_ESTADUAIS }
 
 /** Prefixos das chaves de pauta de cada fonte (para tirar da agenda o que saiu de pauta). */
 const PREFIXOS_PAUTA: Record<string, string[]> = { camara: ['camara:pauta:'], senado: ['senado:pauta:', 'senado:reuniao:'], congresso: ['congresso:pauta:'], dou: [] }
@@ -26,7 +26,7 @@ const FONTES_PADRAO: Record<string, Partial<Fonte>> = {
   senado: { nome: 'Senado Federal', nivel: 'A', esfera: 'federal' },
   congresso: { nome: 'Congresso Nacional (vetos)', nivel: 'A', esfera: 'federal' },
   dou: { nome: 'Diário Oficial da União (INLABS)', nivel: 'A', esfera: 'federal' },
-  ...Object.fromEntries(SAPL_NORTE.map((c) => [`casa-${c.uf}`, { nome: c.nome, nivel: 'A', esfera: 'estadual', uf: c.uf.toUpperCase(), url: c.base }])),
+  ...FONTES_ESTADUAIS,
 }
 
 export type ResultadoRodada = { fonte: string; ok: boolean; itens?: number; balanco?: Balanco; avisos?: string[]; erro?: string; ignorada?: string }
@@ -37,7 +37,7 @@ async function fonteDe(payload: Payload, slug: string): Promise<Fonte> {
   return payload.create({ collection: 'fontes', data: { slug, conector: slug, nome: slug, ...FONTES_PADRAO[slug], frequencia: '6h, 12h, 18h, 23h' } as never })
 }
 
-/** O que o site já acompanha e o que foi descartado, por chave e, nas federais, por número ("PL 2159/2021"). */
+/** O que o site já acompanha e o que foi descartado, por chave e por número ("PL 2159/2021"; nas estaduais, "RR:PL 149/2026"). */
 async function propostasConhecidas(payload: Payload) {
   const acompanhadas = new Set<string>()
   const descartadas = new Set<string>()
@@ -48,12 +48,13 @@ async function propostasConhecidas(payload: Payload) {
       limit: 500,
       page: pagina,
       depth: 0,
-      select: { chaveOrigem: true, chavesExtras: true, sigla: true, numero: true, ano: true, situacaoEditorial: true, esfera: true },
+      select: { chaveOrigem: true, chavesExtras: true, sigla: true, numero: true, ano: true, situacaoEditorial: true, esfera: true, uf: true },
     })
     for (const p of r.docs) {
       const alvo = p.situacaoEditorial === 'descartada' ? descartadas : acompanhadas
-      // O número só identifica sozinho as federais ("PL 12/2026" existe em vários estados)
-      const numero = p.esfera === 'federal' && p.sigla && p.numero && p.ano ? identificacaoDe(p.sigla, p.numero, p.ano) : null
+      // O número só identifica sozinho as federais ("PL 12/2026" existe em vários estados); nas estaduais vai com a UF
+      const ident = p.sigla && p.numero && p.ano ? identificacaoDe(p.sigla, p.numero, p.ano) : null
+      const numero = !ident ? null : p.esfera === 'federal' ? ident : p.uf ? `${p.uf.toUpperCase()}:${ident}` : null
       for (const c of [p.chaveOrigem, ...(p.chavesExtras || []), numero]) if (c) alvo.add(c)
     }
     if (!r.hasNextPage) break

@@ -5,10 +5,11 @@
  * fica só com os tipos que interessam (tipoDeInteresse), e busca tramitação e autoria das propostas
  * já acompanhadas e das novas com nota de relevância suficiente (dicionário nacional + palavras-chave do estado).
  */
-import { dia, type Conector, type ContextoColeta, type ResultadoColeta } from '../conector'
+import { dia, identificacaoDe, type Conector, type ContextoColeta, type ResultadoColeta } from '../conector'
 import type { PacoteProposicao } from '../tipos'
 import {
   mapearMateria,
+  siglaDoTipo,
   tabela,
   tipoDeInteresse,
   type ContextoSapl,
@@ -101,7 +102,10 @@ export function conectorSapl(uf: string, nome: string, base: string): Conector {
       for (const m of deInteresse) {
         const chave = `sapl:${uf}:${m.id}`
         if (ctx.descartadas.has(chave)) continue
-        const acompanhada = ctx.acompanhadas.has(chave)
+        // Acompanhada pela chave ou pelo número no estado ("TO:PLO 77/2026", cadastrada à mão pelo autor)
+        const acompanhada =
+          ctx.acompanhadas.has(chave) ||
+          ctx.acompanhadas.has(`${uf.toUpperCase()}:${identificacaoDe(siglaDoTipo(tipos.get(Number(m.tipo))), Number(m.numero), Number(m.ano))}`)
         if (!acompanhada) {
           if (
             novas >= ctx.maxNovas ||

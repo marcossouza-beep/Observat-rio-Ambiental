@@ -229,7 +229,7 @@ async function gravarVersoes(o: Opcoes, id: number, versoes: SemProposicao<Versa
 /** Fatos avulsos (vetos, publicação no DOU) sobre propostas que o site já tem. */
 export async function gravarEventos(o: Opcoes, eventos: EventoColetado[]) {
   for (const e of eventos) {
-    const prop = await acharProposicao(o.payload, e.alvo.chaves, e.alvo.identificacoes)
+    const prop = await acharProposicao(o.payload, e.alvo.chaves, e.alvo.identificacoes, { esfera: e.alvo.esfera, uf: e.alvo.uf })
     if (!prop || prop.situacaoEditorial === 'descartada') continue
     const extras = (e.chavesExtras || []).filter((c) => c !== prop.chaveOrigem && !(prop.chavesExtras || []).includes(c))
     if (extras.length) await o.payload.update({ collection: 'proposicoes', id: prop.id, context: SILENCIO, data: { chavesExtras: [...(prop.chavesExtras || []), ...extras] } })

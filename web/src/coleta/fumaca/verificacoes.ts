@@ -12,7 +12,7 @@ import { extrairTextoPdf, artigoPrimeiro } from '../textos'
 import { lerZip } from '../zip'
 import { buscarNaRede, type Conector } from '../conector'
 import { pontuar } from '../../lib/relevancia'
-import { CONECTORES_SAPL } from '../sapl/conector'
+import { CONECTORES_ESTADUAIS } from '../estaduais'
 import { conectorSenado } from '../senado/conector'
 
 export type Resultado = { ok: boolean; notas: string[]; amostra?: unknown; contexto?: Record<string, unknown> }
@@ -345,12 +345,12 @@ export const VERIFICACOES: Verificacao[] = [
       },
     }),
   ),
-  // Assembleias do Norte (SAPL): não essenciais; uma semana sem matéria nova é normal fora das sessões
-  ...Object.values(CONECTORES_SAPL).map(
+  // Fontes estaduais (SAPL, Diário da ALE-RR, Banco de Leis da Alepa): não essenciais; semana sem novidade é normal
+  ...Object.values(CONECTORES_ESTADUAIS).map(
     (c): Verificacao => ({
       id: `conector-${c.slug}`,
       fonte: c.nome,
-      descricao: 'Conector do SAPL contra a API ao vivo (últimos 7 dias, até 2 matérias abertas)',
+      descricao: 'Conector estadual contra a fonte ao vivo (últimos 7 dias, até 2 propostas abertas)',
       async rodar() {
         const agora = new Date()
         const dic = [
@@ -370,12 +370,15 @@ export const VERIFICACOES: Verificacao[] = [
           buscar: buscarNaRede(rapido),
         })
         const p = r.pacotes[0]
-        const a = r.amostra as { deInteresse?: number; andamentosNoPeriodo?: number } | undefined
+        const a = r.amostra as { deInteresse?: number; andamentosNoPeriodo?: number; edicoes?: number[]; projetosLidos?: number } | undefined
         return {
           ok: true,
           notas: [
-            `${r.itensListados} matérias atualizadas na semana (${a?.deInteresse ?? '?'} de tipos que interessam)`,
-            `${a?.andamentosNoPeriodo ?? '?'} andamentos (tramitações) na semana`,
+            a?.edicoes
+              ? `${a.edicoes.length} edições do diário na semana (${a.edicoes.join(', ')}), ${a.projetosLidos ?? 0} projetos lidos`
+              : a?.deInteresse !== undefined
+                ? `${r.itensListados} matérias atualizadas na semana (${a.deInteresse} de tipos que interessam); ${a.andamentosNoPeriodo ?? '?'} andamentos`
+                : `${r.itensListados} itens listados`,
             `${r.pacotes.length} abertas: ${r.pacotes.map((x) => `${x.proposicao.sigla} ${x.proposicao.numero}/${x.proposicao.ano} (${x.tramitacoes.length} andamentos)`).join('; ') || 'nenhuma relevante no período'}`,
             ...r.avisos,
           ],
