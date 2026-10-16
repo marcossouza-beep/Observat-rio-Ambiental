@@ -185,6 +185,48 @@ const PASSOS_SAPL: Passo[] = [
   ...passosSapl('sapl', SAPL_NORTE),
 ]
 
+/** Página HTML inteira (até 400 mil caracteres), como navegador. */
+async function gravarHtml(fonte: string, nome: string, url: string) {
+  const gravadaEm = new Date().toISOString()
+  try {
+    const r = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36', 'Accept-Language': 'pt-BR' }, signal: AbortSignal.timeout(45_000), redirect: 'follow' })
+    const html = await r.text()
+    return salvar(fonte, nome, { url: r.url || url, status: r.status, tipo: r.headers.get('content-type') || '', gravadaEm, corpo: { html: html.slice(0, 400_000) } })
+  } catch (e) {
+    return salvar(fonte, nome, { url, status: null, tipo: '', gravadaEm, corpo: null, erro: (e as Error).message })
+  }
+}
+
+/** Nordeste sem SAPL (Fase 6): lista e detalhes da Alba (Bahia), portal legislativo da Alba, proposições da Alece (Ceará). */
+const PASSOS_NE: Passo[] = [
+  {
+    fonte: 'alba',
+    nome: 'proposicoes',
+    async rodar() {
+      const base = 'https://www.al.ba.gov.br/atividade-legislativa-nova'
+      const fim = new Date()
+      const inicio = new Date(fim.getTime() - 20 * 864e5)
+      const br = (d: Date) => d.toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+      const lista = await gravarHtml('alba', 'proposicoes-pl', `${base}/proposicoes?numero=&palavra=&tipo=PL.&deputado=&exDeputado=&outros=&dataInicio=${br(inicio)}&dataFim=${br(fim)}`)
+      await gravarHtml('alba', 'proposicoes-ambiental', `${base}/proposicoes?numero=&palavra=ambiental&tipo=&deputado=&exDeputado=&outros=&dataInicio=&dataFim=`)
+      // Detalhes do primeiro projeto de lei da lista
+      const html = ((lista.corpo as { html?: string } | null)?.html || '') as string
+      const pl = /\/proposicao\/(PL\.?-[\d.]+-\d{4})/.exec(html)?.[1]
+      if (pl) await gravarHtml('alba', 'detalhe-pl', `${base}/proposicao/${pl}`)
+      await gravarHtml('alba', 'portal-legislativo', 'http://albalegis.nopapercloud.com.br/')
+    },
+  },
+  {
+    fonte: 'alece',
+    nome: 'proposicoes',
+    async rodar() {
+      await gravarHtml('alece', 'proposicoes', 'https://www.al.ce.gov.br/paginas/proposicoes?menu=96')
+      await gravarHtml('alece', 'avulso-de-projeto', 'https://www.al.ce.gov.br/legislativo/ordem-do-dia/avulso-de-projeto')
+      await gravarHtml('alece', 'expediente', 'https://www.al.ce.gov.br/legislativo/expediente')
+    },
+  },
+]
+
 /** Pará e Roraima sem SAPL aberto: Diário da ALE-RR (WordPress + PDF) e Banco de Leis da Alepa (API JSON). */
 const PASSOS_NORTE: Passo[] = [
   {
@@ -550,7 +592,7 @@ async function main() {
   const ctx: Ctx = {}
   await mkdir(saida, { recursive: true })
   const fontes = filtro ? filtro.split(',') : null
-  for (const p of [...PASSOS, ...PASSOS_SAPL, ...passosSapl('sapl-ne', SAPL_NE), ...PASSOS_NORTE].filter((x) => !fontes || fontes.includes(x.fonte))) {
+  for (const p of [...PASSOS, ...PASSOS_SAPL, ...passosSapl('sapl-ne', SAPL_NE), ...PASSOS_NORTE, ...PASSOS_NE].filter((x) => !fontes || fontes.includes(x.fonte))) {
     try {
       await p.rodar(ctx)
     } catch (e) {
