@@ -406,6 +406,11 @@ export const VERIFICACOES: Verificacao[] = [
         const zip = await baixarEdicao(cookie, data, 'DO1')
         if (!zip) continue
         const xmls = lerZip(zip, (nome) => nome.toLowerCase().endsWith('.xml'))
+        // Logo depois da meia-noite a edição do dia ainda está sendo montada (pacote sem XML): vale a anterior
+        if (!xmls.length) {
+          notas.push(`DO1 de ${data}: ainda sem atos (${Math.round(zip.length / 1024)} KB); usando a edição anterior`)
+          continue
+        }
         const atos = xmls.map((x) => lerAto(x.conteudo.toString('utf8'))).filter((a): a is NonNullable<typeof a> => !!a)
         const siglas: Record<string, number> = {}
         for (const a of atos) {
