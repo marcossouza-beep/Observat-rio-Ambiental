@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-10-16T02:46:57.395Z",
+  "geradoEm": "2026-10-16T02:58:41.432Z",
   "ambiente": "GitHub Actions (fora do Brasil)",
   "PA": {
     "proposicoes": {
@@ -350,6 +350,38 @@
         }
       ]
     },
+    "pesquisa": {
+      "erro": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#searchButton_I')\n    - locator resolved to <input type=\"submit\" class=\"dxb-hb\" value=\"Pesquisar\" id=\"searchButton_I\" name=\"",
+      "chamadas": [
+        {
+          "metodo": "GET",
+          "url": "https://www.alepa.pa.gov.br/Legislativo/Proposicoes",
+          "status": 200,
+          "tipo": "text/html; charset=utf-8",
+          "bytes": 144265,
+          "inicio": "<!DOCTYPE html>\r\n\r\n<html lang=\"pt-br\">\r\n<head>\r\n    <meta charset=\"UTF-8\" />\r\n    \r\n        <title>Proposi&#231;&#245;es - ALEPA</title>\r\n    <link rel=\"shortcut icon\" href=\"/Content/Images/shortcut-icon-alepa.png\">\r\n\r\n\r\n    <link rel=\"stylesheet\" href=\"/DXR.axd?r=0_4966,1_68,1_69,0_4969,1_74,1_210,0_4827,1_209,0_4830,0_4843,0_4846,1_84,1_73,0_4791,0_4794,0_4860,4_120,4_111,4_112,0_4863,4_136-RHOmx&p=98bf90a6\" /><script id=\"dxis_1678606403\" src=\"/DXR.axd?r=4_154-QHOmx\"></script><link rel=\"stylesheet\" href=\"/DXR.axd?r=5_4,0_4909,0_4927,6_12,0_4930-RHOmx&p=98bf90a6\" />\r\n    <script id=\"dxis_1603570592\" src=\"/DXR.axd?r=1_0,1_2,1_3,1_4,1_11,1_64,1_12,1_255,1_13,1_14,1_15,1_16,1_20,1_66,1_48,1_17,1_9,17_0,17_8,1_27,1_39,1_31,17_36,1_23,1_55,17_35,1_41,1_54,1_53,17_34,1_183,1_184,1_24,1_33,1_46,1_213,1_227,1_211,1_243,1_47,1_52,17_6,1_51,17_15,1_21,1_22,1_40,1_34,1_19,1_226,1_228,1_212,1_220,1_216,1_221,1_222,1_217,1_223,1_218,1_219,1_214,1_224,1_225,1_230,1_239,1_241,1_242,1_229,1_234,1_235,1_236,1_215,1_231,1_232,1_233,1_237,1_238,1_240,17_49,17_50,17_2,1_59,1_57,17_39,1_56,17_40,1_58,17_41,17_42,1_60,17_3,1_49,17_9,17_10,1_35,17_11,1_63,1_62,17_12,1_50,1_38,17_44,1_43,17_13,17_14,1_67,1_185,1_182,17_24,1_205,17_25,1_194,17_18,1_203,17_20,1_188,1_190,1_198,1_199,1_200,1_204,1_186,1_193,17_17,17_22,1_192,17_19,1_61,1_195,1_189,17_16,1_197,1_191,17_43,1_202,1_196,17_21,1_253,17_1,1_252,1_251,1_250,17_47,4_0,1_18,5_1,5_2,4_115,4_98,4_100,4_99,4_101,4_102,4_105,4_108,4_109,4_107,4_106,4_104,4_103,4_110,4_1,4_34,4_113,4_3,4_31,4_2,4_24,4_22,4_23,4_27,4_28,4_32,4_29,4_35,4_47,4_48,4_42,4_80,4_36,4_37,4_38,4_39,4_40,4_43,4_44,4_45,4_46,4_49,4_50,4_51,4_52,4_41,4_53,4_54,4_55,4_56,4_57,4_58,4_59,4_60,4_61,4_62,4_67,4_68,4_69,4_70,4_71,4_72,4_73,4_74,4_75,4_76,4_77,4_63,4_64,4_65,4_66,4_78,4_79,4_86,4_87,4_89,4_93,4_88,4_90,4_91,4_81,4_84,4_83,4_85,4_82,4_15,4_16,4_17,4_18,4_19,4_20,4_92,4_25,4_26,4_30,4_14,4_6,4_8,4_7,4_9,4_10,4_11,4_21,4_12,4_4,4_5,4_13,17_4,4_94,4_95,4_96,4_97,4_33,6_0,6_1,6_2,6_3,6_4,6_5,6_7,6_8,6_6,17_37-YHOmx&amp;p=2afebda9\"></script><script id=\"dxss_2023329486\">\n<!--\n(function(){\nvar a = {'currNegPattern':9,'currGroupSeparator':'.','abbrDayNames':['dom','seg','ter','qua','qui','sex','sáb'],'monthNames':['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro',''],'numGroupSeparator':'.','shortTime':'HH:mm','longTime':'HH:mm:ss','currDecimalPoint':',','currPosPattern':2,'longDate':'dddd, d\\' de \\'MMMM\\' de \\'yyyy','abbrMonthNames':['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez',''],'pm':'','twoDigitYearMax':2049,'numPosInf':'∞','numNegInf':'-∞','am':'','monthDay':'d \\'de\\' MMMM','currency':'R$','yearMonth':'MMMM\\' de \\'yyyy','numDecimalPoint':',','percentPattern':1,'dayNames':['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'],'genMonthNames':['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','s",
+          "fim": "         Horário de atendimento ao público: Das 08:00 às 14:00\r\n        </p>\r\n        <p style=\"margin-top: 20px;\">\r\n\r\n            <a href=\"https://www.quartertec.com.br\" target=\"_blank\" style=\"text-decoration: none; color: var(--font-secondary); font-weight: 300 !important;\">&copy; 2026 Quarter Tecnologia</a>.<br /> Todos os Direitos reservados.\r\n        </p>\r\n    </div>\r\n    <div vw class=\"enabled\">\r\n        <div vw-access-button class=\"active\"></div>\r\n        <div vw-plugin-wrapper>\r\n            <div class=\"vw-plugin-top-wrapper\"></div>\r\n        </div>\r\n    </div>\r\n    <script src=\"https://vlibras.gov.br/app/vlibras-plugin.js\"></script>\r\n    <script>\r\n        new window.VLibras.Widget('https://vlibras.gov.br/app');\r\n    </script>\r\n</body>\r\n</html>\r\n\r\n<table class=\"dxlpLoadingPanel_Office365 loadPanel dxlpControl_Office365\" id=\"loadPanelMenu\" style=\"position:absolute;left:0px;top:0px;z-index:30000;display:none;\">\r\n\t<tr>\r\n\t\t<td class=\"dx\" style=\"padding-right:0px;\"><img class=\"dxlp-loadingImage dxlp-imgPosLeft\" src=\"/DXR.axd?r=1_89-QHOmx\" alt=\"\" style=\"vertical-align:middle;\" /></td><td class=\"dx\" style=\"padding-left:0px;\"><span id=\"loadPanelMenu_TL\">Carregando&hellip;</span></td>\r\n\t</tr>\r\n</table><div id=\"loadPanelMenu_LD\" class=\"dxlpLoadingDiv_Office365 dxlpControl_Office365 dx-ft\" style=\"left:0px;top:0px;z-index:29999;display:none;position:absolute;\">\r\n\r\n</div><script id=\"dxss_642011937\">\n<!--\nASPx.createControl(ASPxClientLoadingPanel,'loadPanelMenu','');\n\n//-->\n</script>"
+        },
+        {
+          "metodo": "GET",
+          "url": "https://www.alepa.pa.gov.br/Legislativo/GetTipoProposicoes",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 600,
+          "inicio": "[{\"codigo\":1,\"nome\":\"PROJETO DE DECRETO LEGISLATIVO\",\"situacao\":1},{\"codigo\":2,\"nome\":\"PROJETO DE EMENDA CONSTITUCIONAL\",\"situacao\":1},{\"codigo\":3,\"nome\":\"PROJETO DE LEI ORDIN\\u00C1RIA\",\"situacao\":0},{\"codigo\":4,\"nome\":\"PROJETO DE LEI COMPLEMENTAR\",\"situacao\":0},{\"codigo\":5,\"nome\":\"PROJETO DE RESOLU\\u00C7\\u00C3O\",\"situacao\":1},{\"codigo\":7,\"nome\":\"PROCESSO\",\"situacao\":1},{\"codigo\":8,\"nome\":\"PROJETO DE INDICA\\u00C7\\u00C3O\",\"situacao\":1},{\"codigo\":20,\"nome\":\"INDICA\\u00C7\\u00C3O\",\"situacao\":1},{\"codigo\":99,\"nome\":\"MO\\u00C7\\u00C3O\",\"situacao\":99},{\"codigo\":100,\"nome\":\"REQUERIMENTO\",\"situacao\":100}]",
+          "fim": "[{\"codigo\":1,\"nome\":\"PROJETO DE DECRETO LEGISLATIVO\",\"situacao\":1},{\"codigo\":2,\"nome\":\"PROJETO DE EMENDA CONSTITUCIONAL\",\"situacao\":1},{\"codigo\":3,\"nome\":\"PROJETO DE LEI ORDIN\\u00C1RIA\",\"situacao\":0},{\"codigo\":4,\"nome\":\"PROJETO DE LEI COMPLEMENTAR\",\"situacao\":0},{\"codigo\":5,\"nome\":\"PROJETO DE RESOLU\\u00C7\\u00C3O\",\"situacao\":1},{\"codigo\":7,\"nome\":\"PROCESSO\",\"situacao\":1},{\"codigo\":8,\"nome\":\"PROJETO DE INDICA\\u00C7\\u00C3O\",\"situacao\":1},{\"codigo\":20,\"nome\":\"INDICA\\u00C7\\u00C3O\",\"situacao\":1},{\"codigo\":99,\"nome\":\"MO\\u00C7\\u00C3O\",\"situacao\":99},{\"codigo\":100,\"nome\":\"REQUERIMENTO\",\"situacao\":100}]"
+        },
+        {
+          "metodo": "GET",
+          "url": "https://www.alepa.pa.gov.br/Legislativo/GetTipoAutores",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 110,
+          "inicio": "[{\"codigo\":1,\"nome\":\"DEPUTADO(A) ESTADUAL\"},{\"codigo\":2,\"nome\":\"EX-DEPUTADO(A)\"},{\"codigo\":3,\"nome\":\"OUTROS\"}]",
+          "fim": "[{\"codigo\":1,\"nome\":\"DEPUTADO(A) ESTADUAL\"},{\"codigo\":2,\"nome\":\"EX-DEPUTADO(A)\"},{\"codigo\":3,\"nome\":\"OUTROS\"}]"
+        }
+      ]
+    },
     "pautasEnderecos": {
       "url": "https://www.alepa.pa.gov.br/Home/Page/PautasPlenario",
       "caminhos": [
@@ -526,7 +558,7 @@
           "url": "https://www.alepa.pa.gov.br/Comunicacao/CallbackPanelDiariosPesquisaAvancadaPartial",
           "status": 200,
           "tipo": "text/plain; charset=utf-8",
-          "bytes": 2828,
+          "bytes": 2827,
           "inicio": "/*DX*/({'id':0,'result':'<%html%>'})/*DXHTML*/ <table class=\"dxcvControl_Office365 dxcv\" id=\"CardView\" style=\"width:100%;border-collapse:separate;\"> <tr> <td><table id=\"CardView_DXMainTable\" class=\"dxcvTable_Office365\" style=\"width:100%;empty-cells:show;\"> <tr> <td id=\"CardView_DXEmptyCard\" class=\"dxcvEmptyCard_Office365\"><div> Nenhum registro encontrado </div></td> </tr> </table><table id=\"CardVi"
         }
       ]
@@ -1084,12 +1116,12 @@
       ],
       "chamadas": [
         {
-          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6af0h2v9101483413za208zd9101483413xf1&_p=1792118962322&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=244054165.1792118962&frm=0&ngs=1&pscdl=noapi&rcb=13&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792118962&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1875",
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1v9101483413za208zd9101483413xf1&_p=1792119693191&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1185734491.1792119693&frm=0&ngs=1&pscdl=noapi&rcb=11&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792119693&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1625",
           "status": 204,
           "tipo": "text/plain"
         },
         {
-          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6af0h2v9101483413za200zd9101483413xf1&_p=1792118962322&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=244054165.1792118962&frm=0&ngs=1&pscdl=noapi&rcb=13&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=2&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792118962&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=scroll&epn.percent_scrolled=90&_et=7&tfd=6883",
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1v9101483413za200zd9101483413xf1&_p=1792119693191&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1185734491.1792119693&frm=0&ngs=1&pscdl=noapi&rcb=11&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=2&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792119693&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=scroll&epn.percent_scrolled=90&_et=7&tfd=6634",
           "status": 204,
           "tipo": "text/plain"
         }
