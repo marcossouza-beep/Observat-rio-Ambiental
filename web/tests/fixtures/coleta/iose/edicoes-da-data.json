@@ -1,0 +1,25 @@
+{
+  "url": "https://iose.se.gov.br/apifront/portal/edicoes/edicoes_from_data.json",
+  "status": 200,
+  "tipo": "application/json; charset=UTF-8",
+  "gravadaEm": "2026-10-16T17:35:30.984Z",
+  "corpo": {
+    "erro": false,
+    "msg": "",
+    "data": null,
+    "numero": null,
+    "ano": "",
+    "itens": [
+      {
+        "id": 8001,
+        "data": "16/10/2026",
+        "suplemento": "",
+        "numero": 29991,
+        "tipo_edicao_id": 1,
+        "tipo_edicao_nome": "Diário Oficial do Estado de Sergipe",
+        "capa": 1,
+        "paginas": 24
+      }
+    ]
+  }
+}
