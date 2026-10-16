@@ -406,6 +406,9 @@ export const ESTADOS: Estado[] = [
       nome: 'Assembleia Legislativa de São Paulo',
       sigla: 'Alesp',
       candidatos: [
+        // Ficha de um processo e pesquisa de proposituras (aplicação; o estudo com navegador anota as chamadas à API)
+        site('https://www.al.sp.gov.br/processo/1100004484'),
+        site('https://www.al.sp.gov.br/propositura/pesquisa?ano=2026'),
         site('https://www.al.sp.gov.br/'),
         dados('https://www.al.sp.gov.br/dados-abertos/'),
         dados('https://www.al.sp.gov.br/dados-abertos/catalogo'),
