@@ -1,0 +1,635 @@
+{
+  "url": "https://sapl.al.pi.leg.br/api/materia/statustramitacao/?page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T17:14:37.738Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 68,
+      "total_entries": 68,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 54,
+        "__str__": "Aguardando assinatura do autógrafo.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/54",
+        "metadata": {},
+        "sigla": "AGAUTOGRAF",
+        "descricao": "Aguardando assinatura do autógrafo.",
+        "indicador": ""
+      },
+      {
+        "id": 84,
+        "__str__": "Aguardando Devolução do Pedido de Vista",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/84",
+        "metadata": {},
+        "sigla": "AGPEDVISTA",
+        "descricao": "Aguardando Devolução do Pedido de Vista",
+        "indicador": ""
+      },
+      {
+        "id": 2,
+        "__str__": "Aguardando emissão de parecer da comissão",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/2",
+        "metadata": {},
+        "sigla": "AGPARECER",
+        "descricao": "Aguardando emissão de parecer da comissão",
+        "indicador": "R"
+      },
+      {
+        "id": 63,
+        "__str__": "Aguardando promulgação da Norma Jurídica.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/63",
+        "metadata": {},
+        "sigla": "AGNORMA",
+        "descricao": "Aguardando promulgação da Norma Jurídica.",
+        "indicador": ""
+      },
+      {
+        "id": 17,
+        "__str__": "Aguardando sanção governamental",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/17",
+        "metadata": {},
+        "sigla": "AGSANCAO",
+        "descricao": "Aguardando sanção governamental",
+        "indicador": "F"
+      },
+      {
+        "id": 93,
+        "__str__": "Aguardando Votação em Plenário",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/93",
+        "metadata": {},
+        "sigla": "AV",
+        "descricao": "Aguardando Votação em Plenário",
+        "indicador": "R"
+      },
+      {
+        "id": 79,
+        "__str__": "Comissão de Agricultura",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/79",
+        "metadata": {},
+        "sigla": "Cagc",
+        "descricao": "Comissão de Agricultura",
+        "indicador": "R"
+      },
+      {
+        "id": 89,
+        "__str__": "Encaminhada à comissão",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/89",
+        "metadata": {},
+        "sigla": "EAC",
+        "descricao": "Encaminhada à comissão",
+        "indicador": ""
+      },
+      {
+        "id": 65,
+        "__str__": "Encaminhar Oficio",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/65",
+        "metadata": {},
+        "sigla": "ENCOFICIO",
+        "descricao": "Encaminhar Oficio",
+        "indicador": ""
+      },
+      {
+        "id": 82,
+        "__str__": "Indicativo Encaminhado",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/82",
+        "metadata": {},
+        "sigla": "INDENC",
+        "descricao": "Indicativo Encaminhado",
+        "indicador": ""
+      },
+      {
+        "id": 64,
+        "__str__": "Norma Promulgada",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/64",
+        "metadata": {},
+        "sigla": "NORMPROM",
+        "descricao": "Norma Promulgada",
+        "indicador": ""
+      },
+      {
+        "id": 91,
+        "__str__": "Ofício encaminhado",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/91",
+        "metadata": {},
+        "sigla": "OE",
+        "descricao": "Ofício encaminhado",
+        "indicador": ""
+      },
+      {
+        "id": 8,
+        "__str__": "Parecer da CCJ ou da CFO pelo arquivamento da proposição",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/8",
+        "metadata": {},
+        "sigla": "PARECERARQ",
+        "descricao": "Parecer da CCJ ou da CFO pelo arquivamento da proposição",
+        "indicador": "F"
+      },
+      {
+        "id": 55,
+        "__str__": "Parecer da Comissão de Defesa do Consumidor e Meio Amiente",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/55",
+        "metadata": {},
+        "sigla": "PARFAVCMA",
+        "descricao": "Parecer da Comissão de Defesa do Consumidor e Meio Amiente",
+        "indicador": ""
+      },
+      {
+        "id": 56,
+        "__str__": "Parecer da Comissão de Fisc. e Controle, Finanças Tributação",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/56",
+        "metadata": {},
+        "sigla": "PARFAVFCF",
+        "descricao": "Parecer da Comissão de Fisc. e Controle, Finanças Tributação",
+        "indicador": ""
+      },
+      {
+        "id": 47,
+        "__str__": "Parecer em Plenário pelas comissões pertinentes",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/47",
+        "metadata": {},
+        "sigla": "PARECPLEN",
+        "descricao": "Parecer em Plenário pelas comissões pertinentes",
+        "indicador": "F"
+      },
+      {
+        "id": 50,
+        "__str__": "Parecer em reunião conjunta das Comissões pertinentes",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/50",
+        "metadata": {},
+        "sigla": "PAREUCONJ",
+        "descricao": "Parecer em reunião conjunta das Comissões pertinentes",
+        "indicador": "R"
+      },
+      {
+        "id": 71,
+        "__str__": "Pareceres Favoráveis das Comissões",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/71",
+        "metadata": {},
+        "sigla": "PARFAVCOM",
+        "descricao": "Pareceres Favoráveis das Comissões",
+        "indicador": ""
+      },
+      {
+        "id": 6,
+        "__str__": "Parecer Favorável da Comissão",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/6",
+        "metadata": {},
+        "sigla": "PARECERFAV",
+        "descricao": "Parecer Favorável da Comissão",
+        "indicador": "R"
+      },
+      {
+        "id": 52,
+        "__str__": "Parecer Favorável da Comissão Adm. Pública e Política Social",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/52",
+        "metadata": {},
+        "sigla": "PARFAVCAD",
+        "descricao": "Parecer Favorável da Comissão Adm. Pública e Política Social",
+        "indicador": ""
+      },
+      {
+        "id": 81,
+        "__str__": "Parecer Favorável da Comissão de Agricultura",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/81",
+        "metadata": {},
+        "sigla": "PFCAGC",
+        "descricao": "Parecer Favorável da Comissão de Agricultura",
+        "indicador": "R"
+      },
+      {
+        "id": 31,
+        "__str__": "Parecer Favorável da Comissão de Constituição e Justiça",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/31",
+        "metadata": {},
+        "sigla": "PARFAVCCJ",
+        "descricao": "Parecer Favorável da Comissão de Constituição e Justiça",
+        "indicador": "R"
+      },
+      {
+        "id": 59,
+        "__str__": "Parecer Favorável da Comissão de Direitos Humanos.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/59",
+        "metadata": {},
+        "sigla": "PARFAVCDH",
+        "descricao": "Parecer Favorável da Comissão de Direitos Humanos.",
+        "indicador": ""
+      },
+      {
+        "id": 32,
+        "__str__": "Parecer Favorável da Comissão de Finanças e Orçamento",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/32",
+        "metadata": {},
+        "sigla": "PARFAVCFO",
+        "descricao": "Parecer Favorável da Comissão de Finanças e Orçamento",
+        "indicador": "R"
+      },
+      {
+        "id": 58,
+        "__str__": "Parecer Favorável da Comissão de Infraestrutura.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/58",
+        "metadata": {},
+        "sigla": "PARFAVCIPS",
+        "descricao": "Parecer Favorável da Comissão de Infraestrutura.",
+        "indicador": ""
+      },
+      {
+        "id": 74,
+        "__str__": "Parecer Favorável da Comissão dos Direitos da Mulher",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/74",
+        "metadata": {},
+        "sigla": "PARECCDM",
+        "descricao": "Parecer Favorável da Comissão dos Direitos da Mulher",
+        "indicador": ""
+      },
+      {
+        "id": 68,
+        "__str__": "Parecer Pela Manutenção do Veto.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/68",
+        "metadata": {},
+        "sigla": "PARMANVETO",
+        "descricao": "Parecer Pela Manutenção do Veto.",
+        "indicador": ""
+      },
+      {
+        "id": 38,
+        "__str__": "Parecer pela rejeição do Veto",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/38",
+        "metadata": {},
+        "sigla": "REJEIVETO",
+        "descricao": "Parecer pela rejeição do Veto",
+        "indicador": "R"
+      },
+      {
+        "id": 37,
+        "__str__": "Parecer pelo manutenção do veto",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/37",
+        "metadata": {},
+        "sigla": "MANUTVETO",
+        "descricao": "Parecer pelo manutenção do veto",
+        "indicador": "R"
+      },
+      {
+        "id": 72,
+        "__str__": "Pedido de Vista",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/72",
+        "metadata": {},
+        "sigla": "PEDVISTA",
+        "descricao": "Pedido de Vista",
+        "indicador": ""
+      },
+      {
+        "id": 61,
+        "__str__": "Proposição Anexada",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/61",
+        "metadata": {},
+        "sigla": "PROPANEX",
+        "descricao": "Proposição Anexada",
+        "indicador": ""
+      },
+      {
+        "id": 75,
+        "__str__": "Proposição apresentada em plenário",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/75",
+        "metadata": {},
+        "sigla": "APLEN",
+        "descricao": "Proposição apresentada em plenário",
+        "indicador": "R"
+      },
+      {
+        "id": 77,
+        "__str__": "Proposição apresentada em plenário",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/77",
+        "metadata": {},
+        "sigla": "APLEN",
+        "descricao": "Proposição apresentada em plenário",
+        "indicador": ""
+      },
+      {
+        "id": 76,
+        "__str__": "Proposição apresentada em plenário",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/76",
+        "metadata": {},
+        "sigla": "APLEN",
+        "descricao": "Proposição apresentada em plenário",
+        "indicador": ""
+      },
+      {
+        "id": 28,
+        "__str__": "Proposição apresentada em Plenário",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/28",
+        "metadata": {},
+        "sigla": "APPLEN",
+        "descricao": "Proposição apresentada em Plenário",
+        "indicador": "R"
+      },
+      {
+        "id": 78,
+        "__str__": "Proposição Apresentada em Plenário",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/78",
+        "metadata": {},
+        "sigla": "APLEN",
+        "descricao": "Proposição Apresentada em Plenário",
+        "indicador": "R"
+      },
+      {
+        "id": 9,
+        "__str__": "Proposição  Aprovada",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/9",
+        "metadata": {},
+        "sigla": "APROVADA",
+        "descricao": "Proposição  Aprovada",
+        "indicador": "F"
+      },
+      {
+        "id": 60,
+        "__str__": "Proposição aprovada com Emenda",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/60",
+        "metadata": {},
+        "sigla": "APROVEMEN",
+        "descricao": "Proposição aprovada com Emenda",
+        "indicador": ""
+      },
+      {
+        "id": 53,
+        "__str__": "Proposição aprovada em 1º turno.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/53",
+        "metadata": {},
+        "sigla": "APROVPRIM",
+        "descricao": "Proposição aprovada em 1º turno.",
+        "indicador": ""
+      },
+      {
+        "id": 57,
+        "__str__": "Proposição aprovada em 2º  turno",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/57",
+        "metadata": {},
+        "sigla": "APROVSEG",
+        "descricao": "Proposição aprovada em 2º  turno",
+        "indicador": ""
+      },
+      {
+        "id": 14,
+        "__str__": "Proposição arquivada",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/14",
+        "metadata": {},
+        "sigla": "ARQUIVADA",
+        "descricao": "Proposição arquivada",
+        "indicador": "F"
+      },
+      {
+        "id": 5,
+        "__str__": "Proposição autuada",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/5",
+        "metadata": {},
+        "sigla": "PROPAUTUA",
+        "descricao": "Proposição autuada",
+        "indicador": "R"
+      },
+      {
+        "id": 20,
+        "__str__": "Proposição com veto total",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/20",
+        "metadata": {},
+        "sigla": "VETOTOTAL",
+        "descricao": "Proposição com veto total",
+        "indicador": "R"
+      },
+      {
+        "id": 88,
+        "__str__": "Proposição Desarquivada",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/88",
+        "metadata": {},
+        "sigla": "PD",
+        "descricao": "Proposição Desarquivada",
+        "indicador": ""
+      },
+      {
+        "id": 86,
+        "__str__": "Proposição despachada",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/86",
+        "metadata": {},
+        "sigla": "PROPDESP",
+        "descricao": "Proposição despachada",
+        "indicador": ""
+      },
+      {
+        "id": 87,
+        "__str__": "Proposição devolvida à Comissão",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/87",
+        "metadata": {},
+        "sigla": "PROPDEVCOM",
+        "descricao": "Proposição devolvida à Comissão",
+        "indicador": ""
+      },
+      {
+        "id": 85,
+        "__str__": "Proposição devolvida para o Relator",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/85",
+        "metadata": {},
+        "sigla": "PROPDEVREL",
+        "descricao": "Proposição devolvida para o Relator",
+        "indicador": ""
+      },
+      {
+        "id": 62,
+        "__str__": "Proposição Devolvido ao Autor",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/62",
+        "metadata": {},
+        "sigla": "DEVAUTOR",
+        "descricao": "Proposição Devolvido ao Autor",
+        "indicador": ""
+      },
+      {
+        "id": 73,
+        "__str__": "Proposição encaminhada à Com. de Estudos Territoriais",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/73",
+        "metadata": {},
+        "sigla": "PROPCETE",
+        "descricao": "Proposição encaminhada à Com. de Estudos Territoriais",
+        "indicador": ""
+      },
+      {
+        "id": 70,
+        "__str__": "Proposição encaminhada à Com. de Fisc.Con.Finanças e Tribut.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/70",
+        "metadata": {},
+        "sigla": "PROPCFC",
+        "descricao": "Proposição encaminhada à Com. de Fisc.Con.Finanças e Tribut.",
+        "indicador": ""
+      },
+      {
+        "id": 12,
+        "__str__": "Proposição encaminhada à Comissão de Constituição e Justiça",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/12",
+        "metadata": {},
+        "sigla": "PROPCCJ",
+        "descricao": "Proposição encaminhada à Comissão de Constituição e Justiça",
+        "indicador": "R"
+      },
+      {
+        "id": 66,
+        "__str__": "Proposição encaminhada à Comissão de Constituição e Justiça",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/66",
+        "metadata": {},
+        "sigla": "PROPCCJ",
+        "descricao": "Proposição encaminhada à Comissão de Constituição e Justiça",
+        "indicador": ""
+      },
+      {
+        "id": 83,
+        "__str__": "Proposição encaminhada à Comissão Representativa",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/83",
+        "metadata": {},
+        "sigla": "CR",
+        "descricao": "Proposição encaminhada à Comissão Representativa",
+        "indicador": ""
+      },
+      {
+        "id": 3,
+        "__str__": "Proposição Inclusa na Ordem do Dia",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/3",
+        "metadata": {},
+        "sigla": "PRINCORDIA",
+        "descricao": "Proposição Inclusa na Ordem do Dia",
+        "indicador": "R"
+      },
+      {
+        "id": 90,
+        "__str__": "Proposição Publicada",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/90",
+        "metadata": {},
+        "sigla": "PUBLICADA",
+        "descricao": "Proposição Publicada",
+        "indicador": "F"
+      },
+      {
+        "id": 10,
+        "__str__": "Proposição rejeitada pelo Plenário",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/10",
+        "metadata": {},
+        "sigla": "REJEITADA",
+        "descricao": "Proposição rejeitada pelo Plenário",
+        "indicador": "F"
+      },
+      {
+        "id": 49,
+        "__str__": "Proposição retirada da Ordem do Dia.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/49",
+        "metadata": {},
+        "sigla": "RETORDIA",
+        "descricao": "Proposição retirada da Ordem do Dia.",
+        "indicador": "R"
+      },
+      {
+        "id": 4,
+        "__str__": "Proposição retirada pelo autor",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/4",
+        "metadata": {},
+        "sigla": "RETAUTOR",
+        "descricao": "Proposição retirada pelo autor",
+        "indicador": "F"
+      },
+      {
+        "id": 51,
+        "__str__": "Proposição Transformada em Indicação",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/51",
+        "metadata": {},
+        "sigla": "TRANSFIND",
+        "descricao": "Proposição Transformada em Indicação",
+        "indicador": ""
+      },
+      {
+        "id": 18,
+        "__str__": "Proposição Transformada em Lei",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/18",
+        "metadata": {},
+        "sigla": "TRANSFLEI",
+        "descricao": "Proposição Transformada em Lei",
+        "indicador": "F"
+      },
+      {
+        "id": 35,
+        "__str__": "Proposição transformada em Lei por promulgação",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/35",
+        "metadata": {},
+        "sigla": "LEIPROMUL",
+        "descricao": "Proposição transformada em Lei por promulgação",
+        "indicador": "F"
+      },
+      {
+        "id": 80,
+        "__str__": "Relator da Comissão de Agricultura",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/80",
+        "metadata": {},
+        "sigla": "RCAGC",
+        "descricao": "Relator da Comissão de Agricultura",
+        "indicador": "R"
+      },
+      {
+        "id": 92,
+        "__str__": "Resposta ao Ofício",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/92",
+        "metadata": {},
+        "sigla": "RO",
+        "descricao": "Resposta ao Ofício",
+        "indicador": ""
+      },
+      {
+        "id": 94,
+        "__str__": "Solenidade Realizada",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/94",
+        "metadata": {},
+        "sigla": "SR",
+        "descricao": "Solenidade Realizada",
+        "indicador": "F"
+      },
+      {
+        "id": 34,
+        "__str__": "Transformada em lei com veto parcial",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/34",
+        "metadata": {},
+        "sigla": "LEIVETPAR",
+        "descricao": "Transformada em lei com veto parcial",
+        "indicador": "R"
+      },
+      {
+        "id": 69,
+        "__str__": "Veto Sobre a Proposição Mantido.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/69",
+        "metadata": {},
+        "sigla": "VETMANT",
+        "descricao": "Veto Sobre a Proposição Mantido.",
+        "indicador": ""
+      },
+      {
+        "id": 67,
+        "__str__": "Veto Sobre a Proposição Rejeitado",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/67",
+        "metadata": {},
+        "sigla": "VETREJEI",
+        "descricao": "Veto Sobre a Proposição Rejeitado",
+        "indicador": ""
+      },
+      {
+        "id": 42,
+        "__str__": "Veto total ou parcial promulgado",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/42",
+        "metadata": {},
+        "sigla": "PROMULVETO",
+        "descricao": "Veto total ou parcial promulgado",
+        "indicador": "F"
+      }
+    ]
+  }
+}

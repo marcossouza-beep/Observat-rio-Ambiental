@@ -1,0 +1,32 @@
+{
+  "url": "https://sapl.al.pi.leg.br/api/materia/autoria/?materia=21330",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T17:14:39.777Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 1,
+      "total_entries": 1,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 21497,
+        "__str__": "Autoria: Henrique Pires - Indicativo de Projeto de Lei nº 1 de 2026",
+        "link_detail_backend": "/materia/autoria/21497",
+        "metadata": {},
+        "primeiro_autor": true,
+        "autor": 212,
+        "materia": 21330
+      }
+    ]
+  }
+}

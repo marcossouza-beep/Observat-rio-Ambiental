@@ -1,0 +1,303 @@
+{
+  "url": "https://sapl3.al.pb.leg.br/api/materia/statustramitacao/?page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T17:14:34.346Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 35,
+      "total_entries": 35,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 33,
+        "__str__": ".",
+        "metadata": {},
+        "sigla": ".",
+        "descricao": ".",
+        "indicador": "R"
+      },
+      {
+        "id": 35,
+        "__str__": "adendo ao expediente",
+        "metadata": {},
+        "sigla": "ADE EX",
+        "descricao": "adendo ao expediente",
+        "indicador": "F"
+      },
+      {
+        "id": 53,
+        "__str__": "ADIADA A VOTAÇÃO",
+        "metadata": {},
+        "sigla": "AAV",
+        "descricao": "ADIADA A VOTAÇÃO",
+        "indicador": "R"
+      },
+      {
+        "id": 13,
+        "__str__": "Aguardando distribuição",
+        "metadata": {},
+        "sigla": "AG DISTRIB",
+        "descricao": "Aguardando distribuição",
+        "indicador": "R"
+      },
+      {
+        "id": 22,
+        "__str__": "Aguardando Parecer do Relator",
+        "metadata": {},
+        "sigla": "AG PAR",
+        "descricao": "Aguardando Parecer do Relator",
+        "indicador": "R"
+      },
+      {
+        "id": 21,
+        "__str__": "Aguardando resposta",
+        "metadata": {},
+        "sigla": "AG RESP",
+        "descricao": "Aguardando resposta",
+        "indicador": "R"
+      },
+      {
+        "id": 19,
+        "__str__": "Aprovado",
+        "metadata": {},
+        "sigla": "APROV",
+        "descricao": "Aprovado",
+        "indicador": "R"
+      },
+      {
+        "id": 36,
+        "__str__": "Aprovado a Urgência ",
+        "metadata": {},
+        "sigla": "AP UR",
+        "descricao": "Aprovado a Urgência ",
+        "indicador": "R"
+      },
+      {
+        "id": 17,
+        "__str__": "Arquivado",
+        "metadata": {},
+        "sigla": "ARQUIVADO",
+        "descricao": "Arquivado",
+        "indicador": "F"
+      },
+      {
+        "id": 20,
+        "__str__": "Com resposta",
+        "metadata": {},
+        "sigla": "COM RESP",
+        "descricao": "Com resposta",
+        "indicador": "F"
+      },
+      {
+        "id": 27,
+        "__str__": "Constou no Expediente",
+        "metadata": {},
+        "sigla": "EXP",
+        "descricao": "Constou no Expediente",
+        "indicador": "R"
+      },
+      {
+        "id": 30,
+        "__str__": "COSTOU NA ORDEM DO  DIA   ",
+        "metadata": {},
+        "sigla": "CON",
+        "descricao": "COSTOU NA ORDEM DO  DIA   ",
+        "indicador": "R"
+      },
+      {
+        "id": 18,
+        "__str__": "Despachada",
+        "metadata": {},
+        "sigla": "DESPACHADA",
+        "descricao": "Despachada",
+        "indicador": "R"
+      },
+      {
+        "id": 37,
+        "__str__": "Destacado para proxima Ordem do Dia",
+        "metadata": {},
+        "sigla": "DEST",
+        "descricao": "Destacado para proxima Ordem do Dia",
+        "indicador": "R"
+      },
+      {
+        "id": 25,
+        "__str__": "Incluir na Ordem do Dia",
+        "metadata": {},
+        "sigla": "DIA",
+        "descricao": "Incluir na Ordem do Dia",
+        "indicador": "R"
+      },
+      {
+        "id": 56,
+        "__str__": "Incluir no Expediente",
+        "metadata": {},
+        "sigla": " INCEXP",
+        "descricao": "Incluir no Expediente",
+        "indicador": "R"
+      },
+      {
+        "id": 29,
+        "__str__": "Indicação de Relator",
+        "metadata": {},
+        "sigla": "RELATOR",
+        "descricao": "Indicação de Relator",
+        "indicador": "R"
+      },
+      {
+        "id": 40,
+        "__str__": "Mantido o Veto",
+        "metadata": {},
+        "sigla": "MANTIDO VE",
+        "descricao": "Mantido o Veto",
+        "indicador": "R"
+      },
+      {
+        "id": 24,
+        "__str__": "Matéria Prejudicada",
+        "metadata": {},
+        "sigla": "PREJUDCAD",
+        "descricao": "Matéria Prejudicada",
+        "indicador": "F"
+      },
+      {
+        "id": 16,
+        "__str__": "Matéria Regimental",
+        "metadata": {},
+        "sigla": "REGIMENTAL",
+        "descricao": "Matéria Regimental",
+        "indicador": "R"
+      },
+      {
+        "id": 55,
+        "__str__": "Pela reprovação",
+        "metadata": {},
+        "sigla": "PRP",
+        "descricao": "Pela reprovação",
+        "indicador": "R"
+      },
+      {
+        "id": 52,
+        "__str__": "PROTOCOLADA NA ASSEMBLÉIA LEGISLATIVA",
+        "metadata": {},
+        "sigla": "PROT",
+        "descricao": "PROTOCOLADA NA ASSEMBLÉIA LEGISLATIVA",
+        "indicador": "R"
+      },
+      {
+        "id": 39,
+        "__str__": "Recebido em Plenário",
+        "metadata": {},
+        "sigla": "R P",
+        "descricao": "Recebido em Plenário",
+        "indicador": "R"
+      },
+      {
+        "id": 54,
+        "__str__": "Redação Final Aprovado",
+        "metadata": {},
+        "sigla": "RFA",
+        "descricao": "Redação Final Aprovado",
+        "indicador": "R"
+      },
+      {
+        "id": 51,
+        "__str__": "Redação final e autografo",
+        "metadata": {},
+        "sigla": "RFIM",
+        "descricao": "Redação final e autografo",
+        "indicador": "R"
+      },
+      {
+        "id": 15,
+        "__str__": "Registrado",
+        "metadata": {},
+        "sigla": "REGISTRADO",
+        "descricao": "Registrado",
+        "indicador": "F"
+      },
+      {
+        "id": 8,
+        "__str__": "Rejeitado",
+        "metadata": {},
+        "sigla": "REJEITADO",
+        "descricao": "Rejeitado",
+        "indicador": "R"
+      },
+      {
+        "id": 26,
+        "__str__": "REJEITADO",
+        "metadata": {},
+        "sigla": "RJ",
+        "descricao": "REJEITADO",
+        "indicador": "F"
+      },
+      {
+        "id": 57,
+        "__str__": "Retirado a pedido do Autor",
+        "metadata": {},
+        "sigla": "RPA",
+        "descricao": "Retirado a pedido do Autor",
+        "indicador": "F"
+      },
+      {
+        "id": 32,
+        "__str__": "Retirado de Pauta por Haver outro de Igual Teor, de nº: ",
+        "metadata": {},
+        "sigla": "RP",
+        "descricao": "Retirado de Pauta por Haver outro de Igual Teor, de nº: ",
+        "indicador": "R"
+      },
+      {
+        "id": 34,
+        "__str__": "Retirado Pauta",
+        "metadata": {},
+        "sigla": "RT",
+        "descricao": "Retirado Pauta",
+        "indicador": "R"
+      },
+      {
+        "id": 38,
+        "__str__": "Retirado por ausencia do Autor",
+        "metadata": {},
+        "sigla": "RET",
+        "descricao": "Retirado por ausencia do Autor",
+        "indicador": "R"
+      },
+      {
+        "id": 28,
+        "__str__": "Sanção e ou Veto",
+        "metadata": {},
+        "sigla": "SV",
+        "descricao": "Sanção e ou Veto",
+        "indicador": "F"
+      },
+      {
+        "id": 31,
+        "__str__": "Sessão ja realizada",
+        "metadata": {},
+        "sigla": "SE",
+        "descricao": "Sessão ja realizada",
+        "indicador": "R"
+      },
+      {
+        "id": 23,
+        "__str__": "Sessão Realizada",
+        "metadata": {},
+        "sigla": "REALIZADA",
+        "descricao": "Sessão Realizada",
+        "indicador": "F"
+      }
+    ]
+  }
+}

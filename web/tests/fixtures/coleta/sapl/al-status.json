@@ -1,0 +1,923 @@
+{
+  "url": "https://sapl.al.al.leg.br/api/materia/statustramitacao/?page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T17:14:29.980Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": "http://sapl.al.al.leg.br/api/materia/statustramitacao/?page=2&page_size=100",
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": 2,
+      "start_index": 1,
+      "end_index": 100,
+      "total_entries": 190,
+      "total_pages": 2,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 48,
+        "__str__": "ADIADA DISCUSSÃO E VOTAÇÃO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/48",
+        "metadata": {},
+        "sigla": "ADIAVOTAC",
+        "descricao": "ADIADA DISCUSSÃO E VOTAÇÃO",
+        "indicador": "R"
+      },
+      {
+        "id": 30,
+        "__str__": "AGUARDANDO A INCLUSÃO NA ORDEM DO DIA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/30",
+        "metadata": {},
+        "sigla": "AGORDIA",
+        "descricao": "AGUARDANDO A INCLUSÃO NA ORDEM DO DIA",
+        "indicador": "R"
+      },
+      {
+        "id": 40,
+        "__str__": "AGUARDANDO ASSINATURA DA MENSAGEM SOBRE O VETO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/40",
+        "metadata": {},
+        "sigla": "AGMENSVET",
+        "descricao": "AGUARDANDO ASSINATURA DA MENSAGEM SOBRE O VETO",
+        "indicador": "R"
+      },
+      {
+        "id": 16,
+        "__str__": "AGUARDANDO ASSINATURA DO AUTÓGRAFO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/16",
+        "metadata": {},
+        "sigla": "AGAUTOGR",
+        "descricao": "AGUARDANDO ASSINATURA DO AUTÓGRAFO",
+        "indicador": "R"
+      },
+      {
+        "id": 202,
+        "__str__": "AGUARDANDO DESIGNAÇÃO  DE RELATORIA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/202",
+        "metadata": {},
+        "sigla": "AG DR",
+        "descricao": "AGUARDANDO DESIGNAÇÃO  DE RELATORIA",
+        "indicador": "R"
+      },
+      {
+        "id": 2,
+        "__str__": "AGUARDANDO EMISSÃO DE PARECER DA COMISSÃO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/2",
+        "metadata": {},
+        "sigla": "AGPARECER",
+        "descricao": "AGUARDANDO EMISSÃO DE PARECER DA COMISSÃO",
+        "indicador": "R"
+      },
+      {
+        "id": 201,
+        "__str__": "AGUARDANDO EMISSÃO DE PARECER DO RELATOR",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/201",
+        "metadata": {},
+        "sigla": "AG PR",
+        "descricao": "AGUARDANDO EMISSÃO DE PARECER DO RELATOR",
+        "indicador": "R"
+      },
+      {
+        "id": 53,
+        "__str__": "AGUARDANDO LEITURA EM PLENÁRIO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/53",
+        "metadata": {},
+        "sigla": "AGLEITURA",
+        "descricao": "AGUARDANDO LEITURA EM PLENÁRIO",
+        "indicador": "R"
+      },
+      {
+        "id": 115,
+        "__str__": "AGUARDANDO O AUTÓGRAFO DA MESA DIRETORA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/115",
+        "metadata": {},
+        "sigla": "AGUADAUMS",
+        "descricao": "AGUARDANDO O AUTÓGRAFO DA MESA DIRETORA",
+        "indicador": "F"
+      },
+      {
+        "id": 23,
+        "__str__": "AGUARDANDO PROMULGAÇÃO DA LEI",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/23",
+        "metadata": {},
+        "sigla": "AGPROMLEI",
+        "descricao": "AGUARDANDO PROMULGAÇÃO DA LEI",
+        "indicador": "R"
+      },
+      {
+        "id": 43,
+        "__str__": "AGUARDANDO PROMULGAÇÃO DA NORMA JURÍDICA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/43",
+        "metadata": {},
+        "sigla": "AGPROMNOR",
+        "descricao": "AGUARDANDO PROMULGAÇÃO DA NORMA JURÍDICA",
+        "indicador": "R"
+      },
+      {
+        "id": 45,
+        "__str__": "AGUARDANDO PROMULGAÇÃO DE LEI COM VETO REJEITADO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/45",
+        "metadata": {},
+        "sigla": "AGPROMVET",
+        "descricao": "AGUARDANDO PROMULGAÇÃO DE LEI COM VETO REJEITADO",
+        "indicador": "R"
+      },
+      {
+        "id": 17,
+        "__str__": "AGUARDANDO SANÇÃO GOVERNAMENTAL",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/17",
+        "metadata": {},
+        "sigla": "AGSANCAO",
+        "descricao": "AGUARDANDO SANÇÃO GOVERNAMENTAL",
+        "indicador": "R"
+      },
+      {
+        "id": 84,
+        "__str__": "APROVADA PROMULGAÇÃO PELO PRESIDENTE DA ASSEMBLEIA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/84",
+        "metadata": {},
+        "sigla": "APROMGPALE",
+        "descricao": "APROVADA PROMULGAÇÃO PELO PRESIDENTE DA ASSEMBLEIA",
+        "indicador": "F"
+      },
+      {
+        "id": 103,
+        "__str__": "ASSUNTOS EXTRAORDINÁRIOS",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/103",
+        "metadata": {},
+        "sigla": "ASS.",
+        "descricao": "ASSUNTOS EXTRAORDINÁRIOS",
+        "indicador": ""
+      },
+      {
+        "id": 177,
+        "__str__": "CONCLUÍDA TRAMITAÇÃO DA MATÉRIA. ARQUIVE-SE.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/177",
+        "metadata": {},
+        "sigla": "CTRMATARQ",
+        "descricao": "CONCLUÍDA TRAMITAÇÃO DA MATÉRIA. ARQUIVE-SE.",
+        "indicador": "F"
+      },
+      {
+        "id": 70,
+        "__str__": "DISTRIBUIÇÃO ÀS COMISSÕES PERTINENTES",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/70",
+        "metadata": {},
+        "sigla": "DISTRPECOM",
+        "descricao": "DISTRIBUIÇÃO ÀS COMISSÕES PERTINENTES",
+        "indicador": "R"
+      },
+      {
+        "id": 51,
+        "__str__": "ENCAMINHA A PRESIDÊNCIA PARA LEITURA E CONHECIMENTO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/51",
+        "metadata": {},
+        "sigla": "ENCPRES",
+        "descricao": "ENCAMINHA A PRESIDÊNCIA PARA LEITURA E CONHECIMENTO",
+        "indicador": "R"
+      },
+      {
+        "id": 147,
+        "__str__": "GAB DEP LOBÃO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/147",
+        "metadata": {},
+        "sigla": "GAB-LOB",
+        "descricao": "GAB DEP LOBÃO",
+        "indicador": "F"
+      },
+      {
+        "id": 90,
+        "__str__": "GABINETE DO GOVERNADOR",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/90",
+        "metadata": {},
+        "sigla": "GAB",
+        "descricao": "GABINETE DO GOVERNADOR",
+        "indicador": "F"
+      },
+      {
+        "id": 89,
+        "__str__": "GABINETE DO PARLAMENTAR",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/89",
+        "metadata": {},
+        "sigla": "GP",
+        "descricao": "GABINETE DO PARLAMENTAR",
+        "indicador": "F"
+      },
+      {
+        "id": 158,
+        "__str__": "INDICAÇÃO APROVADA, ENVIADA AO SETOR DO EXPEDIENTE.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/158",
+        "metadata": {},
+        "sigla": "INDAPENVEX",
+        "descricao": "INDICAÇÃO APROVADA, ENVIADA AO SETOR DO EXPEDIENTE.",
+        "indicador": "F"
+      },
+      {
+        "id": 125,
+        "__str__": "MANTIDO VETO PARCIAL-ARQUIVAR AO PL ORIGINAL",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/125",
+        "metadata": {},
+        "sigla": "MATSCVPO",
+        "descricao": "MANTIDO VETO PARCIAL-ARQUIVAR AO PL ORIGINAL",
+        "indicador": "F"
+      },
+      {
+        "id": 195,
+        "__str__": "MAT. AGUARDA AUTÓGRAFO DA MESA, SEGUINDO P/ SANÇÃO OU VETO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/195",
+        "metadata": {},
+        "sigla": "MAT.AGORTM",
+        "descricao": "MAT. AGUARDA AUTÓGRAFO DA MESA, SEGUINDO P/ SANÇÃO OU VETO",
+        "indicador": "F"
+      },
+      {
+        "id": 170,
+        "__str__": "MAT. AGUARDANDO SANÇÃO OU VETO GOVERNAMENTAL",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/170",
+        "metadata": {},
+        "sigla": "MATAGUSVG",
+        "descricao": "MAT. AGUARDANDO SANÇÃO OU VETO GOVERNAMENTAL",
+        "indicador": "F"
+      },
+      {
+        "id": 187,
+        "__str__": "MAT. APROVADA 1º TURNO, AGUARDANDO PROSSEGUIMENTO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/187",
+        "metadata": {},
+        "sigla": "MATAPDPTP",
+        "descricao": "MAT. APROVADA 1º TURNO, AGUARDANDO PROSSEGUIMENTO.",
+        "indicador": "F"
+      },
+      {
+        "id": 179,
+        "__str__": "MAT. APROVADA E ENVIADA AO GOVERNADOR P/ SANÇÃO OU VETO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/179",
+        "metadata": {},
+        "sigla": "MATAEGSV",
+        "descricao": "MAT. APROVADA E ENVIADA AO GOVERNADOR P/ SANÇÃO OU VETO",
+        "indicador": "F"
+      },
+      {
+        "id": 192,
+        "__str__": "MAT. APROVADA E SANCIONADA COMO EMENDA CONSTITUCIONAL.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/192",
+        "metadata": {},
+        "sigla": "MAT.SAMDEC",
+        "descricao": "MAT. APROVADA E SANCIONADA COMO EMENDA CONSTITUCIONAL.",
+        "indicador": "F"
+      },
+      {
+        "id": 117,
+        "__str__": "MAT. APROVADA TRANSFORMADA EM EMENDA CONSTITUCIONAL",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/117",
+        "metadata": {},
+        "sigla": "MATAPTEMD",
+        "descricao": "MAT. APROVADA TRANSFORMADA EM EMENDA CONSTITUCIONAL",
+        "indicador": "F"
+      },
+      {
+        "id": 190,
+        "__str__": "MAT. COM SANÇÃO TÁCITA E PROMULGADA PELO PRESIDENTE",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/190",
+        "metadata": {},
+        "sigla": "MATCSTPRP",
+        "descricao": "MAT. COM SANÇÃO TÁCITA E PROMULGADA PELO PRESIDENTE",
+        "indicador": "F"
+      },
+      {
+        "id": 150,
+        "__str__": "MAT. C/ VETO PARCIAL AGUARDANDO LEITURA EM PLENÁRIO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/150",
+        "metadata": {},
+        "sigla": "MATVPAGLP",
+        "descricao": "MAT. C/ VETO PARCIAL AGUARDANDO LEITURA EM PLENÁRIO",
+        "indicador": "F"
+      },
+      {
+        "id": 151,
+        "__str__": "MAT. C/ VETO TOTAL AGUARDANDO LEITURA EM PLENÁRIO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/151",
+        "metadata": {},
+        "sigla": "MATVTAGLP",
+        "descricao": "MAT. C/ VETO TOTAL AGUARDANDO LEITURA EM PLENÁRIO.",
+        "indicador": "F"
+      },
+      {
+        "id": 189,
+        "__str__": "MAT. DEVOLVIDA ÀS COMISSÕES PARA RETIFICAÇÃO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/189",
+        "metadata": {},
+        "sigla": "MATDEVASC",
+        "descricao": "MAT. DEVOLVIDA ÀS COMISSÕES PARA RETIFICAÇÃO.",
+        "indicador": "F"
+      },
+      {
+        "id": 148,
+        "__str__": "MAT. DISCUTIDA, APROVADA EM REDAÇÃO DO VENCIDO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/148",
+        "metadata": {},
+        "sigla": "MATDVAPREV",
+        "descricao": "MAT. DISCUTIDA, APROVADA EM REDAÇÃO DO VENCIDO",
+        "indicador": "F"
+      },
+      {
+        "id": 175,
+        "__str__": "MAT. DISCUTIDA, VOTADA E APROVADA CONFORME REGIMENTO INTERNO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/175",
+        "metadata": {},
+        "sigla": "MATDVAPREG",
+        "descricao": "MAT. DISCUTIDA, VOTADA E APROVADA CONFORME REGIMENTO INTERNO",
+        "indicador": "F"
+      },
+      {
+        "id": 182,
+        "__str__": "MAT. DISCUTIDA, VOTADA E APROVADA EM PLENÁRIO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/182",
+        "metadata": {},
+        "sigla": "MATDISVAP",
+        "descricao": "MAT. DISCUTIDA, VOTADA E APROVADA EM PLENÁRIO.",
+        "indicador": "F"
+      },
+      {
+        "id": 183,
+        "__str__": "MAT. DISCUTIDA, VOTADA E PROVADA PELOS PARLAMENTARES.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/183",
+        "metadata": {},
+        "sigla": "MATDVAPP",
+        "descricao": "MAT. DISCUTIDA, VOTADA E PROVADA PELOS PARLAMENTARES.",
+        "indicador": "F"
+      },
+      {
+        "id": 79,
+        "__str__": "MATÉRIA AGUARDANDO APROVAÇÃO EM REDAÇÃO FINAL",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/79",
+        "metadata": {},
+        "sigla": "MATAGPREDF",
+        "descricao": "MATÉRIA AGUARDANDO APROVAÇÃO EM REDAÇÃO FINAL",
+        "indicador": ""
+      },
+      {
+        "id": 163,
+        "__str__": "MATÉRIA AGUARDANDO APROVAÇÃO NA ORDEM DO DIA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/163",
+        "metadata": {},
+        "sigla": "MATODA",
+        "descricao": "MATÉRIA AGUARDANDO APROVAÇÃO NA ORDEM DO DIA",
+        "indicador": "F"
+      },
+      {
+        "id": 156,
+        "__str__": "MATÉRIA AGUARDANDO LEITURA NO EXPEDIENTE",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/156",
+        "metadata": {},
+        "sigla": "MATAGLEXP",
+        "descricao": "MATÉRIA AGUARDANDO LEITURA NO EXPEDIENTE",
+        "indicador": "F"
+      },
+      {
+        "id": 160,
+        "__str__": "MATÉRIA AGUARDANDO LEITURA NO EXPEDIENTE",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/160",
+        "metadata": {},
+        "sigla": "MATAGLEXP",
+        "descricao": "MATÉRIA AGUARDANDO LEITURA NO EXPEDIENTE",
+        "indicador": "F"
+      },
+      {
+        "id": 161,
+        "__str__": "MATÉRIA AGUARDANDO PRAZO REGIMENTAL P/ SANÇÃO OU VETO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/161",
+        "metadata": {},
+        "sigla": "MATAGPRES",
+        "descricao": "MATÉRIA AGUARDANDO PRAZO REGIMENTAL P/ SANÇÃO OU VETO.",
+        "indicador": "F"
+      },
+      {
+        "id": 81,
+        "__str__": "MATÉRIA AGUARDANDO PROMULGAÇÃO PELA ALE",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/81",
+        "metadata": {},
+        "sigla": "MATAGUARP",
+        "descricao": "MATÉRIA AGUARDANDO PROMULGAÇÃO PELA ALE",
+        "indicador": "F"
+      },
+      {
+        "id": 134,
+        "__str__": "MATÉRIA AGUARDANDO SANÇÃO OU VETO DO GOVERNADOR",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/134",
+        "metadata": {},
+        "sigla": "MATENGSV",
+        "descricao": "MATÉRIA AGUARDANDO SANÇÃO OU VETO DO GOVERNADOR",
+        "indicador": "F"
+      },
+      {
+        "id": 95,
+        "__str__": "MATÉRIA APRESENTADA EM PLENÁRIO EM 2ª DISCUSSÃO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/95",
+        "metadata": {},
+        "sigla": "MATAPDISC",
+        "descricao": "MATÉRIA APRESENTADA EM PLENÁRIO EM 2ª DISCUSSÃO",
+        "indicador": "F"
+      },
+      {
+        "id": 194,
+        "__str__": "MATERIA APROVADA AGUARDANDO AUTOGRAFO, SEGUINDO PARA SANÇÃO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/194",
+        "metadata": {},
+        "sigla": "MAASS",
+        "descricao": "MATERIA APROVADA AGUARDANDO AUTOGRAFO, SEGUINDO PARA SANÇÃO",
+        "indicador": "F"
+      },
+      {
+        "id": 131,
+        "__str__": "MATÉRIA APROVADA AGUARDANDO SANÇÃO GOVERNAMENTAL",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/131",
+        "metadata": {},
+        "sigla": "MATAPAGS",
+        "descricao": "MATÉRIA APROVADA AGUARDANDO SANÇÃO GOVERNAMENTAL",
+        "indicador": "F"
+      },
+      {
+        "id": 162,
+        "__str__": "MATÉRIA APROVADA, AGUARDANDO TRAMITAÇÃO FINAL.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/162",
+        "metadata": {},
+        "sigla": "MATAPTRAM",
+        "descricao": "MATÉRIA APROVADA, AGUARDANDO TRAMITAÇÃO FINAL.",
+        "indicador": "F"
+      },
+      {
+        "id": 71,
+        "__str__": "MATÉRIA APROVADA EM 1ª,2ª DISCUSSÃO E REDAÇÃO FINAL",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/71",
+        "metadata": {},
+        "sigla": "MATAPREF",
+        "descricao": "MATÉRIA APROVADA EM 1ª,2ª DISCUSSÃO E REDAÇÃO FINAL",
+        "indicador": "F"
+      },
+      {
+        "id": 67,
+        "__str__": "MATÉRIA APROVADA EM 1ª e 2ª DISCUSSÃO NA SESSÃO DO DIA.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/67",
+        "metadata": {},
+        "sigla": "MATAP1ª-2ª",
+        "descricao": "MATÉRIA APROVADA EM 1ª e 2ª DISCUSSÃO NA SESSÃO DO DIA.",
+        "indicador": "F"
+      },
+      {
+        "id": 73,
+        "__str__": "MATÉRIA APROVADA EM DISCUSSÃO ÚNICA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/73",
+        "metadata": {},
+        "sigla": "MATAPDISU",
+        "descricao": "MATÉRIA APROVADA EM DISCUSSÃO ÚNICA",
+        "indicador": "F"
+      },
+      {
+        "id": 165,
+        "__str__": "MATÉRIA APROVADA NA ORDEM DO DIA E TRAMITANDO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/165",
+        "metadata": {},
+        "sigla": "MATAPORDT",
+        "descricao": "MATÉRIA APROVADA NA ORDEM DO DIA E TRAMITANDO.",
+        "indicador": "F"
+      },
+      {
+        "id": 141,
+        "__str__": "MATÉRIA APROVADA REDAÇÃO DO VENCIDO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/141",
+        "metadata": {},
+        "sigla": "MAT.APREDV",
+        "descricao": "MATÉRIA APROVADA REDAÇÃO DO VENCIDO",
+        "indicador": "F"
+      },
+      {
+        "id": 173,
+        "__str__": "MATÉRIA APROVADA, TRANSFORMADA EM LEI.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/173",
+        "metadata": {},
+        "sigla": "MATAPTLEI",
+        "descricao": "MATÉRIA APROVADA, TRANSFORMADA EM LEI.",
+        "indicador": "F"
+      },
+      {
+        "id": 69,
+        "__str__": "MATÉRIA APROVADA, TRANSFORMADA EM RESOLUÇÃO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/69",
+        "metadata": {},
+        "sigla": "MATAPRES",
+        "descricao": "MATÉRIA APROVADA, TRANSFORMADA EM RESOLUÇÃO",
+        "indicador": "F"
+      },
+      {
+        "id": 68,
+        "__str__": "MATÉRIA COM PRAZO EXPIRADO PARA SANÇÃO GOVERNAMENTAL",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/68",
+        "metadata": {},
+        "sigla": "MAPESG",
+        "descricao": "MATÉRIA COM PRAZO EXPIRADO PARA SANÇÃO GOVERNAMENTAL",
+        "indicador": "R"
+      },
+      {
+        "id": 136,
+        "__str__": "MATÉRIA COM PRAZO EXPIRADO P/SANÇÃO OU VETO GOVERNAMENTAL",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/136",
+        "metadata": {},
+        "sigla": "MPEXSAVG",
+        "descricao": "MATÉRIA COM PRAZO EXPIRADO P/SANÇÃO OU VETO GOVERNAMENTAL",
+        "indicador": "F"
+      },
+      {
+        "id": 111,
+        "__str__": "MATÉRIA COM VETO TOTAL AGUARDANDO VOTAÇÃO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/111",
+        "metadata": {},
+        "sigla": "MATCVTAGV",
+        "descricao": "MATÉRIA COM VETO TOTAL AGUARDANDO VOTAÇÃO.",
+        "indicador": "F"
+      },
+      {
+        "id": 77,
+        "__str__": "MATÉRIA COM VETO TOTAL TRAMITANDO NA ASSEMBLEIA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/77",
+        "metadata": {},
+        "sigla": "MATVTOTA",
+        "descricao": "MATÉRIA COM VETO TOTAL TRAMITANDO NA ASSEMBLEIA",
+        "indicador": "F"
+      },
+      {
+        "id": 139,
+        "__str__": "MATÉRIA C/ SANÇÃO TÁCITA E PROMULGADA PELO PRESIDENTE",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/139",
+        "metadata": {},
+        "sigla": "MATSANTPRO",
+        "descricao": "MATÉRIA C/ SANÇÃO TÁCITA E PROMULGADA PELO PRESIDENTE",
+        "indicador": "F"
+      },
+      {
+        "id": 88,
+        "__str__": "MATÉRIA DEVOLVIDA AO GABINETE DO PARLAMENTAR",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/88",
+        "metadata": {},
+        "sigla": "MATDEVGAB",
+        "descricao": "MATÉRIA DEVOLVIDA AO GABINETE DO PARLAMENTAR",
+        "indicador": "F"
+      },
+      {
+        "id": 87,
+        "__str__": "MATÉRIA DISCUTIDA AGUARDANDO VOTAÇÃO EM PLENÁRIO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/87",
+        "metadata": {},
+        "sigla": "MADISCAVP",
+        "descricao": "MATÉRIA DISCUTIDA AGUARDANDO VOTAÇÃO EM PLENÁRIO",
+        "indicador": "F"
+      },
+      {
+        "id": 92,
+        "__str__": "MATÉRIA DISCUTIDA E APROVADA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/92",
+        "metadata": {},
+        "sigla": "MATDISAPR",
+        "descricao": "MATÉRIA DISCUTIDA E APROVADA",
+        "indicador": "F"
+      },
+      {
+        "id": 110,
+        "__str__": "MATÉRIA DISCUTIDA E APROVADA EM 1º, 2º TURNO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/110",
+        "metadata": {},
+        "sigla": "MATDISAP",
+        "descricao": "MATÉRIA DISCUTIDA E APROVADA EM 1º, 2º TURNO",
+        "indicador": "F"
+      },
+      {
+        "id": 149,
+        "__str__": "MATÉRIA DISCUTIDA E APROVADA EM REDAÇÃO DO VENCIDO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/149",
+        "metadata": {},
+        "sigla": "MATDAPREDV",
+        "descricao": "MATÉRIA DISCUTIDA E APROVADA EM REDAÇÃO DO VENCIDO",
+        "indicador": "F"
+      },
+      {
+        "id": 118,
+        "__str__": "MATÉRIA DISCUTIDA, VOTADA E APROVADA.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/118",
+        "metadata": {},
+        "sigla": "MATDISVAP",
+        "descricao": "MATÉRIA DISCUTIDA, VOTADA E APROVADA.",
+        "indicador": "F"
+      },
+      {
+        "id": 72,
+        "__str__": "MATÉRIA DISCUTIDA, VOTADA E APROVADA EM REDAÇÃO FINAL.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/72",
+        "metadata": {},
+        "sigla": "MATAPREDF",
+        "descricao": "MATÉRIA DISCUTIDA, VOTADA E APROVADA EM REDAÇÃO FINAL.",
+        "indicador": "F"
+      },
+      {
+        "id": 159,
+        "__str__": "MATÉRIA EM PAUTA PARA RECEBIMENTO DE EMENDAS POR 10 SESSÕES",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/159",
+        "metadata": {},
+        "sigla": "MATEPRE",
+        "descricao": "MATÉRIA EM PAUTA PARA RECEBIMENTO DE EMENDAS POR 10 SESSÕES",
+        "indicador": "F"
+      },
+      {
+        "id": 130,
+        "__str__": "MATÉRIA EM PLENÁRIO PARA APROVAÇÃO NA ORDEM DO DIA.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/130",
+        "metadata": {},
+        "sigla": "MATDAPVT",
+        "descricao": "MATÉRIA EM PLENÁRIO PARA APROVAÇÃO NA ORDEM DO DIA.",
+        "indicador": "F"
+      },
+      {
+        "id": 129,
+        "__str__": "MATÉRIA EM PLENÁRIO PARA DISCUSSÃO E VOTAÇÃO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/129",
+        "metadata": {},
+        "sigla": "MATDAPVT",
+        "descricao": "MATÉRIA EM PLENÁRIO PARA DISCUSSÃO E VOTAÇÃO.",
+        "indicador": "F"
+      },
+      {
+        "id": 58,
+        "__str__": "MATÉRIA EM SEGUNDA DISCUSSÃO E VOTAÇÃO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/58",
+        "metadata": {},
+        "sigla": "MSEG.DISC.",
+        "descricao": "MATÉRIA EM SEGUNDA DISCUSSÃO E VOTAÇÃO",
+        "indicador": "R"
+      },
+      {
+        "id": 101,
+        "__str__": "MATÉRIA ENCERRADA DISCUSSÃO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/101",
+        "metadata": {},
+        "sigla": "MATENCDISC",
+        "descricao": "MATÉRIA ENCERRADA DISCUSSÃO.",
+        "indicador": "F"
+      },
+      {
+        "id": 132,
+        "__str__": "MATÉRIA ENVIADA AO GOVERNADOR PARA SANÇÃO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/132",
+        "metadata": {},
+        "sigla": "MATENVGS",
+        "descricao": "MATÉRIA ENVIADA AO GOVERNADOR PARA SANÇÃO",
+        "indicador": "F"
+      },
+      {
+        "id": 64,
+        "__str__": "MATÉRIA ENVIADA AO GOVERNADOR PARA SANÇÃO OU VETO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/64",
+        "metadata": {},
+        "sigla": "MASG",
+        "descricao": "MATÉRIA ENVIADA AO GOVERNADOR PARA SANÇÃO OU VETO.",
+        "indicador": "R"
+      },
+      {
+        "id": 119,
+        "__str__": "MATÉRIA ENVIADA ÀS COMISSÕES P/ EMISSÃO DE PARECER.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/119",
+        "metadata": {},
+        "sigla": "MATECEP",
+        "descricao": "MATÉRIA ENVIADA ÀS COMISSÕES P/ EMISSÃO DE PARECER.",
+        "indicador": "F"
+      },
+      {
+        "id": 120,
+        "__str__": "MATÉRIA ENVIADA ÀS COMISSÕES P/ EMISSÃO DE PARECER.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/120",
+        "metadata": {},
+        "sigla": "MATECEP",
+        "descricao": "MATÉRIA ENVIADA ÀS COMISSÕES P/ EMISSÃO DE PARECER.",
+        "indicador": "F"
+      },
+      {
+        "id": 83,
+        "__str__": "MATÉRIA ENVIADA GABINETE DEPUTADO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/83",
+        "metadata": {},
+        "sigla": "MATEGABDEP",
+        "descricao": "MATÉRIA ENVIADA GABINETE DEPUTADO",
+        "indicador": ""
+      },
+      {
+        "id": 199,
+        "__str__": "MAT.ÉRIA ENVIADA PARA LEITURA EM PLENÁRIO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/199",
+        "metadata": {},
+        "sigla": "MATAGLEIP",
+        "descricao": "MAT.ÉRIA ENVIADA PARA LEITURA EM PLENÁRIO",
+        "indicador": "F"
+      },
+      {
+        "id": 114,
+        "__str__": "MATÉRIA IDÊNTICA DO MESMO AUTOR TRAMITANDO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/114",
+        "metadata": {},
+        "sigla": "MATIDAUT",
+        "descricao": "MATÉRIA IDÊNTICA DO MESMO AUTOR TRAMITANDO",
+        "indicador": "F"
+      },
+      {
+        "id": 171,
+        "__str__": "MATERIA IDENTICA TRAMITANDO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/171",
+        "metadata": {},
+        "sigla": "MATIDTR",
+        "descricao": "MATERIA IDENTICA TRAMITANDO",
+        "indicador": "R"
+      },
+      {
+        "id": 164,
+        "__str__": "MATÉRIA INCLUSA NA ORDEM DO DIA PARA APROVAÇÃO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/164",
+        "metadata": {},
+        "sigla": "MATICORDPA",
+        "descricao": "MATÉRIA INCLUSA NA ORDEM DO DIA PARA APROVAÇÃO.",
+        "indicador": "F"
+      },
+      {
+        "id": 63,
+        "__str__": "MATÉRIA LIDA NO EXPEDIENTE",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/63",
+        "metadata": {},
+        "sigla": "MATLIDA",
+        "descricao": "MATÉRIA LIDA NO EXPEDIENTE",
+        "indicador": "R"
+      },
+      {
+        "id": 102,
+        "__str__": "MATÉRIA LIDA NO EXPEDIENTE, À PUBLICAÇÃO, ÀS COMISSÕES.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/102",
+        "metadata": {},
+        "sigla": "MATLEXPCOM",
+        "descricao": "MATÉRIA LIDA NO EXPEDIENTE, À PUBLICAÇÃO, ÀS COMISSÕES.",
+        "indicador": "F"
+      },
+      {
+        "id": 93,
+        "__str__": "MATÉRIA LIDA NO EXPEDIENTE E EM PAUTA POR 3 SESSÕES",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/93",
+        "metadata": {},
+        "sigla": "MATLEXPS",
+        "descricao": "MATÉRIA LIDA NO EXPEDIENTE E EM PAUTA POR 3 SESSÕES",
+        "indicador": "F"
+      },
+      {
+        "id": 105,
+        "__str__": "MATÉRIA NA ORDEM DO DIA EM  DISCUSSÃO 1º TURNO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/105",
+        "metadata": {},
+        "sigla": "MATINCORDT",
+        "descricao": "MATÉRIA NA ORDEM DO DIA EM  DISCUSSÃO 1º TURNO.",
+        "indicador": "F"
+      },
+      {
+        "id": 107,
+        "__str__": "MATÉRIA NA ORDEM DO DIA EM VOTAÇÃO 1º TURNO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/107",
+        "metadata": {},
+        "sigla": "MATODVT",
+        "descricao": "MATÉRIA NA ORDEM DO DIA EM VOTAÇÃO 1º TURNO.",
+        "indicador": "F"
+      },
+      {
+        "id": 106,
+        "__str__": "MATÉRIA NA ORDEM DO DIA PARA DISCUSSÃO 2º TURNO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/106",
+        "metadata": {},
+        "sigla": "MATODPDT",
+        "descricao": "MATÉRIA NA ORDEM DO DIA PARA DISCUSSÃO 2º TURNO.",
+        "indicador": "F"
+      },
+      {
+        "id": 108,
+        "__str__": "MATÉRIA NA ORDEM DO DIA PARA VOTAÇÃO  EM 2º TURNO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/108",
+        "metadata": {},
+        "sigla": "MATODV2T",
+        "descricao": "MATÉRIA NA ORDEM DO DIA PARA VOTAÇÃO  EM 2º TURNO.",
+        "indicador": "F"
+      },
+      {
+        "id": 104,
+        "__str__": "MATÉRIA NÃO SANCIONADA E NÃO PROMULGADA.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/104",
+        "metadata": {},
+        "sigla": "MATNSENPRO",
+        "descricao": "MATÉRIA NÃO SANCIONADA E NÃO PROMULGADA.",
+        "indicador": "F"
+      },
+      {
+        "id": 61,
+        "__str__": "MATÉRIA PARA RECEBIMENTO DE EMENDAS",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/61",
+        "metadata": {},
+        "sigla": "MAT.REC.EM",
+        "descricao": "MATÉRIA PARA RECEBIMENTO DE EMENDAS",
+        "indicador": "R"
+      },
+      {
+        "id": 142,
+        "__str__": "MATÉRIA PREJUDICADA PLEITO IDÊNTICO.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/142",
+        "metadata": {},
+        "sigla": "MATPLEIDEN",
+        "descricao": "MATÉRIA PREJUDICADA PLEITO IDÊNTICO.",
+        "indicador": "F"
+      },
+      {
+        "id": 78,
+        "__str__": "MATÉRIA PREJUDICADA PLEITO IDÊNTICO TRAMITANDO",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/78",
+        "metadata": {},
+        "sigla": "MATREPI",
+        "descricao": "MATÉRIA PREJUDICADA PLEITO IDÊNTICO TRAMITANDO",
+        "indicador": ""
+      },
+      {
+        "id": 116,
+        "__str__": "MATÉRIA PROMULGADA PELA MESA DIRETORA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/116",
+        "metadata": {},
+        "sigla": "MATPMD",
+        "descricao": "MATÉRIA PROMULGADA PELA MESA DIRETORA",
+        "indicador": "F"
+      },
+      {
+        "id": 138,
+        "__str__": "MATÉRIA PROMULGADA PELO PRESIDENTE DA ASSEMBLEIA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/138",
+        "metadata": {},
+        "sigla": "MATPPALE",
+        "descricao": "MATÉRIA PROMULGADA PELO PRESIDENTE DA ASSEMBLEIA",
+        "indicador": "F"
+      },
+      {
+        "id": 155,
+        "__str__": "MATÉRIA RECEBEU VETO TOTAL DO GOVERNADOR",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/155",
+        "metadata": {},
+        "sigla": "MATVTG",
+        "descricao": "MATÉRIA RECEBEU VETO TOTAL DO GOVERNADOR",
+        "indicador": "F"
+      },
+      {
+        "id": 146,
+        "__str__": "MATÉRIA RETIRADA DE PAUTA",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/146",
+        "metadata": {},
+        "sigla": "MATRETPAUT",
+        "descricao": "MATÉRIA RETIRADA DE PAUTA",
+        "indicador": "F"
+      },
+      {
+        "id": 178,
+        "__str__": "MATÉRIA SANCIONADA COMO LEI COMPLEMENTAR",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/178",
+        "metadata": {},
+        "sigla": "MATAPTLC",
+        "descricao": "MATÉRIA SANCIONADA COMO LEI COMPLEMENTAR",
+        "indicador": "F"
+      },
+      {
+        "id": 181,
+        "__str__": "MATÉRIA SANCIONADA COMO LEI COMPLEMENTAR.",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/181",
+        "metadata": {},
+        "sigla": "MATSANLC",
+        "descricao": "MATÉRIA SANCIONADA COMO LEI COMPLEMENTAR.",
+        "indicador": "F"
+      },
+      {
+        "id": 76,
+        "__str__": "MATÉRIA SANCIONADA COM VETO PARCIAL",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/76",
+        "metadata": {},
+        "sigla": "MATSANCVEP",
+        "descricao": "MATÉRIA SANCIONADA COM VETO PARCIAL",
+        "indicador": "F"
+      },
+      {
+        "id": 62,
+        "__str__": "MATERIA SANCIONADA TRANSFORMADA EM LEI",
+        "link_detail_backend": "/sistema/materia/status-tramitacao/62",
+        "metadata": {},
+        "sigla": "MATESAN",
+        "descricao": "MATERIA SANCIONADA TRANSFORMADA EM LEI",
+        "indicador": "F"
+      }
+    ]
+  }
+}

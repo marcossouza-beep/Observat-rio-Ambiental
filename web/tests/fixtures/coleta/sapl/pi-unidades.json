@@ -1,0 +1,419 @@
+{
+  "url": "https://sapl.al.pi.leg.br/api/materia/unidadetramitacao/?page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T17:14:37.980Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 44,
+      "total_entries": 44,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 25,
+        "__str__": "Arquivo - ARQ",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/25",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 3,
+        "parlamentar": null
+      },
+      {
+        "id": 79,
+        "__str__": "AUTÓGRAFO - AUT",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/79",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 65,
+        "parlamentar": null
+      },
+      {
+        "id": 50,
+        "__str__": "Autoria da Proposição - AUTPROP",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/50",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 37,
+        "parlamentar": null
+      },
+      {
+        "id": 74,
+        "__str__": "CAPDR - Comissão de Agricultura, Pecuária e Desenvolvimento Rural",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/74",
+        "metadata": {},
+        "comissao": 15,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 35,
+        "__str__": "CAPPS - Comissão de Administração Pública e Política Social",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/35",
+        "metadata": {},
+        "comissao": 2,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 32,
+        "__str__": "CCJ - Comissão de Constituição e Justiça",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/32",
+        "metadata": {},
+        "comissao": 1,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 47,
+        "__str__": "CDCMA - Comissão de Defesa do Consumidor e do Meio Ambiente",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/47",
+        "metadata": {},
+        "comissao": 6,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 40,
+        "__str__": "CDDM - Comissão de Defesa dos Direitos da Mulher",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/40",
+        "metadata": {},
+        "comissao": 8,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 42,
+        "__str__": "CDHJMIR - Comissão dos Direitos Humanos, Juventude, Minorias e Igualdade Racial",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/42",
+        "metadata": {},
+        "comissao": 5,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 82,
+        "__str__": "CEM - Comissão de Energia e Mineração",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/82",
+        "metadata": {},
+        "comissao": 13,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 80,
+        "__str__": "Cerimonial - CER",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/80",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 66,
+        "parlamentar": null
+      },
+      {
+        "id": 54,
+        "__str__": "CETE - Comissão de Estudos Territoriais",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/54",
+        "metadata": {},
+        "comissao": 9,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 38,
+        "__str__": "CFCFT - Comissão de Fiscalização e Controle, Finanças e Tributação",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/38",
+        "metadata": {},
+        "comissao": 4,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 37,
+        "__str__": "CIPET - Comissão de Infraestrutura, Política Econômica e Turismo",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/37",
+        "metadata": {},
+        "comissao": 3,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 53,
+        "__str__": "Comissão de Direitos Humanos - CDH",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/53",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 41,
+        "parlamentar": null
+      },
+      {
+        "id": 77,
+        "__str__": "Comissão Representativa - CR",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/77",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 62,
+        "parlamentar": null
+      },
+      {
+        "id": 56,
+        "__str__": "CSEC - Comissão de Saúde, Educação e Cultura",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/56",
+        "metadata": {},
+        "comissao": 10,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 41,
+        "__str__": "CSP - Comissão de Segurança Pública e Combate ao Crime Organizado",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/41",
+        "metadata": {},
+        "comissao": 7,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 66,
+        "__str__": "DIRETORIA FINANCEIRA - DIRF",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/66",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 50,
+        "parlamentar": null
+      },
+      {
+        "id": 81,
+        "__str__": "DIRETORIA GERAL - DIRGER",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/81",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 77,
+        "parlamentar": null
+      },
+      {
+        "id": 34,
+        "__str__": "Diretoria Legislativa - DIRLEG",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/34",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 4,
+        "parlamentar": null
+      },
+      {
+        "id": 27,
+        "__str__": "Diretoria Legislativa - DIRLEG",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/27",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 4,
+        "parlamentar": null
+      },
+      {
+        "id": 30,
+        "__str__": "Divisão de Apoio Legislativo - DAL",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/30",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 8,
+        "parlamentar": null
+      },
+      {
+        "id": 78,
+        "__str__": "Gabinete de Deputado - GABDEP",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/78",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 64,
+        "parlamentar": null
+      },
+      {
+        "id": 49,
+        "__str__": "Mesa Diretora - MSD",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/49",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 36,
+        "parlamentar": null
+      },
+      {
+        "id": 23,
+        "__str__": "Plenário - PLEN",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/23",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 1,
+        "parlamentar": null
+      },
+      {
+        "id": 76,
+        "__str__": "Poder Executivo Estadual - Palácio de Karnak - PES - PK",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/76",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 61,
+        "parlamentar": null
+      },
+      {
+        "id": 69,
+        "__str__": "PRESIDENCIA - PRES",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/69",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 53,
+        "parlamentar": null
+      },
+      {
+        "id": 52,
+        "__str__": "Primeira Secretaria - PRIMSEC",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/52",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 40,
+        "parlamentar": null
+      },
+      {
+        "id": 28,
+        "__str__": "Protocolo Legislativo - PL",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/28",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 5,
+        "parlamentar": null
+      },
+      {
+        "id": 29,
+        "__str__": "Publicação - PUB",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/29",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 7,
+        "parlamentar": null
+      },
+      {
+        "id": 24,
+        "__str__": "Redação de Atas - RA",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/24",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 6,
+        "parlamentar": null
+      },
+      {
+        "id": 33,
+        "__str__": "Relator - Comissão de Constituição e Justiça - RCCJ",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/33",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 26,
+        "parlamentar": null
+      },
+      {
+        "id": 36,
+        "__str__": "Relator da Comissão de Adm. Pública e Política Social - RADM",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/36",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 28,
+        "parlamentar": null
+      },
+      {
+        "id": 75,
+        "__str__": "Relator da Comissão de Agricultura - RELCAGC",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/75",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 60,
+        "parlamentar": null
+      },
+      {
+        "id": 43,
+        "__str__": "Relator da Comissão de Defesa do Consumidor e Meio Ambiente - RELCDCMA",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/43",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 32,
+        "parlamentar": null
+      },
+      {
+        "id": 46,
+        "__str__": "Relator da Comissão de Defesa do Direito da Mulher - RELCDDM",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/46",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 35,
+        "parlamentar": null
+      },
+      {
+        "id": 51,
+        "__str__": "Relator da Comissão de Direitos Humanos - RCDH",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/51",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 38,
+        "parlamentar": null
+      },
+      {
+        "id": 58,
+        "__str__": "Relator da Comissão de Educação, Cultura e Saúde - RELCECS",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/58",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 43,
+        "parlamentar": null
+      },
+      {
+        "id": 57,
+        "__str__": "Relator da Comissão de Educação, Cultura e Saúde - RELCECS",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/57",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 43,
+        "parlamentar": null
+      },
+      {
+        "id": 45,
+        "__str__": "Relator da Comissão de Fiscal Controle Finanças e Tributação - PELCFCFT",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/45",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 34,
+        "parlamentar": null
+      },
+      {
+        "id": 44,
+        "__str__": "Relator da Comissão de Infraestrutura e Politica Social - RELCIPS",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/44",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 33,
+        "parlamentar": null
+      },
+      {
+        "id": 59,
+        "__str__": "Relator da Comissão de Segurança Pública - RELSEG",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/59",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 44,
+        "parlamentar": null
+      },
+      {
+        "id": 26,
+        "__str__": "Secretaria Geral da Mesa - SGM",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/26",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 2,
+        "parlamentar": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,439 @@
+{
+  "url": "https://sapl3.al.pb.leg.br/api/materia/unidadetramitacao/?page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T17:14:34.523Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 52,
+      "total_entries": 52,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 15,
+        "__str__": "Assessoria ao Plenário - DAP",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 4,
+        "parlamentar": null
+      },
+      {
+        "id": 8,
+        "__str__": "CASPS - Comissão de Administração, Serviço Público e Segurança",
+        "metadata": {},
+        "comissao": 9,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 5,
+        "__str__": "CCJR - Comissão de Constituição, Justiça e Redação",
+        "metadata": {},
+        "comissao": 5,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 37,
+        "__str__": "CDDPD - Comissão de Defesa dos Direitos das Pessoas com Deficiência",
+        "metadata": {},
+        "comissao": 56,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 7,
+        "__str__": "CDHM - Comissão de Direitos Humanos e Minorias",
+        "metadata": {},
+        "comissao": 8,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 36,
+        "__str__": "CDMIO - Comissão de Direitos da Mulher",
+        "metadata": {},
+        "comissao": 20,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 6,
+        "__str__": "CDTMA - Comissão de Desenvolvimento, Turismo e Meio Ambiente",
+        "metadata": {},
+        "comissao": 7,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 10,
+        "__str__": "CECD - Comissão de Educação  Cultura e Desportos",
+        "metadata": {},
+        "comissao": 11,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 29,
+        "__str__": "CEDP - Conselho de Ética e Decoro Parlamentar",
+        "metadata": {},
+        "comissao": 17,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 30,
+        "__str__": "CEOP - Comissão Especial das Obras Paralizadas",
+        "metadata": {},
+        "comissao": 18,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 47,
+        "__str__": "CIRIN - Comissão de Incentivo às Relacões Internacionais de Negócios",
+        "metadata": {},
+        "comissao": 72,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 48,
+        "__str__": "CJEL - Comissão de Juventude, Esporte e Lazer",
+        "metadata": {},
+        "comissao": 73,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 12,
+        "__str__": "CLC - Comissão de Legislação Cidadã",
+        "metadata": {},
+        "comissao": 13,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 2,
+        "__str__": "COFTT - Comissão Orçamento, Fiscalização, Tributação e Transparência",
+        "metadata": {},
+        "comissao": 2,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 39,
+        "__str__": "CPI - Comissão Parlamentar de Inquerito - CPI - Do Feminicídio",
+        "metadata": {},
+        "comissao": 58,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 9,
+        "__str__": "CSMDC - Comissão Semi-Árido  Meio Ambiente e Defesa Civil",
+        "metadata": {},
+        "comissao": 10,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 31,
+        "__str__": "CSSASSA - Comissão de Saúde,Saneamento,Assistência Social,Segurança Al",
+        "metadata": {},
+        "comissao": 12,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 18,
+        "__str__": "Depto. de Assistência as Comissões - DAC",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 7,
+        "parlamentar": null
+      },
+      {
+        "id": 16,
+        "__str__": "Depto. de Assistência e Controle do Processo Legislativo - DACPL",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 5,
+        "parlamentar": null
+      },
+      {
+        "id": 25,
+        "__str__": "Divisão de Apoio as Comissões Permanentes - DACP",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 12,
+        "parlamentar": null
+      },
+      {
+        "id": 19,
+        "__str__": "Divisão de Apoio as Comissões Temporárias - DACT",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 8,
+        "parlamentar": null
+      },
+      {
+        "id": 26,
+        "__str__": "Divisão de Arquivo - DIARQ",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 13,
+        "parlamentar": null
+      },
+      {
+        "id": 21,
+        "__str__": "Divisão de Comunicação Oficial - DICOF",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 10,
+        "parlamentar": null
+      },
+      {
+        "id": 45,
+        "__str__": "Divisão de Pesquisa e Estudos Legislativo - DPEL",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 20,
+        "parlamentar": null
+      },
+      {
+        "id": 22,
+        "__str__": "Divisão de Publicação Oficial - DPO",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 11,
+        "parlamentar": null
+      },
+      {
+        "id": 20,
+        "__str__": "Divisão de Redação e Autógrafo - DRA",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 9,
+        "parlamentar": null
+      },
+      {
+        "id": 55,
+        "__str__": "FPA - Frente Parlamentar do Agronegócio",
+        "metadata": {},
+        "comissao": 82,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 49,
+        "__str__": "FPAAF - Frente Parlamentar da Água e da Agricultura Familiar",
+        "metadata": {},
+        "comissao": 76,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 50,
+        "__str__": "FPAAF - Frente Parlamentar da Água e da Agricultura Familiar",
+        "metadata": {},
+        "comissao": 76,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 63,
+        "__str__": "FPADADV - Frente Parlamentar da Advocacia",
+        "metadata": {},
+        "comissao": 90,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 51,
+        "__str__": "FPAPC - Frente Parlamentar da Autodefesa e Proteção do Cidadão",
+        "metadata": {},
+        "comissao": 78,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 41,
+        "__str__": "FPCTI - Frente Parlamentar de Ciência, Tecnologia e Inovação",
+        "metadata": {},
+        "comissao": 62,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 40,
+        "__str__": "FPDAS - Frente Parlamentar em Defesa da Assistência Social",
+        "metadata": {},
+        "comissao": 60,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 53,
+        "__str__": "FPDC - Frente Parlamentar em Defesa do Cooperativismo",
+        "metadata": {},
+        "comissao": 80,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 57,
+        "__str__": "FPDCP - Frente Parlamentar do Desenvolvimento do Cariri Paraibano",
+        "metadata": {},
+        "comissao": 84,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 38,
+        "__str__": "FPDDPA - Frente Parlam. Defesa dos Direitos das Pessoas com Autismo",
+        "metadata": {},
+        "comissao": 55,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 56,
+        "__str__": "FPDDSRH - Frente Parlamentar em Defesa do Desenvolvimento Sustentável dos Recursos Hídricos do Projeto de Inte",
+        "metadata": {},
+        "comissao": 83,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 54,
+        "__str__": "FPDETE - Frente Parlamentar em Defesa de Empreendedorismo, Turismo e Inovação",
+        "metadata": {},
+        "comissao": 81,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 44,
+        "__str__": "FPDPSBER - Ft Parl em Defesa das Práticas Sustentáveis, Biocombustíveis",
+        "metadata": {},
+        "comissao": 65,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 58,
+        "__str__": "FPDQS - Frente Parlamentar do Desenvolvimento Qualificado da Saúde",
+        "metadata": {},
+        "comissao": 85,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 43,
+        "__str__": "FPDRACPNA - Frente Parlamentar de Doenças Raras, Autismo, Câncer, Pessoas Neuro-atípicas e em Defesa e Promoção do Terceiro Setor",
+        "metadata": {},
+        "comissao": 64,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 62,
+        "__str__": "FPDSM - Frente Parlamentar em Defesa da Saúde Mental e da Pessoa Neurodivergente",
+        "metadata": {},
+        "comissao": 89,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 61,
+        "__str__": "FPDSP - Frente Parlamentar em Defesa do Sertão Paraibano",
+        "metadata": {},
+        "comissao": 88,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 52,
+        "__str__": "FPDVM - Frente Parlamentar em Defesa do Vale de Mamanguape",
+        "metadata": {},
+        "comissao": 79,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 64,
+        "__str__": "FPIESEGN - Frente Parlamentar de Infraestrutura Energética: Solar, Eólica e de Gás Natural da Paraíba",
+        "metadata": {},
+        "comissao": 91,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 59,
+        "__str__": "FPMIP - Frente Parlamentar do Mercado Imobiliário da Paraíba",
+        "metadata": {},
+        "comissao": 86,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 60,
+        "__str__": "FPMU - Frente Parlamentar de Mobilidade Urbana",
+        "metadata": {},
+        "comissao": 87,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 42,
+        "__str__": "FPPCFCBPS - FP de Proteção do Conjunto de Falésias do Cabo Branco",
+        "metadata": {},
+        "comissao": 63,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 33,
+        "__str__": "Gabinete do Deputado - GD",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 17,
+        "parlamentar": null
+      },
+      {
+        "id": 34,
+        "__str__": "Movimentação de matéria - MOV",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 18,
+        "parlamentar": null
+      },
+      {
+        "id": 32,
+        "__str__": "PROCURADORIA JURIDICA - PJ",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 16,
+        "parlamentar": null
+      },
+      {
+        "id": 17,
+        "__str__": "Secretaria Legislativa - SL",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 6,
+        "parlamentar": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "url": "https://sapl.al.al.leg.br/api/materia/autoria/?materia=15246",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T17:14:32.386Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 1,
+      "total_entries": 1,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 14929,
+        "__str__": "Autoria: DEPUTADO DELEGADO LEONAM - INDICAÇÃO nº 2057 de 2026",
+        "link_detail_backend": "/materia/autoria/14929",
+        "metadata": {},
+        "primeiro_autor": true,
+        "autor": 118,
+        "materia": 15246
+      }
+    ]
+  }
+}

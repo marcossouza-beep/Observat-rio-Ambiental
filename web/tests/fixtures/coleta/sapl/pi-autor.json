@@ -1,0 +1,24 @@
+{
+  "url": "https://sapl.al.pi.leg.br/api/base/autor/212/",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T17:14:40.300Z",
+  "corpo": {
+    "id": 212,
+    "__str__": "Henrique Pires",
+    "link_detail_backend": "/sistema/autor/212",
+    "metadata": {},
+    "autor_related": {
+      "value": 313,
+      "text": "Henrique Pires"
+    },
+    "object_id": 313,
+    "nome": "Henrique Pires",
+    "cargo": "",
+    "tipo": 1,
+    "content_type": 27,
+    "operadores": [
+      117
+    ]
+  }
+}

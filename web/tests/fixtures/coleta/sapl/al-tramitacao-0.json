@@ -1,0 +1,83 @@
+{
+  "url": "https://sapl.al.al.leg.br/api/materia/tramitacao/?materia=15246&page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T17:14:31.789Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 3,
+      "total_entries": 3,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 79954,
+        "__str__": "INDICAÇÃO nº 2057 de 2026 | AGUARDANDO A INCLUSÃO NA ORDEM DO DIA | 26/05/2026",
+        "link_detail_backend": "/materia/tramitacao/79954",
+        "metadata": {},
+        "timestamp": "2026-05-26T16:08:54.463843-03:00",
+        "data_tramitacao": "2026-05-26",
+        "data_encaminhamento": null,
+        "urgente": false,
+        "turno": "",
+        "texto": "TRAMITANDO",
+        "data_fim_prazo": null,
+        "ip": "186.235.158.21",
+        "ultima_edicao": "2026-05-26T16:08:33.122277-03:00",
+        "status": 30,
+        "materia": 15246,
+        "unidade_tramitacao_local": 17,
+        "unidade_tramitacao_destino": 17,
+        "user": 107
+      },
+      {
+        "id": 79953,
+        "__str__": "INDICAÇÃO nº 2057 de 2026 | TRAMITANDO | 26/05/2026",
+        "link_detail_backend": "/materia/tramitacao/79953",
+        "metadata": {},
+        "timestamp": "2026-05-26T16:08:30.132871-03:00",
+        "data_tramitacao": "2026-05-26",
+        "data_encaminhamento": null,
+        "urgente": false,
+        "turno": "",
+        "texto": "",
+        "data_fim_prazo": null,
+        "ip": "186.235.158.21",
+        "ultima_edicao": "2026-05-26T16:08:19.918172-03:00",
+        "status": 54,
+        "materia": 15246,
+        "unidade_tramitacao_local": 57,
+        "unidade_tramitacao_destino": 17,
+        "user": 107
+      },
+      {
+        "id": 76402,
+        "__str__": "INDICAÇÃO nº 2057 de 2026 | RETORNO DA MATÉRIA PARA TRAMITAÇÃO E APROVAÇÃO. | 26/01/2026",
+        "link_detail_backend": "/materia/tramitacao/76402",
+        "metadata": {},
+        "timestamp": "2026-01-26T17:18:01.244223-03:00",
+        "data_tramitacao": "2026-01-26",
+        "data_encaminhamento": "2026-01-26",
+        "urgente": false,
+        "turno": "",
+        "texto": "TRAMITANDO",
+        "data_fim_prazo": null,
+        "ip": "186.235.158.21",
+        "ultima_edicao": "2026-01-26T17:17:44.012918-03:00",
+        "status": 193,
+        "materia": 15246,
+        "unidade_tramitacao_local": 15,
+        "unidade_tramitacao_destino": 57,
+        "user": 183
+      }
+    ]
+  }
+}

@@ -1,0 +1,923 @@
+{
+  "url": "https://sapl.al.al.leg.br/api/materia/unidadetramitacao/?page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T17:14:30.749Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": "http://sapl.al.al.leg.br/api/materia/unidadetramitacao/?page=2&page_size=100",
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": 2,
+      "start_index": 1,
+      "end_index": 100,
+      "total_entries": 127,
+      "total_pages": 2,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 1,
+        "__str__": "02 CCJR - 02ª Comissão de Constituição, Justiça e Redação - 07 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/1",
+        "metadata": {},
+        "comissao": 1,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 2,
+        "__str__": "03 COFPE - 03ª Comissão de Orçamento, Finanças, Planejamento e Economia - 05 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/2",
+        "metadata": {},
+        "comissao": 2,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 3,
+        "__str__": "04 CECET - 04ª Comissão de Educação, Cultura, Esporte e Turismo - 07 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/3",
+        "metadata": {},
+        "comissao": 3,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 4,
+        "__str__": "05 CAPR - 05ª Comissão de Agricultura e Política Rural - 05 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/4",
+        "metadata": {},
+        "comissao": 4,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 5,
+        "__str__": "06 CTCSOP - 06ª Comissão de Transporte, Comunicação, Serviços e Obras Pública - 05 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/5",
+        "metadata": {},
+        "comissao": 5,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 6,
+        "__str__": "07 CARTAMD - 07ª Comissão de Administração, Rel. do Trabalho, Ass. Mun. e Defesa do Cons. e Contrib. - 05 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/6",
+        "metadata": {},
+        "comissao": 6,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 7,
+        "__str__": "08 CFC - 08ª Comissão de Fiscalização e Controle - 07 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/7",
+        "metadata": {},
+        "comissao": 7,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 8,
+        "__str__": "09 CDH - 09ª Comissão de Direitos Humanos e Segurança Pública - 05 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/8",
+        "metadata": {},
+        "comissao": 8,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 9,
+        "__str__": "10 CLP - 10ª Comissão de Legislação Participativa - 05 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/9",
+        "metadata": {},
+        "comissao": 9,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 10,
+        "__str__": "11 CMAPA - 11ª Comissão Meio Ambiente e Proteção dos Animais - 05 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/10",
+        "metadata": {},
+        "comissao": 10,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 11,
+        "__str__": "12 CCEDP - 12ª Conselho de Ética e Decoro Parlamentar - 05 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/11",
+        "metadata": {},
+        "comissao": 11,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 12,
+        "__str__": "13 CCTI - 13ª Comissão de Ciência e Tecnologia da Informação - 05 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/12",
+        "metadata": {},
+        "comissao": 12,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 106,
+        "__str__": "14 CCAFDM - 14ª Comissão de Criança e Adol., Família e Direitos da Mulher - 05 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/106",
+        "metadata": {},
+        "comissao": 13,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 107,
+        "__str__": "15 CSSS - 15ª Comissão de Saúde e Seguridade Social - 07 membros",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/107",
+        "metadata": {},
+        "comissao": 14,
+        "orgao": null,
+        "parlamentar": null
+      },
+      {
+        "id": 49,
+        "__str__": "1ª SECRETARIA - 1SEC",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/49",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 37,
+        "parlamentar": null
+      },
+      {
+        "id": 54,
+        "__str__": "2ª SECRETARIA - 2 SEC",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/54",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 42,
+        "parlamentar": null
+      },
+      {
+        "id": 55,
+        "__str__": "3ª SECRETARIA - 3 SEC",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/55",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 43,
+        "parlamentar": null
+      },
+      {
+        "id": 56,
+        "__str__": "4ª SECRETARIA - 4 SEC",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/56",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 44,
+        "parlamentar": null
+      },
+      {
+        "id": 87,
+        "__str__": "ARQUIVO FUNCIONAL - ARQ.FUNC",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/87",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 74,
+        "parlamentar": null
+      },
+      {
+        "id": 16,
+        "__str__": "ARQUIVO GERAL - ARQ",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/16",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 4,
+        "parlamentar": null
+      },
+      {
+        "id": 89,
+        "__str__": "ASSENTAMENTO FINANCEIRO - ASSE. FIN",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/89",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 76,
+        "parlamentar": null
+      },
+      {
+        "id": 109,
+        "__str__": "ASSESSORIA DA PRESIDÊNCIA - ASS.PRES",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/109",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 94,
+        "parlamentar": null
+      },
+      {
+        "id": 108,
+        "__str__": "ASSUNTOS EXTRAORDINÁRIOS - ASS.EXTRA",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/108",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 93,
+        "parlamentar": null
+      },
+      {
+        "id": 119,
+        "__str__": "COMISSÃO CONSTITUIÇÃO JUSTIÇA E REDAÇÃO - SCCJR 07",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/119",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 102,
+        "parlamentar": null
+      },
+      {
+        "id": 115,
+        "__str__": "COMISSÃO CONSTITUIÇÃO JUSTIÇA E REDAÇÃO - SCCJR 03",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/115",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 98,
+        "parlamentar": null
+      },
+      {
+        "id": 121,
+        "__str__": "COMISSÃO CONSTITUIÇÃO JUSTIÇA E REDAÇÃO - SCCJR-08",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/121",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 103,
+        "parlamentar": null
+      },
+      {
+        "id": 118,
+        "__str__": "COMISSÃO CONSTITUIÇÃO JUSTIÇA E REDAÇÃO - SCCJR 06",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/118",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 101,
+        "parlamentar": null
+      },
+      {
+        "id": 116,
+        "__str__": "COMISSÃO CONSTITUIÇÃO JUSTIÇA E REDAÇÃO - SCCJR 04",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/116",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 99,
+        "parlamentar": null
+      },
+      {
+        "id": 117,
+        "__str__": "COMISSÃO CONSTITUIÇÃO JUSTIÇA E REDAÇÃO - SCCJR 05",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/117",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 100,
+        "parlamentar": null
+      },
+      {
+        "id": 113,
+        "__str__": "COMISSÃO CONSTITUIÇÃO JUSTIÇA E REDAÇÃO - SCCJR 01",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/113",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 96,
+        "parlamentar": null
+      },
+      {
+        "id": 114,
+        "__str__": "COMISSÃO CONSTITUIÇÃO JUSTIÇA E REDAÇÃO - SCCJR 02",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/114",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 97,
+        "parlamentar": null
+      },
+      {
+        "id": 60,
+        "__str__": "COMISSÃO TÉCNICA - COM-TEC",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/60",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 47,
+        "parlamentar": null
+      },
+      {
+        "id": 61,
+        "__str__": "COORDENAÇÃO GERAL DE ASSUNTOS LEGISLATIVOS - COORG-LEG",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/61",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 48,
+        "parlamentar": null
+      },
+      {
+        "id": 90,
+        "__str__": "DIREITOS E DEVERES - DIR. DEV",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/90",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 77,
+        "parlamentar": null
+      },
+      {
+        "id": 52,
+        "__str__": "DIRETORIA ADMINISTRATIVA - D ADM",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/52",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 40,
+        "parlamentar": null
+      },
+      {
+        "id": 17,
+        "__str__": "DIRETORIA APOIO LEGISLATIVO - APOL",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/17",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 5,
+        "parlamentar": null
+      },
+      {
+        "id": 76,
+        "__str__": "DIRETORIA DA ESCOLA DO LEGISLATIVO - DIR-ESCLEG",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/76",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 64,
+        "parlamentar": null
+      },
+      {
+        "id": 74,
+        "__str__": "DIRETORIA DAS COMISSÕES TECNICAS - DIR-COMTEC",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/74",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 62,
+        "parlamentar": null
+      },
+      {
+        "id": 47,
+        "__str__": "DIRETORIA DE ADMINISTRAÇÃO DE PESSOAL - DIR-ADPESS",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/47",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 35,
+        "parlamentar": null
+      },
+      {
+        "id": 82,
+        "__str__": "DIRETORIA DE ALMOXARIFADO - DIR-ALMOX",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/82",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 70,
+        "parlamentar": null
+      },
+      {
+        "id": 71,
+        "__str__": "DIRETORIA DE APOIO JURIDICO - DIR-APOJUR",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/71",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 59,
+        "parlamentar": null
+      },
+      {
+        "id": 70,
+        "__str__": "DIRETORIA DE APOIO LEGISLATIVO - DAPL",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/70",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 58,
+        "parlamentar": null
+      },
+      {
+        "id": 133,
+        "__str__": "DIRETORIA DE APOIO LEGISLATIVO - ARQUIVO",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/133",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 116,
+        "parlamentar": null
+      },
+      {
+        "id": 78,
+        "__str__": "DIRETORIA DE ARQUIVO - DIR-ARQ",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/78",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 66,
+        "parlamentar": null
+      },
+      {
+        "id": 72,
+        "__str__": "DIRETORIA DE ATAS, REGISTRO E ANAIS - DIR-ATAREG",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/72",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 60,
+        "parlamentar": null
+      },
+      {
+        "id": 77,
+        "__str__": "DIRETORIA DE CERIMONIAL - DIR-CERIM",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/77",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 65,
+        "parlamentar": null
+      },
+      {
+        "id": 65,
+        "__str__": "DIRETORIA DE COMPRAS - DIR-COMPRA",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/65",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 53,
+        "parlamentar": null
+      },
+      {
+        "id": 59,
+        "__str__": "DIRETORIA DE COMUNICAÇÃO - DIR-COM",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/59",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 46,
+        "parlamentar": null
+      },
+      {
+        "id": 75,
+        "__str__": "DIRETORIA DE CONTROLE INTERNO - DIR-CONTIN",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/75",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 63,
+        "parlamentar": null
+      },
+      {
+        "id": 83,
+        "__str__": "DIRETORIA DE EXPEDIENTE - DIR-EXP",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/83",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 71,
+        "parlamentar": null
+      },
+      {
+        "id": 67,
+        "__str__": "DIRETORIA DE FINANÇAS E CONTABILIDADE - DIR-FINCON",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/67",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 55,
+        "parlamentar": null
+      },
+      {
+        "id": 62,
+        "__str__": "DIRETORIA DE GESTAO DOCUMENTAL - DIR-GEDOC",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/62",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 50,
+        "parlamentar": null
+      },
+      {
+        "id": 50,
+        "__str__": "DIRETORIA DE LICITAÇÕES E CONTRATOS - LIC-CONT",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/50",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 38,
+        "parlamentar": null
+      },
+      {
+        "id": 79,
+        "__str__": "DIRETORIA DE MANUTENÇÃO - DIR-MANU",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/79",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 67,
+        "parlamentar": null
+      },
+      {
+        "id": 63,
+        "__str__": "DIRETORIA DE MATERIAL E PATRIMONIO - DIR-MATPAT",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/63",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 51,
+        "parlamentar": null
+      },
+      {
+        "id": 68,
+        "__str__": "DIRETORIA DE ORÇAMENTO - DIR-ORÇA",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/68",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 56,
+        "parlamentar": null
+      },
+      {
+        "id": 64,
+        "__str__": "DIRETORIA DE PREGAO - DIR-PREG",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/64",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 52,
+        "parlamentar": null
+      },
+      {
+        "id": 85,
+        "__str__": "DIRETORIA DE RECURSOS HUMANOS - DIR-RH",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/85",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 73,
+        "parlamentar": null
+      },
+      {
+        "id": 84,
+        "__str__": "DIRETORIA DE SAUDE E ASSISTENCIA - DIR-SAUDAS",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/84",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 72,
+        "parlamentar": null
+      },
+      {
+        "id": 80,
+        "__str__": "DIRETORIA DE SONORIZAÇÃO - DIR-SON",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/80",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 68,
+        "parlamentar": null
+      },
+      {
+        "id": 73,
+        "__str__": "DIRETORIA DE TAQUIGRAFIA E DEBATES - DIR-TAQDEB",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/73",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 61,
+        "parlamentar": null
+      },
+      {
+        "id": 69,
+        "__str__": "DIRETORIA DE TECNOLOGIA DA INFORMAÇÃO - DIR-TI",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/69",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 57,
+        "parlamentar": null
+      },
+      {
+        "id": 53,
+        "__str__": "DIRETORIA FINANCEIRA - D FINAN",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/53",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 41,
+        "parlamentar": null
+      },
+      {
+        "id": 48,
+        "__str__": "DIRETORIA-GERAL - DGER",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/48",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 36,
+        "parlamentar": null
+      },
+      {
+        "id": 81,
+        "__str__": "DIRETORIA SERVIÇOS GERAIS - DIR-SERG",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/81",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 69,
+        "parlamentar": null
+      },
+      {
+        "id": 46,
+        "__str__": "EXPEDIENTE - EXP",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/46",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 34,
+        "parlamentar": null
+      },
+      {
+        "id": 123,
+        "__str__": "GAB DEP ALEXANDRE AYRES - GAB ALEX",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/123",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 105,
+        "parlamentar": null
+      },
+      {
+        "id": 124,
+        "__str__": "GAB DEP ANDRE SILVA - GAB ANDRE S",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/124",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 106,
+        "parlamentar": null
+      },
+      {
+        "id": 92,
+        "__str__": "GAB DEP ANGELA GARROTE - GAB AG",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/92",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 79,
+        "parlamentar": null
+      },
+      {
+        "id": 18,
+        "__str__": "GAB DEP ANTONIO ALBUQUERQUE - GAB-AA",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/18",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 6,
+        "parlamentar": null
+      },
+      {
+        "id": 93,
+        "__str__": "GAB DEP BRENO ALBUQUERQUE - GAB BRENO",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/93",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 81,
+        "parlamentar": null
+      },
+      {
+        "id": 19,
+        "__str__": "GAB DEP BRUNO TOLEDO - GAB-BT",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/19",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 7,
+        "parlamentar": null
+      },
+      {
+        "id": 94,
+        "__str__": "GAB DEP CABO BEBETO - GAB CABO B",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/94",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 82,
+        "parlamentar": null
+      },
+      {
+        "id": 20,
+        "__str__": "GAB DEP CARIMBÃO JÚNIOR - GAB-CJ",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/20",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 8,
+        "parlamentar": null
+      },
+      {
+        "id": 125,
+        "__str__": "GAB DEP CARLA DANTAS - GAB CARLA D",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/125",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 107,
+        "parlamentar": null
+      },
+      {
+        "id": 95,
+        "__str__": "GAB DEP CIBELE MOURA - GAB CIBELE",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/95",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 80,
+        "parlamentar": null
+      },
+      {
+        "id": 21,
+        "__str__": "GAB DEP DAVI DAVINO - GAB-DD",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/21",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 9,
+        "parlamentar": null
+      },
+      {
+        "id": 91,
+        "__str__": "GAB DEP DAVI MAIA - GAB DM",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/91",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 78,
+        "parlamentar": null
+      },
+      {
+        "id": 126,
+        "__str__": "GAB DEP DELEGADO LEONAM - GAB LEONAM",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/126",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 108,
+        "parlamentar": null
+      },
+      {
+        "id": 127,
+        "__str__": "GAB DEP DOUTOR WANDERLEY - GAB WANDER",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/127",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 109,
+        "parlamentar": null
+      },
+      {
+        "id": 22,
+        "__str__": "GAB DEP DUDU HOLLANDA - GAB-DH",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/22",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 10,
+        "parlamentar": null
+      },
+      {
+        "id": 96,
+        "__str__": "GAB DEP DUDU RONALSA - GAB DUDU R",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/96",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 83,
+        "parlamentar": null
+      },
+      {
+        "id": 23,
+        "__str__": "GAB DEP EDVAL GAIA - GAB-EG",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/23",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 11,
+        "parlamentar": null
+      },
+      {
+        "id": 97,
+        "__str__": "GAB DEP FATIMA CANUTO - GAB FAT CA",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/97",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 84,
+        "parlamentar": null
+      },
+      {
+        "id": 128,
+        "__str__": "GAB DEP FERNANDO PEREIRA - GAB FERNANDO P",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/128",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 110,
+        "parlamentar": null
+      },
+      {
+        "id": 98,
+        "__str__": "GAB DEP FLAVIA CAVALCANTE - GAB FLA C",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/98",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 85,
+        "parlamentar": null
+      },
+      {
+        "id": 24,
+        "__str__": "GAB DEP FRANCISCO TENÓRIO - GAB-FT",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/24",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 12,
+        "parlamentar": null
+      },
+      {
+        "id": 129,
+        "__str__": "GAB DEP GABI GONÇALVES - GAB GABI G",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/129",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 111,
+        "parlamentar": null
+      },
+      {
+        "id": 25,
+        "__str__": "GAB DEP GALBA NOVAES - GAB-GN",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/25",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 13,
+        "parlamentar": null
+      },
+      {
+        "id": 26,
+        "__str__": "GAB DEP GILVAN BARROS FILHO - GAB-GB",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/26",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 14,
+        "parlamentar": null
+      },
+      {
+        "id": 27,
+        "__str__": "GAB DEP INÁCIO LOIOLA - GAB-IL",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/27",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 15,
+        "parlamentar": null
+      },
+      {
+        "id": 28,
+        "__str__": "GAB DEP ISNALDO BULHÕES - GAB-IB",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/28",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 16,
+        "parlamentar": null
+      },
+      {
+        "id": 29,
+        "__str__": "GAB DEP JAIRZINHO LIRA - GAB-JL",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/29",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 17,
+        "parlamentar": null
+      },
+      {
+        "id": 30,
+        "__str__": "GAB DEP JÓ PEREIRA - GAB-JP",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/30",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 18,
+        "parlamentar": null
+      },
+      {
+        "id": 130,
+        "__str__": "GAB DEP LELO MAIA - GAB LELO M",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/130",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 112,
+        "parlamentar": null
+      },
+      {
+        "id": 104,
+        "__str__": "GAB DEP LEO LOUREIRO - GAB LEO",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/104",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 90,
+        "parlamentar": null
+      },
+      {
+        "id": 111,
+        "__str__": "GAB DEP LOBAO - GAB-LOB",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/111",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 95,
+        "parlamentar": null
+      },
+      {
+        "id": 32,
+        "__str__": "GAB DEP LUIZ DANTAS - GAB-LD",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/32",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 20,
+        "parlamentar": null
+      },
+      {
+        "id": 100,
+        "__str__": "GAB DEP MARCELO BELTRÃO - GAB MARC B",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/100",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 86,
+        "parlamentar": null
+      },
+      {
+        "id": 33,
+        "__str__": "GAB DEP MARCELO VICTOR - GAB-MV",
+        "link_detail_backend": "/sistema/materia/unidade-tramitacao/33",
+        "metadata": {},
+        "comissao": null,
+        "orgao": 21,
+        "parlamentar": null
+      }
+    ]
+  }
+}

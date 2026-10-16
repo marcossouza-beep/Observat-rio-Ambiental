@@ -1,0 +1,430 @@
+{
+  "url": "https://sapl3.al.pb.leg.br/api/materia/tipomaterialegislativa/?page_size=100",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T17:14:33.553Z",
+  "corpo": {
+    "pagination": {
+      "links": {
+        "next": null,
+        "previous": null
+      },
+      "previous_page": null,
+      "next_page": null,
+      "start_index": 1,
+      "end_index": 37,
+      "total_entries": 37,
+      "total_pages": 1,
+      "page": 1
+    },
+    "results": [
+      {
+        "id": 21,
+        "__str__": "Autógrafo",
+        "metadata": {},
+        "sigla": "AUT",
+        "descricao": "Autógrafo",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 27,
+        "__str__": "Destaques em Bloco",
+        "metadata": {},
+        "sigla": "DESTC",
+        "descricao": "Destaques em Bloco",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 37,
+        "__str__": "Eleição Mesa Diretora",
+        "metadata": {},
+        "sigla": "EMD",
+        "descricao": "Eleição Mesa Diretora",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 29,
+        "__str__": "Emenda Aditiva",
+        "metadata": {},
+        "sigla": "EMADT",
+        "descricao": "Emenda Aditiva",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 28,
+        "__str__": "Emenda LOA",
+        "metadata": {},
+        "sigla": "ELOA",
+        "descricao": "Emenda LOA",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 30,
+        "__str__": "Emenda Modificativa",
+        "metadata": {},
+        "sigla": "EMMOD",
+        "descricao": "Emenda Modificativa",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 31,
+        "__str__": "Emenda Modificativa/Supressiva",
+        "metadata": {},
+        "sigla": "EM/ES",
+        "descricao": "Emenda Modificativa/Supressiva",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 38,
+        "__str__": "Emenda Plenário",
+        "metadata": {},
+        "sigla": "EMPL",
+        "descricao": "Emenda Plenário",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 39,
+        "__str__": "Emenda PPA",
+        "metadata": {},
+        "sigla": "EPPA",
+        "descricao": "Emenda PPA",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 22,
+        "__str__": "Emendas",
+        "metadata": {},
+        "sigla": "EME",
+        "descricao": "Emendas",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 26,
+        "__str__": "Emendas LDO",
+        "metadata": {},
+        "sigla": "ELDO",
+        "descricao": "Emendas LDO",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 32,
+        "__str__": "Emenda Substitutiva a Projetos de Lei",
+        "metadata": {},
+        "sigla": "EMSUB",
+        "descricao": "Emenda Substitutiva a Projetos de Lei",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 33,
+        "__str__": "Emenda Supressiva",
+        "metadata": {},
+        "sigla": "EMSUP",
+        "descricao": "Emenda Supressiva",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 9,
+        "__str__": "Indicação",
+        "metadata": {},
+        "sigla": "IND",
+        "descricao": "Indicação",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 15,
+        "__str__": "Medida Provisória",
+        "metadata": {},
+        "sigla": "MP",
+        "descricao": "Medida Provisória",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 5,
+        "__str__": "Mensagem",
+        "metadata": {},
+        "sigla": "MSG",
+        "descricao": "Mensagem",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 8,
+        "__str__": "Moção",
+        "metadata": {},
+        "sigla": "MOC",
+        "descricao": "Moção",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 17,
+        "__str__": "Oficio",
+        "metadata": {},
+        "sigla": "OF",
+        "descricao": "Oficio",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 10,
+        "__str__": "Pedido de Informação",
+        "metadata": {},
+        "sigla": "PINF",
+        "descricao": "Pedido de Informação",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 36,
+        "__str__": "Prestação de Contas Anuais",
+        "metadata": {},
+        "sigla": "PCA",
+        "descricao": "Prestação de Contas Anuais",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 12,
+        "__str__": "Processo",
+        "metadata": {},
+        "sigla": "PRO",
+        "descricao": "Processo",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 24,
+        "__str__": "Projeto de Código",
+        "metadata": {},
+        "sigla": "PC",
+        "descricao": "Projeto de Código",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 7,
+        "__str__": "Projeto de Decreto Legislativo",
+        "metadata": {},
+        "sigla": "PDL",
+        "descricao": "Projeto de Decreto Legislativo",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 6,
+        "__str__": "Projeto de Lei Complementar",
+        "metadata": {},
+        "sigla": "PLC",
+        "descricao": "Projeto de Lei Complementar",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 1,
+        "__str__": "Projeto de Lei Ordinária",
+        "metadata": {},
+        "sigla": "PLO",
+        "descricao": "Projeto de Lei Ordinária",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 3,
+        "__str__": "Projeto de Resolução",
+        "metadata": {},
+        "sigla": "PRE",
+        "descricao": "Projeto de Resolução",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 2,
+        "__str__": "Proposta de Emenda Constitucional",
+        "metadata": {},
+        "sigla": "PEC",
+        "descricao": "Proposta de Emenda Constitucional",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 35,
+        "__str__": "Questão de ordem",
+        "metadata": {},
+        "sigla": "QORD",
+        "descricao": "Questão de ordem",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 16,
+        "__str__": "Recebido em Plenário",
+        "metadata": {},
+        "sigla": "RE",
+        "descricao": "Recebido em Plenário",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 14,
+        "__str__": "Recurso",
+        "metadata": {},
+        "sigla": "REC",
+        "descricao": "Recurso",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 4,
+        "__str__": "Requerimento",
+        "metadata": {},
+        "sigla": "REQ",
+        "descricao": "Requerimento",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 11,
+        "__str__": "Requerimento de Sessão Especial",
+        "metadata": {},
+        "sigla": "RSE",
+        "descricao": "Requerimento de Sessão Especial",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 20,
+        "__str__": "Retirado de Pauta por haver outro de igual teor nº",
+        "metadata": {},
+        "sigla": "RP",
+        "descricao": "Retirado de Pauta por haver outro de igual teor nº",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 34,
+        "__str__": "Sub-Emenda",
+        "metadata": {},
+        "sigla": "SEMD",
+        "descricao": "Sub-Emenda",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 23,
+        "__str__": "TESTE REQUIMENTO",
+        "metadata": {},
+        "sigla": "TES",
+        "descricao": "TESTE REQUIMENTO",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 13,
+        "__str__": "Veto",
+        "metadata": {},
+        "sigla": "VET",
+        "descricao": "Veto",
+        "num_automatica": true,
+        "quorum_minimo_votacao": 1,
+        "sequencia_numeracao": "A",
+        "sequencia_regimental": 1
+      },
+      {
+        "id": 40,
+        "__str__": "Justificativa de Ausência",
+        "metadata": {},
+        "sigla": "JAUS",
+        "descricao": "Justificativa de Ausência",
+        "num_automatica": false,
+        "quorum_minimo_votacao": null,
+        "sequencia_numeracao": "L",
+        "sequencia_regimental": 2
+      }
+    ]
+  }
+}

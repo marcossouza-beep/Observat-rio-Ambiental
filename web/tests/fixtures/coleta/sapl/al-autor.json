@@ -1,0 +1,22 @@
+{
+  "url": "https://sapl.al.al.leg.br/api/base/autor/118/",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T17:14:32.949Z",
+  "corpo": {
+    "id": 118,
+    "__str__": "DEPUTADO DELEGADO LEONAM",
+    "link_detail_backend": "/sistema/autor/118",
+    "metadata": {},
+    "autor_related": {
+      "value": 126,
+      "text": "DEPUTADO DELEGADO LEONAM"
+    },
+    "object_id": 126,
+    "nome": "DEPUTADO DELEGADO LEONAM",
+    "cargo": "",
+    "tipo": 1,
+    "content_type": 26,
+    "operadores": []
+  }
+}
