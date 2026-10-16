@@ -280,10 +280,14 @@ const PASSOS_CO: Passo[] = [
         `${base}?${new URLSearchParams(Object.fromEntries(Object.entries(o).map(([k, v]) => [`almt_form_proposicao_search_proposicao[${k}]`, v]))).toString()}`
       const ano = String(new Date().getFullYear())
       await gravarHtml('almt', 'proposicoes-pl-ano', q({ tipoPropositura: tipo, ano }))
-      await gravarHtml('almt', 'proposicoes-ambiental', q({ palavraChave: 'ambiental', ano }))
-      await gravarHtml('almt', 'proposicoes-pagina-2', `${q({ tipoPropositura: tipo, ano })}&page=2`)
-      const id = /\/proposicao\/cpdoc\/(\d+)\/visualizar/.exec(html)?.[1]
-      if (id) await gravarHtml('almt', 'detalhe', `${base}/cpdoc/${id}/visualizar`)
+      // Só as publicadas no Diário nos últimos 7 dias; uma proposta pelo número; andamentos e emendas de uma proposta
+      const br = (d: Date) => d.toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+      const periodo = await gravarHtml('almt', 'proposicoes-periodo', q({ tipoPropositura: tipo, dataPublicacaoInicio: br(new Date(Date.now() - 7 * 864e5)) }))
+      await gravarHtml('almt', 'proposicoes-numero', q({ tipoPropositura: tipo, numeroPropositura: '1', ano }))
+      const hp = ((periodo.corpo as { html?: string } | null)?.html || '') as string
+      const ids = [...new Set([...`${hp}${html}`.matchAll(/\/proposicao\/(\d+)\/tramitacoes/g)].map((m) => m[1]))].slice(0, 2)
+      for (const id of ids) await gravarHtml('almt', `tramitacoes-${id}`, `${base}/${id}/tramitacoes`)
+      if (ids[0]) await gravarHtml('almt', `emendas-${ids[0]}`, `${base}/${ids[0]}/emendas-e-substitutivos`)
       await gravarHtml('almt', 'diario-oficial', 'http://diariooficial.al.mt.gov.br/')
     },
   },

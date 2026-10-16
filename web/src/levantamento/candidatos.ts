@@ -204,7 +204,7 @@ export const ESTADOS: Estado[] = [
     casa: {
       nome: 'Assembleia Legislativa de Mato Grosso do Sul',
       sigla: 'ALEMS',
-      candidatos: [site('https://www.al.ms.gov.br/')],
+      candidatos: [site('http://sgpl.consulta.al.ms.gov.br/sgpl-publico/#/busca-proposicoes'), site('https://www.al.ms.gov.br/')],
     },
     diario: {
       nome: 'Diário Oficial de Mato Grosso do Sul',
