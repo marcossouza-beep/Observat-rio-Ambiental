@@ -2,7 +2,7 @@
   "url": "https://bancodeleis.alepa.pa.gov.br/api/leis.php?q=ambiental",
   "status": 200,
   "tipo": "application/json; charset=utf-8",
-  "gravadaEm": "2026-10-16T03:11:20.326Z",
+  "gravadaEm": "2026-10-16T16:38:59.985Z",
   "corpo": {
     "status": true,
     "total": 50,
