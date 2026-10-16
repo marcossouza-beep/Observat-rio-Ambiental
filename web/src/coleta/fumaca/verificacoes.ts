@@ -33,7 +33,7 @@ const semHifen = (d: string) => d.replace(/-/g, '')
 const rapido = { tentativas: 2, esperaBaseMs: 1500, tempoLimiteMs: 40_000 }
 
 /** Propostas reais tratadas como acompanhadas no teste dos conectores estaduais (exercitam a busca de andamentos). */
-const ACOMPANHADAS_DE_TESTE: Record<string, string[]> = { 'casa-ce': ['CE:PL 593/2026'] }
+const ACOMPANHADAS_DE_TESTE: Record<string, string[]> = { 'casa-ce': ['CE:PL 593/2026'], 'casa-mt': ['MT:PL 1/2026'] }
 
 type Camara<T> = { dados: T; links?: { rel: string; href: string }[] }
 
@@ -374,7 +374,7 @@ export const VERIFICACOES: Verificacao[] = [
         })
         const p = r.pacotes[0]
         const a = r.amostra as
-          | { deInteresse?: number; andamentosNoPeriodo?: number; edicoes?: number[]; projetosLidos?: number; sessoes?: string[]; materiasLidas?: number; acompanhadasAchadas?: string; paginasLidas?: number }
+          | { deInteresse?: number; andamentosNoPeriodo?: number; edicoes?: number[]; projetosLidos?: number; sessoes?: string[]; materiasLidas?: number; acompanhadasAchadas?: string; paginasLidas?: number; recentes?: number }
           | undefined
         return {
           ok: true,
@@ -383,7 +383,9 @@ export const VERIFICACOES: Verificacao[] = [
               ? `${a.edicoes.length} edições do diário na semana (${a.edicoes.join(', ')}), ${a.projetosLidos ?? 0} projetos lidos`
               : a?.sessoes
                 ? `${a.sessoes.length} sessões com expediente na semana, ${a.materiasLidas ?? 0} matérias lidas; acompanhada de teste achada na lista: ${a.acompanhadasAchadas} (${a.paginasLidas} páginas lidas)`
-                : a?.deInteresse !== undefined
+                : a?.recentes !== undefined
+                  ? `${a.recentes} proposições protocoladas na semana (${a.paginasLidas} páginas lidas); acompanhada de teste achada: ${a.acompanhadasAchadas}`
+                  : a?.deInteresse !== undefined
                 ? `${r.itensListados} matérias atualizadas na semana (${a.deInteresse} de tipos que interessam); ${a.andamentosNoPeriodo ?? '?'} andamentos`
                 : `${r.itensListados} itens listados`,
             `${r.pacotes.length} abertas: ${r.pacotes.map((x) => `${x.proposicao.sigla} ${x.proposicao.numero}/${x.proposicao.ano} (${x.tramitacoes.length} andamentos)`).join('; ') || 'nenhuma relevante no período'}`,

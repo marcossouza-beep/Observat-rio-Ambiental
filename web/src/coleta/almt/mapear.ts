@@ -43,6 +43,9 @@ const decodificar = (t: string) =>
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
     .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCharCode(parseInt(n, 16)))
     .replace(/&nbsp;/g, ' ')
+    .replace(/&deg;/g, '°')
+    .replace(/&ordm;/g, 'º')
+    .replace(/&ordf;/g, 'ª')
     .replace(/&quot;/g, '"')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
@@ -131,18 +134,35 @@ export function eventoDoVeto(c: CartaoAlmt): EventoColetado | null {
   }
 }
 
-export type AndamentoAlmt = { data: string; descricao: string; orgao?: string }
+export type AndamentoAlmt = { data: string; descricao: string; orgao?: string; documento?: string }
+
+/** Andamentos de /proposicao/<id>/tramitacoes ("16/04/2025 - Lido: 20ª Sessão Ordinária", com o PDF do parecer). */
+export function lerTramitacoes(html: string): AndamentoAlmt[] {
+  const r: AndamentoAlmt[] = []
+  for (const m of html.matchAll(/<div class="mb-1">\s*(\d{2})\/(\d{2})\/(\d{4})\s*-\s*([\s\S]*?)<\/div>/g)) {
+    const corpo = m[4]
+    const documento = /href="([^"]+\.pdf)"/i.exec(corpo)?.[1]
+    const descricao = decodificar(corpo.replace(/<a[\s\S]*?<\/a>/g, '')).replace(/\s+/g, ' ').trim()
+    if (!descricao) continue
+    r.push({ data: `${m[3]}-${m[2]}-${m[1]}`, descricao, ...(documento ? { documento } : {}) })
+  }
+  // A página vem em ordem de data; os da mesma data ficam na ordem em que aparecem
+  return r
+}
 
 export function eventoAlmt(descricao: string): TipoEvento {
   const t = descricao.normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase()
-  if (/PROTOCOL|LEITURA|RECEBID/.test(t)) return 'apresentacao'
-  if (/ORDEM DO DIA|PAUTA/.test(t)) return 'pauta'
+  if (/^LIDO|PROTOCOL|LEITURA|RECEBID/.test(t)) return 'apresentacao'
+  // "Cumprindo pauta" é o prazo de emendas em plenário, não a pauta de votação
+  if (/CUMPRI(?:NDO|RA|MENTO D[OE])\s+PAUTA/.test(t)) return 'outro'
+  if (/ORDEM DO DIA|INCLUID[OA] NA PAUTA/.test(t)) return 'pauta'
   if (/URGENCIA/.test(t)) return 'urgencia'
+  if (/AGUARDANDO SANCAO|APROVAD|APROV\.|AUTOGRAFO|REDACAO FINAL/.test(t)) return 'aprovacao'
   if (/PARECER|RELATOR/.test(t)) return 'parecer_relator'
-  if (/SANCIONAD|SANCAO|LEI N/.test(t)) return 'sancao'
+  if (/SANCIONAD|^LEI N/.test(t)) return 'sancao'
   if (/VETAD|VETO/.test(t)) return 'veto'
-  if (/ARQUIVAD/.test(t)) return 'arquivamento'
-  if (/APROVAD|AUTOGRAFO|REDACAO FINAL/.test(t)) return 'aprovacao'
+  if (/ARQUIVAD|AO ARQUIVO/.test(t)) return 'arquivamento'
+  if (/^MANTIDO|^DERRUBAD|^REJEITAD/.test(t)) return 'votacao'
   return tipoDoAndamento(descricao)
 }
 
@@ -152,7 +172,7 @@ export function statusAlmt(andamentos: AndamentoAlmt[]): StatusSimplificado {
   if (/VETAD[OA] TOTAL/.test(t)) return 'vetada'
   if (/ARQUIVAD/.test(andamentos.at(-1)?.descricao.toUpperCase() || '')) return 'arquivada'
   if (/REJEITAD/.test(t)) return 'rejeitada'
-  if (/APROVAD[OA] EM (2|SEGUNDA|ÚNICA|UNICA)|REDA[ÇC][ÃA]O FINAL APROVADA|AUT[ÓO]GRAFO/.test(t)) return 'aprovada'
+  if (/AGUARDANDO SAN[ÇC][ÃA]O|APROV(?:AD[OA]|\.) EM (2|SEGUNDA|[ÚU]NICA)|REDA[ÇC][ÃA]O FINAL APROVADA|AUT[ÓO]GRAFO/.test(t)) return 'aprovada'
   return 'em_tramitacao'
 }
 
@@ -169,6 +189,7 @@ export function pacoteAlmt(c: CartaoAlmt, andamentos: AndamentoAlmt[] = []): Pac
         orgao: a.orgao,
         descricao: a.descricao,
         tipoEvento: eventoAlmt(a.descricao),
+        ...(a.documento ? { urlDocumento: a.documento } : {}),
       }))
     : [{ chave: `almt:protocolo:${c.id}`, proposicao: chave, data, orgao: 'Secretaria de Serviços Legislativos', descricao: `Protocolado (protocolo nº ${c.protocolo || '?'})`, tipoEvento: 'apresentacao' as const }]
   const ultima = andamentos.at(-1)
