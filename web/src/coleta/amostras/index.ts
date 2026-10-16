@@ -341,26 +341,11 @@ const PASSOS_SE: Passo[] = [
       // API da aplicação (legis-api-portal-prd), achada com o navegador: pesquisa de processos e ficha
       const api = 'https://legis-api-portal-prd.al.sp.gov.br'
       const ano = new Date().getFullYear()
-      await salvar('alesp', 'tipos-processo', await buscar(`${api}/tipo-processo/lista-pesquisa`))
-      await salvar('alesp', 'processos', await buscar(`${api}/processo?page=0&size=20&sort=desc&flPropositura=true&ano=${ano}`))
+      const tipos = 'listaIdTipoProcesso=1&listaIdTipoProcesso=2&listaIdTipoProcesso=5&listaIdTipoProcesso=4'
+      await salvar('alesp', 'processos', await buscar(`${api}/processo?page=0&size=20&sort=desc&flPropositura=true&ano=${ano}&${tipos}`))
+      await salvar('alesp', 'processos-numero', await buscar(`${api}/processo?page=0&size=10&sort=desc&flPropositura=true&listaIdTipoProcesso=1&numero=863&ano=${ano}`))
       await salvar('alesp', 'processo-detalhes', await buscar(`${api}/processo/detalhes/principais/1100004484`))
-      await salvar('alesp', 'processo-resumos', await buscar(`${api}/processo/resumos-com-links/lote?idsProcessos=1100004484`))
-      for (const [nome, url] of [
-        ['tramitacao-a', `${api}/processo/1100004484/tramitacao?page=0&size=10&sort=desc`],
-        ['tramitacao-b', `${api}/processo/tramitacao/1100004484?page=0&size=10&sort=desc`],
-        ['tramitacao-c', `${api}/tramitacao?idProcesso=1100004484&page=0&size=10&sort=desc`],
-      ])
-        await salvar('alesp', nome, await buscar(url))
-      // Módulo com as funções da ficha (tramitação, votações, pareceres)
-      const pag = await gravarHtml('alesp', 'propositura', 'https://www.al.sp.gov.br/propositura/?id=1000682212')
-      const ph = ((pag.corpo as { html?: string } | null)?.html || '') as string
-      const js = /src="(\/legis-web-files\/main-[^"]+\.js)"/.exec(ph)?.[1]
-      if (js) {
-        const main = await gravarHtml('alesp', 'legis-web-main', `https://www.al.sp.gov.br${js}`)
-        const mh = ((main.corpo as { html?: string } | null)?.html || '') as string
-        const m = /legis-web-files\/ementas-com-links-[\w-]+\.js/.exec(mh)?.[0]
-        if (m) await gravarHtml('alesp', 'ementas-com-links', `https://www.al.sp.gov.br/${m}`)
-      }
+      await salvar('alesp', 'processo-tramitacoes', await buscar(`${api}/processo/tramitacoes/1100004484?page=0&size=50&sort=asc`))
       // O arquivo de proposituras (proposituras.zip: 17 MB, XML de 132 MB, sem ordem) fica de fora: pesado para 4 vezes ao dia
     },
   },

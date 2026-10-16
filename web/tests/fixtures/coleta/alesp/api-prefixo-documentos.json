@@ -1,8 +1,0 @@
-{
-  "url": "https://legis-api-portal-prd.al.sp.gov.br/api/documento?page=0&size=10&sort=desc&ano=2026",
-  "status": 404,
-  "tipo": "",
-  "gravadaEm": "2026-10-16T21:19:19.346Z",
-  "corpo": null,
-  "erro": "HTTP 404 em https://legis-api-portal-prd.al.sp.gov.br/api/documento?page=0&size=10&sort=desc&ano=2026"
-}
