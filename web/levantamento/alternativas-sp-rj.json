@@ -1,0 +1,3346 @@
+{
+  "geradoEm": "2026-10-16T21:19:17.515Z",
+  "ambiente": "GitHub Actions (fora do Brasil)",
+  "SP": {
+    "casa": "Alesp",
+    "diario": "DOE-SP",
+    "https://www.al.sp.gov.br/processo/1100004484": {
+      "url": "https://www.al.sp.gov.br/processo/1100004484",
+      "status": 200,
+      "titulo": "Projeto de Lei 863/2026 | Alesp",
+      "texto": "Ir para o conteúdo principal PORTAL ALESP ATIVIDADE LEGISLATIVA Proposições Comissões Plenário Legislação Home Processos Projeto de Lei 863/2026 🖨 Imprimir Projeto de Lei nº 863 / 2026 DOCUMENTO INICIAL 📄 Alesp Sem Papel PROCESSO 32.325 / 2026 EMENTA ✦ IA - Resumo Explicativo Orça a Receita e fixa a Despesa do Estado para o exercício de 2027. DATA DE PUBLICAÇÃO 01/10/2026 AUTORIA Governador INDEXADORES LEI DO ORÇAMENTO ANUAL - LOA REGIME DE TRAMITAÇÃO Tramitação Prioridade ETAPA ATUAL Pauta Tramitação + Votação no Plenário + Votação nas Comissões + Pareceres + Documentos adicionais + © 2026 Assembleia Legislativa do Estado de São Paulo",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.al.sp.gov.br/",
+          "texto": "Atividade Legislativa"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura",
+          "texto": "Proposituras"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/leis/notificacoes/",
+          "texto": "Notificação de Tramitações"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa",
+          "texto": "Sobre o Processo Legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa/o-que-e-uma-comissao",
+          "texto": "O que é uma Comissão?"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa/como-funcionam-as-sessoes-da-alesp",
+          "texto": "Como funcionam as Sessões da Alesp"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/legislacao/",
+          "texto": "Legislação"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/baleg-web/acompanhar/processo/1100004484?d=Projeto%20de%20Lei%20863%2F2026",
+          "texto": ""
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/pesquisa?regime=3",
+          "texto": "Tramitação Prioridade"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/regime-tramitacao/todos",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 148,
+          "inicio": "[{\"idRegime\":1,\"nmRegime\":\"Tramitação Ordinária\"},{\"idRegime\":3,\"nmRegime\":\"Tramitação Prioridade\"},{\"idRegime\":2,\"nmRegime\":\"Tramitação Urgência\"}]"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/detalhes/principais/1100004484",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 2432,
+          "inicio": "{\"idProcesso\":1100004484,\"idTipoProcesso\":1,\"flPropositura\":true,\"tipoProcesso\":\"Projeto de Lei\",\"subtipoProcesso\":\"Projeto de Lei do Orçamento\",\"numeroProcesso\":863,\"anoProcesso\":2026,\"numeroRg\":null,\"anoRg\":null,\"nuProcesso\":32325,\"nuAno\":2026,\"dtPublicacao\":\"2026-10-01\",\"dtAutuacao\":\"2026-09-30\",\"descricao\":\"Projeto de Lei 863/2026\",\"resumo\":\"Orça a Receita e fixa a Despesa do Estado para o exe"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/resumos-com-links/lote?idsProcessos=1100004484",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 2,
+          "inicio": "{}"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=MUMTCHAKAJDJMRLHLFVMKAGDABVSMQQQ-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=11252492&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=MUMTCHAKAJDJMRLHLFVMKAGDABVSMQQQ-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=2172009634&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        }
+      ]
+    },
+    "https://www.al.sp.gov.br/propositura/pesquisa?ano=2026": {
+      "url": "https://www.al.sp.gov.br/propositura/pesquisa?ano=2026",
+      "status": 200,
+      "titulo": "Proposituras | Alesp",
+      "texto": "Ir para o conteúdo principal PORTAL ALESP ATIVIDADE LEGISLATIVA Proposições Comissões Plenário Legislação Home Proposituras Resultado Proposituras Nova Pesquisa Limpar Filtros FILTROS SELECIONADOS Ano: 2026 × FILTROS Tipo de Propositura + Autoria + Identificação + Data de Publicação + Etapa Atual + Regime de Tramitação + Comissão atual + Fase na Comissão + Relator atual + Norma + Busca Livre − Pesquisar 19.266 proposituras encontradas Imprimir Exportar Mostrando registros de 1 a 50 Por página: 10 25 50 100 500 1000 5000 « ‹ 1 2 ... 386 › » Lista de Proposituras encontradas Publicação ⇅ Proposição Autoria 19/10/2026 Projeto de Lei 884/2026 Institui a Política Estadual de Monitoramento Eletrônico de Agressores em caso de violência doméstica e familiar contra a mulher, com o objetivo de fortalecer a fiscalização do cumprimento de medidas protetivas de urgência e prevenir a reincidência de agressões. CARLA MORANDO 19/10/2026 Projeto de Lei 883/2026 Estabelece medidas de proteção e segurança jurídica às cooperativas de eletrificação rural e aos produtores rurais, relativas à utilização de faixas de domínio rodoviárias e ao manejo da vegetação nas faixas de segurança das redes de distribuição de energia elétrica no Estado. ITAMAR BORGES 19/10/2026 Requerimento 3.324/2026 Propõe a criação de uma Comissão de Representação a fim de representar a Assembleia Legislativa de São Paulo no Fórum Liberdade e Democracia de Vitória 2026 (Vitória/ES), nos dias 5 e 6 de novembro de 2026, sem ônu",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.al.sp.gov.br/propositura/pesquisa?ano=2026&tamanho=50#main-content",
+          "texto": "Ir para o conteúdo principal"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/",
+          "texto": "Atividade Legislativa"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura",
+          "texto": "Proposituras"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/leis/notificacoes/",
+          "texto": "Notificação de Tramitações"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa",
+          "texto": "Sobre o Processo Legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa/o-que-e-uma-comissao",
+          "texto": "O que é uma Comissão?"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa/como-funcionam-as-sessoes-da-alesp",
+          "texto": "Como funcionam as Sessões da Alesp"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/legislacao/",
+          "texto": "Legislação"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura",
+          "texto": "Proposituras"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004871",
+          "texto": "Projeto de Lei 884/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004869",
+          "texto": "Projeto de Lei 883/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004870",
+          "texto": "Requerimento 3.324/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004883",
+          "texto": "Indicação 15.134/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004882",
+          "texto": "Indicação 15.133/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004881",
+          "texto": "Indicação 15.132/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004880",
+          "texto": "Indicação 15.131/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004879",
+          "texto": "Indicação 15.130/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004878",
+          "texto": "Indicação 15.129/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004877",
+          "texto": "Indicação 15.128/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004876",
+          "texto": "Indicação 15.127/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004875",
+          "texto": "Indicação 15.126/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004874",
+          "texto": "Indicação 15.125/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004873",
+          "texto": "Indicação 15.124/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004872",
+          "texto": "Indicação 15.123/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004868",
+          "texto": "Indicação 15.122/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004867",
+          "texto": "Indicação 15.121/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004866",
+          "texto": "Indicação 15.120/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004865",
+          "texto": "Indicação 15.119/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004864",
+          "texto": "Indicação 15.118/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004863",
+          "texto": "Indicação 15.117/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004862",
+          "texto": "Indicação 15.116/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004861",
+          "texto": "Indicação 15.115/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004860",
+          "texto": "Indicação 15.114/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004859",
+          "texto": "Indicação 15.113/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004837",
+          "texto": "Projeto de Lei 882/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004835",
+          "texto": "Projeto de Lei 881/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004839",
+          "texto": "Projeto de Lei 880/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004806",
+          "texto": "Projeto de Lei 879/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004802",
+          "texto": "Projeto de Lei 878/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004801",
+          "texto": "Requerimento de Informação 379/2026"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/anos?flPropositura=true",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 396,
+          "inicio": "[2026,2025,2024,2023,2022,2021,2020,2019,2018,2017,2016,2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005,2004,2003,2002,2001,2000,1999,1998,1997,1996,1995,1994,1993,1992,1991,1990,1989,1988,1987,1986,1985,1984,1983,1982,1981,1980,1979,1978,1977,1976,1975,1974,1973,1972,1971,1970,1968,1967,1966,1965,1964,1963,1962,1961,1960,1959,1958,1957,1956,1955,1954,1953,1952,1951,1950,1949,1948,1947]"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/analise-fase/pesquisa",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 296,
+          "inicio": "[{\"id\":1,\"nome\":\"Pronto para entrar na Comissão\"},{\"id\":2,\"nome\":\"Pronto para ser distribuído a um(a) relator(a)\"},{\"id\":3,\"nome\":\"Distribuído para o(a) relator(a)\"},{\"id\":4,\"nome\":\"Recebido o voto do(a) relator(a)\"},{\"id\":7,\"nome\":\"Recebido o requerimento\"},{\"id\":8,\"nome\":\"Aguardando ciência\"}]"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/tipo-processo/lista-pesquisa",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 2109,
+          "inicio": "[{\"id\":1,\"nome\":\"Projeto de Lei\",\"sigla\":\"PL\",\"subtipos\":[{\"id\":112,\"nome\":\"Projeto de Lei de LDO\",\"sigla\":\"LDO\"},{\"id\":142,\"nome\":\"Projeto de Lei do Orçamento\",\"sigla\":\"Orçamento\"},{\"id\":141,\"nome\":\"Projeto de Lei de PPA\",\"sigla\":\"PLPPA\"}]},{\"id\":2,\"nome\":\"Projeto de Lei Complementar\",\"sigla\":\"PLC\"},{\"id\":5,\"nome\":\"Proposta de Emenda à Constituição\",\"sigla\":\"PEC\"},{\"id\":4,\"nome\":\"Projeto de Decre"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/autores/relatores-atuais",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 17038,
+          "inicio": "[{\"id\":1000000330,\"matricula\":null,\"numero\":null,\"nome\":\"ADALBERTO FREITAS\",\"url\":null,\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":440,\"matricula\":null,\"numero\":null,\"nome\":\"ADILSON ROSSI\",\"url\":null,\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":1000000332,\"matricula\":null,\"numero\":null,\"nome\":\"ADRIANA BORGO\",\"url\":null,\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":1000000335,\""
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/regime-tramitacao/todos",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 148,
+          "inicio": "[{\"idRegime\":1,\"nmRegime\":\"Tramitação Ordinária\"},{\"idRegime\":3,\"nmRegime\":\"Tramitação Prioridade\"},{\"idRegime\":2,\"nmRegime\":\"Tramitação Urgência\"}]"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/colegiado/filtro-pesquisa",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 22143,
+          "inicio": "[{\"id\":12448,\"nome\":\"Comissão de Assuntos Desportivos\",\"tipo\":{\"id\":1,\"nome\":\"Comissão Permanente\"},\"sigla\":\"CAD\",\"dtInicio\":\"2011-03-04\",\"dtFim\":null,\"flAtivo\":\"S\",\"descricao\":\"À Comissão de Assuntos Desportivos compete opinar sobre proposições e assuntos que digam respeito aos esportes e recreação, bem como sobre a organização ou reorganização de repartições de administração direta ou indireta a"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/autores/autores-proposituras",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 174566,
+          "inicio": "[{\"id\":272,\"matricula\":300164,\"numero\":300164,\"nome\":\"ABDO HADADE\",\"url\":\"/parlamentar/300164\",\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":52,\"matricula\":300257,\"numero\":300257,\"nome\":\"ABELARDO CAMARINHA\",\"url\":\"/parlamentar/300257\",\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":11325,\"matricula\":299419,\"numero\":299419,\"nome\":\"ABILIO DUARTE\",\"url\":\"/parlamentar/299419\",\"idPartido\":nul"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/facetas?flPropositura=true&ano=2026",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 10208,
+          "inicio": "{\"tipos\":[{\"id\":9,\"quantidade\":15133},{\"id\":7,\"quantidade\":2556},{\"id\":1,\"quantidade\":884},{\"id\":8,\"quantidade\":379},{\"id\":6,\"quantidade\":260},{\"id\":4,\"quantidade\":24},{\"id\":2,\"quantidade\":16},{\"id\":3,\"quantidade\":13},{\"id\":5,\"quantidade\":1}],\"subtipos\":[{\"id\":110,\"quantidade\":2292},{\"id\":121,\"quantidade\":111},{\"id\":111,\"quantidade\":53},{\"id\":34,\"quantidade\":34},{\"id\":25,\"quantidade\":20},{\"id\":100"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo?page=0&size=50&sort=desc&flPropositura=true&ano=2026",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 43696,
+          "inicio": "{\"content\":[{\"idProcesso\":1100004871,\"tipoProcesso\":\"PL\",\"numeroProcesso\":33359,\"anoProcesso\":2026,\"numeroTipo\":884,\"anoTipo\":2026,\"numeroRg\":null,\"anoRg\":null,\"descricao\":\"Projeto de Lei 884/2026\",\"resumo\":\"Institui a Política Estadual de Monitoramento Eletrônico de Agressores em caso de violência doméstica e familiar contra a mulher, com o objetivo de fortalecer a fiscalização do cumprimento de "
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/resumos-com-links/lote?idsProcessos=1100004871&idsProcessos=1100004869&idsProcessos=1100004870&idsProcessos=1100004883&idsProcessos=1100004882&idsProcessos=1100004881&idsProcessos=1100004880&idsProcessos=1100004879&idsProcessos=1100004878&idsProcessos=1100004877&idsProcessos=1100004876&idsProcessos=1100004875&idsProcessos=1100004874&idsProcessos=1100004873&idsProcessos=1100004872&idsProcessos=1100004868&idsProcessos=1100004867&idsProcessos=1100004866&idsProcessos=1100004865&idsProcessos=1100004864&idsProcessos=1100004863&idsProcessos=1100004862&idsProcessos=1100004861&idsProcessos=1100004860&idsProcessos=1100004859&idsProcessos=1100004837&idsProcessos=1100004835&idsProcessos=1100004839&idsProcessos=1100004806&idsProcessos=1100004802&idsProcessos=1100004801&idsProcessos=1100004838&idsProcessos=1100004834&idsProcessos=1100004833&idsProcessos=1100004832&idsProcessos=1100004831&idsProcessos=1100004830&idsProcessos=1100004829&idsProcessos=1100004828&idsProcessos=1100004827&idsProcessos=1100004826&idsProcessos=1100004825&idsProcessos=1100004824&idsProcessos=1100004823&idsProcessos=1100004822&idsProcessos=1100004821&idsProcessos=1100004820&idsProcessos=1100004819&idsProcessos=1100004818&idsProcessos=1100004817",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 2,
+          "inicio": "{}"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=WFRKIPUMKNKAPVKVRFFMRPUHLLRHMKAG-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=697352663&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        }
+      ]
+    },
+    "https://www.al.sp.gov.br/": {
+      "url": "https://www.al.sp.gov.br/",
+      "status": 200,
+      "titulo": "Assembleia Legislativa do Estado de S. Paulo",
+      "texto": "Ir para o conteúdo principal SOBRE O PORTAL CENTRAL DE ATENDIMENTO EXTRANET | Buscar no site INSTITUCIONAL DEPUTADOS PROCESSO LEGISLATIVO COMISSÕES LEGISLAÇÃO DOCUMENTAÇÃO COMUNICAÇÃO TRANSPARÊNCIA Boas-vindas Mesa Diretora da Alesp recepciona parlamentares eleitos para a 21ª Legislatura Anterior Próximo LOA Proposta de Lei Orçamentária Anual para 2027 chega à Alesp com receita recorde de R$ 411 bilhões Canal Legislativo Confira aqui o canal da TV Alesp na sua cidade Rota dos Vinhos é principal atração de São Roque, no interior paulista 07/10/2026 16:31 Cidade fica a menos de 100 km da capital e atrai pessoas para visitar vinícolas e conhecer a gastronomia local; descubra este destino no Me Leva, da TV Alesp Confira quem são os parlamentares reeleitos e os que chegam à Alesp pela primeira vez 05/10/2026 16:06 Disputa para o Legislativo estadual foi encerrada no último domingo (4); Com 54 reeleitos, Parlamento terá renovação de 40 cadeiras Eleições 2026: confira lista dos 94 deputados estaduais eleitos para a 21ª Legislatura da Alesp 01/10/2026 15:05 Parlamentares eleitos exercerão mandato de quatro anos durante a 21ª Legislatura da Alesp, que terá início em 1º de fevereiro de 2027. Alesp aprova transferência da Estrada de Ferro Campos do Jordão à CPTM 06/10/2026 17:52 Executivo cita expertise da CPTM para assumir a EFCJ e aprimorar gestão administrativa; empregados públicos terão mantidos cargos e remuneração MAIS NOTÍCIAS... PROJETOS LEGISLAÇÃO DEPUTADOS Buscar projetos por:",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.al.sp.gov.br/institucional/assembleia",
+          "texto": "Poder Legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/ilp/",
+          "texto": "Instituto do Legislativo"
+        },
+        {
+          "href": "http://diariooficial.imprensaoficial.com.br/nav_v6/index.asp?c=12",
+          "texto": "Diário Oficial (histórico)"
+        },
+        {
+          "href": "https://doe.sp.gov.br/",
+          "texto": "Diário Oficial (novo)"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/deputado/legislaturas/",
+          "texto": "Parlamentares desde 1947"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/processo-legislativo",
+          "texto": "Processo Legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/",
+          "texto": "Pesquisa de Proposições"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/processo/",
+          "texto": "Pesquisa de Processos"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/sessao-plenaria/pesquisa/",
+          "texto": "Sessões Plenárias"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/processo-legislativo/consolidacao-de-leis",
+          "texto": "Consolidação de Leis"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa",
+          "texto": "Sobre o Processo Legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/comissao/",
+          "texto": "Pesquisa das Comissões"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa/o-que-e-uma-comissao",
+          "texto": "O que é uma Comissão"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/leis",
+          "texto": "Legislação"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/norma/pesquisa",
+          "texto": "Legislação Estadual"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/norma/pesquisa/atos-decisoes",
+          "texto": "Atos e Decisões"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/leis/legislacao-eleitoral",
+          "texto": "Legislação Eleitoral"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/leis/notificacoes",
+          "texto": "Notificação de Normas e Proposições"
+        },
+        {
+          "href": "http://diariooficial.imprensaoficial.com.br/nav_v6/index.asp?c=12",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/noticia/?15/10/2026/mesa-diretora-da-alesp-recepciona-parlamentares-eleitos-para-a-21--legislatura",
+          "texto": ""
+        },
+        {
+          "href": "https://www.al.sp.gov.br/noticia/?15/10/2026/mesa-diretora-da-alesp-recepciona-parlamentares-eleitos-para-a-21--legislatura",
+          "texto": "Mesa Diretora da Alesp recepciona parlamentares eleitos para a 21ª Legislatura"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/noticia/?01/10/2026/eleicoes-2026--confira-lista-dos-94-deputados-estaduais-eleitos-para-a-21--legislatura-da-alesp",
+          "texto": "Eleições 2026: confira lista dos 94 deputados estaduais eleitos para a 21ª Legis"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/?id=1000620315",
+          "texto": "Projeto de Lei Complementar n° 28 de 2025"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/?id=1248582",
+          "texto": "Projeto de Lei n° 212 de 2015"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/?id=1000682212",
+          "texto": "Projeto de Lei n° 226 de 2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/?id=1000671291",
+          "texto": "Projeto de Lei n° 1.316 de 2025"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/?id=1017495",
+          "texto": "Projeto de Lei n° 659 de 2011"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/institucional/assembleia",
+          "texto": "Poder Legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/deputado/legislaturas/",
+          "texto": "Parlamentares desde 1947"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/processo-legislativo",
+          "texto": "Processo Legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/",
+          "texto": "Pesquisa de Proposições"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/processo/",
+          "texto": "Pesquisa de Processos"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/sessao-plenaria/pesquisa/",
+          "texto": "Sessões Plenárias"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/processo-legislativo/consolidacao-de-leis",
+          "texto": "Consolidação de Leis"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa",
+          "texto": "Sobre o Processo Legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/comissao/",
+          "texto": "Pesquisa das Comissões"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa/o-que-e-uma-comissao",
+          "texto": "O que é uma Comissão"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/leis",
+          "texto": "Legislação"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/norma/pesquisa",
+          "texto": "Legislação Estadual"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/norma/pesquisa/atos-decisoes",
+          "texto": "Atos e Decisões"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-953E2KQDS3&gtm=45je6af0h2v9231800554za208zd9231800554xf1&_p=1792185577348&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1390120732.1792185577&frm=0&ngs=1&pscdl=noapi&rcb=11&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1792185577&sct=1&seg=0&dl=https%3A%2F%2Fwww.al.sp.gov.br%2F&dt=&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=2036",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-953E2KQDS3&gtm=45je6af0h2v9231800554za200zd9231800554xf1&_p=1792185577348&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1390120732.1792185577&frm=0&ngs=1&pscdl=noapi&rcb=11&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=2&tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1792185577&sct=1&seg=0&dl=https%3A%2F%2Fwww.al.sp.gov.br%2F&dt=&en=scroll&epn.percent_scrolled=90&_et=5&tfd=7043",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=SEMLSCLQUGTNDGUTUQRDRGINMIJLLGML-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=182924855&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=SEMLSCLQUGTNDGUTUQRDRGINMIJLLGML-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=3851000547&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        }
+      ]
+    },
+    "https://www.al.sp.gov.br/dados-abertos/": {
+      "url": "https://www.al.sp.gov.br/dados-abertos/",
+      "status": 200,
+      "titulo": "Portal dos Dados Abertos da Alesp",
+      "texto": "PORTAL DOS DADOS ABERTOS DA ALESP Home Sobre o projeto Catálogo de dados Perguntas frequentes Contato Pesquisa em 26 conjuntos de dados com 29 recursos Os dados abertos da Alesp estarão disponíveis em outro endereço https://ckan.al.sp.gov.br/alesp-dados-abertos (em breve) Processo Legislativo Deputados Estaduais Administração Legislação ‹ › Estatísticas do Portal A… Jan Fev Mar Abr Mai Jun Jul Ago Set Out Nov Dez 0 25,000 50,000 75,000 Meses Acessos Jan 42,911 Fev 42,630 Mar 51,351 Abr 63,151 Mai 54,797 Jun 55,471 Jul 37,336 Ago 31,815 Set 39,798 Out 22,858 Nov 0 Dez 0 + Acessados + Recentes Recurso Mês Total deputados.xml 4315 127020 comissoes_permanentes_reunioes.xml 2263 83320 proposituras.xml 3008 74291 Lotações dos Servidores 689 67912 documento_autor.xml 1846 63018 despesas_gabinetes.xml 1339 37331 naturezasSpl.xml 2519 35451 palavras_chave.xml 116 33906 documento_andamento.xml 217 32990 comissoes.xml 346 32511 Recurso Atualização Criação documento_andamento_atual.xml 16-10-2026 30-05-2017 agenda_eventos.xml 16-10-2026 16-05-2017 funcionarios_lotacoes.xml 12-05-2023 15-08-2016 funcionarios_cargos.xml 12-05-2023 15-08-2016 lotacoes.xml 16-10-2026 09-08-2016 comissoes_permanentes_votacoes.xml 16-10-2026 01-01-2015 documento_andamento.xml 16-10-2026 01-01-2015 palavras_chave.xml 16-10-2026 01-01-2015 legislacao_normas.xml 16-10-2026 01-01-2015 legislacao_norma_anotacoes.xml 16-10-2026 01-01-2015 Nuvem de etiquetas Assembleia Legislativa do Estado de São Paulo",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.al.sp.gov.br/dados-abertos/sobre;jsessionid=C016C09D85EC61AFDD83C4845081710D",
+          "texto": "Sobre o projeto"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/dados-abertos/grupo/1;jsessionid=C016C09D85EC61AFDD83C4845081710D",
+          "texto": "Processo Legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/dados-abertos/grupo/41;jsessionid=C016C09D85EC61AFDD83C4845081710D",
+          "texto": "Legislação"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/dados-abertos/grupo/1;jsessionid=C016C09D85EC61AFDD83C4845081710D",
+          "texto": "Processo Legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/dados-abertos/grupo/41;jsessionid=C016C09D85EC61AFDD83C4845081710D",
+          "texto": "Legislação"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/dados-abertos/busca/tramita%C3%A7%C3%A3o;jsessionid=C016C09D85EC61AFDD83C4845081710D",
+          "texto": "tramitação"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/dados-abertos/busca/processo%20legislativo;jsessionid=C016C09D85EC61AFDD83C4845081710D",
+          "texto": "processo legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/dados-abertos/busca/propositura;jsessionid=C016C09D85EC61AFDD83C4845081710D",
+          "texto": "propositura"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/dados-abertos/busca/regime%20de%20tramita%C3%A7%C3%A3o;jsessionid=C016C09D85EC61AFDD83C4845081710D",
+          "texto": "regime de tramitação"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/dados-abertos/busca/legisla%C3%A7%C3%A3o;jsessionid=C016C09D85EC61AFDD83C4845081710D",
+          "texto": "legislação"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=CBLNLJAURMCGNDNURFKUENFDAKKRVSCC-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=3017941749&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        }
+      ]
+    },
+    "seguido:https://www.al.sp.gov.br/propositura": {
+      "url": "https://www.al.sp.gov.br/propositura",
+      "status": 200,
+      "titulo": "Proposituras | Alesp",
+      "texto": "Ir para o conteúdo principal PORTAL ALESP ATIVIDADE LEGISLATIVA Proposições Comissões Plenário Legislação Home Proposituras Resultado Proposituras Nova Pesquisa Limpar Filtros FILTROS Tipo de Propositura + Autoria + Identificação + Data de Publicação + Etapa Atual + Regime de Tramitação + Comissão atual + Fase na Comissão + Relator atual + Norma + Busca Livre − Pesquisar 442.072 proposituras encontradas Imprimir Exportar Mostrando registros de 1 a 50 Por página: 10 25 50 100 500 1000 5000 « ‹ 1 2 ... 8842 › » Lista de Proposituras encontradas Publicação ⇅ Proposição Autoria 19/10/2026 Projeto de Lei 884/2026 Institui a Política Estadual de Monitoramento Eletrônico de Agressores em caso de violência doméstica e familiar contra a mulher, com o objetivo de fortalecer a fiscalização do cumprimento de medidas protetivas de urgência e prevenir a reincidência de agressões. CARLA MORANDO 19/10/2026 Projeto de Lei 883/2026 Estabelece medidas de proteção e segurança jurídica às cooperativas de eletrificação rural e aos produtores rurais, relativas à utilização de faixas de domínio rodoviárias e ao manejo da vegetação nas faixas de segurança das redes de distribuição de energia elétrica no Estado. ITAMAR BORGES 19/10/2026 Requerimento 3.324/2026 Propõe a criação de uma Comissão de Representação a fim de representar a Assembleia Legislativa de São Paulo no Fórum Liberdade e Democracia de Vitória 2026 (Vitória/ES), nos dias 5 e 6 de novembro de 2026, sem ônus para este Poder. Vários 19/10",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.al.sp.gov.br/propositura/pesquisa?tamanho=50#main-content",
+          "texto": "Ir para o conteúdo principal"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/",
+          "texto": "Atividade Legislativa"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura",
+          "texto": "Proposituras"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/leis/notificacoes/",
+          "texto": "Notificação de Tramitações"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa",
+          "texto": "Sobre o Processo Legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa/o-que-e-uma-comissao",
+          "texto": "O que é uma Comissão?"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa/como-funcionam-as-sessoes-da-alesp",
+          "texto": "Como funcionam as Sessões da Alesp"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/legislacao/",
+          "texto": "Legislação"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura",
+          "texto": "Proposituras"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004871",
+          "texto": "Projeto de Lei 884/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004869",
+          "texto": "Projeto de Lei 883/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004870",
+          "texto": "Requerimento 3.324/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004883",
+          "texto": "Indicação 15.134/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004882",
+          "texto": "Indicação 15.133/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004881",
+          "texto": "Indicação 15.132/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004880",
+          "texto": "Indicação 15.131/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004879",
+          "texto": "Indicação 15.130/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004878",
+          "texto": "Indicação 15.129/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004877",
+          "texto": "Indicação 15.128/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004876",
+          "texto": "Indicação 15.127/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004875",
+          "texto": "Indicação 15.126/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004874",
+          "texto": "Indicação 15.125/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004873",
+          "texto": "Indicação 15.124/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004872",
+          "texto": "Indicação 15.123/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004868",
+          "texto": "Indicação 15.122/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004867",
+          "texto": "Indicação 15.121/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004866",
+          "texto": "Indicação 15.120/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004865",
+          "texto": "Indicação 15.119/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004864",
+          "texto": "Indicação 15.118/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004863",
+          "texto": "Indicação 15.117/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004862",
+          "texto": "Indicação 15.116/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004861",
+          "texto": "Indicação 15.115/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004860",
+          "texto": "Indicação 15.114/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004859",
+          "texto": "Indicação 15.113/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004837",
+          "texto": "Projeto de Lei 882/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004835",
+          "texto": "Projeto de Lei 881/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004839",
+          "texto": "Projeto de Lei 880/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004806",
+          "texto": "Projeto de Lei 879/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004802",
+          "texto": "Projeto de Lei 878/2026"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura/1100004801",
+          "texto": "Requerimento de Informação 379/2026"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/colegiado/filtro-pesquisa",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 22143,
+          "inicio": "[{\"id\":12448,\"nome\":\"Comissão de Assuntos Desportivos\",\"tipo\":{\"id\":1,\"nome\":\"Comissão Permanente\"},\"sigla\":\"CAD\",\"dtInicio\":\"2011-03-04\",\"dtFim\":null,\"flAtivo\":\"S\",\"descricao\":\"À Comissão de Assuntos Desportivos compete opinar sobre proposições e assuntos que digam respeito aos esportes e recreação, bem como sobre a organização ou reorganização de repartições de administração direta ou indireta a"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/analise-fase/pesquisa",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 296,
+          "inicio": "[{\"id\":1,\"nome\":\"Pronto para entrar na Comissão\"},{\"id\":2,\"nome\":\"Pronto para ser distribuído a um(a) relator(a)\"},{\"id\":3,\"nome\":\"Distribuído para o(a) relator(a)\"},{\"id\":4,\"nome\":\"Recebido o voto do(a) relator(a)\"},{\"id\":7,\"nome\":\"Recebido o requerimento\"},{\"id\":8,\"nome\":\"Aguardando ciência\"}]"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/regime-tramitacao/todos",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 148,
+          "inicio": "[{\"idRegime\":1,\"nmRegime\":\"Tramitação Ordinária\"},{\"idRegime\":3,\"nmRegime\":\"Tramitação Prioridade\"},{\"idRegime\":2,\"nmRegime\":\"Tramitação Urgência\"}]"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/autores/relatores-atuais",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 17038,
+          "inicio": "[{\"id\":1000000330,\"matricula\":null,\"numero\":null,\"nome\":\"ADALBERTO FREITAS\",\"url\":null,\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":440,\"matricula\":null,\"numero\":null,\"nome\":\"ADILSON ROSSI\",\"url\":null,\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":1000000332,\"matricula\":null,\"numero\":null,\"nome\":\"ADRIANA BORGO\",\"url\":null,\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":1000000335,\""
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/tipo-processo/lista-pesquisa",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 2109,
+          "inicio": "[{\"id\":1,\"nome\":\"Projeto de Lei\",\"sigla\":\"PL\",\"subtipos\":[{\"id\":112,\"nome\":\"Projeto de Lei de LDO\",\"sigla\":\"LDO\"},{\"id\":142,\"nome\":\"Projeto de Lei do Orçamento\",\"sigla\":\"Orçamento\"},{\"id\":141,\"nome\":\"Projeto de Lei de PPA\",\"sigla\":\"PLPPA\"}]},{\"id\":2,\"nome\":\"Projeto de Lei Complementar\",\"sigla\":\"PLC\"},{\"id\":5,\"nome\":\"Proposta de Emenda à Constituição\",\"sigla\":\"PEC\"},{\"id\":4,\"nome\":\"Projeto de Decre"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/anos?flPropositura=true",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 396,
+          "inicio": "[2026,2025,2024,2023,2022,2021,2020,2019,2018,2017,2016,2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005,2004,2003,2002,2001,2000,1999,1998,1997,1996,1995,1994,1993,1992,1991,1990,1989,1988,1987,1986,1985,1984,1983,1982,1981,1980,1979,1978,1977,1976,1975,1974,1973,1972,1971,1970,1968,1967,1966,1965,1964,1963,1962,1961,1960,1959,1958,1957,1956,1955,1954,1953,1952,1951,1950,1949,1948,1947]"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/autores/autores-proposituras",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 174566,
+          "inicio": "[{\"id\":272,\"matricula\":300164,\"numero\":300164,\"nome\":\"ABDO HADADE\",\"url\":\"/parlamentar/300164\",\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":52,\"matricula\":300257,\"numero\":300257,\"nome\":\"ABELARDO CAMARINHA\",\"url\":\"/parlamentar/300257\",\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":11325,\"matricula\":299419,\"numero\":299419,\"nome\":\"ABILIO DUARTE\",\"url\":\"/parlamentar/299419\",\"idPartido\":nul"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=UTABEQRCTUFAVRARASKPFOMCLOMFVAAC-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=1667971708&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo?page=0&size=50&sort=desc&flPropositura=true",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 43698,
+          "inicio": "{\"content\":[{\"idProcesso\":1100004871,\"tipoProcesso\":\"PL\",\"numeroProcesso\":33359,\"anoProcesso\":2026,\"numeroTipo\":884,\"anoTipo\":2026,\"numeroRg\":null,\"anoRg\":null,\"descricao\":\"Projeto de Lei 884/2026\",\"resumo\":\"Institui a Política Estadual de Monitoramento Eletrônico de Agressores em caso de violência doméstica e familiar contra a mulher, com o objetivo de fortalecer a fiscalização do cumprimento de "
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/facetas?flPropositura=true",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 79393,
+          "inicio": "{\"tipos\":[{\"id\":9,\"quantidade\":203091},{\"id\":7,\"quantidade\":111100},{\"id\":1,\"quantidade\":80634},{\"id\":8,\"quantidade\":19669},{\"id\":6,\"quantidade\":17345},{\"id\":4,\"quantidade\":3422},{\"id\":2,\"quantidade\":3087},{\"id\":3,\"quantidade\":2811},{\"id\":5,\"quantidade\":913}],\"subtipos\":[{\"id\":110,\"quantidade\":101858},{\"id\":111,\"quantidade\":5557},{\"id\":121,\"quantidade\":887},{\"id\":114,\"quantidade\":580},{\"id\":149,\"q"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/resumos-com-links/lote?idsProcessos=1100004871&idsProcessos=1100004869&idsProcessos=1100004870&idsProcessos=1100004883&idsProcessos=1100004882&idsProcessos=1100004881&idsProcessos=1100004880&idsProcessos=1100004879&idsProcessos=1100004878&idsProcessos=1100004877&idsProcessos=1100004876&idsProcessos=1100004875&idsProcessos=1100004874&idsProcessos=1100004873&idsProcessos=1100004872&idsProcessos=1100004868&idsProcessos=1100004867&idsProcessos=1100004866&idsProcessos=1100004865&idsProcessos=1100004864&idsProcessos=1100004863&idsProcessos=1100004862&idsProcessos=1100004861&idsProcessos=1100004860&idsProcessos=1100004859&idsProcessos=1100004837&idsProcessos=1100004835&idsProcessos=1100004839&idsProcessos=1100004806&idsProcessos=1100004802&idsProcessos=1100004801&idsProcessos=1100004838&idsProcessos=1100004834&idsProcessos=1100004833&idsProcessos=1100004832&idsProcessos=1100004831&idsProcessos=1100004830&idsProcessos=1100004829&idsProcessos=1100004828&idsProcessos=1100004827&idsProcessos=1100004826&idsProcessos=1100004825&idsProcessos=1100004824&idsProcessos=1100004823&idsProcessos=1100004822&idsProcessos=1100004821&idsProcessos=1100004820&idsProcessos=1100004819&idsProcessos=1100004818&idsProcessos=1100004817",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 2,
+          "inicio": "{}"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=UTABEQRCTUFAVRARASKPFOMCLOMFVAAC-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=1200814583&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=UTABEQRCTUFAVRARASKPFOMCLOMFVAAC-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=4183543977&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=UTABEQRCTUFAVRARASKPFOMCLOMFVAAC-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=4012083413&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        }
+      ]
+    },
+    "enderecos:https://www.al.sp.gov.br/propositura": {
+      "url": "https://www.al.sp.gov.br/propositura",
+      "caminhos": [],
+      "trechos": [
+        "ajax/libs/font-awesome/6.5.0/css/all.min.css\" integrity=\"sha384-/o6I2CkkWC//PSjvWC/eYN7l3xM3tJm8ZzVkCOfp//W05QcE3mlGskpoHB6XqI+B\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\">",
+        "Url:\"w2dax4xgw3\",cwt:\"\",cors:!1,cuc:\"\",cce:!1,cux:!1,postfix:\"\",dataDtConfig:\"\",debugName:\"\",dvl:500,dASXH:!1,disableCookieManager:!1,dKAH:!1,disableLogging:!1,dmo:!1,doel:!1,dpch:!1,dpvc:!1,disableXhrFai",
+        "Url:\"dynaTraceMonitor\",rid:\"\",ridPath:\"\",rpid:\"\",rcdec:12096E5,rtl:0,rtp:2,rtt:1E3,rtu:200,rvcl:24,sl:100,ssc:!1,svNB:!1,srad:!0,srbbv:1,srbw:!0,srcst:!1,srdinitrec:!0,",
+        "Url:\"dynaTraceMonitor\",",
+        "url:z,title:N,view:W}){return{id:a,target:b,name:\"\",type:g,next:void 0,prev:void 0,info:k||\"-\",start:dc(),sourceActionCreated:!1,validUntil:dc()+(p||30),url:z||pb(),title:N||document.title,guessedName:\"\",",
+        "url:p,title:z,view:N});try{return ic&&(W.next=Aa,W.next&&(W.next.prev=W),md(W)),W}finally{Lb(function(){B(W)},W.validUntil-dc())}}function Bd(){return Na(Lc)?Lc.gci():Aa}function ed(){return Na(Lc)?Lc.gpi",
+        "url:sc(\"url\",b),name:sc(\"name\",b),startTime:sc(\"start\",b),type:sc(\"type\",b)||\"-\",title:sc(\"title\",b)}}function B(a){if(Na(Lc))Lc.ei(a);else if(Aa){let b=Aa;for(;b.next&&b!==a;)b=b.next;b===a&&(sc(\"name\")&",
+        "Url:p}}function qb(a,b){let g=D(ae,function(p){return(p.ud()||a||b)&&!p.zf()}),k=Ce;if(b){k=[];Ce=[];for(let p of g)fa({kind:2<=p.status?\"ACTION_BEACON_FORCED\":\"ACTION_CLOSED\",detail:{a:p.start,s:p.stop,r",
+        "Url:N}=eb(p,g,a);u(gi,function(W){g.push(Va(W))});",
+        "Url:N}}function jc(a,b,g,k){let p=bg().slice();for(let z of p)try{z(a,b,g,k)}catch(N){}}function qc(){return tj}function Nc(a){a=ob(a);kl.includes(a)||kl.push(a)}function Pc(a){return kl.includes(a)}funct",
+        "fetch\"===a.initiatorType){let W=\"1\";Qi[a.name]&&(W=\"11\",delete Qi[a.name]);z.push(\"z\",W)}else Qi[a.name]&&(z.push(\"z\",\"01\"),delete Qi[a.name]);z=\"\";\"frame\"===a.initiatorType?z=\"f\":\"iframe\"===a.initiatorTyp",
+        "Url:N,Nc:W,sourceUrl:la=\"\",hb:Sa=!1,isCustomAction:Ua=!1,Xa:$a=!1,Vd:ub=-1,guessedName:xb=\"\",sourceView:Fb,uc:mc,id:fc}){a=new jm(g,k||g,a,b,z||\"\",p||-1,We(la),document.title,N||\"\",Ua,$a,Sa,W,ub,xb,Zl,Fb,",
+        "Url:z||\"\",isCustomAction:!!N};return W&&(a.sourceUrl=W),Hd(a).id}function Xe(a,b,g){Be();Ld(a,b,g)}function ih(a,b,g,k){a=Td({type:a,name:b+\"=\"+t(g+\"\",Kb(\"mpl\")),start:dc(),hb:!0});Cd(a,k);Ge()}function M",
+        "Url:W,isCustomAction:k,Nc:p,uc:N};Ua?(b=0,Ua=(z||(a.wa=",
+        "Url:la.url,wa:!1,guessedName:la.guessedName||\"\",sourceView:la.view})),la.actionId=z,la.isSourceActionCreated()&&m(!0,lb(z))),z)):((Ua=cd)?(la=0,b=(1<=b&&!z&&(la=sg(Object.assign(Object.assign({},a),{wa:Ua",
+        "Url:p}=a;if(g&&gf.length)for(b=gf.length-1;0<=b;b--){let z=gf[b],N=z.actionId,W=Mc(N);if(W&&k&&!k.startsWith(z.featureHash)&&J(W.xhrUrl||\"\")===z.xhrUrl&&z.xhrUrl===J(p||\"\")){b=N;break a}}b=0}return b||(a.",
+        "Url:\"\"}function jh(a,b){(a=Mc(a))&&a.Od(b)}function Xf(a){let {configuration:b={headers:{}},url:g,actionId:k,traceContext:p,ic:z}=a;b&&\"object\"==typeof b&&\"headers\"in b&&b.headers&&\"object\"==typeof b.head",
+        "fetchStart:z}=b;b=(Sg(b)?0:g)+6E4;b=p?b>p?g:p:z?b>z?g:z:g;Number.isFinite(b)&&(a=b)}return Math.round(a)}function Wi(){let a=ye(kb.performance,\"loadEventEnd\",!0),b=dc();return Math.round(a||b)}function Xi(",
+        "url:a.url||\"-\"}}function Uj(a){for(let b of a.getEntries())\"first-input\"===b.entryType&&b.processingStart&&b.startTime&&(c=Math.round(b.startTime),e=Math.round(b.processingStart-b.startTime));Bk()}functio",
+        "Url:Db(sd[7]),anchor:sd[10],guessedName:sd[11],sourceView:void 0};",
+        "url:\"\",title:\"\",view:void 0},Aa,wb,gc,ic,Lc,uf,ei=-1,Vg=null,fi=[],ph=[],oh=!1,Cg={_csprv_:{blockedURL:ja,documentURL:ja,referrer:ja,sourceFile:ja},_customerror_:function(a,b){return\"name\"===a?na(a,b,!0,1",
+        "Url:z}}else k=Bb(b,g);p=0<k.actionsAndEvents.length;let $a;if(p){if($a=this.G(),$a.addParam(\"a\",ag(k.actionsAndEvents),",
+        "fetch,fm=class extends Tl{constructor(a){super(a);a=a.Yb;let b={[\"Content-Type\"]:this.$};this.Ga()&&(b[\"x-dtreferer\"]=this.ja());this.na={method:\"POST\",credentials:\"same-origin\",headers:b,body:a,keepalive:",
+        "fetchStart\",f:\"domainLookupStart\",g:\"domainLookupEnd\",h:\"connectStart\",i:\"connectEnd\",",
+        "fetch:2,beacon:3,iframe:4,frame:5,subdocument:6,img:7,image:8,css:9,svg:10,link:11,script:12,input:13,body:14,object:15,embed:16,source:17,audio:18,video:19,",
+        "fetch\"===this.info?\"fetch\":\"xmlhttprequest\",this.start,3===this.status?this.stop:0);return le(a)?(this.Od(a),a):null}We(){let a=this.sc();if(!a||0>=a.startTime)return[];this.Ga(a);let b=[\"b\",Zd()+Math.roun",
+        "Url:z,Ba:N,",
+        "Url:b,isCustomAction:g,Na:k,stop:p,guessedName:z,Ba:N,start:W,name:la,domNodes:Sa,Sa:Ua,cb:$a,sourceView:ub,Ef:xb,Wd:Fb,Ma:mc,uc:fc}=this,Xc=mc.slice();var Rc=Xc.push;var nd=[];if(0!==w){var {name:gh,time",
+        "Url:x(J(p||\"\")),actionId:k,featureHash:z||\"\"}),N=a.apply(b,g||[]),\"g\"===",
+        "fetch\"===C.initiatorType&&sa.dT_.gto()+"
+      ],
+      "campos": [
+        {
+          "tag": "button",
+          "id": "menu-toggle",
+          "nome": "",
+          "tipo": "submit",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Proposições"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Comissões"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Plenário"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-todos",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "on"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-1",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "1"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-1-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-1",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-2",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "2"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-5",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "5"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-4",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "4"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-4-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-4",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-3",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "3"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-3-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-3",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-9",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "9"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-6",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "6"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-7",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "7"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-7-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-7",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-8",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "8"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-8-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-8",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-numero",
+          "nome": "",
+          "tipo": "number",
+          "valor": ""
+        },
+        {
+          "tag": "select",
+          "id": "f-ano",
+          "nome": "",
+          "tipo": "select-one",
+          "valor": "Todos os anos202620252024202320222021202",
+          "opcoes": [
+            "=Todos os anos",
+            "2026=2026",
+            "2025=2025",
+            "2024=2024",
+            "2023=2023",
+            "2022=2022",
+            "2021=2021",
+            "2020=2020"
+          ]
+        },
+        {
+          "tag": "input",
+          "id": "f-dtInicio",
+          "nome": "",
+          "tipo": "date",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-dtFim",
+          "nome": "",
+          "tipo": "date",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-autor-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-autor",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-apoiador-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-apoiador",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-etapa",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-regime",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-colegiado-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-colegiado",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-fase",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-relator-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-relator",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-busca",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-transformadaNorma",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "on"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "reset",
+          "valor": "Limpar Filtros"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "submit",
+          "valor": "Pesquisar"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "share-modal-close",
+          "nome": "",
+          "tipo": "submit",
+          "valor": "×"
+        }
+      ]
+    },
+    "seguido:https://www.al.sp.gov.br/baleg-web/acompanhar/processo/1100004484?d=Projeto%20de%20Lei%20863%2F2026": {
+      "url": "https://www.al.sp.gov.br/baleg-web/acompanhar/processo/1100004484?d=Projeto%20de%20Lei%20863%2F2026",
+      "status": 200,
+      "titulo": "Login Alesp",
+      "texto": "Sign in to your account Username or email Password Reset password (ALESP user) Recover or create a new password (external user) ©DTI Alesp - 2024",
+      "pdfs": [],
+      "interessantes": [],
+      "chamadas": []
+    },
+    "enderecos:https://www.al.sp.gov.br/baleg-web/acompanhar/processo/1100004484?d=Projeto%20de%20Lei%20863%2F2026": {
+      "url": "https://www.al.sp.gov.br/baleg-web/acompanhar/processo/1100004484?d=Projeto%20de%20Lei%20863%2F2026",
+      "caminhos": [],
+      "trechos": [],
+      "campos": [
+        {
+          "tag": "input",
+          "id": "username",
+          "nome": "username",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "password",
+          "nome": "password",
+          "tipo": "password",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "id-hidden-input",
+          "nome": "credentialId",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "kc-login",
+          "nome": "login",
+          "tipo": "submit",
+          "valor": "Sign In"
+        }
+      ]
+    },
+    "seguido:https://www.al.sp.gov.br/propositura/pesquisa?regime=3": {
+      "url": "https://www.al.sp.gov.br/propositura/pesquisa?regime=3",
+      "status": 200,
+      "titulo": "Proposituras | Alesp",
+      "texto": "Ir para o conteúdo principal PORTAL ALESP ATIVIDADE LEGISLATIVA Proposições Comissões Plenário Legislação Home Proposituras Tipo de Propositura Todos Projeto de Lei Projeto de Lei Complementar Proposta de Emenda à Constituição Projeto de Decreto Legislativo Projeto de Resolução Indicação Moção Requerimento Requerimento de Informação Identificação Número Ano Todos os anos 2026 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 2014 2013 2012 2011 2010 2009 2008 2007 2006 2005 2004 2003 2002 2001 2000 1999 1998 1997 1996 1995 1994 1993 1992 1991 1990 1989 1988 1987 1986 1985 1984 1983 1982 1981 1980 1979 1978 1977 1976 1975 1974 1973 1972 1971 1970 1968 1967 1966 1965 1964 1963 1962 1961 1960 1959 1958 1957 1956 1955 1954 1953 1952 1951 1950 1949 1948 1947 Data de Publicação no Diário Oficial Data Inicial Data Final Autoria do Projeto Todos Apoiadores Todos Etapa Atual de Tramitação Todos Regime de Tramitação Todos Comissão atual Todos Fase na Comissão Todos Relator atual Todos Busca Livre Transformada em Norma Limpar Filtros Pesquisar © 2026 Assembleia Legislativa do Estado de São Paulo",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.al.sp.gov.br/propositura#main-content",
+          "texto": "Ir para o conteúdo principal"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/",
+          "texto": "Atividade Legislativa"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura",
+          "texto": "Proposituras"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/leis/notificacoes/",
+          "texto": "Notificação de Tramitações"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa",
+          "texto": "Sobre o Processo Legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa/o-que-e-uma-comissao",
+          "texto": "O que é uma Comissão?"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa/como-funcionam-as-sessoes-da-alesp",
+          "texto": "Como funcionam as Sessões da Alesp"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/legislacao/",
+          "texto": "Legislação"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura#",
+          "texto": "WhatsApp"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura#",
+          "texto": "Facebook"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura#",
+          "texto": "X"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura#",
+          "texto": "LinkedIn"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura#",
+          "texto": "E-mail"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/regime-tramitacao/todos",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 148,
+          "inicio": "[{\"idRegime\":1,\"nmRegime\":\"Tramitação Ordinária\"},{\"idRegime\":3,\"nmRegime\":\"Tramitação Prioridade\"},{\"idRegime\":2,\"nmRegime\":\"Tramitação Urgência\"}]"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/tipo-processo/lista-pesquisa",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 2109,
+          "inicio": "[{\"id\":1,\"nome\":\"Projeto de Lei\",\"sigla\":\"PL\",\"subtipos\":[{\"id\":112,\"nome\":\"Projeto de Lei de LDO\",\"sigla\":\"LDO\"},{\"id\":142,\"nome\":\"Projeto de Lei do Orçamento\",\"sigla\":\"Orçamento\"},{\"id\":141,\"nome\":\"Projeto de Lei de PPA\",\"sigla\":\"PLPPA\"}]},{\"id\":2,\"nome\":\"Projeto de Lei Complementar\",\"sigla\":\"PLC\"},{\"id\":5,\"nome\":\"Proposta de Emenda à Constituição\",\"sigla\":\"PEC\"},{\"id\":4,\"nome\":\"Projeto de Decre"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/colegiado/filtro-pesquisa",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 22143,
+          "inicio": "[{\"id\":12448,\"nome\":\"Comissão de Assuntos Desportivos\",\"tipo\":{\"id\":1,\"nome\":\"Comissão Permanente\"},\"sigla\":\"CAD\",\"dtInicio\":\"2011-03-04\",\"dtFim\":null,\"flAtivo\":\"S\",\"descricao\":\"À Comissão de Assuntos Desportivos compete opinar sobre proposições e assuntos que digam respeito aos esportes e recreação, bem como sobre a organização ou reorganização de repartições de administração direta ou indireta a"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/analise-fase/pesquisa",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 296,
+          "inicio": "[{\"id\":1,\"nome\":\"Pronto para entrar na Comissão\"},{\"id\":2,\"nome\":\"Pronto para ser distribuído a um(a) relator(a)\"},{\"id\":3,\"nome\":\"Distribuído para o(a) relator(a)\"},{\"id\":4,\"nome\":\"Recebido o voto do(a) relator(a)\"},{\"id\":7,\"nome\":\"Recebido o requerimento\"},{\"id\":8,\"nome\":\"Aguardando ciência\"}]"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/autores/relatores-atuais",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 17038,
+          "inicio": "[{\"id\":1000000330,\"matricula\":null,\"numero\":null,\"nome\":\"ADALBERTO FREITAS\",\"url\":null,\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":440,\"matricula\":null,\"numero\":null,\"nome\":\"ADILSON ROSSI\",\"url\":null,\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":1000000332,\"matricula\":null,\"numero\":null,\"nome\":\"ADRIANA BORGO\",\"url\":null,\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":1000000335,\""
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/autores/autores-proposituras",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 174566,
+          "inicio": "[{\"id\":272,\"matricula\":300164,\"numero\":300164,\"nome\":\"ABDO HADADE\",\"url\":\"/parlamentar/300164\",\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":52,\"matricula\":300257,\"numero\":300257,\"nome\":\"ABELARDO CAMARINHA\",\"url\":\"/parlamentar/300257\",\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":11325,\"matricula\":299419,\"numero\":299419,\"nome\":\"ABILIO DUARTE\",\"url\":\"/parlamentar/299419\",\"idPartido\":nul"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/anos?flPropositura=true",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 396,
+          "inicio": "[2026,2025,2024,2023,2022,2021,2020,2019,2018,2017,2016,2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005,2004,2003,2002,2001,2000,1999,1998,1997,1996,1995,1994,1993,1992,1991,1990,1989,1988,1987,1986,1985,1984,1983,1982,1981,1980,1979,1978,1977,1976,1975,1974,1973,1972,1971,1970,1968,1967,1966,1965,1964,1963,1962,1961,1960,1959,1958,1957,1956,1955,1954,1953,1952,1951,1950,1949,1948,1947]"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/facetas?flPropositura=true&listaIdRegime=3",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 10515,
+          "inicio": "{\"tipos\":[{\"id\":1,\"quantidade\":204},{\"id\":4,\"quantidade\":192},{\"id\":7,\"quantidade\":93},{\"id\":3,\"quantidade\":9},{\"id\":9,\"quantidade\":6},{\"id\":6,\"quantidade\":4},{\"id\":5,\"quantidade\":3},{\"id\":2,\"quantidade\":1}],\"subtipos\":[{\"id\":117,\"quantidade\":34},{\"id\":110,\"quantidade\":15},{\"id\":142,\"quantidade\":1}],\"autores\":[{\"id\":9761,\"quantidade\":100},{\"id\":100,\"quantidade\":61},{\"id\":12445,\"quantidade\":38},{\"i"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo?page=0&size=50&sort=desc&flPropositura=true&listaIdRegime=3",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 40604,
+          "inicio": "{\"content\":[{\"idProcesso\":1100004484,\"tipoProcesso\":\"PL\",\"numeroProcesso\":32325,\"anoProcesso\":2026,\"numeroTipo\":863,\"anoTipo\":2026,\"numeroRg\":null,\"anoRg\":null,\"descricao\":\"Projeto de Lei 863/2026\",\"resumo\":\"Orça a Receita e fixa a Despesa do Estado para o exercício de 2027.\",\"urlProcesso\":\"/processo/1100004484\",\"urlSemPapel\":\"https://sempapel.al.sp.gov.br/Sistema/Protocolo/Processo2/Digital.aspx?"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/resumos-com-links/lote?idsProcessos=1100004484&idsProcessos=1100004189&idsProcessos=1100000380&idsProcessos=1000677913&idsProcessos=1000677775&idsProcessos=1000671742&idsProcessos=1000669253&idsProcessos=1000669271&idsProcessos=1000669087&idsProcessos=1000622676&idsProcessos=1000620373&idsProcessos=1000607497&idsProcessos=1000603904&idsProcessos=1000595939&idsProcessos=1000595364&idsProcessos=1000594807&idsProcessos=1000594806&idsProcessos=1000594804&idsProcessos=1000560026&idsProcessos=1000558660&idsProcessos=1000558659&idsProcessos=1000554998&idsProcessos=1000548016&idsProcessos=1000548015&idsProcessos=1000548014&idsProcessos=1000545989&idsProcessos=1000545311&idsProcessos=1000545309&idsProcessos=1000545308&idsProcessos=1000545307&idsProcessos=1000545305&idsProcessos=1000503367&idsProcessos=1000500360&idsProcessos=1000500188&idsProcessos=1000497518&idsProcessos=1000494940&idsProcessos=1000491372&idsProcessos=1000487027&idsProcessos=1000486948&idsProcessos=1000486745&idsProcessos=1000486593&idsProcessos=1000486500&idsProcessos=1000486071&idsProcessos=1000486165&idsProcessos=1000456935&idsProcessos=1000456933&idsProcessos=1000456932&idsProcessos=1000445210&idsProcessos=1000445209&idsProcessos=1000445207",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 2,
+          "inicio": "{}"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=UUISRUFGNPLCCONAUFNUOMNMKTUBCTMS-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=656281344&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=UUISRUFGNPLCCONAUFNUOMNMKTUBCTMS-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=1370794493&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=UUISRUFGNPLCCONAUFNUOMNMKTUBCTMS-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=689631050&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        }
+      ]
+    },
+    "enderecos:https://www.al.sp.gov.br/propositura/pesquisa?regime=3": {
+      "url": "https://www.al.sp.gov.br/propositura/pesquisa?regime=3",
+      "caminhos": [],
+      "trechos": [
+        "ajax/libs/font-awesome/6.5.0/css/all.min.css\" integrity=\"sha384-/o6I2CkkWC//PSjvWC/eYN7l3xM3tJm8ZzVkCOfp//W05QcE3mlGskpoHB6XqI+B\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\">",
+        "Url:\"w2dax4xgw3\",cwt:\"\",cors:!1,cuc:\"\",cce:!1,cux:!1,postfix:\"\",dataDtConfig:\"\",debugName:\"\",dvl:500,dASXH:!1,disableCookieManager:!1,dKAH:!1,disableLogging:!1,dmo:!1,doel:!1,dpch:!1,dpvc:!1,disableXhrFai",
+        "Url:\"dynaTraceMonitor\",rid:\"\",ridPath:\"\",rpid:\"\",rcdec:12096E5,rtl:0,rtp:2,rtt:1E3,rtu:200,rvcl:24,sl:100,ssc:!1,svNB:!1,srad:!0,srbbv:1,srbw:!0,srcst:!1,srdinitrec:!0,",
+        "Url:\"dynaTraceMonitor\",",
+        "url:z,title:N,view:W}){return{id:a,target:b,name:\"\",type:g,next:void 0,prev:void 0,info:k||\"-\",start:dc(),sourceActionCreated:!1,validUntil:dc()+(p||30),url:z||pb(),title:N||document.title,guessedName:\"\",",
+        "url:p,title:z,view:N});try{return ic&&(W.next=Aa,W.next&&(W.next.prev=W),md(W)),W}finally{Lb(function(){B(W)},W.validUntil-dc())}}function Bd(){return Na(Lc)?Lc.gci():Aa}function ed(){return Na(Lc)?Lc.gpi",
+        "url:sc(\"url\",b),name:sc(\"name\",b),startTime:sc(\"start\",b),type:sc(\"type\",b)||\"-\",title:sc(\"title\",b)}}function B(a){if(Na(Lc))Lc.ei(a);else if(Aa){let b=Aa;for(;b.next&&b!==a;)b=b.next;b===a&&(sc(\"name\")&",
+        "Url:p}}function qb(a,b){let g=D(ae,function(p){return(p.ud()||a||b)&&!p.zf()}),k=Ce;if(b){k=[];Ce=[];for(let p of g)fa({kind:2<=p.status?\"ACTION_BEACON_FORCED\":\"ACTION_CLOSED\",detail:{a:p.start,s:p.stop,r",
+        "Url:N}=eb(p,g,a);u(gi,function(W){g.push(Va(W))});",
+        "Url:N}}function jc(a,b,g,k){let p=bg().slice();for(let z of p)try{z(a,b,g,k)}catch(N){}}function qc(){return tj}function Nc(a){a=ob(a);kl.includes(a)||kl.push(a)}function Pc(a){return kl.includes(a)}funct",
+        "fetch\"===a.initiatorType){let W=\"1\";Qi[a.name]&&(W=\"11\",delete Qi[a.name]);z.push(\"z\",W)}else Qi[a.name]&&(z.push(\"z\",\"01\"),delete Qi[a.name]);z=\"\";\"frame\"===a.initiatorType?z=\"f\":\"iframe\"===a.initiatorTyp",
+        "Url:N,Nc:W,sourceUrl:la=\"\",hb:Sa=!1,isCustomAction:Ua=!1,Xa:$a=!1,Vd:ub=-1,guessedName:xb=\"\",sourceView:Fb,uc:mc,id:fc}){a=new jm(g,k||g,a,b,z||\"\",p||-1,We(la),document.title,N||\"\",Ua,$a,Sa,W,ub,xb,Zl,Fb,",
+        "Url:z||\"\",isCustomAction:!!N};return W&&(a.sourceUrl=W),Hd(a).id}function Xe(a,b,g){Be();Ld(a,b,g)}function ih(a,b,g,k){a=Td({type:a,name:b+\"=\"+t(g+\"\",Kb(\"mpl\")),start:dc(),hb:!0});Cd(a,k);Ge()}function M",
+        "Url:W,isCustomAction:k,Nc:p,uc:N};Ua?(b=0,Ua=(z||(a.wa=",
+        "Url:la.url,wa:!1,guessedName:la.guessedName||\"\",sourceView:la.view})),la.actionId=z,la.isSourceActionCreated()&&m(!0,lb(z))),z)):((Ua=cd)?(la=0,b=(1<=b&&!z&&(la=sg(Object.assign(Object.assign({},a),{wa:Ua",
+        "Url:p}=a;if(g&&gf.length)for(b=gf.length-1;0<=b;b--){let z=gf[b],N=z.actionId,W=Mc(N);if(W&&k&&!k.startsWith(z.featureHash)&&J(W.xhrUrl||\"\")===z.xhrUrl&&z.xhrUrl===J(p||\"\")){b=N;break a}}b=0}return b||(a.",
+        "Url:\"\"}function jh(a,b){(a=Mc(a))&&a.Od(b)}function Xf(a){let {configuration:b={headers:{}},url:g,actionId:k,traceContext:p,ic:z}=a;b&&\"object\"==typeof b&&\"headers\"in b&&b.headers&&\"object\"==typeof b.head",
+        "fetchStart:z}=b;b=(Sg(b)?0:g)+6E4;b=p?b>p?g:p:z?b>z?g:z:g;Number.isFinite(b)&&(a=b)}return Math.round(a)}function Wi(){let a=ye(kb.performance,\"loadEventEnd\",!0),b=dc();return Math.round(a||b)}function Xi(",
+        "url:a.url||\"-\"}}function Uj(a){for(let b of a.getEntries())\"first-input\"===b.entryType&&b.processingStart&&b.startTime&&(c=Math.round(b.startTime),e=Math.round(b.processingStart-b.startTime));Bk()}functio",
+        "Url:Db(sd[7]),anchor:sd[10],guessedName:sd[11],sourceView:void 0};",
+        "url:\"\",title:\"\",view:void 0},Aa,wb,gc,ic,Lc,uf,ei=-1,Vg=null,fi=[],ph=[],oh=!1,Cg={_csprv_:{blockedURL:ja,documentURL:ja,referrer:ja,sourceFile:ja},_customerror_:function(a,b){return\"name\"===a?na(a,b,!0,1",
+        "Url:z}}else k=Bb(b,g);p=0<k.actionsAndEvents.length;let $a;if(p){if($a=this.G(),$a.addParam(\"a\",ag(k.actionsAndEvents),",
+        "fetch,fm=class extends Tl{constructor(a){super(a);a=a.Yb;let b={[\"Content-Type\"]:this.$};this.Ga()&&(b[\"x-dtreferer\"]=this.ja());this.na={method:\"POST\",credentials:\"same-origin\",headers:b,body:a,keepalive:",
+        "fetchStart\",f:\"domainLookupStart\",g:\"domainLookupEnd\",h:\"connectStart\",i:\"connectEnd\",",
+        "fetch:2,beacon:3,iframe:4,frame:5,subdocument:6,img:7,image:8,css:9,svg:10,link:11,script:12,input:13,body:14,object:15,embed:16,source:17,audio:18,video:19,",
+        "fetch\"===this.info?\"fetch\":\"xmlhttprequest\",this.start,3===this.status?this.stop:0);return le(a)?(this.Od(a),a):null}We(){let a=this.sc();if(!a||0>=a.startTime)return[];this.Ga(a);let b=[\"b\",Zd()+Math.roun",
+        "Url:z,Ba:N,",
+        "Url:b,isCustomAction:g,Na:k,stop:p,guessedName:z,Ba:N,start:W,name:la,domNodes:Sa,Sa:Ua,cb:$a,sourceView:ub,Ef:xb,Wd:Fb,Ma:mc,uc:fc}=this,Xc=mc.slice();var Rc=Xc.push;var nd=[];if(0!==w){var {name:gh,time",
+        "Url:x(J(p||\"\")),actionId:k,featureHash:z||\"\"}),N=a.apply(b,g||[]),\"g\"===",
+        "fetch\"===C.initiatorType&&sa.dT_.gto()+"
+      ],
+      "campos": [
+        {
+          "tag": "button",
+          "id": "menu-toggle",
+          "nome": "",
+          "tipo": "submit",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Proposições"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Comissões"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Plenário"
+        },
+        {
+          "tag": "button",
+          "id": "nova-pesquisa-btn",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Nova Pesquisa"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "reset",
+          "valor": "Limpar Filtros"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "×"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Tipo de Propositura\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-todos-side",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "on"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-1",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "1"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-1-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-1",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-2",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "2"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-5",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "5"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-4",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "4"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-4-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-4",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-3",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "3"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-3-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-3",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-9",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "9"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-6",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "6"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-7",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "7"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-7-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-7",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Autoria\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-autor-side-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-autor-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-apoiador-side-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-apoiador-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Identificação\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-numero-side",
+          "nome": "",
+          "tipo": "number",
+          "valor": ""
+        },
+        {
+          "tag": "select",
+          "id": "f-ano-side",
+          "nome": "",
+          "tipo": "select-one",
+          "valor": "Todos os anos202620252024202320222021202",
+          "opcoes": [
+            "=Todos os anos",
+            "2026=2026",
+            "2025=2025",
+            "2024=2024",
+            "2023=2023",
+            "2022=2022",
+            "2021=2021",
+            "2020=2020"
+          ]
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Data de Publicação\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-dtInicio-side",
+          "nome": "",
+          "tipo": "date",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-dtFim-side",
+          "nome": "",
+          "tipo": "date",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Etapa Atual\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-etapa-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Regime de Tramitação\n        +"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "×"
+        },
+        {
+          "tag": "input",
+          "id": "",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "3"
+        },
+        {
+          "tag": "input",
+          "id": "f-regime-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": "3"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Comissão atual\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-colegiado-side-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-colegiado-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Fase na Comissão\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-fase-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Relator atual\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-relator-side-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-relator-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Norma\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-transformadaNorma-side",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "on"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Busca Livre\n        −"
+        },
+        {
+          "tag": "input",
+          "id": "f-busca-side",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "submit",
+          "valor": "Pesquisar"
+        },
+        {
+          "tag": "input",
+          "id": "proposicoes-local-filter",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "btn-imprimir-proposicoes",
+          "nome": "",
+          "tipo": "submit",
+          "valor": "Imprimir"
+        },
+        {
+          "tag": "button",
+          "id": "btn-exportar-proposicoes",
+          "nome": "",
+          "tipo": "submit",
+          "valor": "Exportar"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Filtros ↓"
+        },
+        {
+          "tag": "select",
+          "id": "",
+          "nome": "",
+          "tipo": "select-one",
+          "valor": "50",
+          "opcoes": [
+            "10=10",
+            "25=25",
+            "50=50",
+            "100=100",
+            "500=500",
+            "1000=1000",
+            "5000=5000"
+          ]
+        }
+      ]
+    },
+    "seguido:https://www.al.sp.gov.br/propositura/pesquisa?ano=2026&tamanho=50": {
+      "url": "https://www.al.sp.gov.br/propositura/pesquisa?ano=2026&tamanho=50",
+      "status": 200,
+      "titulo": "Proposituras | Alesp",
+      "texto": "Ir para o conteúdo principal PORTAL ALESP ATIVIDADE LEGISLATIVA Proposições Comissões Plenário Legislação Home Proposituras Tipo de Propositura Todos Projeto de Lei Projeto de Lei Complementar Proposta de Emenda à Constituição Projeto de Decreto Legislativo Projeto de Resolução Indicação Moção Requerimento Requerimento de Informação Identificação Número Ano Todos os anos 2026 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 2014 2013 2012 2011 2010 2009 2008 2007 2006 2005 2004 2003 2002 2001 2000 1999 1998 1997 1996 1995 1994 1993 1992 1991 1990 1989 1988 1987 1986 1985 1984 1983 1982 1981 1980 1979 1978 1977 1976 1975 1974 1973 1972 1971 1970 1968 1967 1966 1965 1964 1963 1962 1961 1960 1959 1958 1957 1956 1955 1954 1953 1952 1951 1950 1949 1948 1947 Data de Publicação no Diário Oficial Data Inicial Data Final Autoria do Projeto Todos Apoiadores Todos Etapa Atual de Tramitação Todos Regime de Tramitação Todos Comissão atual Todos Fase na Comissão Todos Relator atual Todos Busca Livre Transformada em Norma Limpar Filtros Pesquisar © 2026 Assembleia Legislativa do Estado de São Paulo",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.al.sp.gov.br/propositura#main-content",
+          "texto": "Ir para o conteúdo principal"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/",
+          "texto": "Atividade Legislativa"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura",
+          "texto": "Proposituras"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/leis/notificacoes/",
+          "texto": "Notificação de Tramitações"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa",
+          "texto": "Sobre o Processo Legislativo"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa/o-que-e-uma-comissao",
+          "texto": "O que é uma Comissão?"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/atividade-legislativa/como-funcionam-as-sessoes-da-alesp",
+          "texto": "Como funcionam as Sessões da Alesp"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/legislacao/",
+          "texto": "Legislação"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura#",
+          "texto": "WhatsApp"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura#",
+          "texto": "Facebook"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura#",
+          "texto": "X"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura#",
+          "texto": "LinkedIn"
+        },
+        {
+          "href": "https://www.al.sp.gov.br/propositura#",
+          "texto": "E-mail"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/colegiado/filtro-pesquisa",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 22143,
+          "inicio": "[{\"id\":12448,\"nome\":\"Comissão de Assuntos Desportivos\",\"tipo\":{\"id\":1,\"nome\":\"Comissão Permanente\"},\"sigla\":\"CAD\",\"dtInicio\":\"2011-03-04\",\"dtFim\":null,\"flAtivo\":\"S\",\"descricao\":\"À Comissão de Assuntos Desportivos compete opinar sobre proposições e assuntos que digam respeito aos esportes e recreação, bem como sobre a organização ou reorganização de repartições de administração direta ou indireta a"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/analise-fase/pesquisa",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 296,
+          "inicio": "[{\"id\":1,\"nome\":\"Pronto para entrar na Comissão\"},{\"id\":2,\"nome\":\"Pronto para ser distribuído a um(a) relator(a)\"},{\"id\":3,\"nome\":\"Distribuído para o(a) relator(a)\"},{\"id\":4,\"nome\":\"Recebido o voto do(a) relator(a)\"},{\"id\":7,\"nome\":\"Recebido o requerimento\"},{\"id\":8,\"nome\":\"Aguardando ciência\"}]"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/autores/relatores-atuais",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 17038,
+          "inicio": "[{\"id\":1000000330,\"matricula\":null,\"numero\":null,\"nome\":\"ADALBERTO FREITAS\",\"url\":null,\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":440,\"matricula\":null,\"numero\":null,\"nome\":\"ADILSON ROSSI\",\"url\":null,\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":1000000332,\"matricula\":null,\"numero\":null,\"nome\":\"ADRIANA BORGO\",\"url\":null,\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":1000000335,\""
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/tipo-processo/lista-pesquisa",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 2109,
+          "inicio": "[{\"id\":1,\"nome\":\"Projeto de Lei\",\"sigla\":\"PL\",\"subtipos\":[{\"id\":112,\"nome\":\"Projeto de Lei de LDO\",\"sigla\":\"LDO\"},{\"id\":142,\"nome\":\"Projeto de Lei do Orçamento\",\"sigla\":\"Orçamento\"},{\"id\":141,\"nome\":\"Projeto de Lei de PPA\",\"sigla\":\"PLPPA\"}]},{\"id\":2,\"nome\":\"Projeto de Lei Complementar\",\"sigla\":\"PLC\"},{\"id\":5,\"nome\":\"Proposta de Emenda à Constituição\",\"sigla\":\"PEC\"},{\"id\":4,\"nome\":\"Projeto de Decre"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/regime-tramitacao/todos",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 148,
+          "inicio": "[{\"idRegime\":1,\"nmRegime\":\"Tramitação Ordinária\"},{\"idRegime\":3,\"nmRegime\":\"Tramitação Prioridade\"},{\"idRegime\":2,\"nmRegime\":\"Tramitação Urgência\"}]"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/anos?flPropositura=true",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 396,
+          "inicio": "[2026,2025,2024,2023,2022,2021,2020,2019,2018,2017,2016,2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005,2004,2003,2002,2001,2000,1999,1998,1997,1996,1995,1994,1993,1992,1991,1990,1989,1988,1987,1986,1985,1984,1983,1982,1981,1980,1979,1978,1977,1976,1975,1974,1973,1972,1971,1970,1968,1967,1966,1965,1964,1963,1962,1961,1960,1959,1958,1957,1956,1955,1954,1953,1952,1951,1950,1949,1948,1947]"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/autores/autores-proposituras",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 174566,
+          "inicio": "[{\"id\":272,\"matricula\":300164,\"numero\":300164,\"nome\":\"ABDO HADADE\",\"url\":\"/parlamentar/300164\",\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":52,\"matricula\":300257,\"numero\":300257,\"nome\":\"ABELARDO CAMARINHA\",\"url\":\"/parlamentar/300257\",\"idPartido\":null,\"partido\":null,\"ordem\":null},{\"id\":11325,\"matricula\":299419,\"numero\":299419,\"nome\":\"ABILIO DUARTE\",\"url\":\"/parlamentar/299419\",\"idPartido\":nul"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo?page=0&size=50&sort=desc&flPropositura=true&ano=2026",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 43696,
+          "inicio": "{\"content\":[{\"idProcesso\":1100004871,\"tipoProcesso\":\"PL\",\"numeroProcesso\":33359,\"anoProcesso\":2026,\"numeroTipo\":884,\"anoTipo\":2026,\"numeroRg\":null,\"anoRg\":null,\"descricao\":\"Projeto de Lei 884/2026\",\"resumo\":\"Institui a Política Estadual de Monitoramento Eletrônico de Agressores em caso de violência doméstica e familiar contra a mulher, com o objetivo de fortalecer a fiscalização do cumprimento de "
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/facetas?flPropositura=true&ano=2026",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 10208,
+          "inicio": "{\"tipos\":[{\"id\":9,\"quantidade\":15133},{\"id\":7,\"quantidade\":2556},{\"id\":1,\"quantidade\":884},{\"id\":8,\"quantidade\":379},{\"id\":6,\"quantidade\":260},{\"id\":4,\"quantidade\":24},{\"id\":2,\"quantidade\":16},{\"id\":3,\"quantidade\":13},{\"id\":5,\"quantidade\":1}],\"subtipos\":[{\"id\":110,\"quantidade\":2292},{\"id\":121,\"quantidade\":111},{\"id\":111,\"quantidade\":53},{\"id\":34,\"quantidade\":34},{\"id\":25,\"quantidade\":20},{\"id\":100"
+        },
+        {
+          "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/resumos-com-links/lote?idsProcessos=1100004871&idsProcessos=1100004869&idsProcessos=1100004870&idsProcessos=1100004883&idsProcessos=1100004882&idsProcessos=1100004881&idsProcessos=1100004880&idsProcessos=1100004879&idsProcessos=1100004878&idsProcessos=1100004877&idsProcessos=1100004876&idsProcessos=1100004875&idsProcessos=1100004874&idsProcessos=1100004873&idsProcessos=1100004872&idsProcessos=1100004868&idsProcessos=1100004867&idsProcessos=1100004866&idsProcessos=1100004865&idsProcessos=1100004864&idsProcessos=1100004863&idsProcessos=1100004862&idsProcessos=1100004861&idsProcessos=1100004860&idsProcessos=1100004859&idsProcessos=1100004837&idsProcessos=1100004835&idsProcessos=1100004839&idsProcessos=1100004806&idsProcessos=1100004802&idsProcessos=1100004801&idsProcessos=1100004838&idsProcessos=1100004834&idsProcessos=1100004833&idsProcessos=1100004832&idsProcessos=1100004831&idsProcessos=1100004830&idsProcessos=1100004829&idsProcessos=1100004828&idsProcessos=1100004827&idsProcessos=1100004826&idsProcessos=1100004825&idsProcessos=1100004824&idsProcessos=1100004823&idsProcessos=1100004822&idsProcessos=1100004821&idsProcessos=1100004820&idsProcessos=1100004819&idsProcessos=1100004818&idsProcessos=1100004817",
+          "status": 200,
+          "tipo": "application/json",
+          "bytes": 2,
+          "inicio": "{}"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=QMTPHVLDQMFHUTPFKCUWMBKOMAFPNHKM-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=3743458194&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=QMTPHVLDQMFHUTPFKCUWMBKOMAFPNHKM-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=1553366459&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/rb_bf32302csu?type=js3&flavor=post&vi=QMTPHVLDQMFHUTPFKCUWMBKOMAFPNHKM-0&modifiedSince=1768847594389&bp=3&app=da4214bfad2bf73e&crc=2367849198&en=810ommp0&end=1",
+          "status": 404,
+          "tipo": "text/html",
+          "bytes": 736,
+          "inicio": "<div style=\"border: 3px solid #4991C5; font:1.5em; font-family:tahoma,calibri,arial; font-weight:bold; color:#1A4369; padding:5px; margin:10px; text-align:center\"> A URL especificada n&atilde;o pode ser encontrada. </div><!--0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234"
+        }
+      ]
+    },
+    "enderecos:https://www.al.sp.gov.br/propositura/pesquisa?ano=2026&tamanho=50": {
+      "url": "https://www.al.sp.gov.br/propositura/pesquisa?ano=2026&tamanho=50",
+      "caminhos": [],
+      "trechos": [
+        "ajax/libs/font-awesome/6.5.0/css/all.min.css\" integrity=\"sha384-/o6I2CkkWC//PSjvWC/eYN7l3xM3tJm8ZzVkCOfp//W05QcE3mlGskpoHB6XqI+B\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\">",
+        "Url:\"w2dax4xgw3\",cwt:\"\",cors:!1,cuc:\"\",cce:!1,cux:!1,postfix:\"\",dataDtConfig:\"\",debugName:\"\",dvl:500,dASXH:!1,disableCookieManager:!1,dKAH:!1,disableLogging:!1,dmo:!1,doel:!1,dpch:!1,dpvc:!1,disableXhrFai",
+        "Url:\"dynaTraceMonitor\",rid:\"\",ridPath:\"\",rpid:\"\",rcdec:12096E5,rtl:0,rtp:2,rtt:1E3,rtu:200,rvcl:24,sl:100,ssc:!1,svNB:!1,srad:!0,srbbv:1,srbw:!0,srcst:!1,srdinitrec:!0,",
+        "Url:\"dynaTraceMonitor\",",
+        "url:z,title:N,view:W}){return{id:a,target:b,name:\"\",type:g,next:void 0,prev:void 0,info:k||\"-\",start:dc(),sourceActionCreated:!1,validUntil:dc()+(p||30),url:z||pb(),title:N||document.title,guessedName:\"\",",
+        "url:p,title:z,view:N});try{return ic&&(W.next=Aa,W.next&&(W.next.prev=W),md(W)),W}finally{Lb(function(){B(W)},W.validUntil-dc())}}function Bd(){return Na(Lc)?Lc.gci():Aa}function ed(){return Na(Lc)?Lc.gpi",
+        "url:sc(\"url\",b),name:sc(\"name\",b),startTime:sc(\"start\",b),type:sc(\"type\",b)||\"-\",title:sc(\"title\",b)}}function B(a){if(Na(Lc))Lc.ei(a);else if(Aa){let b=Aa;for(;b.next&&b!==a;)b=b.next;b===a&&(sc(\"name\")&",
+        "Url:p}}function qb(a,b){let g=D(ae,function(p){return(p.ud()||a||b)&&!p.zf()}),k=Ce;if(b){k=[];Ce=[];for(let p of g)fa({kind:2<=p.status?\"ACTION_BEACON_FORCED\":\"ACTION_CLOSED\",detail:{a:p.start,s:p.stop,r",
+        "Url:N}=eb(p,g,a);u(gi,function(W){g.push(Va(W))});",
+        "Url:N}}function jc(a,b,g,k){let p=bg().slice();for(let z of p)try{z(a,b,g,k)}catch(N){}}function qc(){return tj}function Nc(a){a=ob(a);kl.includes(a)||kl.push(a)}function Pc(a){return kl.includes(a)}funct",
+        "fetch\"===a.initiatorType){let W=\"1\";Qi[a.name]&&(W=\"11\",delete Qi[a.name]);z.push(\"z\",W)}else Qi[a.name]&&(z.push(\"z\",\"01\"),delete Qi[a.name]);z=\"\";\"frame\"===a.initiatorType?z=\"f\":\"iframe\"===a.initiatorTyp",
+        "Url:N,Nc:W,sourceUrl:la=\"\",hb:Sa=!1,isCustomAction:Ua=!1,Xa:$a=!1,Vd:ub=-1,guessedName:xb=\"\",sourceView:Fb,uc:mc,id:fc}){a=new jm(g,k||g,a,b,z||\"\",p||-1,We(la),document.title,N||\"\",Ua,$a,Sa,W,ub,xb,Zl,Fb,",
+        "Url:z||\"\",isCustomAction:!!N};return W&&(a.sourceUrl=W),Hd(a).id}function Xe(a,b,g){Be();Ld(a,b,g)}function ih(a,b,g,k){a=Td({type:a,name:b+\"=\"+t(g+\"\",Kb(\"mpl\")),start:dc(),hb:!0});Cd(a,k);Ge()}function M",
+        "Url:W,isCustomAction:k,Nc:p,uc:N};Ua?(b=0,Ua=(z||(a.wa=",
+        "Url:la.url,wa:!1,guessedName:la.guessedName||\"\",sourceView:la.view})),la.actionId=z,la.isSourceActionCreated()&&m(!0,lb(z))),z)):((Ua=cd)?(la=0,b=(1<=b&&!z&&(la=sg(Object.assign(Object.assign({},a),{wa:Ua",
+        "Url:p}=a;if(g&&gf.length)for(b=gf.length-1;0<=b;b--){let z=gf[b],N=z.actionId,W=Mc(N);if(W&&k&&!k.startsWith(z.featureHash)&&J(W.xhrUrl||\"\")===z.xhrUrl&&z.xhrUrl===J(p||\"\")){b=N;break a}}b=0}return b||(a.",
+        "Url:\"\"}function jh(a,b){(a=Mc(a))&&a.Od(b)}function Xf(a){let {configuration:b={headers:{}},url:g,actionId:k,traceContext:p,ic:z}=a;b&&\"object\"==typeof b&&\"headers\"in b&&b.headers&&\"object\"==typeof b.head",
+        "fetchStart:z}=b;b=(Sg(b)?0:g)+6E4;b=p?b>p?g:p:z?b>z?g:z:g;Number.isFinite(b)&&(a=b)}return Math.round(a)}function Wi(){let a=ye(kb.performance,\"loadEventEnd\",!0),b=dc();return Math.round(a||b)}function Xi(",
+        "url:a.url||\"-\"}}function Uj(a){for(let b of a.getEntries())\"first-input\"===b.entryType&&b.processingStart&&b.startTime&&(c=Math.round(b.startTime),e=Math.round(b.processingStart-b.startTime));Bk()}functio",
+        "Url:Db(sd[7]),anchor:sd[10],guessedName:sd[11],sourceView:void 0};",
+        "url:\"\",title:\"\",view:void 0},Aa,wb,gc,ic,Lc,uf,ei=-1,Vg=null,fi=[],ph=[],oh=!1,Cg={_csprv_:{blockedURL:ja,documentURL:ja,referrer:ja,sourceFile:ja},_customerror_:function(a,b){return\"name\"===a?na(a,b,!0,1",
+        "Url:z}}else k=Bb(b,g);p=0<k.actionsAndEvents.length;let $a;if(p){if($a=this.G(),$a.addParam(\"a\",ag(k.actionsAndEvents),",
+        "fetch,fm=class extends Tl{constructor(a){super(a);a=a.Yb;let b={[\"Content-Type\"]:this.$};this.Ga()&&(b[\"x-dtreferer\"]=this.ja());this.na={method:\"POST\",credentials:\"same-origin\",headers:b,body:a,keepalive:",
+        "fetchStart\",f:\"domainLookupStart\",g:\"domainLookupEnd\",h:\"connectStart\",i:\"connectEnd\",",
+        "fetch:2,beacon:3,iframe:4,frame:5,subdocument:6,img:7,image:8,css:9,svg:10,link:11,script:12,input:13,body:14,object:15,embed:16,source:17,audio:18,video:19,",
+        "fetch\"===this.info?\"fetch\":\"xmlhttprequest\",this.start,3===this.status?this.stop:0);return le(a)?(this.Od(a),a):null}We(){let a=this.sc();if(!a||0>=a.startTime)return[];this.Ga(a);let b=[\"b\",Zd()+Math.roun",
+        "Url:z,Ba:N,",
+        "Url:b,isCustomAction:g,Na:k,stop:p,guessedName:z,Ba:N,start:W,name:la,domNodes:Sa,Sa:Ua,cb:$a,sourceView:ub,Ef:xb,Wd:Fb,Ma:mc,uc:fc}=this,Xc=mc.slice();var Rc=Xc.push;var nd=[];if(0!==w){var {name:gh,time",
+        "Url:x(J(p||\"\")),actionId:k,featureHash:z||\"\"}),N=a.apply(b,g||[]),\"g\"===",
+        "fetch\"===C.initiatorType&&sa.dT_.gto()+"
+      ],
+      "campos": [
+        {
+          "tag": "button",
+          "id": "menu-toggle",
+          "nome": "",
+          "tipo": "submit",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Proposições"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Comissões"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Plenário"
+        },
+        {
+          "tag": "button",
+          "id": "nova-pesquisa-btn",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Nova Pesquisa"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "reset",
+          "valor": "Limpar Filtros"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "×"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Tipo de Propositura\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-todos-side",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "on"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-1",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "1"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-1-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-1",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-2",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "2"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-5",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "5"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-4",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "4"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-4-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-4",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-3",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "3"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-3-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-3",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-9",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "9"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-6",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "6"
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-7",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "7"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-7-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-7",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-tipo-side-8",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "8"
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-8-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-subtipo-side-8",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Autoria\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-autor-side-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-autor-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-apoiador-side-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-apoiador-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Identificação\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-numero-side",
+          "nome": "",
+          "tipo": "number",
+          "valor": ""
+        },
+        {
+          "tag": "select",
+          "id": "f-ano-side",
+          "nome": "",
+          "tipo": "select-one",
+          "valor": "2026",
+          "opcoes": [
+            "=Todos os anos",
+            "2026=2026",
+            "2025=2025",
+            "2024=2024",
+            "2023=2023",
+            "2022=2022",
+            "2021=2021",
+            "2020=2020"
+          ]
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Data de Publicação\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-dtInicio-side",
+          "nome": "",
+          "tipo": "date",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-dtFim-side",
+          "nome": "",
+          "tipo": "date",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Etapa Atual\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-etapa-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Regime de Tramitação\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-regime-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Comissão atual\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-colegiado-side-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-colegiado-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Fase na Comissão\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-fase-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Relator atual\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-relator-side-search",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "f-relator-side",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Norma\n        +"
+        },
+        {
+          "tag": "input",
+          "id": "f-transformadaNorma-side",
+          "nome": "",
+          "tipo": "checkbox",
+          "valor": "on"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Busca Livre\n        −"
+        },
+        {
+          "tag": "input",
+          "id": "f-busca-side",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "submit",
+          "valor": "Pesquisar"
+        },
+        {
+          "tag": "input",
+          "id": "proposicoes-local-filter",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "btn-imprimir-proposicoes",
+          "nome": "",
+          "tipo": "submit",
+          "valor": "Imprimir"
+        },
+        {
+          "tag": "button",
+          "id": "btn-exportar-proposicoes",
+          "nome": "",
+          "tipo": "submit",
+          "valor": "Exportar"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Filtros ↓"
+        }
+      ]
+    },
+    "saplComoNavegador": {
+      "url": "https://sapl.al.sp.leg.br/api/materia/materialegislativa/?page_size=1",
+      "comoNavegador": true,
+      "erro": "fetch failed (ENOTFOUND)"
+    }
+  },
+  "RJ": {
+    "casa": "Alerj",
+    "diario": "Ioerj",
+    "https://www.alerj.rj.gov.br/": {
+      "url": "https://www.alerj.rj.gov.br/",
+      "status": 200,
+      "titulo": "Assembléia Legislativa do Estado do Rio de Janeiro",
+      "texto": "ALÔ ALERJ PERGUNTAS FREQUENTES INÍCIO ALERJ DEPUTADOS PROCESSO LEGISLATIVO COMUNICAÇÃO CONTATO LICITAÇÕES / TRANSPARÊNCIA 1 2 3 4 5 MAIS NOTÍCIAS 16.10.2026 - 15:19 NO DIA MUNDIAL DO PÃO, ALERJ DESTACA COMO LEIS E PROPOSTAS CHEGAM À MESA DOS FLUMINENSES Das manhãs em família à pausa para o café com colegas de trabalho, o pão está presente em diferentes momentos da rotina das pessoas. As decisões debatidas na Assembleia do Estado do Rio d... AGENDA sexta-feira, 16 de outubro de 2026 Não existe nenhuma informação disponível. NOTÍCIAS IMAGENS TV ALERJ RÁDIO ALERJ ENQUETE 16.10.2026 - 15:19 NO DIA MUNDIAL DO PÃO, ALERJ DESTACA COMO LEIS E PROPOSTAS CHEGAM À MESA DOS FLUMINENSES Das manhãs em família à pausa para o café com colegas de trabalho, o pão está presente em diferentes momentos da rotina das pessoas. As decisões debatidas na Assembleia do Estado do Rio d... CONTINUAR 16.10.2026 - 11:37 EXPOSIÇÃO \"CIDADES LÍQUIDAS\" TRANSFORMA CAFÉ EM ARTE NO PALÁCIO TIRADENTES Com entrada gratuita, mostra reúne 30 obras do artista francês Jèrôme Poignard e integra a programação comemorativa do centenário da sede histórica da Alerj A mistura de aquarela e café g... CONTINUAR 16.10.2026 - 10:00 ENTRE O DESPERDÍCIO E O PRATO VAZIO: LEIS DA ALERJ INCENTIVAM DOAÇÕES E O COMBATE À FOME No Dia Mundial da Alimentação, tecnologia e redes de solidariedade mostram como levar alimentos de onde sobram para onde fazem falta. Alimentos próprios para consumo acabam no lixo, enqua... CONTINUAR NOTÍCIAS ANT",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa",
+          "texto": ""
+        },
+        {
+          "href": "javascript:;",
+          "texto": "PROCESSO LEGISLATIVO"
+        },
+        {
+          "href": "http://www.ioerj.com.br/portal/modules/content/index.php?id=21",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144",
+          "texto": "Leis e Projetos"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=161",
+          "texto": "Projetos 2023-2027"
+        },
+        {
+          "href": "javascript:;",
+          "texto": "PROCESSO LEGISLATIVO"
+        },
+        {
+          "href": "http://www.ioerj.com.br/portal/modules/content/index.php?id=21",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144",
+          "texto": "Leis e Projetos"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=161",
+          "texto": "Projetos 2023-2027"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/#",
+          "texto": "PESQUISAR"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial",
+          "texto": ""
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial",
+          "texto": "CAPAS D.O."
+        },
+        {
+          "href": "http://www2.alerj.rj.gov.br/elerj/default.asp",
+          "texto": "ESCOLA DO LEGISLATIVO"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/j/collect?v=1&_v=j102&a=1498971577&t=pageview&_s=1&dl=https%3A%2F%2Fwww.alerj.rj.gov.br%2F&ul=pt-br&dt=Assembl%C3%A9ia%20Legislativa%20do%20Estado%20do%20Rio%20de%20Janeiro&sr=1280x720&vp=1280x720&_u=IEBAAEABAAAAACAAI~&jid=1214540827&gjid=1877550081&cid=1119622572.1792185667&tid=UA-5511064-1&_gid=1962683471.1792185667&_r=1&_slc=1&z=775798828",
+          "status": 200,
+          "tipo": "text/plain",
+          "bytes": 15,
+          "inicio": "2,cG-53NTCF6TKB"
+        },
+        {
+          "url": "https://analytics.google.com/g/collect?v=2&tid=G-53NTCF6TKB&gtm=45je6ae1v9117858115za20gxf1&_p=1792185666661&_gaz=1&gcd=13l3l3l3l2l1&npa=0&dma=0&_eu=ABAIAGA&are=1&cid=1119622572.1792185667&frm=0&pscdl=noapi&rcb=5&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&gaf=2&_s=1&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&dl=https%3A%2F%2Fwww.alerj.rj.gov.br%2F&dt=Assembl%C3%A9ia%20Legislativa%20do%20Estado%20do%20Rio%20de%20Janeiro&sid=1792185666&sct=1&seg=0&en=page_view&_fv=1&_ss=1&_ee=1&tfd=4795",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/Home/RecuperaConfiguracoesExibicao",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 35,
+          "inicio": "{\"tempoBanner\":5,\"tempoNoticia\":15}"
+        },
+        {
+          "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+          "status": 200,
+          "tipo": "application/json; charset=UTF-8",
+          "bytes": 3,
+          "inicio": "{}"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/Home/CarregaAbaNoticia",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 2152,
+          "inicio": "\"\\n \\n\\u003cdiv class=\\\"controle_linha\\\"\\u003e\\n \\u003cdiv class=\\\"data\\\"\\u003e16.10.2026 - 15:19\\u003c/div\\u003e\\n \\u003ca class=\\\"titulo\\\" href=\\\"/Visualizar/Noticia/88553\\\"\\u003eNO DIA MUNDIAL DO P\\u0026#195;O, ALERJ DESTACA COMO LEIS E PROPOSTAS CHEGAM \\u0026#192; MESA DOS FLUMINENSES\\u003c/a\\u003e\\n \\n \\u003cp\\u003eDas manhãs em família à pausa para o café com colegas de trabalho, o pão está "
+        }
+      ]
+    },
+    "http://alerjln1.alerj.rj.gov.br/scpro2327.nsf/Internet/LeiInt?OpenForm": {
+      "url": "http://alerjln1.alerj.rj.gov.br/scpro2327.nsf/Internet/LeiInt?OpenForm",
+      "status": 200,
+      "titulo": "",
+      "texto": "Clique aqui para escolher o Deputado (2023-2027) e ver os Projetos de Leis de sua autoria. Cadastro de Projeto de Lei Data Publ. Autor(es) 20260308411 ALTERA A LEI Nº 2.657, DE 26 DE DEZEMBRO DE 1996, QUE DISPÕE SOBRE O IMPOSTO SOBRE CIRCULAÇÃO DE MERCADORIAS E SERVIÇOS – ICMS, PARA ESTABELECER ALÍQUOTA DIFERENCIADA NAS OPERAÇÕES INTERNAS COM RAÇÕES E ALIMENTOS INDUSTRIALIZADOS DESTINADOS À ALIMENTAÇÃO DE CÃES E GATOS NO ESTADO DO RIO DE JANEIRO. =>20260308411 => {Constituição e Justiça Defesa e Proteção dos Animais Economia Indústria e Comércio Tributação Controle da Arrecadação Estadual e de Fiscalização dos Tributos Estaduais Orçamento Finanças Fiscalização Financeira e Controle } 16/10/2026 MARCELO DINO 20260308410 ESTABELECE DIRETRIZES PARA A CONTINUIDADE DO CUIDADO E DO SUPORTE À PESSOA COM DEFICIÊNCIA NA VIDA ADULTA E NO ENVELHECIMENTO, NO ÂMBITO DO ESTADO DO RIO DE JANEIRO. =>20260308410 => {Constituição e Justiça Assuntos da Criança do Adolescente e do Idoso Pessoa com Deficiência Saúde Defesa dos Direitos Humanos e Cidadania Orçamento Finanças Fiscalização Financeira e Controle } 16/10/2026 MARCELO DINO 20260308409 INSTITUI A POLÍTICA ESTADUAL DE REGIONALIZAÇÃO DA ATENÇÃO À PESSOA COM TRANSTORNO DO ESPECTRO AUTISTA, DISPÕE SOBRE O COFINANCIAMENTO ESTADUAL DE CENTROS MUNICIPAIS DE DIAGNÓSTICO E TERAPIA E A IMPLANTAÇÃO REGIONALIZADA DE CENTROS ESTADUAIS DE REABILITAÇÃO E INCLUSÃO, ALTERA A LEI Nº 9.395, DE 9 DE SETEMBRO DE 2021 E DÁ OUTRAS PROVIDÊNCIAS =>20260308409 =",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "http://alerjln1.alerj.rj.gov.br/scpro2327.nsf/deputadosint?OpenForm&ExpandView",
+          "texto": "Clique aqui para escolher o Deputado (2023-2027) e ver os Projetos de Leis de su"
+        }
+      ],
+      "chamadas": []
+    },
+    "https://www.ioerj.com.br/": {
+      "url": "https://www.ioerj.com.br/",
+      "status": 200,
+      "titulo": "IOERJ - Imprensa Oficial do Estado do Rio de Janeiro",
+      "texto": "Ir para o conteúdo Coronavírus Portal da Transparência Acesso à Informação Acessibilidade Facebook Instagram Linkedin A IMPRENSA DIÁRIO OFICIAL LICITAÇÕES SERVIÇOS ATENDIMENTO TRANSPARÊNCIA ÚLTIMA EDIÇÃO BUSCAS NO D.O. E-DOFS Publique no Diário Oficial SERVIÇOS GRÁFICOS CERTIFICADO DIGITAL GESTÃO DOCUMENTAL RJ DOC PROGRAMA MAIS LEITURA SALA DE CULTURA LEILA DINIZ REVISTA O PRELO OUTROS CANAIS DE ATENDIMENTO Registre aqui sua manifestação CANAL DE DENÚNCIAS OUVIDORIA ONDE ESTAMOS Sede da Imprensa Oficial Agência Niterói Rua Professor Heitor Carrilho, 81 Centro, Niterói – RJ Cep: 24030-230 Agência Barra da Tijuca Aerotown Power Center Av. Ayrton Senna, 2541 Loja 33/34, Barra da Tijuca – RJ CONTATOS IOERJ (21) 2717-4141 sac@ioerj.rj.gov.br @imprensaoficialrj CONSULTAS AO DIÁRIO OFICIAL Edições Pré 2008 Rua Professor Heitor Carrilho, 81 Centro, Niterói - RJ (21) 2717-6696 (21) 2717-7521 secdoa@ioerj.rj.gov.br CONTATOS Agência Niterói (21) 2717-4427 agenit@ioerj.rj.gov.br Agência Barra da Tijuca (21) 2332-6548 (21) 2332-6550 (21) 2332-6549 agebarra@ioerj.rj.gov.br CONTATOS PARA SERVIÇOS Serviços Gráficos (21) 2717-5825 secgap@ioerj.rj.gov.br Certificado Digital 0800 284 4675 certificadodigital @ioerj.rj.gov.br certificadodigital.ioerj.com.br Gestão Documental - RJDOC (21) 2717-5678 rjdoc@ioerj.rj.gov.br rjdoc.com.br SALA DE CULTURA LEILA DINIZ (21) 2717-5617 saladeculturaleiladiniz@gmail.com @culturaleiladiniz @culturaleiladiniz PROGRAMA MAIS LEITURA (21) 2717-2304 maisleitura@ioe",
+      "pdfs": [
+        {
+          "href": "https://transparencia.ioerj.com.br/wp-content/uploads/2023/10/ESTATUTO_IOERJ_ATUALIZADO_26_03_2021.pdf",
+          "texto": "Estatuto Social"
+        },
+        {
+          "href": "https://transparencia.ioerj.com.br/wp-content/uploads/2023/12/Plano_de_Integridade_Imprensa_Oficial.pdf",
+          "texto": "Plano de Integridade"
+        },
+        {
+          "href": "https://transparencia.ioerj.com.br/wp-content/uploads/2023/04/Codigo-de-Conduta-e-Integridade-IOERJ.pdf",
+          "texto": "Código de Conduta"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/wp-content/uploads/2024/06/Carta-de-Servicos-ao-Cidadao-2024_.pdf",
+          "texto": "Carta de Serviços ao cidadão"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/wp-content/uploads/2023/08/CORONAVIRUS1.pdf",
+          "texto": "Despesas com Coronavírus"
+        },
+        {
+          "href": "https://transparencia.ioerj.com.br/wp-content/uploads/2023/10/ESTATUTO_IOERJ_ATUALIZADO_26_03_2021.pdf",
+          "texto": "Estatuto Social"
+        },
+        {
+          "href": "https://transparencia.ioerj.com.br/wp-content/uploads/2023/12/Plano_de_Integridade_Imprensa_Oficial.pdf",
+          "texto": "Plano de Integridade"
+        },
+        {
+          "href": "https://transparencia.ioerj.com.br/wp-content/uploads/2023/04/Codigo-de-Conduta-e-Integridade-IOERJ.pdf",
+          "texto": "Código de Conduta"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/wp-content/uploads/2024/06/Carta-de-Servicos-ao-Cidadao-2024_.pdf",
+          "texto": "Carta de Serviços ao cidadão"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/wp-content/uploads/2023/08/CORONAVIRUS1.pdf",
+          "texto": "Despesas com Coronavírus"
+        },
+        {
+          "href": "https://transparencia.ioerj.com.br/wp-content/uploads/2023/10/ESTATUTO_IOERJ_ATUALIZADO_26_03_2021.pdf",
+          "texto": "Estatuto Social"
+        },
+        {
+          "href": "https://transparencia.ioerj.com.br/wp-content/uploads/2023/12/Plano_de_Integridade_Imprensa_Oficial.pdf",
+          "texto": "Plano de Integridade"
+        },
+        {
+          "href": "https://transparencia.ioerj.com.br/wp-content/uploads/2023/04/Codigo-de-Conduta-e-Integridade-IOERJ.pdf",
+          "texto": "Código de Conduta"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/wp-content/uploads/2024/06/Carta-de-Servicos-ao-Cidadao-2024_.pdf",
+          "texto": "Carta de Serviços ao cidadão"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/wp-content/uploads/2023/08/CORONAVIRUS1.pdf",
+          "texto": "Despesas com Coronavírus"
+        }
+      ],
+      "interessantes": [
+        {
+          "href": "https://portal.ioerj.com.br/#",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/diario-oficial/",
+          "texto": "Estrutura"
+        },
+        {
+          "href": "https://www.ioerj.com.br/asps/default_portal.asp",
+          "texto": "Publique no Diário Oficial"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/#",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/diario-oficial/",
+          "texto": "Estrutura"
+        },
+        {
+          "href": "https://www.ioerj.com.br/asps/default_portal.asp",
+          "texto": "Publique no Diário Oficial"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/#",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/diario-oficial/",
+          "texto": "Estrutura"
+        },
+        {
+          "href": "https://www.ioerj.com.br/asps/default_portal.asp",
+          "texto": "Publique no Diário Oficial"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/#",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/diario-oficial/",
+          "texto": "Estrutura"
+        },
+        {
+          "href": "https://www.ioerj.com.br/asps/default_portal.asp",
+          "texto": "Publique no Diário Oficial"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/#",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/diario-oficial/",
+          "texto": "Estrutura"
+        },
+        {
+          "href": "https://www.ioerj.com.br/asps/default_portal.asp",
+          "texto": "Publique no Diário Oficial"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/#",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "https://portal.ioerj.com.br/diario-oficial/",
+          "texto": "Estrutura"
+        },
+        {
+          "href": "https://www.ioerj.com.br/asps/default_portal.asp",
+          "texto": "Publique no Diário Oficial"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+          "status": 200,
+          "tipo": "application/json; charset=UTF-8",
+          "bytes": 3,
+          "inicio": "{}"
+        },
+        {
+          "url": "https://www.ioerj.com.br/cdn-cgi/rum?",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://portal.ioerj.com.br/wp-content/plugins/litespeed-cache/guest.vary.php",
+          "status": 200,
+          "tipo": "text/html; charset=UTF-8"
+        },
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-J3PJ1K5V0E&gtm=45je6ae1v9137437428za208zd9137437428xf1&_p=1792185682930&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=2040923952.1792185683&frm=0&ngs=1&pscdl=noapi&rcb=15&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1792185683&sct=1&seg=0&dl=https%3A%2F%2Fportal.ioerj.com.br%2F&dr=https%3A%2F%2Fwww.ioerj.com.br%2F&dt=IOERJ%20-%20Imprensa%20Oficial%20do%20Estado%20do%20Rio%20de%20Janeiro&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1162",
+          "status": 204,
+          "tipo": "text/plain"
+        }
+      ]
+    },
+    "seguido:https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa": {
+      "url": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa",
+      "status": 200,
+      "titulo": "Assembléia Legislativa do Estado do Rio de Janeiro",
+      "texto": "AGUARDE... ALÔ ALERJ PERGUNTAS FREQUENTES INÍCIO ALERJ DEPUTADOS PROCESSO LEGISLATIVO COMUNICAÇÃO CONTATO LICITAÇÕES / TRANSPARÊNCIA PROCURA VOLTAR 1 2 TOPO Sede da Alerj Rua da Ajuda, nº 05, Centro, Rio de Janeiro. CEP20040-000 Telefone +55 (21) 2588-1000",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa",
+          "texto": ""
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": ""
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Palácio Tiradentes"
+        },
+        {
+          "href": "javascript:;",
+          "texto": "PROCESSO LEGISLATIVO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Plenário"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Comissões"
+        },
+        {
+          "href": "http://www.ioerj.com.br/portal/modules/content/index.php?id=21",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144",
+          "texto": "Leis e Projetos"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=161",
+          "texto": "Projetos 2023-2027"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Constituição e Regimento"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "COMUNICAÇÃO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Sala de Imprensa"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Publicações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Licitações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Palácio Tiradentes"
+        },
+        {
+          "href": "javascript:;",
+          "texto": "PROCESSO LEGISLATIVO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Plenário"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Comissões"
+        },
+        {
+          "href": "http://www.ioerj.com.br/portal/modules/content/index.php?id=21",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144",
+          "texto": "Leis e Projetos"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=161",
+          "texto": "Projetos 2023-2027"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Constituição e Regimento"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "COMUNICAÇÃO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Sala de Imprensa"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Publicações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Licitações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "1"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "2"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/j/collect?v=1&_v=j102&a=1972950265&t=pageview&_s=1&dl=https%3A%2F%2Fwww.alerj.rj.gov.br%2FResultadoPesquisa%2FMontaTelaPesquisa&ul=pt-br&dt=Assembl%C3%A9ia%20Legislativa%20do%20Estado%20do%20Rio%20de%20Janeiro&sr=1280x720&vp=1280x720&_u=IEBAAEABAAAAACAAI~&jid=1635954620&gjid=1788883464&cid=78449950.1792185690&tid=UA-5511064-1&_gid=1880675753.1792185690&_r=1&_slc=1&z=952879737",
+          "status": 200,
+          "tipo": "text/plain",
+          "bytes": 15,
+          "inicio": "2,cG-53NTCF6TKB"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/Home/RecuperaConfiguracoesExibicao",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 35,
+          "inicio": "{\"tempoBanner\":5,\"tempoNoticia\":15}"
+        },
+        {
+          "url": "https://analytics.google.com/g/collect?v=2&tid=G-53NTCF6TKB&gtm=45je6ae1v9117858115za20gxf1&_p=1792185690023&_gaz=1&gcd=13l3l3l3l2l1&npa=0&dma=0&_eu=ABAIAGA&are=1&cid=78449950.1792185690&frm=0&pscdl=noapi&rcb=18&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&gaf=2&_s=1&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&dl=https%3A%2F%2Fwww.alerj.rj.gov.br%2FResultadoPesquisa%2FMontaTelaPesquisa&dt=Assembl%C3%A9ia%20Legislativa%20do%20Estado%20do%20Rio%20de%20Janeiro&sid=1792185690&sct=1&seg=0&en=page_view&_fv=1&_ss=1&_ee=1&tfd=3324",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_15_sn_EE55D35F61CDA7F12AD749715F7C26EA_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=15&flavor=post&vi=SHUGUBFLJPCOIQUARIUIHLKARRFQOSBE-0&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&crc=1865909336&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_15_sn_EE55D35F61CDA7F12AD749715F7C26EA_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=15&flavor=post&vi=SHUGUBFLJPCOIQUARIUIHLKARRFQOSBE-0&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&crc=284732598&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_15_sn_EE55D35F61CDA7F12AD749715F7C26EA_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=15&flavor=post&vi=SHUGUBFLJPCOIQUARIUIHLKARRFQOSBE-0&contentType=srBm&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&v=10347260902154544&crc=2079015545&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_15_sn_EE55D35F61CDA7F12AD749715F7C26EA_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=15&flavor=post&vi=SHUGUBFLJPCOIQUARIUIHLKARRFQOSBE-0&contentType=srTe&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&v=10347260902154544&crc=1864360125&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        }
+      ]
+    },
+    "enderecos:https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa": {
+      "url": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa",
+      "caminhos": [
+        "/Comunicacao/SalaDeImprensa/Noticias",
+        "/Comunicacao/SalaDeImprensa/Imagens",
+        "/Comunicacao/Publicacoes/Jornal",
+        "/Comunicacao/Publicacoes/Outras"
+      ],
+      "trechos": [
+        "AjaxStop = \"not\";",
+        "ajaxStart(function () {",
+        "ajaxStop(function () {",
+        "AjaxStop === 'undefined')",
+        "ajaxSetup({ cache: false }); //resolver problema com IE e cache quando são feitas chamadas via Json",
+        "Ajax(rootUrl + \"Home/RecuperaConfiguracoesExibicao\", \"\", function (response) {",
+        "Ajax(urlMetodo, parametros, funcSucesso, funcErro, isAsync) {",
+        "ajax({",
+        "url: urlMetodo,",
+        "Url:\"w2dax4xgw3\",cwt:\"\",cors:!1,cuc:\"\",cce:!1,cux:!1,postfix:\"\",dataDtConfig:\"\",debugName:\"\",dvl:500,dASXH:!1,disableCookieManager:!1,dKAH:!1,disableLogging:!1,dmo:!1,doel:!1,dpch:!1,dpvc:!1,disableXhrFai",
+        "Url:\"dynaTraceMonitor\",rid:\"\",ridPath:\"\",rpid:\"\",rcdec:12096E5,rtl:0,rtp:2,rtt:1E3,rtu:200,rvcl:24,sl:100,ssc:!1,svNB:!1,srad:!0,srbbv:1,",
+        "Url:\"dynaTraceMonitor\",",
+        "url:x,title:G,view:W}){return{id:a,target:b,name:\"\",type:e,next:void 0,prev:void 0,info:l||\"-\",start:lb(),sourceActionCreated:!1,validUntil:lb()+",
+        "url:x||Ib(),title:G||document.title,guessedName:\"\",view:W,getName:function(){if(!this.name){if(fb(\"uam\"))var ba={guessedName:\"dTMasked_\"+(xa(this.target)?this.target.nodeName:\"\")};else{var Ca=this.target|",
+        "url:q,title:x,view:G});try{return Bh&&(W.next=yd,",
+        "url:vc(\"url\",b),name:vc(\"name\",b),startTime:vc(\"start\",b),type:vc(\"type\",b)||\"-\",title:vc(\"title\",b)}}function od(a){if(bc(Oe))Oe.ei(a);else if(yd){let b=yd;for(;b.next&&b!==a;)b=b.next;b===a&&(vc(\"name\")",
+        "Url:q}}function Pa(a,b){let e=B(uf,function(q){return(q.gd()||a||b)&&!q.ef()}),l=Uc;if(b){l=[];Uc=[];for(let q of e)ma({kind:2<=q.status?\"ACTION_BEACON_FORCED\":\"ACTION_CLOSED\",detail:{a:q.start,s:q.stop,r",
+        "Url:G}=Ra(q,e,a);m(ci,function(W){e.push(oa(W))});uf=[...l];ci=[];return{actionsAndEvents:e.join(\",\"),referer:x,sourceUrl:G}}function Db(a,b,e,l){let q=di().slice();for(let x of q)try{x(a,b,e,l)}catch(G){",
+        "fetch\"===a.initiatorType){let W=\"1\";Ji[a.name]&&(W=\"11\",delete Ji[a.name]);x.push(\"z\",W)}else Ji[a.name]&&(x.push(\"z\",\"01\"),delete Ji[a.name]);x=\"\";\"frame\"===a.initiatorType?x=\"f\":\"iframe\"===a.initiatorTyp",
+        "Url:G,Fc:W,sourceUrl:ba=\"\",fb:Ca=!1,isCustomAction:Ia=!1,Va:$a=!1,Md:eb=-1,guessedName:tb=\"\",sourceView:qb,kc:Xb,id:uc}){a=new Fg(e,l||e,a,b,x||\"\",q||-1,jf(ba),document.title,G||\"\",Ia,$a,Ca,W,eb,tb,om,qb,",
+        "Url:x||\"\",isCustomAction:!!G};return W&&(a.sourceUrl=W),Hd(a).id}function Zg(a,b,e){se();$c(a,b,e)}function Ld(a,b,e,l){a=he({type:a,name:b+\"=\"+Hb(e+\"\",wb(\"mpl\")),start:lb(),fb:!0});gd(a,l);",
+        "Url:Bc(Kb(b||\"\")),actionId:a,featureHash:e||\"\"});b=l();return\"g\"===e?rc(function(){for(let q=0;q<wf.length;q++)if(wf[q].actionId===a){Ya(wf,q);break}},0):wf.pop(),b}function Ff(a){if(null==a?0:a.startsWit",
+        "Url:W,isCustomAction:l,Fc:q,kc:G};Ia?(b=0,Ia=(x||(a.va=Ia,b=Ke(a)),b)):ba?(x=0,Ia=(3<=b&&(x=Xe(Object.assign(Object.assign({},a),{name:ba.getName(),type:ba.type,start:ba.start,info:ba.info,sourceUrl:ba.ur",
+        "Url:q}=a;if(e&&wf.length)for(b=wf.length-1;0<=b;b--){let x=wf[b],G=x.actionId,W=rb(G);if(W&&l&&!l.startsWith(x.featureHash)&&Kb(W.xhrUrl||\"\")===x.xhrUrl&&",
+        "Url:\"\"}function Be(a,b){(a=rb(a))&&a.Ed(b)}function Wh(a,b){if(ce())return a=ob(a),null==Kf?void 0:Kf.validateRequestForTraceContext(a,b)}function kg(a){var b;let {configuration:e={headers:{}},url:l,actio",
+        "Url:ob(l),traceparentHeaderValue:null!=x?x:null,existingTracestateValue:null!=G?G:null,validation:null!=W?W:null};var ba=null==Kf?void 0:Kf.getTraceContextHeaderInfo(a);a=null==ba?void 0:ba.traceContext;l",
+        "fetchStart:x}=b;b=(Cf(b)?0:e)+6E4;b=q?b>q?e:q:x?b>x?e:x:e;Number.isFinite(b)&&(a=b)}return Math.round(a)}function Hh(){let a=Ye(na.performance,\"loadEventEnd\",!0),b=lb();return Math.round(a||b)}function Ih(",
+        "url:a.url||\"-\"}}function Lj(a){for(let b of a.getEntries())\"first-input\"===b.entryType&&b.processingStart&&b.startTime&&(Rh=Math.round(b.startTime),c=Math.round(b.processingStart-b.startTime));Kk()}functi",
+        "Url:cc(Bd[7]),anchor:Bd[10],guessedName:Bd[11],sourceView:void 0};16===Bd.length&&(Rj.sourceView={name:cc(Bd[12]),timestamp:Number.parseInt(Bd[13]),group:cc(Bd[14]),trigger:Qj.trigger,kind:Qj.kind,hydrate",
+        "url:\"\","
+      ],
+      "campos": [
+        {
+          "tag": "input",
+          "id": "tempoBanner",
+          "nome": "tempoBanner",
+          "tipo": "hidden",
+          "valor": "5000"
+        },
+        {
+          "tag": "input",
+          "id": "tempoNoticia",
+          "nome": "tempoNoticia",
+          "tipo": "hidden",
+          "valor": "15000"
+        },
+        {
+          "tag": "input",
+          "id": "txtPesquisar",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "isConsulta",
+          "nome": "isConsulta",
+          "tipo": "hidden",
+          "valor": "False"
+        },
+        {
+          "tag": "input",
+          "id": "termoPesquisa",
+          "nome": "termoPesquisa",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "txtProcurarInterno",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        }
+      ]
+    },
+    "seguido:https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial": {
+      "url": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial",
+      "status": 200,
+      "titulo": "Assembléia Legislativa do Estado do Rio de Janeiro",
+      "texto": "ALÔ ALERJ PERGUNTAS FREQUENTES INÍCIO ALERJ DEPUTADOS PROCESSO LEGISLATIVO COMUNICAÇÃO CONTATO LICITAÇÕES / TRANSPARÊNCIA COMUNICAÇÃO PUBLICAÇÕES / DIÁRIO OFICIAL VOLTAR Exibindo 1 a 10 de 95 1 2 3 4 5 28.02.2019 - 08:00 Diário Oficial Notícias - 28/02/2019 21.02.2019 - 08:00 Diário Oficial Notícias - 21/02/2019 14.02.2019 - 08:00 Diário Oficial Notícias - 14/02/2019 07.02.2019 - 08:00 Diário Oficial Notícias - 07/02/2019 20.12.2018 - 08:00 Diário Oficial Notícias - 20/12/2018 13.12.2018 - 08:00 Diário Oficial Notícias - 13/12/2018 06.12.2018 - 08:00 Diário Oficial Notícias - 06/12/2018 29.11.2018 - 08:00 Diário Oficial Notícias - 29/11/2018 22.11.2018 - 08:00 Diário Oficial Notícias - 22/11/2018 08.11.2018 - 08:00 Diário Oficial Notícias - 08/11/2018 Exibindo 1 a 10 de 95 1 2 3 4 5 1 2 TOPO Sede da Alerj Rua da Ajuda, nº 05, Centro, Rio de Janeiro. CEP20040-000 Telefone +55 (21) 2588-1000",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa",
+          "texto": ""
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": ""
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Palácio Tiradentes"
+        },
+        {
+          "href": "javascript:;",
+          "texto": "PROCESSO LEGISLATIVO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Plenário"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Comissões"
+        },
+        {
+          "href": "http://www.ioerj.com.br/portal/modules/content/index.php?id=21",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144",
+          "texto": "Leis e Projetos"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=161",
+          "texto": "Projetos 2023-2027"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Constituição e Regimento"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "COMUNICAÇÃO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Sala de Imprensa"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Publicações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Licitações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Palácio Tiradentes"
+        },
+        {
+          "href": "javascript:;",
+          "texto": "PROCESSO LEGISLATIVO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Plenário"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Comissões"
+        },
+        {
+          "href": "http://www.ioerj.com.br/portal/modules/content/index.php?id=21",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144",
+          "texto": "Leis e Projetos"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=161",
+          "texto": "Projetos 2023-2027"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Constituição e Regimento"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "COMUNICAÇÃO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Sala de Imprensa"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Publicações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Licitações"
+        },
+        {
+          "href": "javascript:DownloadArquivo('28022019_140923DO_2019-02-28.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 28/02/2019"
+        },
+        {
+          "href": "javascript:DownloadArquivo('21022019_133919DO_2019-02-21.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 21/02/2019"
+        },
+        {
+          "href": "javascript:DownloadArquivo('14022019_143214DO_2019-02-14.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 14/02/2019"
+        },
+        {
+          "href": "javascript:DownloadArquivo('08022019_155818DO-2019-02-07.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 07/02/2019"
+        },
+        {
+          "href": "javascript:DownloadArquivo('20122018_135847DO_2018-12-20.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 20/12/2018"
+        },
+        {
+          "href": "javascript:DownloadArquivo('13122018_095624DO_2018-12-13.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 13/12/2018"
+        },
+        {
+          "href": "javascript:DownloadArquivo('06122018_142721DO_2018-12-06.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 06/12/2018"
+        },
+        {
+          "href": "javascript:DownloadArquivo('29112018_135444DO_2018-11-29.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 29/11/2018"
+        },
+        {
+          "href": "javascript:DownloadArquivo('22112018_184454DO_2018-11-22.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 22/11/2018"
+        },
+        {
+          "href": "javascript:DownloadArquivo('08112018_133913DO_2018-11-08.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 08/11/2018"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "1"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "2"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/j/collect?v=1&_v=j102&a=1645016294&t=pageview&_s=1&dl=https%3A%2F%2Fwww.alerj.rj.gov.br%2FComunicacao%2FPublicacoes%2FDiarioOficial&ul=pt-br&dt=Assembl%C3%A9ia%20Legislativa%20do%20Estado%20do%20Rio%20de%20Janeiro&sr=1280x720&vp=1280x720&_u=IEBAAEABAAAAACAAI~&jid=1363741574&gjid=33446678&cid=1625649617.1792185703&tid=UA-5511064-1&_gid=1292311305.1792185703&_r=1&_slc=1&z=416478798",
+          "status": 200,
+          "tipo": "text/plain",
+          "bytes": 15,
+          "inicio": "2,cG-53NTCF6TKB"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/Home/RecuperaConfiguracoesExibicao",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 35,
+          "inicio": "{\"tempoBanner\":5,\"tempoNoticia\":15}"
+        },
+        {
+          "url": "https://analytics.google.com/g/collect?v=2&tid=G-53NTCF6TKB&gtm=45je6af0h2v9117858115za20gxf1&_p=1792185702712&_gaz=1&gcd=13l3l3l3l2l1&npa=0&dma=0&_eu=ABAIAGA&are=1&cid=1625649617.1792185703&frm=0&pscdl=noapi&rcb=8&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&gaf=2&_s=1&tag_exp=115616985~115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&dl=https%3A%2F%2Fwww.alerj.rj.gov.br%2FComunicacao%2FPublicacoes%2FDiarioOficial&dt=Assembl%C3%A9ia%20Legislativa%20do%20Estado%20do%20Rio%20de%20Janeiro&sid=1792185702&sct=1&seg=0&en=page_view&_fv=1&_ss=1&_ee=1&tfd=4295",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_11_sn_E2EAC7349B787F41B7A37C37F0642683_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=11&flavor=post&vi=EHRUCCKATMUHMPQKVPASBVHFUGGVICAN-0&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&crc=2655611881&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/Listar/ConsultarDocumentoEletronico?tipo=DI&pagina=1&limite=10&order=1+ASC&consultar=true&_=1792185700867",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 3148,
+          "inicio": "{\"Lista\":[{\"Id\":746,\"NmLinkDownload\":\"28022019_140923DO_2019-02-28.pdf\",\"NmTitulo\":\"Diário Oficial Notícias - 28/02/2019\",\"NmTituloAudio\":\"\",\"NmCaminhoAudio\":\"\",\"DataHoraPublicacao\":\"28.02.2019 - 08:00\",\"NmCaminhoImagem\":\"28022019_140924DO_2019-02-28-capa.jpg\",\"NmCaminhoBase\":\"/Uploads/Publicacao/DocumentoEletronico/\"},{\"Id\":736,\"NmLinkDownload\":\"21022019_133919DO_2019-02-21.pdf\",\"NmTitulo\":\"Diári"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_11_sn_E2EAC7349B787F41B7A37C37F0642683_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=11&flavor=post&vi=EHRUCCKATMUHMPQKVPASBVHFUGGVICAN-0&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&crc=2398857166&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_11_sn_E2EAC7349B787F41B7A37C37F0642683_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=11&flavor=post&vi=EHRUCCKATMUHMPQKVPASBVHFUGGVICAN-0&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&crc=1998429755&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        }
+      ]
+    },
+    "enderecos:https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial": {
+      "url": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial",
+      "caminhos": [
+        "/Comunicacao/SalaDeImprensa/Noticias",
+        "/Comunicacao/SalaDeImprensa/Imagens",
+        "/Comunicacao/Publicacoes/Jornal",
+        "/Comunicacao/Publicacoes/Outras"
+      ],
+      "trechos": [
+        "ajaxStart(function () {",
+        "ajaxStop(function () {",
+        "AjaxStop === 'undefined')",
+        "ajaxSetup({ cache: false }); //resolver problema com IE e cache quando são feitas chamadas via Json",
+        "Ajax(rootUrl + \"Home/RecuperaConfiguracoesExibicao\", \"\", function (response) {",
+        "Ajax(urlMetodo, parametros, funcSucesso, funcErro, isAsync) {",
+        "ajax({",
+        "url: urlMetodo,",
+        "Url:\"w2dax4xgw3\",cwt:\"\",cors:!1,cuc:\"\",cce:!1,cux:!1,postfix:\"\",dataDtConfig:\"\",debugName:\"\",dvl:500,dASXH:!1,disableCookieManager:!1,dKAH:!1,disableLogging:!1,dmo:!1,doel:!1,dpch:!1,dpvc:!1,disableXhrFai",
+        "Url:\"dynaTraceMonitor\",rid:\"\",ridPath:\"\",rpid:\"\",rcdec:12096E5,rtl:0,rtp:2,rtt:1E3,rtu:200,rvcl:24,sl:100,ssc:!1,svNB:!1,srad:!0,srbbv:1,",
+        "Url:\"dynaTraceMonitor\",",
+        "url:x,title:G,view:W}){return{id:a,target:b,name:\"\",type:e,next:void 0,prev:void 0,info:l||\"-\",start:lb(),sourceActionCreated:!1,validUntil:lb()+",
+        "url:x||Ib(),title:G||document.title,guessedName:\"\",view:W,getName:function(){if(!this.name){if(fb(\"uam\"))var ba={guessedName:\"dTMasked_\"+(xa(this.target)?this.target.nodeName:\"\")};else{var Ca=this.target|",
+        "url:q,title:x,view:G});try{return Bh&&(W.next=yd,",
+        "url:vc(\"url\",b),name:vc(\"name\",b),startTime:vc(\"start\",b),type:vc(\"type\",b)||\"-\",title:vc(\"title\",b)}}function od(a){if(bc(Oe))Oe.ei(a);else if(yd){let b=yd;for(;b.next&&b!==a;)b=b.next;b===a&&(vc(\"name\")",
+        "Url:q}}function Pa(a,b){let e=B(uf,function(q){return(q.gd()||a||b)&&!q.ef()}),l=Uc;if(b){l=[];Uc=[];for(let q of e)ma({kind:2<=q.status?\"ACTION_BEACON_FORCED\":\"ACTION_CLOSED\",detail:{a:q.start,s:q.stop,r",
+        "Url:G}=Ra(q,e,a);m(ci,function(W){e.push(oa(W))});uf=[...l];ci=[];return{actionsAndEvents:e.join(\",\"),referer:x,sourceUrl:G}}function Db(a,b,e,l){let q=di().slice();for(let x of q)try{x(a,b,e,l)}catch(G){",
+        "fetch\"===a.initiatorType){let W=\"1\";Ji[a.name]&&(W=\"11\",delete Ji[a.name]);x.push(\"z\",W)}else Ji[a.name]&&(x.push(\"z\",\"01\"),delete Ji[a.name]);x=\"\";\"frame\"===a.initiatorType?x=\"f\":\"iframe\"===a.initiatorTyp",
+        "Url:G,Fc:W,sourceUrl:ba=\"\",fb:Ca=!1,isCustomAction:Ia=!1,Va:$a=!1,Md:eb=-1,guessedName:tb=\"\",sourceView:qb,kc:Xb,id:uc}){a=new Fg(e,l||e,a,b,x||\"\",q||-1,jf(ba),document.title,G||\"\",Ia,$a,Ca,W,eb,tb,om,qb,",
+        "Url:x||\"\",isCustomAction:!!G};return W&&(a.sourceUrl=W),Hd(a).id}function Zg(a,b,e){se();$c(a,b,e)}function Ld(a,b,e,l){a=he({type:a,name:b+\"=\"+Hb(e+\"\",wb(\"mpl\")),start:lb(),fb:!0});gd(a,l);",
+        "Url:Bc(Kb(b||\"\")),actionId:a,featureHash:e||\"\"});b=l();return\"g\"===e?rc(function(){for(let q=0;q<wf.length;q++)if(wf[q].actionId===a){Ya(wf,q);break}},0):wf.pop(),b}function Ff(a){if(null==a?0:a.startsWit",
+        "Url:W,isCustomAction:l,Fc:q,kc:G};Ia?(b=0,Ia=(x||(a.va=Ia,b=Ke(a)),b)):ba?(x=0,Ia=(3<=b&&(x=Xe(Object.assign(Object.assign({},a),{name:ba.getName(),type:ba.type,start:ba.start,info:ba.info,sourceUrl:ba.ur",
+        "Url:q}=a;if(e&&wf.length)for(b=wf.length-1;0<=b;b--){let x=wf[b],G=x.actionId,W=rb(G);if(W&&l&&!l.startsWith(x.featureHash)&&Kb(W.xhrUrl||\"\")===x.xhrUrl&&",
+        "Url:\"\"}function Be(a,b){(a=rb(a))&&a.Ed(b)}function Wh(a,b){if(ce())return a=ob(a),null==Kf?void 0:Kf.validateRequestForTraceContext(a,b)}function kg(a){var b;let {configuration:e={headers:{}},url:l,actio",
+        "Url:ob(l),traceparentHeaderValue:null!=x?x:null,existingTracestateValue:null!=G?G:null,validation:null!=W?W:null};var ba=null==Kf?void 0:Kf.getTraceContextHeaderInfo(a);a=null==ba?void 0:ba.traceContext;l",
+        "fetchStart:x}=b;b=(Cf(b)?0:e)+6E4;b=q?b>q?e:q:x?b>x?e:x:e;Number.isFinite(b)&&(a=b)}return Math.round(a)}function Hh(){let a=Ye(na.performance,\"loadEventEnd\",!0),b=lb();return Math.round(a||b)}function Ih(",
+        "url:a.url||\"-\"}}function Lj(a){for(let b of a.getEntries())\"first-input\"===b.entryType&&b.processingStart&&b.startTime&&(Rh=Math.round(b.startTime),c=Math.round(b.processingStart-b.startTime));Kk()}functi",
+        "Url:cc(Bd[7]),anchor:Bd[10],guessedName:Bd[11],sourceView:void 0};16===Bd.length&&(Rj.sourceView={name:cc(Bd[12]),timestamp:Number.parseInt(Bd[13]),group:cc(Bd[14]),trigger:Qj.trigger,kind:Qj.kind,hydrate",
+        "url:\"\",",
+        "URL:P,documentURL:P,referrer:P,sourceFile:P},_customerror_:function(a,b){return\"name\"===a?R(a,b,!0,1E3):R(a,b,!0,wb(\"mcepsl\"))},_vc_:{VE:function(a,b){return b}},_dj_:function(a,b){return b},_wv_:{lcpU:P}"
+      ],
+      "campos": [
+        {
+          "tag": "input",
+          "id": "tempoBanner",
+          "nome": "tempoBanner",
+          "tipo": "hidden",
+          "valor": "5000"
+        },
+        {
+          "tag": "input",
+          "id": "tempoNoticia",
+          "nome": "tempoNoticia",
+          "tipo": "hidden",
+          "valor": "15000"
+        },
+        {
+          "tag": "input",
+          "id": "txtPesquisar",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "tipo",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": "DI"
+        }
+      ]
+    },
+    "saplComoNavegador": {
+      "url": "https://sapl.al.rj.leg.br/api/materia/materialegislativa/?page_size=1",
+      "comoNavegador": true,
+      "erro": "fetch failed (ENOTFOUND)"
+    }
+  }
+}
