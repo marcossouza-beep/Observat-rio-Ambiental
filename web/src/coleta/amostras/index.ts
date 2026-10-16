@@ -253,6 +253,57 @@ const PASSOS_NE: Passo[] = [
   },
 ]
 
+/** Página inicial e até `max` links dela que casam com `re` (mesmo site), para achar onde ficam as proposições. */
+async function gravarComLinks(fonte: string, inicio: string, re: RegExp, max = 4) {
+  const g = await gravarHtml(fonte, 'inicio', inicio)
+  const html = ((g.corpo as { html?: string } | null)?.html || '') as string
+  const base = g.url || inicio
+  const host = new URL(base).host.replace(/^www\./, '')
+  const links = [...new Set([...html.matchAll(/href=["']([^"'#]+)["']/g)].map((m) => { try { return new URL(m[1].replace(/&amp;/g, '&'), base).toString() } catch { return '' } }))]
+    .filter((u) => u && re.test(u) && new URL(u).host.replace(/^www\./, '') === host)
+    .slice(0, max)
+  for (const [i, u] of links.entries()) await gravarHtml(fonte, `link-${i + 1}`, u)
+}
+
+/** Centro-Oeste (Fase 6): pesquisa de proposições da ALMT; páginas de proposições da Alego e da ALEMS. */
+const PASSOS_CO: Passo[] = [
+  {
+    fonte: 'almt',
+    nome: 'proposicoes',
+    async rodar() {
+      const base = 'https://www.al.mt.gov.br/proposicao'
+      const lista = await gravarHtml('almt', 'proposicoes', base)
+      const html = ((lista.corpo as { html?: string } | null)?.html || '') as string
+      // Valor do tipo "Projeto de lei" no formulário de pesquisa
+      const tipo = /<option value="([^"]+)"[^>]*>\s*Projeto de lei\s*<\/option>/i.exec(html)?.[1] || ''
+      const q = (o: Record<string, string>) =>
+        `${base}?${new URLSearchParams(Object.fromEntries(Object.entries(o).map(([k, v]) => [`almt_form_proposicao_search_proposicao[${k}]`, v]))).toString()}`
+      const ano = String(new Date().getFullYear())
+      await gravarHtml('almt', 'proposicoes-pl-ano', q({ tipoPropositura: tipo, ano }))
+      await gravarHtml('almt', 'proposicoes-ambiental', q({ palavraChave: 'ambiental', ano }))
+      await gravarHtml('almt', 'proposicoes-pagina-2', `${q({ tipoPropositura: tipo, ano })}&page=2`)
+      const id = /\/proposicao\/cpdoc\/(\d+)\/visualizar/.exec(html)?.[1]
+      if (id) await gravarHtml('almt', 'detalhe', `${base}/cpdoc/${id}/visualizar`)
+      await gravarHtml('almt', 'diario-oficial', 'http://diariooficial.al.mt.gov.br/')
+    },
+  },
+  {
+    fonte: 'alego',
+    nome: 'portal',
+    async rodar() {
+      await gravarComLinks('alego', 'https://portal.al.go.leg.br/', /proposi|processo|projeto|legislativ|materia|tramit/i)
+    },
+  },
+  {
+    fonte: 'alems',
+    nome: 'portal',
+    async rodar() {
+      await gravarComLinks('alems', 'https://al.ms.gov.br/', /proposi|projeto|legislativ|materia|tramit|Proposicao|Projetos/i)
+      await gravarHtml('alems', 'rss', 'https://al.ms.gov.br/RSS')
+    },
+  },
+]
+
 /** Pará e Roraima sem SAPL aberto: Diário da ALE-RR (WordPress + PDF) e Banco de Leis da Alepa (API JSON). */
 const PASSOS_NORTE: Passo[] = [
   {
@@ -618,7 +669,7 @@ async function main() {
   const ctx: Ctx = {}
   await mkdir(saida, { recursive: true })
   const fontes = filtro ? filtro.split(',') : null
-  for (const p of [...PASSOS, ...PASSOS_SAPL, ...passosSapl('sapl-ne', SAPL_NE), ...PASSOS_NORTE, ...PASSOS_NE].filter((x) => !fontes || fontes.includes(x.fonte))) {
+  for (const p of [...PASSOS, ...PASSOS_SAPL, ...passosSapl('sapl-ne', SAPL_NE), ...PASSOS_NORTE, ...PASSOS_NE, ...PASSOS_CO].filter((x) => !fontes || fontes.includes(x.fonte))) {
     try {
       await p.rodar(ctx)
     } catch (e) {
