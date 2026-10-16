@@ -207,17 +207,21 @@ const PASSOS_NORTE: Passo[] = [
       await salvar('alepa', 'api-doc', await buscar('https://bancodeleis.alepa.pa.gov.br/api.php'))
       await salvar('alepa', 'tipos-proposicao', await buscar('https://www.alepa.pa.gov.br/Legislativo/GetTipoProposicoes'))
       // Página de detalhes (andamentos): projeto de licenciamento (647/2026) e APA Bacajaí (461/2026)
-      for (const id of [16347, 16099, 16375]) {
-        const tipo = encodeURIComponent('PROJETO DE LEI ORDINÁRIA')
-        const url = `https://www.alepa.pa.gov.br/Legislativo/DetalhesProposicao?IdProposicao=${id}&tipo=${tipo}&situacao=0&decisao=-1&veto=-1`
+      const tipo = encodeURIComponent('PROJETO DE LEI ORDINÁRIA')
+      for (const [nome, id, url] of [
+        ...[16347, 16099, 16375].map((id) => [`detalhes-${id}`, id, `https://www.alepa.pa.gov.br/Legislativo/DetalhesProposicao?IdProposicao=${id}&tipo=${tipo}&situacao=0&decisao=-1&veto=-1`] as const),
+        // Só com o id (como o conector chamava): para comparar
+        ['detalhes-16347-so-id', 16347, 'https://www.alepa.pa.gov.br/Legislativo/DetalhesProposicao?IdProposicao=16347'] as const,
+      ]) {
+        void id
         const gravadaEm = new Date().toISOString()
         try {
           const r = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36' }, signal: AbortSignal.timeout(45_000) })
           const html = await r.text()
           // A página inteira (o painel DevExpress fica no fim); só os scripts da biblioteca saem
-          await salvar('alepa', `detalhes-${id}`, { url, status: r.status, tipo: r.headers.get('content-type') || '', gravadaEm, corpo: { html: html.replace(/<script[^>]*src="\/DXR\.axd[^"]*"[^>]*><\/script>/g, '').slice(0, 400_000) } })
+          await salvar('alepa', nome, { url, status: r.status, tipo: r.headers.get('content-type') || '', gravadaEm, corpo: { html: html.replace(/<script[^>]*src="\/DXR\.axd[^"]*"[^>]*><\/script>/g, '').slice(0, 400_000) } })
         } catch (e) {
-          await salvar('alepa', `detalhes-${id}`, { url, status: null, tipo: '', gravadaEm, corpo: null, erro: (e as Error).message })
+          await salvar('alepa', nome, { url, status: null, tipo: '', gravadaEm, corpo: null, erro: (e as Error).message })
         }
       }
       // Lista de proposições (painel DevExpress): POST direto, sem navegador, com variações do campo de tipo
