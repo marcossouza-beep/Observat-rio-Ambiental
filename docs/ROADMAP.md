@@ -133,6 +133,13 @@ Uma região por ciclo, repetindo o processo do piloto.
 > - **Goiás:** o portal da Alego respondia na sondagem de 15/10 e não respondeu nas rodadas de 16/10 (DNS e tempo esgotado a partir do GitHub); testar de novo e, se continuar, de um servidor no Brasil.
 > - **Distrito Federal:** a CLDF e o DODF não respondem de fora do Brasil; precisam de servidor no Brasil.
 
+> **Fase 6 (Sudeste) — em andamento (16/10/2026):**
+> - **Minas Gerais, pela API de dados abertos da ALMG** (`web/src/coleta/almg/`, fonte `casa-mg`): a pesquisa direcionada devolve cada proposição completa (autor, ementa, situação, local, regime, indexação temática e o histórico inteiro), da mais nova para a mais antiga. As novas vêm das primeiras páginas de cada tipo (PL, PLC, PEC); as acompanhadas, pela pesquisa por número. As chamadas são em sequência, com um segundo entre elas, como a ALMG pede. Teste ao vivo: 79 proposições novas na semana, 6 páginas lidas.
+> - **São Paulo, pela API do processo legislativo da Alesp** (`web/src/coleta/alesp/`, fonte `casa-sp`): os dados abertos em arquivo têm 132 MB e não servem para 4 coletas ao dia; o estudo com navegador achou a API da aplicação, com pesquisa por tipo, número e ano, ficha (etapa, regime, norma, veto, autores, indexação) e andamentos.
+> - **Palavras-chave:** 23 termos dos quatro estados (Cetesb, Feam, Copam, IEF, Inea, Iema, Quadrilátero Ferrífero, Rio Doce, Baía de Guanabara, Sistema Cantareira, Serra do Mar e outros).
+> - **Rio de Janeiro:** a Alerj tem a lista de projetos em HTML (Lotus Notes, `alerjln1.alerj.rj.gov.br`), dos mais novos para os mais antigos, mas o servidor responde de forma instável a partir do GitHub (uma de três tentativas). Testar de um servidor no Brasil antes do conector.
+> - **Espírito Santo:** a Ales não responde de fora do Brasil.
+
 ## Fase 7 — Municipal e premium
 
 Capitais e municípios-chave (via Querido Diário). Camada premium definida a partir das métricas acumuladas.
