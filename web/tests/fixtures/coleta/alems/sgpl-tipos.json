@@ -1,0 +1,8 @@
+{
+  "url": "https://sgpl.consulta.al.ms.gov.br/sgpl/sgpl-api/public/tipoProposicao",
+  "status": 403,
+  "tipo": "",
+  "gravadaEm": "2026-10-16T19:13:57.712Z",
+  "corpo": null,
+  "erro": "HTTP 403 em https://sgpl.consulta.al.ms.gov.br/sgpl/sgpl-api/public/tipoProposicao"
+}

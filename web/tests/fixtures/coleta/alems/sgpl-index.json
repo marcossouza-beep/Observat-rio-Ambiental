@@ -1,0 +1,9 @@
+{
+  "url": "https://sgpl.consulta.al.ms.gov.br/sgpl-publico/",
+  "status": 200,
+  "tipo": "text/html; charset=UTF-8",
+  "gravadaEm": "2026-10-16T19:13:55.563Z",
+  "corpo": {
+    "html": "<!DOCTYPE html>\n<html>\n\n  <head>\n    <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" />\n    <title>SGPL</title>\n    <link rel=\"shortcut icon\" href=\"./favicon.ico\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n  </head>\n\n  <body>\n    <div class=\"sg-pow-captcha\" ng-show=\"powCaptchaInProgress\">\n      <span class=\"sg-pow-captcha__spinner\"></span>\n      <span>Validando acesso...</span>\n    </div>\n    <ui-view></ui-view>\n  <script type=\"text/javascript\" src=\"vendors.js\"></script><script type=\"text/javascript\" src=\"main.js\"></script></body>\n\n</html>\n"
+  }
+}
