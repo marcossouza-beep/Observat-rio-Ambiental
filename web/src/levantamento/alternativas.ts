@@ -14,6 +14,7 @@ import path from 'node:path'
 import { chromium, type Browser, type Response as RespostaPw } from '@playwright/test'
 import { USER_AGENT } from '../coleta/http'
 import { extrairTextoPdf } from '../coleta/textos'
+import { ESTADOS } from './candidatos'
 
 const NAVEGADOR = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36'
 const curto = (t: string, n = 300) => t.replace(/\s+/g, ' ').trim().slice(0, n)
@@ -173,9 +174,50 @@ async function lerPdf(url: string) {
   }
 }
 
+/**
+ * Estudo genérico de um estado (Fase 6+): abre os endereços conhecidos da casa e do diário (candidatos.ts) com
+ * navegador, anota as chamadas por trás e os links promissores, segue até 4 deles (proposições, projetos, diário)
+ * e tenta o SAPL no endereço padrão.
+ */
+async function estudarEstado(b: Browser, uf: string) {
+  const e = ESTADOS.find((x) => x.uf === uf)
+  if (!e) return { erro: 'UF desconhecida' }
+  const r: Record<string, unknown> = { casa: e.casa.sigla, diario: e.diario.sigla }
+  const paginas = [...e.casa.candidatos, ...e.diario.candidatos].map((c) => c.url).filter((u) => !/\/api\//.test(u))
+  const seguir = new Set<string>()
+  for (const url of paginas.slice(0, 4)) {
+    const n = (await navegar(b, url)) as { interessantes?: { href: string; texto: string }[] }
+    r[url] = n
+    for (const l of n.interessantes || [])
+      if (/proposi|projeto|materia|pesquis|diario|di%c3%a1rio|legisla/i.test(l.href) && new URL(l.href).host === new URL(url).host) seguir.add(l.href.split('#')[0])
+  }
+  // Os links mais promissores (proposições primeiro), até 4
+  const ordem = [...seguir].sort((a, b) => Number(/proposi|projeto|materia/i.test(b)) - Number(/proposi|projeto|materia/i.test(a))).slice(0, 4)
+  for (const url of ordem) {
+    r[`seguido:${url}`] = await navegar(b, url, true)
+    r[`enderecos:${url}`] = await endpointsDaPagina(b, url)
+  }
+  r.saplComoNavegador = await direto(`https://sapl.al.${uf.toLowerCase()}.leg.br/api/materia/materialegislativa/?page_size=1`, true)
+  return r
+}
+
 async function main() {
   const b = await chromium.launch(process.env.PW_CHROMIUM_PATH ? { executablePath: process.env.PW_CHROMIUM_PATH } : {})
   const resultado: Record<string, unknown> = { geradoEm: new Date().toISOString(), ambiente: process.env.GITHUB_ACTIONS ? 'GitHub Actions (fora do Brasil)' : 'local' }
+  // Com UFs (ex.: BA,CE,MA): estudo genérico desses estados, gravado em alternativas-<ufs>.json
+  const ufs = (process.argv[2] || '').split(',').map((u) => u.trim().toUpperCase()).filter(Boolean)
+  if (ufs.length) {
+    try {
+      for (const uf of ufs) resultado[uf] = await estudarEstado(b, uf)
+    } finally {
+      await b.close()
+    }
+    const destino = path.resolve(process.cwd(), `levantamento/alternativas-${ufs.join('-').toLowerCase()}.json`)
+    await mkdir(path.dirname(destino), { recursive: true })
+    await writeFile(destino, JSON.stringify(resultado, null, 2))
+    console.log(`Gravado em ${destino}`)
+    return
+  }
   try {
     // ---------- Pará ----------
     const pa = {

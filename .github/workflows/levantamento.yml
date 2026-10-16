@@ -12,7 +12,7 @@ on:
         required: false
         default: ''
       modo:
-        description: 'sondagem (padrão) ou alternativas (testes com navegador para PA, AP e RR)'
+        description: 'sondagem (padrão) ou alternativas (navegador; sem UFs, PA/AP/RR; com UFs, estudo genérico delas)'
         required: false
         default: 'sondagem'
 
@@ -49,7 +49,7 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
       - name: Testar alternativas (PA, AP, RR)
         if: github.event.inputs.modo == 'alternativas'
-        run: pnpm levantamento:alternativas
+        run: pnpm levantamento:alternativas ${{ github.event.inputs.ufs }}
       - name: Salvar no repositório
         run: |
           git config user.name "github-actions[bot]"
