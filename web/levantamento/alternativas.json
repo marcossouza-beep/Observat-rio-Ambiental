@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-10-16T02:02:05.849Z",
+  "geradoEm": "2026-10-16T02:05:57.347Z",
   "ambiente": "GitHub Actions (fora do Brasil)",
   "PA": {
     "proposicoes": {
@@ -179,7 +179,15 @@
           "texto": "Proposições"
         }
       ],
-      "chamadas": []
+      "chamadas": [
+        {
+          "url": "https://www.alepa.pa.gov.br/Comunicacao/CallbackPanelDiariosPesquisaAvancadaPartial",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 2828,
+          "inicio": "/*DX*/({'id':0,'result':'<%html%>'})/*DXHTML*/ <table class=\"dxcvControl_Office365 dxcv\" id=\"CardView\" style=\"width:100%;border-collapse:separate;\"> <tr> <td><table id=\"CardView_DXMainTable\" class=\"dxcvTable_Office365\" style=\"width:100%;empty-cells:show;\"> <tr> <td id=\"CardView_DXEmptyCard\" class=\"dxcvEmptyCard_Office365\"><div> Nenhum registro encontrado </div></td> </tr> </table><table id=\"CardVi"
+        }
+      ]
     },
     "diarios": {
       "url": "https://www.alepa.pa.gov.br/Comunicacao/Diarios",
@@ -326,6 +334,25 @@
           "texto": "📋\n        \n          Funcional\n          Regime Jurídico Único\n          RJU — "
         }
       ],
+      "interessantes": [],
+      "chamadas": []
+    },
+    "bancoDeLeisLinksApi": [
+      {
+        "href": "https://bancodeleis.alepa.pa.gov.br/api.php",
+        "texto": "🔗 Dados Abertos API"
+      },
+      {
+        "href": "https://bancodeleis.alepa.pa.gov.br/api.php",
+        "texto": "Ver orientações de uso →"
+      }
+    ],
+    "api:https://bancodeleis.alepa.pa.gov.br/api.php": {
+      "url": "https://bancodeleis.alepa.pa.gov.br/api.php",
+      "status": 200,
+      "titulo": "Dados Abertos API — Banco de Leis ALEPA",
+      "texto": "Banco de Leis – Assembleia Legislativa do Pará Dados Abertos 📚 Banco de Leis 🔗 Dados Abertos API INTEGRAÇÃO E TRANSPARÊNCIA Dados Abertos API do Banco de Leis Orientações para consulta automatizada das leis cadastradas no Banco de Leis da Assembleia Legislativa do Estado do Pará, com retorno em formato JSON. 📌 Visão geral A API do Banco de Leis permite consultar normas legislativas por número, ano, tipo e palavra-chave. O serviço retorna somente registros ativos e limita cada chamada a até 50 resultados. ENDPOINT PRINCIPAL https://bancodeleis.alepa.pa.gov.br/api/leis.php Formato de resposta: application/json; charset=utf-8 Método HTTP: GET ⚙️ Parâmetros de consulta Parâmetro Obrigatório Descrição Exemplo numero Não Número ou parte do número da lei. 5810 ano Não Ano da norma, com quatro dígitos. 2024 q Não Palavra-chave pesquisada na ementa e, quando disponível, no texto da lei. servidor tipo Não Identificador do tipo da norma, conforme cadastro interno do Banco de Leis. 1 🧪 Exemplos de chamadas Consulta por número https://bancodeleis.alepa.pa.gov.br/api/leis.php?numero=5810 Consulta por ano https://bancodeleis.alepa.pa.gov.br/api/leis.php?ano=2024 Consulta por palavra-chave https://bancodeleis.alepa.pa.gov.br/api/leis.php?q=servidor Consulta combinada https://bancodeleis.alepa.pa.gov.br/api/leis.php?ano=2024&q=educacao Exemplo com cURL curl \"https://bancodeleis.alepa.pa.gov.br/api/leis.php?numero=5810\" 📤 Exemplo de resposta { \"status\": true, \"total\": 1, \"resultados\": [ {",
+      "pdfs": [],
       "interessantes": [],
       "chamadas": []
     }
@@ -615,16 +642,71 @@
         "url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4745-08.10.2026.pdf"
       }
     ],
-    "pdfDiario": {
-      "url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4743-06.10.2026.pdf",
-      "paginas": 3,
-      "caracteres": 14209,
-      "projetosDeLei": 0,
-      "exemplos": [],
-      "ambientais": [
-        "e) Deputado Odilon. XIII - Comissão de Meio Ambiente e Desenvolvimento Sustentável: a) Deputado Eder Lourinho – Presidente; b) Deputada Joilma Teodora – Vice-Presidente; c) Deputado Rárison Barbosa; d) Deputado Rogério Borges; e) Deputado Armando Neto. XIV -"
-      ]
-    }
+    "pdfsDiario": [
+      {
+        "url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4743-06.10.2026.pdf",
+        "paginas": 3,
+        "caracteres": 14209,
+        "projetosDeLei": 0,
+        "exemplos": [],
+        "ambientais": [
+          "e) Deputado Odilon. XIII - Comissão de Meio Ambiente e Desenvolvimento Sustentável: a) Deputado Eder Lourinho – Presidente; b) Deputada Joilma Teodora – Vice-Presidente; c) Deputado Rárison Barbosa; d) Deputado Rogério Borges; e) Deputado Armando Neto. XIV -"
+        ]
+      },
+      {
+        "url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4748-14.10.2026.pdf",
+        "paginas": 3,
+        "caracteres": 13384,
+        "projetosDeLei": 0,
+        "exemplos": [],
+        "ambientais": [
+          "e) Deputado Odilon. XIII - Comissão de Meio Ambiente e Desenvolvimento Sustentável: a) Deputado Eder Lourinho – Presidente; b) Deputada Joilma Teodora – Vice-Presidente; c) Deputado Rárison Barbosa; d) Deputado Rogério Borges; e) Deputado Armando Neto. XIV -"
+        ]
+      },
+      {
+        "url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4746-09.10.2026.pdf",
+        "paginas": 6,
+        "caracteres": 29377,
+        "projetosDeLei": 0,
+        "exemplos": [],
+        "ambientais": [
+          "e) Deputado Odilon. XIII - Comissão de Meio Ambiente e Desenvolvimento Sustentável: a) Deputado Eder Lourinho – Presidente; b) Deputada Joilma Teodora – Vice-Presidente; c) Deputado Rárison Barbosa; d) Deputado Rogério Borges; e) Deputado Armando Neto. XIV -"
+        ]
+      },
+      {
+        "url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4747-13.10.2026.pdf",
+        "paginas": 47,
+        "caracteres": 355346,
+        "projetosDeLei": 32,
+        "exemplos": [
+          "INTENDÊNCIA LEGISLATIVA PROJETOS DE LEI PROJETO DE LEI Nº 149/2026 INSTITUI A POLÍTICA ESTADUAL DE SAÚDE VOCAL E DE PREVENÇÃO AO DISTÚRBIO VOCAL RELACIONADO AO TRABALHO (DVRT) PARA OS PROFISSIONAIS DA EDUCAÇÃO DA REDE PÚBLICA E PRIVADA NO ESTADO DE RORAIMA, E",
+          "ecente aprovação, em âmbito federal, do projeto de lei na Comissão de Constituição e Justiça (CCJ) que institui a notificação compulsória do Distúrbio Vocal Relacionado ao Trabalho (DVRT) como doença funcional representa um marco histórico. Trata-se do reconhe",
+          "ternalização dessa proteção. O presente Projeto de Lei visa criar uma política estadual efetiva. Não basta apenas notificar; é preciso prevenir através de exames periódicos, capacitar os professores para o uso correto da voz e, principalmente, garantir a reabi",
+          "já estiver instalado. A aprovação deste Projeto de Lei colocará Roraima na vanguarda da proteção à saúde do trabalhador da educação, valorizando aqueles que dedicam suas vidas — e suas vozes — à formação do futuro do nosso Estado. Diante da relevância da matér"
+        ],
+        "ambientais": [
+          "e) Deputado Odilon. XIII - Comissão de Meio Ambiente e Desenvolvimento Sustentável: a) Deputado Eder Lourinho – Presidente; b) Deputada Joilma Teodora – Vice-Presidente; c) Deputado Rárison Barbosa; d) Deputado Rogério Borges; e) Deputado Armando Neto. XIV -",
+          "malizados b) 18.604 - Fundo Estadual Do Meio Ambiente e Desenvolvimento Sustentável – FEMADS Ação: 2308 – Gestão do Fundo Estadual do Meio Ambiente Título: De: Gestão do Fundo Estadual do Meio Ambiente Para: Gestão do Fundo Estadual do Meio Ambiente e Desenvol",
+          "ção: 2308 – Gestão do Fundo Estadual do Meio Ambiente Título: De: Gestão do Fundo Estadual do Meio Ambiente Para: Gestão do Fundo Estadual do Meio Ambiente e Desenvolvimento Sustentável c) 18.101 - Secretaria de Estado da Agricultura, Desenvolvimento e Inovaçã",
+          "Título: De: Gestão do Fundo Estadual do Meio Ambiente Para: Gestão do Fundo Estadual do Meio Ambiente e Desenvolvimento Sustentável c) 18.101 - Secretaria de Estado da Agricultura, Desenvolvimento e Inovação. Ação: 2481 - Implementação do Zoneamento Ecológico-"
+        ]
+      },
+      {
+        "url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4745-08.10.2026.pdf",
+        "paginas": 4,
+        "caracteres": 24965,
+        "projetosDeLei": 7,
+        "exemplos": [
+          "rintendência Legislativa - Autógrafo do Projeto de Lei nº 157/2026 - Projeto de Lei Complementar nº 009/2026 - Projeto de Lei nº 139/2026 - Requerimentos nº 086 e 089/2026 Superintendência de Gestão de Pessoas - Resoluções nº 12863 e 12864/2026 02 02 03 04 04",
+          "tógrafo do Projeto de Lei nº 157/2026 - Projeto de Lei Complementar nº 009/2026 - Projeto de Lei nº 139/2026 - Requerimentos nº 086 e 089/2026 Superintendência de Gestão de Pessoas - Resoluções nº 12863 e 12864/2026 02 02 03 04 04 MATÉRIAS E PUBLICAÇÕES EXPEDI",
+          "ojeto de Lei Complementar nº 009/2026 - Projeto de Lei nº 139/2026 - Requerimentos nº 086 e 089/2026 Superintendência de Gestão de Pessoas - Resoluções nº 12863 e 12864/2026 02 02 03 04 04 MATÉRIAS E PUBLICAÇÕES EXPEDIENTE GERÊNCIA DE DOCUMENTAÇÃO ADMINISTRATI",
+          "TÓGRAFOS - PROJETOS DE LEI AUTÓGRAFO DO PROJETO DE LEI N. 157/2026 Altera dispositivo da Lei nº 2.415, de 27 de julho de 2026, que dispõe sobre as diretrizes para a elaboração e execução da Lei Orçamentária Anual para o exercício financeiro de 2027 e dá outras"
+        ],
+        "ambientais": [
+          "e) Deputado Odilon. XIII - Comissão de Meio Ambiente e Desenvolvimento Sustentável: a) Deputado Eder Lourinho – Presidente; b) Deputada Joilma Teodora – Vice-Presidente; c) Deputado Rárison Barbosa; d) Deputado Rogério Borges; e) Deputado Armando Neto. XIV -"
+        ]
+      }
+    ]
   },
   "AP": {
     "siteComoNavegador": {
@@ -660,12 +742,12 @@
       ],
       "chamadas": [
         {
-          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1h1v9101483413za208zd9101483413xf1&_p=1792116232710&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1160436977.1792116233&frm=0&ngs=1&pscdl=noapi&rcb=13&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938466~115938468~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792116232&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=2358",
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1v9101483413za208zd9101483413xf1&_p=1792116494895&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1216644545.1792116495&frm=0&ngs=1&pscdl=noapi&rcb=6&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792116495&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1976",
           "status": 204,
           "tipo": "text/plain"
         },
         {
-          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1h1v9101483413za200zd9101483413xf1&_p=1792116232710&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1160436977.1792116233&frm=0&ngs=1&pscdl=noapi&rcb=13&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=2&tag_exp=115938466~115938468~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792116232&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=scroll&epn.percent_scrolled=90&_et=7&tfd=7367",
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1v9101483413za200zd9101483413xf1&_p=1792116494895&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1216644545.1792116495&frm=0&ngs=1&pscdl=noapi&rcb=6&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=2&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792116495&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=scroll&epn.percent_scrolled=90&_et=7&tfd=6984",
           "status": 204,
           "tipo": "text/plain"
         }
