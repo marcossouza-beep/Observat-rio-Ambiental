@@ -342,7 +342,13 @@ const PASSOS_SE: Passo[] = [
       const pag = await gravarHtml('alesp', 'propositura', 'https://www.al.sp.gov.br/propositura/?id=1000682212')
       const ph = ((pag.corpo as { html?: string } | null)?.html || '') as string
       const js = /src="(\/legis-web-files\/main-[^"]+\.js)"/.exec(ph)?.[1]
-      if (js) await gravarHtml('alesp', 'legis-web-main', `https://www.al.sp.gov.br${js}`)
+      if (js) {
+        const main = await gravarHtml('alesp', 'legis-web-main', `https://www.al.sp.gov.br${js}`)
+        const mh = ((main.corpo as { html?: string } | null)?.html || '') as string
+        // Módulos da pesquisa e da proposição: é neles que ficam os caminhos da API (legis-api-portal-prd)
+        for (const m of [...new Set(mh.match(/legis-web-files\/(?:proposicao-view|topo-da-pesquisa|processo-view|documento-view)-[\w-]+\.js/g) || [])])
+          await gravarHtml('alesp', m.replace(/^legis-web-files\/|-[\w-]+\.js$/g, ''), `https://www.al.sp.gov.br/${m}`)
+      }
       await gravarHtml('alesp', 'dataset-tramitacao', 'https://www.al.sp.gov.br/dados-abertos/dataset/82')
       // O arquivo de proposituras (proposituras.zip: 17 MB, XML de 132 MB, sem ordem) fica de fora: pesado para 4 vezes ao dia
     },
