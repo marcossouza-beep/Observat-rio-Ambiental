@@ -40,7 +40,7 @@ async function direto(url: string, comoNavegador: boolean) {
 }
 
 /** Abre a página num navegador de verdade e anota o que ela busca por trás (XHR/fetch), os links de PDF e o texto visível. */
-async function navegar(b: Browser, url: string) {
+async function navegar(b: Browser, url: string, interagir = false) {
   const ctx = await b.newContext({ userAgent: NAVEGADOR, locale: 'pt-BR', ignoreHTTPSErrors: true })
   const p = await ctx.newPage()
   const chamadas: { url: string; status: number; tipo: string | null; bytes?: number; inicio?: string }[] = []
@@ -57,6 +57,15 @@ async function navegar(b: Browser, url: string) {
   try {
     const r = await p.goto(url, { waitUntil: 'networkidle', timeout: 45_000 })
     await p.waitForTimeout(2500)
+    if (interagir) {
+      // Pesquisa sem filtro: o que a página chama para trazer a lista
+      const botao = p.locator('button, input[type=submit], a.btn').filter({ hasText: /pesquis|buscar|filtrar|consultar/i }).first()
+      if (await botao.count()) {
+        await botao.click({ timeout: 10_000 }).catch(() => {})
+        await p.waitForLoadState('networkidle', { timeout: 30_000 }).catch(() => {})
+        await p.waitForTimeout(3000)
+      }
+    }
     const texto = await p.evaluate(() => document.body?.innerText || '')
     const links = await p.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => ({ href: (a as HTMLAnchorElement).href, texto: (a.textContent || '').trim().slice(0, 80) })))
     const pdfs = links.filter((l) => /\.pdf(\?|$)/i.test(l.href))
@@ -76,7 +85,7 @@ async function lerPdf(url: string) {
     if (!r.ok) return { url, status: r.status }
     const { texto, paginas } = await extrairTextoPdf(new Uint8Array(await r.arrayBuffer()))
     const achados = (re: RegExp) => [...texto.matchAll(re)].map((m) => curto(texto.slice(Math.max(0, m.index! - 40), m.index! + 220), 260))
-    const projetos = achados(/PROJETO DE LEI[^\n]{0,40}N[º°o.]/gi)
+    const projetos = achados(/PROJETO DE LEI/gi)
     return {
       url,
       paginas,
@@ -96,11 +105,23 @@ async function main() {
   try {
     // ---------- Pará ----------
     const pa = {
-      proposicoes: await navegar(b, 'https://www.alepa.pa.gov.br/Home/Page/Proposicoes'),
-      diarioOficial: await navegar(b, 'https://www.alepa.pa.gov.br/Home/Page/DiarioOficial'),
+      proposicoes: await navegar(b, 'https://www.alepa.pa.gov.br/Home/Page/Proposicoes', true),
+      diarioOficial: await navegar(b, 'https://www.alepa.pa.gov.br/Home/Page/DiarioOficial', true),
       diarios: await navegar(b, 'https://www.alepa.pa.gov.br/Comunicacao/Diarios'),
       bancoDeLeis: await navegar(b, 'https://bancodeleis.alepa.pa.gov.br/'),
     } as Record<string, unknown>
+    const linksBanco = await (async () => {
+      const ctx = await b.newContext({ userAgent: NAVEGADOR })
+      const p = await ctx.newPage()
+      try {
+        await p.goto('https://bancodeleis.alepa.pa.gov.br/', { waitUntil: 'networkidle', timeout: 45_000 })
+        return await p.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => ({ href: (a as HTMLAnchorElement).href, texto: (a.textContent || '').trim().slice(0, 60) })).filter((l) => /api|dados/i.test(`${l.href} ${l.texto}`)))
+      } finally {
+        await ctx.close()
+      }
+    })().catch((e) => [{ href: '', texto: erro(e) }])
+    pa.bancoDeLeisLinksApi = linksBanco
+    for (const l of linksBanco.slice(0, 2)) if (l.href) pa[`api:${l.href}`] = await navegar(b, l.href)
     const pdfPa = [pa.diarioOficial, pa.diarios].flatMap((x) => ((x as { pdfs?: { href: string }[] }).pdfs || []).map((l) => l.href))[0]
     if (pdfPa) pa.pdfDiario = await lerPdf(pdfPa)
     resultado.PA = pa
@@ -127,7 +148,9 @@ async function main() {
       rr.wpUltimos = { erro: erro(e) }
     }
     pdfRr ||= ((rr.diarios as { pdfs?: { href: string }[] }).pdfs || [])[0]?.href
-    if (pdfRr) rr.pdfDiario = await lerPdf(pdfRr)
+    const ultimas = Array.isArray(rr.wpUltimos) ? (rr.wpUltimos as { url?: string }[]).map((m) => m.url).filter((u): u is string => !!u) : pdfRr ? [pdfRr] : []
+    rr.pdfsDiario = []
+    for (const u of ultimas.slice(0, 5)) (rr.pdfsDiario as unknown[]).push(await lerPdf(u))
     resultado.RR = rr
 
     // ---------- Amapá ----------
