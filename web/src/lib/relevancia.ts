@@ -107,3 +107,51 @@ export function pontuar(texto: string, dicionario: Termo[]): Resultado {
     excluida,
   }
 }
+
+/**
+ * Onde o termo aparece no texto original (início e fim), com as mesmas variações da nota, para destacar na Triagem.
+ * O texto é normalizado sem mudar de tamanho (acento sai, hífen vira espaço), então as posições valem no original.
+ */
+export function posicoes(texto: string, termo: string): [number, number][] {
+  const re = expressao(termo)
+  if (!re) return []
+  const alvo = texto
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[-‐-―]/g, ' ')
+  // Só funciona se cada letra continuar sendo um caractere (letras acentuadas compostas); senão, nada a destacar
+  if (alvo.length !== texto.length) return []
+  const global = new RegExp(re.source, 'g')
+  const r: [number, number][] = []
+  for (const m of alvo.matchAll(global)) {
+    const inicio = m.index! + m[1].length
+    r.push([inicio, m.index! + m[0].length - m[m.length - 1].length])
+  }
+  return r
+}
+
+export type Sugestao = { id: number; nome: string; peso: number }
+
+/**
+ * Áreas e biomas sugeridos pelos termos encontrados: o grupo de cada palavra-chave é o nome da área ou do bioma.
+ * Ordem: o que mais pesou primeiro. Quem decide é o autor (a Triagem só pré-marca).
+ */
+export function sugerirClassificacao(
+  encontrados: string[] | null | undefined,
+  dicionario: { termo: string; grupo?: string | null; peso: number }[],
+  opcoes: { temas: { id: number; nome: string }[]; biomas: { id: number; nome: string }[] },
+): { temas: Sugestao[]; biomas: Sugestao[] } {
+  const grupoDe = new Map(dicionario.map((d) => [normalizar(d.termo), d]))
+  const peso = new Map<string, number>()
+  for (const t of encontrados || []) {
+    const d = grupoDe.get(normalizar(t))
+    if (d?.grupo) peso.set(normalizar(d.grupo), (peso.get(normalizar(d.grupo)) || 0) + d.peso)
+  }
+  const escolher = (lista: { id: number; nome: string }[]) =>
+    lista
+      .map((o) => ({ ...o, peso: peso.get(normalizar(o.nome)) || 0 }))
+      .filter((o) => o.peso > 0)
+      .sort((a, b) => b.peso - a.peso || a.nome.localeCompare(b.nome))
+  return { temas: escolher(opcoes.temas), biomas: escolher(opcoes.biomas) }
+}

@@ -17,7 +17,7 @@ async function voltarParaTriagem() {
   const r = await payload.find({ collection: 'proposicoes', where: { chaveOrigem: { equals: TILAPIA } }, limit: 1 })
   const p = r.docs[0]
   await payload.delete({ collection: 'compromissos', where: { proposicao: { equals: p.id } } })
-  await payload.update({ collection: 'proposicoes', id: p.id, data: { situacaoEditorial: 'triagem', prazoParecer: null } })
+  await payload.update({ collection: 'proposicoes', id: p.id, data: { situacaoEditorial: 'triagem', prazoParecer: null, temas: [], biomas: [] } })
   return p
 }
 
@@ -64,6 +64,13 @@ test.describe('Painel do autor', () => {
     await page.goto('/admin/triagem')
     const linha = page.locator('.obs-tri', { hasText: 'tilápia' })
     await expect(linha.locator('mark').first()).toBeVisible()
+    // Área sugerida pelos termos (tilápia, espécies exóticas) vem marcada; a desmarcada não é gravada
+    await expect(linha.getByRole('button', { name: /Espécies exóticas/ })).toHaveAttribute('aria-pressed', 'true')
+    const agua = linha.getByRole('button', { name: /Água/ })
+    if (await agua.count()) {
+      await agua.click()
+      await expect(agua).toHaveAttribute('aria-pressed', 'false')
+    }
     await linha.getByRole('button', { name: 'Ativar parecer' }).click()
     await linha.locator('input[type="date"]').fill('2026-12-01')
     await linha.getByRole('button', { name: 'Ativar e publicar aviso' }).click()
@@ -71,6 +78,9 @@ test.describe('Painel do autor', () => {
 
     const p = (await payload.find({ collection: 'proposicoes', where: { chaveOrigem: { equals: TILAPIA } }, limit: 1 })).docs[0]
     expect(p.situacaoEditorial).toBe('ativa')
+    const nomes = (p.temas || []).map((t) => (typeof t === 'object' ? t.nome : t))
+    expect(nomes).toContain('Espécies exóticas')
+    expect(nomes).not.toContain('Água')
     const c = await payload.find({ collection: 'compromissos', where: { proposicao: { equals: p.id }, status: { equals: 'aberto' } } })
     expect(c.docs[0].prazoEm.slice(0, 10)).toBe('2026-12-01')
 

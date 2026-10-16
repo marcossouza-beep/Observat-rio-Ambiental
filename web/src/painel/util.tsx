@@ -1,5 +1,6 @@
 import { situacaoPrazo, textoPrazo } from '../lib/compromissos'
 import { isoParaCivil } from '../lib/datas'
+import { posicoes } from '../lib/relevancia'
 
 export const ADMIN = '/admin'
 export const linkDoc = (colecao: string, id: string | number) => `${ADMIN}/collections/${colecao}/${id}`
@@ -25,21 +26,11 @@ export function inicioDaSemana(agora = new Date()): string {
   return new Date(seg).toISOString()
 }
 
-/** Destaca os termos encontrados na ementa (sem HTML: monta os pedaços). */
+/** Destaca os termos encontrados na ementa, com as mesmas variações da nota (plural, hífen, acento). */
 export function Destacar({ texto, termos }: { texto: string; termos?: string[] | null }) {
   const lista = (termos || []).filter(Boolean)
   if (!lista.length) return <>{texto}</>
-  const norm = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
-  const alvo = norm(texto)
-  const marcas: [number, number][] = []
-  for (const t of lista) {
-    const nt = norm(t)
-    let i = alvo.indexOf(nt)
-    while (i >= 0) {
-      marcas.push([i, i + nt.length])
-      i = alvo.indexOf(nt, i + nt.length)
-    }
-  }
+  const marcas: [number, number][] = lista.flatMap((t) => posicoes(texto, t))
   marcas.sort((a, b) => a[0] - b[0])
   const partes: React.ReactNode[] = []
   let pos = 0

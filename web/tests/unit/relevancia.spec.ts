@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { pontuar, type Termo } from '@/lib/relevancia'
+import { pontuar, posicoes, sugerirClassificacao, type Termo } from '@/lib/relevancia'
 
 const dic: Termo[] = [
   { termo: 'unidades de conservação', peso: 9, grupo: 'Unidades de conservação' },
@@ -62,5 +62,37 @@ describe('variações dos termos', () => {
     expect(r.encontrados).toHaveLength(2)
     expect(r.encontrados).toContain('licença ambiental por adesão e compromisso')
     expect(pontuar('Proíbe agrotóxicos', dic).nota).toBe(pontuar('Proíbe agrotóxicos', [t('agrotóxico', 9)]).nota)
+  })
+})
+
+describe('destaque e sugestão de áreas e biomas', () => {
+  it('posições no texto original, com variações e acento', () => {
+    const texto = 'Altera as Unidades de Conservação e a zona ecológico-econômica'
+    const [[a, b]] = posicoes(texto, 'unidade de conservação')
+    expect(texto.slice(a, b)).toBe('Unidades de Conservação')
+    expect(posicoes(texto, 'garimpo')).toEqual([])
+  })
+
+  it('sugere área e bioma pelo grupo dos termos, o que mais pesou primeiro', () => {
+    const dic = [
+      { termo: 'garimpo', grupo: 'Mineração', peso: 9 },
+      { termo: 'mercúrio', grupo: 'Mineração', peso: 7 },
+      { termo: 'terra indígena', grupo: 'Povos e comunidades', peso: 8 },
+      { termo: 'Amazônia', grupo: 'Amazônia', peso: 5 },
+      { termo: 'ambiental', grupo: 'Geral', peso: 3 },
+    ]
+    const temas = [
+      { id: 1, nome: 'Mineração' },
+      { id: 2, nome: 'Povos e comunidades' },
+      { id: 3, nome: 'Água' },
+    ]
+    const biomas = [
+      { id: 10, nome: 'Amazônia' },
+      { id: 11, nome: 'Cerrado' },
+    ]
+    const s = sugerirClassificacao(['garimpo', 'mercúrio', 'terra indígena', 'Amazônia', 'ambiental'], dic, { temas, biomas })
+    expect(s.temas.map((t) => t.nome)).toEqual(['Mineração', 'Povos e comunidades'])
+    expect(s.biomas.map((b) => b.id)).toEqual([10])
+    expect(sugerirClassificacao(null, dic, { temas, biomas })).toEqual({ temas: [], biomas: [] })
   })
 })
