@@ -1,0 +1,323 @@
+{
+  "url": "https://legis-api-portal-prd.al.sp.gov.br/documento/facetas?ano=2026",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T21:19:20.555Z",
+  "corpo": {
+    "tipos": [
+      {
+        "id": 20001,
+        "quantidade": 19241
+      },
+      {
+        "id": 14,
+        "quantidade": 2058
+      },
+      {
+        "id": 20008,
+        "quantidade": 1172
+      },
+      {
+        "id": 17,
+        "quantidade": 781
+      },
+      {
+        "id": 20019,
+        "quantidade": 245
+      },
+      {
+        "id": 20013,
+        "quantidade": 242
+      },
+      {
+        "id": 113,
+        "quantidade": 163
+      },
+      {
+        "id": 20012,
+        "quantidade": 155
+      },
+      {
+        "id": 18,
+        "quantidade": 149
+      },
+      {
+        "id": 20011,
+        "quantidade": 130
+      },
+      {
+        "id": 1000000005,
+        "quantidade": 125
+      },
+      {
+        "id": 26,
+        "quantidade": 118
+      },
+      {
+        "id": 24,
+        "quantidade": 109
+      },
+      {
+        "id": 1000000006,
+        "quantidade": 104
+      },
+      {
+        "id": 135,
+        "quantidade": 101
+      },
+      {
+        "id": 37,
+        "quantidade": 88
+      },
+      {
+        "id": 20010,
+        "quantidade": 62
+      },
+      {
+        "id": 144,
+        "quantidade": 38
+      },
+      {
+        "id": 20,
+        "quantidade": 31
+      },
+      {
+        "id": 21,
+        "quantidade": 22
+      },
+      {
+        "id": 129,
+        "quantidade": 22
+      },
+      {
+        "id": 145,
+        "quantidade": 14
+      },
+      {
+        "id": 20007,
+        "quantidade": 12
+      },
+      {
+        "id": 30,
+        "quantidade": 8
+      },
+      {
+        "id": 33,
+        "quantidade": 6
+      },
+      {
+        "id": 19,
+        "quantidade": 5
+      },
+      {
+        "id": 36,
+        "quantidade": 4
+      },
+      {
+        "id": 34,
+        "quantidade": 3
+      },
+      {
+        "id": 148,
+        "quantidade": 3
+      },
+      {
+        "id": 1,
+        "quantidade": 2
+      },
+      {
+        "id": 39,
+        "quantidade": 2
+      },
+      {
+        "id": 149,
+        "quantidade": 2
+      },
+      {
+        "id": 1000000001,
+        "quantidade": 2
+      },
+      {
+        "id": 138,
+        "quantidade": 1
+      },
+      {
+        "id": 20009,
+        "quantidade": 1
+      },
+      {
+        "id": 20014,
+        "quantidade": 1
+      },
+      {
+        "id": 20020,
+        "quantidade": 1
+      }
+    ],
+    "autores": [
+      {
+        "id": 12419,
+        "quantidade": 3219
+      },
+      {
+        "id": 13085,
+        "quantidade": 2602
+      },
+      {
+        "id": 454,
+        "quantidade": 1587
+      },
+      {
+        "id": 1000000340,
+        "quantidade": 1189
+      },
+      {
+        "id": 1000000369,
+        "quantidade": 917
+      },
+      {
+        "id": 12380,
+        "quantidade": 670
+      },
+      {
+        "id": 12384,
+        "quantidade": 605
+      },
+      {
+        "id": 1000000335,
+        "quantidade": 595
+      },
+      {
+        "id": 1000000355,
+        "quantidade": 540
+      },
+      {
+        "id": 431,
+        "quantidade": 479
+      },
+      {
+        "id": 197,
+        "quantidade": 469
+      },
+      {
+        "id": 289,
+        "quantidade": 440
+      },
+      {
+        "id": 1000000997,
+        "quantidade": 429
+      },
+      {
+        "id": 1000000426,
+        "quantidade": 397
+      },
+      {
+        "id": 13097,
+        "quantidade": 390
+      },
+      {
+        "id": 1000000352,
+        "quantidade": 388
+      },
+      {
+        "id": 1000000971,
+        "quantidade": 388
+      },
+      {
+        "id": 291,
+        "quantidade": 382
+      },
+      {
+        "id": 423,
+        "quantidade": 382
+      },
+      {
+        "id": 13091,
+        "quantidade": 382
+      },
+      {
+        "id": 10592,
+        "quantidade": 351
+      },
+      {
+        "id": 1000001003,
+        "quantidade": 322
+      },
+      {
+        "id": 4926,
+        "quantidade": 312
+      },
+      {
+        "id": 10587,
+        "quantidade": 312
+      },
+      {
+        "id": 1000000410,
+        "quantidade": 312
+      },
+      {
+        "id": 13109,
+        "quantidade": 296
+      },
+      {
+        "id": 1000000351,
+        "quantidade": 294
+      },
+      {
+        "id": 1000001238,
+        "quantidade": 293
+      },
+      {
+        "id": 1000000348,
+        "quantidade": 280
+      },
+      {
+        "id": 12420,
+        "quantidade": 276
+      },
+      {
+        "id": 1000000963,
+        "quantidade": 272
+      },
+      {
+        "id": 1000001205,
+        "quantidade": 270
+      },
+      {
+        "id": 13089,
+        "quantidade": 266
+      },
+      {
+        "id": 1000001009,
+        "quantidade": 261
+      },
+      {
+        "id": 1000001013,
+        "quantidade": 255
+      },
+      {
+        "id": 1000000610,
+        "quantidade": 247
+      },
+      {
+        "id": 1000000958,
+        "quantidade": 227
+      },
+      {
+        "id": 1000000987,
+        "quantidade": 222
+      },
+      {
+        "id": 13077,
+        "quantidade": 214
+      },
+      {
+        "id": 1000000350,
+        "quantidade": 212
+      },
+      {
+        "_cortado": "130 itens a mais"
+      }
+    ]
+  }
+}

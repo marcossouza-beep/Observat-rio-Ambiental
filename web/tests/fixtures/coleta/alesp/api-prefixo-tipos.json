@@ -1,0 +1,8 @@
+{
+  "url": "https://legis-api-portal-prd.al.sp.gov.br/api/tipo-documento/lista-pesquisa",
+  "status": 404,
+  "tipo": "",
+  "gravadaEm": "2026-10-16T21:19:18.775Z",
+  "corpo": null,
+  "erro": "HTTP 404 em https://legis-api-portal-prd.al.sp.gov.br/api/tipo-documento/lista-pesquisa"
+}
