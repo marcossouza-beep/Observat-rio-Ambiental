@@ -1,9 +1,0 @@
-{
-  "url": "https://www2.al.ce.gov.br/legislativo/proposicoes/busca.php?nome=31_legislatura&tabela=projeto_decre&opcao=T",
-  "status": 200,
-  "tipo": "text/html; charset=ISO-8859-1",
-  "gravadaEm": "2026-10-16T17:32:26.585Z",
-  "corpo": {
-    "html": "<html><head>\r\n<title>Proposições</title>\r\n<script type=\"text/javascript\" src=\"loader.js\"></script>\r\n<link rel=\"stylesheet\" type=\"text/css\" href=\"loader.css\">\r\n</head>\r\n<body onLoad=\"remove_loading();\">\r\n<div id=\"loader_container\">\r\n\t<div id=\"loader\">\r\n\t\t<div align=\"center\">Efetuando busca ...</div>\r\n\t\t<div id=\"loader_bg\"><div id=\"progress\"> </div></div>\r\n\t</div>\r\n</div>\r\n<font size=\"2\" face=\"Verdana\">Visualizando registros<br>Texto procurado: \r\n<b></b></font><br>\r\n<hr>\r\n<a href=\"javascript: history.back();\">Voltar</a>\r\n<hr>\r\n<table cellspacing=\"3\" cellpadding=\"3\" width=\"100%\">\r\n     <tr bgcolor=\"#CCCCCC\">\r\n        <td><font face=\"Verdana\" size=\"1\" color=\"#000000\"><b>Nº Proj.</b></font></td>\r\n        <td><font face=\"Verdana\" size=\"1\" color=\"#000000\"><b>Ano</b></font></td>\r\n        <td><font face=\"Verdana\" size=\"1\" color=\"#000000\"><b>Autor</b></font></td>\r\n        <td><font face=\"Verdana\" size=\"1\" color=\"#000000\"><b>Lei</b></font></td>\r\n        <td><font face=\"Verdana\" size=\"1\" color=\"#000000\"><b>Ementa</b></font></td>\r\n        <td colspan=\"2\"><font face=\"Verdana\" size=\"1\" color=\"#000000\"><b>Status</b></font></td>\r\n        <td><font face=\"Verdana\" size=\"1\" color=\"#000000\"><b>Editar</b></font></td>\r\n     </tr>\r\n</table>\r\n<center>Encontrados <b></b> registros...</center>\r\n</body>\r\n</html>\r\n"
-  }
-}
