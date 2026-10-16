@@ -6,6 +6,7 @@ import path from 'node:path'
 import { beforeAll, describe, expect, it } from 'vitest'
 import { autografosDaEdicao, edicaoDe, eventoDoAutografo, pacoteDoProjeto, projetosDaEdicao, semCabecalhoDePagina } from '@/coleta/alerr/mapear'
 import { limparEmenta, pacoteDaLei, siglaDaLei, type LeiAlepa } from '@/coleta/alepa/leis'
+import { autorAlepa, lerPainel, pacoteAlepa, pedidoPainel, siglaAlepa } from '@/coleta/alepa/proposicoes'
 import { extrairTextoPdf } from '@/coleta/textos'
 
 const dir = path.resolve(__dirname, '../fixtures/coleta')
@@ -86,5 +87,42 @@ describe('Banco de Leis da Alepa', () => {
     expect(p.proposicao).toMatchObject({ chave: 'alepa:lei:32817', esfera: 'estadual', uf: 'PA', sigla: 'Lei', numero: 11665, ano: 2026, statusSimplificado: 'norma', ultimaMovimentacao: '2026-09-01' })
     expect(p.proposicao.ementa).toMatch(/^Cria a Área de Proteção Ambiental Bacajaí/)
     expect(p.versoes[0]).toMatchObject({ tipo: 'norma', data: '2026-09-01', url: apa.link_pdf })
+  })
+})
+
+describe('Proposições da Alepa (painel da pesquisa)', () => {
+  const painel = (f: string) => JSON.parse(readFileSync(path.join(dir, 'alepa', `${f}.json`), 'utf8')).corpo.html as string
+
+  it('lê os 10 projetos de lei mais novos com número, data, autor e ementa', () => {
+    const r = lerPainel(painel('proposicoes-tipo-IdTipoProposicao'))
+    expect(r.total).toBe(669)
+    expect(r.cartoes).toHaveLength(10)
+    expect(r.cartoes[0]).toMatchObject({ id: 16375, sigla: 'PL', numero: 669, ano: 2026, data: '2026-10-13', autor: 'DEP. DELEGADO NILTON NEVES' })
+    expect(r.cartoes[0].ementa).toMatch(/^Institui o Programa Estadual "GELO PAI' DÉGUA"/)
+  })
+
+  it('a busca por "ambiental" traz a APA Bacajaí e o projeto de licenciamento', () => {
+    const r = lerPainel(painel('proposicoes-texto-ambiental'))
+    expect(r.total).toBe(18)
+    expect(r.cartoes.find((c) => c.numero === 461)?.ementa).toMatch(/^Cria a Área de Proteção Ambiental Bacajaí/)
+    expect(r.cartoes.find((c) => c.numero === 647)?.ementa).toMatch(/licenciamento ambiental/)
+  })
+
+  it('página só de indicações não é erro de formato (nenhum projeto)', () => {
+    expect(lerPainel(painel('proposicoes-ano')).cartoes).toEqual([])
+    expect(lerPainel('')).toEqual({ total: 0, cartoes: [] })
+  })
+
+  it('sigla, autor e pacote', () => {
+    expect(siglaAlepa('PROJETO DE LEI ORDINÁRIA')).toBe('PL')
+    expect(siglaAlepa('PROJETO DE LEI COMPLEMENTAR')).toBe('PLC')
+    expect(siglaAlepa('INDICAÇÃO')).toBeNull()
+    expect(autorAlepa('DEP. LÍVIA DUARTE')?.parlamentar).toMatchObject({ nome: 'Lívia Duarte', uf: 'PA', chave: 'alepa:parlamentar:livia-duarte' })
+    expect(autorAlepa('PODER EXECUTIVO')).toEqual({ papel: 'autor', nomeLivre: 'Poder Executivo' })
+    const c = lerPainel(painel('proposicoes-texto-ambiental')).cartoes.find((x) => x.numero === 461)!
+    const p = pacoteAlepa(c)
+    expect(p.proposicao).toMatchObject({ chave: 'alepa:proposicao:16099', esfera: 'estadual', uf: 'PA', sigla: 'PL', numero: 461, dataApresentacao: '2026-06-11' })
+    expect(p.proposicao.urlFonte).toBe('https://www.alepa.pa.gov.br/Legislativo/DetalhesProposicao?IdProposicao=16099')
+    expect(pedidoPainel(2026, { tipo: 3 })).toMatchObject({ 'model[Ano]': '2026', 'model[IdTipoProposicao]': '3', DXCallbackName: 'cbpProposicoes' })
   })
 })

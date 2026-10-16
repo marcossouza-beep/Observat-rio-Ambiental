@@ -9,6 +9,7 @@ import config from '@/payload.config'
 import { beforeAll, describe, expect, it } from 'vitest'
 import { coletarFonte } from '@/coleta/executar'
 import { criarConectorAlerr } from '@/coleta/alerr/conector'
+import { criarConectorAlepa } from '@/coleta/alepa/proposicoes'
 
 let payload: Payload
 const dir = path.resolve(__dirname, '../fixtures/coleta')
@@ -36,8 +37,8 @@ async function palavra(termo: string, grupo: string, uf?: string) {
 beforeAll(async () => {
   payload = await getPayload({ config: await config })
   for (const c of ['tramitacoes', 'versoes', 'alertas', 'coletas'] as const) await payload.delete({ collection: c, where: { id: { exists: true } } })
-  await payload.delete({ collection: 'proposicoes', where: { or: [{ chaveOrigem: { like: 'alerr:' } }, { chaveOrigem: { like: 'alepa:' } }, { chaveOrigem: { equals: 'manual:rr:153' } }] } })
-  await payload.delete({ collection: 'fontes', where: { slug: { in: ['casa-rr', 'leis-pa'] } } })
+  await payload.delete({ collection: 'proposicoes', where: { or: [{ chaveOrigem: { like: 'alerr:' } }, { chaveOrigem: { like: 'alepa:' } }, { chaveOrigem: { equals: 'manual:rr:153' } }, { chaveOrigem: { equals: 'manual:pa:647' } }] } })
+  await payload.delete({ collection: 'fontes', where: { slug: { in: ['casa-rr', 'leis-pa', 'casa-pa'] } } })
   await palavra('patrimônio cultural imaterial', 'Povos e comunidades', 'RR')
   await palavra('área de proteção ambiental', 'Unidades de conservação')
   await payload.updateGlobal({ slug: 'ajustes', data: { coleta: { notaMinima: 40, maxNovas: 5 } } })
@@ -86,3 +87,28 @@ describe('Pará pelo Banco de Leis da Alepa', () => {
     expect(fonte).toMatchObject({ esfera: 'estadual', uf: 'PA', nivel: 'A' })
   })
 })
+
+describe('Pará pela pesquisa de proposições da Alepa', () => {
+  // Projetos de lei ordinária e busca por "ambiental" respondem com as amostras; os outros tipos, painel vazio
+  const postar = async (_url: string, pedido: Record<string, string>) =>
+    pedido['model[Texto]'] === 'ambiental' ? painel('proposicoes-texto-ambiental') : pedido['model[IdTipoProposicao]'] === '3' ? painel('proposicoes-tipo-IdTipoProposicao') : ''
+  const painel = (f: string) => corpo(`alepa/${f}.json`).html as string
+
+  it('projetos ambientais novos entram na triagem; o cadastrado à mão é reconhecido pelo número', async () => {
+    await payload.create({
+      collection: 'proposicoes',
+      data: { esfera: 'estadual', uf: 'PA', casa: 'assembleia', sigla: 'PL', numero: 647, ano: 2026, situacaoEditorial: 'monitorada', chaveOrigem: 'manual:pa:647' },
+    })
+    const r = await coletarFonte(payload, 'casa-pa', { agora: AGORA, conector: criarConectorAlepa({ postar }) })
+    expect(r.ok).toBe(true)
+    const apa = (await payload.find({ collection: 'proposicoes', where: { chaveOrigem: { equals: 'alepa:proposicao:16099' } }, depth: 1 })).docs[0]
+    expect(apa).toMatchObject({ esfera: 'estadual', uf: 'PA', sigla: 'PL', numero: 461, situacaoEditorial: 'triagem' })
+    const autor = apa.autoria?.[0]?.parlamentar
+    expect(typeof autor === 'object' && autor?.nome).toBe('Torrinho Torres')
+    const manual = (await payload.find({ collection: 'proposicoes', where: { chaveOrigem: { equals: 'manual:pa:647' } }, depth: 0 })).docs[0]
+    expect(manual.chavesExtras).toContain('alepa:proposicao:16347')
+    // "Gelo pai'dégua", utilidade pública, orçamento: sem palavra ambiental, não entram
+    expect((await payload.count({ collection: 'proposicoes', where: { chaveOrigem: { equals: 'alepa:proposicao:16374' } } })).totalDocs).toBe(0)
+  })
+})
+
