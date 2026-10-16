@@ -122,6 +122,9 @@ export const PALAVRAS: [string, string, number, boolean?][] = [
   ['usina hidrelétrica', 'Água', 6],
   ['pequena central hidrelétrica', 'Água', 6],
   ['irrigação', 'Água', 4],
+  ['Rio São Francisco', 'Água', 6],
+  ['transposição do Rio São Francisco', 'Água', 7],
+  ['açude', 'Água', 5],
   // ---------------- Clima ----------------
   ['mudança do clima', 'Clima', 8],
   ['mudança climática', 'Clima', 8],
@@ -141,6 +144,8 @@ export const PALAVRAS: [string, string, number, boolean?][] = [
   ['transição energética', 'Clima', 6],
   ['combustível fóssil', 'Clima', 6],
   ['energia renovável', 'Clima', 5],
+  ['energia eólica', 'Clima', 5],
+  ['parque eólico', 'Clima', 6],
   ['metano', 'Clima', 5],
   // ---------------- Mineração ----------------
   ['mineração', 'Mineração', 8],
@@ -379,4 +384,54 @@ export const PALAVRAS_NORTE: [string, string, number, string][] = [
   ['Femarh', 'Licenciamento', 8, 'RR'],
   ['Yanomami', 'Povos e comunidades', 8, 'RR'],
   ['lavrado', 'Florestas', 6, 'RR'],
+]
+
+/**
+ * [termo, grupo, peso, UF] — palavras do Nordeste que só contam nas propostas daquele estado (Fase 6).
+ * Mesmos critérios do Norte: órgão ambiental estadual, áreas protegidas, rios e conflitos conhecidos.
+ */
+export const PALAVRAS_NE: [string, string, number, string][] = [
+  // Alagoas
+  ['Instituto do Meio Ambiente de Alagoas', 'Licenciamento', 8, 'AL'],
+  ['Costa dos Corais', 'Unidades de conservação', 7, 'AL'],
+  ['Lagoa Mundaú', 'Água', 6, 'AL'],
+  // Bahia
+  ['Inema', 'Licenciamento', 8, 'BA'],
+  ['Chapada Diamantina', 'Unidades de conservação', 7, 'BA'],
+  ['Abrolhos', 'Costeiro e marinho', 7, 'BA'],
+  ['Baía de Todos os Santos', 'Costeiro e marinho', 6, 'BA'],
+  ['Raso da Catarina', 'Caatinga', 7, 'BA'],
+  ['oeste baiano', 'Cerrado', 6, 'BA'],
+  // Ceará
+  ['Semace', 'Licenciamento', 8, 'CE'],
+  ['Chapada do Araripe', 'Unidades de conservação', 7, 'CE'],
+  ['Jericoacoara', 'Unidades de conservação', 6, 'CE'],
+  ['Castanhão', 'Água', 6, 'CE'],
+  // Maranhão
+  ['Sema-MA', 'Licenciamento', 8, 'MA'],
+  ['Lençóis Maranhenses', 'Unidades de conservação', 7, 'MA'],
+  ['Baixada Maranhense', 'Pantanal', 7, 'MA'],
+  ['babaçu', 'Povos e comunidades', 6, 'MA'],
+  // Paraíba
+  ['Sudema', 'Licenciamento', 8, 'PB'],
+  ['Rio Paraíba', 'Água', 6, 'PB'],
+  ['Mata do Buraquinho', 'Mata Atlântica', 6, 'PB'],
+  // Pernambuco
+  ['CPRH', 'Licenciamento', 8, 'PE'],
+  ['Fernando de Noronha', 'Costeiro e marinho', 7, 'PE'],
+  ['Suape', 'Costeiro e marinho', 6, 'PE'],
+  ['Capibaribe', 'Água', 6, 'PE'],
+  // Piauí
+  ['Semarh', 'Licenciamento', 8, 'PI'],
+  ['Serra da Capivara', 'Unidades de conservação', 7, 'PI'],
+  ['Delta do Parnaíba', 'Unidades de conservação', 7, 'PI'],
+  ['Rio Parnaíba', 'Água', 6, 'PI'],
+  // Rio Grande do Norte
+  ['Idema', 'Licenciamento', 8, 'RN'],
+  ['Genipabu', 'Unidades de conservação', 6, 'RN'],
+  ['Rio Piranhas', 'Água', 6, 'RN'],
+  // Sergipe
+  ['Adema', 'Licenciamento', 8, 'SE'],
+  ['Serra de Itabaiana', 'Unidades de conservação', 7, 'SE'],
+  ['Rio Sergipe', 'Água', 6, 'SE'],
 ]

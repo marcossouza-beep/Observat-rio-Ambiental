@@ -5,7 +5,7 @@
  */
 import { getPayload } from 'payload'
 import config from '../payload.config'
-import { BIOMAS, FONTES, PALAVRAS, PALAVRAS_NORTE, TEMAS } from './dados'
+import { BIOMAS, FONTES, PALAVRAS, PALAVRAS_NE, PALAVRAS_NORTE, TEMAS } from './dados'
 
 async function upsert(payload: Awaited<ReturnType<typeof getPayload>>, collection: string, campo: string, valor: string, data: Record<string, unknown>) {
   const achado = await payload.find({ collection: collection as never, where: { [campo]: { equals: valor } }, limit: 1, depth: 0 })
@@ -27,7 +27,7 @@ export async function seed() {
     const r = await payload.update({ collection: 'palavras-chave', where: { and: [{ termo: { equals: termo } }, { grupo: { in: ['Bioma', 'Órgão ambiental'] } }] }, data: { grupo } })
     n += r.docs.length
   }
-  for (const [termo, grupo, peso, uf] of PALAVRAS_NORTE) n += (await upsert(payload, 'palavras-chave', 'termo', termo, { termo, grupo, peso, uf })).criado ? 1 : 0
+  for (const [termo, grupo, peso, uf] of [...PALAVRAS_NORTE, ...PALAVRAS_NE]) n += (await upsert(payload, 'palavras-chave', 'termo', termo, { termo, grupo, peso, uf })).criado ? 1 : 0
 
   const email = process.env.SEED_ADMIN_EMAIL
   const password = process.env.SEED_ADMIN_SENHA

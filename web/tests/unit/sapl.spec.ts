@@ -119,3 +119,36 @@ describe('situações do SAPL', () => {
     expect(statusDaMateria('Aguardando Análise da Comissão', true)).toBe('em_tramitacao')
   })
 })
+
+describe('SAPL no Nordeste (AL, PB, PI): tipos que interessam, pelas tabelas reais', () => {
+  const tiposDe = (uf: string) => (JSON.parse(readFileSync(path.join(dir, `${uf}-tipos.json`), 'utf8')).corpo.results as Record<string, unknown>[])
+  const aceitos = (uf: string) => tiposDe(uf).filter(tipoDeInteresse).map((t) => t.sigla).sort()
+
+  it('Alagoas', () => expect(aceitos('al')).toEqual(['PDL', 'PEC', 'PLC', 'PLO', 'VP', 'VT']))
+  it('Paraíba: projeto de código entra; emenda substitutiva e autógrafo, não', () => expect(aceitos('pb')).toEqual(['MP', 'PC', 'PDL', 'PEC', 'PLC', 'PLO', 'VET']))
+  it('Piauí: "Indicativo de Projeto de Lei" não é projeto', () => expect(aceitos('pi')).toEqual(['MPV', 'PDL', 'PEC', 'PECG', 'PLC', 'PLCG', 'PLO', 'PLOG', 'VEP', 'VET']))
+
+  it('a matéria gravada de cada casa vira pacote sem erro', () => {
+    for (const uf of ['al', 'pb', 'pi']) {
+      const ler = (f: string) => JSON.parse(readFileSync(path.join(dir, `${uf}-${f}.json`), 'utf8')).corpo
+      const autor = (() => {
+        try {
+          return ler('autor')
+        } catch {
+          return null
+        }
+      })()
+      const ctx = {
+        uf,
+        base: `https://sapl.al.${uf}.leg.br`,
+        tipos: tabela(ler('tipos').results),
+        situacoes: tabela(ler('status').results),
+        unidades: tabela(ler('unidades').results),
+        autores: new Map(autor ? [[Number(autor.id), autor]] : []),
+      }
+      const p = mapearMateria(ler('materia-0'), ler('tramitacao-0').results, ler('autoria-0').results, ctx)
+      expect(p.proposicao).toMatchObject({ esfera: 'estadual', uf: uf.toUpperCase(), casa: 'assembleia' })
+      expect(p.proposicao.chave).toMatch(new RegExp(`^sapl:${uf}:\\d+$`))
+    }
+  })
+})

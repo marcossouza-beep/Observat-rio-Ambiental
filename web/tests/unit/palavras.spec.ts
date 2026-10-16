@@ -4,14 +4,15 @@
  */
 import { describe, expect, it } from 'vitest'
 import { pontuar, raiz, type Termo } from '@/lib/relevancia'
-import { BIOMAS, PALAVRAS, PALAVRAS_NORTE, TEMAS } from '@/seed/dados'
+import { BIOMAS, PALAVRAS, PALAVRAS_NE, PALAVRAS_NORTE, TEMAS } from '@/seed/dados'
+import { REGIAO } from '@/lib/rotulos'
 
 const GRUPOS = new Set([...TEMAS, ...BIOMAS.map(([b]) => b), 'Geral', 'Exclusão'])
 const dic: Termo[] = PALAVRAS.map(([termo, grupo, peso, exclusao]) => ({ termo, grupo, peso, exclusao: !!exclusao }))
 
 describe('dicionário de palavras-chave', () => {
   it('cada termo está numa área, num bioma, em Geral ou em Exclusão (também os do Norte)', () => {
-    for (const [termo, grupo] of [...PALAVRAS, ...PALAVRAS_NORTE]) expect(GRUPOS.has(grupo), `${termo} → ${grupo}`).toBe(true)
+    for (const [termo, grupo] of [...PALAVRAS, ...PALAVRAS_NORTE, ...PALAVRAS_NE]) expect(GRUPOS.has(grupo), `${termo} → ${grupo}`).toBe(true)
   })
 
   it('todas as áreas e todos os biomas têm termos', () => {
@@ -20,9 +21,14 @@ describe('dicionário de palavras-chave', () => {
   })
 
   it('sem variação redundante (mesma raiz) entre nacionais e regionais', () => {
-    const raizes = [...PALAVRAS, ...PALAVRAS_NORTE].map((p) => raiz(p[0]))
+    const raizes = [...PALAVRAS, ...PALAVRAS_NORTE, ...PALAVRAS_NE].map((p) => raiz(p[0]))
     const repetidas = raizes.filter((r, i) => raizes.indexOf(r) !== i)
     expect(repetidas).toEqual([])
+  })
+
+  it('regionais do Nordeste: os nove estados, cada termo no seu estado', () => {
+    expect([...new Set(PALAVRAS_NE.map((p) => p[3]))].sort()).toEqual(['AL', 'BA', 'CE', 'MA', 'PB', 'PE', 'PI', 'RN', 'SE'])
+    for (const [, , , uf] of PALAVRAS_NE) expect(REGIAO[uf]).toBe('Nordeste')
   })
 
   it('ementas reais: ambientais passam da nota mínima, as de rotina não', () => {

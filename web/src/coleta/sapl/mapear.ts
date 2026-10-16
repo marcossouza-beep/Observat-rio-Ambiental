@@ -31,19 +31,22 @@ export const tabela = (lista: Registro[] | undefined) =>
   new Map((lista || []).map((r) => [Number(r.id), r]))
 
 /**
- * Tipos de matéria que interessam ao observatório: projetos de lei (de qualquer autoria), PEC, medidas provisórias,
- * decretos legislativos e mensagens de veto. Ficam de fora indicações, requerimentos, moções, prestações de contas etc.
+ * Tipos de matéria que interessam ao observatório: projetos de lei e de código (de qualquer autoria), PEC, medidas
+ * provisórias, decretos legislativos e vetos. Ficam de fora indicações (e "indicativos de projeto de lei"),
+ * requerimentos, moções, emendas e substitutivos a projetos, prestações de contas etc.
  */
 export function tipoDeInteresse(tipo: Registro | undefined): boolean {
   const d = normal(`${tipo?.descricao || ''}`)
   if (!d) return false
   if (
-    /indicac|requerimento|mocao|aplauso|pesar|prestacao de contas|eleicao|composicao|nulo|anexo|recurso|emenda (modificativa|aditiva|supressiva)|oficio|parecer|resolucao/.test(
+    /indicac|indicativ|requerimento|mocao|aplauso|pesar|prestacao de contas|eleicao|composicao|nulo|anexo|recurso|emenda (modificativa|aditiva|supressiva)|substitutiv|oficio|parecer|resolucao/.test(
       d,
     )
   )
     return false
-  return /projeto de lei|emenda constitucional|emenda a constitui|medida provisoria|decreto legislativo|mensagem de veto|veto/.test(
+  // Emendas a projetos ("Emenda Aditiva", "Emendas LDO", "Sub-Emenda") ficam de fora; a emenda à Constituição, não
+  if (/^(sub ?-?)?emendas?\b/.test(d) && !/constitui/.test(d)) return false
+  return /projeto de lei|projeto de codigo|emenda constitucional|emenda a constitui|medida provisoria|decreto legislativo|mensagem de veto|veto/.test(
     d,
   )
 }

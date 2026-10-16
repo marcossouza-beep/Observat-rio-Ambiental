@@ -157,6 +157,16 @@ export function conectorSapl(uf: string, nome: string, base: string): Conector {
   }
 }
 
+/** Assembleias do Nordeste com a API do SAPL aberta (Fase 6). */
+export const SAPL_NE: { uf: string; nome: string; base: string }[] = [
+  { uf: 'al', nome: 'Assembleia Legislativa de Alagoas (SAPL)', base: 'https://sapl.al.al.leg.br' },
+  { uf: 'pb', nome: 'Assembleia Legislativa da Paraíba (SAPL)', base: 'https://sapl3.al.pb.leg.br' },
+  { uf: 'pi', nome: 'Assembleia Legislativa do Piauí (SAPL)', base: 'https://sapl.al.pi.leg.br' },
+]
+
+/** Todas as casas com SAPL aberto, de todas as regiões já cobertas. */
+export const SAPL_CASAS = [...SAPL_NORTE, ...SAPL_NE]
+
 export const CONECTORES_SAPL: Record<string, Conector> = Object.fromEntries(
-  SAPL_NORTE.map((c) => [`casa-${c.uf}`, conectorSapl(c.uf, c.nome, c.base)]),
+  SAPL_CASAS.map((c) => [`casa-${c.uf}`, conectorSapl(c.uf, c.nome, c.base)]),
 )
