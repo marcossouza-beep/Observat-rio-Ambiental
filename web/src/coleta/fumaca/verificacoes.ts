@@ -33,7 +33,7 @@ const semHifen = (d: string) => d.replace(/-/g, '')
 const rapido = { tentativas: 2, esperaBaseMs: 1500, tempoLimiteMs: 40_000 }
 
 /** Propostas reais tratadas como acompanhadas no teste dos conectores estaduais (exercitam a busca de andamentos). */
-const ACOMPANHADAS_DE_TESTE: Record<string, string[]> = { 'casa-ce': ['CE:PL 593/2026'], 'casa-mt': ['MT:PL 1/2026'] }
+const ACOMPANHADAS_DE_TESTE: Record<string, string[]> = { 'casa-ce': ['CE:PL 593/2026'], 'casa-mt': ['MT:PL 1/2026'], 'casa-mg': ['MG:PL 6187/2026'] }
 
 type Camara<T> = { dados: T; links?: { rel: string; href: string }[] }
 
@@ -384,7 +384,7 @@ export const VERIFICACOES: Verificacao[] = [
               : a?.sessoes
                 ? `${a.sessoes.length} sessões com expediente na semana, ${a.materiasLidas ?? 0} matérias lidas; acompanhada de teste achada na lista: ${a.acompanhadasAchadas} (${a.paginasLidas} páginas lidas)`
                 : a?.recentes !== undefined
-                  ? `${a.recentes} proposições protocoladas na semana (${a.paginasLidas} páginas lidas); acompanhada de teste achada: ${a.acompanhadasAchadas}`
+                  ? `${a.recentes} proposições novas na semana (${a.paginasLidas} páginas lidas); acompanhada de teste achada: ${a.acompanhadasAchadas}`
                   : a?.deInteresse !== undefined
                 ? `${r.itensListados} matérias atualizadas na semana (${a.deInteresse} de tipos que interessam); ${a.andamentosNoPeriodo ?? '?'} andamentos`
                 : `${r.itensListados} itens listados`,

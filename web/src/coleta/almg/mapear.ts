@@ -10,7 +10,13 @@
  */
 import { slugify } from '../../lib/texto'
 import { tipoDoAndamento } from '../classificar'
-import { ErroFormato, type AutorColetado, type PacoteProposicao, type StatusSimplificado, type TipoEvento } from '../tipos'
+import {
+  ErroFormato,
+  type AutorColetado,
+  type PacoteProposicao,
+  type StatusSimplificado,
+  type TipoEvento,
+} from '../tipos'
 
 export const ALMG_API = 'https://dadosabertos.almg.gov.br'
 export const ALMG = 'https://www.almg.gov.br'
@@ -32,15 +38,34 @@ export type ItemAlmg = {
   regime?: string
   local?: string
   dataUltimaAcao?: string
-  listaHistoricoTramitacoes?: { passo?: number; data?: string; local?: string; historico?: string }[]
+  listaHistoricoTramitacoes?: {
+    passo?: number
+    data?: string
+    local?: string
+    historico?: string
+  }[]
   linksTextos?: { descricao?: string; url?: string }[]
   resumo?: string
 }
 
-export type RespostaAlmg = { resultado?: { noDocumentos?: number; tamanhoPagina?: number; numPagina?: number; erro?: unknown; listaItem?: ItemAlmg[] } }
+export type RespostaAlmg = {
+  resultado?: {
+    noDocumentos?: number
+    tamanhoPagina?: number
+    numPagina?: number
+    erro?: unknown
+    listaItem?: ItemAlmg[]
+  }
+}
 
 /** Endereço da pesquisa direcionada (tp = itens por página; p = página). */
-export function urlPesquisaAlmg(f: { tipo: string; ano?: number; numero?: number; pagina?: number; tamanho?: number }): string {
+export function urlPesquisaAlmg(f: {
+  tipo: string
+  ano?: number
+  numero?: number
+  pagina?: number
+  tamanho?: number
+}): string {
   const q = new URLSearchParams({ formato: 'json', tipo: f.tipo })
   if (f.numero) q.set('num', String(f.numero))
   if (f.ano) q.set('ano', String(f.ano))
@@ -52,7 +77,8 @@ export function urlPesquisaAlmg(f: { tipo: string; ano?: number; numero?: number
 /** Itens da resposta; formato inesperado vira ErroFormato (a fonte avisa na saúde das fontes). */
 export function itensAlmg(r: unknown): { itens: ItemAlmg[]; total: number } {
   const res = (r as RespostaAlmg | null)?.resultado
-  if (!res || (res.listaItem !== undefined && !Array.isArray(res.listaItem))) throw new ErroFormato('almg', 'resultado.listaItem', 'proposicoes/pesquisa/direcionada')
+  if (!res || (res.listaItem !== undefined && !Array.isArray(res.listaItem)))
+    throw new ErroFormato('almg', 'resultado.listaItem', 'proposicoes/pesquisa/direcionada')
   return { itens: res.listaItem || [], total: Number(res.noDocumentos || 0) }
 }
 
@@ -73,13 +99,22 @@ export function autoresAlmg(autor: string | undefined): AutorColetado[] {
       const dep = /^Deputad[oa]s?\s+(.+)$/i.exec(a)
       if (!dep) return { papel: 'autor', nomeLivre: a }
       const nome = capitalizar(dep[1].trim())
-      return { papel: 'autor', parlamentar: { chave: `almg:parlamentar:${slugify(nome)}`, nome, uf: 'MG', casa: 'assembleia' } }
+      return {
+        papel: 'autor',
+        parlamentar: {
+          chave: `almg:parlamentar:${slugify(nome)}`,
+          nome,
+          uf: 'MG',
+          casa: 'assembleia',
+        },
+      }
     })
 }
 
 export function eventoAlmg(historico: string): TipoEvento {
   const t = historico.normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase()
-  if (/^PROPOSICAO RECEBIDA EM PLENARIO|PUBLICADO NO DL/.test(t) && /RECEBIDA EM PLENARIO/.test(t)) return 'apresentacao'
+  if (/^PROPOSICAO RECEBIDA EM PLENARIO|PUBLICADO NO DL/.test(t) && /RECEBIDA EM PLENARIO/.test(t))
+    return 'apresentacao'
   if (/SANCIONAD|LEI N[º°O]?\s*\d/.test(t)) return 'sancao'
   if (/VETAD|VETO/.test(t)) return 'veto'
   if (/INCLUID[OA] NA ORDEM DO DIA|ORDEM DO DIA/.test(t)) return 'pauta'
@@ -91,16 +126,25 @@ export function eventoAlmg(historico: string): TipoEvento {
 }
 
 export function statusAlmg(i: ItemAlmg): StatusSimplificado {
-  const s = `${i.situacao || ''} ${i.situacaoGeral || ''}`.normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase()
+  const s = `${i.situacao || ''} ${i.situacaoGeral || ''}`
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toUpperCase()
   if (/TRANSFORMAD[OA] EM (LEI|NORMA)|SANCIONAD|PROMULGAD/.test(s)) return 'norma'
   if (/VETAD[OA] TOTAL|VETO TOTAL MANTIDO/.test(s)) return 'vetada'
   if (/REJEITAD/.test(s)) return 'rejeitada'
   if (/ARQUIVAD|RETIRAD|PREJUDICAD/.test(s)) return 'arquivada'
-  if (/AGUARDANDO SANCAO|ENVIAD[OA] A SANCAO|APROVAD[OA] EM (2|SEGUNDO|TURNO UNICO)|REDACAO FINAL APROVADA/.test(s)) return 'aprovada'
+  if (
+    /AGUARDANDO SANCAO|ENVIAD[OA] A SANCAO|APROVAD[OA] EM (2|SEGUNDO|TURNO UNICO)|REDACAO FINAL APROVADA/.test(
+      s,
+    )
+  )
+    return 'aprovada'
   return 'em_tramitacao'
 }
 
-export const chaveMG = (sigla: string, numero: number, ano: number) => `almg:${sigla}-${numero}-${ano}`
+export const chaveMG = (sigla: string, numero: number, ano: number) =>
+  `almg:${sigla}-${numero}-${ano}`
 export const urlProposicaoAlmg = (sigla: string, numero: number, ano: number) =>
   `${ALMG}/atividade-parlamentar/projetos-de-lei/texto/?tipo=${sigla}&num=${numero}&ano=${ano}`
 
