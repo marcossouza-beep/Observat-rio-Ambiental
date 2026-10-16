@@ -22,6 +22,11 @@ export async function seed() {
   for (const f of FONTES) n += (await upsert(payload, 'fontes', 'slug', f.slug, { ...f })).criado ? 1 : 0
   for (const [termo, grupo, peso, exclusao] of PALAVRAS)
     n += (await upsert(payload, 'palavras-chave', 'termo', termo, { termo, grupo, peso, exclusao: !!exclusao })).criado ? 1 : 0
+  // Grupos genéricos das versões anteriores passam para a área ou o bioma (só esses; o resto é do autor)
+  for (const [termo, grupo] of [...PALAVRAS, ...PALAVRAS_NORTE]) {
+    const r = await payload.update({ collection: 'palavras-chave', where: { and: [{ termo: { equals: termo } }, { grupo: { in: ['Bioma', 'Órgão ambiental'] } }] }, data: { grupo } })
+    n += r.docs.length
+  }
   for (const [termo, grupo, peso, uf] of PALAVRAS_NORTE) n += (await upsert(payload, 'palavras-chave', 'termo', termo, { termo, grupo, peso, uf })).criado ? 1 : 0
 
   const email = process.env.SEED_ADMIN_EMAIL
