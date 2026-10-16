@@ -218,16 +218,15 @@ async function gravarPdf(fonte: string, nome: string, url: string) {
   }
 }
 
-/** Diários no sistema da EGBA/IOSE (Bahia: Diário do Legislativo; Sergipe: DOE): lista de edições em JSON e o PDF da última. */
+/** Diários no sistema da EGBA (Bahia: Diário do Legislativo): lista de edições em JSON e o PDF da última. */
 async function diarioEgba(fonte: string, base: string, subtema?: string) {
   const q = subtema ? `?subtheme=${subtema}` : ''
   const g = await salvar(fonte, 'ultimas-edicoes', await buscar(`${base}/apifront/portal/edicoes/ultimas_edicoes.json${q}`))
-  await salvar(fonte, 'edicoes-da-data', await buscar(`${base}/apifront/portal/edicoes/edicoes_from_data.json${q}`))
   const itens = ((g.corpo as { itens?: { id: number }[] } | null)?.itens || []).slice(0, 1)
   for (const e of itens) await gravarPdf(fonte, `edicao-${e.id}`, `${base}${subtema ? `/${subtema}` : ''}/portal/edicoes/download/${e.id}`)
 }
 
-/** Nordeste sem SAPL (Fase 6): Bahia (Diário do Legislativo), Ceará (expediente e fichas da Alece), Sergipe (DOE). */
+/** Nordeste sem SAPL (Fase 6): Bahia (Diário do Legislativo) e Ceará (expediente e lista de proposições da Alece). */
 const PASSOS_NE: Passo[] = [
   {
     fonte: 'alba',
@@ -242,29 +241,14 @@ const PASSOS_NE: Passo[] = [
     nome: 'expediente',
     async rodar() {
       const hist = await gravarHtml('alece', 'expediente-historico', 'https://www.al.ce.gov.br/legislativo/expediente-historico')
-      await gravarHtml('alece', 'expediente-historico-p2', 'https://www.al.ce.gov.br/legislativo/expediente-historico?page=2')
       const html = ((hist.corpo as { html?: string } | null)?.html || '') as string
       const id = /\/legislativo\/expediente-texto\/(\d+)/.exec(html)?.[1]
-      if (id) {
-        await gravarHtml('alece', 'expediente-texto', `https://www.al.ce.gov.br/legislativo/expediente-texto/${id}`)
-        await gravarHtml('alece', 'expediente-csv', `https://www.al.ce.gov.br/legislativo/expediente-historico-csv/${id}`)
-      }
-      // Registro com andamentos: lista por legislatura (www2) e as formas de busca por número
-      const www2 = 'http://www2.al.ce.gov.br/legislativo/proposicoes'
-      const q = 'nome=31_legislatura&tabela=projeto_lei&opcao=T'
-      await gravarHtml('alece', 'projetos-lei-tramitando', `${www2}/numero.php?${q}`)
-      await gravarHtml('alece', 'projetos-lei-ultima-pagina', `${www2}/numero.php?${q}&absolutepage=126`)
-      await gravarHtml('alece', 'busca-get-numero', `${www2}/busca.php?${q}&pesquisa=593&escolha=num_proj`)
-      await gravarHtml('alece', 'busca-post-numero', `${www2}/busca.php?${q}`, { pesquisa: '593', escolha: 'num_proj', B1: 'Busca' })
-      await gravarHtml('alece', 'busca-post-tudo', `${www2}/busca.php?${q}`, { pesquisa: '593/26', escolha: 'tudo', B1: 'Busca' })
-      await gravarHtml('alece', 'ficha-projeto', 'https://www2.al.ce.gov.br/legislativo/tramit2026/pl593_26.htm')
-    },
-  },
-  {
-    fonte: 'iose',
-    nome: 'diario',
-    async rodar() {
-      await diarioEgba('iose', 'https://iose.se.gov.br')
+      if (id) await gravarHtml('alece', 'expediente-texto', `https://www.al.ce.gov.br/legislativo/expediente-texto/${id}`)
+      // Lista por legislatura (www2), em ordem de número: primeira e última página
+      const q = 'http://www2.al.ce.gov.br/legislativo/proposicoes/numero.php?nome=31_legislatura&tabela=projeto_lei&opcao=T'
+      await gravarHtml('alece', 'projetos-lei-tramitando', q)
+      await gravarHtml('alece', 'projetos-lei-ultima-pagina', `${q}&absolutepage=126`)
+      await gravarHtml('alece', 'mensagens-tramitando', 'http://www2.al.ce.gov.br/legislativo/proposicoes/numero.php?nome=31_legislatura&tabela=projeto_mens&opcao=T')
     },
   },
 ]

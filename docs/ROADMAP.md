@@ -118,6 +118,14 @@ Conectores dos estados da região escolhida, palavras-chave regionais, páginas 
 
 Uma região por ciclo, repetindo o processo do piloto.
 
+> **Fase 6 (Nordeste) — em andamento (16/10/2026):**
+> - **Alagoas, Paraíba e Piauí, pelo SAPL** (mesmo conector do Norte). Teste ao vivo: AL 191 matérias atualizadas na semana, PB 273, PI 14; andamentos completos. Ficam de fora "Indicativo de Projeto de Lei" (PI), emendas e substitutivos a projetos (PB); projeto de código entra.
+> - **Bahia, pelo Diário Oficial do Legislativo** (`web/src/coleta/alba/`, fonte `casa-ba`): o site da Alba só tem proposições até 01/08/2025 e o sistema novo (nopapercloud) recusa acesso de fora pelo Cloudflare. O diário sai todo dia útil pela API de edições da EGBA, com o PDF completo; em "Expediente despachado pela Presidência" vêm os projetos apresentados, com texto, justificativa, autor e as comissões. Matérias que citam no título uma proposta acompanhada (parecer, ordem do dia, redação final) viram andamento.
+> - **Ceará, pelo expediente e pela lista de proposições da Alece** (`web/src/coleta/alece/`, fonte `casa-ce`): o histórico do expediente traz cada sessão com as matérias lidas (projetos de lei, de lei complementar, PEC, decreto legislativo e mensagens do Executivo), que é a apresentação oficial; a lista por legislatura do www2 traz, de cada proposta acompanhada, o histórico inteiro, comissões, local, autógrafo, lei e veto; a ficha em PDF traz o texto.
+> - **Palavras-chave:** 34 termos regionais dos nove estados (cada um vale só no seu estado) e nacionais que atravessam a região (Rio São Francisco e a transposição, açude, energia eólica, parque eólico). Em produção, `pnpm seed` acrescenta.
+> - **Sergipe:** o site da Alese não tem lista de proposições e o Diário Oficial do Estado não publica os projetos; fica no cadastro manual do autor.
+> - **Maranhão, Pernambuco e Rio Grande do Norte:** os sites das Assembleias não respondem de fora do Brasil (o DOE do Maranhão responde "Acesso bloqueado"). Precisam de coleta a partir de um servidor no Brasil, como o Amapá.
+
 ## Fase 7 — Municipal e premium
 
 Capitais e municípios-chave (via Querido Diário). Camada premium definida a partir das métricas acumuladas.
