@@ -117,13 +117,23 @@ async function pesquisarAlepa(b: Browser) {
   const chamadas: { metodo: string; url: string; corpoPedido?: string; status: number; tipo: string | null; bytes: number; inicio: string; fim: string }[] = []
   p.on('response', async (r: RespostaPw) => {
     const q = r.request()
-    if (!['xhr', 'fetch', 'document'].includes(q.resourceType()) || !/Legislativo/i.test(r.url())) return
+    if (!['xhr', 'fetch', 'document'].includes(q.resourceType()) || /google|DXR\.axd|\.(css|js|png|svg)(\?|$)/i.test(r.url())) return
     const corpo = await r.text().catch(() => '')
     chamadas.push({ metodo: q.method(), url: r.url(), corpoPedido: q.postData()?.slice(0, 3000), status: r.status(), tipo: r.headers()['content-type'] || null, bytes: corpo.length, inicio: corpo.slice(0, 3000), fim: corpo.slice(-1500) })
   })
   try {
     await p.goto('https://www.alepa.pa.gov.br/Home/Page/Proposicoes', { waitUntil: 'networkidle', timeout: 45_000 })
+    // Campos DevExpress: o valor vai pelo próprio componente (SetValue); o clique, por DoClick
     await p.locator('#Ano_I').fill(String(new Date().getFullYear()))
+    await p
+      .evaluate((ano) => {
+        const w = window as unknown as { ASPxClientControl?: { GetControlCollection: () => { GetByName: (n: string) => { SetValue?: (v: unknown) => void; DoClick?: () => void } | null } } }
+        const col = w.ASPxClientControl?.GetControlCollection()
+        col?.GetByName('Ano')?.SetValue?.(ano)
+        col?.GetByName('searchButton')?.DoClick?.()
+      }, String(new Date().getFullYear()))
+      .catch(() => {})
+    await p.waitForTimeout(5000)
     // O botão do DevExpress fica escondido atrás de um invólucro: tenta o clique forçado, o invólucro e o Enter
     await p.locator('#searchButton_I').click({ force: true, timeout: 8000 }).catch(async () => {
       await p.locator('#searchButton').click({ timeout: 8000 }).catch(async () => {
