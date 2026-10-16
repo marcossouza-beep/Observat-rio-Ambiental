@@ -338,26 +338,29 @@ const PASSOS_SE: Passo[] = [
     fonte: 'alesp',
     nome: 'dados-abertos',
     async rodar() {
-      // A página da propositura é uma aplicação; o script mostra a API por trás
+      // API da aplicação (legis-api-portal-prd), achada com o navegador: pesquisa de processos e ficha
+      const api = 'https://legis-api-portal-prd.al.sp.gov.br'
+      const ano = new Date().getFullYear()
+      await salvar('alesp', 'tipos-processo', await buscar(`${api}/tipo-processo/lista-pesquisa`))
+      await salvar('alesp', 'processos', await buscar(`${api}/processo?page=0&size=20&sort=desc&flPropositura=true&ano=${ano}`))
+      await salvar('alesp', 'processo-detalhes', await buscar(`${api}/processo/detalhes/principais/1100004484`))
+      await salvar('alesp', 'processo-resumos', await buscar(`${api}/processo/resumos-com-links/lote?idsProcessos=1100004484`))
+      for (const [nome, url] of [
+        ['tramitacao-a', `${api}/processo/1100004484/tramitacao?page=0&size=10&sort=desc`],
+        ['tramitacao-b', `${api}/processo/tramitacao/1100004484?page=0&size=10&sort=desc`],
+        ['tramitacao-c', `${api}/tramitacao?idProcesso=1100004484&page=0&size=10&sort=desc`],
+      ])
+        await salvar('alesp', nome, await buscar(url))
+      // Módulo com as funções da ficha (tramitação, votações, pareceres)
       const pag = await gravarHtml('alesp', 'propositura', 'https://www.al.sp.gov.br/propositura/?id=1000682212')
       const ph = ((pag.corpo as { html?: string } | null)?.html || '') as string
       const js = /src="(\/legis-web-files\/main-[^"]+\.js)"/.exec(ph)?.[1]
       if (js) {
         const main = await gravarHtml('alesp', 'legis-web-main', `https://www.al.sp.gov.br${js}`)
         const mh = ((main.corpo as { html?: string } | null)?.html || '') as string
-        // Módulos da pesquisa e da proposição: é neles que ficam os caminhos da API (legis-api-portal-prd)
-        for (const m of [...new Set(mh.match(/legis-web-files\/(?:proposicao-view|topo-da-pesquisa|processo-view|documento-view)-[\w-]+\.js/g) || [])])
-          await gravarHtml('alesp', m.replace(/^legis-web-files\/|-[\w-]+\.js$/g, ''), `https://www.al.sp.gov.br/${m}`)
+        const m = /legis-web-files\/ementas-com-links-[\w-]+\.js/.exec(mh)?.[0]
+        if (m) await gravarHtml('alesp', 'ementas-com-links', `https://www.al.sp.gov.br/${m}`)
       }
-      // API da aplicação (legis-api-portal-prd): pesquisa de documentos, tipos e detalhe; com e sem /api
-      const ano = new Date().getFullYear()
-      for (const [nome, base] of [['api', 'https://legis-api-portal-prd.al.sp.gov.br'], ['api-prefixo', 'https://legis-api-portal-prd.al.sp.gov.br/api']]) {
-        await salvar('alesp', `${nome}-tipos`, await buscar(`${base}/tipo-documento/lista-pesquisa`))
-        await salvar('alesp', `${nome}-documentos`, await buscar(`${base}/documento?page=0&size=10&sort=desc&ano=${ano}`))
-      }
-      await salvar('alesp', 'api-documentos-pl', await buscar(`https://legis-api-portal-prd.al.sp.gov.br/documento?page=0&size=10&sort=desc&listaIdTipoDocumento=1&ano=${ano}`))
-      await salvar('alesp', 'api-facetas', await buscar(`https://legis-api-portal-prd.al.sp.gov.br/documento/facetas?ano=${ano}`))
-      await salvar('alesp', 'api-documento-detalhes', await buscar('https://legis-api-portal-prd.al.sp.gov.br/documento/detalhes/1000682212'))
       // O arquivo de proposituras (proposituras.zip: 17 MB, XML de 132 MB, sem ordem) fica de fora: pesado para 4 vezes ao dia
     },
   },
