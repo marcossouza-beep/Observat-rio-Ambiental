@@ -6,7 +6,8 @@ import path from 'node:path'
 import { beforeAll, describe, expect, it } from 'vitest'
 import { autografosDaEdicao, edicaoDe, eventoDoAutografo, pacoteDoProjeto, projetosDaEdicao, semCabecalhoDePagina } from '@/coleta/alerr/mapear'
 import { limparEmenta, pacoteDaLei, siglaDaLei, type LeiAlepa } from '@/coleta/alepa/leis'
-import { autorAlepa, lerPainel, pacoteAlepa, pedidoPainel, siglaAlepa } from '@/coleta/alepa/proposicoes'
+import { autorAlepa, lerPainel, pacoteAlepa, pedidoPainel, siglaAlepa, urlDetalhes } from '@/coleta/alepa/proposicoes'
+import { criarConectorAlepa } from '@/coleta/alepa/conector'
 import { eventoAlepa, lerDetalhesAlepa, pacoteDosDetalhes, statusAlepa } from '@/coleta/alepa/detalhes'
 import { extrairTextoPdf } from '@/coleta/textos'
 
@@ -167,5 +168,33 @@ describe('Detalhes da proposição na Alepa', () => {
     expect(eventoAlepa('INCLUÍDO NA PAUTA DA 19ª SESSÃO ORDINÁRIA')).toBe('pauta')
     expect(eventoAlepa('VOTADO NA COMISSÃO DE MEIO AMBIENTE')).toBe('parecer_relator')
     expect(eventoAlepa('PUBLICADO NO AVULSO Nº: 71 PÁGINA: 02')).toBe('outro')
+  })
+})
+
+describe('Conector da Alepa: endereço dos detalhes', () => {
+  const html = (f: string) => JSON.parse(readFileSync(path.join(dir, 'alepa', `${f}.json`), 'utf8')).corpo.html as string
+  const ctx = (acompanhadas: string[]) => ({
+    desde: new Date('2026-10-15T00:00:00Z'),
+    agora: new Date('2026-10-16T12:00:00Z'),
+    acompanhadas: new Set(acompanhadas),
+    descartadas: new Set<string>(),
+    relevancia: () => 0,
+    notaMinima: 40,
+    maxNovas: 5,
+    buscar: async () => ({}),
+  })
+  // Sem tipo e situação no endereço, a página real vem sem a tramitação
+  const obter = async (url: string) => (url.includes('&tipo=') ? html('detalhes-16347') : html('detalhes-16347-so-id'))
+
+  it('o cartão traz o endereço completo (tipo e situação)', () => {
+    const c = lerPainel(html('proposicoes-tipo-IdTipoProposicao')).cartoes[0]
+    expect(c.detalhes).toBe('https://www.alepa.pa.gov.br/Legislativo/DetalhesProposicao?IdProposicao=16375&tipo=PROJETO%20DE%20LEI%20ORDIN%C3%81RIA&situacao=0&decisao=-1&veto=-1')
+    expect(urlDetalhes(16375, 'PL')).toBe(c.detalhes)
+  })
+
+  it('acompanhada fora da lista: lê o tipo e pede de novo com ele, e a tramitação vem', async () => {
+    const r = await criarConectorAlepa({ postar: async () => '', obter }).coletar(ctx(['alepa:proposicao:16347']))
+    expect(r.pacotes).toHaveLength(1)
+    expect(r.pacotes[0].tramitacoes).toHaveLength(3)
   })
 })

@@ -15,14 +15,32 @@ export const ALEPA = 'https://www.alepa.pa.gov.br'
 export const NAVEGADOR = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36'
 
 /** Tipos da Alepa (GetTipoProposicoes) que interessam, com a sigla usada no site. */
-export const TIPOS_ALEPA: { codigo: number; sigla: string }[] = [
-  { codigo: 3, sigla: 'PL' },
-  { codigo: 4, sigla: 'PLC' },
-  { codigo: 2, sigla: 'PEC' },
-  { codigo: 1, sigla: 'PDL' },
+/** "situacao" vem de GetTipoProposicoes e vai no endereço dos detalhes (sem ele a página vem sem a tramitação). */
+export const TIPOS_ALEPA: { codigo: number; sigla: string; nome: string; situacao: number }[] = [
+  { codigo: 3, sigla: 'PL', nome: 'PROJETO DE LEI ORDINÁRIA', situacao: 0 },
+  { codigo: 4, sigla: 'PLC', nome: 'PROJETO DE LEI COMPLEMENTAR', situacao: 0 },
+  { codigo: 2, sigla: 'PEC', nome: 'PROJETO DE EMENDA CONSTITUCIONAL', situacao: 1 },
+  { codigo: 1, sigla: 'PDL', nome: 'PROJETO DE DECRETO LEGISLATIVO', situacao: 1 },
 ]
 
-export type CartaoAlepa = { id: number; tipo: string; sigla: string; numero: number; ano: number; data: string; autor: string; ementa: string }
+export type CartaoAlepa = {
+  id: number
+  tipo: string
+  sigla: string
+  numero: number
+  ano: number
+  data: string
+  autor: string
+  ementa: string
+  /** Endereço dos detalhes exatamente como o cartão abre (com tipo e situação; sem eles falta a tramitação). */
+  detalhes: string
+}
+
+/** Endereço dos detalhes quando não há cartão: tipo e situação pela sigla. */
+export function urlDetalhes(id: number, sigla?: string): string {
+  const t = TIPOS_ALEPA.find((x) => x.sigla === sigla)
+  return `${ALEPA}/Legislativo/DetalhesProposicao?IdProposicao=${id}${t ? `&tipo=${encodeURIComponent(t.nome)}&situacao=${t.situacao}&decisao=-1&veto=-1` : ''}`
+}
 
 const decodificar = (t: string) =>
   t
@@ -48,24 +66,25 @@ export function siglaAlepa(tipo: string): string | null {
 export function lerPainel(html: string): { total: number; cartoes: CartaoAlepa[] } {
   const total = Number(/(\d+) Resultados/.exec(html)?.[1] || 0)
   const cartoes: CartaoAlepa[] = []
-  const re = /IdProposicao=(\d+)[^"']*["'][^>]*class=["']card-proposicao["']>\s*<h3[^>]*>([\s\S]*?)<\/h3>\s*<span>([\s\S]*?)<\/span>\s*<p>([\s\S]*?)<\/p>/g
+  const re = /(\/Legislativo\/DetalhesProposicao\?IdProposicao=(\d+)[^"']*)["'][^>]*class=["']card-proposicao["']>\s*<h3[^>]*>([\s\S]*?)<\/h3>\s*<span>([\s\S]*?)<\/span>\s*<p>([\s\S]*?)<\/p>/g
   let brutos = 0
   for (const m of html.matchAll(re)) {
     brutos++
-    const cab = decodificar(m[3])
+    const cab = decodificar(m[4])
     const c = /^(.+?)\s+N[º°o.]?\s*(\d+)\s*\/\s*(\d{4})(?:,\s*DE\s+(\d{2})\/(\d{2})\/(\d{4}))?/i.exec(cab)
     if (!c) continue
     const sigla = siglaAlepa(c[1])
     if (!sigla) continue
     cartoes.push({
-      id: Number(m[1]),
+      id: Number(m[2]),
+      detalhes: `${ALEPA}${decodificar(m[1])}`,
       tipo: c[1].trim(),
       sigla,
       numero: Number(c[2]),
       ano: Number(c[3]),
       data: c[4] ? `${c[6]}-${c[5]}-${c[4]}` : `${c[3]}-01-01`,
-      autor: decodificar(m[2]),
-      ementa: decodificar(m[4]),
+      autor: decodificar(m[3]),
+      ementa: decodificar(m[5]),
     })
   }
   // Cartões que não são projetos (indicações, requerimentos) são ignorados; nenhum cartão legível é mudança de formato

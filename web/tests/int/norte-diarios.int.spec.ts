@@ -101,6 +101,8 @@ describe('Pará pela pesquisa de proposições da Alepa', () => {
     })
     const obter = async (url: string) => {
       const id = /IdProposicao=(\d+)/.exec(url)?.[1]
+      // Como o site real: sem tipo e situação no endereço, a página vem sem a tramitação
+      if (id === '16347' && !url.includes('&tipo=')) return corpo('alepa/detalhes-16347-so-id.json').html as string
       if (id && ['16099', '16347', '16375'].includes(id)) return corpo(`alepa/detalhes-${id}.json`).html as string
       throw new Error('HTTP 404')
     }

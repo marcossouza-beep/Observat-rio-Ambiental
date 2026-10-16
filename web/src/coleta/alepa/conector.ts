@@ -9,7 +9,7 @@
 import { identificacaoDe, type Conector, type ResultadoColeta } from '../conector'
 import type { PacoteProposicao } from '../tipos'
 import { lerDetalhesAlepa, pacoteDosDetalhes } from './detalhes'
-import { ALEPA, lerPainel, NAVEGADOR, pacoteAlepa, pedidoPainel, postarNaRede, TIPOS_ALEPA, type CartaoAlepa, type Postar } from './proposicoes'
+import { ALEPA, lerPainel, NAVEGADOR, pacoteAlepa, pedidoPainel, postarNaRede, siglaAlepa, TIPOS_ALEPA, urlDetalhes, type CartaoAlepa, type Postar } from './proposicoes'
 
 export type ObterHtml = (url: string) => Promise<string>
 const obterNaRede: ObterHtml = async (url) => {
@@ -20,7 +20,6 @@ const obterNaRede: ObterHtml = async (url) => {
 
 /** Teto de páginas de detalhes por rodada (protege o site da Alepa e o tempo da coleta). */
 const MAX_DETALHES = 40
-const urlDetalhes = (id: number) => `${ALEPA}/Legislativo/DetalhesProposicao?IdProposicao=${id}`
 
 export function criarConectorAlepa(opcoes: { postar?: Postar; obter?: ObterHtml } = {}): Conector {
   const postar = opcoes.postar || postarNaRede
@@ -86,7 +85,10 @@ export function criarConectorAlepa(opcoes: { postar?: Postar; obter?: ObterHtml 
         }
         lidas++
         try {
-          pacotes.push(pacoteDosDetalhes(id, lerDetalhesAlepa(await obter(urlDetalhes(id))), cartao?.ano || ano))
+          let d = lerDetalhesAlepa(await obter(cartao?.detalhes || urlDetalhes(id)))
+          // Sem cartão (acompanhada fora da lista): o endereço só com o id vem sem a tramitação; pede de novo com o tipo
+          if (!cartao && !d.tramitacao.length && siglaAlepa(d.tipo || '')) d = lerDetalhesAlepa(await obter(urlDetalhes(id, siglaAlepa(d.tipo || '')!)))
+          pacotes.push(pacoteDosDetalhes(id, d, cartao?.ano || ano))
         } catch (e) {
           avisos.push(`detalhes de ${cartao ? `${cartao.sigla} ${cartao.numero}/${cartao.ano}` : id}: ${(e as Error).message}`.slice(0, 200))
           if (cartao) pacotes.push(pacoteAlepa(cartao))
