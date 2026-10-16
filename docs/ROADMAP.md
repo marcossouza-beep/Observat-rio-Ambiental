@@ -126,6 +126,13 @@ Uma região por ciclo, repetindo o processo do piloto.
 > - **Sergipe:** o site da Alese não tem lista de proposições e o Diário Oficial do Estado não publica os projetos; fica no cadastro manual do autor.
 > - **Maranhão, Pernambuco e Rio Grande do Norte:** os sites das Assembleias não respondem de fora do Brasil (o DOE do Maranhão responde "Acesso bloqueado"). Precisam de coleta a partir de um servidor no Brasil, como o Amapá.
 
+> **Fase 6 (Centro-Oeste) — em andamento (16/10/2026):**
+> - **Mato Grosso, pela pesquisa de proposições da ALMT** (`web/src/coleta/almt/`, fonte `casa-mt`): a API própria exige chave, mas a pesquisa é aberta e responde a GET com filtros. As novas vêm do fim da lista de cada tipo (PL, PLC, PEC, PDL), pela data do protocolo; as acompanhadas, pela pesquisa por número; os andamentos (leitura, comissões, relator, parecer com PDF, votações, sanção e lei) vêm de `/proposicao/<id>/tramitacoes`. Vetos viram andamento do projeto vetado.
+> - **Palavras-chave:** 22 termos dos quatro estados (Sema-MT, Imasul, Semad, Ibram, Chapada dos Guimarães e dos Veadeiros, Serra da Bodoquena, Lago Paranoá, Kalunga, Guarani-Kaiowá, moratória da soja e outros) e, nacionais, Rio Paraguai e bacia do Alto Paraguai.
+> - **Mato Grosso do Sul:** o sistema de proposições da ALEMS (SGPL) tem API pública em JSON, mas toda chamada passa por um desafio anti-robô; sem ele, responde 403. Caminho: pedir à ALEMS acesso para o observatório (chave ou liberação). Até lá, cadastro manual.
+> - **Goiás:** o portal da Alego respondia na sondagem de 15/10 e não respondeu nas rodadas de 16/10 (DNS e tempo esgotado a partir do GitHub); testar de novo e, se continuar, de um servidor no Brasil.
+> - **Distrito Federal:** a CLDF e o DODF não respondem de fora do Brasil; precisam de servidor no Brasil.
+
 ## Fase 7 — Municipal e premium
 
 Capitais e municípios-chave (via Querido Diário). Camada premium definida a partir das métricas acumuladas.
