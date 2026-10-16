@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-10-16T03:03:07.384Z",
+  "geradoEm": "2026-10-16T03:07:31.141Z",
   "ambiente": "GitHub Actions (fora do Brasil)",
   "PA": {
     "proposicoes": {
@@ -354,10 +354,19 @@
       "chamadas": [
         {
           "metodo": "GET",
+          "url": "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
+          "status": 302,
+          "tipo": "text/html; charset=utf-8",
+          "bytes": 0,
+          "inicio": "",
+          "fim": ""
+        },
+        {
+          "metodo": "GET",
           "url": "https://www.alepa.pa.gov.br/Legislativo/Proposicoes",
           "status": 200,
           "tipo": "text/html; charset=utf-8",
-          "bytes": 144263,
+          "bytes": 144262,
           "inicio": "<!DOCTYPE html>\r\n\r\n<html lang=\"pt-br\">\r\n<head>\r\n    <meta charset=\"UTF-8\" />\r\n    \r\n        <title>Proposi&#231;&#245;es - ALEPA</title>\r\n    <link rel=\"shortcut icon\" href=\"/Content/Images/shortcut-icon-alepa.png\">\r\n\r\n\r\n    <link rel=\"stylesheet\" href=\"/DXR.axd?r=0_4966,1_68,1_69,0_4969,1_74,1_210,0_4827,1_209,0_4830,0_4843,0_4846,1_84,1_73,0_4791,0_4794,0_4860,4_120,4_111,4_112,0_4863,4_136-RHOmx&p=98bf90a6\" /><script id=\"dxis_1678606403\" src=\"/DXR.axd?r=4_154-QHOmx\"></script><link rel=\"stylesheet\" href=\"/DXR.axd?r=5_4,0_4909,0_4927,6_12,0_4930-RHOmx&p=98bf90a6\" />\r\n    <script id=\"dxis_1603570592\" src=\"/DXR.axd?r=1_0,1_2,1_3,1_4,1_11,1_64,1_12,1_255,1_13,1_14,1_15,1_16,1_20,1_66,1_48,1_17,1_9,17_0,17_8,1_27,1_39,1_31,17_36,1_23,1_55,17_35,1_41,1_54,1_53,17_34,1_183,1_184,1_24,1_33,1_46,1_213,1_227,1_211,1_243,1_47,1_52,17_6,1_51,17_15,1_21,1_22,1_40,1_34,1_19,1_226,1_228,1_212,1_220,1_216,1_221,1_222,1_217,1_223,1_218,1_219,1_214,1_224,1_225,1_230,1_239,1_241,1_242,1_229,1_234,1_235,1_236,1_215,1_231,1_232,1_233,1_237,1_238,1_240,17_49,17_50,17_2,1_59,1_57,17_39,1_56,17_40,1_58,17_41,17_42,1_60,17_3,1_49,17_9,17_10,1_35,17_11,1_63,1_62,17_12,1_50,1_38,17_44,1_43,17_13,17_14,1_67,1_185,1_182,17_24,1_205,17_25,1_194,17_18,1_203,17_20,1_188,1_190,1_198,1_199,1_200,1_204,1_186,1_193,17_17,17_22,1_192,17_19,1_61,1_195,1_189,17_16,1_197,1_191,17_43,1_202,1_196,17_21,1_253,17_1,1_252,1_251,1_250,17_47,4_0,1_18,5_1,5_2,4_115,4_98,4_100,4_99,4_101,4_102,4_105,4_108,4_109,4_107,4_106,4_104,4_103,4_110,4_1,4_34,4_113,4_3,4_31,4_2,4_24,4_22,4_23,4_27,4_28,4_32,4_29,4_35,4_47,4_48,4_42,4_80,4_36,4_37,4_38,4_39,4_40,4_43,4_44,4_45,4_46,4_49,4_50,4_51,4_52,4_41,4_53,4_54,4_55,4_56,4_57,4_58,4_59,4_60,4_61,4_62,4_67,4_68,4_69,4_70,4_71,4_72,4_73,4_74,4_75,4_76,4_77,4_63,4_64,4_65,4_66,4_78,4_79,4_86,4_87,4_89,4_93,4_88,4_90,4_91,4_81,4_84,4_83,4_85,4_82,4_15,4_16,4_17,4_18,4_19,4_20,4_92,4_25,4_26,4_30,4_14,4_6,4_8,4_7,4_9,4_10,4_11,4_21,4_12,4_4,4_5,4_13,17_4,4_94,4_95,4_96,4_97,4_33,6_0,6_1,6_2,6_3,6_4,6_5,6_7,6_8,6_6,17_37-YHOmx&amp;p=2afebda9\"></script><script id=\"dxss_2023329486\">\n<!--\n(function(){\nvar a = {'currNegPattern':9,'currGroupSeparator':'.','abbrDayNames':['dom','seg','ter','qua','qui','sex','sáb'],'monthNames':['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro',''],'numGroupSeparator':'.','shortTime':'HH:mm','longTime':'HH:mm:ss','currDecimalPoint':',','currPosPattern':2,'longDate':'dddd, d\\' de \\'MMMM\\' de \\'yyyy','abbrMonthNames':['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez',''],'pm':'','twoDigitYearMax':2049,'numPosInf':'∞','numNegInf':'-∞','am':'','monthDay':'d \\'de\\' MMMM','currency':'R$','yearMonth':'MMMM\\' de \\'yyyy','numDecimalPoint':',','percentPattern':1,'dayNames':['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'],'genMonthNames':['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','s",
           "fim": "         Horário de atendimento ao público: Das 08:00 às 14:00\r\n        </p>\r\n        <p style=\"margin-top: 20px;\">\r\n\r\n            <a href=\"https://www.quartertec.com.br\" target=\"_blank\" style=\"text-decoration: none; color: var(--font-secondary); font-weight: 300 !important;\">&copy; 2026 Quarter Tecnologia</a>.<br /> Todos os Direitos reservados.\r\n        </p>\r\n    </div>\r\n    <div vw class=\"enabled\">\r\n        <div vw-access-button class=\"active\"></div>\r\n        <div vw-plugin-wrapper>\r\n            <div class=\"vw-plugin-top-wrapper\"></div>\r\n        </div>\r\n    </div>\r\n    <script src=\"https://vlibras.gov.br/app/vlibras-plugin.js\"></script>\r\n    <script>\r\n        new window.VLibras.Widget('https://vlibras.gov.br/app');\r\n    </script>\r\n</body>\r\n</html>\r\n\r\n<table class=\"dxlpLoadingPanel_Office365 loadPanel dxlpControl_Office365\" id=\"loadPanelMenu\" style=\"position:absolute;left:0px;top:0px;z-index:30000;display:none;\">\r\n\t<tr>\r\n\t\t<td class=\"dx\" style=\"padding-right:0px;\"><img class=\"dxlp-loadingImage dxlp-imgPosLeft\" src=\"/DXR.axd?r=1_89-QHOmx\" alt=\"\" style=\"vertical-align:middle;\" /></td><td class=\"dx\" style=\"padding-left:0px;\"><span id=\"loadPanelMenu_TL\">Carregando&hellip;</span></td>\r\n\t</tr>\r\n</table><div id=\"loadPanelMenu_LD\" class=\"dxlpLoadingDiv_Office365 dxlpControl_Office365 dx-ft\" style=\"left:0px;top:0px;z-index:29999;display:none;position:absolute;\">\r\n\r\n</div><script id=\"dxss_642011937\">\n<!--\nASPx.createControl(ASPxClientLoadingPanel,'loadPanelMenu','');\n\n//-->\n</script>"
         },
@@ -378,6 +387,16 @@
           "bytes": 110,
           "inicio": "[{\"codigo\":1,\"nome\":\"DEPUTADO(A) ESTADUAL\"},{\"codigo\":2,\"nome\":\"EX-DEPUTADO(A)\"},{\"codigo\":3,\"nome\":\"OUTROS\"}]",
           "fim": "[{\"codigo\":1,\"nome\":\"DEPUTADO(A) ESTADUAL\"},{\"codigo\":2,\"nome\":\"EX-DEPUTADO(A)\"},{\"codigo\":3,\"nome\":\"OUTROS\"}]"
+        },
+        {
+          "metodo": "POST",
+          "url": "https://www.alepa.pa.gov.br/Legislativo/CallbackPanelProposicoes",
+          "corpoPedido": "DXCallbackName=cbpProposicoes&__DXCallbackArgument=c0%3A%5Bobject+Object%5D&model%5BNumero%5D=&model%5BAno%5D=2026&model%5BIdAutor%5D=&model%5BTexto%5D=&cardViewProposicoes=%7B%26quot%3Bkeys%26quot%3B%3A%5B%5D%2C%26quot%3BcallbackState%26quot%3B%3A%26quot%3BrVvZ0v7bWElptKOe%2F%2Bs3LJbH5UxT6d4P9eVlfOsRMXuDJqfLvZJbPudjjxMnEyEI6%2FvbOeGDIQaP1xNoq1R%2FEpANK7YtJan9%2F9cih3%2F6DgS7MkqoAbB4GXcb2jxEN1z2We%2BZkvpls4%2FY4qRowWOqHPw6eJ3yz1%2FQLdyRnhGJDtN%2FCfPFW%2FNa%2FdKsQ2OH2IBRRsyl5CWHegRpNg6kq%2Fcxx3bCRAy%2B7RQxojYO7qjcZKAP%2B7Pd7fDf1ul3Lr3PFH3n6uljKD4N3At7w8zD58C%2BpQ%3D%3D%26quot%3B%2C%26quot%3Bselection%26quot%3B%3A%26quot%3B%26quot%3B%2C%26quot%3Btoolbar%26quot%3B%3Anull%7D&DXMVCEditorsValues=%7B%7D",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 16382,
+          "inicio": "\r\n/*DX*/({'id':0,'result':'<%html%>'})/*DXHTML*/<table class=\"dxcvControl_Office365 dxcv\" id=\"cardViewProposicoes\" style=\"width:100%;border-collapse:separate;border:none;\">\r\n\t<tr>\r\n\t\t<td><table id=\"cardViewProposicoes_DXTitle\" style=\"width:100%;\">\r\n\t\t\t<tr>\r\n\t\t\t\t<td id=\"cardViewProposicoes_tcTitle\" class=\"dxcvTitlePanel_Office365\"><p style='font-size: 1.25rem;'>1891 Resultados</p></td>\r\n\t\t\t</tr>\r\n\t\t</table><div class=\"dxcvPagerTopPanel_Office365\">\r\n\t\t\t<div class=\"dxpLite_Office365\" id=\"cardViewProposicoes_DXPagerTop\">\r\n\t\t\t\t<b class=\"dxp-lead dxp-summary\">P&#225;gina 1 de 190 (1891 itens)</b><b id=\"cardViewProposicoes_DXPagerTop_PBP\" class=\"dxp-button dxp-bi dxp-disabledButton\"><img class=\"dxWeb_pPrevDisabled_Office365\" src=\"/DXR.axd?r=1_89-QHOmx\" alt=\"Anterior\" /></b><b class=\"dxp-num dxp-current\">1</b><a class=\"dxp-num\" onclick=\"ASPx.GVPagerOnClick(&#39;cardViewProposicoes&#39;,&#39;PN1&#39;);\">2</a><a class=\"dxp-num\" onclick=\"ASPx.GVPagerOnClick(&#39;cardViewProposicoes&#39;,&#39;PN2&#39;);\">3</a><a class=\"dxp-num\" onclick=\"ASPx.GVPagerOnClick(&#39;cardViewProposicoes&#39;,&#39;PN3&#39;);\">4</a><a class=\"dxp-num\" onclick=\"ASPx.GVPagerOnClick(&#39;cardViewProposicoes&#39;,&#39;PN4&#39;);\">5</a><a class=\"dxp-num\" onclick=\"ASPx.GVPagerOnClick(&#39;cardViewProposicoes&#39;,&#39;PN5&#39;);\">6</a><a class=\"dxp-num\" onclick=\"ASPx.GVPagerOnClick(&#39;cardViewProposicoes&#39;,&#39;PN6&#39;);\">7</a><b class=\"dxp-ellip\">&hellip;</b><a class=\"dxp-num\" onclick=\"ASPx.GVPagerOnClick(&#39;cardViewProposicoes&#39;,&#39;PN187&#39;);\">188</a><a class=\"dxp-num\" onclick=\"ASPx.GVPagerOnClick(&#39;cardViewProposicoes&#39;,&#39;PN188&#39;);\">189</a><a class=\"dxp-num\" onclick=\"ASPx.GVPagerOnClick(&#39;cardViewProposicoes&#39;,&#39;PN189&#39;);\">190</a><a id=\"cardViewProposicoes_DXPagerTop_PBN\" class=\"dxp-button dxp-bi\" onclick=\"ASPx.GVPagerOnClick(&#39;cardViewProposicoes&#39;,&#39;PBN&#39;);\"><img class=\"dxWeb_pNext_Office365\" src=\"/DXR.axd?r=1_89-QHOmx\" alt=\"Próximo\" /></a>\r\n\t\t\t</div><b class=\"dx-clear\"></b><script id=\"dxss_1443300577\">\n<!--\nASPx.AddHoverItems('cardViewProposicoes_DXPagerTop',[[['dxp-hoverButton'],[''],['PBN']]]);\nASPx.RemoveHoverItems('cardViewProposicoes_DXPagerTop',[[['PBP']]]);\nASPx.createControl(ASPxClientPager,'cardViewProposicoes_DXPagerTop','',{'uniqueID':'cardViewProposicoes$DXPagerTop','hasOwnerControl':true,'requireInlineLayout':true,'enableAdaptivity':true,'pageSizeItems':[{'text':'10','value':'10'},{'text':'20','value':'20'},{'text':'50','value':'50'},{'text':'100','value':'100'},{'text':'200','value':'200'}],'pageSizeSelectedItem':{'text':'10','value':10}},{'pageSizeChanged':function(s, e) { ASPx.GVPagerOnClick('cardViewProposicoes',e.value); }});\n\n//-->\n</script>\r\n\t\t</div><table id=\"cardViewProposicoes_DXMainTable\" class=\"dxcvTable_Office365 dxcvBPT\" style=\"width:100%;empty-cells:show;\">\r\n\t\t\t<tr>\r\n\t\t\t\t<td><div class=\"dxbplc\">\r\n\t\t\t\t\t<div id=\"cardViewProposicoes_DXDataCard0\" class=\"dxcvBreakpointsCard_Office365\" style=\"height:100%;\">\r\n\t\t\t",
+          "fim": "Ne/opXyqdr2f0LkaZ/Y4h9WbNU/FiQUEaVvo720KFowA==','selection':''},'callBacksEnabled':true,'pageRowCount':10,'pageRowSize':10,'pageIndex':0,'pageCount':190,'selectedWithoutPageRowCount':0,'visibleStartIndex':0,'focusedRowIndex':-1,'allowFocusedRow':false,'allowSelectByItemClick':false,'allowSelectSingleRowOnly':false,'callbackOnFocusedRowChanged':false,'callbackOnSelectionChanged':false,'editState':0,'editItemVisibleIndex':-1,'searchPanelFilter':'','allowDelete':true,'allowEdit':true,'allowInsert':true,'columnProp':[[0,,,'Id'],[1,,,'Tipo'],[2,,,'Situacao'],[3,,,'Decisao'],[4,,,'Veto']],'shouldScrollToNewRow':false,'layoutMode':2,'breakpointsCardsPerRow':1,'breakpointsInfo':[[1600,1],[450,1]],'editingItemVisibleIndex':-1,'callbackUrl':'/Legislativo/CardViewProposicoes','keyName':'Id'},{'EndCallback':onCardEndCallback});\nASPxClientGridBase.PostponeInitialize('cardViewProposicoes',({'commandButtonIDs':[],'styleInfo':{'ei':'<div id=\"DXEditingErrorItem\" class=\"dxcvCardError_Office365\">\\r\\n\\t\\r\\n</div>','fc':{'className':'dxcvFocusedCell_Office365'},'sc':{'className':'dxcvSelectedCell_Office365'},'bec':{'className':'dxcvBatchEditCell_Office365 dxcv'},'bemc':{'className':'dxcvBatchEditModifiedCell_Office365 dxcv'},'bemergmc':{'className':'dxcvBatchEditModifiedCell_Office365 dxcvBatchEditCell_Office365 dxcv'},'bedi':{'className':'dxcvBatchEditDeletedItem_Office365 dxcv'},'sel':{'className':'dxcvSelectedCard_Office365'},'fi':{'className':'dxcvFocusedCard_Office365'}}}));\n\n//-->\n</script>"
         }
       ],
       "cartoes": [],
@@ -386,7 +405,7 @@
         "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
         "https://www.alepa.pa.gov.br/Home/Page/Proposicoes"
       ],
-      "texto": "Acessibilidade INÍCIO TRANSPARÊNCIA RADAR DA TRANSPARÊNCIA DIÁRIO OFICIAL E-SIC / FALE CONOSCO INSTITUCIONAL Deputados Mesa Diretora Comissões e Representações Relatórios Condecorações e Medalhas Planejamento Estratégico Organograma Comissão de Legislação Participativa Banco de Leis COMUNICAÇÃO Fotos Logos Notícias Fundação Rádio e TV Alepa SERVIÇOS Biblioteca Newton Miranda Memorial Legislativo Legislações FELEPA Procuradoria da Mulher PROCESSO LEGISLATIVO O Processo Legislativo Proposições Pautas do Plenário Votações Nominais Pautas das Comissões Resumo do Plenário Atas das Sessões SERVIDOR Apollo Webmail Contra-Cheque Você está em: Portal Alepa / Proposições Pesquisar Limpar ATENÇÃO: Todos os filtros são opcionais! Não foi encontrada nenhuma proposição Carregando… Setor responsável pelas informações: DIVISÃO DE EXPEDIENTE - DIDEX GERAL Início Portal da Transparência Ouvidoria SIC - Serviço de informação ao Cidadão Carta de Serviços LGPD Radar da Transparência Diário Oficial e-SIC / Fale Conosco INSTITUCIONAL Deputados Mesa Diretora Comissões e Representações Relatórios Condecorações e Medalhas Planejamento Estratégico Organograma Comissão de Legislação Participativa Banco de Leis COMUNICAÇÃO Fotos Logos Notícias Fundação Rádio e TV Alepa SERVIÇOS Biblioteca Newton Miranda Memorial Legislativo Legislações FELEPA Procuradoria da Mulher PROCESSO LEGISLATIVO O Processo Legislativo Proposições Pautas do Plenário Votações Nominais Pautas das Comissões Resumo do Plenário Atas das Sessões SERVIDOR Apollo Webmail Contra-Cheque Palácio Cabanagem - Rua do Aveiro,130 - Praça Dom Pedro II, Bairro Cidade Velha - 66020-070 - (91) 3213-4200 Ouvidoria: ouvidoria.alepa.pa.gov.br Horário de atendimento ao público: Das 08:00 às 14:00 © 2026 Quarter Tecnologia. Todos os Direitos reservados."
+      "texto": "Acessibilidade INÍCIO TRANSPARÊNCIA RADAR DA TRANSPARÊNCIA DIÁRIO OFICIAL E-SIC / FALE CONOSCO INSTITUCIONAL Deputados Mesa Diretora Comissões e Representações Relatórios Condecorações e Medalhas Planejamento Estratégico Organograma Comissão de Legislação Participativa Banco de Leis COMUNICAÇÃO Fotos Logos Notícias Fundação Rádio e TV Alepa SERVIÇOS Biblioteca Newton Miranda Memorial Legislativo Legislações FELEPA Procuradoria da Mulher PROCESSO LEGISLATIVO O Processo Legislativo Proposições Pautas do Plenário Votações Nominais Pautas das Comissões Resumo do Plenário Atas das Sessões SERVIDOR Apollo Webmail Contra-Cheque Você está em: Portal Alepa / Proposições Pesquisar Limpar ATENÇÃO: Todos os filtros são opcionais! 1891 Resultados Página 1 de 190 (1891 itens) 1 2 3 4 5 6 7 … 188 189 190 DEP. ÂNGELO FERRARI INDICAÇÃO Nº 95/2026, DE 13/10/2026 Requer a Excelentíssima Governadora do Estado do Pará, que envie Projeto de Lei a esta Casa Legislativa da presente indicação, dispondo sobre a promoção, em articulação com órgãos competentes, da implantação de faixa temporária de segurança e apoio aos romeiros e peregrinos no trecho da BR-36 entre Castanhal e Belém, e em sua conceção urbana com o acesso à Basílica Santuário de Nossa Senhora de Nazaré, no mês de outubro, nos quatro dias que antecedem ao Círio de Nazaré, e dá outra providências. DEP. CORONEL NEIL INDICAÇÃO Nº 94/2026, DE 15/09/2026 Requer a Excelentíssima Governadora do Estado do Pará, Sra. Hana Ghassan, a proposição nesta Casa de Leis de Projeto de Lei que concede implementação do \"Programa IASEP Presente - Interiorização e Humanização do Atendimento\", mediante a reestruturação organizacional do Instituto de Assistência dos Servidores do Estado do Pará (IASEP), criação de Diretorias Regionais e descentralização administrativa, financeira e assistencial, e dá outras providências. DEP. CARLOS VINICIOS INDICAÇÃO Nº 93/2026, DE 03/09/2026 Requer à Excelentíssima Senhora Governadora do Estado do Pará o envio de Projeto de Lei Complementar que altere a Lei Complementar nº 206, de 3 de junho de 2026, a fim de ampliar até 31 de janeiro de 2028 a possibilidade de prorrogação excepcional dos contratos temporários de pessoal cujo prazo de vigência se encerre até 31 de janeiro de 2027. DEP. ERICK MONTEIRO INDICAÇÃO Nº 92/2026, DE 02/09/2026 Indica à Excelentíssima Senhora Govenadora do Estado do Pará o encaminhamento à Assembleia Legislativa de Projeto de Lei que institui o Programa Estadual de Conservação, Armazenamento e Valorização da Produção Familiar Amazônica - Produção que Vale Mais, destinado a apoiar a implantação e o funcionamento de estruturas comunitárias compartilhadas de conservação e armazenamento da produção familiar no Estado do Pará. DEP. ERICK MONTEIRO INDICAÇÃO Nº 91/2026, DE 02/09/2026 Indica à Excelentíssima Senhora Govenadora do Estado do Pará o encaminhamento de Projeto de Lei que institui, no âmbito do Programa Dinheiro na Escola Paraense - PRODEP, o Subprograma Escola da Amaz"
     },
     "pautasEnderecos": {
       "url": "https://www.alepa.pa.gov.br/Home/Page/PautasPlenario",
@@ -564,7 +583,7 @@
           "url": "https://www.alepa.pa.gov.br/Comunicacao/CallbackPanelDiariosPesquisaAvancadaPartial",
           "status": 200,
           "tipo": "text/plain; charset=utf-8",
-          "bytes": 2827,
+          "bytes": 2824,
           "inicio": "/*DX*/({'id':0,'result':'<%html%>'})/*DXHTML*/ <table class=\"dxcvControl_Office365 dxcv\" id=\"CardView\" style=\"width:100%;border-collapse:separate;\"> <tr> <td><table id=\"CardView_DXMainTable\" class=\"dxcvTable_Office365\" style=\"width:100%;empty-cells:show;\"> <tr> <td id=\"CardView_DXEmptyCard\" class=\"dxcvEmptyCard_Office365\"><div> Nenhum registro encontrado </div></td> </tr> </table><table id=\"CardVi"
         }
       ]
@@ -653,15 +672,89 @@
     },
     "bancoDeLeis": {
       "url": "https://bancodeleis.alepa.pa.gov.br/",
-      "erro": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://bancodeleis.alepa.pa.gov.br/\nCall log:\n  - navigating to \"https://bancodeleis.alepa.pa.gov.br/\", waiting until \"networkidle\"\n",
+      "status": 200,
+      "titulo": "Banco de Leis — Assembleia Legislativa do Pará",
+      "texto": "Banco de Leis – Assembleia Legislativa do Pará Sistema de Legislação 📚 Banco de Leis 🔗 Dados Abertos API LEGISLAÇÃO ESTADUAL Banco de Leis & Normas 30.118 Leis registradas 236 Emendas Const. 2026 Ano mais recente NÚMERO / CÓDIGO ANO TIPO DE NORMA Todos os tipos Decreto Estadual Decreto Legislativo Emendas Constitucionais Estaduais Emendas Constitucionais Federais Lei Complementar Lei Ordinária Resoluções ASSUNTO / EMENTA Pesquisar Limpar Acesso rápido: Ordinárias Complementares 2026 2025 Emendas Resoluções 30.118 resultado(s) encontrado(s) Mais recentes Mais antigas Número maior Número menor NÚMERO TIPO ANO EMENTA AÇÕES Nº 11666 2026 Lei Ordinária 2026 Dispõe sobre as diretrizes para a elaboração e a execução da Lei Orçamentária Anual de 2027. ↓ PDF Ver Nº 11665 2026 Lei Ordinária 2026 Cria a Área de Proteção Ambiental Bacajaí APA Bacajaí, nos Municípios de Altamira e Senador José Porfírio, Estado do Pará. ↓ PDF Ver Nº 11664 2026 Lei Ordinária 2026 Declara e reconhece como de utilidade pública para o Estado do Pará, o Clube Atlético Central Park. ↓ PDF Ver Nº 11663 2026 Lei Ordinária 2026 Altera e acrescenta dispositivos à Lei nº 8.107, de 19 de fevereiro de 2015, que dispõe sobre o Plano de Cargos, Carreiras e Remuneração dos Servidores da Defensoria Pública do Estado do Pará. ↓ PDF Ver Nº 11662 2026 Lei Ordinária 2026 Estabelece diretrizes para a oferta na rede pública estadual de saúde de consultas médicas e terapêuticas por videoconferência para pessoas com deficiência,",
+      "pdfs": [
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260805105738_151029fb.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260901102051_67fa9497.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092828_8dcdac09.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260901101839_0a41c333.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092721_6d0981f9.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092647_47fa63f3.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092559_0d86fc30.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092457_38dd0969.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092410_1f6b5de5.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092107_4ee90bfb_LEI_N_11.657_DE_09_DE_JULHO_DE_2026.pdf",
+          "texto": "↓ PDF"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/especificas/c_federallei__68373.pdf",
+          "texto": "🇧🇷\n        \n          Federal\n          Constituição Federal\n          Última "
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/especificas/c_estaduallei__84635.pdf",
+          "texto": "🏛️\n        \n          Estadual\n          Constituição do Pará\n          Última "
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/especificas/reg_interno_alepalei__89698.pdf",
+          "texto": "📜\n        \n          Institucional\n          Regimento Interno\n          Regime"
+        },
+        {
+          "href": "https://bancodeleis.alepa.pa.gov.br/arquivos/especificas/rjulei__57216.pdf",
+          "texto": "📋\n        \n          Funcional\n          Regime Jurídico Único\n          RJU — "
+        }
+      ],
+      "interessantes": [],
       "chamadas": []
     },
     "bancoDeLeisLinksApi": [
       {
-        "href": "",
-        "texto": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://bancodeleis.alepa.pa.gov.br/\nCall log:\n  - navigating to \"https://bancodeleis.alepa.pa.gov.br/\", waiting until \"networkidle\"\n"
+        "href": "https://bancodeleis.alepa.pa.gov.br/api.php",
+        "texto": "🔗 Dados Abertos API"
+      },
+      {
+        "href": "https://bancodeleis.alepa.pa.gov.br/api.php",
+        "texto": "Ver orientações de uso →"
       }
-    ]
+    ],
+    "api:https://bancodeleis.alepa.pa.gov.br/api.php": {
+      "url": "https://bancodeleis.alepa.pa.gov.br/api.php",
+      "status": 200,
+      "titulo": "Dados Abertos API — Banco de Leis ALEPA",
+      "texto": "Banco de Leis – Assembleia Legislativa do Pará Dados Abertos 📚 Banco de Leis 🔗 Dados Abertos API INTEGRAÇÃO E TRANSPARÊNCIA Dados Abertos API do Banco de Leis Orientações para consulta automatizada das leis cadastradas no Banco de Leis da Assembleia Legislativa do Estado do Pará, com retorno em formato JSON. 📌 Visão geral A API do Banco de Leis permite consultar normas legislativas por número, ano, tipo e palavra-chave. O serviço retorna somente registros ativos e limita cada chamada a até 50 resultados. ENDPOINT PRINCIPAL https://bancodeleis.alepa.pa.gov.br/api/leis.php Formato de resposta: application/json; charset=utf-8 Método HTTP: GET ⚙️ Parâmetros de consulta Parâmetro Obrigatório Descrição Exemplo numero Não Número ou parte do número da lei. 5810 ano Não Ano da norma, com quatro dígitos. 2024 q Não Palavra-chave pesquisada na ementa e, quando disponível, no texto da lei. servidor tipo Não Identificador do tipo da norma, conforme cadastro interno do Banco de Leis. 1 🧪 Exemplos de chamadas Consulta por número https://bancodeleis.alepa.pa.gov.br/api/leis.php?numero=5810 Consulta por ano https://bancodeleis.alepa.pa.gov.br/api/leis.php?ano=2024 Consulta por palavra-chave https://bancodeleis.alepa.pa.gov.br/api/leis.php?q=servidor Consulta combinada https://bancodeleis.alepa.pa.gov.br/api/leis.php?ano=2024&q=educacao Exemplo com cURL curl \"https://bancodeleis.alepa.pa.gov.br/api/leis.php?numero=5810\" 📤 Exemplo de resposta { \"status\": true, \"total\": 1, \"resultados\": [ {",
+      "pdfs": [],
+      "interessantes": [],
+      "chamadas": []
+    }
   },
   "RR": {
     "saplComoRobo": {
@@ -1048,12 +1141,12 @@
       ],
       "chamadas": [
         {
-          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1v9101483413za208zd9101483413xf1&_p=1792119953447&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=987646796.1792119954&frm=0&ngs=1&pscdl=noapi&rcb=7&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120420414~120469145~120469153~121246026~121246034&sid=1792119953&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=2291",
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1h1v9101483413za208zd9101483413xf1&_p=1792120202929&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=367492260.1792120203&frm=0&ngs=1&pscdl=noapi&rcb=8&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792120203&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=2360",
           "status": 204,
           "tipo": "text/plain"
         },
         {
-          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1v9101483413za200zd9101483413xf1&_p=1792119953447&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=987646796.1792119954&frm=0&ngs=1&pscdl=noapi&rcb=7&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=2&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120420414~120469145~120469153~121246026~121246034&sid=1792119953&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=scroll&epn.percent_scrolled=90&_et=6&tfd=7299",
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1h1v9101483413za200zd9101483413xf1&_p=1792120202929&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=367492260.1792120203&frm=0&ngs=1&pscdl=noapi&rcb=8&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=2&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792120203&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=scroll&epn.percent_scrolled=90&_et=7&tfd=7369",
           "status": 204,
           "tipo": "text/plain"
         }
