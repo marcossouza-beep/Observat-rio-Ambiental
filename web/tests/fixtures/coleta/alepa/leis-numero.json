@@ -1,0 +1,21 @@
+{
+  "url": "https://bancodeleis.alepa.pa.gov.br/api/leis.php?numero=5887",
+  "status": 200,
+  "tipo": "application/json; charset=utf-8",
+  "gravadaEm": "2026-10-16T02:46:41.321Z",
+  "corpo": {
+    "status": true,
+    "total": 1,
+    "resultados": [
+      {
+        "id": 18892,
+        "numero": "5887",
+        "ano": "1995",
+        "tipo": "Lei Ordinária",
+        "ementa": "LEI N° 5.887, DE 09 DE MAIO DE 1995. *Esta Lei foi REGULAMENTADA pelo Decreto nº 1.523 de 25 de julho de 1996, publicado no DOE nº 28.264 de 26 de julho de 1996. * Alterada em seu Art. 122 pela Lei nº 6.671, de 27/7/2004. * Alterada em seu Art. 73 pela Lei nº 6.745, de 06/05/2005. Dispõe sobre a Política Estadual do Meio Ambiente e dá outras providências. DOE Nº. 30.436, de 13/05/2005.\r\n    ",
+        "arquivo": "lei5887_1995_56642.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei5887_1995_56642.pdf"
+      }
+    ]
+  }
+}

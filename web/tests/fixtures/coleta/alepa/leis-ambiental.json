@@ -1,0 +1,462 @@
+{
+  "url": "https://bancodeleis.alepa.pa.gov.br/api/leis.php?q=ambiental",
+  "status": 200,
+  "tipo": "application/json; charset=utf-8",
+  "gravadaEm": "2026-10-16T02:46:40.780Z",
+  "corpo": {
+    "status": true,
+    "total": 50,
+    "resultados": [
+      {
+        "id": 32817,
+        "numero": "11665",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Cria a Área de Proteção Ambiental Bacajaí APA Bacajaí, nos Municípios de Altamira e Senador José Porfírio, Estado do Pará.",
+        "arquivo": "lei_20260901102051_67fa9497.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260901102051_67fa9497.pdf"
+      },
+      {
+        "id": 32221,
+        "numero": "11481",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto de Desenvolvimento Educacional Cultural Ambiental e Assistência Social de Moju (INDECAM).",
+        "arquivo": "lei_20260603123313_c23df9d0.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260603123313_c23df9d0.pdf"
+      },
+      {
+        "id": 32112,
+        "numero": "11467",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto Social Cultural Recreativo Esportivo Turismo Ambiental Laser Pará (ISCRETALP).",
+        "arquivo": "lei_20260602104028_57850923.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260602104028_57850923.pdf"
+      },
+      {
+        "id": 32207,
+        "numero": "11467",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto Social Cultural Recreativo Esportivo Turismo Ambiental Laser Pará (ISCRETALP).",
+        "arquivo": "lei_20260602151137_f23dd0a5.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260602151137_f23dd0a5.pdf"
+      },
+      {
+        "id": 32105,
+        "numero": "11459",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Institui o Programa Estadual de Educação Ambiental Digital no Estado do Pará.",
+        "arquivo": "lei_20260602102852_a0ac6076.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260602102852_a0ac6076.pdf"
+      },
+      {
+        "id": 32176,
+        "numero": "11459",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Institui o Programa Estadual de Educação Ambiental Digital no Estado do Pará.",
+        "arquivo": "lei_20260602140450_1253d5c0.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260602140450_1253d5c0.pdf"
+      },
+      {
+        "id": 32148,
+        "numero": "11456",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara como patrimônio cultural de natureza material do Estado do Pará, o Parque Ambiental Adhemar Monteiro, localizado no Município de Paragominas.",
+        "arquivo": "lei_20260602130408_187dc8cf.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260602130408_187dc8cf.pdf"
+      },
+      {
+        "id": 31825,
+        "numero": "11344",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Sociedade Ambiental Médica Educacional (SAME). ",
+        "arquivo": "lei11344_2026_25355.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei11344_2026_25355.pdf"
+      },
+      {
+        "id": 31822,
+        "numero": "11341",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Altera a Lei Estadual nº 7.596, de 29 de dezembro de 2011, que institui o Cadastro Técnico Estadual de Atividades Potencialmente Poluidoras ou Utilizadoras de Recursos Ambientais, a Taxa de Fiscalização Ambiental.     ",
+        "arquivo": "lei11341_2026_12342.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei11341_2026_12342.pdf"
+      },
+      {
+        "id": 32847,
+        "numero": "5606",
+        "ano": "2026",
+        "tipo": "Decreto Estadual",
+        "ementa": "Declara, em caráter preventivo, situação de alerta climático e ambiental em todo o Estado do Pará, em razão das projeções meteorológicas associadas ao fenômeno El Niño 2026/2027.",
+        "arquivo": "lei_20260901111210_d552417a.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260901111210_d552417a.pdf"
+      },
+      {
+        "id": 31974,
+        "numero": "205",
+        "ano": "2026",
+        "tipo": "Lei Complementar",
+        "ementa": "Altera a Lei Complementar Estadual nº 190, de 5 de junho de 2025, que estabelece normas para a responsabilidade na gestão ambiental no Estado do Pará.",
+        "arquivo": "lei_20260521130329_37e7ad81.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260521130329_37e7ad81.pdf"
+      },
+      {
+        "id": 30421,
+        "numero": "11266",
+        "ano": "2025",
+        "tipo": "Lei Ordinária",
+        "ementa": "Altera a Lei Estadual nº 10.588, de 19 de junho de 2024, que dispõe sobre a destinação da matéria-prima florestal, proveniente da supressão de vegetação, em área de domínio público e privado sob jurisdição do Estado, autorizada pelo órgão ambiental competente, no âmbito do processo de licenciamento ambiental de obras de utilidade pública de infraestrutura e de mineração; altera a Lei Estadual nº 5.752, de 26 de julho de 1993; e revoga a Lei Estadual nº 6.958, de 3 de abril de 2007. ",
+        "arquivo": "lei11266_2025_96392.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei11266_2025_96392.pdf"
+      },
+      {
+        "id": 30397,
+        "numero": "11242",
+        "ano": "2025",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto de Desenvolvimento Ecológico e Ambiental do Pará Cândida Rosa (IDEAP). ",
+        "arquivo": "lei11242_2025_91556.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei11242_2025_91556.pdf"
+      },
+      {
+        "id": 30152,
+        "numero": "11165",
+        "ano": "2025",
+        "tipo": "Lei Ordinária",
+        "ementa": "Institui o serviço ambiental voluntário de Chefe de Esquadrão e de Brigadista Florestal, no âmbito do Estado do Pará. ",
+        "arquivo": "lei11165_2025_13324.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei11165_2025_13324.pdf"
+      },
+      {
+        "id": 30047,
+        "numero": "11105",
+        "ano": "2025",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto Manilkara de Desenvolvimento Socioambiental, Saúde, Educação e Empreendedorismo na Amazônia. ",
+        "arquivo": "lei11105_2025_21164.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei11105_2025_21164.pdf"
+      },
+      {
+        "id": 29814,
+        "numero": "11028",
+        "ano": "2025",
+        "tipo": "Lei Ordinária",
+        "ementa": "Cria e estrutura a Carreira de Gestão Ambiental, no âmbito da Secretaria de Estado de Meio Ambiente, Clima e Sustentabilidade (SEMAS) e do Instituto de Desenvolvimento Florestal e da Biodiversidade do Estado do Pará (IDEFLOR-Bio); e altera as Leis Estaduais nº 6.963, de 16 de abril de 2007, e nº 8.633, de 19 de junho de 2018. ",
+        "arquivo": "lei11028_2025_72158.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei11028_2025_72158.pdf"
+      },
+      {
+        "id": 29736,
+        "numero": "10998",
+        "ano": "2025",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto de Educação Profissional e Ambiental da Amazônia - Sustentar. ",
+        "arquivo": "lei10998_2025_99936.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei10998_2025_99936.pdf"
+      },
+      {
+        "id": 29119,
+        "numero": "10940",
+        "ano": "2025",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto Sócio-Cultural, Educacional e Ambiental. ",
+        "arquivo": "lei10940_2025_93975.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei10940_2025_93975.pdf"
+      },
+      {
+        "id": 30198,
+        "numero": "4925",
+        "ano": "2025",
+        "tipo": "Decreto Estadual",
+        "ementa": "Regulamenta a Lei Estadual nº 11.165, de 19 de setembro de 2025, que institui o serviço ambiental voluntário de chefe de esquadrão e de brigadista florestal, no âmbito do Estado do Pará. ",
+        "arquivo": "lei4925_2025_92261.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei4925_2025_92261.pdf"
+      },
+      {
+        "id": 30043,
+        "numero": "4868",
+        "ano": "2025",
+        "tipo": "Decreto Estadual",
+        "ementa": "Declara situação de emergência ambiental e climática em todo o Estado do Pará, pelo prazo de 180 (cento e oitenta) dias úteis. ",
+        "arquivo": "lei4868_2025_84258.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei4868_2025_84258.pdf"
+      },
+      {
+        "id": 29846,
+        "numero": "4746",
+        "ano": "2025",
+        "tipo": "Decreto Estadual",
+        "ementa": "Institui e regulamenta o Comitê Estadual de Desenvolvimento da Economia de Impacto Socioambiental (CEDISA). ",
+        "arquivo": "lei4746_2025_82358.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei4746_2025_82358.pdf"
+      },
+      {
+        "id": 29426,
+        "numero": "4613",
+        "ano": "2025",
+        "tipo": "Decreto Estadual",
+        "ementa": "Regulamenta o art. 18 da Lei Estadual nº 6.745, de 6 de maio de 2005, para dispor sobre a Cota de Proteção Ambiental (CPA). ",
+        "arquivo": "lei4613_2025_48711.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei4613_2025_48711.pdf"
+      },
+      {
+        "id": 28482,
+        "numero": "4420",
+        "ano": "2025",
+        "tipo": "Decreto Estadual",
+        "ementa": "Altera o Decreto Estadual nº 4.272, de 22 de outubro de 2024, que dispõe sobre a Comissão Interinstitucional de Educação Ambiental do Estado do Pará. ",
+        "arquivo": "lei4420_2025_74726.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei4420_2025_74726.pdf"
+      },
+      {
+        "id": 32063,
+        "numero": "190",
+        "ano": "2025",
+        "tipo": "Lei Complementar",
+        "ementa": "Estabelece normas para a responsabilidade na gestão ambiental no Estado do Pará.",
+        "arquivo": "lei_20260521145555_1e96b7c3.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260521145555_1e96b7c3.pdf"
+      },
+      {
+        "id": 28330,
+        "numero": "10827",
+        "ano": "2024",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Organização Brasileira de Desenvolvimento Socioambiental e Econômico (OBDESE). ",
+        "arquivo": "lei10827_2024_94842.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei10827_2024_94842.pdf"
+      },
+      {
+        "id": 28320,
+        "numero": "10817",
+        "ano": "2024",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto Cultural e Ambiental Amazônia Sustentável (ICAAS). ",
+        "arquivo": "lei10817_2024_91155.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei10817_2024_91155.pdf"
+      },
+      {
+        "id": 27430,
+        "numero": "10751",
+        "ano": "2024",
+        "tipo": "Lei Ordinária",
+        "ementa": "Altera a Lei Estadual nº 5.752, de 26 de julho de 1993, que reorganiza a Secretaria de Estado de Meio Ambiente e Sustentabilidade (SEMAS) e inclui dispositivos na Lei Estadual nº 8.633, de 19 de junho de 2018, que cria o Fundo de Compensação Ambiental (FCA). ",
+        "arquivo": "lei10751_2024_56777.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei10751_2024_56777.pdf"
+      },
+      {
+        "id": 25886,
+        "numero": "10588",
+        "ano": "2024",
+        "tipo": "Lei Ordinária",
+        "ementa": "Dispõe sobre a destinação da matéria-prima florestal, proveniente da supressão de vegetação, em área de domínio público e privado sob jurisdição do Estado, autorizada pelo órgão ambiental competente, no âmbito do processo de licenciamento ambiental de obras de utilidade pública de infraestrutura e de mineração; altera a Lei Estadual nº 5.752, de 26 de julho de 1993; e revoga a Lei Estadual nº 6.958, de 3 de abril de 2007.     ",
+        "arquivo": "lei10588_2024_84518.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei10588_2024_84518.pdf"
+      },
+      {
+        "id": 25441,
+        "numero": "10425",
+        "ano": "2024",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto de Proteção e Recuperação Ambiental do Brasil (IPRA BRASIL), no Município de Novo Progresso. ",
+        "arquivo": "lei10425_2024_78189.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei10425_2024_78189.pdf"
+      },
+      {
+        "id": 25175,
+        "numero": "10359",
+        "ano": "2024",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Associação Social, Educacional, Cultural, Saúde e Ambiental Compaixão. ",
+        "arquivo": "lei10359_2024_51131.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei10359_2024_51131.pdf"
+      },
+      {
+        "id": 26511,
+        "numero": "4272",
+        "ano": "2024",
+        "tipo": "Decreto Estadual",
+        "ementa": "Dispõe sobre a Comissão Interinstitucional de Educação Ambiental do Estado do Pará e revoga os Decretos Estaduais nº 3.632, de 03 de setembro de 1999, e nº 1.638, de 8 de junho de 2005. \r\n\r\n    ",
+        "arquivo": "lei4272_2024_12677.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei4272_2024_12677.pdf"
+      },
+      {
+        "id": 26454,
+        "numero": "4234",
+        "ano": "2024",
+        "tipo": "Decreto Estadual",
+        "ementa": "Declara Situação de Emergência Nível II em todo o território do Estado do Pará, em virtude dos desastres classificados e codificados como Incêndio Florestal em Parques, Áreas de Proteção Ambiental e Áreas de Preservação Permanente Nacionais, Estaduais ou Municipais (COBRADE 1.4.1.3.1) e Incêndios em áreas não protegidas, com reflexos na qualidade do ar (COBRADE 1.4.1.3.2). ",
+        "arquivo": "lei4234_2024_97512.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei4234_2024_97512.pdf"
+      },
+      {
+        "id": 26472,
+        "numero": "4219",
+        "ano": "2024",
+        "tipo": "Decreto Estadual",
+        "ementa": "Dispõe sobre a criação do Parque Estadual Ambiental das Árvores Gigantes da Amazônia (PAGAM) e altera a Floresta Estadual do Paru, situadas no Estado do Pará. ",
+        "arquivo": "lei4219_2024_87872.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei4219_2024_87872.pdf"
+      },
+      {
+        "id": 26362,
+        "numero": "4192",
+        "ano": "2024",
+        "tipo": "Decreto Estadual",
+        "ementa": "Declara Situação de Emergência Nível II em todo o território do Estado do Pará em virtude dos desastres classificados e codificados como estiagem (COBRADE 1.4.1.1.0), incêndio florestal em Parques, Áreas de Proteção Ambiental e Áreas de Preservação Permanente Nacionais, Estaduais ou Municipais (COBRADE 1.4.1.3.1) e incêndios em áreas não protegidas, com reflexos na qualidade do ar (COBRADE 1.4.1.3.2). ",
+        "arquivo": "lei4192_2024_15843.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei4192_2024_15843.pdf"
+      },
+      {
+        "id": 26247,
+        "numero": "4151",
+        "ano": "2024",
+        "tipo": "Decreto Estadual",
+        "ementa": "Declara situação de emergência ambiental e decreta a proibição da permissão, autorização e utilização de fogo, inclusive para limpeza e manejo de áreas, em todo o Estado do Pará. ",
+        "arquivo": "lei4151_2024_97225.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei4151_2024_97225.pdf"
+      },
+      {
+        "id": 26191,
+        "numero": "4100",
+        "ano": "2024",
+        "tipo": "Decreto Estadual",
+        "ementa": "Prorroga o prazo do estado de emergência ambiental de que trata o Decreto Estadual nº 2.887, de 7 de fevereiro de 2023. ",
+        "arquivo": "lei4100_2024_63558.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei4100_2024_63558.pdf"
+      },
+      {
+        "id": 26188,
+        "numero": "4095",
+        "ano": "2024",
+        "tipo": "Decreto Estadual",
+        "ementa": "Revoga o inciso V do caput do art. 2º do Decreto Estadual nº 3.322, de 11 de setembro de 2023, que cria o Comitê Estadual de Avaliação e Suporte para captação de recursos relacionados às políticas públicas estaduais sobre conservação ambiental e mudanças climáticas no Estado do Pará (COMCAR-CLIMA); e altera o Decreto de 24 de janeiro de 2024, que nomeou os representantes para compor o Comitê Estadual de Avaliação e Suporte para Captação de Recursos Relacionados às Políticas Públicas Estaduais sobre Conservação Ambiental e Mudanças Climáticas no Estado do Pará (COMCAR-Clima). ",
+        "arquivo": "lei4095_2024_37849.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei4095_2024_37849.pdf"
+      },
+      {
+        "id": 29966,
+        "numero": "10295",
+        "ano": "2023",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto Sócio Ambiental Progresso. ",
+        "arquivo": "lei10295_2023_43317.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei10295_2023_43317.pdf"
+      },
+      {
+        "id": 25106,
+        "numero": "10278",
+        "ano": "2023",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto Agro-Ambiental e Econômico Solidário de Limoeiro do Ajuru (IAESOL). ",
+        "arquivo": "lei10278_2023_83415.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei10278_2023_83415.pdf"
+      },
+      {
+        "id": 24907,
+        "numero": "10190",
+        "ano": "2023",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Teia de Envolvimento Humano e Ambiental (TEHA). ",
+        "arquivo": "lei10190_2023_98417.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei10190_2023_98417.pdf"
+      },
+      {
+        "id": 24866,
+        "numero": "10151",
+        "ano": "2023",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Sociedade de Preservação Ambiental e Inclusão Sócio-Educacional (PRISMA). ",
+        "arquivo": "lei10151_2023_48281.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei10151_2023_48281.pdf"
+      },
+      {
+        "id": 24191,
+        "numero": "9981",
+        "ano": "2023",
+        "tipo": "Lei Ordinária",
+        "ementa": "Institui a Política de Educação Formal para o Meio Ambiente, Sustentabilidade e Clima, vinculada à Secretaria de Estado de Educação (SEDUC), e revoga a Lei Estadual nº 5.600, de 15 de junho de 1990, que dispõe sobre a promoção da educação ambiental em todos os níveis, de acordo com o art. 225, inciso IV da Constituição Estadual do Pará.",
+        "arquivo": "lei9981_2023_97287.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei9981_2023_97287.pdf"
+      },
+      {
+        "id": 24185,
+        "numero": "9974",
+        "ano": "2023",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto de Desenvolvimento Ambiental e Social (IDAMS).",
+        "arquivo": "lei9974_2023_14422.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei9974_2023_14422.pdf"
+      },
+      {
+        "id": 24179,
+        "numero": "9968",
+        "ano": "2023",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto de Assessoria Técnica Social e Agroambiental da Amazônia (IATAM).",
+        "arquivo": "lei9968_2023_68425.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei9968_2023_68425.pdf"
+      },
+      {
+        "id": 24066,
+        "numero": "9928",
+        "ano": "2023",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Central Rural de Desenvolvimento Socioagroambiental da Amazônia, no Município de Bujaru.",
+        "arquivo": "lei9928_2023_53648.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei9928_2023_53648.pdf"
+      },
+      {
+        "id": 23951,
+        "numero": "9898",
+        "ano": "2023",
+        "tipo": "Lei Ordinária",
+        "ementa": "Dispõe sobre a obrigatoriedade de recolhimento de medicamentos domiciliares vencidos ou em desuso para um destino ambiental adequado através de logística reversa.",
+        "arquivo": "lei9898_2023_92499.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei9898_2023_92499.pdf"
+      },
+      {
+        "id": 23692,
+        "numero": "9847",
+        "ano": "2023",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto de Proteção Ambiental de Novo Progresso (IPANP).",
+        "arquivo": "lei9847_2023_94431.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei9847_2023_94431.pdf"
+      },
+      {
+        "id": 23675,
+        "numero": "9830",
+        "ano": "2023",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto Espadarte da Amazônia de Desenvolvimento Sócio Ambiental.",
+        "arquivo": "lei9830_2023_81164.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei9830_2023_81164.pdf"
+      },
+      {
+        "id": 23654,
+        "numero": "9809",
+        "ano": "2023",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Fundação Socio-Agroambiental Cabanagem - FUNDAÇÃO CABANAGEM.",
+        "arquivo": "lei9809_2023_33512.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei9809_2023_33512.pdf"
+      },
+      {
+        "id": 25131,
+        "numero": "3600",
+        "ano": "2023",
+        "tipo": "Decreto Estadual",
+        "ementa": "Regulamenta o processo de conversão de multa simples ambiental em serviços de preservação, melhoria e recuperação da qualidade do meio ambiente, previsto no art. 11 e no inciso IV do art. 44 da Lei Estadual nº 9.575, de 11 de maio de 2022. ",
+        "arquivo": "lei3600_2023_24649.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei3600_2023_24649.pdf"
+      }
+    ]
+  }
+}

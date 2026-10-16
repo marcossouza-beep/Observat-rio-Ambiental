@@ -1,0 +1,58 @@
+{
+  "url": "https://www.alepa.pa.gov.br/Legislativo/GetTipoProposicoes",
+  "status": 200,
+  "tipo": "application/json; charset=utf-8",
+  "gravadaEm": "2026-10-16T02:46:42.216Z",
+  "corpo": [
+    {
+      "codigo": 1,
+      "nome": "PROJETO DE DECRETO LEGISLATIVO",
+      "situacao": 1
+    },
+    {
+      "codigo": 2,
+      "nome": "PROJETO DE EMENDA CONSTITUCIONAL",
+      "situacao": 1
+    },
+    {
+      "codigo": 3,
+      "nome": "PROJETO DE LEI ORDINÁRIA",
+      "situacao": 0
+    },
+    {
+      "codigo": 4,
+      "nome": "PROJETO DE LEI COMPLEMENTAR",
+      "situacao": 0
+    },
+    {
+      "codigo": 5,
+      "nome": "PROJETO DE RESOLUÇÃO",
+      "situacao": 1
+    },
+    {
+      "codigo": 7,
+      "nome": "PROCESSO",
+      "situacao": 1
+    },
+    {
+      "codigo": 8,
+      "nome": "PROJETO DE INDICAÇÃO",
+      "situacao": 1
+    },
+    {
+      "codigo": 20,
+      "nome": "INDICAÇÃO",
+      "situacao": 1
+    },
+    {
+      "codigo": 99,
+      "nome": "MOÇÃO",
+      "situacao": 99
+    },
+    {
+      "codigo": 100,
+      "nome": "REQUERIMENTO",
+      "situacao": 100
+    }
+  ]
+}

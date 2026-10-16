@@ -1,0 +1,2538 @@
+{
+  "url": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media?per_page=20&mime_type=application/pdf&orderby=date&order=desc",
+  "status": 200,
+  "tipo": "application/json; charset=UTF-8",
+  "gravadaEm": "2026-10-16T02:46:33.383Z",
+  "corpo": [
+    {
+      "id": 12042,
+      "date": "2026-10-15T15:26:09",
+      "date_gmt": "2026-10-15T19:26:09",
+      "guid": {
+        "rendered": "http://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4743-06.10.2026.pdf"
+      },
+      "modified": "2026-10-15T15:26:09",
+      "modified_gmt": "2026-10-15T19:26:09",
+      "slug": "diario-ale-rr-ed-4743-06-10-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/diario-ale-rr-ed-4743-06-10-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4743-06.10.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12042",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4743-06.10.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4743-06.10.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4743-06.10.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4743-06.10.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4743-06.10.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21811,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4743-06.10.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4743-06.10.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 184930,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4743-06.10.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4743-06.10.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8411,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4743-06.10.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 869855
+      },
+      "post": null,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4743-06.10.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4743-06.10.2026.pdf",
+      "filesize": 869855,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12042",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12042"
+          }
+        ]
+      }
+    },
+    {
+      "id": 12040,
+      "date": "2026-10-15T08:20:39",
+      "date_gmt": "2026-10-15T12:20:39",
+      "guid": {
+        "rendered": "http://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4748-14.10.2026.pdf"
+      },
+      "modified": "2026-10-15T08:20:39",
+      "modified_gmt": "2026-10-15T12:20:39",
+      "slug": "diario-ale-rr-ed-4748-14-10-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4748/diario-ale-rr-ed-4748-14-10-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4748-14.10.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12040",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4748-14.10.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4748-14.10.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4748-14.10.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4748-14.10.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4748-14.10.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21829,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4748-14.10.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4748-14.10.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 184981,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4748-14.10.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4748-14.10.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8423,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4748-14.10.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 773808
+      },
+      "post": 12039,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4748-14.10.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4748-14.10.2026.pdf",
+      "filesize": 773808,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12040",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12040"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 12039,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/12039"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 12038,
+      "date": "2026-10-14T10:23:44",
+      "date_gmt": "2026-10-14T14:23:44",
+      "guid": {
+        "rendered": "http://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4746-09.10.2026.pdf"
+      },
+      "modified": "2026-10-14T10:23:44",
+      "modified_gmt": "2026-10-14T14:23:44",
+      "slug": "diario-ale-rr-ed-4746-09-10-2026-2",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/diario-ale-rr-ed-4746-09-10-2026-2/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4746-09.10.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12038",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4746-09.10.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4746-09.10.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4746-09.10.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4746-09.10.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4746-09.10.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21800,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4746-09.10.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4746-09.10.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 184982,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4746-09.10.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4746-09.10.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8421,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4746-09.10.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 807563
+      },
+      "post": null,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4746-09.10.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4746-09.10.2026.pdf",
+      "filesize": 807563,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12038",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12038"
+          }
+        ]
+      }
+    },
+    {
+      "id": 12036,
+      "date": "2026-10-14T09:32:59",
+      "date_gmt": "2026-10-14T13:32:59",
+      "guid": {
+        "rendered": "http://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4747-13.10.2026.pdf"
+      },
+      "modified": "2026-10-14T09:32:59",
+      "modified_gmt": "2026-10-14T13:32:59",
+      "slug": "diario-ale-rr-ed-4747-13-10-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4747/diario-ale-rr-ed-4747-13-10-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4747-13.10.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12036",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4747-13.10.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4747-13.10.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4747-13.10.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4747-13.10.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4747-13.10.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 20499,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4747-13.10.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4747-13.10.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 183751,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4747-13.10.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4747-13.10.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 7118,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4747-13.10.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 2609045
+      },
+      "post": 12035,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4747-13.10.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4747-13.10.2026.pdf",
+      "filesize": 2609045,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12036",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12036"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 12035,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/12035"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 12030,
+      "date": "2026-10-09T08:50:21",
+      "date_gmt": "2026-10-09T12:50:21",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4745-08.10.2026.pdf"
+      },
+      "modified": "2026-10-09T08:50:21",
+      "modified_gmt": "2026-10-09T12:50:21",
+      "slug": "diario-ale-rr-ed-4745-08-10-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4745/diario-ale-rr-ed-4745-08-10-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4745-08.10.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12030",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4745-08.10.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4745-08.10.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4745-08.10.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4745-08.10.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4745-08.10.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21817,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4745-08.10.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4745-08.10.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 184910,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4745-08.10.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4745-08.10.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8412,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4745-08.10.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 514905
+      },
+      "post": 12029,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4745-08.10.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4745-08.10.2026.pdf",
+      "filesize": 514905,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12030",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12030"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 12029,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/12029"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 12025,
+      "date": "2026-10-08T09:04:15",
+      "date_gmt": "2026-10-08T13:04:15",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4744-07.10.2026.pdf"
+      },
+      "modified": "2026-10-08T09:04:15",
+      "modified_gmt": "2026-10-08T13:04:15",
+      "slug": "diario-ale-rr-ed-4744-07-10-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4744/diario-ale-rr-ed-4744-07-10-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4744-07.10.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12025",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4744-07.10.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4744-07.10.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4744-07.10.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4744-07.10.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4744-07.10.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21824,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4744-07.10.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4744-07.10.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 184957,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4744-07.10.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4744-07.10.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8420,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4744-07.10.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 789231
+      },
+      "post": 12024,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4744-07.10.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4744-07.10.2026.pdf",
+      "filesize": 789231,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12025",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12025"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 12024,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/12024"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 12021,
+      "date": "2026-10-06T08:51:23",
+      "date_gmt": "2026-10-06T12:51:23",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4742-02.10.2026.pdf"
+      },
+      "modified": "2026-10-06T08:51:23",
+      "modified_gmt": "2026-10-06T12:51:23",
+      "slug": "diario-ale-rr-ed-4742-02-10-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4742/diario-ale-rr-ed-4742-02-10-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4742-02.10.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12021",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4742-02.10.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4742-02.10.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4742-02.10.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4742-02.10.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4742-02.10.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21797,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4742-02.10.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4742-02.10.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 184964,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4742-02.10.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4742-02.10.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8415,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4742-02.10.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 1004065
+      },
+      "post": 12020,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4742-02.10.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4742-02.10.2026.pdf",
+      "filesize": 1004065,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12021",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12021"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 12020,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/12020"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 12019,
+      "date": "2026-10-02T08:39:14",
+      "date_gmt": "2026-10-02T12:39:14",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4741-01.10.2026.pdf"
+      },
+      "modified": "2026-10-02T08:39:14",
+      "modified_gmt": "2026-10-02T12:39:14",
+      "slug": "diario-ale-rr-ed-4741-01-10-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4741/diario-ale-rr-ed-4741-01-10-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4741-01.10.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12019",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4741-01.10.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4741-01.10.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4741-01.10.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4741-01.10.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4741-01.10.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21809,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4741-01.10.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4741-01.10.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 184947,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4741-01.10.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4741-01.10.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8416,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4741-01.10.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 1215262
+      },
+      "post": 12018,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4741-01.10.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4741-01.10.2026.pdf",
+      "filesize": 1215262,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12019",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12019"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 12018,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/12018"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 12017,
+      "date": "2026-09-30T11:24:42",
+      "date_gmt": "2026-09-30T15:24:42",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4740-30.09.2026.pdf"
+      },
+      "modified": "2026-09-30T11:24:42",
+      "modified_gmt": "2026-09-30T15:24:42",
+      "slug": "diario-ale-rr-ed-4740-30-09-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4740/diario-ale-rr-ed-4740-30-09-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4740-30.09.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12017",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4740-30.09.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4740-30.09.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4740-30.09.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4740-30.09.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4740-30.09.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21819,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4740-30.09.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4740-30.09.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 185021,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4740-30.09.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4740-30.09.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8420,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4740-30.09.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 1032801
+      },
+      "post": 12016,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4740-30.09.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4740-30.09.2026.pdf",
+      "filesize": 1032801,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12017",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12017"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 12016,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/12016"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 12015,
+      "date": "2026-09-30T08:31:07",
+      "date_gmt": "2026-09-30T12:31:07",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4739-29.09.2026.pdf"
+      },
+      "modified": "2026-09-30T08:31:07",
+      "modified_gmt": "2026-09-30T12:31:07",
+      "slug": "diario-ale-rr-ed-4739-29-09-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4739/diario-ale-rr-ed-4739-29-09-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4739-29.09.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12015",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4739-29.09.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4739-29.09.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4739-29.09.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4739-29.09.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4739-29.09.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 20537,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4739-29.09.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4739-29.09.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 183737,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4739-29.09.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4739-29.09.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 7131,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4739-29.09.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 1553769
+      },
+      "post": 12014,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4739-29.09.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4739-29.09.2026.pdf",
+      "filesize": 1553769,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12015",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12015"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 12014,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/12014"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 12013,
+      "date": "2026-09-28T14:36:00",
+      "date_gmt": "2026-09-28T18:36:00",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4738-28.09.2026.pdf"
+      },
+      "modified": "2026-09-28T14:36:00",
+      "modified_gmt": "2026-09-28T18:36:00",
+      "slug": "diario-ale-rr-ed-4738-28-09-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4738/diario-ale-rr-ed-4738-28-09-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4738-28.09.2026"
+      },
+      "author": 13,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12013",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4738-28.09.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4738-28.09.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4738-28.09.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4738-28.09.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4738-28.09.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21827,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4738-28.09.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4738-28.09.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 185020,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4738-28.09.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4738-28.09.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8419,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4738-28.09.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 676891
+      },
+      "post": 12012,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4738-28.09.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4738-28.09.2026.pdf",
+      "filesize": 676891,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12013",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/13"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12013"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 12012,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/12012"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 12010,
+      "date": "2026-09-28T08:27:05",
+      "date_gmt": "2026-09-28T12:27:05",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4737-25.09.2026.pdf"
+      },
+      "modified": "2026-09-28T08:27:05",
+      "modified_gmt": "2026-09-28T12:27:05",
+      "slug": "diario-ale-rr-ed-4737-25-09-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4737/diario-ale-rr-ed-4737-25-09-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4737-25.09.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12010",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4737-25.09.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4737-25.09.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4737-25.09.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4737-25.09.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4737-25.09.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21803,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4737-25.09.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4737-25.09.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 185010,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4737-25.09.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4737-25.09.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8417,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4737-25.09.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 1185169
+      },
+      "post": 12009,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4737-25.09.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4737-25.09.2026.pdf",
+      "filesize": 1185169,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12010",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12010"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 12009,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/12009"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 12008,
+      "date": "2026-09-25T11:59:03",
+      "date_gmt": "2026-09-25T15:59:03",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4736-24.09.2026.pdf"
+      },
+      "modified": "2026-09-25T11:59:03",
+      "modified_gmt": "2026-09-25T15:59:03",
+      "slug": "diario-ale-rr-ed-4736-24-09-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4736/diario-ale-rr-ed-4736-24-09-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4736-24.09.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12008",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4736-24.09.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4736-24.09.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4736-24.09.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4736-24.09.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4736-24.09.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21824,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4736-24.09.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4736-24.09.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 185057,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4736-24.09.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4736-24.09.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8423,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4736-24.09.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 645849
+      },
+      "post": 12007,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4736-24.09.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4736-24.09.2026.pdf",
+      "filesize": 645849,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12008",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12008"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 12007,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/12007"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 12006,
+      "date": "2026-09-25T11:19:18",
+      "date_gmt": "2026-09-25T15:19:18",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4735-23.09.2026.pdf"
+      },
+      "modified": "2026-09-25T11:19:18",
+      "modified_gmt": "2026-09-25T15:19:18",
+      "slug": "diario-ale-rr-ed-4735-23-09-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4735/diario-ale-rr-ed-4735-23-09-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4735-23.09.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12006",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4735-23.09.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4735-23.09.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4735-23.09.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4735-23.09.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4735-23.09.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 20520,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4735-23.09.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4735-23.09.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 183750,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4735-23.09.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4735-23.09.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 7131,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4735-23.09.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 1248378
+      },
+      "post": 12005,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4735-23.09.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4735-23.09.2026.pdf",
+      "filesize": 1248378,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12006",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12006"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 12005,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/12005"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 12003,
+      "date": "2026-09-22T11:56:23",
+      "date_gmt": "2026-09-22T15:56:23",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4734-22.09.2026.pdf"
+      },
+      "modified": "2026-09-22T11:56:23",
+      "modified_gmt": "2026-09-22T15:56:23",
+      "slug": "diario-ale-rr-ed-4734-22-09-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4734/diario-ale-rr-ed-4734-22-09-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4734-22.09.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12003",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4734-22.09.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4734-22.09.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4734-22.09.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4734-22.09.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4734-22.09.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21824,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4734-22.09.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4734-22.09.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 185022,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4734-22.09.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4734-22.09.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8419,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4734-22.09.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 694563
+      },
+      "post": 12002,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4734-22.09.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4734-22.09.2026.pdf",
+      "filesize": 694563,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12003",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12003"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 12002,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/12002"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 12000,
+      "date": "2026-09-22T11:55:02",
+      "date_gmt": "2026-09-22T15:55:02",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4733-21.09.2026.pdf"
+      },
+      "modified": "2026-09-22T11:55:02",
+      "modified_gmt": "2026-09-22T15:55:02",
+      "slug": "diario-ale-rr-ed-4733-21-09-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4732/diario-ale-rr-ed-4733-21-09-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4733-21.09.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-12000",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4733-21.09.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4733-21.09.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4733-21.09.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4733-21.09.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4733-21.09.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21825,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4733-21.09.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4733-21.09.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 185069,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4733-21.09.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4733-21.09.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8417,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4733-21.09.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 752511
+      },
+      "post": 11998,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4733-21.09.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4733-21.09.2026.pdf",
+      "filesize": 752511,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/12000",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=12000"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 11998,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/11998"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 11999,
+      "date": "2026-09-22T11:54:35",
+      "date_gmt": "2026-09-22T15:54:35",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4732-18.09.2026.pdf"
+      },
+      "modified": "2026-09-22T11:54:35",
+      "modified_gmt": "2026-09-22T15:54:35",
+      "slug": "diario-ale-rr-ed-4732-18-09-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4732/diario-ale-rr-ed-4732-18-09-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4732-18.09.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-11999",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4732-18.09.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4732-18.09.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4732-18.09.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4732-18.09.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4732-18.09.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21819,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4732-18.09.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4732-18.09.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 185011,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4732-18.09.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4732-18.09.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8419,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4732-18.09.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 399230
+      },
+      "post": 11998,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4732-18.09.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4732-18.09.2026.pdf",
+      "filesize": 399230,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/11999",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=11999"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 11998,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/11998"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 11997,
+      "date": "2026-09-18T09:00:35",
+      "date_gmt": "2026-09-18T13:00:35",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4731-17.09.2026.pdf"
+      },
+      "modified": "2026-09-18T09:00:35",
+      "modified_gmt": "2026-09-18T13:00:35",
+      "slug": "diario-ale-rr-ed-4731-17-09-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4731/diario-ale-rr-ed-4731-17-09-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4731-17.09.2026"
+      },
+      "author": 10,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-11997",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4731-17.09.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4731-17.09.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4731-17.09.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4731-17.09.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4731-17.09.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21810,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4731-17.09.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4731-17.09.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 185037,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4731-17.09.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4731-17.09.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8410,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4731-17.09.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 1276234
+      },
+      "post": 11996,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4731-17.09.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4731-17.09.2026.pdf",
+      "filesize": 1276234,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/11997",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/10"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=11997"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 11996,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/11996"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 11995,
+      "date": "2026-09-16T17:39:34",
+      "date_gmt": "2026-09-16T21:39:34",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4730-16.09.2026.pdf"
+      },
+      "modified": "2026-09-16T17:39:34",
+      "modified_gmt": "2026-09-16T21:39:34",
+      "slug": "diario-ale-rr-ed-4730-16-09-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4730/diario-ale-rr-ed-4730-16-09-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4730-16.09.2026"
+      },
+      "author": 13,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-11995",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4730-16.09.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4730-16.09.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4730-16.09.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4730-16.09.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4730-16.09.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21837,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4730-16.09.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4730-16.09.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 185172,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4730-16.09.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4730-16.09.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8412,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4730-16.09.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 441579
+      },
+      "post": 11994,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4730-16.09.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4730-16.09.2026.pdf",
+      "filesize": 441579,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/11995",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/13"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=11995"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 11994,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/11994"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 11993,
+      "date": "2026-09-16T17:38:25",
+      "date_gmt": "2026-09-16T21:38:25",
+      "guid": {
+        "rendered": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4729-15.09.2026.pdf"
+      },
+      "modified": "2026-09-16T17:38:25",
+      "modified_gmt": "2026-09-16T21:38:25",
+      "slug": "diario-ale-rr-ed-4729-15-09-2026",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://diarios.al.rr.leg.br/events/edicao-no-4729/diario-ale-rr-ed-4729-15-09-2026/",
+      "title": {
+        "rendered": "DIARIO-ALE-RR-ED.-4729-15.09.2026"
+      },
+      "author": 13,
+      "featured_media": 0,
+      "comment_status": "",
+      "ping_status": "closed",
+      "template": "",
+      "meta": [],
+      "class_list": [
+        "post-11993",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "description": {
+        "rendered": "<p class=\"attachment\"><a href='https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4729-15.09.2026.pdf'><img loading=\"lazy\" decoding=\"async\" width=\"212\" height=\"300\" src=\"https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4729-15.09.2026-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" /></a></p>\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "application/pdf",
+      "media_details": {
+        "sizes": {
+          "full": {
+            "file": "DIARIO-ALE-RR-ED.-4729-15.09.2026-pdf.jpg",
+            "width": 1058,
+            "height": 1497,
+            "mime_type": "application/pdf",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4729-15.09.2026-pdf.jpg"
+          },
+          "medium": {
+            "file": "DIARIO-ALE-RR-ED.-4729-15.09.2026-pdf-212x300.jpg",
+            "width": 212,
+            "height": 300,
+            "filesize": 21807,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4729-15.09.2026-pdf-212x300.jpg"
+          },
+          "large": {
+            "file": "DIARIO-ALE-RR-ED.-4729-15.09.2026-pdf-724x1024.jpg",
+            "width": 724,
+            "height": 1024,
+            "filesize": 185024,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4729-15.09.2026-pdf-724x1024.jpg"
+          },
+          "thumbnail": {
+            "file": "DIARIO-ALE-RR-ED.-4729-15.09.2026-pdf-106x150.jpg",
+            "width": 106,
+            "height": 150,
+            "filesize": 8418,
+            "mime_type": "image/jpeg",
+            "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4729-15.09.2026-pdf-106x150.jpg"
+          }
+        },
+        "filesize": 1025131
+      },
+      "post": 11992,
+      "source_url": "https://diarios.al.rr.leg.br/wp-content/uploads/2026/09/DIARIO-ALE-RR-ED.-4729-15.09.2026.pdf",
+      "filename": "DIARIO-ALE-RR-ED.-4729-15.09.2026.pdf",
+      "filesize": 1025131,
+      "_links": {
+        "self": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media/11993",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/users/13"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/comments?post=11993"
+          }
+        ],
+        "wp:attached-to": [
+          {
+            "embeddable": true,
+            "post_type": "mec-events",
+            "id": 11992,
+            "href": "https://diarios.al.rr.leg.br/wp-json/wp/v2/mec-events/11992"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    }
+  ]
+}

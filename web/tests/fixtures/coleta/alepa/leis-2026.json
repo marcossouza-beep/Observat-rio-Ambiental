@@ -1,0 +1,462 @@
+{
+  "url": "https://bancodeleis.alepa.pa.gov.br/api/leis.php?ano=2026",
+  "status": 200,
+  "tipo": "application/json; charset=utf-8",
+  "gravadaEm": "2026-10-16T02:46:39.445Z",
+  "corpo": {
+    "status": true,
+    "total": 50,
+    "resultados": [
+      {
+        "id": 32532,
+        "numero": "11666",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Dispõe sobre as diretrizes para a elaboração e a execução da Lei Orçamentária Anual de 2027.",
+        "arquivo": "lei_20260805105738_151029fb.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260805105738_151029fb.pdf"
+      },
+      {
+        "id": 32817,
+        "numero": "11665",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Cria a Área de Proteção Ambiental Bacajaí APA Bacajaí, nos Municípios de Altamira e Senador José Porfírio, Estado do Pará.",
+        "arquivo": "lei_20260901102051_67fa9497.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260901102051_67fa9497.pdf"
+      },
+      {
+        "id": 32472,
+        "numero": "11664",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Clube Atlético Central Park.",
+        "arquivo": "lei_20260722092828_8dcdac09.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092828_8dcdac09.pdf"
+      },
+      {
+        "id": 32816,
+        "numero": "11663",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Altera e acrescenta dispositivos à Lei nº 8.107, de 19 de fevereiro de 2015, que dispõe sobre o Plano de Cargos, Carreiras e Remuneração dos Servidores da Defensoria Pública do Estado do Pará.",
+        "arquivo": "lei_20260901101839_0a41c333.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260901101839_0a41c333.pdf"
+      },
+      {
+        "id": 32471,
+        "numero": "11662",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Estabelece diretrizes para a oferta na rede pública estadual de saúde de consultas médicas e terapêuticas por videoconferência para pessoas com deficiência, no âmbito do Estado do Pará.",
+        "arquivo": "lei_20260722092721_6d0981f9.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092721_6d0981f9.pdf"
+      },
+      {
+        "id": 32470,
+        "numero": "11661",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Dispõe sobre a realização de campanha anual para a promoção da saúde da população negra no Estado do Pará.",
+        "arquivo": "lei_20260722092647_47fa63f3.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092647_47fa63f3.pdf"
+      },
+      {
+        "id": 32469,
+        "numero": "11660",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Garante às instituições que menciona, no âmbito do Estado do Pará, a atribuição do uso de seus banheiros de acordo com a definição biológica de sexo.",
+        "arquivo": "lei_20260722092559_0d86fc30.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092559_0d86fc30.pdf"
+      },
+      {
+        "id": 32468,
+        "numero": "11659",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto Porto Laranjeiras, no Município de Belém.",
+        "arquivo": "lei_20260722092457_38dd0969.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092457_38dd0969.pdf"
+      },
+      {
+        "id": 32467,
+        "numero": "11658",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Dispõe sobre a obrigatoriedade das concessionárias dos sistemas de transportes públicos rodoviário e hidroviário de passageiros do Estado do Pará a promover campanha permanente de estímulo à doação de sangue, medula óssea e órgãos.",
+        "arquivo": "lei_20260722092410_1f6b5de5.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092410_1f6b5de5.pdf"
+      },
+      {
+        "id": 32466,
+        "numero": "11657",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Dispõe sobre a transformação da Auditoria Militar do Estado do Pará em Vara Especializada da Justiça Militar.",
+        "arquivo": "lei_20260722092107_4ee90bfb_LEI_N_11.657_DE_09_DE_JULHO_DE_2026.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722092107_4ee90bfb_LEI_N_11.657_DE_09_DE_JULHO_DE_2026.pdf"
+      },
+      {
+        "id": 32465,
+        "numero": "11656",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Institui a Política Pública de Prevenção ao Phishing Virtual nas Instituições de Ensino Público e Privado, no âmbito do Estado do Pará.",
+        "arquivo": "lei_20260722091838_331236e7.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722091838_331236e7.pdf"
+      },
+      {
+        "id": 32464,
+        "numero": "11655",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Associação dos Usuários da Reserva Extrativista Marinha de Tracuateua (AUREMAT).",
+        "arquivo": "lei_20260722091749_11dc36c6.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722091749_11dc36c6.pdf"
+      },
+      {
+        "id": 32463,
+        "numero": "11654",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Associação dos Produtores (as) Rurais da Comunidade do Tamatateua.",
+        "arquivo": "lei_20260722091703_06fb4b3d.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722091703_06fb4b3d.pdf"
+      },
+      {
+        "id": 32462,
+        "numero": "11653",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto Cultural Nova Geração.",
+        "arquivo": "lei_20260722091305_f2d1ba8a.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722091305_f2d1ba8a.pdf"
+      },
+      {
+        "id": 32461,
+        "numero": "11652",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto Anjos da Saúde, no Município de Ananindeua.",
+        "arquivo": "lei_20260722091221_4ba3b5f6.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722091221_4ba3b5f6.pdf"
+      },
+      {
+        "id": 32460,
+        "numero": "11651",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Associação de Moradores do Bairro da Maracangalha, no Município de Belém.",
+        "arquivo": "lei_20260722091135_fe196b75.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722091135_fe196b75.pdf"
+      },
+      {
+        "id": 32459,
+        "numero": "11650",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Liga Sourense de Desportos.",
+        "arquivo": "lei_20260722091037_27f9cfb9.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722091037_27f9cfb9.pdf"
+      },
+      {
+        "id": 32458,
+        "numero": "11649",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Cooperativa de Trabalho dos Catadores de Materiais Recicláveis de Ourilândia do Norte (RECICLA OURILÂNDIA).",
+        "arquivo": "lei_20260722090844_723f315f.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722090844_723f315f.pdf"
+      },
+      {
+        "id": 32457,
+        "numero": "11648",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Institui o Programa Estadual de Estímulo ao Empreendedorismo de Mães Atípicas.",
+        "arquivo": "lei_20260722090756_699f2eb7.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722090756_699f2eb7.pdf"
+      },
+      {
+        "id": 32456,
+        "numero": "11647",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Colônia de Pescadores Z-14 de Abaetetuba, com sede e foro na Cidade de Abaetetuba.",
+        "arquivo": "lei_20260722090715_00986053.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722090715_00986053.pdf"
+      },
+      {
+        "id": 32455,
+        "numero": "11646",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto de Desenvolvimento Luz do Norte (IDLN).",
+        "arquivo": "lei_20260722090630_57198442.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722090630_57198442.pdf"
+      },
+      {
+        "id": 32454,
+        "numero": "11645",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto Ana Paula Nascimento de Moraes, no Município de Castanhal.",
+        "arquivo": "lei_20260722090544_701adbfc.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722090544_701adbfc.pdf"
+      },
+      {
+        "id": 32453,
+        "numero": "11644",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Dispõe sobre o Cadastro Estadual de Pessoas Condenadas por Crimes contra a Mulher, no âmbito do Estado do Pará.",
+        "arquivo": "lei_20260722090447_f42cd2d0.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722090447_f42cd2d0.pdf"
+      },
+      {
+        "id": 32452,
+        "numero": "11643",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o Instituto de Desenvolvimento Socioeconômico e da Preservação da Amazônia (IDESPAM).",
+        "arquivo": "lei_20260722090406_200456ca.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722090406_200456ca.pdf"
+      },
+      {
+        "id": 32451,
+        "numero": "11642",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara como patrimônio cultural de natureza imaterial do Estado do Pará, o evento EXPOAP - Exposição Agropecuária de Pacajá.",
+        "arquivo": "lei_20260722090317_ac59bec5.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722090317_ac59bec5.pdf"
+      },
+      {
+        "id": 32450,
+        "numero": "11641",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Dispõe sobre a criação do Selo de Autenticidade Artesanal Quilombola, a produtos de procedência das comunidades Quilombolas do Estado do Pará.",
+        "arquivo": "lei_20260722090232_14798230.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722090232_14798230.pdf"
+      },
+      {
+        "id": 32449,
+        "numero": "11640",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Associação Amigos da Natureza (AAMINA).",
+        "arquivo": "lei_20260722090115_20f66502.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722090115_20f66502.pdf"
+      },
+      {
+        "id": 32448,
+        "numero": "11639",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Acrescenta dispositivos à Lei Estadual nº 8.843, de 2019, para ampliar Diretrizes de Educação e Prevenção da Violência contra Animais no Estado do Pará.",
+        "arquivo": "lei_20260722090011_c74846d3.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722090011_c74846d3.pdf"
+      },
+      {
+        "id": 32447,
+        "numero": "11638",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Dispõe sobre a recomendação de disponibilização de mesas e cadeiras acessíveis para pessoas com deficiência, mobilidade reduzida, idosos e gestantes nas áreas de alimentação de shopping centers e centros comerciais do Estado do Pará.",
+        "arquivo": "lei_20260722085923_90976abc.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722085923_90976abc.pdf"
+      },
+      {
+        "id": 32446,
+        "numero": "11637",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Cooperativa de Agricultura Familiar do Marajó (COOPAFAM).",
+        "arquivo": "lei_20260722085819_f7aa49f0.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722085819_f7aa49f0.pdf"
+      },
+      {
+        "id": 32445,
+        "numero": "11636",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Convenção de Ministros e Igrejas Evangélicas do Pará (COMIEP).",
+        "arquivo": "lei_20260722085730_33553882.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722085730_33553882.pdf"
+      },
+      {
+        "id": 32444,
+        "numero": "11635",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Associação de Caminhoneiros do Estado do Pará.",
+        "arquivo": "lei_20260722085638_26980b76.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722085638_26980b76.pdf"
+      },
+      {
+        "id": 32443,
+        "numero": "11634",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Associação Beneficente Amigos do Sideral (ABAS), no Município de Belém.",
+        "arquivo": "lei_20260722085554_3e0132c6.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722085554_3e0132c6.pdf"
+      },
+      {
+        "id": 32442,
+        "numero": "11633",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Associação de Familiares da Pessoa com Transtorno do Espectro Autista (AFPTEA), com sede e foro no Município de Santa Izabel do Pará.",
+        "arquivo": "lei_20260722085511_7b06680d.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722085511_7b06680d.pdf"
+      },
+      {
+        "id": 32441,
+        "numero": "11632",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Associação dos Agricultores e Pescadores Artesanais dos Moradores de Maracajó, no Município de Colares.",
+        "arquivo": "lei_20260722085430_99cf76a8.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722085430_99cf76a8.pdf"
+      },
+      {
+        "id": 32440,
+        "numero": "11631",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Ordem dos Ministros Evangélicos de Eldorado do Carajás, no Estado do Pará.",
+        "arquivo": "lei_20260722085346_06a12050.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722085346_06a12050.pdf"
+      },
+      {
+        "id": 32439,
+        "numero": "11630",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Associação dos Bombeiros Civis do Pará (ASSBOMBE).",
+        "arquivo": "lei_20260722085301_de33052e.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722085301_de33052e.pdf"
+      },
+      {
+        "id": 32438,
+        "numero": "11629",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara como patrimônio cultural de natureza imaterial do Estado do Pará, a Cachoeira Serra Azul ou Cachoeira do Detão, localizada no Município de Monte Alegre/PA.",
+        "arquivo": "lei_20260722085214_0c322bcf.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722085214_0c322bcf.pdf"
+      },
+      {
+        "id": 32437,
+        "numero": "11628",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Sociedade de Amigos do Hospital do Amor de Santarém (SOAHAMOR).",
+        "arquivo": "lei_20260722084125_65ec9ee8.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722084125_65ec9ee8.pdf"
+      },
+      {
+        "id": 32436,
+        "numero": "11627",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara como patrimônio cultural de natureza imaterial do Estado do Pará, o saber tradicional dos(as) abridores(as) de letra de municípios ribeirinhos do Estado do Pará, bem como as letras de barco, resultado dessa prática tradicional e particular de escrever.",
+        "arquivo": "lei_20260722084041_c0592691.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722084041_c0592691.pdf"
+      },
+      {
+        "id": 32435,
+        "numero": "11626",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara como patrimônio cultural de natureza imaterial do Estado do Pará, o ofício, saberes e práticas das Parteiras Tradicionais.",
+        "arquivo": "lei_20260722083841_a199866f.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722083841_a199866f.pdf"
+      },
+      {
+        "id": 32434,
+        "numero": "11625",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Dispõe sobre a possibilidade de regularização imediata de débitos relativos ao Imposto sobre a Propriedade de Veículos Automotores (IPVA), à taxa de licenciamento e às multas de trânsito, no momento da fiscalização, para fins de evitar a remoção ou apreensão do veículo, no âmbito do Estado do Pará.",
+        "arquivo": "lei_20260722083154_1daf8df2.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722083154_1daf8df2.pdf"
+      },
+      {
+        "id": 32433,
+        "numero": "11618",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Dispõe sobre o reajuste da remuneração dos membros e servidores da Defensoria Pública do Estado do Pará.",
+        "arquivo": "lei_20260722082927_c40a3520.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722082927_c40a3520.pdf"
+      },
+      {
+        "id": 32432,
+        "numero": "11617",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Dispõe sobre o reajuste da remuneração dos servidores do Poder Judiciário do Estado do Pará.",
+        "arquivo": "lei_20260722082838_e3339075.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722082838_e3339075.pdf"
+      },
+      {
+        "id": 32431,
+        "numero": "11616",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Associação dos Agricultores, Produtores e Moradores do Assentamento Margarida Alves (AMA), com sede e foro no Município de Acará.",
+        "arquivo": "lei_20260722082756_5de605af.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722082756_5de605af.pdf"
+      },
+      {
+        "id": 32430,
+        "numero": "11615",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Associação de Desenvolvimento Ecológico Sustentável Filhos do Pará.",
+        "arquivo": "lei_20260722082710_24986a59.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722082710_24986a59.pdf"
+      },
+      {
+        "id": 32429,
+        "numero": "11614",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Dispõe sobre a concessão de Título de Utilidade Pública ao Instituto Vinicius de Morais (IVM).",
+        "arquivo": "lei_20260722082625_f4355baa.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722082625_f4355baa.pdf"
+      },
+      {
+        "id": 32428,
+        "numero": "11613",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Reconhece como de relevante interesse cultural do Estado do Pará, a Cultura Gospel.",
+        "arquivo": "lei_20260722082508_63cc7a4f.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260722082508_63cc7a4f.pdf"
+      },
+      {
+        "id": 32413,
+        "numero": "11608",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, o INSTITUTO AMIGOS PET.",
+        "arquivo": "lei_20260721123909_d7c9cb11.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260721123909_d7c9cb11.pdf"
+      },
+      {
+        "id": 32412,
+        "numero": "11607",
+        "ano": "2026",
+        "tipo": "Lei Ordinária",
+        "ementa": "Declara e reconhece como de utilidade pública para o Estado do Pará, a Associação Cultural e Fomento Agrícola de Tomé-Açu (ACTA).",
+        "arquivo": "lei_20260721123738_5bc95126.pdf",
+        "link_pdf": "https://bancodeleis.alepa.pa.gov.br/arquivos/lei_20260721123738_5bc95126.pdf"
+      }
+    ]
+  }
+}
