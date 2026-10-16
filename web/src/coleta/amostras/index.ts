@@ -172,6 +172,44 @@ const PASSOS_SAPL: Passo[] = [
   },
 ]
 
+/** Pará e Roraima sem SAPL aberto: Diário da ALE-RR (WordPress + PDF) e Banco de Leis da Alepa (API JSON). */
+const PASSOS_NORTE: Passo[] = [
+  {
+    fonte: 'alerr',
+    nome: 'diario',
+    async rodar() {
+      const base = 'https://diarios.al.rr.leg.br'
+      const g = await salvar('alerr', 'midia', await buscar(`${base}/wp-json/wp/v2/media?per_page=20&mime_type=application/pdf&orderby=date&order=desc`))
+      const lista = Array.isArray(g.corpo) ? (g.corpo as { source_url?: string }[]) : []
+      // Edições recentes e a 4747 (13/10/2026), que traz 32 menções a projetos de lei
+      const urls = [...new Set([`${base}/wp-content/uploads/2026/10/DIARIO-ALE-RR-ED.-4747-13.10.2026.pdf`, ...lista.slice(0, 3).map((m) => m.source_url).filter((u): u is string => !!u)])]
+      for (const url of urls) {
+        try {
+          const r = await obter(url, { tentativas: 2, esperaBaseMs: 1500, tempoLimiteMs: 60_000 })
+          const buf = Buffer.from(await r.arrayBuffer())
+          const nome = (url.match(/ED\.-(\d+)/)?.[1] || 'edicao').replace(/\D/g, '')
+          await writeFile(path.join(saida, 'alerr', `ed-${nome}.pdf`), buf)
+          console.log(`✅ alerr/ed-${nome}.pdf · ${Math.round(buf.length / 1024)} KB`)
+        } catch (e) {
+          console.log(`⚠️ alerr ${url} · ${(e as Error).message}`)
+        }
+      }
+    },
+  },
+  {
+    fonte: 'alepa',
+    nome: 'banco-de-leis',
+    async rodar() {
+      const api = 'https://bancodeleis.alepa.pa.gov.br/api/leis.php'
+      await salvar('alepa', 'leis-2026', await buscar(`${api}?ano=${new Date().getFullYear()}`, 60))
+      await salvar('alepa', 'leis-ambiental', await buscar(`${api}?q=ambiental`, 60))
+      await salvar('alepa', 'leis-numero', await buscar(`${api}?numero=5887`, 60))
+      await salvar('alepa', 'api-doc', await buscar('https://bancodeleis.alepa.pa.gov.br/api.php'))
+      await salvar('alepa', 'tipos-proposicao', await buscar('https://www.alepa.pa.gov.br/Legislativo/GetTipoProposicoes'))
+    },
+  },
+]
+
 const PASSOS: Passo[] = [
   // ---------------- Câmara ----------------
   {
@@ -454,7 +492,7 @@ async function main() {
   const ctx: Ctx = {}
   await mkdir(saida, { recursive: true })
   const fontes = filtro ? filtro.split(',') : null
-  for (const p of [...PASSOS, ...PASSOS_SAPL].filter((x) => !fontes || fontes.includes(x.fonte))) {
+  for (const p of [...PASSOS, ...PASSOS_SAPL, ...PASSOS_NORTE].filter((x) => !fontes || fontes.includes(x.fonte))) {
     try {
       await p.rodar(ctx)
     } catch (e) {

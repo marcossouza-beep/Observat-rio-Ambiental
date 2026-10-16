@@ -78,6 +78,38 @@ async function navegar(b: Browser, url: string, interagir = false) {
   }
 }
 
+/** Endereços internos que a página usa: procura caminhos /Controlador/Acao nos scripts e lista os campos do formulário. */
+async function endpointsDaPagina(b: Browser, url: string) {
+  const ctx = await b.newContext({ userAgent: NAVEGADOR, locale: 'pt-BR', ignoreHTTPSErrors: true })
+  const p = await ctx.newPage()
+  const scripts: string[] = []
+  p.on('response', async (r: RespostaPw) => {
+    if (r.request().resourceType() === 'script' && new URL(r.url()).host === new URL(url).host) scripts.push(await r.text().catch(() => ''))
+  })
+  try {
+    await p.goto(url, { waitUntil: 'networkidle', timeout: 45_000 })
+    const html = await p.content()
+    const fontes = [html, ...scripts].join('\n')
+    const caminhos = [...new Set([...fontes.matchAll(/["'`](\/(?:Legislativo|Comunicacao|Home|api)\/[A-Za-z]+[^"'`\s]{0,80})["'`]/g)].map((m) => m[1]))].slice(0, 60)
+    const trechos = [...fontes.matchAll(/(?:ajax|fetch|\$\.(?:get|post|getJSON)|url\s*:)[^\n]{0,200}/gi)].map((m) => curto(m[0], 220)).slice(0, 30)
+    const campos = await p.evaluate(() =>
+      [...document.querySelectorAll('input, select, button, textarea')].map((e) => ({
+        tag: e.tagName.toLowerCase(),
+        id: e.id,
+        nome: (e as HTMLInputElement).name,
+        tipo: (e as HTMLInputElement).type,
+        valor: ((e as HTMLInputElement).value || e.textContent || '').trim().slice(0, 40),
+        opcoes: e.tagName === 'SELECT' ? [...(e as HTMLSelectElement).options].slice(0, 8).map((o) => `${o.value}=${o.text}`) : undefined,
+      })),
+    )
+    return { url, caminhos, trechos, campos: campos.slice(0, 60) }
+  } catch (e) {
+    return { url, erro: erro(e) }
+  } finally {
+    await ctx.close()
+  }
+}
+
 /** Baixa um PDF e conta o que interessa ao observatório: projetos de lei e termos ambientais. */
 async function lerPdf(url: string) {
   try {
@@ -106,6 +138,8 @@ async function main() {
     // ---------- Pará ----------
     const pa = {
       proposicoes: await navegar(b, 'https://www.alepa.pa.gov.br/Home/Page/Proposicoes', true),
+      proposicoesEnderecos: await endpointsDaPagina(b, 'https://www.alepa.pa.gov.br/Home/Page/Proposicoes'),
+      pautasEnderecos: await endpointsDaPagina(b, 'https://www.alepa.pa.gov.br/Home/Page/PautasPlenario'),
       diarioOficial: await navegar(b, 'https://www.alepa.pa.gov.br/Home/Page/DiarioOficial', true),
       diarios: await navegar(b, 'https://www.alepa.pa.gov.br/Comunicacao/Diarios'),
       bancoDeLeis: await navegar(b, 'https://bancodeleis.alepa.pa.gov.br/'),
