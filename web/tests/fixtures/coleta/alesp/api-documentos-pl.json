@@ -1,0 +1,121 @@
+{
+  "url": "https://legis-api-portal-prd.al.sp.gov.br/documento?page=0&size=10&sort=desc&listaIdTipoDocumento=1&ano=2026",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T21:16:34.316Z",
+  "corpo": {
+    "content": [
+      {
+        "idDocumento": 310000006756,
+        "idTipoDocumento": 1,
+        "idSessao": null,
+        "idReuniao": null,
+        "numero": 863,
+        "ano": 2026,
+        "dtDocumento": "2026-09-30",
+        "dtPublicacao": "2026-10-01",
+        "tipo": "Projeto de lei",
+        "descricao": "Projeto de lei 863/2026",
+        "resumo": "Orça a Receita e fixa a Despesa do Estado para o exercício de 2027.",
+        "cdTipoSessaoOuReuniao": null,
+        "nomeTipoSessaoReuniao": null,
+        "linkArquivo": null,
+        "linkArquivoPDF": null,
+        "urlDocumento": "",
+        "processos": [
+          {
+            "idProcesso": 1100004484,
+            "idTipoProcesso": 1,
+            "tipoProcesso": "PL",
+            "numeroProcesso": 863,
+            "anoProcesso": 2026,
+            "dtPublicacao": null,
+            "descricao": "PL 863/2026",
+            "resumo": "Orça a Receita e fixa a Despesa do Estado para o exercício de 2027.",
+            "urlProcesso": null,
+            "urlSemPapel": null,
+            "indexadores": null,
+            "autorProposicao": "Governador",
+            "tipoAutorPrincipal": "Pessoa",
+            "flPropositura": null
+          }
+        ],
+        "numeroAutorPrincipal": 105,
+        "autorPrincipal": "Governador",
+        "tipoAutorPrincipal": "Pessoa",
+        "siglaPartidoPrincipal": null,
+        "urlAutorPrincipal": null,
+        "idDocumentoSpl": 310000006756,
+        "arquivos": null
+      },
+      {
+        "idDocumento": 310000003884,
+        "idTipoDocumento": 1,
+        "idSessao": null,
+        "idReuniao": null,
+        "numero": 777,
+        "ano": 2026,
+        "dtDocumento": "2026-08-05",
+        "dtPublicacao": "2026-08-06",
+        "tipo": "Projeto de lei",
+        "descricao": "Projeto de lei 777/2026",
+        "resumo": "Autoriza o Poder Executivo a promover a absorção dos empregados atuais da Companhia Paulista de Trens Metropolitanos - CPTM das Linhas 10 - Turquesa, 11 - Coral, 12 - Safira e 13 - Jade por órgãos ou entidades da Administração Pública direta ou indireta do Estado de São Paulo.",
+        "cdTipoSessaoOuReuniao": null,
+        "nomeTipoSessaoReuniao": null,
+        "linkArquivo": null,
+        "linkArquivoPDF": null,
+        "urlDocumento": null,
+        "processos": [
+          {
+            "idProcesso": 1100000549,
+            "idTipoProcesso": 1,
+            "tipoProcesso": "PL",
+            "numeroProcesso": 777,
+            "anoProcesso": 2026,
+            "dtPublicacao": null,
+            "descricao": "PL 777/2026",
+            "resumo": "Autoriza o Poder Executivo a promover a absorção dos empregados atuais da Companhia Paulista de Trens Metropolitanos - CPTM das Linhas 10 - Turquesa, 11 - Coral, 12 - Safira e 13 - Jade por órgãos ou entidades da Administração Pública direta ou indireta do Estado de São Paulo.",
+            "urlProcesso": null,
+            "urlSemPapel": null,
+            "indexadores": null,
+            "autorProposicao": "Governador",
+            "tipoAutorPrincipal": "Pessoa",
+            "flPropositura": null
+          }
+        ],
+        "numeroAutorPrincipal": 105,
+        "autorPrincipal": "Governador",
+        "tipoAutorPrincipal": "Pessoa",
+        "siglaPartidoPrincipal": null,
+        "urlAutorPrincipal": null,
+        "idDocumentoSpl": 310000003884,
+        "arquivos": null
+      }
+    ],
+    "pageable": {
+      "pageNumber": 0,
+      "pageSize": 10,
+      "sort": {
+        "unsorted": false,
+        "sorted": true,
+        "empty": false
+      },
+      "offset": 0,
+      "unpaged": false,
+      "paged": true
+    },
+    "totalPages": 1,
+    "totalElements": 2,
+    "last": true,
+    "numberOfElements": 2,
+    "size": 10,
+    "number": 0,
+    "sort": {
+      "unsorted": false,
+      "sorted": true,
+      "empty": false
+    },
+    "first": true,
+    "empty": false
+  }
+}
