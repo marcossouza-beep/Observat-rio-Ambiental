@@ -213,7 +213,10 @@ const PASSOS_NE: Passo[] = [
       const html = ((lista.corpo as { html?: string } | null)?.html || '') as string
       const pl = /\/proposicao\/(PL\.?-[\d.]+-\d{4})/.exec(html)?.[1]
       if (pl) await gravarHtml('alba', 'detalhe-pl', `${base}/proposicao/${pl}`)
-      await gravarHtml('alba', 'portal-legislativo', 'http://albalegis.nopapercloud.com.br/')
+      // Desde 01/08/2025 as proposições estão no SPL (nopapercloud); o domínio .com.br recusa o GitHub (Cloudflare)
+      await gravarHtml('alba', 'spl-consulta', 'https://albalegis.nopapercloud.com.br/spl/consulta-producao.aspx')
+      await gravarHtml('alba', 'nopapercloud-app', 'https://alba.nopapercloud.app')
+      await gravarHtml('alba', 'diario-egba', 'https://egbanet.egba.ba.gov.br/alba')
     },
   },
   {
@@ -223,6 +226,16 @@ const PASSOS_NE: Passo[] = [
       await gravarHtml('alece', 'proposicoes', 'https://www.al.ce.gov.br/paginas/proposicoes?menu=96')
       await gravarHtml('alece', 'avulso-de-projeto', 'https://www.al.ce.gov.br/legislativo/ordem-do-dia/avulso-de-projeto')
       await gravarHtml('alece', 'expediente', 'https://www.al.ce.gov.br/legislativo/expediente')
+      await gravarHtml('alece', 'expediente-historico', 'https://www.al.ce.gov.br/legislativo/expediente-historico')
+      // Lista por legislatura (www2): projetos de lei e de lei complementar tramitando
+      const www2 = 'http://www2.al.ce.gov.br/legislativo/proposicoes/numero.php?nome=31_legislatura'
+      const lista = await gravarHtml('alece', 'projetos-lei-tramitando', `${www2}&tabela=projeto_lei&opcao=T`)
+      await gravarHtml('alece', 'projetos-compl-tramitando', `${www2}&tabela=projeto_compl&opcao=T`)
+      const html = ((lista.corpo as { html?: string } | null)?.html || '') as string
+      const det = [...html.matchAll(/href=["']([^"']+)["']/g)].map((m) => m[1].replace(/&amp;/g, '&')).find((u) => /proposic|projeto|codigo|id=/i.test(u) && !/numero\.php/.test(u))
+      if (det) await gravarHtml('alece', 'detalhe-projeto', new URL(det, 'http://www2.al.ce.gov.br/legislativo/proposicoes/').toString())
+      await gravarHtml('alece', 'diario-consulta', 'https://doalece.al.ce.gov.br/publico/consulta')
+      await gravarHtml('alece', 'diario', 'https://doalece.al.ce.gov.br/')
     },
   },
 ]
