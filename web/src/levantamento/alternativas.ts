@@ -124,7 +124,12 @@ async function pesquisarAlepa(b: Browser) {
   try {
     await p.goto('https://www.alepa.pa.gov.br/Home/Page/Proposicoes', { waitUntil: 'networkidle', timeout: 45_000 })
     await p.locator('#Ano_I').fill(String(new Date().getFullYear()))
-    await p.locator('#searchButton_I').click()
+    // O botão do DevExpress fica escondido atrás de um invólucro: tenta o clique forçado, o invólucro e o Enter
+    await p.locator('#searchButton_I').click({ force: true, timeout: 8000 }).catch(async () => {
+      await p.locator('#searchButton').click({ timeout: 8000 }).catch(async () => {
+        await p.locator('#Ano_I').press('Enter')
+      })
+    })
     await p.waitForLoadState('networkidle', { timeout: 30_000 }).catch(() => {})
     await p.waitForTimeout(4000)
     const cartoes = await p.evaluate(() => [...document.querySelectorAll('[id*=CardView] .dxcvCard, .dxcvCard')].slice(0, 5).map((c) => (c as HTMLElement).innerText.slice(0, 600)))
