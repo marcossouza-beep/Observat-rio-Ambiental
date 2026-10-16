@@ -110,6 +110,33 @@ async function endpointsDaPagina(b: Browser, url: string) {
   }
 }
 
+/** Pesquisa de proposições da Alepa: preenche o ano, clica em Pesquisar e guarda a chamada (método, corpo) e a resposta. */
+async function pesquisarAlepa(b: Browser) {
+  const ctx = await b.newContext({ userAgent: NAVEGADOR, locale: 'pt-BR', ignoreHTTPSErrors: true })
+  const p = await ctx.newPage()
+  const chamadas: { metodo: string; url: string; corpoPedido?: string; status: number; tipo: string | null; bytes: number; inicio: string; fim: string }[] = []
+  p.on('response', async (r: RespostaPw) => {
+    const q = r.request()
+    if (!['xhr', 'fetch', 'document'].includes(q.resourceType()) || !/Legislativo/i.test(r.url())) return
+    const corpo = await r.text().catch(() => '')
+    chamadas.push({ metodo: q.method(), url: r.url(), corpoPedido: q.postData()?.slice(0, 3000), status: r.status(), tipo: r.headers()['content-type'] || null, bytes: corpo.length, inicio: corpo.slice(0, 3000), fim: corpo.slice(-1500) })
+  })
+  try {
+    await p.goto('https://www.alepa.pa.gov.br/Home/Page/Proposicoes', { waitUntil: 'networkidle', timeout: 45_000 })
+    await p.locator('#Ano_I').fill(String(new Date().getFullYear()))
+    await p.locator('#searchButton_I').click()
+    await p.waitForLoadState('networkidle', { timeout: 30_000 }).catch(() => {})
+    await p.waitForTimeout(4000)
+    const cartoes = await p.evaluate(() => [...document.querySelectorAll('[id*=CardView] .dxcvCard, .dxcvCard')].slice(0, 5).map((c) => (c as HTMLElement).innerText.slice(0, 600)))
+    const links = await p.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => (a as HTMLAnchorElement).href).filter((h) => /Proposic|Materia|Detalhe|\.pdf/i.test(h)).slice(0, 20))
+    return { chamadas, cartoes, links, texto: curto(await p.evaluate(() => document.body?.innerText || ''), 3000) }
+  } catch (e) {
+    return { erro: erro(e), chamadas }
+  } finally {
+    await ctx.close()
+  }
+}
+
 /** Baixa um PDF e conta o que interessa ao observatório: projetos de lei e termos ambientais. */
 async function lerPdf(url: string) {
   try {
@@ -139,6 +166,7 @@ async function main() {
     const pa = {
       proposicoes: await navegar(b, 'https://www.alepa.pa.gov.br/Home/Page/Proposicoes', true),
       proposicoesEnderecos: await endpointsDaPagina(b, 'https://www.alepa.pa.gov.br/Home/Page/Proposicoes'),
+      pesquisa: await pesquisarAlepa(b),
       pautasEnderecos: await endpointsDaPagina(b, 'https://www.alepa.pa.gov.br/Home/Page/PautasPlenario'),
       diarioOficial: await navegar(b, 'https://www.alepa.pa.gov.br/Home/Page/DiarioOficial', true),
       diarios: await navegar(b, 'https://www.alepa.pa.gov.br/Comunicacao/Diarios'),
