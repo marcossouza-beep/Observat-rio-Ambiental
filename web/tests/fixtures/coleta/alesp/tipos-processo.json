@@ -1,0 +1,208 @@
+{
+  "url": "https://legis-api-portal-prd.al.sp.gov.br/tipo-processo/lista-pesquisa",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T21:23:13.468Z",
+  "corpo": [
+    {
+      "id": 1,
+      "nome": "Projeto de Lei",
+      "sigla": "PL",
+      "subtipos": [
+        {
+          "id": 112,
+          "nome": "Projeto de Lei de LDO",
+          "sigla": "LDO"
+        },
+        {
+          "id": 142,
+          "nome": "Projeto de Lei do Orçamento",
+          "sigla": "Orçamento"
+        },
+        {
+          "id": 141,
+          "nome": "Projeto de Lei de PPA",
+          "sigla": "PLPPA"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Projeto de Lei Complementar",
+      "sigla": "PLC"
+    },
+    {
+      "id": 5,
+      "nome": "Proposta de Emenda à Constituição",
+      "sigla": "PEC"
+    },
+    {
+      "id": 4,
+      "nome": "Projeto de Decreto Legislativo",
+      "sigla": "PDL",
+      "subtipos": [
+        {
+          "id": 241,
+          "nome": "Convênio ICMS - CONFAZ",
+          "sigla": "CFZ"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Projeto de Resolução",
+      "sigla": "PR",
+      "subtipos": [
+        {
+          "id": 10004,
+          "nome": "Projeto de Resolução - Reforma do Regimento Interno"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "nome": "Indicação",
+      "sigla": "IND"
+    },
+    {
+      "id": 6,
+      "nome": "Moção",
+      "sigla": "MOÇ"
+    },
+    {
+      "id": 7,
+      "nome": "Requerimento",
+      "sigla": "REQ",
+      "subtipos": [
+        {
+          "id": 32,
+          "nome": "Adiamento"
+        },
+        {
+          "id": 57,
+          "nome": "Audiência de Comissão"
+        },
+        {
+          "id": 1000000006,
+          "nome": "Coautoria"
+        },
+        {
+          "id": 1000000003,
+          "nome": "Comissão"
+        },
+        {
+          "id": 147,
+          "nome": "Comissão Parlamentar Especial",
+          "sigla": "RCPE"
+        },
+        {
+          "id": 110,
+          "nome": "Congratulações"
+        },
+        {
+          "id": 121,
+          "nome": "Constituição de Comissão de Representação",
+          "sigla": "RCCR"
+        },
+        {
+          "id": 114,
+          "nome": "Constituição de CPI",
+          "sigla": "RCCPI"
+        },
+        {
+          "id": 117,
+          "nome": "Convocação de Secretário de Estado",
+          "sigla": "RCSE"
+        },
+        {
+          "id": 53,
+          "nome": "Desentranhamento"
+        },
+        {
+          "id": 43,
+          "nome": "Inclusão na O. Dia"
+        },
+        {
+          "id": 61,
+          "nome": "Informação - Reiteração"
+        },
+        {
+          "id": 34,
+          "nome": "Juntada"
+        },
+        {
+          "id": 118,
+          "nome": "Licença para Desempenhar Missão Cultural",
+          "sigla": "RLDMC"
+        },
+        {
+          "id": 119,
+          "nome": "Licença para Tratamento de Saúde",
+          "sigla": "RLTS"
+        },
+        {
+          "id": 120,
+          "nome": "Licença para Tratar de Interesse Particular",
+          "sigla": "RLTIP"
+        },
+        {
+          "id": 52,
+          "nome": "Não Arquivamento"
+        },
+        {
+          "id": 116,
+          "nome": "Não Realização de Sessão",
+          "sigla": "RNRS"
+        },
+        {
+          "id": 93,
+          "nome": "Ordem do Dia"
+        },
+        {
+          "id": 111,
+          "nome": "Pesar"
+        },
+        {
+          "id": 59,
+          "nome": "Relator Especial"
+        },
+        {
+          "id": 25,
+          "nome": "Retirada"
+        },
+        {
+          "id": 28,
+          "nome": "Retirada de Emenda"
+        },
+        {
+          "id": 29,
+          "nome": "Retirada do Req. Retirada"
+        },
+        {
+          "id": 50,
+          "nome": "Tramitação"
+        },
+        {
+          "id": 26,
+          "nome": "Urgência"
+        },
+        {
+          "id": 36,
+          "nome": "Votação"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "nome": "Requerimento de Informação",
+      "sigla": "RI",
+      "subtipos": [
+        {
+          "id": 149,
+          "nome": "Resposta Req. Informação",
+          "sigla": "RRI"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/tramitacao/1100004484?page=0&size=10&sort=desc",
+  "status": 404,
+  "tipo": "",
+  "gravadaEm": "2026-10-16T21:23:16.869Z",
+  "corpo": null,
+  "erro": "HTTP 404 em https://legis-api-portal-prd.al.sp.gov.br/processo/tramitacao/1100004484?page=0&size=10&sort=desc"
+}

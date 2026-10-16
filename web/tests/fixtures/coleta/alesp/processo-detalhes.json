@@ -1,0 +1,77 @@
+{
+  "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/detalhes/principais/1100004484",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T21:23:14.864Z",
+  "corpo": {
+    "idProcesso": 1100004484,
+    "idTipoProcesso": 1,
+    "flPropositura": true,
+    "tipoProcesso": "Projeto de Lei",
+    "subtipoProcesso": "Projeto de Lei do Orçamento",
+    "numeroProcesso": 863,
+    "anoProcesso": 2026,
+    "numeroRg": null,
+    "anoRg": null,
+    "nuProcesso": 32325,
+    "nuAno": 2026,
+    "dtPublicacao": "2026-10-01",
+    "dtAutuacao": "2026-09-30",
+    "descricao": "Projeto de Lei 863/2026",
+    "resumo": "Orça a Receita e fixa a Despesa do Estado para o exercício de 2027.",
+    "urlProcesso": "/processo/1100004484",
+    "urlSemPapel": "https://sempapel.al.sp.gov.br/Sistema/Protocolo/Processo2/Digital.aspx?id=307889",
+    "linksArquivosIniciais": [],
+    "etapa": "Pauta",
+    "regimeTramitacao": "Tramitação Prioridade",
+    "faseDiscussao": {
+      "idFaseDiscussao": 1,
+      "txNmDiscussao": "Discussão e votação -",
+      "nuSeqDiscussao": 13
+    },
+    "idEtapa": 8,
+    "analisesAtuais": [],
+    "etapaDetalhes": [],
+    "numeroExterno": null,
+    "tipoContrato": null,
+    "tipoResultado": null,
+    "ultimaTramitacao": "Pauta de 4ª sessão (Emenda).",
+    "transformadoNorma": false,
+    "urlNorma": null,
+    "descricaoNorma": null,
+    "houveVeto": false,
+    "tipoVeto": "",
+    "deliberacaoAlesp": null,
+    "alespExplica": "<p style=\"text-align:justify;\">Este é o projeto da Lei Orçamentária Anual do Estado para 2027, enviado pelo Sr. Governador. A Lei Orçamentária define quanto o Governo deverá arrecadar e poderá gastar e como os recursos públicos serão distribuídos entre os diferentes órgãos, programas, ações e áreas de atuação do Estado, incluindo despesas com pessoal, custeio, investimentos, serviços públicos, transferências e demais obrigações. Também estabelece autorizações e limites para a execução das despesas e para alterações no orçamento ao longo do exercício, observadas as regras fiscais e orçamentárias. Na prática, é a lei que materializa, em valores, o planejamento proposto pelo Plano Plurianual e pela Lei de Diretrizes Orçamentárias para o exercício seguinte, permitindo a execução do orçamento e o acompanhamento e controle de sua aplicação pelos órgãos competentes e pela sociedade.</p>",
+    "tpPublicacaoAlespExplica": "P",
+    "tramitacoes": null,
+    "processosSubordinados": [],
+    "processosPrincipais": [],
+    "indexadores": [
+      {
+        "idTesauro": 4166,
+        "txTesauro": "LEI DO ORÇAMENTO ANUAL - LOA"
+      }
+    ],
+    "autores": [
+      {
+        "id": 105,
+        "matricula": null,
+        "numero": 105,
+        "nome": "Governador",
+        "url": null,
+        "idPartido": null,
+        "partido": null,
+        "ordem": null
+      }
+    ],
+    "apoiadores": [],
+    "interessados": null,
+    "documentos": null,
+    "flPossuiTramitacao": true,
+    "flPossuiVotacaoPlenario": false,
+    "flPossuiVotacaoComissao": false,
+    "flPossuiParecer": false,
+    "flPossuiDocumento": true
+  }
+}
