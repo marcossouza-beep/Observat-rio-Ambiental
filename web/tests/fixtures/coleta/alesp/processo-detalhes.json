@@ -2,7 +2,7 @@
   "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/detalhes/principais/1100004484",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-16T21:23:14.864Z",
+  "gravadaEm": "2026-10-16T21:25:00.592Z",
   "corpo": {
     "idProcesso": 1100004484,
     "idTipoProcesso": 1,

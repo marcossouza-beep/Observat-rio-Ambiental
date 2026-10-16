@@ -1,0 +1,75 @@
+{
+  "url": "https://legis-api-portal-prd.al.sp.gov.br/processo/tramitacoes/1100004484?page=0&size=50&sort=asc",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-16T21:25:01.124Z",
+  "corpo": {
+    "content": [
+      {
+        "data": "2026-09-30",
+        "descricao": "Início da tramitação eletrônica."
+      },
+      {
+        "data": "2026-10-01",
+        "descricao": "Publicado no Diário Oficial em 01/10/2026."
+      },
+      {
+        "data": "2026-10-08",
+        "descricao": "Publicado o <a href=\"https://www.al.sp.gov.br/norma/213030\" target=\"_blank\" rel=\"noopener noreferrer\">Ato do Presidente nº 143, de 2026</a> que, no uso de suas atribuições, e nos termos do artigo 6° do <a href=\"https://www.al.sp.gov.br/norma/206880\" target=\"_blank\" rel=\"noopener noreferrer\">Ato da Mesa\nn° 2, de 7 de fevereiro de 2023</a>, disciplina a forma como se processará, na fase de Pauta, a apresentação de emendas ao referido Projeto de Lei. (D.A., pág. 2)"
+      },
+      {
+        "data": "2026-10-13",
+        "descricao": "Pauta de 1ª sessão (Emenda)."
+      },
+      {
+        "data": "2026-10-14",
+        "descricao": "Publicadas as Emendas de nºs 1 a 27, de autoria do Deputado Carlos Giannazi. (D.A., págs. 23 a 25)"
+      },
+      {
+        "data": "2026-10-14",
+        "descricao": "Pauta de 2ª sessão (Emenda)."
+      },
+      {
+        "data": "2026-10-15",
+        "descricao": "Publicadas as Emendas de nºs 28 a 52, de autoria do Deputado Carlos Giannazi, e de nºs 53 a 55, de autoria do Deputado Alex Madureira. (D.A., págs. 8 a 10)"
+      },
+      {
+        "data": "2026-10-15",
+        "descricao": "Pauta de 3ª sessão (Emenda)."
+      },
+      {
+        "data": "2026-10-16",
+        "descricao": "Publicadas as Emendas de nºs 56 a 172, de autoria do Deputado Carlos Giannazi. (D.A., págs. 9 a 16)"
+      },
+      {
+        "data": "2026-10-16",
+        "descricao": "Pauta de 4ª sessão (Emenda)."
+      }
+    ],
+    "pageable": {
+      "pageNumber": 0,
+      "pageSize": 50,
+      "sort": {
+        "unsorted": true,
+        "sorted": false,
+        "empty": true
+      },
+      "offset": 0,
+      "unpaged": false,
+      "paged": true
+    },
+    "totalPages": 1,
+    "totalElements": 10,
+    "last": true,
+    "numberOfElements": 10,
+    "size": 50,
+    "number": 0,
+    "sort": {
+      "unsorted": true,
+      "sorted": false,
+      "empty": true
+    },
+    "first": true,
+    "empty": false
+  }
+}
