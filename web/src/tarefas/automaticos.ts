@@ -7,6 +7,7 @@ import type { Payload } from 'payload'
 import { enfileirar, linkDescadastro, modelo } from '../lib/email'
 import type { Carater } from '../lib/indicadores'
 import { textoDe } from '../lib/publicacao'
+import { SITE_URL } from '../lib/rotulos'
 import { EVENTOS_PUBLICOS, montarAlerta, montarResumo, regiaoDe, type EventoResumo, type LeiResumo, type Regiao, type TipoEventoPublico } from '../lib/resumo'
 import type { Proposicao } from '../payload-types'
 
@@ -143,6 +144,8 @@ export async function resumoSemanal(payload: Payload, agora = new Date()) {
     const regiao = regiaoDe(a.uf)
     const m = modelo({
       ...c,
+      // Edição regional leva à página das leis estaduais da região
+      botao: regiao ? { texto: `Leis estaduais do ${regiao}`, url: `${SITE_URL}/estaduais?regiao=${encodeURIComponent(regiao)}` } : undefined,
       descadastro: linkDescadastro(a.id),
       motivo: `Você recebe o resumo semanal porque pediu na sua inscrição${regiao ? `; a edição ${regiao} vem do estado informado na sua conta` : ''}.`,
     })

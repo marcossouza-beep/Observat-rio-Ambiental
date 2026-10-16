@@ -279,3 +279,31 @@ export const dadosDoPanorama = cache(async () => {
   }))
   return { itens, propostas, temas: temas.docs, biomas: biomas.docs }
 })
+
+export type Cobertura = 'auto' | 'manual' | 'breve'
+
+/**
+ * Leis estaduais: as propostas estaduais públicas e a cobertura de cada estado.
+ * "auto" = a Assembleia tem conector ligado (coleta diária); "manual" = sem conector, mas há leis acompanhadas pelo autor;
+ * "breve" = ainda não monitorado.
+ */
+export const dadosEstaduais = cache(async () => {
+  const payload = await payloadSite()
+  const [props, fontes] = await Promise.all([
+    payload.find({
+      collection: 'proposicoes',
+      ...publico,
+      where: { esfera: { equals: 'estadual' } },
+      sort: '-ultimaMovimentacao',
+      limit: 5000,
+      depth: 0,
+      pagination: false,
+    }),
+    payload.find({ collection: 'fontes', ...publico, where: { slug: { like: 'casa-' } }, limit: 100, depth: 0, pagination: false, select: { slug: true, ativa: true, conector: true } }),
+  ])
+  const porUF = new Map<string, Proposicao[]>()
+  for (const p of props.docs) if (p.uf) porUF.set(p.uf.toUpperCase(), [...(porUF.get(p.uf.toUpperCase()) || []), p])
+  const automaticas = new Set(fontes.docs.filter((f) => f.ativa && f.conector && /^casa-[a-z]{2}$/.test(f.slug)).map((f) => f.slug.slice(5).toUpperCase()))
+  const cobertura = (uf: string): Cobertura => (automaticas.has(uf) ? 'auto' : porUF.get(uf)?.length ? 'manual' : 'breve')
+  return { porUF, cobertura }
+})

@@ -108,6 +108,8 @@ describe('resumo semanal', () => {
     expect(norte.assunto).toMatch(/^Resumo da semana \(Norte\)/)
     expect(norte.texto).toContain('Semana de votações na Alepa.')
     expect(norte.texto).toContain('NA SUA REGIÃO (NORTE)')
+    expect(norte.texto).toContain('Leis estaduais do Norte: ')
+    expect(norte.texto).toContain('/estaduais?regiao=Norte')
     expect(norte.texto).toContain('Reserva extrativista no Pará')
     const sul = todos.find((e) => e.para === 'sul@exemplo.com')!
     expect(sul.assunto).toMatch(/^Resumo da semana \(Sul\)/)

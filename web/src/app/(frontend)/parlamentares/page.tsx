@@ -16,7 +16,7 @@ type Busca = Promise<{ casa?: string; uf?: string }>
 
 export default async function Parlamentares({ searchParams }: { searchParams: Busca }) {
   const s = await searchParams
-  const casa = s.casa === 'camara' || s.casa === 'senado' ? s.casa : undefined
+  const casa = s.casa === 'camara' || s.casa === 'senado' || s.casa === 'assembleia' ? s.casa : undefined
   const uf = s.uf && UF_NOME[s.uf.toUpperCase()] ? s.uf.toUpperCase() : undefined
   const lista = await listarParlamentares({ casa, uf })
   const filtro = (k: string, v?: string) => {
@@ -42,6 +42,11 @@ export default async function Parlamentares({ searchParams }: { searchParams: Bu
         <Link className="chip" aria-current={casa === 'senado' ? 'true' : undefined} href={filtro('casa', 'senado')}>
           Senadores
         </Link>
+        {casa === 'assembleia' ? (
+          <Link className="chip" aria-current="true" href={filtro('casa')}>
+            Deputados estaduais ✕
+          </Link>
+        ) : null}
         {uf ? (
           <Link className="chip" aria-current="true" href={filtro('uf')}>
             {UF_NOME[uf]} ✕
@@ -63,7 +68,7 @@ export default async function Parlamentares({ searchParams }: { searchParams: Bu
               <span>
                 <b>{p.nome}</b>
                 <small>
-                  {p.uf ? <Bandeira uf={p.uf} /> : null} {[p.partido, p.uf].filter(Boolean).join('-')} · {p.casa === 'senado' ? 'Senado' : 'Câmara'}
+                  {p.uf ? <Bandeira uf={p.uf} /> : null} {[p.partido, p.uf].filter(Boolean).join('-')} · {p.casa === 'senado' ? 'Senado' : p.casa === 'assembleia' ? 'Assembleia' : 'Câmara'}
                 </small>
                 <small>
                   {[p.votos ? `${p.votos} ${p.votos === 1 ? 'voto' : 'votos'}` : '', p.autorias ? `${p.autorias} ${p.autorias === 1 ? 'autoria' : 'autorias'}` : ''].filter(Boolean).join(' · ')}

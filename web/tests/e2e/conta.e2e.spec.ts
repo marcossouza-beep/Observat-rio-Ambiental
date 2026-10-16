@@ -8,7 +8,7 @@ import config from '../../src/payload.config.js'
 
 const EMAIL = 'inscrita-e2e@exemplo.com'
 const PANT = '/leis/pl-140-2026-regras-de-protecao-do-pantanal'
-const RESEX_PARECER = '/pareceres/pl-123-2026-nova-reserva-extrativista-no-baixo-rio-exemplo'
+const RESEX_PARECER = '/pareceres/pa-pl-123-2026-nova-reserva-extrativista-no-baixo-rio-exemplo'
 let payload: Payload
 let page: Page
 

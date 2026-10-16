@@ -1,6 +1,7 @@
 /**
  * Conector do SAPL (Interlegis): um por Assembleia, todos com o mesmo código.
- * Em cada rodada lista as matérias atualizadas desde a última coleta (data_ultima_atualizacao),
+ * Em cada rodada lista as matérias atualizadas desde a última coleta (data_ultima_atualizacao) e os andamentos
+ * do período (para não perder a acompanhada cuja tramitação andou sem mudar a data da matéria),
  * fica só com os tipos que interessam (tipoDeInteresse), e busca tramitação e autoria das propostas
  * já acompanhadas e das novas com nota de relevância suficiente (dicionário nacional + palavras-chave do estado).
  */
@@ -71,6 +72,30 @@ export function conectorSapl(uf: string, nome: string, base: string): Conector {
       )
       const deInteresse = lista.filter((m) => tipoDeInteresse(tipos.get(Number(m.tipo))))
 
+      // Andamentos da semana: tramitação nova nem sempre muda a data de atualização da matéria.
+      // As acompanhadas que andaram e não vieram na lista acima são buscadas uma a uma.
+      const desde = dia(ctx.desde)
+      const tramitadas = (
+        await todas(
+          ctx,
+          `${base}/api/materia/tramitacao/?data_tramitacao__gte=${desde}&o=-data_tramitacao&page_size=100`,
+          5,
+        )
+      ).lista.filter((t) => `${t.data_tramitacao || ''}` >= desde)
+      const naLista = new Set(lista.map((m) => Number(m.id)))
+      const faltando = [...new Set(tramitadas.map((t) => Number(t.materia)))].filter(
+        (id) => id && !naLista.has(id) && ctx.acompanhadas.has(`sapl:${uf}:${id}`),
+      )
+      for (const id of faltando) {
+        try {
+          deInteresse.push(
+            (await ctx.buscar(`${base}/api/materia/materialegislativa/${id}/`)) as Registro,
+          )
+        } catch (e) {
+          avisos.push(`matéria ${id}: ${(e as Error).message}`.slice(0, 200))
+        }
+      }
+
       const pacotes: PacoteProposicao[] = []
       let novas = 0
       for (const m of deInteresse) {
@@ -118,6 +143,8 @@ export function conectorSapl(uf: string, nome: string, base: string): Conector {
         amostra: {
           listadas: lista.length,
           deInteresse: deInteresse.length,
+          andamentosNoPeriodo: tramitadas.length,
+          acompanhadasPorAndamento: faltando.length,
           primeira: lista[0] ?? null,
         },
         avisos,

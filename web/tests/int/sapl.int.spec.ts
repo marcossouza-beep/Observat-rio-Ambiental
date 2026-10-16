@@ -76,11 +76,40 @@ describe('conector do SAPL (Tocantins)', () => {
     expect((await payload.count({ collection: 'proposicoes', where: { chaveOrigem: { like: 'sapl:to:' } } })).totalDocs).toBe(2)
   })
 
+  it('acompanhada que andou sem mudar a data da matéria vem pelos andamentos do período', async () => {
+    const andamento = { ...corpo('to-tramitacao-0').results[0], id: 999999, data_tramitacao: '2026-10-15', texto: 'Andamento novo' }
+    const semMudanca = (url: string) => {
+      const u = new URL(url)
+      if (u.pathname.endsWith('/materialegislativa/')) return Promise.resolve(pagina([]))
+      if (u.pathname.endsWith('/materialegislativa/13716/')) return Promise.resolve(corpo('to-materia-0'))
+      if (u.pathname.endsWith('/tramitacao/') && !u.searchParams.get('materia')) return Promise.resolve(pagina([andamento]))
+      if (u.pathname.endsWith('/tramitacao/') && u.searchParams.get('materia') === '13716') return Promise.resolve(pagina([andamento, ...corpo('to-tramitacao-0').results]))
+      return buscar(url)
+    }
+    const r = await coletarFonte(payload, 'casa-to', { agora: new Date(AGORA.getTime() + 108e5), buscar: semMudanca })
+    expect(r.balanco).toMatchObject({ novas: 0, tramitacoes: 1 })
+    const mp = (await payload.find({ collection: 'proposicoes', where: { chaveOrigem: { equals: 'sapl:to:13716' } }, depth: 0 })).docs[0]
+    expect((await payload.count({ collection: 'tramitacoes', where: { proposicao: { equals: mp.id } } })).totalDocs).toBe(6)
+  })
+
   it('o PL 77/2026 de Tocantins não se confunde com um PL 77/2026 federal', async () => {
     const federal = await payload.create({ collection: 'proposicoes', data: { esfera: 'federal', sigla: 'PLO', numero: 77, ano: 2026, situacaoEditorial: 'triagem', chaveOrigem: 'camara:teste-77' } })
     await coletarFonte(payload, 'casa-to', { agora: new Date(AGORA.getTime() + 72e5), buscar })
     const doFederal = await payload.findByID({ collection: 'proposicoes', id: federal.id, depth: 0 })
     expect(doFederal.chavesExtras || []).not.toContain('sapl:to:99001')
     await payload.delete({ collection: 'proposicoes', id: federal.id })
+  })
+
+  it('palavra-chave de Tocantins não pesa em proposta federal nem de outro estado', async () => {
+    const ementa = 'Dispõe sobre o turismo no Jalapão'
+    const criar = (data: Record<string, unknown>) => payload.create({ collection: 'proposicoes', data: { sigla: 'PL', numero: 4242, ano: 2026, ementa, situacaoEditorial: 'triagem', ...data } as never })
+    const federal = await criar({ esfera: 'federal', chaveOrigem: 'camara:teste-4242' })
+    const doPara = await criar({ esfera: 'estadual', uf: 'PA', chaveOrigem: 'teste:pa:4242' })
+    const deTocantins = await criar({ esfera: 'estadual', uf: 'TO', chaveOrigem: 'teste:to:4242' })
+    expect(federal.termosEncontrados || []).not.toContain('jalapão')
+    expect(doPara.termosEncontrados || []).not.toContain('jalapão')
+    expect(deTocantins.termosEncontrados).toContain('jalapão')
+    expect(new Set([federal.slug, doPara.slug, deTocantins.slug]).size).toBe(3)
+    await payload.delete({ collection: 'proposicoes', where: { id: { in: [federal.id, doPara.id, deTocantins.id] } } })
   })
 })

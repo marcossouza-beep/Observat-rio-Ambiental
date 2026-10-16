@@ -25,7 +25,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Link>
             <nav className="nav" aria-label="Principal">
               <Link href="/leis?esfera=federal">Federais</Link>
-              <Link href="/leis?esfera=estadual">Estaduais</Link>
+              <Link href="/estaduais">Estaduais</Link>
               <Link href="/pareceres">Opinião</Link>
               <Link href="/artigos">Artigos</Link>
               <Link href="/temas">Temas e biomas</Link>

@@ -412,3 +412,43 @@ a:hover .ico-l { transform: translateX(-3px); }
   .pano-chamada { grid-template-columns: 1fr; gap: 8px; }
   .numeros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* ---------- leis estaduais (protótipo) ---------- */
+.pg-head { padding-block: 40px 18px; display: grid; gap: 12px; }
+.pg-head h1 { font-size: clamp(1.9rem, 4.8vw, 2.6rem); font-weight: 800; }
+.pg-head p { color: var(--gray); max-width: 56ch; }
+.flag.lg { width: 48px; height: 32px; border-radius: 5px; box-shadow: 0 2px 8px -3px rgba(22, 32, 26, 0.35); }
+.uf-title { display: flex; align-items: center; gap: 12px; }
+.uf-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 28px; align-items: start; }
+.tilemap { display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(8, 1fr); gap: 5px; aspect-ratio: 6/8; max-width: 360px; width: 100%; }
+.uf { border: 0; border-radius: 9px; font-size: 0.8rem; font-weight: 700; display: grid; place-items: center; align-content: center; line-height: 1; transition: transform 0.15s, box-shadow 0.15s; position: relative; }
+.uf small { display: block; font-size: 0.64rem; font-weight: 600; margin-top: 2px; opacity: 0.85; }
+.uf:hover { transform: scale(1.08); z-index: 1; }
+.uf[aria-current='true'] { box-shadow: 0 0 0 3px var(--ink); z-index: 2; }
+.uf.n0 { background: var(--green-50); color: var(--green-dk); }
+.uf.n1 { background: #7fcb9d; color: #0f3a22; }
+.uf.n2 { background: var(--green-dk); color: #fff; }
+.uf.breve { background: repeating-linear-gradient(135deg, var(--white) 0 5px, var(--line) 5px 7px); color: var(--soft); box-shadow: inset 0 0 0 1px var(--line); }
+.uf.breve[aria-current='true'] { box-shadow: 0 0 0 3px var(--ink); }
+.maplegend { display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 0.8rem; color: var(--gray); margin-top: 12px; }
+.maplegend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.ufpanel { background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 20px; display: grid; gap: 14px; }
+.ufpanel h2 { font-size: 1.5rem; font-weight: 800; }
+.ufpanel .casa { color: var(--gray); font-size: 0.9rem; margin-top: -8px; }
+.ufstats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.ufstats div { background: var(--bg); border-radius: 12px; padding: 10px 12px; display: grid; gap: 2px; }
+.ufstats b { font-size: 1.4rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.ufstats span { font-size: 0.78rem; color: var(--gray); }
+.cov { display: flex; gap: 10px; align-items: flex-start; font-size: 0.88rem; color: var(--gray); background: var(--bg); border-radius: 12px; padding: 10px 12px; }
+.cov b { color: var(--ink); }
+.minilist { display: grid; gap: 8px; }
+.minilaw { display: grid; gap: 4px; border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; transition: border-color 0.15s; }
+.minilaw:hover { border-color: var(--green); }
+.minilaw b { font-size: 0.98rem; }
+.minilaw .row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.minilaw .row span.n { font-size: 0.8rem; color: var(--soft); }
+.ask { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; border-top: 1px dashed var(--line); padding-top: 12px; font-size: 0.88rem; color: var(--gray); }
+@media (max-width: 760px) {
+  .uf-layout { grid-template-columns: 1fr; }
+  .tilemap { margin: 0 auto; }
+}

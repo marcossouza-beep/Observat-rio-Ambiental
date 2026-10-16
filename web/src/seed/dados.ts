@@ -90,3 +90,52 @@ export const PALAVRAS: [string, string, number, boolean?][] = [
   ['semana nacional', 'Exclusão', 0, true],
   ['título de cidadão', 'Exclusão', 0, true],
 ]
+
+/**
+ * [termo, grupo, peso, UF] — palavras da região Norte que só contam nas propostas daquele estado (Fase 5).
+ * Órgãos ambientais estaduais, áreas protegidas, rios e conflitos conhecidos de cada estado. O autor ajusta no painel.
+ */
+export const PALAVRAS_NORTE: [string, string, number, string][] = [
+  // Tocantins
+  ['Naturatins', 'Órgão ambiental', 8, 'TO'],
+  ['Jalapão', 'Unidades de conservação', 7, 'TO'],
+  ['Ilha do Bananal', 'Unidades de conservação', 7, 'TO'],
+  ['Cantão', 'Unidades de conservação', 6, 'TO'],
+  ['Rio Araguaia', 'Água', 6, 'TO'],
+  ['Rio Tocantins', 'Água', 6, 'TO'],
+  ['Matopiba', 'Florestas', 6, 'TO'],
+  // Acre
+  ['Imac', 'Órgão ambiental', 8, 'AC'],
+  ['Serra do Divisor', 'Unidades de conservação', 7, 'AC'],
+  ['Chico Mendes', 'Unidades de conservação', 6, 'AC'],
+  ['Rio Acre', 'Água', 6, 'AC'],
+  ['serviços ambientais', 'Clima', 7, 'AC'],
+  // Amazonas
+  ['Ipaam', 'Órgão ambiental', 8, 'AM'],
+  ['Sema-AM', 'Órgão ambiental', 8, 'AM'],
+  ['BR-319', 'Florestas', 7, 'AM'],
+  ['Bolsa Floresta', 'Clima', 7, 'AM'],
+  ['Rio Negro', 'Água', 5, 'AM'],
+  ['manejo florestal', 'Florestas', 7, 'AM'],
+  // Rondônia
+  ['Sedam', 'Órgão ambiental', 8, 'RO'],
+  ['Guajará-Mirim', 'Unidades de conservação', 6, 'RO'],
+  ['Jaci-Paraná', 'Unidades de conservação', 7, 'RO'],
+  ['Rio Madeira', 'Água', 6, 'RO'],
+  ['zoneamento socioeconômico-ecológico', 'Florestas', 8, 'RO'],
+  // Pará
+  ['Semas', 'Órgão ambiental', 8, 'PA'],
+  ['Ideflor', 'Órgão ambiental', 8, 'PA'],
+  ['Belo Monte', 'Água', 6, 'PA'],
+  ['Tapajós', 'Água', 6, 'PA'],
+  ['Xingu', 'Água', 6, 'PA'],
+  ['Carajás', 'Mineração', 6, 'PA'],
+  // Amapá
+  ['Imap', 'Órgão ambiental', 8, 'AP'],
+  ['Tumucumaque', 'Unidades de conservação', 7, 'AP'],
+  ['Foz do Amazonas', 'Costeiro e marinho', 7, 'AP'],
+  // Roraima
+  ['Femarh', 'Órgão ambiental', 8, 'RR'],
+  ['Yanomami', 'Povos e comunidades', 8, 'RR'],
+  ['lavrado', 'Florestas', 6, 'RR'],
+]

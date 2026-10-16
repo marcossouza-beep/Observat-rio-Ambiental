@@ -20,7 +20,7 @@ export default async function Inicio() {
   const geral = padrao(panorama.itens)
   const explore = [
     { href: '/leis?esfera=federal', icone: <IconeFederal />, titulo: 'Leis federais', desc: 'Câmara, Senado e Presidência', n: `${n.federais} ${n.federais === 1 ? 'lei acompanhada' : 'leis acompanhadas'}` },
-    { href: '/leis?esfera=estadual', icone: <IconeEstadual />, titulo: 'Leis estaduais', desc: 'Assembleias Legislativas', n: `${n.estaduais} ${n.estaduais === 1 ? 'lei' : 'leis'} · ${n.estados} ${n.estados === 1 ? 'estado' : 'estados'}` },
+    { href: '/estaduais', icone: <IconeEstadual />, titulo: 'Leis estaduais', desc: 'Assembleias Legislativas', n: `${n.estaduais} ${n.estaduais === 1 ? 'lei' : 'leis'} · ${n.estados} ${n.estados === 1 ? 'estado' : 'estados'}` },
     { href: '/pareceres', icone: <IconeOpiniao />, titulo: 'Opinião', desc: 'Os pareceres técnicos', n: `${n.pareceres} ${n.pareceres === 1 ? 'parecer publicado' : 'pareceres publicados'}` },
     { href: '/artigos', icone: <IconeArtigos />, titulo: 'Artigos', desc: 'Tendências, explicadores e dados', n: `${n.artigos} ${n.artigos === 1 ? 'artigo' : 'artigos'}` },
   ]

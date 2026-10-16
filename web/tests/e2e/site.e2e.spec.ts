@@ -135,6 +135,21 @@ test.describe('Site público', () => {
     await expect(page.locator('.law').first()).toBeVisible()
   })
 
+  test('leis estaduais: mapa, painel do estado e cobertura', async ({ page }) => {
+    await page.goto('/estaduais?uf=PA')
+    await expect(page.locator('h1')).toHaveText('Leis estaduais')
+    await expect(page.locator('.uf-title h2')).toHaveText('Pará')
+    await expect(page.locator('.ufpanel .sub-h')).toHaveText('Norte')
+    await expect(page.locator('.minilaw').first()).toBeVisible()
+    await expect(page.locator('.cov .tag')).toHaveText('Monitoramento manual')
+    await page.locator('.tilemap a[title="São Paulo"]').click()
+    await expect(page).toHaveURL(/uf=SP/)
+    await expect(page.locator('.cov .tag')).toHaveText('Em breve')
+    await expect(page.locator('.ask .pill-btn')).toHaveText('Avise-me')
+    await page.goto('/estaduais?regiao=Norte')
+    await expect(page.locator('.chip[aria-current="true"]')).toHaveText('Norte')
+  })
+
   test('sitemap, robots e página inexistente', async ({ page, request }) => {
     const sm = await (await request.get('/sitemap.xml')).text()
     expect(sm).toContain(LIC)

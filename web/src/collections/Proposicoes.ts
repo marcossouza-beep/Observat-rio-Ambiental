@@ -33,7 +33,11 @@ export const Proposicoes: CollectionConfig = {
         const anterior = [originalDoc?.titulo, originalDoc?.ementa, originalDoc?.art1].filter(Boolean).join(' ')
         if (texto && (texto !== anterior || data.relevancia == null)) {
           const dic = await req.payload.find({ collection: 'palavras-chave', limit: 1000, depth: 0, req, pagination: false })
-          const r = pontuar(texto, dic.docs.map((d) => ({ termo: d.termo, peso: d.peso, exclusao: !!d.exclusao, grupo: d.grupo || undefined }) as Termo))
+          // Palavra de um estado só conta nas propostas daquele estado
+          const esfera = data.esfera ?? originalDoc?.esfera
+          const uf = esfera === 'estadual' ? (data.uf ?? originalDoc?.uf)?.toUpperCase() : undefined
+          const termos = dic.docs.filter((d) => !d.uf || d.uf.toUpperCase() === uf)
+          const r = pontuar(texto, termos.map((d) => ({ termo: d.termo, peso: d.peso, exclusao: !!d.exclusao, grupo: d.grupo || undefined }) as Termo))
           data.relevancia = r.nota
           data.termosEncontrados = r.encontrados
         }

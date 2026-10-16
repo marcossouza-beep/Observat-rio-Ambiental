@@ -102,6 +102,14 @@ Mapa das 27 casas legislativas estaduais e dos 27 Diários Oficiais: URL, format
 
 Conectores dos estados da região escolhida, palavras-chave regionais, páginas regionais e newsletter regional.
 
+> **Fase 5 (Norte) — feita a parte que depende só de nós:**
+> - **Conectores:** Assembleias do Acre, Amazonas, Rondônia e Tocantins pelo SAPL (`web/src/coleta/sapl/`), na mesma coleta das 6h, 12h, 18h e 23h. Proposta acompanhada recebe andamentos, situação e autoria; proposta nova só entra na Triagem com nota de relevância suficiente. A fonte de cada casa liga sozinha quando o conector chega (`pnpm levantamento:fontes`); se o autor desligar, fica desligada. Teste ao vivo em "Teste das APIs" (não essencial).
+> - **Estadual e federal não se misturam:** o endereço da proposta estadual leva a UF (`to-plo-77-2026`), e a busca por número só junta propostas da mesma esfera e do mesmo estado.
+> - **Palavras-chave regionais:** 35 termos dos sete estados (órgãos ambientais, áreas protegidas, rios, conflitos), cada um valendo só nas propostas do seu estado (`pnpm seed`). O autor ajusta em Palavras-chave no painel.
+> - **Página regional:** "Leis estaduais" (`/estaduais`), a tela do protótipo: mapa por estado, chips de região, painel do estado com contagens, cobertura real (automático = conector ligado; manual = há leis acompanhadas pelo autor; em breve), padrão de atuação, leis e deputados estaduais.
+> - **Newsletter regional:** a edição por região do resumo semanal (Fase 3) agora termina com o botão "Leis estaduais do Norte".
+> - **Pendente fora do código:** Pará, Amapá e Roraima estão em nível D (Alepa sem a lista no HTML; Alap não responde de fora do Brasil; ALE-RR usa o SAPL, mas recusa o acesso à API, e é preciso pedir liberação). Ficam em monitoramento manual pelo autor até haver acesso.
+
 ## Fase 6 — Expansão
 
 Uma região por ciclo, repetindo o processo do piloto.

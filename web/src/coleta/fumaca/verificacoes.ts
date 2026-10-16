@@ -370,11 +370,12 @@ export const VERIFICACOES: Verificacao[] = [
           buscar: buscarNaRede(rapido),
         })
         const p = r.pacotes[0]
-        const a = r.amostra as { deInteresse?: number } | undefined
+        const a = r.amostra as { deInteresse?: number; andamentosNoPeriodo?: number } | undefined
         return {
           ok: true,
           notas: [
             `${r.itensListados} matérias atualizadas na semana (${a?.deInteresse ?? '?'} de tipos que interessam)`,
+            `${a?.andamentosNoPeriodo ?? '?'} andamentos (tramitações) na semana`,
             `${r.pacotes.length} abertas: ${r.pacotes.map((x) => `${x.proposicao.sigla} ${x.proposicao.numero}/${x.proposicao.ano} (${x.tramitacoes.length} andamentos)`).join('; ') || 'nenhuma relevante no período'}`,
             ...r.avisos,
           ],
