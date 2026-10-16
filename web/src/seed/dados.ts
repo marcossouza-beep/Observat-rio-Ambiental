@@ -314,6 +314,8 @@ export const PALAVRAS: [string, string, number, boolean?][] = [
   ['planície pantaneira', 'Pantanal', 7],
   ['área úmida', 'Pantanal', 7],
   ['Convenção de Ramsar', 'Pantanal', 8],
+  ['Rio Paraguai', 'Pantanal', 7],
+  ['bacia do Alto Paraguai', 'Pantanal', 8],
   ['Pampa', 'Pampa', 4],
   ['campo nativo', 'Pampa', 7],
   ['campos sulinos', 'Pampa', 7],
@@ -434,4 +436,34 @@ export const PALAVRAS_NE: [string, string, number, string][] = [
   ['Adema', 'Licenciamento', 8, 'SE'],
   ['Serra de Itabaiana', 'Unidades de conservação', 7, 'SE'],
   ['Rio Sergipe', 'Água', 6, 'SE'],
+]
+
+/** Centro-Oeste (Fase 6): órgãos, unidades de conservação, rios e temas de cada estado; cada termo vale só no seu estado. */
+export const PALAVRAS_CO: [string, string, number, string][] = [
+  // Distrito Federal
+  ['Ibram', 'Licenciamento', 8, 'DF'],
+  ['Lago Paranoá', 'Água', 6, 'DF'],
+  ['Adasa', 'Água', 7, 'DF'],
+  ['Floresta Nacional de Brasília', 'Unidades de conservação', 7, 'DF'],
+  ['APA do Planalto Central', 'Unidades de conservação', 7, 'DF'],
+  // Goiás
+  ['Semad', 'Licenciamento', 8, 'GO'],
+  ['Chapada dos Veadeiros', 'Unidades de conservação', 7, 'GO'],
+  ['Parque Estadual da Serra de Caldas', 'Unidades de conservação', 6, 'GO'],
+  ['Rio Meia Ponte', 'Água', 6, 'GO'],
+  ['Kalunga', 'Povos e comunidades', 7, 'GO'],
+  // Mato Grosso do Sul
+  ['Imasul', 'Licenciamento', 8, 'MS'],
+  ['Serra da Bodoquena', 'Unidades de conservação', 7, 'MS'],
+  ['Rio Taquari', 'Água', 6, 'MS'],
+  ['Rio Miranda', 'Água', 6, 'MS'],
+  ['Guarani-Kaiowá', 'Povos e comunidades', 7, 'MS'],
+  // Mato Grosso
+  ['Sema-MT', 'Licenciamento', 8, 'MT'],
+  ['Chapada dos Guimarães', 'Unidades de conservação', 7, 'MT'],
+  ['Parque Indígena do Xingu', 'Povos e comunidades', 7, 'MT'],
+  ['Rio Cuiabá', 'Água', 6, 'MT'],
+  ['Lei do Pantanal mato-grossense', 'Pantanal', 9, 'MT'],
+  ['moratória da soja', 'Florestas', 8, 'MT'],
+  ['Fethab', 'Agrotóxicos', 5, 'MT'],
 ]
