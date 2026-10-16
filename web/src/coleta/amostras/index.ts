@@ -206,6 +206,33 @@ const PASSOS_NORTE: Passo[] = [
       await salvar('alepa', 'leis-numero', await buscar(`${api}?numero=5887`, 60))
       await salvar('alepa', 'api-doc', await buscar('https://bancodeleis.alepa.pa.gov.br/api.php'))
       await salvar('alepa', 'tipos-proposicao', await buscar('https://www.alepa.pa.gov.br/Legislativo/GetTipoProposicoes'))
+      // Lista de proposições (painel DevExpress): POST direto, sem navegador, com variações do campo de tipo
+      const ano = new Date().getFullYear()
+      const variacoes: Record<string, Record<string, string>> = {
+        'proposicoes-ano': {},
+        'proposicoes-tipo-IdTipoProposicao': { 'model[IdTipoProposicao]': '3' },
+        'proposicoes-tipo-IdTipo': { 'model[IdTipo]': '3' },
+        'proposicoes-tipo-TipoProposicao': { 'model[TipoProposicao]': '3' },
+        'proposicoes-tipo-ComboBox': { ComboBoxTipoProposicao_VI: '3', 'model[ComboBoxTipoProposicao]': '3' },
+        'proposicoes-texto-ambiental': { 'model[Texto]': 'ambiental' },
+      }
+      for (const [nome, extra] of Object.entries(variacoes)) {
+        const corpo = new URLSearchParams({ DXCallbackName: 'cbpProposicoes', __DXCallbackArgument: 'c0:[object Object]', 'model[Numero]': '', 'model[Ano]': String(ano), 'model[IdAutor]': '', 'model[Texto]': '', ...extra })
+        const gravadaEm = new Date().toISOString()
+        try {
+          const r = await fetch('https://www.alepa.pa.gov.br/Legislativo/CallbackPanelProposicoes', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36' },
+            body: corpo.toString(),
+            signal: AbortSignal.timeout(45_000),
+          })
+          const texto = await r.text()
+          const total = /(\d+) Resultados/.exec(texto)?.[1]
+          await salvar('alepa', nome, { url: `POST CallbackPanelProposicoes ${JSON.stringify(extra)}`, status: r.status, tipo: r.headers.get('content-type') || '', gravadaEm, corpo: { total, html: texto.slice(0, 60_000) } })
+        } catch (e) {
+          await salvar('alepa', nome, { url: 'POST CallbackPanelProposicoes', status: null, tipo: '', gravadaEm, corpo: null, erro: (e as Error).message })
+        }
+      }
     },
   },
 ]
