@@ -2,7 +2,7 @@
   "url": "https://bancodeleis.alepa.pa.gov.br/api/leis.php?numero=5887",
   "status": 200,
   "tipo": "application/json; charset=utf-8",
-  "gravadaEm": "2026-10-16T02:46:41.321Z",
+  "gravadaEm": "2026-10-16T03:11:20.754Z",
   "corpo": {
     "status": true,
     "total": 1,
