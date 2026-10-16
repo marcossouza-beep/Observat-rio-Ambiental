@@ -108,7 +108,10 @@ Conectores dos estados da região escolhida, palavras-chave regionais, páginas 
 > - **Palavras-chave regionais:** 35 termos dos sete estados (órgãos ambientais, áreas protegidas, rios, conflitos), cada um valendo só nas propostas do seu estado (`pnpm seed`). O autor ajusta em Palavras-chave no painel.
 > - **Página regional:** "Leis estaduais" (`/estaduais`), a tela do protótipo: mapa por estado, chips de região, painel do estado com contagens, cobertura real (automático = conector ligado; manual = há leis acompanhadas pelo autor; em breve), padrão de atuação, leis e deputados estaduais.
 > - **Newsletter regional:** a edição por região do resumo semanal (Fase 3) agora termina com o botão "Leis estaduais do Norte".
-> - **Pendente fora do código:** Pará, Amapá e Roraima estão em nível D (Alepa sem a lista no HTML; Alap não responde de fora do Brasil; ALE-RR usa o SAPL, mas recusa o acesso à API, e é preciso pedir liberação). Ficam em monitoramento manual pelo autor até haver acesso.
+> - **Pará, Amapá e Roraima (testes de 16/10/2026, `web/levantamento/alternativas.json`):** não há base nacional com os projetos estaduais. Saídas encontradas:
+>   - **Roraima:** o SAPL recusa até navegador (bloqueio de rede), mas o **Diário da ALE-RR** (diarios.al.rr.leg.br) tem a API do WordPress com as edições em PDF, quase diárias, e publica o texto integral dos projetos de lei e os autógrafos (ed. 4747: 32 menções a projeto de lei). Dá para coletar automaticamente pelo diário.
+>   - **Pará:** o **Banco de Leis da Alepa** tem API aberta e documentada (`bancodeleis.alepa.pa.gov.br/api/leis.php`, JSON, busca por número, ano, tipo e palavra) para as leis aprovadas. A página de proposições usa uma API interna (`/Legislativo/GetTipoProposicoes`); falta achar a chamada da lista. O Diário Oficial da Alepa é semanal, em painel que monta a lista no navegador.
+>   - **Amapá:** o site da Alap não responde de fora do Brasil, nem com navegador. Precisa de coleta a partir de um servidor no Brasil.
 
 ## Fase 6 — Expansão
 
