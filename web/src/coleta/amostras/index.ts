@@ -186,11 +186,19 @@ const PASSOS_SAPL: Passo[] = [
 ]
 
 /** Página HTML inteira (até 400 mil caracteres), como navegador. */
-async function gravarHtml(fonte: string, nome: string, url: string) {
+async function gravarHtml(fonte: string, nome: string, url: string, form?: Record<string, string>) {
   const gravadaEm = new Date().toISOString()
   try {
-    const r = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36', 'Accept-Language': 'pt-BR' }, signal: AbortSignal.timeout(45_000), redirect: 'follow' })
-    const html = await r.text()
+    const r = await fetch(url, {
+      method: form ? 'POST' : 'GET',
+      headers: { 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36', 'Accept-Language': 'pt-BR', ...(form ? { 'Content-Type': 'application/x-www-form-urlencoded' } : {}) },
+      body: form ? new URLSearchParams(form).toString() : undefined,
+      signal: AbortSignal.timeout(45_000),
+      redirect: 'follow',
+    })
+    // Páginas antigas (Alece) vêm em ISO-8859-1
+    const latin1 = /iso-8859-1|latin1|windows-1252/i.test(r.headers.get('content-type') || '')
+    const html = new TextDecoder(latin1 ? 'latin1' : 'utf-8').decode(await r.arrayBuffer())
     return salvar(fonte, nome, { url: r.url || url, status: r.status, tipo: r.headers.get('content-type') || '', gravadaEm, corpo: { html: html.slice(0, 400_000) } })
   } catch (e) {
     return salvar(fonte, nome, { url, status: null, tipo: '', gravadaEm, corpo: null, erro: (e as Error).message })
@@ -217,25 +225,25 @@ const PASSOS_NE: Passo[] = [
       await gravarHtml('alba', 'spl-consulta', 'https://albalegis.nopapercloud.com.br/spl/consulta-producao.aspx')
       await gravarHtml('alba', 'nopapercloud-app', 'https://alba.nopapercloud.app')
       await gravarHtml('alba', 'diario-egba', 'https://egbanet.egba.ba.gov.br/alba')
+      await gravarHtml('alba', 'diario-egba-home-js', 'https://egbanet.egba.ba.gov.br/theme/Ba/js/controllers/home.js')
+      await gravarHtml('alba', 'diario-egba-site-js', 'https://egbanet.egba.ba.gov.br/theme/Ba/js/site.js')
+      await gravarHtml('alba', 'diario-egba-busca', 'https://egbanet.egba.ba.gov.br/alba/buscanova')
     },
   },
   {
     fonte: 'alece',
     nome: 'proposicoes',
     async rodar() {
-      await gravarHtml('alece', 'proposicoes', 'https://www.al.ce.gov.br/paginas/proposicoes?menu=96')
-      await gravarHtml('alece', 'avulso-de-projeto', 'https://www.al.ce.gov.br/legislativo/ordem-do-dia/avulso-de-projeto')
-      await gravarHtml('alece', 'expediente', 'https://www.al.ce.gov.br/legislativo/expediente')
-      await gravarHtml('alece', 'expediente-historico', 'https://www.al.ce.gov.br/legislativo/expediente-historico')
-      // Lista por legislatura (www2): projetos de lei e de lei complementar tramitando
-      const www2 = 'http://www2.al.ce.gov.br/legislativo/proposicoes/numero.php?nome=31_legislatura'
-      const lista = await gravarHtml('alece', 'projetos-lei-tramitando', `${www2}&tabela=projeto_lei&opcao=T`)
-      await gravarHtml('alece', 'projetos-compl-tramitando', `${www2}&tabela=projeto_compl&opcao=T`)
+      // Lista por legislatura (www2), em ordem de número; a ficha de cada projeto (tramit<ano>/pl<n>_<aa>.htm)
+      const lista = await gravarHtml('alece', 'projetos-lei-tramitando', 'http://www2.al.ce.gov.br/legislativo/proposicoes/numero.php?nome=31_legislatura&tabela=projeto_lei&opcao=T')
       const html = ((lista.corpo as { html?: string } | null)?.html || '') as string
-      const det = [...html.matchAll(/href=["']([^"']+)["']/g)].map((m) => m[1].replace(/&amp;/g, '&')).find((u) => /proposic|projeto|codigo|id=/i.test(u) && !/numero\.php/.test(u))
-      if (det) await gravarHtml('alece', 'detalhe-projeto', new URL(det, 'http://www2.al.ce.gov.br/legislativo/proposicoes/').toString())
-      await gravarHtml('alece', 'diario-consulta', 'https://doalece.al.ce.gov.br/publico/consulta')
-      await gravarHtml('alece', 'diario', 'https://doalece.al.ce.gov.br/')
+      const ficha = /https?:\/\/www2\.al\.ce\.gov\.br\/legislativo\/tramit\d{4}\/pl\d+_\d+\.htm/.exec(html)?.[0]
+      if (ficha) await gravarHtml('alece', 'ficha-projeto', ficha)
+      // Busca por ano (POST busca.php): todos os projetos do ano, com o histórico de cada um
+      const ano = String(new Date().getFullYear())
+      const busca = (t: string) => `http://www2.al.ce.gov.br/legislativo/proposicoes/busca.php?nome=31_legislatura&tabela=${t}&opcao=T`
+      for (const t of ['projeto_lei', 'projeto_mens', 'projeto_emen', 'projeto_compl', 'projeto_decre'])
+        await gravarHtml('alece', `busca-${t}-${ano}`, busca(t), { pesquisa: ano, escolha: 'ano', B1: 'Busca' })
     },
   },
 ]
