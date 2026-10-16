@@ -1,0 +1,151 @@
+/**
+ * Testa as alternativas de coleta para os estados do Norte sem API aberta (Pará, Amapá, Roraima):
+ *   - navegador de verdade (Playwright) nas páginas de proposições e do Diário Oficial do Legislativo,
+ *     anotando as chamadas que a página faz por trás (de onde vem a lista);
+ *   - o SAPL de Roraima identificado como navegador, em vez de robô;
+ *   - o Diário da ALE-RR (WordPress): API do WordPress e leitura do PDF mais recente;
+ *   - leitura do PDF mais recente que aparecer nas páginas de diário.
+ * Grava as evidências em levantamento/alternativas.json. Roda no GitHub Actions (rede de fora do Brasil).
+ *
+ * Uso: pnpm levantamento:alternativas
+ */
+import { mkdir, writeFile } from 'node:fs/promises'
+import path from 'node:path'
+import { chromium, type Browser, type Response as RespostaPw } from '@playwright/test'
+import { USER_AGENT } from '../coleta/http'
+import { extrairTextoPdf } from '../coleta/textos'
+
+const NAVEGADOR = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36'
+const curto = (t: string, n = 300) => t.replace(/\s+/g, ' ').trim().slice(0, n)
+const erro = (e: unknown) => {
+  const x = e as Error & { cause?: { code?: string } }
+  return `${x.message}${x.cause?.code ? ` (${x.cause.code})` : ''}`.slice(0, 200)
+}
+
+/** Acesso direto, como robô ou como navegador. */
+async function direto(url: string, comoNavegador: boolean) {
+  try {
+    const r = await fetch(url, {
+      headers: comoNavegador
+        ? { 'User-Agent': NAVEGADOR, Accept: 'text/html,application/json;q=0.9,*/*;q=0.8', 'Accept-Language': 'pt-BR,pt;q=0.9' }
+        : { 'User-Agent': USER_AGENT, Accept: 'application/json' },
+      signal: AbortSignal.timeout(25_000),
+      redirect: 'follow',
+    })
+    const corpo = await r.text()
+    return { url, comoNavegador, status: r.status, tipo: r.headers.get('content-type'), servidor: r.headers.get('server'), bytes: corpo.length, inicio: curto(corpo) }
+  } catch (e) {
+    return { url, comoNavegador, erro: erro(e) }
+  }
+}
+
+/** Abre a página num navegador de verdade e anota o que ela busca por trás (XHR/fetch), os links de PDF e o texto visível. */
+async function navegar(b: Browser, url: string) {
+  const ctx = await b.newContext({ userAgent: NAVEGADOR, locale: 'pt-BR', ignoreHTTPSErrors: true })
+  const p = await ctx.newPage()
+  const chamadas: { url: string; status: number; tipo: string | null; bytes?: number; inicio?: string }[] = []
+  p.on('response', async (r: RespostaPw) => {
+    const tipoRecurso = r.request().resourceType()
+    if (tipoRecurso !== 'xhr' && tipoRecurso !== 'fetch') return
+    const tipo = r.headers()['content-type'] || null
+    let corpo = ''
+    try {
+      corpo = /json|html|xml|text/.test(tipo || '') ? await r.text() : ''
+    } catch {}
+    chamadas.push({ url: r.url(), status: r.status(), tipo, bytes: corpo.length || undefined, inicio: corpo ? curto(corpo, 400) : undefined })
+  })
+  try {
+    const r = await p.goto(url, { waitUntil: 'networkidle', timeout: 45_000 })
+    await p.waitForTimeout(2500)
+    const texto = await p.evaluate(() => document.body?.innerText || '')
+    const links = await p.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => ({ href: (a as HTMLAnchorElement).href, texto: (a.textContent || '').trim().slice(0, 80) })))
+    const pdfs = links.filter((l) => /\.pdf(\?|$)/i.test(l.href))
+    const interessantes = links.filter((l) => /proposi|materia|projeto|diario|di[aá]rio|legisla|tramit|pesquis/i.test(`${l.href} ${l.texto}`)).slice(0, 40)
+    return { url, status: r?.status(), titulo: await p.title(), texto: curto(texto, 1500), pdfs: pdfs.slice(0, 15), interessantes, chamadas: chamadas.slice(0, 40) }
+  } catch (e) {
+    return { url, erro: erro(e), chamadas: chamadas.slice(0, 20) }
+  } finally {
+    await ctx.close()
+  }
+}
+
+/** Baixa um PDF e conta o que interessa ao observatório: projetos de lei e termos ambientais. */
+async function lerPdf(url: string) {
+  try {
+    const r = await fetch(url, { headers: { 'User-Agent': NAVEGADOR }, signal: AbortSignal.timeout(60_000) })
+    if (!r.ok) return { url, status: r.status }
+    const { texto, paginas } = await extrairTextoPdf(new Uint8Array(await r.arrayBuffer()))
+    const achados = (re: RegExp) => [...texto.matchAll(re)].map((m) => curto(texto.slice(Math.max(0, m.index! - 40), m.index! + 220), 260))
+    const projetos = achados(/PROJETO DE LEI[^\n]{0,40}N[º°o.]/gi)
+    return {
+      url,
+      paginas,
+      caracteres: texto.length,
+      projetosDeLei: projetos.length,
+      exemplos: projetos.slice(0, 4),
+      ambientais: achados(/ambiental|meio ambiente|florest|garimp|minera|recursos h[ií]dricos/gi).slice(0, 4),
+    }
+  } catch (e) {
+    return { url, erro: erro(e) }
+  }
+}
+
+async function main() {
+  const b = await chromium.launch(process.env.PW_CHROMIUM_PATH ? { executablePath: process.env.PW_CHROMIUM_PATH } : {})
+  const resultado: Record<string, unknown> = { geradoEm: new Date().toISOString(), ambiente: process.env.GITHUB_ACTIONS ? 'GitHub Actions (fora do Brasil)' : 'local' }
+  try {
+    // ---------- Pará ----------
+    const pa = {
+      proposicoes: await navegar(b, 'https://www.alepa.pa.gov.br/Home/Page/Proposicoes'),
+      diarioOficial: await navegar(b, 'https://www.alepa.pa.gov.br/Home/Page/DiarioOficial'),
+      diarios: await navegar(b, 'https://www.alepa.pa.gov.br/Comunicacao/Diarios'),
+      bancoDeLeis: await navegar(b, 'https://bancodeleis.alepa.pa.gov.br/'),
+    } as Record<string, unknown>
+    const pdfPa = [pa.diarioOficial, pa.diarios].flatMap((x) => ((x as { pdfs?: { href: string }[] }).pdfs || []).map((l) => l.href))[0]
+    if (pdfPa) pa.pdfDiario = await lerPdf(pdfPa)
+    resultado.PA = pa
+
+    // ---------- Roraima ----------
+    const api = 'https://sapl.al.rr.leg.br/api/materia/materialegislativa/?page_size=1'
+    const rr = {
+      saplComoRobo: await direto(api, false),
+      saplComoNavegador: await direto(api, true),
+      saplNoNavegador: await navegar(b, api),
+      saplPesquisa: await navegar(b, 'https://sapl.al.rr.leg.br/materia/pesquisar-materia'),
+      wpMidia: await direto('https://diarios.al.rr.leg.br/wp-json/wp/v2/media?per_page=5&mime_type=application/pdf', true),
+      wpPosts: await direto('https://diarios.al.rr.leg.br/wp-json/wp/v2/posts?per_page=5', true),
+      diarios: await navegar(b, 'https://diarios.al.rr.leg.br/'),
+    } as Record<string, unknown>
+    let pdfRr: string | undefined
+    try {
+      const midia = JSON.parse(
+        await (await fetch('https://diarios.al.rr.leg.br/wp-json/wp/v2/media?per_page=5&mime_type=application/pdf', { headers: { 'User-Agent': NAVEGADOR }, signal: AbortSignal.timeout(25_000) })).text(),
+      ) as { date?: string; source_url?: string; title?: { rendered?: string } }[]
+      rr.wpUltimos = midia.map((m) => ({ data: m.date, titulo: m.title?.rendered, url: m.source_url }))
+      pdfRr = midia[0]?.source_url
+    } catch (e) {
+      rr.wpUltimos = { erro: erro(e) }
+    }
+    pdfRr ||= ((rr.diarios as { pdfs?: { href: string }[] }).pdfs || [])[0]?.href
+    if (pdfRr) rr.pdfDiario = await lerPdf(pdfRr)
+    resultado.RR = rr
+
+    // ---------- Amapá ----------
+    resultado.AP = {
+      siteComoNavegador: await direto('https://www.al.ap.leg.br/', true),
+      siteNoNavegador: await navegar(b, 'https://www.al.ap.leg.br/'),
+      diarioDoEstado: await navegar(b, 'https://diofe.portal.ap.gov.br/'),
+    }
+  } finally {
+    await b.close()
+  }
+  const destino = path.resolve(process.cwd(), 'levantamento/alternativas.json')
+  await mkdir(path.dirname(destino), { recursive: true })
+  await writeFile(destino, JSON.stringify(resultado, null, 2))
+  console.log(`Gravado em ${destino}`)
+}
+
+main().catch((e) => {
+  console.error(e)
+  process.exit(1)
+})
