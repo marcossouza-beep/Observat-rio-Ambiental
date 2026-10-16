@@ -1,4 +1,4 @@
-import type { Endpoint } from 'payload'
+import type { Endpoint, Payload } from 'payload'
 import { situacaoFonte } from './lib/fontes'
 import { endpointsSite } from './endpoints-site'
 import { TAREFAS } from './tarefas'
@@ -58,4 +58,28 @@ const cron: Endpoint = {
   },
 }
 
-export const endpoints = [saude, cron, ...endpointsSite]
+/**
+ * Recalcula nota de relevância e termos encontrados das propostas na Triagem com o dicionário atual
+ * (depois de o autor mexer nas palavras-chave). O gancho de Proposições refaz a conta quando a nota está vazia.
+ */
+export async function recalcularTriagem(payload: Payload) {
+  const lista = await payload.find({ collection: 'proposicoes', where: { situacaoEditorial: { equals: 'triagem' } }, limit: 1000, depth: 0, pagination: false, select: { relevancia: true } })
+  let mudaram = 0
+  for (const p of lista.docs) {
+    const r = await payload.update({ collection: 'proposicoes', id: p.id, data: { relevancia: null }, depth: 0 })
+    if (r.relevancia !== p.relevancia) mudaram++
+  }
+  return { propostas: lista.docs.length, mudaram }
+}
+
+/** POST /api/triagem/recalcular — botão da Triagem (só equipe). */
+const triagemRecalcular: Endpoint = {
+  path: '/triagem/recalcular',
+  method: 'post',
+  handler: async (req) => {
+    if (!req.user || (req.user as { collection?: string }).collection !== 'users') return Response.json({ ok: false, erro: 'não autorizado' }, { status: 401 })
+    return Response.json({ ok: true, ...(await recalcularTriagem(req.payload)) })
+  },
+}
+
+export const endpoints = [saude, cron, triagemRecalcular, ...endpointsSite]

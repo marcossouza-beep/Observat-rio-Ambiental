@@ -4,7 +4,7 @@
  */
 import { conectorAlerr } from './alerr/conector'
 import { conectorLeisPara } from './alepa/leis'
-import { conectorAlepa } from './alepa/proposicoes'
+import { conectorAlepa } from './alepa/conector'
 import type { Conector } from './conector'
 import { CONECTORES_SAPL, SAPL_NORTE } from './sapl/conector'
 

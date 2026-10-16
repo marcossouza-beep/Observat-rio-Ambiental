@@ -7,6 +7,7 @@ import { beforeAll, describe, expect, it } from 'vitest'
 import { autografosDaEdicao, edicaoDe, eventoDoAutografo, pacoteDoProjeto, projetosDaEdicao, semCabecalhoDePagina } from '@/coleta/alerr/mapear'
 import { limparEmenta, pacoteDaLei, siglaDaLei, type LeiAlepa } from '@/coleta/alepa/leis'
 import { autorAlepa, lerPainel, pacoteAlepa, pedidoPainel, siglaAlepa } from '@/coleta/alepa/proposicoes'
+import { eventoAlepa, lerDetalhesAlepa, pacoteDosDetalhes, statusAlepa } from '@/coleta/alepa/detalhes'
 import { extrairTextoPdf } from '@/coleta/textos'
 
 const dir = path.resolve(__dirname, '../fixtures/coleta')
@@ -124,5 +125,47 @@ describe('Proposições da Alepa (painel da pesquisa)', () => {
     expect(p.proposicao).toMatchObject({ chave: 'alepa:proposicao:16099', esfera: 'estadual', uf: 'PA', sigla: 'PL', numero: 461, dataApresentacao: '2026-06-11' })
     expect(p.proposicao.urlFonte).toBe('https://www.alepa.pa.gov.br/Legislativo/DetalhesProposicao?IdProposicao=16099')
     expect(pedidoPainel(2026, { tipo: 3 })).toMatchObject({ 'model[Ano]': '2026', 'model[IdTipoProposicao]': '3', DXCallbackName: 'cbpProposicoes' })
+  })
+})
+
+describe('Detalhes da proposição na Alepa', () => {
+  const detalhes = (id: number) => lerDetalhesAlepa(JSON.parse(readFileSync(path.join(dir, 'alepa', `detalhes-${id}.json`), 'utf8')).corpo.html)
+
+  it('APA Bacajaí: referências, 14 andamentos, 3 comissões com relator, plenário e a lei', () => {
+    const d = detalhes(16099)
+    expect(d).toMatchObject({ tipo: 'PROJETO DE LEI ORDINÁRIA', numero: 461, ano: 2026, autor: 'DEP. TORRINHO TORRES', situacao: 'ARQUIVADO', pdfProjeto: 'https://downloads.alepa.pa.gov.br/Projeto/16099.PDF' })
+    expect(d.tramitacao).toHaveLength(14)
+    expect(d.comissoes.map((c) => c.relator)).toEqual(['DEP. ERALDO PIMENTA', 'DEP. IRAN LIMA', 'DEP. MARIA DO CARMO'])
+    expect(d.plenario).toEqual([
+      { turno: 'TURNO ÚNICO', data: '2026-06-30T15:00:00.000Z', resultado: 'APROVADA' },
+      { turno: 'REDAÇÃO FINAL', data: '2026-06-30T15:00:00.000Z', resultado: 'APROVADA' },
+    ])
+    expect(d.lei).toMatchObject({ numero: '11665', data: '2026-07-23T15:00:00.000Z', doe: '36729', dataDoe: '2026-08-12T15:00:00.000Z' })
+    expect(statusAlepa(d)).toBe('norma')
+  })
+
+  it('pacote: ementa sem anotações do expediente, plenário sem repetição, lei como sanção, versões com PDF', () => {
+    const p = pacoteDosDetalhes(16099, detalhes(16099))
+    expect(p.proposicao.ementa).toBe('Cria a Área de Proteção Ambiental Bacajaí - APA Bacajaí, nos Municípios de Altamira e Senador José Porfírio, Estado do Pará, e dá outras providências.')
+    expect(p.tramitacoes.filter((t) => /TURNO ÚNICO/.test(t.descricao)).map((t) => [t.descricao, t.tipoEvento])).toEqual([['TURNO ÚNICO: APROVADA', 'aprovacao']])
+    expect(p.tramitacoes.at(-1)).toMatchObject({ tipoEvento: 'sancao', descricao: 'Transformado na Lei nº 11665 (DOE nº 36729, 12/08/2026)' })
+    expect(p.tramitacoes.find((t) => t.descricao.startsWith('VOTADO NA COMISSÃO DE MEIO'))?.orgao).toBe('COMISSÃO DE MEIO AMBIENTE, RECURSOS HÍDRICOS E DESENVOLVIMENTO SUSTENTÁVEL')
+    expect(p.versoes.map((v) => v.tipo)).toEqual(['original', 'parecer_relator', 'parecer_relator', 'parecer_relator', 'redacao_final', 'norma'])
+    expect(p.proposicao.autoria?.find((a) => a.papel === 'relator' && a.orgao?.startsWith('COMISSÃO DE MEIO'))?.parlamentar?.nome).toBe('Maria do Carmo')
+  })
+
+  it('projeto recente: em tramitação, comissão sem parecer ainda não vira relator', () => {
+    const d = detalhes(16347)
+    expect(statusAlepa(d)).toBe('em_tramitacao')
+    const p = pacoteDosDetalhes(16347, d)
+    expect(p.tramitacoes).toHaveLength(3)
+    expect(p.proposicao.autoria?.filter((a) => a.papel === 'relator')).toEqual([])
+    expect(p.proposicao.etapa).toBe('COMISSÃO DE CONSTITUIÇÃO E JUSTIÇA E DE REDAÇÃO FINAL')
+  })
+
+  it('tipo de andamento', () => {
+    expect(eventoAlepa('INCLUÍDO NA PAUTA DA 19ª SESSÃO ORDINÁRIA')).toBe('pauta')
+    expect(eventoAlepa('VOTADO NA COMISSÃO DE MEIO AMBIENTE')).toBe('parecer_relator')
+    expect(eventoAlepa('PUBLICADO NO AVULSO Nº: 71 PÁGINA: 02')).toBe('outro')
   })
 })

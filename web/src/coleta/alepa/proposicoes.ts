@@ -5,16 +5,14 @@
  * cartão por proposição (autor, "PROJETO DE LEI ORDINÁRIA Nº 669/2026, DE 13/10/2026", ementa), 10 por página,
  * das mais novas para as mais antigas. Filtros: ano, tipo (model[IdTipoProposicao]) e palavra (model[Texto]).
  *
- * Em cada rodada: as 10 mais novas de cada tipo que interessa e a busca por "ambiental" no ano.
- * Os andamentos ficam na página de detalhes (próximo passo); por ora entra a apresentação.
+ * O conector (alepa/conector.ts) junta esta lista com a página de detalhes de cada proposta (alepa/detalhes.ts).
  * Chave: alepa:proposicao:<IdProposicao>. Fonte: casa-pa.
  */
 import { slugify } from '../../lib/texto'
-import { identificacaoDe, type Conector, type ResultadoColeta } from '../conector'
 import { ErroFormato, type AutorColetado, type PacoteProposicao } from '../tipos'
 
 export const ALEPA = 'https://www.alepa.pa.gov.br'
-const NAVEGADOR = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36'
+export const NAVEGADOR = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36'
 
 /** Tipos da Alepa (GetTipoProposicoes) que interessam, com a sigla usada no site. */
 export const TIPOS_ALEPA: { codigo: number; sigla: string }[] = [
@@ -122,7 +120,7 @@ export function pacoteAlepa(c: CartaoAlepa): PacoteProposicao {
 
 export type Postar = (url: string, corpo: Record<string, string>) => Promise<string>
 
-const postarNaRede: Postar = async (url, corpo) => {
+export const postarNaRede: Postar = async (url, corpo) => {
   const r = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest', 'User-Agent': NAVEGADOR },
@@ -143,43 +141,3 @@ export const pedidoPainel = (ano: number, filtros: { tipo?: number; texto?: stri
   'model[Texto]': filtros.texto || '',
   ...(filtros.tipo ? { 'model[IdTipoProposicao]': String(filtros.tipo) } : {}),
 })
-
-export function criarConectorAlepa(opcoes: { postar?: Postar } = {}): Conector {
-  const postar = opcoes.postar || postarNaRede
-  return {
-    slug: 'casa-pa',
-    nome: 'Assembleia Legislativa do Pará (pesquisa de proposições)',
-    uf: 'PA',
-    async coletar(ctx): Promise<ResultadoColeta> {
-      const ano = ctx.agora.getUTCFullYear()
-      const url = `${ALEPA}/Legislativo/CallbackPanelProposicoes`
-      const vistos = new Map<number, CartaoAlepa>()
-      const totais: Record<string, number> = {}
-      for (const t of TIPOS_ALEPA) {
-        const r = lerPainel(await postar(url, pedidoPainel(ano, { tipo: t.codigo })))
-        totais[t.sigla] = r.total
-        for (const c of r.cartoes) vistos.set(c.id, c)
-      }
-      const amb = lerPainel(await postar(url, pedidoPainel(ano, { texto: 'ambiental' })))
-      totais.ambiental = amb.total
-      for (const c of amb.cartoes) vistos.set(c.id, c)
-
-      const pacotes: PacoteProposicao[] = []
-      let novas = 0
-      for (const c of vistos.values()) {
-        const chave = `alepa:proposicao:${c.id}`
-        if (ctx.descartadas.has(chave)) continue
-        const acompanhada = ctx.acompanhadas.has(chave) || ctx.acompanhadas.has(`PA:${identificacaoDe(c.sigla, c.numero, c.ano)}`)
-        if (!acompanhada) {
-          if (novas >= ctx.maxNovas || ctx.relevancia(c.ementa) < ctx.notaMinima) continue
-          novas++
-        }
-        pacotes.push(pacoteAlepa(c))
-      }
-      const avisos = novas >= ctx.maxNovas ? [`limite de ${ctx.maxNovas} propostas novas por rodada atingido; o restante entra nas próximas`] : []
-      return { pacotes, pautas: [], itensListados: vistos.size, amostra: { ano, totais, listadas: vistos.size }, avisos }
-    },
-  }
-}
-
-export const conectorAlepa = criarConectorAlepa()

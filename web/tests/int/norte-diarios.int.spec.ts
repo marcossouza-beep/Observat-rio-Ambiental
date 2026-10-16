@@ -9,7 +9,7 @@ import config from '@/payload.config'
 import { beforeAll, describe, expect, it } from 'vitest'
 import { coletarFonte } from '@/coleta/executar'
 import { criarConectorAlerr } from '@/coleta/alerr/conector'
-import { criarConectorAlepa } from '@/coleta/alepa/proposicoes'
+import { criarConectorAlepa } from '@/coleta/alepa/conector'
 
 let payload: Payload
 const dir = path.resolve(__dirname, '../fixtures/coleta')
@@ -99,16 +99,34 @@ describe('Pará pela pesquisa de proposições da Alepa', () => {
       collection: 'proposicoes',
       data: { esfera: 'estadual', uf: 'PA', casa: 'assembleia', sigla: 'PL', numero: 647, ano: 2026, situacaoEditorial: 'monitorada', chaveOrigem: 'manual:pa:647' },
     })
-    const r = await coletarFonte(payload, 'casa-pa', { agora: AGORA, conector: criarConectorAlepa({ postar }) })
+    const obter = async (url: string) => {
+      const id = /IdProposicao=(\d+)/.exec(url)?.[1]
+      if (id && ['16099', '16347', '16375'].includes(id)) return corpo(`alepa/detalhes-${id}.json`).html as string
+      throw new Error('HTTP 404')
+    }
+    const r = await coletarFonte(payload, 'casa-pa', { agora: AGORA, conector: criarConectorAlepa({ postar, obter }) })
     expect(r.ok).toBe(true)
     const apa = (await payload.find({ collection: 'proposicoes', where: { chaveOrigem: { equals: 'alepa:proposicao:16099' } }, depth: 1 })).docs[0]
-    expect(apa).toMatchObject({ esfera: 'estadual', uf: 'PA', sigla: 'PL', numero: 461, situacaoEditorial: 'triagem' })
+    // Pela página de detalhes: já virou a Lei 11.665, com andamentos, relatores e versões
+    expect(apa).toMatchObject({ esfera: 'estadual', uf: 'PA', sigla: 'PL', numero: 461, situacaoEditorial: 'triagem', statusSimplificado: 'norma', statusOficial: 'Lei nº 11665' })
+    expect((await payload.count({ collection: 'tramitacoes', where: { proposicao: { equals: apa.id } } })).totalDocs).toBe(15)
+    expect((await payload.count({ collection: 'versoes', where: { proposicao: { equals: apa.id } } })).totalDocs).toBe(6)
+    expect(apa.autoria?.filter((a) => a.papel === 'relator')).toHaveLength(3)
     const autor = apa.autoria?.[0]?.parlamentar
     expect(typeof autor === 'object' && autor?.nome).toBe('Torrinho Torres')
     const manual = (await payload.find({ collection: 'proposicoes', where: { chaveOrigem: { equals: 'manual:pa:647' } }, depth: 0 })).docs[0]
     expect(manual.chavesExtras).toContain('alepa:proposicao:16347')
+    expect((await payload.count({ collection: 'tramitacoes', where: { proposicao: { equals: manual.id } } })).totalDocs).toBe(3)
     // "Gelo pai'dégua", utilidade pública, orçamento: sem palavra ambiental, não entram
     expect((await payload.count({ collection: 'proposicoes', where: { chaveOrigem: { equals: 'alepa:proposicao:16374' } } })).totalDocs).toBe(0)
   })
-})
 
+  it('página de detalhes fora do ar: a proposta entra com o cartão da lista e a rodada segue', async () => {
+    const r = await coletarFonte(payload, 'casa-pa', {
+      agora: new Date(AGORA.getTime() + 36e5),
+      conector: criarConectorAlepa({ postar, obter: async () => Promise.reject(new Error('HTTP 503')) }),
+    })
+    expect(r.ok).toBe(true)
+    expect(r.avisos?.some((a) => /detalhes de PL 461\/2026: HTTP 503/.test(a))).toBe(true)
+  })
+})

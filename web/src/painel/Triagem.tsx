@@ -4,6 +4,7 @@ import { sugerirClassificacao } from '../lib/relevancia'
 import { chave, civilParaISO } from '../lib/datas'
 import { regrasDePrazoDe } from './regras'
 import { AcoesTriagem } from './AcoesTriagem'
+import { RecalcularTriagem } from './RecalcularTriagem'
 import { Moldura } from './Moldura'
 import { ADMIN, Chip, ChipPrazo, dataCurta, Destacar, linkDoc } from './util'
 
@@ -40,6 +41,7 @@ export async function Triagem(props: AdminViewServerProps) {
         <b>
           {abertos.totalDocs} de {limite}
         </b>
+        <RecalcularTriagem />
         <span className="obs-filtros">
           {[
             ['', 'Todas'],
