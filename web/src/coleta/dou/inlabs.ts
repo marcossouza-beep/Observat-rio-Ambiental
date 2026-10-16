@@ -19,6 +19,7 @@ export class ErroInlabs extends Error {}
  */
 export async function entrarInlabs(email: string, senha: string, baixar: Baixar = fetch, dormir = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))): Promise<string> {
   let motivo = ''
+  let foraDoAr = false
   for (let tentativa = 0; tentativa < 3; tentativa++) {
     if (tentativa) await dormir(10_000 * tentativa)
     const r = await baixar(`${INLABS}/logar.php`, {
@@ -33,7 +34,10 @@ export async function entrarInlabs(email: string, senha: string, baixar: Baixar 
     const corpo = r.status === 200 ? await r.text().catch(() => '') : ''
     const aviso = /class="[^"]*(?:alert|erro|error)[^"]*"[^>]*>([^<]{3,200})</i.exec(corpo)?.[1] || /<title>([^<]{1,120})<\/title>/i.exec(corpo)?.[1] || ''
     motivo = `HTTP ${r.status}${aviso ? `, página: "${aviso.trim()}"` : ''}`
+    foraDoAr = r.status >= 500
   }
+  // 5xx é falha do servidor da Imprensa Nacional, não da senha
+  if (foraDoAr) throw new ErroInlabs(`INLABS fora do ar no login (${motivo}). A coleta do DOU tenta de novo na próxima rodada.`)
   throw new ErroInlabs(`INLABS recusou o login (${motivo}). Confira os segredos INLABS_EMAIL e INLABS_SENHA.`)
 }
 
