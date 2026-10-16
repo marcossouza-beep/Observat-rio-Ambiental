@@ -2,7 +2,7 @@
   "url": "https://www.alepa.pa.gov.br/Legislativo/GetTipoProposicoes",
   "status": 200,
   "tipo": "application/json; charset=utf-8",
-  "gravadaEm": "2026-10-16T16:39:01.378Z",
+  "gravadaEm": "2026-10-16T16:51:36.390Z",
   "corpo": [
     {
       "codigo": 1,
