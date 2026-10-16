@@ -294,7 +294,7 @@ Tela `/admin/radar` e atalho no menu com contador. Lista o que a coleta trouxe n
 | Lista | Nota de relevância (0–100), número, fonte, data, ementa com as palavras-chave destacadas, temas encontrados, sinal de "provável homenagem" |
 | Filtros | Todas, Câmara, Senado, DOU, Estados |
 | Capacidade | "Pareceres prometidos em aberto: 5 de 10". No limite, ativar pede prazo maior ou sugere acompanhar |
-| Ativar parecer | Janela com prazo (padrão 7 dias), prévia do aviso público e efeito na capacidade. Ao confirmar, o aviso "Parecer em preparação" vai ao ar e o dossiê fica pronto |
+| Ativar parecer | Janela com prazo (padrão: 4 dias depois que a proposta saiu; cada linha da Triagem mostra "saiu em" e "publicar até"), prévia do aviso público e efeito na capacidade. Ao confirmar, o aviso "Parecer em preparação" vai ao ar e o dossiê fica pronto |
 | Acompanhar | A página pública mostra "Acompanhando", sem prometer parecer |
 | Descartar | Com motivo (fora do tema, homenagem ou data, duplicada, outro); o motivo ajusta as palavras-chave |
 

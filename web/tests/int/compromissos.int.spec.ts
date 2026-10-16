@@ -1,3 +1,4 @@
+import { PRAZOS_PADRAO, prazoDesde } from '@/lib/compromissos'
 import { getPayload, type Payload } from 'payload'
 import config from '@/payload.config'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
@@ -35,21 +36,25 @@ const novaProposicao = (extra: Record<string, unknown> = {}) =>
 beforeAll(async () => {
   payload = await getPayload({ config: await config })
   await limpar()
+  // Prazos da regra atual (o banco de teste pode guardar valores de versões anteriores)
+  await payload.updateGlobal({ slug: 'ajustes', data: { prazos: { parecer: PRAZOS_PADRAO.parecer_prometido.dias, atualizacao: PRAZOS_PADRAO.atualizacao.dias } } })
 })
 afterAll(async () => {
   await limpar()
 })
 
 describe('parecer prometido', () => {
-  it('ativar abre compromisso de 7 dias e grava o prazo na proposição', async () => {
-    const p = await novaProposicao()
+  it('ativar abre compromisso de 4 dias contados de quando a proposta saiu, e grava o prazo na proposição', async () => {
+    // Apresentada há 1 dia: o prazo é a apresentação + 4 (3 dias a partir de hoje), não a ativação + 4
+    const apresentacao = new Date(Date.now() - 864e5).toISOString()
+    const p = await novaProposicao({ dataApresentacao: apresentacao })
     expect(p.rotulo).toMatch(/^PL nº \d+\/2026$/)
     expect(p.slug).toMatch(/^pl-\d+-2026-regras-de-protecao-do-pantanal$/)
     await payload.update({ collection: 'proposicoes', id: p.id, data: { situacaoEditorial: 'ativa' } })
     const [c] = await compromissos('proposicoes', p.id)
     expect(c.tipo).toBe('parecer_prometido')
     expect(c.status).toBe('aberto')
-    expect(chave(dataCivil(new Date(c.prazoEm)))).toBe(chave(somarDias(dataCivil(new Date()), 7)))
+    expect(chave(dataCivil(new Date(c.prazoEm)))).toBe(chave(somarDias(dataCivil(new Date(apresentacao)), 4)))
     const atual = await payload.findByID({ collection: 'proposicoes', id: p.id })
     expect(atual.prazoParecer).toBe(c.prazoEm)
   })
@@ -103,6 +108,8 @@ describe('publicação e desatualização', () => {
     const [atualizacao] = await compromissos('pareceres', par.id)
     expect(atualizacao.tipo).toBe('atualizacao')
     expect(atualizacao.status).toBe('aberto')
+    // Regra dos 4 dias: o prazo conta da data do substitutivo (12/10), não de quando o site o captou
+    expect(atualizacao.prazoEm.slice(0, 10)).toBe(chave(prazoDesde('atualizacao', new Date('2026-10-12T12:00:00.000Z'), new Date())))
 
     // Salvar outra coisa sem apontar a nova versão não tira a faixa
     const outra = await payload.update({ collection: 'pareceres', id: par.id, data: { seo: { tituloSeo: 'Novo título' } } })
@@ -151,7 +158,7 @@ describe('ajustes', () => {
     const p = await novaProposicao({ situacaoEditorial: 'ativa' })
     const [c] = await compromissos('proposicoes', p.id)
     expect(chave(dataCivil(new Date(c.prazoEm)))).toBe(chave(somarDias(dataCivil(new Date()), 10)))
-    await payload.updateGlobal({ slug: 'ajustes', data: { prazos: { parecer: 7 } } })
+    await payload.updateGlobal({ slug: 'ajustes', data: { prazos: { parecer: PRAZOS_PADRAO.parecer_prometido.dias } } })
   })
 })
 

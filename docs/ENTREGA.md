@@ -33,8 +33,8 @@
 
 | Promessa no site | Prazo proposto | Começa a contar | Avisos no painel | Se vencer |
 |---|---|---|---|---|
-| "Parecer será publicado nos próximos dias" | **7 dias corridos** (ajustável) | Ao ativar a proposta na triagem | Amarelo no 5º dia, vermelho no 7º | Autor escolhe: nova data (o aviso público continua) ou "Acompanhando" (o aviso muda) |
-| Parecer atualizado após mudança no texto | **5 dias corridos** | Quando o sistema detecta a mudança | Fila "A atualizar" | A faixa "atualização em preparação" continua visível; nunca some sem nova versão |
+| "Parecer será publicado nos próximos dias" | **4 dias corridos** depois que o projeto (ou a norma) saiu (ajustável) | Da data de apresentação ou publicação, não da ativação; o prazo já corre enquanto a proposta está na Triagem | "Hoje" avisa as propostas na Triagem vencendo ou vencidas; amarelo a 2 dias, vermelho no dia | Autor escolhe: nova data (o aviso público continua) ou "Acompanhando" (o aviso muda) |
+| Parecer atualizado após mudança no texto | **4 dias corridos** depois que a nova versão saiu | Da data da nova versão (substitutivo, redação final, alteração), não de quando o sistema a captou | Fila "A atualizar" | A faixa "atualização em preparação" continua visível; nunca some sem nova versão |
 | Correções: "Respondemos por e-mail em até 3 dias úteis" | 3 dias úteis | Envio do formulário | Contador por pedido | Vermelho em "Hoje" até responder |
 | Credenciamento de imprensa: "em até 2 dias úteis" | 2 dias úteis | Envio do pedido | Contador por pedido | Vermelho em "Hoje" |
 | Pedido de dados ou exclusão (LGPD) | 15 dias (lei) | Pedido recebido | Contador | Vermelho em "Hoje" |
@@ -82,7 +82,8 @@ Uma verificação automática roda a cada hora e uma completa todo dia às 7h. A
 ## 5. Antes de lançar (checklist de entrega)
 
 - [ ] Todas as promessas desta lista testadas de ponta a ponta no ambiente de teste.
-- [ ] Prazos confirmados pelo autor (7 dias para parecer prometido, 5 para atualização, 3 úteis para correção, 2 úteis para credenciamento).
+- [x] Prazos confirmados pelo autor: 4 dias corridos para o parecer e para a atualização, contados de quando o projeto ou a alteração saiu (16/10/2026); 3 úteis para correção, 2 úteis para credenciamento.
+- A proposta aparece no painel em horas: a coleta roda 4 vezes por dia (6h, 12h, 18h e 23h).
 - [ ] Conectores federais rodando por 2 semanas sem intervenção.
 - [ ] Alertas chegando ao celular do autor.
 - [ ] Teste de restauração do banco feito.

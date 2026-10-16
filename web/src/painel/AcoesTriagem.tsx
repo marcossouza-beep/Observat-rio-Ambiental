@@ -72,7 +72,7 @@ export function AcoesTriagem({ id, rotulo, prazoPadrao, abertos, limite, classif
       <div className="obs-acoes coluna" role="group" aria-label={`Ativar parecer de ${rotulo}`}>
         {chips}
         <label>
-          Prazo prometido
+          Publicar até (sugerido: 4 dias depois que a proposta saiu)
           <input type="date" value={prazo} min={new Date().toISOString().slice(0, 10)} onChange={(e) => setPrazo(e.target.value)} />
         </label>
         {lotado ? (

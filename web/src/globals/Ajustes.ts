@@ -13,8 +13,8 @@ export const Ajustes: GlobalConfig = {
       label: 'Prazos prometidos',
       type: 'group',
       fields: [
-        { name: 'parecer', label: 'Parecer prometido (dias corridos)', type: 'number', min: 1, defaultValue: PRAZOS_PADRAO.parecer_prometido.dias },
-        { name: 'atualizacao', label: 'Atualização após mudança no texto (dias corridos)', type: 'number', min: 1, defaultValue: PRAZOS_PADRAO.atualizacao.dias },
+        { name: 'parecer', label: 'Parecer publicado (dias corridos desde que a proposta saiu)', type: 'number', min: 1, defaultValue: PRAZOS_PADRAO.parecer_prometido.dias },
+        { name: 'atualizacao', label: 'Atualização do parecer (dias corridos desde a nova versão do texto)', type: 'number', min: 1, defaultValue: PRAZOS_PADRAO.atualizacao.dias },
         { name: 'correcao', label: 'Resposta a correção (dias úteis)', type: 'number', min: 1, defaultValue: PRAZOS_PADRAO.correcao.dias },
         { name: 'credenciamento', label: 'Verificação de imprensa (dias úteis)', type: 'number', min: 1, defaultValue: PRAZOS_PADRAO.credenciamento.dias },
         { name: 'lgpd', label: 'Pedido de dados pessoais (dias)', type: 'number', min: 1, max: 15, defaultValue: PRAZOS_PADRAO.lgpd.dias },

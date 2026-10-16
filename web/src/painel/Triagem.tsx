@@ -1,11 +1,11 @@
 import type { AdminViewServerProps } from 'payload'
-import { calcularPrazo } from '../lib/compromissos'
+import { calcularPrazo, dataDeSaida, prazoDesde } from '../lib/compromissos'
 import { sugerirClassificacao } from '../lib/relevancia'
-import { chave } from '../lib/datas'
+import { chave, civilParaISO } from '../lib/datas'
 import { regrasDePrazoDe } from './regras'
 import { AcoesTriagem } from './AcoesTriagem'
 import { Moldura } from './Moldura'
-import { ADMIN, Chip, dataCurta, Destacar, linkDoc } from './util'
+import { ADMIN, Chip, ChipPrazo, dataCurta, Destacar, linkDoc } from './util'
 
 /** Triagem: propostas captadas, da mais relevante para a menos (docs/TELAS.md, B2). */
 export async function Triagem(props: AdminViewServerProps) {
@@ -28,7 +28,8 @@ export async function Triagem(props: AdminViewServerProps) {
   const opcoes = { temas: temas.docs.map((t) => ({ id: t.id, nome: t.nome })), biomas: biomas.docs.map((b) => ({ id: b.id, nome: b.nome })) }
   const ids = (v: unknown) => (Array.isArray(v) ? v.map((x) => (typeof x === 'object' && x ? (x as { id: number }).id : (x as number))) : [])
   const limite = ajustes.limitePrometidos || 10
-  const prazoPadrao = chave(calcularPrazo('parecer_prometido', new Date(), regrasDePrazoDe(ajustes)))
+  const regras = regrasDePrazoDe(ajustes)
+  const agora = new Date()
   return (
     <Moldura props={props} titulo="Triagem" sub="Propostas captadas pelas palavras-chave. Você decide o que vira parecer.">
       <div className="obs-faixa">
@@ -55,6 +56,10 @@ export async function Triagem(props: AdminViewServerProps) {
         {lista.docs.length ? (
           lista.docs.map((p) => {
             const nota = p.relevancia ?? 0
+            // Regra dos 4 dias: conta de quando a proposta saiu (apresentação ou publicação), não de quando chegou aqui
+            const saida = dataDeSaida(p, agora)
+            const prazoDaRegra = civilParaISO(calcularPrazo('parecer_prometido', saida, regras))
+            const prazoPadrao = chave(prazoDesde('parecer_prometido', saida, agora, regras))
             // Áreas e biomas pelos termos encontrados (grupo da palavra-chave), menos os que a proposta já tem
             const sug = sugerirClassificacao(p.termosEncontrados, dic.docs, opcoes)
             const jaTemas = ids(p.temas)
@@ -70,7 +75,10 @@ export async function Triagem(props: AdminViewServerProps) {
                       <b>{p.rotulo}</b>
                     </a>
                     <span>{p.esfera === 'federal' ? 'Federal' : p.uf}</span>
-                    <span>captada em {dataCurta(p.createdAt)}</span>
+                    <span>saiu em {dataCurta(saida.toISOString())}</span>
+                    <span title={`Parecer publicado em até ${regras.parecer_prometido.dias} dias depois que a proposta saiu`}>
+                      <ChipPrazo prazo={prazoDaRegra} agora={agora} />
+                    </span>
                   </div>
                   <p>
                     <Destacar texto={p.ementa || p.titulo || ''} termos={p.termosEncontrados} />

@@ -1,6 +1,7 @@
 import { APIError, type CollectionConfig } from 'payload'
 import { campoSoEquipe, equipe, proposicaoPublicaOuEquipe } from '../access'
 import { abrirCompromisso, mudarCompromissos } from '../hooks/compromissos'
+import { dataDeSaida } from '../lib/compromissos'
 import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
 import { leisCitadas } from '../lib/leis'
 import { casaDeOrigem } from '../lib/panorama'
@@ -79,6 +80,7 @@ export const Proposicoes: CollectionConfig = {
             proposicao: doc.id,
             descricao: doc.titulo || doc.rotulo || String(doc.id),
             prazo: doc.prazoParecer || undefined,
+            desde: dataDeSaida(doc),
           })
           if (doc.prazoParecer !== prazo) {
             await req.payload.update({ collection: 'proposicoes', id: doc.id, req, data: { prazoParecer: prazo }, context: { semGanchos: true } })

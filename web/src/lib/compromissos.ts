@@ -24,8 +24,9 @@ export type RegraPrazo = { dias: number; uteis: boolean }
 
 /** Prazos padrão. Ficam editáveis em Ajustes; estes são os valores propostos em docs/ENTREGA.md. */
 export const PRAZOS_PADRAO: Record<TipoCompromisso, RegraPrazo> = {
-  parecer_prometido: { dias: 7, uteis: false },
-  atualizacao: { dias: 5, uteis: false },
+  // Regra do autor: até 4 dias depois que o projeto (ou a alteração do texto) sai, o parecer está publicado
+  parecer_prometido: { dias: 4, uteis: false },
+  atualizacao: { dias: 4, uteis: false },
   correcao: { dias: 3, uteis: true },
   credenciamento: { dias: 2, uteis: true },
   lgpd: { dias: 15, uteis: false },
@@ -47,6 +48,26 @@ export function calcularPrazo(
   const r = regras[tipo]
   const inicio = dataCivil(aberto)
   return r.uteis ? somarDiasUteis(inicio, r.dias) : somarDias(inicio, r.dias)
+}
+
+/**
+ * Quando a proposta "saiu": a data de apresentação (projeto) ou de publicação (norma); sem elas, a última
+ * movimentação; sem nada, quando o site a captou.
+ */
+export function dataDeSaida(p: { dataApresentacao?: string | null; ultimaMovimentacao?: string | null; createdAt?: string | null }, agora = new Date()): Date {
+  const d = p.dataApresentacao || p.ultimaMovimentacao || p.createdAt
+  const t = d ? new Date(d) : agora
+  return Number.isNaN(t.getTime()) || t.getTime() > agora.getTime() ? agora : t
+}
+
+/**
+ * Prazo contado de quando o texto saiu (não de quando o autor o viu). Se o prazo já passou quando o compromisso
+ * é aberto (proposta captada ou ativada tarde), vence hoje: o painel mostra o atraso pela data de saída.
+ */
+export function prazoDesde(tipo: TipoCompromisso, saida: Date, agora: Date, regras: Record<TipoCompromisso, RegraPrazo> = PRAZOS_PADRAO): DataCivil {
+  const p = calcularPrazo(tipo, saida, regras)
+  const hoje = dataCivil(agora)
+  return diferencaDias(p, hoje) < 0 ? hoje : p
 }
 
 export type SituacaoPrazo = 'em_dia' | 'perto' | 'vence_hoje' | 'atrasado'

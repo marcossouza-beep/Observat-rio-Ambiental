@@ -1,6 +1,7 @@
 import type { PayloadRequest } from 'payload'
 import {
   calcularPrazo,
+  prazoDesde,
   PRAZOS_PADRAO,
   ROTULO_COMPROMISSO,
   type RegraPrazo,
@@ -31,7 +32,16 @@ export async function regrasDePrazo(req: PayloadRequest): Promise<Record<TipoCom
 /** Abre um compromisso, se ainda não houver um aberto do mesmo tipo para o mesmo alvo. Devolve o prazo (ISO). */
 export async function abrirCompromisso(
   req: PayloadRequest,
-  a: { tipo: TipoCompromisso; alvo: Alvo; alvoId: string | number; proposicao?: string | number | null; descricao: string; prazo?: string },
+  a: {
+    tipo: TipoCompromisso
+    alvo: Alvo
+    alvoId: string | number
+    proposicao?: string | number | null
+    descricao: string
+    prazo?: string
+    /** Quando o texto saiu: o prazo conta dali (regra dos 4 dias), não de quando o compromisso é aberto. */
+    desde?: Date
+  },
 ): Promise<string> {
   const existentes = await req.payload.find({
     collection: 'compromissos',
@@ -47,7 +57,8 @@ export async function abrirCompromisso(
   })
   if (existentes.docs[0]) return existentes.docs[0].prazoEm as string
   const agora = new Date()
-  const prazoEm = a.prazo || civilParaISO(calcularPrazo(a.tipo, agora, await regrasDePrazo(req)))
+  const regras = await regrasDePrazo(req)
+  const prazoEm = a.prazo || civilParaISO(a.desde ? prazoDesde(a.tipo, a.desde, agora, regras) : calcularPrazo(a.tipo, agora, regras))
   await req.payload.create({
     collection: 'compromissos',
     req,

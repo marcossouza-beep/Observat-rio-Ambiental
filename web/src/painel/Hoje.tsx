@@ -1,14 +1,15 @@
 import type { ServerProps } from 'payload'
-import { ROTULO_COMPROMISSO, type TipoCompromisso } from '../lib/compromissos'
+import { calcularPrazo, dataDeSaida, ROTULO_COMPROMISSO, situacaoPrazo, type TipoCompromisso } from '../lib/compromissos'
 import { situacaoFonte } from '../lib/fontes'
 import type { Proposicao } from '../payload-types'
+import { regrasDePrazoDe } from './regras'
 import { ADMIN, Chip, ChipPrazo, dataCurta, inicioDaSemana, linkDoc } from './util'
 
 /** "Hoje": o que precisa do autor, do mais urgente ao menos (docs/TELAS.md, B1). Fica no topo do painel. */
 export async function Hoje({ payload, user }: ServerProps) {
   if (!user) return null
   const agora = new Date()
-  const [compromissos, fontes, pauta, publicadosSemana, agendados, revisao, ajustes, radar] = await Promise.all([
+  const [compromissos, fontes, pauta, publicadosSemana, agendados, revisao, ajustes, radar, triagem] = await Promise.all([
     payload.find({ collection: 'compromissos', where: { status: { in: ['aberto', 'suspenso'] } }, sort: 'prazoEm', limit: 60, depth: 0 }),
     payload.find({ collection: 'fontes', where: { ativa: { equals: true } }, limit: 100, depth: 0 }),
     payload.find({
@@ -23,7 +24,20 @@ export async function Hoje({ payload, user }: ServerProps) {
     payload.count({ collection: 'pareceres', where: { status: { equals: 'em_revisao' } } }),
     payload.findGlobal({ slug: 'ajustes', depth: 0 }),
     payload.count({ collection: 'alertas', where: { visto: { equals: false } } }),
+    payload.find({
+      collection: 'proposicoes',
+      where: { situacaoEditorial: { equals: 'triagem' } },
+      limit: 500,
+      depth: 0,
+      pagination: false,
+      select: { dataApresentacao: true, ultimaMovimentacao: true, createdAt: true },
+    }),
   ])
+  // Regra dos 4 dias: na Triagem o prazo já corre desde que a proposta saiu
+  const regras = regrasDePrazoDe(ajustes)
+  const naTriagem = triagem.docs.map((p) => situacaoPrazo(calcularPrazo('parecer_prometido', dataDeSaida(p, agora), regras), agora))
+  const triagemVencida = naTriagem.filter((x) => x.situacao === 'atrasado').length
+  const triagemVencendo = naTriagem.filter((x) => x.situacao === 'vence_hoje' || (x.situacao === 'perto' && x.dias <= 1)).length
   const propIds = pauta.docs.map((t) => (typeof t.proposicao === 'object' ? t.proposicao.id : t.proposicao))
   const pareceres = propIds.length
     ? await payload.find({ collection: 'pareceres', where: { proposicao: { in: propIds } }, limit: 50, depth: 0 })
@@ -67,6 +81,19 @@ export async function Hoje({ payload, user }: ServerProps) {
                 </span>
               </a>
             ))}
+            {triagemVencida || triagemVencendo ? (
+              <a href={`${ADMIN}/triagem`}>
+                <Chip cor={triagemVencida ? 'r' : 'y'}>Triagem</Chip>
+                <span>
+                  <b>
+                    {triagemVencida ? `${triagemVencida} ${triagemVencida === 1 ? 'proposta' : 'propostas'} com o prazo de ${regras.parecer_prometido.dias} dias vencido` : ''}
+                    {triagemVencida && triagemVencendo ? ' e ' : ''}
+                    {triagemVencendo ? `${triagemVencendo} vencendo até amanhã` : ''}
+                  </b>{' '}
+                  · contado de quando saíram; decida: ativar, acompanhar ou descartar
+                </span>
+              </a>
+            ) : null}
             {compromissos.docs.map((c) => (
               <a key={c.id} href={linkDoc(c.alvo, c.alvoId)}>
                 <ChipPrazo prazo={c.prazoEm} agora={agora} />
@@ -76,7 +103,7 @@ export async function Hoje({ payload, user }: ServerProps) {
                 </span>
               </a>
             ))}
-            {!compromissos.docs.length && !fontesProblema.length ? <p className="obs-vazio">Nada pendente.</p> : null}
+            {!compromissos.docs.length && !fontesProblema.length && !triagemVencida && !triagemVencendo ? <p className="obs-vazio">Nada pendente.</p> : null}
           </div>
         </section>
         <div>
