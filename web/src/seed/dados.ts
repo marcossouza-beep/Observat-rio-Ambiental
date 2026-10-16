@@ -467,3 +467,34 @@ export const PALAVRAS_CO: [string, string, number, string][] = [
   ['moratória da soja', 'Florestas', 8, 'MT'],
   ['Fethab', 'Agrotóxicos', 5, 'MT'],
 ]
+
+/** Sudeste (Fase 6): órgãos, unidades de conservação, rios e temas de cada estado; cada termo vale só no seu estado. */
+export const PALAVRAS_SE: [string, string, number, string][] = [
+  // Espírito Santo
+  ['Iema', 'Licenciamento', 8, 'ES'],
+  ['Rio Doce', 'Água', 7, 'ES'],
+  ['Foz do Rio Doce', 'Costeiro e marinho', 7, 'ES'],
+  ['Parque Estadual de Itaúnas', 'Unidades de conservação', 6, 'ES'],
+  // Minas Gerais
+  ['Feam', 'Licenciamento', 8, 'MG'],
+  ['Copam', 'Licenciamento', 8, 'MG'],
+  ['IEF', 'Florestas', 7, 'MG'],
+  ['Serra do Espinhaço', 'Unidades de conservação', 7, 'MG'],
+  ['Quadrilátero Ferrífero', 'Mineração', 8, 'MG'],
+  ['Brumadinho', 'Mineração', 7, 'MG'],
+  ['Mariana', 'Mineração', 5, 'MG'],
+  ['Serra do Cipó', 'Unidades de conservação', 6, 'MG'],
+  // Rio de Janeiro
+  ['Inea', 'Licenciamento', 8, 'RJ'],
+  ['Baía de Guanabara', 'Costeiro e marinho', 7, 'RJ'],
+  ['Rio Paraíba do Sul', 'Água', 7, 'RJ'],
+  ['Serra dos Órgãos', 'Unidades de conservação', 6, 'RJ'],
+  ['Floresta da Tijuca', 'Unidades de conservação', 6, 'RJ'],
+  // São Paulo
+  ['Cetesb', 'Licenciamento', 8, 'SP'],
+  ['Sistema Cantareira', 'Água', 7, 'SP'],
+  ['Rio Tietê', 'Água', 7, 'SP'],
+  ['Serra do Mar', 'Mata Atlântica', 7, 'SP'],
+  ['Mantiqueira', 'Mata Atlântica', 6, 'SP'],
+  ['Fundação Florestal', 'Unidades de conservação', 7, 'SP'],
+]
