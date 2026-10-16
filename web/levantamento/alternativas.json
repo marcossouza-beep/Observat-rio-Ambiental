@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-10-16T02:05:57.347Z",
+  "geradoEm": "2026-10-16T02:46:57.395Z",
   "ambiente": "GitHub Actions (fora do Brasil)",
   "PA": {
     "proposicoes": {
@@ -96,6 +96,348 @@
           "tipo": "application/json; charset=utf-8",
           "bytes": 110,
           "inicio": "[{\"codigo\":1,\"nome\":\"DEPUTADO(A) ESTADUAL\"},{\"codigo\":2,\"nome\":\"EX-DEPUTADO(A)\"},{\"codigo\":3,\"nome\":\"OUTROS\"}]"
+        }
+      ]
+    },
+    "proposicoesEnderecos": {
+      "url": "https://www.alepa.pa.gov.br/Home/Page/Proposicoes",
+      "caminhos": [
+        "/Home/Pesquisa/${palavraChave}",
+        "/Home/Page/Inicio",
+        "/Home/Page/PortaldaTransparencia",
+        "/Home/Page/ouvidor",
+        "/Home/Page/SIC",
+        "/Home/Page/CartadeServicos",
+        "/Home/Page/LGPD",
+        "/Home/Page/RadardaTransparencia",
+        "/Home/Page/DiarioOficial",
+        "/Home/Page/FaleConosco",
+        "/Home/Page/Deputados",
+        "/Home/Page/MesaDiretora",
+        "/Home/Page/ComissoeseRepresentacoes",
+        "/Home/Page/Relatorios",
+        "/Home/Page/CondecoracoeseMedalhas",
+        "/Home/Page/PlanejamentoEstrategico",
+        "/Home/Page/Organograma",
+        "/Home/Page/ComissaoLegislacaoPart",
+        "/Home/Page/BancodeLeis",
+        "/Home/Page/Fotos",
+        "/Home/Page/Logos",
+        "/Home/Page/Noticias",
+        "/Home/Page/FundacaoRadioeTVAlepa",
+        "/Home/Page/BibliotecaNewtonMiranda",
+        "/Home/Page/MemorialLegislativo",
+        "/Home/Page/Legislacoes",
+        "/Home/Page/FELEPA",
+        "/Home/Page/ProcuradoriadaMulher",
+        "/Home/Page/OProcessoLegislativo",
+        "/Home/Page/Proposicoes",
+        "/Home/Page/PautasdoPlenario",
+        "/Home/Page/VotacoesNominais",
+        "/Home/Page/PautasdasComissoes",
+        "/Home/Page/ResumodoPlenario",
+        "/Home/Page/AtasdasSessoes",
+        "/Home/Page/Apollo",
+        "/Home/Page/Webmail",
+        "/Home/Page/ContraCheque",
+        "/Legislativo/GetTipoProposicoes",
+        "/Legislativo/GetTipoAutores",
+        "/Legislativo/ComboboxProposicaoAutor",
+        "/Legislativo/Proposicoes",
+        "/Legislativo/CardViewProposicoes",
+        "/Legislativo/CallbackPanelProposicoes"
+      ],
+      "trechos": [
+        "ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\">",
+        "fetchAndInsertItemsInCombo('/Legislativo/GetTipoProposicoes', ComboBoxTipoProposicao);",
+        "fetchAndInsertItemsInCombo('/Legislativo/GetTipoAutores', ComboBoxProposicaoTipoAutores);",
+        "fetchAndInsertItemsInCombo(endpoint, combo) {",
+        "fetch(endpoint);",
+        "ajaxSettings.flatOptions||{};for(n in t)void 0!==t[n]&&((i[n]?e:r||(r={}))[n]=t[n]);return r&&S.extend(!0,e,r),e}Wt.href=Tt.href,S.extend({active:0,lastModified:{},etag:{},ajaxSettings:{url:Tt.href,type:\"",
+        "url:!0,context:!0}},ajaxSetup:function(e,t){return t?$t($t(e,S.ajaxSettings),t):$t(S.ajaxSettings,e)},ajaxPrefilter:Ft(Rt),ajaxTransport:Ft(Mt),ajax:function(e,t){\"object\"==typeof e&&(t=e,e=void 0),t=t||{",
+        "ajaxSetup({},t),y=v.context||v,m=v.context&&(y.nodeType||y.jquery)?S(y):S.event,x=S.Deferred(),b=S.Callbacks(\"once memory\"),w=v.statusCode||{},a={},s={},u=\"canceled\",T={readyState:0,getResponseHeader:func",
+        "ajaxStart\"),v.type=v.type.toUpperCase(),v.hasContent=!Ot.test(v.type),f=v.url.replace(qt,\"\"),v.hasContent?v.data&&v.processData&&0===(v.contentType||\"\").indexOf(\"application/x-www-form-urlencoded\")&&(v.da",
+        "ajaxSend\",[T,v]),h)return T;v.async&&0<v.timeout&&(d=C.setTimeout(function(){T.abort(\"timeout\")},v.timeout));try{h=!1,c.send(a,l)}catch(e){if(h)throw e;l(-1,e)}}else l(-1,\"No Transport\");function l(e,t,n,",
+        "ajaxSuccess\":\"ajaxError\",[T,v,i?o:a]),b.fireWith(y,[T,l]),g&&(m.trigger(\"ajaxComplete\",[T,v]),--S.active||S.event.trigger(\"ajaxStop\")))}return T},getJSON:function(e,t,n){return S.get(e,t,n,\"json\")},getScr",
+        "ajax(S.extend({url:e,type:i,dataType:r,data:t,success:n},S.isPlainObject(e)&&e))}}),S.ajaxPrefilter(function(e){var t;for(t in e.headers)\"content-type\"===t.toLowerCase()&&(e.contentType=e.headers[t]||\"\")}",
+        "ajax({url:e,type:\"GET\",dataType:\"script\",cache:!0,async:!1,global:!1,converters:{\"text script\":function(){}},dataFilter:function(e){S.globalEval(e,t,n)}})},S.fn.extend({wrapAll:function(e){var t;return th",
+        "ajaxSettings.xhr=function(){try{return new C.XMLHttpRequest}catch(e){}};var _t={0:200,1223:204},zt=S.ajaxSettings.xhr();y.cors=!!zt&&\"withCredentials\"in zt,y.ajax=zt=!!zt,S.ajaxTransport(function(i){var o",
+        "ajaxPrefilter(function(e){e.crossDomain&&(e.contents.script=!1)}),S.ajaxSetup({accepts:{script:\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"},contents:{script",
+        "ajaxPrefilter(\"script\",function(e){void 0===e.cache&&(e.cache=!1),e.crossDomain&&(e.type=\"GET\")}),S.ajaxTransport(\"script\",function(n){var r,i;if(n.crossDomain||n.scriptAttrs)return{send:function(e,t){r=S",
+        "ajaxSetup({jsonp:\"callback\",jsonpCallback:function(){var e=Xt.pop()||S.expando+\"_\"+Ct.guid++;return this[e]=!0,e}}),S.ajaxPrefilter(\"json jsonp\",function(e,t,n){var r,i,o,a=!1!==e.jsonp&&(Vt.test(e.url)?\"",
+        "ajax({url:e,type:i||\"GET\",dataType:\"html\",data:t}).done(function(e){o=arguments,a.html(r?S(\"<div>\").append(S.parseHTML(e)).find(r):e)}).always(n&&function(e,t){a.each(function(){n.apply(this,o||[e.respons",
+        "ajaxStart\",\"ajaxStop\",\"ajaxComplete\",\"ajaxError\",\"ajaxSuccess\",\"ajaxSend\"],function(e,t){S.fn[t]=function(e){return this.on(t,e)}}),S.fn.extend({bind:function(e,t,n){return this.on(e,null,t,n)},unbind:fun",
+        "url:\"Please enter a valid URL.\",date:\"Please enter a valid date.\",dateISO:\"Please enter a valid date (ISO).\",number:\"Please enter a valid number.\",digits:\"Please enter only digits.\",equalTo:\"Please enter",
+        "url:{url:!0},date:{date:!0},dateISO:{dateISO:!0},number:{number:!0},digits:{digits:!0},creditcard:{creditcard:!0}},addClassRules:function(b,c){b.constructor===String?this.classRuleSettings[b]=c:a.extend(t",
+        "url:function(a,b){return this.optional(b)||/^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,",
+        "url:d}||d,h=a.param(a.extend({data:b},d.data)),i.old===h?i.valid:(i.old=h,f=this,this.startRequest(c),g={},g[c.name]=b,a.ajax(a.extend(!0,{mode:\"abort\",port:\"validate\"+c.name,dataType:\"json\",data:g,contex",
+        "ajaxPrefilter?a.ajaxPrefilter(function(a,b,d){var e=a.port;\"abort\"===a.mode&&(c[e]&&c[e].abort(),c[e]=d)}):(b=a.ajax,a.ajax=function(d){var e=(\"mode\"in d?d:a.ajaxSettings).mode,f=(\"port\"in d?d:a.ajaxSetti",
+        "url:o.params.url,type:o.params.type||\"GET\",data:{}},s=r(o.element.name);a.each(n(o.params.additionalfields||o.element.name),function(e,n){var r=i(n,s);d.data[r]=function(){var e=a(o.form).find(\":input\").f",
+        "Ajax support library for jQuery",
+        "AjaxClick\",d=\"unobtrusiveAjaxClickTarget\",h=\"unobtrusiveValidation\";function c(d,b){var a=window,c=(d||\"\").split(\".\");while(a&&c.length)a=a[c.shift()];if(typeof a===\"function\")return a;b.push(d);return Fu",
+        "ajax-mode\")||\"\").toUpperCase();a(c.getAttribute(\"data-ajax-update\")).each(function(f,c){var e;switch(d){case\"BEFORE\":e=c.firstChild;a(\"<div />\").html(b).contents().each(function(){c.insertBefore(this,e)})",
+        "ajax-confirm\");if(j&&!window.confirm(j))return;k=a(b.getAttribute(\"data-ajax-loading\"));h=parseInt(b.getAttribute(\"data-ajax-loading-duration\"),10)||0;a.extend(d,{type:b.getAttribute(\"data-ajax-method\")||",
+        "url:b.getAttribute(\"data-ajax-url\")||undefined,cache:(b.getAttribute(\"data-ajax-cache\")||\"\").toLowerCase()===\"true\",beforeSend:function(d){var a;g(d,f);a=c(b.getAttribute(\"data-ajax-begin\"),[\"xhr\"]).apply"
+      ],
+      "campos": [
+        {
+          "tag": "input",
+          "id": "SearchBox_I",
+          "nome": "SearchBox",
+          "tipo": "text",
+          "valor": "Buscar no site"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "submit",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "ComboBoxTipoProposicao_VI",
+          "nome": "ComboBoxTipoProposicao_VI",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "ComboBoxTipoProposicao_I",
+          "nome": "ComboBoxTipoProposicao",
+          "tipo": "text",
+          "valor": "Tipo da Proposição"
+        },
+        {
+          "tag": "input",
+          "id": "ComboBoxTipoProposicao_DDD_L_VI",
+          "nome": "ComboBoxTipoProposicao$DDD$L",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "Numero_I",
+          "nome": "Numero",
+          "tipo": "text",
+          "valor": "Número da Proposição"
+        },
+        {
+          "tag": "input",
+          "id": "Ano_I",
+          "nome": "Ano",
+          "tipo": "text",
+          "valor": "Ano da Proposição"
+        },
+        {
+          "tag": "input",
+          "id": "DataInicio_I",
+          "nome": "DataInicio",
+          "tipo": "text",
+          "valor": "Data de entrada inicial"
+        },
+        {
+          "tag": "button",
+          "id": "DataInicio_DDD_C_BT",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Hoje"
+        },
+        {
+          "tag": "button",
+          "id": "DataInicio_DDD_C_BC",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Limpar"
+        },
+        {
+          "tag": "input",
+          "id": "DataFim_I",
+          "nome": "DataFim",
+          "tipo": "text",
+          "valor": "Data de entrada final"
+        },
+        {
+          "tag": "button",
+          "id": "DataFim_DDD_C_BT",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Hoje"
+        },
+        {
+          "tag": "button",
+          "id": "DataFim_DDD_C_BC",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Limpar"
+        },
+        {
+          "tag": "input",
+          "id": "ComboBoxProposicaoTipoAutores_VI",
+          "nome": "ComboBoxProposicaoTipoAutores_VI",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "ComboBoxProposicaoTipoAutores_I",
+          "nome": "ComboBoxProposicaoTipoAutores",
+          "tipo": "text",
+          "valor": "Tipo de Autor"
+        },
+        {
+          "tag": "input",
+          "id": "ComboBoxProposicaoTipoAutores_DDD_L_VI",
+          "nome": "ComboBoxProposicaoTipoAutores$DDD$L",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "ComboBoxProposicaoAutor_VI",
+          "nome": "ComboBoxProposicaoAutor_VI",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "ComboBoxProposicaoAutor_I",
+          "nome": "ComboBoxProposicaoAutor",
+          "tipo": "text",
+          "valor": "Autor"
+        },
+        {
+          "tag": "input",
+          "id": "ComboBoxProposicaoAutor_DDD_L_VI",
+          "nome": "ComboBoxProposicaoAutor$DDD$L",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "Texto_I",
+          "nome": "Texto",
+          "tipo": "text",
+          "valor": "palavra-chave"
+        },
+        {
+          "tag": "input",
+          "id": "searchButton_I",
+          "nome": "searchButton",
+          "tipo": "submit",
+          "valor": "Pesquisar"
+        },
+        {
+          "tag": "input",
+          "id": "clearButton_I",
+          "nome": "clearButton",
+          "tipo": "button",
+          "valor": "Limpar"
+        },
+        {
+          "tag": "input",
+          "id": "",
+          "nome": "DXScript",
+          "tipo": "hidden",
+          "valor": "4_154,1_0,1_2,1_3,1_4,1_11,1_64,1_12,1_2"
+        },
+        {
+          "tag": "input",
+          "id": "",
+          "nome": "DXCss",
+          "tipo": "hidden",
+          "valor": "0_4966,1_68,1_69,0_4969,1_74,1_210,0_482"
+        }
+      ]
+    },
+    "pautasEnderecos": {
+      "url": "https://www.alepa.pa.gov.br/Home/Page/PautasPlenario",
+      "caminhos": [
+        "/Home/Pesquisa/${palavraChave}",
+        "/Home/Page/Inicio",
+        "/Home/Page/PortaldaTransparencia",
+        "/Home/Page/ouvidor",
+        "/Home/Page/SIC",
+        "/Home/Page/CartadeServicos",
+        "/Home/Page/LGPD",
+        "/Home/Page/RadardaTransparencia",
+        "/Home/Page/DiarioOficial",
+        "/Home/Page/FaleConosco",
+        "/Home/Page/Deputados",
+        "/Home/Page/MesaDiretora",
+        "/Home/Page/ComissoeseRepresentacoes",
+        "/Home/Page/Relatorios",
+        "/Home/Page/CondecoracoeseMedalhas",
+        "/Home/Page/PlanejamentoEstrategico",
+        "/Home/Page/Organograma",
+        "/Home/Page/ComissaoLegislacaoPart",
+        "/Home/Page/BancodeLeis",
+        "/Home/Page/Fotos",
+        "/Home/Page/Logos",
+        "/Home/Page/Noticias",
+        "/Home/Page/FundacaoRadioeTVAlepa",
+        "/Home/Page/BibliotecaNewtonMiranda",
+        "/Home/Page/MemorialLegislativo",
+        "/Home/Page/Legislacoes",
+        "/Home/Page/FELEPA",
+        "/Home/Page/ProcuradoriadaMulher",
+        "/Home/Page/OProcessoLegislativo",
+        "/Home/Page/Proposicoes",
+        "/Home/Page/PautasdoPlenario",
+        "/Home/Page/VotacoesNominais",
+        "/Home/Page/PautasdasComissoes",
+        "/Home/Page/ResumodoPlenario",
+        "/Home/Page/AtasdasSessoes",
+        "/Home/Page/Apollo",
+        "/Home/Page/Webmail",
+        "/Home/Page/ContraCheque"
+      ],
+      "trechos": [
+        "ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"/Content/Error.css\">",
+        "ajaxSettings.flatOptions||{};for(n in t)void 0!==t[n]&&((i[n]?e:r||(r={}))[n]=t[n]);return r&&S.extend(!0,e,r),e}Wt.href=Tt.href,S.extend({active:0,lastModified:{},etag:{},ajaxSettings:{url:Tt.href,type:\"",
+        "url:!0,context:!0}},ajaxSetup:function(e,t){return t?$t($t(e,S.ajaxSettings),t):$t(S.ajaxSettings,e)},ajaxPrefilter:Ft(Rt),ajaxTransport:Ft(Mt),ajax:function(e,t){\"object\"==typeof e&&(t=e,e=void 0),t=t||{",
+        "ajaxSetup({},t),y=v.context||v,m=v.context&&(y.nodeType||y.jquery)?S(y):S.event,x=S.Deferred(),b=S.Callbacks(\"once memory\"),w=v.statusCode||{},a={},s={},u=\"canceled\",T={readyState:0,getResponseHeader:func",
+        "ajaxStart\"),v.type=v.type.toUpperCase(),v.hasContent=!Ot.test(v.type),f=v.url.replace(qt,\"\"),v.hasContent?v.data&&v.processData&&0===(v.contentType||\"\").indexOf(\"application/x-www-form-urlencoded\")&&(v.da",
+        "ajaxSend\",[T,v]),h)return T;v.async&&0<v.timeout&&(d=C.setTimeout(function(){T.abort(\"timeout\")},v.timeout));try{h=!1,c.send(a,l)}catch(e){if(h)throw e;l(-1,e)}}else l(-1,\"No Transport\");function l(e,t,n,",
+        "ajaxSuccess\":\"ajaxError\",[T,v,i?o:a]),b.fireWith(y,[T,l]),g&&(m.trigger(\"ajaxComplete\",[T,v]),--S.active||S.event.trigger(\"ajaxStop\")))}return T},getJSON:function(e,t,n){return S.get(e,t,n,\"json\")},getScr",
+        "ajax(S.extend({url:e,type:i,dataType:r,data:t,success:n},S.isPlainObject(e)&&e))}}),S.ajaxPrefilter(function(e){var t;for(t in e.headers)\"content-type\"===t.toLowerCase()&&(e.contentType=e.headers[t]||\"\")}",
+        "ajax({url:e,type:\"GET\",dataType:\"script\",cache:!0,async:!1,global:!1,converters:{\"text script\":function(){}},dataFilter:function(e){S.globalEval(e,t,n)}})},S.fn.extend({wrapAll:function(e){var t;return th",
+        "ajaxSettings.xhr=function(){try{return new C.XMLHttpRequest}catch(e){}};var _t={0:200,1223:204},zt=S.ajaxSettings.xhr();y.cors=!!zt&&\"withCredentials\"in zt,y.ajax=zt=!!zt,S.ajaxTransport(function(i){var o",
+        "ajaxPrefilter(function(e){e.crossDomain&&(e.contents.script=!1)}),S.ajaxSetup({accepts:{script:\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"},contents:{script",
+        "ajaxPrefilter(\"script\",function(e){void 0===e.cache&&(e.cache=!1),e.crossDomain&&(e.type=\"GET\")}),S.ajaxTransport(\"script\",function(n){var r,i;if(n.crossDomain||n.scriptAttrs)return{send:function(e,t){r=S",
+        "ajaxSetup({jsonp:\"callback\",jsonpCallback:function(){var e=Xt.pop()||S.expando+\"_\"+Ct.guid++;return this[e]=!0,e}}),S.ajaxPrefilter(\"json jsonp\",function(e,t,n){var r,i,o,a=!1!==e.jsonp&&(Vt.test(e.url)?\"",
+        "ajax({url:e,type:i||\"GET\",dataType:\"html\",data:t}).done(function(e){o=arguments,a.html(r?S(\"<div>\").append(S.parseHTML(e)).find(r):e)}).always(n&&function(e,t){a.each(function(){n.apply(this,o||[e.respons",
+        "ajaxStart\",\"ajaxStop\",\"ajaxComplete\",\"ajaxError\",\"ajaxSuccess\",\"ajaxSend\"],function(e,t){S.fn[t]=function(e){return this.on(t,e)}}),S.fn.extend({bind:function(e,t,n){return this.on(e,null,t,n)},unbind:fun",
+        "url:\"Please enter a valid URL.\",date:\"Please enter a valid date.\",dateISO:\"Please enter a valid date (ISO).\",number:\"Please enter a valid number.\",digits:\"Please enter only digits.\",equalTo:\"Please enter",
+        "url:{url:!0},date:{date:!0},dateISO:{dateISO:!0},number:{number:!0},digits:{digits:!0},creditcard:{creditcard:!0}},addClassRules:function(b,c){b.constructor===String?this.classRuleSettings[b]=c:a.extend(t",
+        "url:function(a,b){return this.optional(b)||/^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,",
+        "url:d}||d,h=a.param(a.extend({data:b},d.data)),i.old===h?i.valid:(i.old=h,f=this,this.startRequest(c),g={},g[c.name]=b,a.ajax(a.extend(!0,{mode:\"abort\",port:\"validate\"+c.name,dataType:\"json\",data:g,contex",
+        "ajaxPrefilter?a.ajaxPrefilter(function(a,b,d){var e=a.port;\"abort\"===a.mode&&(c[e]&&c[e].abort(),c[e]=d)}):(b=a.ajax,a.ajax=function(d){var e=(\"mode\"in d?d:a.ajaxSettings).mode,f=(\"port\"in d?d:a.ajaxSetti",
+        "url:o.params.url,type:o.params.type||\"GET\",data:{}},s=r(o.element.name);a.each(n(o.params.additionalfields||o.element.name),function(e,n){var r=i(n,s);d.data[r]=function(){var e=a(o.form).find(\":input\").f",
+        "Ajax support library for jQuery",
+        "AjaxClick\",d=\"unobtrusiveAjaxClickTarget\",h=\"unobtrusiveValidation\";function c(d,b){var a=window,c=(d||\"\").split(\".\");while(a&&c.length)a=a[c.shift()];if(typeof a===\"function\")return a;b.push(d);return Fu",
+        "ajax-mode\")||\"\").toUpperCase();a(c.getAttribute(\"data-ajax-update\")).each(function(f,c){var e;switch(d){case\"BEFORE\":e=c.firstChild;a(\"<div />\").html(b).contents().each(function(){c.insertBefore(this,e)})",
+        "ajax-confirm\");if(j&&!window.confirm(j))return;k=a(b.getAttribute(\"data-ajax-loading\"));h=parseInt(b.getAttribute(\"data-ajax-loading-duration\"),10)||0;a.extend(d,{type:b.getAttribute(\"data-ajax-method\")||",
+        "url:b.getAttribute(\"data-ajax-url\")||undefined,cache:(b.getAttribute(\"data-ajax-cache\")||\"\").toLowerCase()===\"true\",beforeSend:function(d){var a;g(d,f);a=c(b.getAttribute(\"data-ajax-begin\"),[\"xhr\"]).apply",
+        "ajax-complete\"),[\"xhr\",\"status\"]).apply(b,arguments)},success:function(a,e,d){i(b,a,d.getResponseHeader(\"Content-Type\")||\"text/html\");c(b.getAttribute(\"data-ajax-success\"),[\"data\",\"status\",\"xhr\"]).apply(b",
+        "ajax-failure\"),[\"xhr\",\"status\",\"error\"]).apply(b,arguments)}});d.data.push({name:\"X-Requested-With\",value:\"XMLHttpRequest\"});f=d.type.toUpperCase();if(!e(f)){d.type=\"POST\";d.data.push({name:\"X-HTTP-Method",
+        "ajax(d)}function j(c){var b=a(c).data(h);return!b||!b.validate||b.validate()}a(document).on(\"click\",\"a[data-ajax=true]\",function(a){a.preventDefault();f(this,{url:this.href,type:\"GET\",data:[]})});a(docume",
+        "ajax=true] input[type=image]\",function(c){var g=c.target.name,e=a(c.target),f=a(e.parents(\"form\")[0]),d=e.offset();f.data(b,[{name:g+\".x\",value:Math.round(c.pageX-d.left)},{name:g+\".y\",value:Math.round(c."
+      ],
+      "campos": [
+        {
+          "tag": "input",
+          "id": "SearchBox_I",
+          "nome": "SearchBox",
+          "tipo": "text",
+          "valor": "Buscar no site"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "submit",
+          "valor": ""
         }
       ]
     },
@@ -742,12 +1084,12 @@
       ],
       "chamadas": [
         {
-          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1v9101483413za208zd9101483413xf1&_p=1792116494895&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1216644545.1792116495&frm=0&ngs=1&pscdl=noapi&rcb=6&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792116495&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1976",
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6af0h2v9101483413za208zd9101483413xf1&_p=1792118962322&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=244054165.1792118962&frm=0&ngs=1&pscdl=noapi&rcb=13&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792118962&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1875",
           "status": 204,
           "tipo": "text/plain"
         },
         {
-          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6ae1v9101483413za200zd9101483413xf1&_p=1792116494895&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1216644545.1792116495&frm=0&ngs=1&pscdl=noapi&rcb=6&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=2&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792116495&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=scroll&epn.percent_scrolled=90&_et=7&tfd=6984",
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SKZ66VLH1J&gtm=45je6af0h2v9101483413za200zd9101483413xf1&_p=1792118962322&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=244054165.1792118962&frm=0&ngs=1&pscdl=noapi&rcb=13&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=2&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792118962&sct=1&seg=0&dl=https%3A%2F%2Fdiofe.portal.ap.gov.br%2F&dt=Di%C3%A1rio%20Oficial%20%2F%20Home&en=scroll&epn.percent_scrolled=90&_et=7&tfd=6883",
           "status": 204,
           "tipo": "text/plain"
         }
