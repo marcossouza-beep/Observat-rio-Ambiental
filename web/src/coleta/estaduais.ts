@@ -1,11 +1,12 @@
 /**
  * Conectores das fontes estaduais (Fases 5 e 6): Assembleias com SAPL (AC, AM, RO, TO; AL, PB, PI), o Diário da ALE-RR
  * (Roraima), a pesquisa de proposições da Alepa e o Banco de Leis da Alepa (Pará), o Diário do Legislativo da Bahia, o
- * expediente e a lista de proposições da Alece (Ceará) a pesquisa de proposições da ALMT (Mato Grosso) e a API de dados abertos da ALMG (Minas Gerais). A chave é o slug da fonte em Fontes.
+ * expediente e a lista de proposições da Alece (Ceará) a pesquisa de proposições da ALMT (Mato Grosso) a API de dados abertos da ALMG (Minas Gerais) e a API do processo legislativo da Alesp (São Paulo). A chave é o slug da fonte em Fontes.
  */
 import { conectorAlba } from './alba/conector'
 import { conectorAlece } from './alece/conector'
 import { conectorAlerr } from './alerr/conector'
+import { conectorAlesp } from './alesp/conector'
 import { conectorAlmg } from './almg/conector'
 import { conectorAlmt } from './almt/conector'
 import { conectorLeisPara } from './alepa/leis'
@@ -22,6 +23,7 @@ export const CONECTORES_ESTADUAIS: Record<string, Conector> = {
   'casa-ce': conectorAlece,
   'casa-mt': conectorAlmt,
   'casa-mg': conectorAlmg,
+  'casa-sp': conectorAlesp,
 }
 
 /** Dados da fonte quando ela ainda não existe em Fontes (a coleta cria). */
@@ -34,4 +36,5 @@ export const FONTES_ESTADUAIS: Record<string, { nome: string; nivel: 'A' | 'B' |
   'casa-ce': { nome: 'Assembleia Legislativa do Ceará (expediente e proposições)', nivel: 'B', esfera: 'estadual', uf: 'CE', url: 'https://www.al.ce.gov.br/legislativo/expediente-historico' },
   'casa-mt': { nome: 'Assembleia Legislativa de Mato Grosso (pesquisa de proposições)', nivel: 'B', esfera: 'estadual', uf: 'MT', url: 'https://www.al.mt.gov.br/proposicao' },
   'casa-mg': { nome: 'Assembleia Legislativa de Minas Gerais (dados abertos)', nivel: 'A', esfera: 'estadual', uf: 'MG', url: 'https://dadosabertos.almg.gov.br/documentacao/index' },
+  'casa-sp': { nome: 'Assembleia Legislativa de São Paulo (processo legislativo)', nivel: 'A', esfera: 'estadual', uf: 'SP', url: 'https://www.al.sp.gov.br/propositura' },
 }
