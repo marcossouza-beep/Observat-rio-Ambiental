@@ -140,6 +140,12 @@ Uma região por ciclo, repetindo o processo do piloto.
 > - **Rio de Janeiro:** a Alerj tem a lista de projetos em HTML (Lotus Notes, `alerjln1.alerj.rj.gov.br`), dos mais novos para os mais antigos, mas o servidor responde de forma instável a partir do GitHub (uma de três tentativas). Testar de um servidor no Brasil antes do conector.
 > - **Espírito Santo:** a Ales não responde de fora do Brasil.
 
+> **Fase 6 (Sul) — em andamento (17/10/2026):**
+> - **Santa Catarina, pelo e-Legis da Alesc** (`web/src/coleta/alesc/`, fonte `casa-sc`): a lista do processo legislativo vem das mais novas para as mais antigas, com número, ementa, entrada, autoria, setor e situação; a ficha de cada proposta traz regime, matéria legislativa e a linha do tempo de tramitações, com setor de origem e de destino. As novas vêm do começo da lista; as acompanhadas, da lista filtrada pelo número.
+> - **Palavras-chave:** 18 termos dos três estados (IAT, Instituto Água e Terra, Fepam, IMA, Floresta com Araucária, Baía de Paranaguá, Lagoa dos Patos, Rio Guaíba, Serra do Tabuleiro, Código Ambiental de Santa Catarina e outros).
+> - **Paraná:** a pesquisa legislativa da Alep passa por captcha, que não é contornado; a ordem do dia e as pautas das comissões saem em PDF (`storage2.assembleia.pr.leg.br`) e podem virar andamentos das propostas acompanhadas. Caminho para as novas: pedir acesso à Alep.
+> - **Rio Grande do Sul:** a ALRS não responde de fora do Brasil; precisa de servidor no Brasil.
+
 ## Fase 7 — Municipal e premium
 
 Capitais e municípios-chave (via Querido Diário). Camada premium definida a partir das métricas acumuladas.
