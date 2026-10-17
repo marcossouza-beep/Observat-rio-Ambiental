@@ -363,6 +363,41 @@ const PASSOS_SE: Passo[] = [
   },
 ]
 
+/** Sul (Fase 6): e-Legis da Alesc (lista e tramitações), portal e diário da Alep, ALRS. */
+const PASSOS_SUL: Passo[] = [
+  {
+    fonte: 'alesc',
+    nome: 'elegis',
+    async rodar() {
+      const base = 'https://portalelegis.alesc.sc.gov.br'
+      const lista = await gravarHtml('alesc', 'processo-legislativo', `${base}/proposicoes/processo-legislativo`)
+      await gravarHtml('alesc', 'processo-legislativo-p2', `${base}/proposicoes/processo-legislativo?page=2`)
+      const html = ((lista.corpo as { html?: string } | null)?.html || '') as string
+      const ids = [...new Set([...html.matchAll(/\/proposicoes\/([A-Za-z0-9]{4,8})(?=["'?/])/g)].map((m) => m[1]))].filter((i) => !/^(processo|atividade)/.test(i)).slice(0, 2)
+      for (const id of ids) {
+        await gravarHtml('alesc', `tramitacoes-${id}`, `${base}/proposicoes/${id}`)
+        await gravarHtml('alesc', `documentos-${id}`, `${base}/proposicoes/${id}/documentos`)
+      }
+    },
+  },
+  {
+    fonte: 'alep',
+    nome: 'portal',
+    async rodar() {
+      await gravarComLinks('alep', 'https://www.assembleia.pr.leg.br/', /diario|proposi|projeto|legislativ|pauta|ordem-do-dia/i, 5)
+      await gravarHtml('alep', 'consultas', 'https://consultas.assembleia.pr.leg.br/')
+    },
+  },
+  {
+    fonte: 'alrs',
+    nome: 'portal',
+    async rodar() {
+      await gravarHtml('alrs', 'inicio', 'https://ww4.al.rs.gov.br/')
+      await gravarHtml('alrs', 'proposicoes', 'https://ww4.al.rs.gov.br/proposicoes')
+    },
+  },
+]
+
 /** Pará e Roraima sem SAPL aberto: Diário da ALE-RR (WordPress + PDF) e Banco de Leis da Alepa (API JSON). */
 const PASSOS_NORTE: Passo[] = [
   {
@@ -728,7 +763,7 @@ async function main() {
   const ctx: Ctx = {}
   await mkdir(saida, { recursive: true })
   const fontes = filtro ? filtro.split(',') : null
-  for (const p of [...PASSOS, ...PASSOS_SAPL, ...passosSapl('sapl-ne', SAPL_NE), ...PASSOS_NORTE, ...PASSOS_NE, ...PASSOS_CO, ...PASSOS_SE].filter((x) => !fontes || fontes.includes(x.fonte))) {
+  for (const p of [...PASSOS, ...PASSOS_SAPL, ...passosSapl('sapl-ne', SAPL_NE), ...PASSOS_NORTE, ...PASSOS_NE, ...PASSOS_CO, ...PASSOS_SE, ...PASSOS_SUL].filter((x) => !fontes || fontes.includes(x.fonte))) {
     try {
       await p.rodar(ctx)
     } catch (e) {

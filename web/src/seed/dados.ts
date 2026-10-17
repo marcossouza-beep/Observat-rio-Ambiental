@@ -498,3 +498,28 @@ export const PALAVRAS_SE: [string, string, number, string][] = [
   ['Mantiqueira', 'Mata Atlântica', 6, 'SP'],
   ['Fundação Florestal', 'Unidades de conservação', 7, 'SP'],
 ]
+
+/** Sul (Fase 6): órgãos, unidades de conservação, rios e temas de cada estado; cada termo vale só no seu estado. */
+export const PALAVRAS_SUL: [string, string, number, string][] = [
+  // Paraná
+  ['IAT', 'Licenciamento', 8, 'PR'],
+  ['Instituto Água e Terra', 'Licenciamento', 8, 'PR'],
+  ['Floresta com Araucária', 'Mata Atlântica', 7, 'PR'],
+  ['Baía de Paranaguá', 'Costeiro e marinho', 7, 'PR'],
+  ['Rio Iguaçu', 'Água', 6, 'PR'],
+  ['Parque Nacional do Iguaçu', 'Unidades de conservação', 6, 'PR'],
+  // Rio Grande do Sul
+  ['Fepam', 'Licenciamento', 8, 'RS'],
+  ['Lagoa dos Patos', 'Água', 7, 'RS'],
+  ['Rio Guaíba', 'Água', 7, 'RS'],
+  ['Código Estadual do Meio Ambiente', 'Licenciamento', 9, 'RS'],
+  ['enchentes de 2024', 'Clima', 7, 'RS'],
+  ['banhado', 'Pampa', 6, 'RS'],
+  // Santa Catarina
+  ['IMA', 'Licenciamento', 8, 'SC'],
+  ['Instituto do Meio Ambiente de Santa Catarina', 'Licenciamento', 8, 'SC'],
+  ['Serra do Tabuleiro', 'Unidades de conservação', 7, 'SC'],
+  ['Rio Itajaí', 'Água', 6, 'SC'],
+  ['Lagoa da Conceição', 'Água', 6, 'SC'],
+  ['Código Ambiental de Santa Catarina', 'Licenciamento', 9, 'SC'],
+]
