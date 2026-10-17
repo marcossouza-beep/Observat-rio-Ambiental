@@ -33,7 +33,7 @@ const semHifen = (d: string) => d.replace(/-/g, '')
 const rapido = { tentativas: 2, esperaBaseMs: 1500, tempoLimiteMs: 40_000 }
 
 /** Propostas reais tratadas como acompanhadas no teste dos conectores estaduais (exercitam a busca de andamentos). */
-const ACOMPANHADAS_DE_TESTE: Record<string, string[]> = { 'casa-ce': ['CE:PL 593/2026'], 'casa-mt': ['MT:PL 1/2026'], 'casa-mg': ['MG:PL 6187/2026'], 'casa-sp': ['SP:PL 863/2026'] }
+const ACOMPANHADAS_DE_TESTE: Record<string, string[]> = { 'casa-ce': ['CE:PL 593/2026'], 'casa-mt': ['MT:PL 1/2026'], 'casa-mg': ['MG:PL 6187/2026'], 'casa-sp': ['SP:PL 863/2026'], 'casa-sc': ['SC:PL 600/2026'] }
 
 type Camara<T> = { dados: T; links?: { rel: string; href: string }[] }
 
