@@ -72,6 +72,21 @@ Criar a conta gratuita em inlabs.in.gov.br com um e-mail do projeto e cadastrar 
 
 Num serviço gratuito (UptimeRobot, Better Stack ou similar), monitorar `SITE_URL/api/saude` a cada 5 minutos, com alerta para o seu e-mail e celular. A resposta traz `"ok": true`, a situação de cada fonte e quantos compromissos públicos estão vencidos.
 
+## 5.1 Servidor no Brasil (Assembleias que bloqueiam acesso de fora)
+
+Os fluxos do GitHub rodam fora do Brasil. Os sites de AP, MA, PE, RN, DF, ES e RS (e, em alguns dias, GO e RJ) não respondem a eles. Uma máquina pequena no Brasil, cadastrada como executor próprio do GitHub, resolve: os mesmos fluxos passam a rodar lá quando pedido.
+
+1. **Máquina:** qualquer Linux com 1 vCPU, 1 GB de memória e 20 GB de disco, em São Paulo (por exemplo: Oracle Cloud "Always Free", região São Paulo; Magalu Cloud; AWS ou Google na região `sa-east-1`/`southamerica-east1`). Ela só faz chamadas de saída; não precisa de porta aberta.
+2. **Programas:** `git`, Node 22 e `corepack enable` (pnpm). Para o estudo com navegador: `sudo npx playwright install-deps chromium` uma vez.
+3. **Executor do GitHub:** no repositório, Settings → Actions → Runners → *New self-hosted runner* → Linux. Rodar os comandos mostrados na própria máquina; no `./config.sh`, informar o rótulo **`brasil`**. Depois, deixar como serviço: `sudo ./svc.sh install && sudo ./svc.sh start`.
+4. **Variáveis do GitHub** (Settings → Secrets and variables → Actions → *Variables*):
+   - `RUNNER_BRASIL` = `true` (liga o uso do servidor);
+   - `FONTES_BRASIL` = fontes que só respondem do Brasil, separadas por vírgula (ex.: `casa-ap,casa-rs`), preenchida à medida que os conectores desses estados ficarem prontos.
+5. **Conferir:** Actions → **Levantamento regional** → *Run workflow* com `servidor` = `brasil` e as UFs `AP,MA,PE,RN,DF,ES,RS,GO,RJ`. O resultado vira um commit com "(servidor no Brasil)" na mensagem; a partir dele os conectores desses estados podem ser construídos, com amostras gravadas também pelo servidor (**Gravar amostras das APIs**, `servidor` = `brasil`).
+6. **Coleta:** com as variáveis ligadas, a **Coleta** das 6h, 12h, 18h e 23h roda as fontes de `FONTES_BRASIL` no servidor no Brasil e as demais no GitHub, como hoje.
+
+Cuidado: um executor próprio roda o código dos fluxos do repositório. Mantenha o repositório privado ou, se for público, em Settings → Actions → General exija aprovação para fluxos de colaboradores externos; os fluxos deste projeto que usam o servidor só rodam por agendamento ou à mão.
+
 ## 6. Conferir
 
 - [ ] `SITE_URL` abre a página inicial; `SITE_URL/admin` abre o painel em português.

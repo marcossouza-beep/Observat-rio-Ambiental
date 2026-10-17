@@ -35,6 +35,8 @@ jobs:
       INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
       INLABS_SENHA: ${{ secrets.INLABS_SENHA }}
       COLETA_FONTES: ${{ github.event.inputs.fontes }}
+      # Fontes que só respondem de dentro do Brasil ficam para o servidor no Brasil (job abaixo)
+      COLETA_EXCLUIR: ${{ vars.RUNNER_BRASIL == 'true' && vars.FONTES_BRASIL || '' }}
     steps:
       - name: Banco ainda não configurado
         if: env.DATABASE_URL == '' || env.PAYLOAD_SECRET == ''
@@ -56,4 +58,32 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Coletar e gravar
         if: env.DATABASE_URL != '' && env.PAYLOAD_SECRET != ''
+        run: pnpm coleta
+
+  # Assembleias que não respondem de fora do Brasil (AP, MA, PE, RN, DF, ES, RS...): rodam num executor próprio no
+  # Brasil, com o rótulo "brasil" (docs/IMPLANTACAO.md, seção 5). Liga com as variáveis RUNNER_BRASIL=true e
+  # FONTES_BRASIL=casa-ap,casa-rs,... Sem elas, este job não roda.
+  coletar-brasil:
+    if: vars.RUNNER_BRASIL == 'true' && vars.FONTES_BRASIL != '' && github.event.inputs.fontes == ''
+    runs-on: [self-hosted, brasil]
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: web
+    env:
+      DATABASE_URL: ${{ secrets.COLETA_DATABASE_URL || secrets.BACKUP_DATABASE_URL }}
+      PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
+      COLETA_FONTES: ${{ vars.FONTES_BRASIL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - name: Coletar e gravar (servidor no Brasil)
         run: pnpm coleta

@@ -146,6 +146,8 @@ Uma região por ciclo, repetindo o processo do piloto.
 > - **Paraná:** a pesquisa legislativa da Alep passa por captcha, que não é contornado; a ordem do dia e as pautas das comissões saem em PDF (`storage2.assembleia.pr.leg.br`) e podem virar andamentos das propostas acompanhadas. Caminho para as novas: pedir acesso à Alep.
 > - **Rio Grande do Sul:** a ALRS não responde de fora do Brasil; precisa de servidor no Brasil.
 
+> **Estados que dependem de servidor no Brasil (17/10/2026):** os fluxos de levantamento, amostras e coleta já aceitam um executor próprio no Brasil (rótulo `brasil`; `docs/IMPLANTACAO.md`, seção 5.1). Com a máquina cadastrada, o primeiro passo é o levantamento de AP, MA, PE, RN, DF, ES, RS, GO e RJ a partir dela; depois, amostras e conectores, que entram em `FONTES_BRASIL` e passam a ser coletados de lá.
+
 ## Fase 7 — Municipal e premium
 
 Capitais e municípios-chave (via Querido Diário). Camada premium definida a partir das métricas acumuladas.

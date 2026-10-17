@@ -15,6 +15,10 @@ on:
         description: 'sondagem (padrão) ou alternativas (navegador; sem UFs, PA/AP/RR; com UFs, estudo genérico delas)'
         required: false
         default: 'sondagem'
+      servidor:
+        description: 'github (padrão, fora do Brasil) ou brasil (executor próprio com o rótulo brasil; docs/IMPLANTACAO.md, seção 5)'
+        required: false
+        default: 'github'
 
 permissions:
   contents: write
@@ -25,7 +29,7 @@ concurrency:
 
 jobs:
   sondar:
-    runs-on: ubuntu-latest
+    runs-on: ${{ github.event.inputs.servidor == 'brasil' && fromJSON('["self-hosted","brasil"]') || 'ubuntu-latest' }}
     timeout-minutes: 30
     defaults:
       run:
@@ -46,7 +50,8 @@ jobs:
         run: pnpm levantamento ${{ github.event.inputs.ufs }}
       - name: Instalar o navegador
         if: github.event.inputs.modo == 'alternativas'
-        run: pnpm exec playwright install --with-deps chromium
+        # No servidor no Brasil as dependências do sistema já ficam instaladas (docs/IMPLANTACAO.md, seção 5)
+        run: pnpm exec playwright install ${{ github.event.inputs.servidor != 'brasil' && '--with-deps' || '' }} chromium
       - name: Testar alternativas (PA, AP, RR)
         if: github.event.inputs.modo == 'alternativas'
         run: pnpm levantamento:alternativas ${{ github.event.inputs.ufs }}
@@ -56,6 +61,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add levantamento
           if git diff --cached --quiet; then echo "Nada mudou."; exit 0; fi
-          git commit -m "Levantamento regional: ${{ github.event.inputs.modo || 'sondagem' }} ($(date -u +%Y-%m-%d))"
+          git commit -m "Levantamento regional: ${{ github.event.inputs.modo || 'sondagem' }}${{ github.event.inputs.servidor == 'brasil' && ' (servidor no Brasil)' || '' }} ($(date -u +%Y-%m-%d))"
           for i in 1 2 3; do git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0; sleep 5; done
           exit 1

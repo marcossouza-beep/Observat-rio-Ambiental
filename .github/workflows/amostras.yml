@@ -11,6 +11,10 @@ on:
         description: 'camara, senado, vetos, pdf, dou, sapl (separadas por vírgula) ou vazio para todas'
         required: false
         default: ''
+      servidor:
+        description: 'github (padrão, fora do Brasil) ou brasil (executor próprio com o rótulo brasil)'
+        required: false
+        default: 'github'
 
 permissions:
   contents: write
@@ -23,7 +27,7 @@ concurrency:
 
 jobs:
   gravar:
-    runs-on: ubuntu-latest
+    runs-on: ${{ github.event.inputs.servidor == 'brasil' && fromJSON('["self-hosted","brasil"]') || 'ubuntu-latest' }}
     timeout-minutes: 15
     defaults:
       run:
