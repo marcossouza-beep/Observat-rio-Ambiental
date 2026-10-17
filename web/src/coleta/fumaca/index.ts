@@ -4,11 +4,13 @@
  *   fumaca-resultado/<id>.json     (amostra de cada resposta)
  * Uso: pnpm fumaca            (todas)
  *      pnpm fumaca camara     (só as que começam com "camara")
- * Sai com erro se alguma verificação essencial falhar.
+ * Sai com erro se alguma verificação essencial falhar. Fonte fora do ar (rede, tempo esgotado, HTTP 5xx) é aviso, não
+ * falha: é problema do site, não do conector, e a verificação horária já avisa a equipe se passar da tolerância.
+ * Mudança de formato e qualquer outro erro continuam vermelhos.
  */
 import { mkdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
-import { descreverErro, VERIFICACOES } from './verificacoes'
+import { descreverErro, foraDoAr, VERIFICACOES } from './verificacoes'
 
 const saida = path.resolve(process.cwd(), 'fumaca-resultado')
 const filtro = process.argv[2]
@@ -21,15 +23,17 @@ async function main() {
   for (const v of VERIFICACOES.filter((x) => !filtro || x.id.startsWith(filtro))) {
     const t0 = Date.now()
     let res
+    let semRede = false
     try {
       res = await v.rodar(ctx)
     } catch (e) {
-      res = { ok: false, notas: [`erro: ${descreverErro(e)}`] }
+      semRede = foraDoAr(e)
+      res = { ok: false, notas: [`${semRede ? 'fonte fora do ar' : 'erro'}: ${descreverErro(e)}`] }
     }
     const ms = Date.now() - t0
     Object.assign(ctx, res.contexto || {})
-    if (!res.ok && v.essencial) falhaEssencial = true
-    const marca = res.ok ? '✅' : v.essencial ? '❌' : '⚠️'
+    if (!res.ok && v.essencial && !semRede) falhaEssencial = true
+    const marca = res.ok ? '✅' : v.essencial && !semRede ? '❌' : '⚠️'
     linhas.push(`## ${marca} ${v.fonte} · ${v.descricao}`, '', `\`${v.id}\` · ${ms} ms${v.essencial ? ' · essencial' : ''}`, '', ...res.notas.map((n) => `- ${n}`), '')
     if (res.amostra !== undefined) {
       const json = JSON.stringify(res.amostra, null, 2)

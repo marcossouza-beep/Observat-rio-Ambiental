@@ -135,18 +135,26 @@ export async function coletarFonte(payload: Payload, slug: string, opcoes: { ago
     await payload.update({
       collection: 'fontes',
       id: fonte.id,
-      data: { ultimaColeta: agora.toISOString(), ultimaColetaOk: agora.toISOString(), itensUltimaColeta: r.itensListados, mediaItens30d: await mediaItens(payload, fonte.id, agora), erro: avisos.length ? avisos.join('\n').slice(0, 2000) : null },
+      data: { ultimaColeta: agora.toISOString(), ultimaColetaOk: agora.toISOString(), itensUltimaColeta: r.itensListados, mediaItens30d: await mediaItens(payload, fonte.id, agora), erro: avisos.length ? avisos.join('\n').slice(0, 2000) : null, falhasSeguidas: 0 },
     })
     await revalidarSite()
     return { fonte: slug, ok: true, itens: r.itensListados, balanco, avisos }
   } catch (e) {
     const erro = (e as Error).message
     await payload.update({ collection: 'coletas', id: coleta.id, data: { fim: new Date().toISOString(), ok: false, erro, amostra: { balanco } as never } })
-    await payload.update({ collection: 'fontes', id: fonte.id, data: { ultimaColeta: agora.toISOString(), erro } })
+    const falhasSeguidas = (fonte.falhasSeguidas ?? 0) + 1
+    await payload.update({ collection: 'fontes', id: fonte.id, data: { ultimaColeta: agora.toISOString(), erro, falhasSeguidas } })
     // Formato mudou: a coleta desta fonte para; os dados anteriores ficam no ar com a data (docs/ENTREGA.md).
+    // Uma falha isolada (site fora do ar, página de manutenção) é alerta; "conector quebrado" só quando a mudança de
+    // formato se repete em duas coletas seguidas.
     await payload.create({
       collection: 'verificacoes',
-      data: { tipo: 'fonte', resultado: e instanceof ErroFormato ? 'falha' : 'alerta', detalhe: `${conector.nome}: ${erro}`.slice(0, 500), dados: { fonte: slug, balanco } },
+      data: {
+        tipo: 'fonte',
+        resultado: e instanceof ErroFormato && falhasSeguidas >= 2 ? 'falha' : 'alerta',
+        detalhe: `${conector.nome}: ${erro}${falhasSeguidas > 1 ? ` (${falhasSeguidas} coletas seguidas)` : ''}`.slice(0, 500),
+        dados: { fonte: slug, balanco, falhasSeguidas },
+      },
     })
     if (balanco.tramitacoes || balanco.novas) await revalidarSite()
     return { fonte: slug, ok: false, erro, balanco }

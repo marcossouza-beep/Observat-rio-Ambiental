@@ -1,6 +1,6 @@
 import type { ServerProps } from 'payload'
 import { calcularPrazo, dataDeSaida, ROTULO_COMPROMISSO, situacaoPrazo, type TipoCompromisso } from '../lib/compromissos'
-import { situacaoFonte } from '../lib/fontes'
+import { estadoDaFonte, situacaoFonte } from '../lib/fontes'
 import type { Proposicao } from '../payload-types'
 import { regrasDePrazoDe } from './regras'
 import { ADMIN, Chip, ChipPrazo, dataCurta, inicioDaSemana, linkDoc } from './util'
@@ -47,7 +47,7 @@ export async function Hoje({ payload, user }: ServerProps) {
   const fontesProblema = fontes.docs
     .map((f) => ({
       f,
-      s: situacaoFonte({ manual: f.manual ?? false, ultimaColetaOk: f.ultimaColetaOk ? new Date(f.ultimaColetaOk) : null, itensUltimaColeta: f.itensUltimaColeta, mediaItens30d: f.mediaItens30d }, agora),
+      s: situacaoFonte(estadoDaFonte(f), agora),
     }))
     .filter((x) => x.s === 'atrasada' || x.s === 'volume_baixo')
   const prometidos = compromissos.docs.filter((c) => c.tipo === 'parecer_prometido').length

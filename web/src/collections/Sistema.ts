@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { equipe } from '../access'
-import { situacaoFonte } from '../lib/fontes'
+import { estadoDaFonte, situacaoFonte } from '../lib/fontes'
 
 const soEquipe = { read: equipe, create: equipe, update: equipe, delete: equipe }
 
@@ -38,6 +38,16 @@ export const Fontes: CollectionConfig = {
       ],
     },
     { name: 'frequencia', type: 'text', defaultValue: '6h, 12h, 18h, 23h' },
+    {
+      name: 'toleranciaHoras',
+      label: 'Tolerância sem coleta (horas)',
+      type: 'number',
+      min: 1,
+      admin: {
+        description:
+          'Depois disso a fonte aparece como atrasada e a equipe recebe e-mail. Vazio: 8 horas nas federais; 48 horas úteis nas estaduais (sem fim de semana nem recesso).',
+      },
+    },
     { name: 'manual', label: 'Cadastro manual (nível D)', type: 'checkbox', defaultValue: false },
     { name: 'ativa', type: 'checkbox', defaultValue: true },
     { name: 'ultimaColeta', type: 'date', admin: { readOnly: true, date: { pickerAppearance: 'dayAndTime' } } },
@@ -45,6 +55,8 @@ export const Fontes: CollectionConfig = {
     { name: 'itensUltimaColeta', type: 'number', admin: { readOnly: true } },
     { name: 'mediaItens30d', label: 'Média de itens (30 dias)', type: 'number', admin: { readOnly: true } },
     { name: 'erro', label: 'Último erro', type: 'textarea', admin: { readOnly: true } },
+    { name: 'falhasSeguidas', label: 'Coletas seguidas com falha', type: 'number', defaultValue: 0, admin: { readOnly: true } },
+    { name: 'alertaEnviadoEm', label: 'Aviso à equipe enviado em', type: 'date', admin: { readOnly: true, date: { pickerAppearance: 'dayAndTime' } } },
     {
       name: 'situacao',
       type: 'text',
@@ -52,16 +64,7 @@ export const Fontes: CollectionConfig = {
       admin: { readOnly: true },
       hooks: {
         afterRead: [
-          ({ siblingData }) =>
-            situacaoFonte(
-              {
-                manual: siblingData.manual,
-                ultimaColetaOk: siblingData.ultimaColetaOk ? new Date(siblingData.ultimaColetaOk) : null,
-                itensUltimaColeta: siblingData.itensUltimaColeta,
-                mediaItens30d: siblingData.mediaItens30d,
-              },
-              new Date(),
-            ),
+          ({ siblingData }) => situacaoFonte(estadoDaFonte(siblingData), new Date()),
         ],
       },
     },

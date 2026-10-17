@@ -149,8 +149,12 @@ describe('coleta da Câmara e do Senado', () => {
     const depois = (await payload.find({ collection: 'fontes', where: { slug: { equals: 'camara' } } })).docs[0]
     expect(depois.ultimaColetaOk).toBe(antes.ultimaColetaOk)
     expect(depois.erro).toMatch(/Formato da Câmara mudou/)
+    // Primeira vez é alerta; a segunda seguida vira falha (conector quebrado, não instabilidade)
+    expect((await payload.count({ collection: 'verificacoes', where: { resultado: { equals: 'falha' } } })).totalDocs).toBe(0)
+    await coletarFonte(payload, 'camara', { agora: new Date(AGORA.getTime() + 6 * 36e5), buscar: buscaGravada({ fichaQuebrada: true }) })
     const v = await payload.find({ collection: 'verificacoes', where: { resultado: { equals: 'falha' } } })
     expect(v.docs[0].detalhe).toMatch(/Câmara dos Deputados/)
+    expect(v.docs[0].detalhe).toMatch(/2 coletas seguidas/)
   }, 120_000)
 
   it('Congresso: veto vira andamento da proposta vetada, com o resultado da apreciação', async () => {

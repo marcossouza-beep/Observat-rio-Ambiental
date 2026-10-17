@@ -3,7 +3,8 @@
  */
 import type { Payload } from 'payload'
 import { enfileirar, enviarRegistro, linkDescadastro, modelo } from '../lib/email'
-import { situacaoFonte } from '../lib/fontes'
+import { estadoDaFonte, limiteDaFonte, situacaoFonte } from '../lib/fontes'
+import { SITE_URL } from '../lib/rotulos'
 import { alertasDiarios, resumoSemanal } from './automaticos'
 
 type Resumo = Record<string, unknown>
@@ -12,18 +13,21 @@ type Resumo = Record<string, unknown>
 export async function verificar(payload: Payload, agora = new Date()): Promise<Resumo> {
   const fontes = await payload.find({ collection: 'fontes', where: { ativa: { equals: true } }, limit: 200, depth: 0 })
   const problemas: { fonte: string; situacao: string }[] = []
+  const avisar: AvisoFonte[] = []
   for (const f of fontes.docs) {
-    const s = situacaoFonte(
-      {
-        manual: f.manual ?? false,
-        ultimaColetaOk: f.ultimaColetaOk ? new Date(f.ultimaColetaOk) : null,
-        itensUltimaColeta: f.itensUltimaColeta,
-        mediaItens30d: f.mediaItens30d,
-      },
-      agora,
-    )
-    if (s === 'atrasada' || s === 'volume_baixo') problemas.push({ fonte: f.slug, situacao: s })
+    const s = situacaoFonte(estadoDaFonte(f), agora)
+    const problema = s === 'atrasada' || s === 'volume_baixo'
+    if (problema) problemas.push({ fonte: f.slug, situacao: s })
+    // Aviso à equipe: na primeira vez que passa do limite e, se continuar, uma vez por dia; zera quando a fonte volta
+    const ultimoAviso = f.alertaEnviadoEm ? new Date(f.alertaEnviadoEm).getTime() : 0
+    if (problema && agora.getTime() - ultimoAviso >= 24 * 3_600_000) {
+      avisar.push({ nome: f.nome, situacao: s, ultima: f.ultimaColetaOk, limite: limiteDaFonte(estadoDaFonte(f)), erro: f.erro })
+      await payload.update({ collection: 'fontes', id: f.id, data: { alertaEnviadoEm: agora.toISOString() }, depth: 0 })
+    } else if (!problema && f.alertaEnviadoEm) {
+      await payload.update({ collection: 'fontes', id: f.id, data: { alertaEnviadoEm: null }, depth: 0 })
+    }
   }
+  if (avisar.length) await avisarEquipe(payload, avisar)
   await payload.create({
     collection: 'verificacoes',
     data: {
@@ -49,6 +53,35 @@ export async function verificar(payload: Payload, agora = new Date()): Promise<R
     },
   })
   return { fontesComProblema: problemas, compromissosVencidos: vencidos.totalDocs }
+}
+
+type AvisoFonte = { nome: string; situacao: string; ultima?: string | null; limite: number; erro?: string | null }
+
+const dataBR = (d?: string | null) =>
+  d ? new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }).format(new Date(d)) : 'nunca'
+
+/** E-mail à equipe (administradores e autores) com as fontes que passaram do limite. */
+async function avisarEquipe(payload: Payload, fontes: AvisoFonte[]) {
+  const equipe = await payload.find({ collection: 'users', where: { papel: { in: ['admin', 'autor'] } }, limit: 50, depth: 0 })
+  if (!equipe.docs.length) return
+  const assunto = fontes.length === 1 ? `Fonte com problema: ${fontes[0].nome}` : `${fontes.length} fontes com problema`
+  const m = modelo({
+    titulo: assunto,
+    paragrafos: [
+      'A coleta continua tentando a cada rodada; os dados anteriores seguem no site com a data da última coleta. Este aviso se repete uma vez por dia enquanto o problema continuar.',
+    ],
+    secoes: [
+      {
+        titulo: 'Fontes',
+        itens: fontes.map((f) => ({
+          texto: `${f.nome}: ${f.situacao === 'atrasada' ? `sem coleta desde ${dataBR(f.ultima)} (tolerância de ${f.limite} h)` : 'volume muito abaixo do normal (possível mudança no site)'}`,
+          ...(f.erro ? { detalhe: f.erro.split('\n')[0].slice(0, 200) } : {}),
+        })),
+      },
+    ],
+    botao: { texto: 'Abrir as fontes no painel', url: `${SITE_URL}/admin/collections/fontes` },
+  })
+  for (const u of equipe.docs) await enfileirar(payload, { tipo: 'aviso_equipe', para: u.email, assunto, ...m })
 }
 
 /** Publica os pareceres agendados cuja hora chegou (as travas de publicação continuam valendo). */

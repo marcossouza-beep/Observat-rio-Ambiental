@@ -173,7 +173,7 @@ export const Envios: CollectionConfig = {
       name: 'tipo',
       type: 'select',
       required: true,
-      options: ['acesso', 'aviso_publicacao', 'alerta', 'resumo', 'comunicado', 'resposta_pedido'].map((v) => ({ label: v.replace('_', ' '), value: v })),
+      options: ['acesso', 'aviso_publicacao', 'alerta', 'resumo', 'comunicado', 'resposta_pedido', 'aviso_equipe'].map((v) => ({ label: v.replace('_', ' '), value: v })),
     },
     { name: 'para', type: 'email', required: true },
     { name: 'assunto', type: 'text', required: true },

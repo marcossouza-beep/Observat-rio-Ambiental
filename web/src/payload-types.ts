@@ -349,6 +349,10 @@ export interface Fonte {
     verificadoEm?: string | null;
   };
   frequencia?: string | null;
+  /**
+   * Depois disso a fonte aparece como atrasada e a equipe recebe e-mail. Vazio: 8 horas nas federais; 48 horas úteis nas estaduais (sem fim de semana nem recesso).
+   */
+  toleranciaHoras?: number | null;
   manual?: boolean | null;
   ativa?: boolean | null;
   ultimaColeta?: string | null;
@@ -356,6 +360,8 @@ export interface Fonte {
   itensUltimaColeta?: number | null;
   mediaItens30d?: number | null;
   erro?: string | null;
+  falhasSeguidas?: number | null;
+  alertaEnviadoEm?: string | null;
   situacao?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -952,7 +958,7 @@ export interface Comunicado {
  */
 export interface Envio {
   id: number;
-  tipo: 'acesso' | 'aviso_publicacao' | 'alerta' | 'resumo' | 'comunicado' | 'resposta_pedido';
+  tipo: 'acesso' | 'aviso_publicacao' | 'alerta' | 'resumo' | 'comunicado' | 'resposta_pedido' | 'aviso_equipe';
   para: string;
   assunto: string;
   html?: string | null;
@@ -1640,6 +1646,7 @@ export interface FontesSelect<T extends boolean = true> {
         verificadoEm?: T;
       };
   frequencia?: T;
+  toleranciaHoras?: T;
   manual?: T;
   ativa?: T;
   ultimaColeta?: T;
@@ -1647,6 +1654,8 @@ export interface FontesSelect<T extends boolean = true> {
   itensUltimaColeta?: T;
   mediaItens30d?: T;
   erro?: T;
+  falhasSeguidas?: T;
+  alertaEnviadoEm?: T;
   situacao?: T;
   updatedAt?: T;
   createdAt?: T;

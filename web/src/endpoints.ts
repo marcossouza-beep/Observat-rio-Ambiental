@@ -1,5 +1,5 @@
 import type { Endpoint, Payload } from 'payload'
-import { situacaoFonte } from './lib/fontes'
+import { estadoDaFonte, situacaoFonte } from './lib/fontes'
 import { endpointsSite } from './endpoints-site'
 import { TAREFAS } from './tarefas'
 
@@ -21,10 +21,7 @@ const saude: Endpoint = {
         em: agora.toISOString(),
         fontes: fontes.docs.map((f) => ({
           fonte: f.slug,
-          situacao: situacaoFonte(
-            { manual: f.manual ?? false, ultimaColetaOk: f.ultimaColetaOk ? new Date(f.ultimaColetaOk) : null, itensUltimaColeta: f.itensUltimaColeta, mediaItens30d: f.mediaItens30d },
-            agora,
-          ),
+          situacao: situacaoFonte(estadoDaFonte(f), agora),
           ultimaColetaOk: f.ultimaColetaOk ?? null,
         })),
         compromissosVencidos: vencidos.totalDocs,

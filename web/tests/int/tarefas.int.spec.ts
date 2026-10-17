@@ -27,6 +27,30 @@ describe('tarefas agendadas', () => {
     expect(v.totalDocs).toBe(2)
   })
 
+  it('avisa a equipe por e-mail uma vez por dia enquanto a fonte estiver com problema, e zera quando volta', async () => {
+    await payload.delete({ collection: 'envios', where: { tipo: { equals: 'aviso_equipe' } } })
+    const email = 'equipe-aviso@teste.local'
+    await payload.delete({ collection: 'users', where: { email: { equals: email } } })
+    await payload.create({ collection: 'users', data: { email, password: 'senha-de-teste-123', papel: 'autor' } as never })
+    const t0 = new Date()
+    const f = await payload.create({ collection: 'fontes', data: { nome: 'Alesc', slug: 'casa-sc-t', esfera: 'estadual', toleranciaHoras: 4, ultimaColetaOk: new Date(t0.getTime() - 30 * 864e5).toISOString() } })
+    const avisos = async () => (await payload.find({ collection: 'envios', where: { tipo: { equals: 'aviso_equipe' }, para: { equals: email } }, limit: 10 })).docs
+    await verificar(payload, t0)
+    const primeiro = await avisos()
+    expect(primeiro).toHaveLength(1)
+    expect(primeiro[0].assunto).toMatch(/fonte/i)
+    expect(primeiro[0].texto).toMatch(/Alesc: sem coleta desde/)
+    await verificar(payload, new Date(t0.getTime() + 36e5))
+    expect(await avisos()).toHaveLength(1)
+    await verificar(payload, new Date(t0.getTime() + 25 * 36e5))
+    expect(await avisos()).toHaveLength(2)
+    // A fonte volta: o aviso zera
+    const volta = new Date(t0.getTime() + 26 * 36e5)
+    await payload.update({ collection: 'fontes', id: f.id, data: { ultimaColetaOk: volta.toISOString() } })
+    await verificar(payload, volta)
+    expect((await payload.findByID({ collection: 'fontes', id: f.id })).alertaEnviadoEm).toBeFalsy()
+  })
+
   it('publica agendados vencidos e respeita as travas', async () => {
     const prop = await payload.create({ collection: 'proposicoes', data: { sigla: 'PL', numero: 9001, ano: 2026, esfera: 'federal' } as never })
     const par = await payload.create({ collection: 'pareceres', data: { proposicao: prop.id, status: 'agendado', agendadoPara: new Date(Date.now() - 6e4).toISOString() } })

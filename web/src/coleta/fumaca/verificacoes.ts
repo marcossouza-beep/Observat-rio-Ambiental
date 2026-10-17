@@ -13,6 +13,7 @@ import { lerZip } from '../zip'
 import { buscarNaRede, type Conector } from '../conector'
 import { pontuar } from '../../lib/relevancia'
 import { CONECTORES_ESTADUAIS } from '../estaduais'
+import { ErroFormato } from '../tipos'
 import { conectorSenado } from '../senado/conector'
 
 export type Resultado = { ok: boolean; notas: string[]; amostra?: unknown; contexto?: Record<string, unknown> }
@@ -43,6 +44,11 @@ export function descreverErro(e: unknown): string {
   const causa = err.cause ? ` (${err.cause.code || ''} ${err.cause.message || ''})`.replace(/\s+\)/, ')') : ''
   return `${err.message}${causa}`
 }
+
+/** Erro de rede ou do servidor da fonte (não do nosso código nem do formato): no teste, vira aviso. */
+export const foraDoAr = (e: unknown) =>
+  !(e instanceof ErroFormato) &&
+  /fetch failed|fora do ar|HTTP 5\d\d|tempo esgotado|timeout|ETIMEDOUT|ECONNRESET|ECONNREFUSED|EAI_AGAIN|ENOTFOUND|UND_ERR|aborted/i.test(descreverErro(e))
 
 async function textoCurto(url: string, headers: Record<string, string> = {}) {
   const r = await obter(url, { ...rapido, headers })

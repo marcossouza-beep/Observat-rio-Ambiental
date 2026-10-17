@@ -10,6 +10,7 @@ import * as migration_20261015_180134_sem_embargo from './20261015_180134_sem_em
 import * as migration_20261015_181752_fase3_parte2 from './20261015_181752_fase3_parte2';
 import * as migration_20261015_194718_fase4 from './20261015_194718_fase4';
 import * as migration_20261016_162737_prazo_4_dias from './20261016_162737_prazo_4_dias';
+import * as migration_20261017_030200_monitoramento_fontes from './20261017_030200_monitoramento_fontes';
 
 export const migrations = [
   {
@@ -70,6 +71,11 @@ export const migrations = [
   {
     up: migration_20261016_162737_prazo_4_dias.up,
     down: migration_20261016_162737_prazo_4_dias.down,
-    name: '20261016_162737_prazo_4_dias'
+    name: '20261016_162737_prazo_4_dias',
+  },
+  {
+    up: migration_20261017_030200_monitoramento_fontes.up,
+    down: migration_20261017_030200_monitoramento_fontes.down,
+    name: '20261017_030200_monitoramento_fontes'
   },
 ];

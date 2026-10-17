@@ -11,7 +11,7 @@ import { Trilha } from '@/componentes/Trilha'
 import { leiPorSlug } from '@/dados/consultas'
 import { avisoDaLei } from '@/lib/aviso'
 import { oQueJaSeSabe } from '@/lib/frase'
-import { notaPublica } from '@/lib/fontes'
+import { estadoDaFonte, notaPublica } from '@/lib/fontes'
 import { textoDe } from '@/lib/publicacao'
 import { CASA, dataBR, SITUACAO } from '@/lib/rotulos'
 import { descricaoLei, jsonLdLei, jurisdicao, tituloLei } from '@/lib/seo'
@@ -61,7 +61,7 @@ export default async function PaginaLei({ params }: { params: Params }) {
   const frase = oQueJaSeSabe({ ...lei, autores, emendas, ultimaVotacao: ultima ? { data: ultima.data, orgao: ultima.orgao, sim: ultima.placarSim, nao: ultima.placarNao } : null })
   const nota = fonte
     ? notaPublica(
-        { manual: fonte.manual ?? false, ultimaColetaOk: fonte.ultimaColetaOk ? new Date(fonte.ultimaColetaOk) : null, itensUltimaColeta: fonte.itensUltimaColeta, mediaItens30d: fonte.mediaItens30d },
+        estadoDaFonte(fonte),
         fonte.nome,
         new Date(),
       )
