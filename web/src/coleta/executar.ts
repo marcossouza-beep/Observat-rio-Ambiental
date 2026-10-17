@@ -10,7 +10,7 @@ import { conectorCamara } from './camara/conector'
 import { conectorCongresso } from './congresso/conector'
 import { conectorDou } from './dou/conector'
 import { CONECTORES_ESTADUAIS, FONTES_ESTADUAIS } from './estaduais'
-import { buscarNaRede, identificacaoDe, type Buscar, type Conector, type ContextoColeta } from './conector'
+import { buscarNaRede, identificacaoDe, semResposta, type Buscar, type Conector, type ContextoColeta } from './conector'
 import { balancoVazio, gravarEventos, gravarPacote, gravarPautas, type Balanco } from './gravar'
 import { conectorSenado } from './senado/conector'
 import { preencherTextos, type Baixador } from './textos'
@@ -113,6 +113,8 @@ export async function coletarFonte(payload: Payload, slug: string, opcoes: { ago
   const avisos: string[] = []
   try {
     const r = await conector.coletar(ctx)
+    const caiu = semResposta(r)
+    if (caiu) throw new Error(`fonte fora do ar: ${caiu}`.slice(0, 300))
     avisos.push(...r.avisos)
     const o = { payload, fonteId: fonte.id, agora, desde, balanco }
     for (const pacote of r.pacotes) {

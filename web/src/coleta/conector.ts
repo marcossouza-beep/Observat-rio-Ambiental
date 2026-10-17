@@ -37,6 +37,20 @@ export type ResultadoColeta = {
   avisos: string[]
 }
 
+/** Erro de rede ou do servidor da fonte (não do nosso código nem do formato). */
+export const FALHA_DE_REDE =
+  /fetch failed|fora do ar|HTTP 5\d\d|tempo esgotado|timeout|ETIMEDOUT|ECONNRESET|ECONNREFUSED|EAI_AGAIN|ENOTFOUND|UND_ERR|aborted/i
+
+/**
+ * Rodada em que a fonte não respondeu: nada listado, nada aberto e avisos de rede (o conector guarda cada erro como
+ * aviso). Devolve o primeiro aviso; a coleta trata como fonte fora do ar e não avança a data da última coleta, para a
+ * próxima rodada reler o período.
+ */
+export function semResposta(r: ResultadoColeta): string | null {
+  if (r.itensListados || r.pacotes.length || r.eventos?.length || r.pautas.length) return null
+  return r.avisos.find((a) => FALHA_DE_REDE.test(a)) ?? null
+}
+
 export type Conector = {
   slug: string
   nome: string

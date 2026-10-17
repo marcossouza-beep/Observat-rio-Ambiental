@@ -156,6 +156,27 @@ describe('coleta da Câmara e do Senado', () => {
     expect(v.docs[0].detalhe).toMatch(/Câmara dos Deputados/)
     expect(v.docs[0].detalhe).toMatch(/2 coletas seguidas/)
   }, 120_000)
+  it('fonte que não responde: a rodada é "fora do ar", a data da última coleta não avança e a próxima relê o período', async () => {
+    const semRede = async () => {
+      throw new Error('fetch failed')
+    }
+    const t1 = new Date(AGORA.getTime() + 7 * 36e5)
+    const r = await coletarFonte(payload, 'casa-sp', { agora: t1, buscar: semRede })
+    expect(r.ok).toBe(false)
+    expect(r.erro).toMatch(/^fonte fora do ar: pesquisa: fetch failed/)
+    const f = (await payload.find({ collection: 'fontes', where: { slug: { equals: 'casa-sp' } } })).docs[0]
+    expect(f.ultimaColetaOk).toBeFalsy()
+    expect(f.falhasSeguidas).toBe(1)
+    const v = await payload.find({ collection: 'verificacoes', where: { 'dados.fonte': { equals: 'casa-sp' } } as never })
+    expect(v.docs.map((x) => x.resultado)).toEqual(['alerta'])
+    // Volta a responder (sem nada novo): agora a rodada conta e zera as falhas
+    const vazia = async () => ({ content: [], totalPages: 1 })
+    const r2 = await coletarFonte(payload, 'casa-sp', { agora: new Date(t1.getTime() + 36e5), buscar: vazia })
+    expect(r2.ok).toBe(true)
+    const f2 = (await payload.find({ collection: 'fontes', where: { slug: { equals: 'casa-sp' } } })).docs[0]
+    expect(f2.ultimaColetaOk).toBeTruthy()
+    expect(f2.falhasSeguidas).toBe(0)
+  }, 120_000)
 
   it('Congresso: veto vira andamento da proposta vetada, com o resultado da apreciação', async () => {
     // Um veto já apreciado da lista gravada; o autor acompanha a proposta vetada

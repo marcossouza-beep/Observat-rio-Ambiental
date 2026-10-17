@@ -10,7 +10,7 @@ import { baixarEdicao, entrarInlabs } from '../dou/inlabs'
 import { lerAto, siglaDoAto } from '../dou/mapear'
 import { extrairTextoPdf, artigoPrimeiro } from '../textos'
 import { lerZip } from '../zip'
-import { buscarNaRede, type Conector } from '../conector'
+import { buscarNaRede, FALHA_DE_REDE, semResposta, type Conector } from '../conector'
 import { pontuar } from '../../lib/relevancia'
 import { CONECTORES_ESTADUAIS } from '../estaduais'
 import { ErroFormato } from '../tipos'
@@ -48,7 +48,7 @@ export function descreverErro(e: unknown): string {
 /** Erro de rede ou do servidor da fonte (não do nosso código nem do formato): no teste, vira aviso. */
 export const foraDoAr = (e: unknown) =>
   !(e instanceof ErroFormato) &&
-  /fetch failed|fora do ar|HTTP 5\d\d|tempo esgotado|timeout|ETIMEDOUT|ECONNRESET|ECONNREFUSED|EAI_AGAIN|ENOTFOUND|UND_ERR|aborted/i.test(descreverErro(e))
+  FALHA_DE_REDE.test(descreverErro(e))
 
 async function textoCurto(url: string, headers: Record<string, string> = {}) {
   const r = await obter(url, { ...rapido, headers })
@@ -378,6 +378,8 @@ export const VERIFICACOES: Verificacao[] = [
           maxNovas: 2,
           buscar: buscarNaRede(rapido),
         })
+        const caiu = semResposta(r)
+        if (caiu) throw new Error(`fonte fora do ar: ${caiu}`)
         const p = r.pacotes[0]
         const a = r.amostra as
           | { deInteresse?: number; andamentosNoPeriodo?: number; edicoes?: number[]; projetosLidos?: number; sessoes?: string[]; materiasLidas?: number; acompanhadasAchadas?: string; paginasLidas?: number; recentes?: number; itens?: number; acompanhadasNaPauta?: number }
