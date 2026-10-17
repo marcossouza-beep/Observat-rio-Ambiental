@@ -1,0 +1,1369 @@
+{
+  "geradoEm": "2026-10-17T14:33:44.246Z",
+  "ambiente": "GitHub Actions (fora do Brasil)",
+  "GO": {
+    "casa": "Alego",
+    "diario": "DOE-GO",
+    "https://portal.al.go.leg.br/": {
+      "url": "https://portal.al.go.leg.br/",
+      "erro": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://portal.al.go.leg.br/\", waiting until \"networkidle\"\n",
+      "chamadas": [
+        {
+          "url": "https://analytics.google.com/g/collect?v=2&tid=G-675MZWTHB1&gtm=45je6ae1v9117614391za208zd9117614391xf1&_p=1792247625964&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&are=1&cid=1022560589.1792247626&frm=0&pscdl=noapi&rcb=15&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&gaf=2&_s=1&tag_exp=115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1792247626&sct=1&seg=0&dl=https%3A%2F%2Fportal.al.go.leg.br%2F&dt=Portal%20da%20Alego&en=page_view&_fv=2&_nsi=1&_ss=2&_c=1&_ee=1&tfd=1821",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://cdn.radiantmediatechs.com/rmp/rr/vgrp-o.json",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 34953,
+          "inicio": "{\"data\":\"---------------------==Qfd1XXbpjI0NXasVGdph2VwBXYiwSXiUGZuMHZyF2dhJXZoR3byJ2ZpJmIsISZk5CchNWZ3JyW6ICdzlGblRXaodnIs01W6ICdzlGbrNWYsJmIsIyYXBHahdFbxllM0NTYFFEeOp3a31ERrFjI6ISZz5WZjlGbisHL911W6ICdzlGblRXaodFcwFmIs0lIt92YuADMxYHdiwiI0NXZ05CMwEjd0JCLiQ3clRnL2RXYk9mIsISbvNmL2RXYk9mIbpjI0NXasVGdph2diwSXbpjI0NXast2YhxmYiwiIidUO1J2VOFjYyETNZBTQ45kend3TUt2diojIlNnblNWasJyes0XXbpjI0NXasVGdph2diwSXbp"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?method=ImaSdkSettings.setCookiesEnabled&lid=230&sdkv=h.3.794.0&e=83323870%2C95322027%2C95331589%2C95332046&id=ima_html5&c=2914098992269914&domain=portal.al.go.leg.br",
+          "status": 204,
+          "tipo": "image/gif"
+        },
+        {
+          "url": "https://securepubads.g.doubleclick.net/pagead/ima_ppub_config?ippd=https%3A%2F%2Fportal.al.go.leg.br%2F",
+          "status": 200,
+          "tipo": "application/json; charset=UTF-8",
+          "bytes": 20,
+          "inicio": "[null,[],[],null,[]]"
+        },
+        {
+          "url": "https://zoevideos.net/cdn-cgi/rum?",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/playlist.m3u8",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/chunklist_b1152209.m3u8",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/media-udl6wwoom_b1152209_34738.ts",
+          "status": 200,
+          "tipo": "video/MP2T"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?fm=f&fl=131&t=f&b=csWeb&lid=190&sdkv=h.3.794.0&e=83323870%2C95322027%2C95331589%2C95332046&id=ima_html5&c=2914098992269914&domain=portal.al.go.leg.br",
+          "status": 204,
+          "tipo": "image/gif"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?aid=f&aidf=f&hsc=f&lid=182&sdkv=h.3.794.0&e=83323870%2C95322027%2C95331589%2C95332046&id=ima_html5&c=2914098992269914&domain=portal.al.go.leg.br",
+          "status": 204,
+          "tipo": "image/gif"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?ws=f&blob=undef&lid=155&sdkv=h.3.794.0&e=83323870%2C95322027%2C95331589%2C95332046&id=ima_html5&c=2914098992269914&domain=portal.al.go.leg.br",
+          "status": 204,
+          "tipo": "image/gif"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?ppc_ss_enabled=t&ss_empty_cache_timeout_ms=0&ss=f&ss_latency=3&lid=239&sdkv=h.3.794.0&e=83323870%2C95322027%2C95331589%2C95332046&id=ima_html5&c=2914098992269914&domain=portal.al.go.leg.br",
+          "status": 204,
+          "tipo": "image/gif"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?status=f&optOutReason=noNetworkCode&lid=196&sdkv=h.3.794.0&e=83323870%2C95322027%2C95331589%2C95332046&id=ima_html5&c=2914098992269914&domain=portal.al.go.leg.br",
+          "status": 204,
+          "tipo": "image/gif"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/media-udl6wwoom_b1152209_34739.ts",
+          "status": 200,
+          "tipo": "video/MP2T"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/media-udl6wwoom_b1152209_34740.ts",
+          "status": 200,
+          "tipo": "video/MP2T"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?status=f&optOutReason=noNetworkCode&lid=196&sdkv=h.3.794.0&e=83323870%2C95322027%2C95331589%2C95332046&id=ima_html5&c=2914098992269914&domain=portal.al.go.leg.br",
+          "status": 204,
+          "tipo": "image/gif"
+        },
+        {
+          "url": "https://pagead2.googlesyndication.com/pagead/gen_204?error=1005&vis=1&lid=7&sdkv=h.3.794.0&e=83323870%2C95322027%2C95331589%2C95332046&id=ima_html5&c=2914098992269914&domain=portal.al.go.leg.br",
+          "status": 204,
+          "tipo": "image/gif"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/chunklist_b1152209.m3u8",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/media-udl6wwoom_b1152209_34741.ts",
+          "status": 200,
+          "tipo": "video/MP2T"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/chunklist_b1152209.m3u8",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        }
+      ]
+    },
+    "https://www.al.go.leg.br/": {
+      "url": "https://www.al.go.leg.br/",
+      "erro": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.al.go.leg.br/\", waiting until \"networkidle\"\n",
+      "chamadas": [
+        {
+          "url": "https://analytics.google.com/g/collect?v=2&tid=G-675MZWTHB1&gtm=45je6ae1v9117614391za208zd9117614391xf1&_p=1792247671385&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&are=1&cid=2039912489.1792247671&frm=0&pscdl=noapi&rcb=13&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&gaf=2&_s=1&tag_exp=115616986~115938465~115938468~118897920~118897930~120213116~120385423~120412527~120469145~120469153~121246026~121246034&sid=1792247671&sct=1&seg=0&dl=https%3A%2F%2Fportal.al.go.leg.br%2F&dt=Portal%20da%20Alego&en=page_view&_fv=2&_nsi=1&_ss=2&_c=1&_ee=1&tfd=2165",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://cdn.radiantmediatechs.com/rmp/rr/vgrp-o.json",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 34953,
+          "inicio": "{\"data\":\"---------------------==Qfd1XXbpjI0NXasVGdph2VwBXYiwSXiUGZuMHZyF2dhJXZoR3byJ2ZpJmIsISZk5CchNWZ3JyW6ICdzlGblRXaodnIs01W6ICdzlGbrNWYsJmIsIyYXBHahdFbxllM0NTYFFEeOp3a31ERrFjI6ISZz5WZjlGbisHL911W6ICdzlGblRXaodFcwFmIs0lIt92YuADMxYHdiwiI0NXZ05CMwEjd0JCLiQ3clRnL2RXYk9mIsISbvNmL2RXYk9mIbpjI0NXasVGdph2diwSXbpjI0NXast2YhxmYiwiIidUO1J2VOFjYyETNZBTQ45kend3TUt2diojIlNnblNWasJyes0XXbpjI0NXasVGdph2diwSXbp"
+        },
+        {
+          "url": "https://securepubads.g.doubleclick.net/pagead/ima_ppub_config?ippd=https%3A%2F%2Fportal.al.go.leg.br%2F",
+          "status": 200,
+          "tipo": "application/json; charset=UTF-8",
+          "bytes": 20,
+          "inicio": "[null,[],[],null,[]]"
+        },
+        {
+          "url": "https://zoevideos.net/cdn-cgi/rum?",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/playlist.m3u8",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/chunklist_b1152209.m3u8",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/media-udl6wwoom_b1152209_34742.ts",
+          "status": 200,
+          "tipo": "video/MP2T"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/media-udl6wwoom_b1152209_34743.ts",
+          "status": 200,
+          "tipo": "video/MP2T"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/media-udl6wwoom_b1152209_34744.ts",
+          "status": 200,
+          "tipo": "video/MP2T"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/chunklist_b1152209.m3u8",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/media-udl6wwoom_b1152209_34745.ts",
+          "status": 200,
+          "tipo": "video/MP2T"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/chunklist_b1152209.m3u8",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/media-udl6wwoom_b1152209_34746.ts",
+          "status": 200,
+          "tipo": "video/MP2T"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/chunklist_b1152209.m3u8",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/media-udl6wwoom_b1152209_34747.ts",
+          "status": 200,
+          "tipo": "video/MP2T"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/chunklist_b1152209.m3u8",
+          "status": 200,
+          "tipo": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://ngbvqmbygn.zoeweb.tv/alegolive/ngrp:alegolive_all/media-udl6wwoom_b1152209_34748.ts",
+          "status": 200,
+          "tipo": "video/MP2T"
+        }
+      ]
+    },
+    "https://diariooficial.abc.go.gov.br/": {
+      "url": "https://diariooficial.abc.go.gov.br/",
+      "status": 200,
+      "titulo": "ABC - Agência Brasil Central / Home",
+      "texto": "INSTITUCIONAL COMO PUBLICAR LEGISLAÇÃO ACESSO À INFORMAÇÃO FALE CONOSCO NORMAS PARA ACESSO TERMOS DE USO POLÍTICA DE PRIVACIDADE 14h35 | Sábado, 17 de outubro de 2026 LOGIN ESQUECI MINHA SENHA CADASTRE-SE DIÁRIO OFICIAL DO ESTADO DE GOIÁS 24.887 BUSCAR POR DATA Buscar por nome completo ou palavra-chave Início Fim ÚLTIMAS EDIÇÕES Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do Estado de Goiás SUPLEMENTO Diário Oficial do ",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/institucional",
+          "texto": "INSTITUCIONAL"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+          "texto": "COMO PUBLICAR"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+          "texto": "LEGISLAÇÃO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+          "texto": "FALE CONOSCO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/normas-para-acesso",
+          "texto": "NORMAS PARA ACESSO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/termos-de-uso",
+          "texto": "TERMOS DE USO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/politica-de-privacidade",
+          "texto": "POLÍTICA DE PRIVACIDADE"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/",
+          "texto": ""
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/usuarios/recupera_senha",
+          "texto": "ESQUECI MINHA SENHA"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/cadastro",
+          "texto": "CADASTRE-SE"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/portal/visualizacoes/pdf/7410/#e:7410",
+          "texto": "PDF"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/portal/visualizacoes/html/7410/#e:7410",
+          "texto": "HTML"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/portal/visualizacoes/jornal/7410/#e:7410",
+          "texto": "FLIP"
+        },
+        {
+          "href": "javascript:void(0)",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "javascript:void(0)",
+          "texto": "Diário Oficial - Suplemento"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/portal/edicoes/download/7410",
+          "texto": "DOWNLOAD"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/declaraCAo-de-uso-de-cookies",
+          "texto": "Declaração de Cookies"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-S0NTPR1FDP&gtm=45je6ae1v9119036903za20oxf1&_p=1792247719434&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAI&are=1&cid=1605843007.1792247721&frm=0&ir=1&ngs=1&pscdl=noapi&rcb=3&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1792247720&sct=1&seg=0&dl=https%3A%2F%2Fdiariooficial.abc.go.gov.br%2F&dt=ABC%20-%20Ag%C3%AAncia%20Brasil%20Central%20%2F%20Home&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=6391",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://diariooficial.abc.go.gov.br/apifront/portal/edicoes/ultimas_edicoes.json?subtheme=false",
+          "status": 200,
+          "tipo": "application/json; charset=UTF-8",
+          "bytes": 8941,
+          "inicio": "{\"erro\":false,\"msg\":\"\",\"itens\":[{\"id\":7410,\"data\":\"16\\/10\\/2026\",\"suplemento\":1,\"suplemento_nome\":\"Suplemento\",\"numero\":24887,\"tipo_edicao_id\":1,\"tipo_edicao_nome\":\"Di\\u00e1rio Oficial do Estado de Goi\\u00e1s\",\"tipo_edicao_posicao\":1,\"capa\":1},{\"id\":7409,\"data\":\"16\\/10\\/2026\",\"suplemento\":0,\"suplemento_nome\":\"\",\"numero\":24887,\"tipo_edicao_id\":1,\"tipo_edicao_nome\":\"Di\\u00e1rio Oficial do Estado de "
+        },
+        {
+          "url": "https://diariooficial.abc.go.gov.br/apifront/portal/edicoes/edicoes_from_data.json?subtheme=false",
+          "status": 200,
+          "tipo": "application/json; charset=UTF-8",
+          "bytes": 419,
+          "inicio": "{\"erro\":false,\"msg\":\"\",\"data\":null,\"numero\":null,\"ano\":\"\",\"itens\":[{\"id\":7410,\"data\":\"16\\/10\\/2026\",\"suplemento\":\"Suplemento\",\"numero\":24887,\"tipo_edicao_id\":1,\"tipo_edicao_nome\":\"Di\\u00e1rio Oficial do Estado de Goi\\u00e1s\",\"capa\":1,\"paginas\":3},{\"id\":7409,\"data\":\"16\\/10\\/2026\",\"suplemento\":\"\",\"numero\":24887,\"tipo_edicao_id\":1,\"tipo_edicao_nome\":\"Di\\u00e1rio Oficial do Estado de Goi\\u00e1s\",\"capa"
+        }
+      ]
+    },
+    "seguido:https://diariooficial.abc.go.gov.br/canal/institucional": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/institucional",
+      "status": 200,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": "INSTITUCIONAL COMO PUBLICAR LEGISLAÇÃO ACESSO À INFORMAÇÃO FALE CONOSCO NORMAS PARA ACESSO TERMOS DE USO POLÍTICA DE PRIVACIDADE Institucional A Agência Brasil Central (denominação e finalidades decretadas na lei 18.746/14), surgiu em 1999 – conforme consta na lei 13.550/99, porém com o antigo nome AGECOM (Agência Goiana de Comunicação), no intuito de substituir a Secretaria de Comunicação Social do Estado de Goiás. Cumprindo o importante papel público e social da comunicação, a agência conta com duas emissoras de rádio, emissora de TV, Diário Oficial e site que disponibiliza grande volume de conteúdos gerados exclusivamente para a internet. Todos, totalmente integrados à ABC. Fazem parte da Agência Brasil Central: Diário Oficial do Estado de Goiás; Rádio Brasil Central (AM 1270); RBC (FM 90,1); Televisão Brasil Central (TBC); e o Site de Notícias Goiás Agora. Breve história dos veículos da ABC O grande primeiro passo da comunicação oficial se deu com o início do Diário Oficial do Estado de Goiás, antes mesmo de existirem as emissoras de rádio e televisão. A Imprensa Oficial de Goiás foi fundada pela Lei Provincial, de 16 de março de 1836. No dia 03 de junho de 1837, circulou pela primeira vez o Correio Oficial de Goiás. O Diário Oficial tem como objetivo a divulgação de decretos, portarias, convocações e tudo que esteja oficialmente relacionado ao Governo do Estado de Goiás. A Rádio Brasil Central foi criada em 1950 e, desde então, tornou-se um marco na história do povo goia",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/institucional",
+          "texto": "INSTITUCIONAL"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+          "texto": "COMO PUBLICAR"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+          "texto": "LEGISLAÇÃO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+          "texto": "FALE CONOSCO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/normas-para-acesso",
+          "texto": "NORMAS PARA ACESSO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/termos-de-uso",
+          "texto": "TERMOS DE USO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/politica-de-privacidade",
+          "texto": "POLÍTICA DE PRIVACIDADE"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/",
+          "texto": ""
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-S0NTPR1FDP&gtm=45je6ae1v9119036903za20oxf1&_p=1792247725821&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAI&are=1&cid=683374827.1792247727&frm=0&ir=1&ngs=1&pscdl=noapi&rcb=11&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792247726&sct=1&seg=0&dl=https%3A%2F%2Fdiariooficial.abc.go.gov.br%2Fcanal%2Finstitucional&dt=ABC%20-%20Ag%C3%AAncia%20Brasil%20Central%20%2F%20Canais&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=1901",
+          "status": 204,
+          "tipo": "text/plain"
+        }
+      ]
+    },
+    "enderecos:https://diariooficial.abc.go.gov.br/canal/institucional": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/institucional",
+      "caminhos": [],
+      "trechos": [
+        "ajax-loader.gif) center center no-repeat rgba(255,255,255,.7)'",
+        "ajax({",
+        "url: url,",
+        "ajaxSettings.flatOptions||{};for(n in t)void 0!==t[n]&&((i[n]?e:r||(r={}))[n]=t[n]);return r&&w.extend(!0,e,r),e}function Xt(e,t,n){var r,i,o,a,s=e.contents,u=e.dataTypes;while(\"*\"===u[0])u.shift(),void 0",
+        "ajaxSettings:{url:Ct.href,type:\"GET\",isLocal:Pt.test(Ct.protocol),global:!0,processData:!0,async:!0,contentType:\"application/x-www-form-urlencoded; charset=UTF-8\",accepts:{\"*\":$t,text:\"text/plain\",html:\"t",
+        "url:!0,context:!0}},ajaxSetup:function(e,t){return t?zt(zt(e,w.ajaxSettings),t):zt(w.ajaxSettings,e)},ajaxPrefilter:Ft(It),ajaxTransport:Ft(Wt),ajax:function(t,n){\"object\"==typeof t&&(n=t,t=void 0),n=n||{",
+        "ajaxSetup({},n),g=h.context||h,y=h.context&&(g.nodeType||g.jquery)?w(g):w.event,v=w.Deferred(),m=w.Callbacks(\"once memory\"),x=h.statusCode||{},b={},T={},C=\"canceled\",E={readyState:0,getResponseHeader:func",
+        "ajaxStart\"),h.type=h.type.toUpperCase(),h.hasContent=!Mt.test(h.type),o=h.url.replace(Lt,\"\"),h.hasContent?h.data&&h.processData&&0===(h.contentType||\"\").indexOf(\"application/x-www-form-urlencoded\")&&(h.da",
+        "ajaxSend\",[E,h]),c)return E;h.async&&h.timeout>0&&(u=e.setTimeout(function(){E.abort(\"timeout\")},h.timeout));try{c=!1,i.send(b,k)}catch(e){if(c)throw e;k(-1,e)}}else k(-1,\"No Transport\");function k(t,n,r,",
+        "ajaxSuccess\":\"ajaxError\",[E,h,l?p:d]),m.fireWith(g,[E,C]),f&&(y.trigger(\"ajaxComplete\",[E,h]),--w.active||w.event.trigger(\"ajaxStop\")))}return E},getJSON:function(e,t,n){return w.get(e,t,n,\"json\")},getScr",
+        "ajax(w.extend({url:e,type:t,dataType:i,data:n,success:r},w.isPlainObject(e)&&e))}}),w._evalUrl=function(e){return w.ajax({url:e,type:\"GET\",dataType:\"script\",cache:!0,async:!1,global:!1,\"throws\":!0})},w.fn",
+        "ajaxSettings.xhr=function(){try{return new e.XMLHttpRequest}catch(e){}};var Vt={0:200,1223:204},Gt=w.ajaxSettings.xhr();h.cors=!!Gt&&\"withCredentials\"in Gt,h.ajax=Gt=!!Gt,w.ajaxTransport(function(t){var n",
+        "ajaxPrefilter(function(e){e.crossDomain&&(e.contents.script=!1)}),w.ajaxSetup({accepts:{script:\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"},contents:{script",
+        "ajaxPrefilter(\"script\",function(e){void 0===e.cache&&(e.cache=!1),e.crossDomain&&(e.type=\"GET\")}),w.ajaxTransport(\"script\",function(e){if(e.crossDomain){var t,n;return{send:function(i,o){t=w(\"<script>\").p",
+        "ajaxSetup({jsonp:\"callback\",jsonpCallback:function(){var e=Yt.pop()||w.expando+\"_\"+Et++;return this[e]=!0,e}}),w.ajaxPrefilter(\"json jsonp\",function(t,n,r){var i,o,a,s=!1!==t.jsonp&&(Qt.test(t.url)?\"url\":",
+        "ajax({url:e,type:i||\"GET\",dataType:\"html\",data:t}).done(function(e){o=arguments,a.html(r?w(\"<div>\").append(w.parseHTML(e)).find(r):e)}).always(n&&function(e,t){a.each(function(){n.apply(this,o||[e.respons",
+        "ajaxStart\",\"ajaxStop\",\"ajaxComplete\",\"ajaxError\",\"ajaxSuccess\",\"ajaxSend\"],function(e,t){w.fn[t]=function(e){return this.on(t,e)}}),w.expr.pseudos.animated=function(e){return w.grep(w.timers,function(t){r"
+      ],
+      "campos": [
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Toggle navigation"
+        }
+      ]
+    },
+    "seguido:https://diariooficial.abc.go.gov.br/canal/como-publicar": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+      "status": 200,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": "INSTITUCIONAL COMO PUBLICAR LEGISLAÇÃO ACESSO À INFORMAÇÃO FALE CONOSCO NORMAS PARA ACESSO TERMOS DE USO POLÍTICA DE PRIVACIDADE Como Publicar Entrou em funcionamento no último dia 16 de janeiro de 2017 o Sistema de Automação do Diário Oficial, e a partir de agora o Diário Oficial é totalmente eletrônico, não possuindo mais a sua versão impressa. A versão eletrônica do Diário Oficial contará com assinatura digital para os devidos efeitos legais as suas publicações. Para envio de publicações para o Diário Oficial, será necessário enviar as matérias através do Sistema de Publicações da ABC, disponibilizado através de login e senha , que deve ser cadastrado a partir do contato com o setor de suporte da ABC, através do e-mail: diariooficial@goias.gov.br Para os órgãos da Administração Pública Estadual que possuem regime de pagamento faturado, enviará as suas publicações através do sistema que já irão ser recebidas de maneira aprovada pelo sistema automaticamente. Para os órgãos da Administração Pública Municipal que possuem contrato com a Agência Brasil Central, também serão enquadrados no regime de pagamento faturado, enviando as suas publicações utilizando o sistema, e já irão ser recebidas de maneira aprovada pelo sistema automaticamente. Para os órgãos da Administração Pública Municipal, Associações, Fundações e Empresas Particulares, que possuem regime de pagamento a vista, enviará suas publicações pelo sistema, aonde será possível gerar o seu orçamento, para posterior aprov",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/institucional",
+          "texto": "INSTITUCIONAL"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+          "texto": "COMO PUBLICAR"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+          "texto": "LEGISLAÇÃO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+          "texto": "FALE CONOSCO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/normas-para-acesso",
+          "texto": "NORMAS PARA ACESSO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/termos-de-uso",
+          "texto": "TERMOS DE USO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/politica-de-privacidade",
+          "texto": "POLÍTICA DE PRIVACIDADE"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/",
+          "texto": ""
+        },
+        {
+          "href": "https://outlook.live.com/mail/",
+          "texto": "diariooficial@goias.gov.br"
+        },
+        {
+          "href": "mailto:diariooficial@goias.gov.br",
+          "texto": "diariooficial@goias.gov.br"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-S0NTPR1FDP&gtm=45je6ae1v9119036903za20oxf1&_p=1792247733579&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAI&are=1&cid=218670636.1792247735&frm=0&ir=1&ngs=1&pscdl=noapi&rcb=4&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1792247734&sct=1&seg=0&dl=https%3A%2F%2Fdiariooficial.abc.go.gov.br%2Fcanal%2Fcomo-publicar&dt=ABC%20-%20Ag%C3%AAncia%20Brasil%20Central%20%2F%20Canais&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=1954",
+          "status": 204,
+          "tipo": "text/plain"
+        }
+      ]
+    },
+    "enderecos:https://diariooficial.abc.go.gov.br/canal/como-publicar": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+      "caminhos": [],
+      "trechos": [
+        "ajax-loader.gif) center center no-repeat rgba(255,255,255,.7)'",
+        "ajax({",
+        "url: url,",
+        "ajaxSettings.flatOptions||{};for(n in t)void 0!==t[n]&&((i[n]?e:r||(r={}))[n]=t[n]);return r&&w.extend(!0,e,r),e}function Xt(e,t,n){var r,i,o,a,s=e.contents,u=e.dataTypes;while(\"*\"===u[0])u.shift(),void 0",
+        "ajaxSettings:{url:Ct.href,type:\"GET\",isLocal:Pt.test(Ct.protocol),global:!0,processData:!0,async:!0,contentType:\"application/x-www-form-urlencoded; charset=UTF-8\",accepts:{\"*\":$t,text:\"text/plain\",html:\"t",
+        "url:!0,context:!0}},ajaxSetup:function(e,t){return t?zt(zt(e,w.ajaxSettings),t):zt(w.ajaxSettings,e)},ajaxPrefilter:Ft(It),ajaxTransport:Ft(Wt),ajax:function(t,n){\"object\"==typeof t&&(n=t,t=void 0),n=n||{",
+        "ajaxSetup({},n),g=h.context||h,y=h.context&&(g.nodeType||g.jquery)?w(g):w.event,v=w.Deferred(),m=w.Callbacks(\"once memory\"),x=h.statusCode||{},b={},T={},C=\"canceled\",E={readyState:0,getResponseHeader:func",
+        "ajaxStart\"),h.type=h.type.toUpperCase(),h.hasContent=!Mt.test(h.type),o=h.url.replace(Lt,\"\"),h.hasContent?h.data&&h.processData&&0===(h.contentType||\"\").indexOf(\"application/x-www-form-urlencoded\")&&(h.da",
+        "ajaxSend\",[E,h]),c)return E;h.async&&h.timeout>0&&(u=e.setTimeout(function(){E.abort(\"timeout\")},h.timeout));try{c=!1,i.send(b,k)}catch(e){if(c)throw e;k(-1,e)}}else k(-1,\"No Transport\");function k(t,n,r,",
+        "ajaxSuccess\":\"ajaxError\",[E,h,l?p:d]),m.fireWith(g,[E,C]),f&&(y.trigger(\"ajaxComplete\",[E,h]),--w.active||w.event.trigger(\"ajaxStop\")))}return E},getJSON:function(e,t,n){return w.get(e,t,n,\"json\")},getScr",
+        "ajax(w.extend({url:e,type:t,dataType:i,data:n,success:r},w.isPlainObject(e)&&e))}}),w._evalUrl=function(e){return w.ajax({url:e,type:\"GET\",dataType:\"script\",cache:!0,async:!1,global:!1,\"throws\":!0})},w.fn",
+        "ajaxSettings.xhr=function(){try{return new e.XMLHttpRequest}catch(e){}};var Vt={0:200,1223:204},Gt=w.ajaxSettings.xhr();h.cors=!!Gt&&\"withCredentials\"in Gt,h.ajax=Gt=!!Gt,w.ajaxTransport(function(t){var n",
+        "ajaxPrefilter(function(e){e.crossDomain&&(e.contents.script=!1)}),w.ajaxSetup({accepts:{script:\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"},contents:{script",
+        "ajaxPrefilter(\"script\",function(e){void 0===e.cache&&(e.cache=!1),e.crossDomain&&(e.type=\"GET\")}),w.ajaxTransport(\"script\",function(e){if(e.crossDomain){var t,n;return{send:function(i,o){t=w(\"<script>\").p",
+        "ajaxSetup({jsonp:\"callback\",jsonpCallback:function(){var e=Yt.pop()||w.expando+\"_\"+Et++;return this[e]=!0,e}}),w.ajaxPrefilter(\"json jsonp\",function(t,n,r){var i,o,a,s=!1!==t.jsonp&&(Qt.test(t.url)?\"url\":",
+        "ajax({url:e,type:i||\"GET\",dataType:\"html\",data:t}).done(function(e){o=arguments,a.html(r?w(\"<div>\").append(w.parseHTML(e)).find(r):e)}).always(n&&function(e,t){a.each(function(){n.apply(this,o||[e.respons",
+        "ajaxStart\",\"ajaxStop\",\"ajaxComplete\",\"ajaxError\",\"ajaxSuccess\",\"ajaxSend\"],function(e,t){w.fn[t]=function(e){return this.on(t,e)}}),w.expr.pseudos.animated=function(e){return w.grep(w.timers,function(t){r"
+      ],
+      "campos": [
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Toggle navigation"
+        }
+      ]
+    },
+    "seguido:https://diariooficial.abc.go.gov.br/canal/legislacao": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+      "status": 200,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": "INSTITUCIONAL COMO PUBLICAR LEGISLAÇÃO ACESSO À INFORMAÇÃO FALE CONOSCO NORMAS PARA ACESSO TERMOS DE USO POLÍTICA DE PRIVACIDADE Legislação * Criação AGECOM: Lei 13.550/99 Decreto nº. 6.910 * Alteração da denominação para ABC (Agência Brasil Central): Lei 18746/14 * Competências: DECRETO Nº 8.578, DE 24 DE FEVEREIRO DE 2016 * Normas para o acesso, publicação e envio de matérias para o Diário Oficial do Estado de Goiás: Resolução Direx 001, de 02 de janeiro de 2017. ABC- Agência Brasil Central. Rua SC-01, nº 299, Parque Santa Cruz, Goiânia - GO CEP: 74.860-270 Fone: (62) 3235-3398 / (62) 3235-3399 / (62) 99218-9816 (WhatsApp) © Copyright 2015. Todos os direitos reservados. Desenvolvido pela Agência Brasil Central.",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/institucional",
+          "texto": "INSTITUCIONAL"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+          "texto": "COMO PUBLICAR"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+          "texto": "LEGISLAÇÃO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+          "texto": "FALE CONOSCO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/normas-para-acesso",
+          "texto": "NORMAS PARA ACESSO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/termos-de-uso",
+          "texto": "TERMOS DE USO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/politica-de-privacidade",
+          "texto": "POLÍTICA DE PRIVACIDADE"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/",
+          "texto": ""
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/normas-para-acesso",
+          "texto": "Resolução Direx 001, de 02 de janeiro de 2017"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-S0NTPR1FDP&gtm=45je6ae1v9119036903za20oxf1&_p=1792247741327&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAI&are=1&cid=841397632.1792247743&frm=0&ir=1&ngs=1&pscdl=noapi&rcb=15&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792247742&sct=1&seg=0&dl=https%3A%2F%2Fdiariooficial.abc.go.gov.br%2Fcanal%2Flegislacao&dt=ABC%20-%20Ag%C3%AAncia%20Brasil%20Central%20%2F%20Canais&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=2207",
+          "status": 204,
+          "tipo": "text/plain"
+        }
+      ]
+    },
+    "enderecos:https://diariooficial.abc.go.gov.br/canal/legislacao": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+      "caminhos": [],
+      "trechos": [
+        "ajax-loader.gif) center center no-repeat rgba(255,255,255,.7)'",
+        "ajax({",
+        "url: url,",
+        "ajaxSettings.flatOptions||{};for(n in t)void 0!==t[n]&&((i[n]?e:r||(r={}))[n]=t[n]);return r&&w.extend(!0,e,r),e}function Xt(e,t,n){var r,i,o,a,s=e.contents,u=e.dataTypes;while(\"*\"===u[0])u.shift(),void 0",
+        "ajaxSettings:{url:Ct.href,type:\"GET\",isLocal:Pt.test(Ct.protocol),global:!0,processData:!0,async:!0,contentType:\"application/x-www-form-urlencoded; charset=UTF-8\",accepts:{\"*\":$t,text:\"text/plain\",html:\"t",
+        "url:!0,context:!0}},ajaxSetup:function(e,t){return t?zt(zt(e,w.ajaxSettings),t):zt(w.ajaxSettings,e)},ajaxPrefilter:Ft(It),ajaxTransport:Ft(Wt),ajax:function(t,n){\"object\"==typeof t&&(n=t,t=void 0),n=n||{",
+        "ajaxSetup({},n),g=h.context||h,y=h.context&&(g.nodeType||g.jquery)?w(g):w.event,v=w.Deferred(),m=w.Callbacks(\"once memory\"),x=h.statusCode||{},b={},T={},C=\"canceled\",E={readyState:0,getResponseHeader:func",
+        "ajaxStart\"),h.type=h.type.toUpperCase(),h.hasContent=!Mt.test(h.type),o=h.url.replace(Lt,\"\"),h.hasContent?h.data&&h.processData&&0===(h.contentType||\"\").indexOf(\"application/x-www-form-urlencoded\")&&(h.da",
+        "ajaxSend\",[E,h]),c)return E;h.async&&h.timeout>0&&(u=e.setTimeout(function(){E.abort(\"timeout\")},h.timeout));try{c=!1,i.send(b,k)}catch(e){if(c)throw e;k(-1,e)}}else k(-1,\"No Transport\");function k(t,n,r,",
+        "ajaxSuccess\":\"ajaxError\",[E,h,l?p:d]),m.fireWith(g,[E,C]),f&&(y.trigger(\"ajaxComplete\",[E,h]),--w.active||w.event.trigger(\"ajaxStop\")))}return E},getJSON:function(e,t,n){return w.get(e,t,n,\"json\")},getScr",
+        "ajax(w.extend({url:e,type:t,dataType:i,data:n,success:r},w.isPlainObject(e)&&e))}}),w._evalUrl=function(e){return w.ajax({url:e,type:\"GET\",dataType:\"script\",cache:!0,async:!1,global:!1,\"throws\":!0})},w.fn",
+        "ajaxSettings.xhr=function(){try{return new e.XMLHttpRequest}catch(e){}};var Vt={0:200,1223:204},Gt=w.ajaxSettings.xhr();h.cors=!!Gt&&\"withCredentials\"in Gt,h.ajax=Gt=!!Gt,w.ajaxTransport(function(t){var n",
+        "ajaxPrefilter(function(e){e.crossDomain&&(e.contents.script=!1)}),w.ajaxSetup({accepts:{script:\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"},contents:{script",
+        "ajaxPrefilter(\"script\",function(e){void 0===e.cache&&(e.cache=!1),e.crossDomain&&(e.type=\"GET\")}),w.ajaxTransport(\"script\",function(e){if(e.crossDomain){var t,n;return{send:function(i,o){t=w(\"<script>\").p",
+        "ajaxSetup({jsonp:\"callback\",jsonpCallback:function(){var e=Yt.pop()||w.expando+\"_\"+Et++;return this[e]=!0,e}}),w.ajaxPrefilter(\"json jsonp\",function(t,n,r){var i,o,a,s=!1!==t.jsonp&&(Qt.test(t.url)?\"url\":",
+        "ajax({url:e,type:i||\"GET\",dataType:\"html\",data:t}).done(function(e){o=arguments,a.html(r?w(\"<div>\").append(w.parseHTML(e)).find(r):e)}).always(n&&function(e,t){a.each(function(){n.apply(this,o||[e.respons",
+        "ajaxStart\",\"ajaxStop\",\"ajaxComplete\",\"ajaxError\",\"ajaxSuccess\",\"ajaxSend\"],function(e,t){w.fn[t]=function(e){return this.on(t,e)}}),w.expr.pseudos.animated=function(e){return w.grep(w.timers,function(t){r"
+      ],
+      "campos": [
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Toggle navigation"
+        }
+      ]
+    },
+    "seguido:https://diariooficial.abc.go.gov.br/canal/fale-conosco": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+      "status": 200,
+      "titulo": "ABC - Agência Brasil Central / Canais",
+      "texto": "INSTITUCIONAL COMO PUBLICAR LEGISLAÇÃO ACESSO À INFORMAÇÃO FALE CONOSCO NORMAS PARA ACESSO TERMOS DE USO POLÍTICA DE PRIVACIDADE Fale Conosco Seja bem-vindo(a) à Central de Relacionamento. Telefones: PUBLICAÇÃO (62) 3235-3398 / (62) 3235 3399 (62) 99218-9816 (WhatsApp) FATURAMENTO (62)99233-0958 Endereço: Rua SC-01, nº 299, Parque Santa Cruz, Goiânia – GO CEP: 74.860-270 Envie-nos um e-mail: diariooficial@goias.gov.br ENVIAR LIMPAR ABC- Agência Brasil Central. Rua SC-01, nº 299, Parque Santa Cruz, Goiânia - GO CEP: 74.860-270 Fone: (62) 3235-3398 / (62) 3235-3399 / (62) 99218-9816 (WhatsApp) © Copyright 2015. Todos os direitos reservados. Desenvolvido pela Agência Brasil Central.",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/institucional",
+          "texto": "INSTITUCIONAL"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/como-publicar",
+          "texto": "COMO PUBLICAR"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/legislacao",
+          "texto": "LEGISLAÇÃO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+          "texto": "FALE CONOSCO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/normas-para-acesso",
+          "texto": "NORMAS PARA ACESSO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/termos-de-uso",
+          "texto": "TERMOS DE USO"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/canal/politica-de-privacidade",
+          "texto": "POLÍTICA DE PRIVACIDADE"
+        },
+        {
+          "href": "https://diariooficial.abc.go.gov.br/",
+          "texto": ""
+        },
+        {
+          "href": "mailto:diariooficial@goias.gov.br",
+          "texto": "diariooficial@goias.gov.br"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-S0NTPR1FDP&gtm=45je6ae1v9119036903za20oxf1&_p=1792247749810&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAI&are=1&cid=1978482517.1792247751&frm=0&ir=1&ngs=1&pscdl=noapi&rcb=0&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&_s=1&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1792247751&sct=1&seg=0&dl=https%3A%2F%2Fdiariooficial.abc.go.gov.br%2Fcanal%2Ffale-conosco&dt=ABC%20-%20Ag%C3%AAncia%20Brasil%20Central%20%2F%20Canais&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=2208",
+          "status": 204,
+          "tipo": "text/plain"
+        }
+      ]
+    },
+    "enderecos:https://diariooficial.abc.go.gov.br/canal/fale-conosco": {
+      "url": "https://diariooficial.abc.go.gov.br/canal/fale-conosco",
+      "caminhos": [],
+      "trechos": [
+        "ajax-loader.gif) center center no-repeat rgba(255,255,255,.7)'",
+        "ajax({",
+        "url: url,",
+        "ajaxSettings.flatOptions||{};for(n in t)void 0!==t[n]&&((i[n]?e:r||(r={}))[n]=t[n]);return r&&w.extend(!0,e,r),e}function Xt(e,t,n){var r,i,o,a,s=e.contents,u=e.dataTypes;while(\"*\"===u[0])u.shift(),void 0",
+        "ajaxSettings:{url:Ct.href,type:\"GET\",isLocal:Pt.test(Ct.protocol),global:!0,processData:!0,async:!0,contentType:\"application/x-www-form-urlencoded; charset=UTF-8\",accepts:{\"*\":$t,text:\"text/plain\",html:\"t",
+        "url:!0,context:!0}},ajaxSetup:function(e,t){return t?zt(zt(e,w.ajaxSettings),t):zt(w.ajaxSettings,e)},ajaxPrefilter:Ft(It),ajaxTransport:Ft(Wt),ajax:function(t,n){\"object\"==typeof t&&(n=t,t=void 0),n=n||{",
+        "ajaxSetup({},n),g=h.context||h,y=h.context&&(g.nodeType||g.jquery)?w(g):w.event,v=w.Deferred(),m=w.Callbacks(\"once memory\"),x=h.statusCode||{},b={},T={},C=\"canceled\",E={readyState:0,getResponseHeader:func",
+        "ajaxStart\"),h.type=h.type.toUpperCase(),h.hasContent=!Mt.test(h.type),o=h.url.replace(Lt,\"\"),h.hasContent?h.data&&h.processData&&0===(h.contentType||\"\").indexOf(\"application/x-www-form-urlencoded\")&&(h.da",
+        "ajaxSend\",[E,h]),c)return E;h.async&&h.timeout>0&&(u=e.setTimeout(function(){E.abort(\"timeout\")},h.timeout));try{c=!1,i.send(b,k)}catch(e){if(c)throw e;k(-1,e)}}else k(-1,\"No Transport\");function k(t,n,r,",
+        "ajaxSuccess\":\"ajaxError\",[E,h,l?p:d]),m.fireWith(g,[E,C]),f&&(y.trigger(\"ajaxComplete\",[E,h]),--w.active||w.event.trigger(\"ajaxStop\")))}return E},getJSON:function(e,t,n){return w.get(e,t,n,\"json\")},getScr",
+        "ajax(w.extend({url:e,type:t,dataType:i,data:n,success:r},w.isPlainObject(e)&&e))}}),w._evalUrl=function(e){return w.ajax({url:e,type:\"GET\",dataType:\"script\",cache:!0,async:!1,global:!1,\"throws\":!0})},w.fn",
+        "ajaxSettings.xhr=function(){try{return new e.XMLHttpRequest}catch(e){}};var Vt={0:200,1223:204},Gt=w.ajaxSettings.xhr();h.cors=!!Gt&&\"withCredentials\"in Gt,h.ajax=Gt=!!Gt,w.ajaxTransport(function(t){var n",
+        "ajaxPrefilter(function(e){e.crossDomain&&(e.contents.script=!1)}),w.ajaxSetup({accepts:{script:\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"},contents:{script",
+        "ajaxPrefilter(\"script\",function(e){void 0===e.cache&&(e.cache=!1),e.crossDomain&&(e.type=\"GET\")}),w.ajaxTransport(\"script\",function(e){if(e.crossDomain){var t,n;return{send:function(i,o){t=w(\"<script>\").p",
+        "ajaxSetup({jsonp:\"callback\",jsonpCallback:function(){var e=Yt.pop()||w.expando+\"_\"+Et++;return this[e]=!0,e}}),w.ajaxPrefilter(\"json jsonp\",function(t,n,r){var i,o,a,s=!1!==t.jsonp&&(Qt.test(t.url)?\"url\":",
+        "ajax({url:e,type:i||\"GET\",dataType:\"html\",data:t}).done(function(e){o=arguments,a.html(r?w(\"<div>\").append(w.parseHTML(e)).find(r):e)}).always(n&&function(e,t){a.each(function(){n.apply(this,o||[e.respons",
+        "ajaxStart\",\"ajaxStop\",\"ajaxComplete\",\"ajaxError\",\"ajaxSuccess\",\"ajaxSend\"],function(e,t){w.fn[t]=function(e){return this.on(t,e)}}),w.expr.pseudos.animated=function(e){return w.grep(w.timers,function(t){r"
+      ],
+      "campos": [
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "button",
+          "valor": "Toggle navigation"
+        },
+        {
+          "tag": "input",
+          "id": "",
+          "nome": "_method",
+          "tipo": "hidden",
+          "valor": "POST"
+        },
+        {
+          "tag": "input",
+          "id": "nome",
+          "nome": "data[Contato][nome]",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "email",
+          "nome": "data[Contato][email]",
+          "tipo": "email",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "nome",
+          "nome": "data[Contato][assunto]",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "textarea",
+          "id": "mensagem",
+          "nome": "data[Contato][mensagem]",
+          "tipo": "textarea",
+          "valor": ""
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "submit",
+          "valor": "ENVIAR"
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "nome": "",
+          "tipo": "reset",
+          "valor": "LIMPAR"
+        }
+      ]
+    },
+    "saplComoNavegador": {
+      "url": "https://sapl.al.go.leg.br/api/materia/materialegislativa/?page_size=1",
+      "comoNavegador": true,
+      "erro": "fetch failed (ENOTFOUND)"
+    }
+  },
+  "RJ": {
+    "casa": "Alerj",
+    "diario": "Ioerj",
+    "https://www.alerj.rj.gov.br/": {
+      "url": "https://www.alerj.rj.gov.br/",
+      "status": 200,
+      "titulo": "Assembléia Legislativa do Estado do Rio de Janeiro",
+      "texto": "ALÔ ALERJ PERGUNTAS FREQUENTES INÍCIO ALERJ DEPUTADOS PROCESSO LEGISLATIVO COMUNICAÇÃO CONTATO LICITAÇÕES / TRANSPARÊNCIA 1 2 3 4 5 MAIS NOTÍCIAS 17.10.2026 - 10:00 GERAÇÃO Z REDESCOBRE O VALOR DO ‘FEITO À MÃO’ E BUSCA ORIGINALIDADE EM FEIRAS DO RIO Busca por produtos cada vez mais focados na produção artesanal é acompanhada por leis da Alerj, que incentivam o setor e valorizam espaços tradicionais de comercialização. Depois de adota... AGENDA sábado, 17 de outubro de 2026 Não existe nenhuma informação disponível. NOTÍCIAS IMAGENS TV ALERJ RÁDIO ALERJ ENQUETE 17.10.2026 - 10:00 GERAÇÃO Z REDESCOBRE O VALOR DO ‘FEITO À MÃO’ E BUSCA ORIGINALIDADE EM FEIRAS DO RIO Busca por produtos cada vez mais focados na produção artesanal é acompanhada por leis da Alerj, que incentivam o setor e valorizam espaços tradicionais de comercialização. Depois de adota... CONTINUAR 16.10.2026 - 15:19 NO DIA MUNDIAL DO PÃO, ALERJ DESTACA COMO LEIS E PROPOSTAS CHEGAM À MESA DOS FLUMINENSES Das manhãs em família à pausa para o café com colegas de trabalho, o pão está presente em diferentes momentos da rotina das pessoas. As decisões debatidas na Assembleia do Estado do Rio d... CONTINUAR 16.10.2026 - 11:37 EXPOSIÇÃO \"CIDADES LÍQUIDAS\" TRANSFORMA CAFÉ EM ARTE NO PALÁCIO TIRADENTES Com entrada gratuita, mostra reúne 30 obras do artista francês Jèrôme Poignard e integra a programação comemorativa do centenário da sede histórica da Alerj A mistura de aquarela e café g... CONTINUAR NOTÍCIAS ANTERIORES 1 2 C",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa",
+          "texto": ""
+        },
+        {
+          "href": "javascript:;",
+          "texto": "PROCESSO LEGISLATIVO"
+        },
+        {
+          "href": "http://www.ioerj.com.br/portal/modules/content/index.php?id=21",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144",
+          "texto": "Leis e Projetos"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=161",
+          "texto": "Projetos 2023-2027"
+        },
+        {
+          "href": "javascript:;",
+          "texto": "PROCESSO LEGISLATIVO"
+        },
+        {
+          "href": "http://www.ioerj.com.br/portal/modules/content/index.php?id=21",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144",
+          "texto": "Leis e Projetos"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=161",
+          "texto": "Projetos 2023-2027"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/#",
+          "texto": "PESQUISAR"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial",
+          "texto": ""
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial",
+          "texto": "CAPAS D.O."
+        },
+        {
+          "href": "http://www2.alerj.rj.gov.br/elerj/default.asp",
+          "texto": "ESCOLA DO LEGISLATIVO"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/j/collect?v=1&_v=j102&a=1098174369&t=pageview&_s=1&dl=https%3A%2F%2Fwww.alerj.rj.gov.br%2F&ul=pt-br&dt=Assembl%C3%A9ia%20Legislativa%20do%20Estado%20do%20Rio%20de%20Janeiro&sr=1280x720&vp=1280x720&_u=IEBAAEABAAAAACAAI~&jid=607569292&gjid=1453646504&cid=1546440824.1792247763&tid=UA-5511064-1&_gid=1869339368.1792247763&_r=1&_slc=1&z=367888111",
+          "status": 200,
+          "tipo": "text/plain",
+          "bytes": 15,
+          "inicio": "2,cG-53NTCF6TKB"
+        },
+        {
+          "url": "https://analytics.google.com/g/collect?v=2&tid=G-53NTCF6TKB&gtm=45je6ae1v9117858115za20gxf1&_p=1792247763223&_gaz=1&gcd=13l3l3l3l2l1&npa=0&dma=0&_eu=ABAIAGA&are=1&cid=1546440824.1792247763&frm=0&pscdl=noapi&rcb=16&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&gaf=2&_s=1&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&dl=https%3A%2F%2Fwww.alerj.rj.gov.br%2F&dt=Assembl%C3%A9ia%20Legislativa%20do%20Estado%20do%20Rio%20de%20Janeiro&sid=1792247763&sct=1&seg=0&en=page_view&_fv=1&_ss=1&_ee=1&tfd=5931",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/Home/RecuperaConfiguracoesExibicao",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 35,
+          "inicio": "{\"tempoBanner\":5,\"tempoNoticia\":15}"
+        },
+        {
+          "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+          "status": 200,
+          "tipo": "application/json; charset=UTF-8",
+          "bytes": 3,
+          "inicio": "{}"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_5_sn_6F5FD687DC89317E4A4883E4F0330AD8_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=5&flavor=post&vi=OBKJRMAEPCAIUCKCIOFNATNOMRQPUKFC-0&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&crc=905830024&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_5_sn_6F5FD687DC89317E4A4883E4F0330AD8_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=5&flavor=post&vi=OBKJRMAEPCAIUCKCIOFNATNOMRQPUKFC-0&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&crc=2510496756&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/Home/CarregaAbaNoticia",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 2148,
+          "inicio": "\"\\n \\n\\u003cdiv class=\\\"controle_linha\\\"\\u003e\\n \\u003cdiv class=\\\"data\\\"\\u003e17.10.2026 - 10:00\\u003c/div\\u003e\\n \\u003ca class=\\\"titulo\\\" href=\\\"/Visualizar/Noticia/88540\\\"\\u003eGERA\\u0026#199;\\u0026#195;O Z REDESCOBRE O VALOR DO ‘FEITO \\u0026#192; M\\u0026#195;O’ E BUSCA ORIGINALIDADE EM FEIRAS DO RIO\\u003c/a\\u003e\\n \\n \\u003cp\\u003eBusca por produtos cada vez mais focados na produção artesanal"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_5_sn_6F5FD687DC89317E4A4883E4F0330AD8_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=5&flavor=post&vi=OBKJRMAEPCAIUCKCIOFNATNOMRQPUKFC-0&contentType=srBm&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&v=10347260902154544&crc=3063772615&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_5_sn_6F5FD687DC89317E4A4883E4F0330AD8_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=5&flavor=post&vi=OBKJRMAEPCAIUCKCIOFNATNOMRQPUKFC-0&contentType=srTe&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&v=10347260902154544&crc=941378802&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_5_sn_6F5FD687DC89317E4A4883E4F0330AD8_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=5&flavor=post&vi=OBKJRMAEPCAIUCKCIOFNATNOMRQPUKFC-0&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&crc=288524220&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_5_sn_6F5FD687DC89317E4A4883E4F0330AD8_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=5&flavor=post&vi=OBKJRMAEPCAIUCKCIOFNATNOMRQPUKFC-0&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&crc=1148367331&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        }
+      ]
+    },
+    "http://alerjln1.alerj.rj.gov.br/scpro2327.nsf/Internet/LeiInt?OpenForm": {
+      "url": "http://alerjln1.alerj.rj.gov.br/scpro2327.nsf/Internet/LeiInt?OpenForm",
+      "status": 200,
+      "titulo": "",
+      "texto": "Clique aqui para escolher o Deputado (2023-2027) e ver os Projetos de Leis de sua autoria. Cadastro de Projeto de Lei Data Publ. Autor(es) 20260308411 ALTERA A LEI Nº 2.657, DE 26 DE DEZEMBRO DE 1996, QUE DISPÕE SOBRE O IMPOSTO SOBRE CIRCULAÇÃO DE MERCADORIAS E SERVIÇOS – ICMS, PARA ESTABELECER ALÍQUOTA DIFERENCIADA NAS OPERAÇÕES INTERNAS COM RAÇÕES E ALIMENTOS INDUSTRIALIZADOS DESTINADOS À ALIMENTAÇÃO DE CÃES E GATOS NO ESTADO DO RIO DE JANEIRO. =>20260308411 => {Constituição e Justiça Defesa e Proteção dos Animais Economia Indústria e Comércio Tributação Controle da Arrecadação Estadual e de Fiscalização dos Tributos Estaduais Orçamento Finanças Fiscalização Financeira e Controle } 16/10/2026 MARCELO DINO 20260308410 ESTABELECE DIRETRIZES PARA A CONTINUIDADE DO CUIDADO E DO SUPORTE À PESSOA COM DEFICIÊNCIA NA VIDA ADULTA E NO ENVELHECIMENTO, NO ÂMBITO DO ESTADO DO RIO DE JANEIRO. =>20260308410 => {Constituição e Justiça Assuntos da Criança do Adolescente e do Idoso Pessoa com Deficiência Saúde Defesa dos Direitos Humanos e Cidadania Orçamento Finanças Fiscalização Financeira e Controle } 16/10/2026 MARCELO DINO 20260308409 INSTITUI A POLÍTICA ESTADUAL DE REGIONALIZAÇÃO DA ATENÇÃO À PESSOA COM TRANSTORNO DO ESPECTRO AUTISTA, DISPÕE SOBRE O COFINANCIAMENTO ESTADUAL DE CENTROS MUNICIPAIS DE DIAGNÓSTICO E TERAPIA E A IMPLANTAÇÃO REGIONALIZADA DE CENTROS ESTADUAIS DE REABILITAÇÃO E INCLUSÃO, ALTERA A LEI Nº 9.395, DE 9 DE SETEMBRO DE 2021 E DÁ OUTRAS PROVIDÊNCIAS =>20260308409 =",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "http://alerjln1.alerj.rj.gov.br/scpro2327.nsf/deputadosint?OpenForm&ExpandView",
+          "texto": "Clique aqui para escolher o Deputado (2023-2027) e ver os Projetos de Leis de su"
+        }
+      ],
+      "chamadas": []
+    },
+    "https://www.ioerj.com.br/": {
+      "url": "https://www.ioerj.com.br/",
+      "erro": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.ioerj.com.br/\", waiting until \"networkidle\"\n",
+      "chamadas": [
+        {
+          "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+          "status": 200,
+          "tipo": "application/json; charset=UTF-8",
+          "bytes": 3,
+          "inicio": "{}"
+        }
+      ]
+    },
+    "seguido:https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa": {
+      "url": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa",
+      "status": 200,
+      "titulo": "Assembléia Legislativa do Estado do Rio de Janeiro",
+      "texto": "AGUARDE... ALÔ ALERJ PERGUNTAS FREQUENTES INÍCIO ALERJ DEPUTADOS PROCESSO LEGISLATIVO COMUNICAÇÃO CONTATO LICITAÇÕES / TRANSPARÊNCIA PROCURA VOLTAR 1 2 TOPO Sede da Alerj Rua da Ajuda, nº 05, Centro, Rio de Janeiro. CEP20040-000 Telefone +55 (21) 2588-1000",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa",
+          "texto": ""
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": ""
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Palácio Tiradentes"
+        },
+        {
+          "href": "javascript:;",
+          "texto": "PROCESSO LEGISLATIVO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Plenário"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Comissões"
+        },
+        {
+          "href": "http://www.ioerj.com.br/portal/modules/content/index.php?id=21",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144",
+          "texto": "Leis e Projetos"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=161",
+          "texto": "Projetos 2023-2027"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Constituição e Regimento"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "COMUNICAÇÃO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Sala de Imprensa"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Publicações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Licitações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Palácio Tiradentes"
+        },
+        {
+          "href": "javascript:;",
+          "texto": "PROCESSO LEGISLATIVO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Plenário"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Comissões"
+        },
+        {
+          "href": "http://www.ioerj.com.br/portal/modules/content/index.php?id=21",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144",
+          "texto": "Leis e Projetos"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=161",
+          "texto": "Projetos 2023-2027"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Constituição e Regimento"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "COMUNICAÇÃO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Sala de Imprensa"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Publicações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "Licitações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "1"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa#",
+          "texto": "2"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.alerj.rj.gov.br/Home/RecuperaConfiguracoesExibicao",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 35,
+          "inicio": "{\"tempoBanner\":5,\"tempoNoticia\":15}"
+        },
+        {
+          "url": "https://www.google-analytics.com/j/collect?v=1&_v=j102&a=1923633042&t=pageview&_s=1&dl=https%3A%2F%2Fwww.alerj.rj.gov.br%2FResultadoPesquisa%2FMontaTelaPesquisa&ul=pt-br&dt=Assembl%C3%A9ia%20Legislativa%20do%20Estado%20do%20Rio%20de%20Janeiro&sr=1280x720&vp=1280x720&_u=IEBAAEABAAAAACAAI~&jid=1624492&gjid=1125859476&cid=419006278.1792247826&tid=UA-5511064-1&_gid=1085282092.1792247826&_r=1&_slc=1&z=1158273766",
+          "status": 200,
+          "tipo": "text/plain",
+          "bytes": 15,
+          "inicio": "2,cG-53NTCF6TKB"
+        },
+        {
+          "url": "https://analytics.google.com/g/collect?v=2&tid=G-53NTCF6TKB&gtm=45je6ae1v9117858115za20gxf1&_p=1792247826116&_gaz=1&gcd=13l3l3l3l2l1&npa=0&dma=0&_eu=ABAIAGA&are=1&cid=419006278.1792247826&frm=0&pscdl=noapi&rcb=14&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&gaf=2&_s=1&tag_exp=115938465~115938468~118897920~118897930~119793972~120213116~120385423~120469145~120469153~121246026~121246034&dl=https%3A%2F%2Fwww.alerj.rj.gov.br%2FResultadoPesquisa%2FMontaTelaPesquisa&dt=Assembl%C3%A9ia%20Legislativa%20do%20Estado%20do%20Rio%20de%20Janeiro&sid=1792247826&sct=1&seg=0&en=page_view&_fv=1&_ss=1&_ee=1&tfd=1821",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/rb_bf66253twh?type=js3&sn=v_4_srv_14_sn_0924CFB987627B1D1212FB406DC36E52_perc_100000_ol_0_mul_1_app-3Aed1eaaa3451dbd4d_1_rcs-3Acss_0&svrid=14&flavor=post&vi=EPNQCPJRGFMPEUBTFLMUQNHLLMRFKKIS-0&modifiedSince=1792090744744&bp=3&app=ed1eaaa3451dbd4d&crc=3409559894&en=vim3kbst&end=1",
+          "status": 200,
+          "tipo": "text/plain; charset=utf-8",
+          "bytes": 117,
+          "inicio": "OK(OA)|name=ruxitagentjs|featureHash=ICANQVfqru|version=|buildNumber=10347260902154543|lastModification=1792090744744"
+        }
+      ]
+    },
+    "enderecos:https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa": {
+      "url": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa",
+      "caminhos": [
+        "/Comunicacao/SalaDeImprensa/Noticias",
+        "/Comunicacao/SalaDeImprensa/Imagens",
+        "/Comunicacao/Publicacoes/Jornal",
+        "/Comunicacao/Publicacoes/Outras"
+      ],
+      "trechos": [
+        "AjaxStop = \"not\";",
+        "ajaxStart(function () {",
+        "ajaxStop(function () {",
+        "AjaxStop === 'undefined')",
+        "ajaxSetup({ cache: false }); //resolver problema com IE e cache quando são feitas chamadas via Json",
+        "Ajax(rootUrl + \"Home/RecuperaConfiguracoesExibicao\", \"\", function (response) {",
+        "Ajax(urlMetodo, parametros, funcSucesso, funcErro, isAsync) {",
+        "ajax({",
+        "url: urlMetodo,",
+        "ajaxSettings.flatOptions||{};for(d in b)void 0!==b[d]&&((e[d]?a:c||(c={}))[d]=b[d]);return c&&m.extend(!0,a,c),a}function Oc(a,b,c){var d,e,f,g,h=a.contents,i=a.dataTypes;while(\"*\"===i[0])i.shift(),void 0",
+        "ajaxSettings:{url:zc,type:\"GET\",isLocal:Dc.test(yc[1]),global:!0,processData:!0,async:!0,contentType:\"application/x-www-form-urlencoded; charset=UTF-8\",accepts:{\"*\":Jc,text:\"text/plain\",html:\"text/html\",x",
+        "url:!0,context:!0}},ajaxSetup:function(a,b){return b?Nc(Nc(a,m.ajaxSettings),b):Nc(m.ajaxSettings,a)},ajaxPrefilter:Lc(Hc),ajaxTransport:Lc(Ic),ajax:function(a,b){\"object\"==typeof a&&(b=a,a=void 0),b=b||{",
+        "ajaxSetup({},b),l=k.context||k,n=k.context&&(l.nodeType||l.jquery)?m(l):m.event,o=m.Deferred(),p=m.Callbacks(\"once memory\"),q=k.statusCode||{},r={},s={},t=0,u=\"canceled\",v={readyState:0,getResponseHeader:",
+        "ajaxStart\"),k.type=k.type.toUpperCase(),k.hasContent=!Ec.test(k.type),e=k.url,k.hasContent||(k.data&&(e=k.url+=(wc.test(e)?\"&\":\"?\")+k.data,delete k.data),k.cache===!1&&(k.url=Bc.test(e)?e.replace(Bc,\"$1_=",
+        "ajaxSend\",[v,k]),k.async&&k.timeout>0&&(g=setTimeout(function(){v.abort(\"timeout\")},k.timeout));try{t=1,i.send(r,x)}catch(w){if(!(2>t))throw w;x(-1,w)}}else x(-1,\"No Transport\");function x(a,b,c,d){var j,",
+        "ajaxSuccess\":\"ajaxError\",[v,k,j?r:s]),p.fireWith(l,[v,x]),h&&(n.trigger(\"ajaxComplete\",[v,k]),--m.active||m.event.trigger(\"ajaxStop\")))}return v},getJSON:function(a,b,c){return m.get(a,b,c,\"json\")},getScr",
+        "ajax({url:a,type:b,dataType:e,data:c,success:d})}}),m.each([\"ajaxStart\",\"ajaxStop\",\"ajaxComplete\",\"ajaxError\",\"ajaxSuccess\",\"ajaxSend\"],function(a,b){m.fn[b]=function(a){return this.on(b,a)}}),m._evalUrl=",
+        "ajax({url:a,type:\"GET\",dataType:\"script\",async:!1,global:!1,\"throws\":!0})},m.fn.extend({wrapAll:function(a){if(m.isFunction(a))return this.each(function(b){m(this).wrapAll(a.call(this,b))});if(this[0]){va",
+        "ajaxSettings&&m.ajaxSettings.traditional),m.isArray(a)||a.jquery&&!m.isPlainObject(a))m.each(a,function(){e(this.name,this.value)});else for(c in a)Vc(c,a[c],b,e);return d.join(\"&\").replace(Qc,\"+\")},m.fn.",
+        "ajaxSettings.xhr=void 0!==a.ActiveXObject?function(){return!this.isLocal&&/^(get|post|head|put|delete|options)$/i.test(this.type)&&Zc()||$c()}:Zc;var Wc=0,Xc={},Yc=m.ajaxSettings.xhr();a.ActiveXObject&&m(",
+        "ajax=!!Yc,Yc&&m.ajaxTransport(function(a){if(!a.crossDomain||k.cors){var b;return{send:function(c,d){var e,f=a.xhr(),g=++Wc;if(f.open(a.type,a.url,a.async,a.username,a.password),a.xhrFields)for(e in a.xhr",
+        "ajaxSetup({accepts:{script:\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"},contents:{script:/(?:java|ecma)script/},converters:{\"text script\":function(a){return",
+        "ajaxPrefilter(\"script\",function(a){void 0===a.cache&&(a.cache=!1),a.crossDomain&&(a.type=\"GET\",a.global=!1)}),m.ajaxTransport(\"script\",function(a){if(a.crossDomain){var b,c=y.head||m(\"head\")[0]||y.documen",
+        "ajaxSetup({jsonp:\"callback\",jsonpCallback:function(){var a=_c.pop()||m.expando+\"_\"+vc++;return this[a]=!0,a}}),m.ajaxPrefilter(\"json jsonp\",function(b,c,d){var e,f,g,h=b.jsonp!==!1&&(ad.test(b.url)?\"url\":",
+        "ajax({url:a,type:f,dataType:\"html\",data:b}).done(function(a){e=arguments,g.html(d?m(\"<div>\").append(m.parseHTML(a)).find(d):a)}).complete(c&&function(a,b){g.each(c,e||[a.responseText,b,a])}),this},m.expr.",
+        "url: \"Please enter a valid URL.\",",
+        "url: { url: true },",
+        "url: function( value, element ) {",
+        "url: param } || param;",
+        "ajax( $.extend( true, {"
+      ],
+      "campos": [
+        {
+          "tag": "input",
+          "id": "tempoBanner",
+          "nome": "tempoBanner",
+          "tipo": "hidden",
+          "valor": "5000"
+        },
+        {
+          "tag": "input",
+          "id": "tempoNoticia",
+          "nome": "tempoNoticia",
+          "tipo": "hidden",
+          "valor": "15000"
+        },
+        {
+          "tag": "input",
+          "id": "txtPesquisar",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "isConsulta",
+          "nome": "isConsulta",
+          "tipo": "hidden",
+          "valor": "False"
+        },
+        {
+          "tag": "input",
+          "id": "termoPesquisa",
+          "nome": "termoPesquisa",
+          "tipo": "hidden",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "txtProcurarInterno",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        }
+      ]
+    },
+    "seguido:https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial": {
+      "url": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial",
+      "status": 200,
+      "titulo": "Assembléia Legislativa do Estado do Rio de Janeiro",
+      "texto": "ALÔ ALERJ PERGUNTAS FREQUENTES INÍCIO ALERJ DEPUTADOS PROCESSO LEGISLATIVO COMUNICAÇÃO CONTATO LICITAÇÕES / TRANSPARÊNCIA COMUNICAÇÃO PUBLICAÇÕES / DIÁRIO OFICIAL VOLTAR Exibindo 1 a 10 de 95 1 2 3 4 5 28.02.2019 - 08:00 Diário Oficial Notícias - 28/02/2019 21.02.2019 - 08:00 Diário Oficial Notícias - 21/02/2019 14.02.2019 - 08:00 Diário Oficial Notícias - 14/02/2019 07.02.2019 - 08:00 Diário Oficial Notícias - 07/02/2019 20.12.2018 - 08:00 Diário Oficial Notícias - 20/12/2018 13.12.2018 - 08:00 Diário Oficial Notícias - 13/12/2018 06.12.2018 - 08:00 Diário Oficial Notícias - 06/12/2018 29.11.2018 - 08:00 Diário Oficial Notícias - 29/11/2018 22.11.2018 - 08:00 Diário Oficial Notícias - 22/11/2018 08.11.2018 - 08:00 Diário Oficial Notícias - 08/11/2018 Exibindo 1 a 10 de 95 1 2 3 4 5 1 2 TOPO Sede da Alerj Rua da Ajuda, nº 05, Centro, Rio de Janeiro. CEP20040-000 Telefone +55 (21) 2588-1000",
+      "pdfs": [],
+      "interessantes": [
+        {
+          "href": "https://www.alerj.rj.gov.br/ResultadoPesquisa/MontaTelaPesquisa",
+          "texto": ""
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": ""
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Palácio Tiradentes"
+        },
+        {
+          "href": "javascript:;",
+          "texto": "PROCESSO LEGISLATIVO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Plenário"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Comissões"
+        },
+        {
+          "href": "http://www.ioerj.com.br/portal/modules/content/index.php?id=21",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144",
+          "texto": "Leis e Projetos"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=161",
+          "texto": "Projetos 2023-2027"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Constituição e Regimento"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "COMUNICAÇÃO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Sala de Imprensa"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Publicações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Licitações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Palácio Tiradentes"
+        },
+        {
+          "href": "javascript:;",
+          "texto": "PROCESSO LEGISLATIVO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Plenário"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Comissões"
+        },
+        {
+          "href": "http://www.ioerj.com.br/portal/modules/content/index.php?id=21",
+          "texto": "Diário Oficial"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144",
+          "texto": "Leis e Projetos"
+        },
+        {
+          "href": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=161",
+          "texto": "Projetos 2023-2027"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Constituição e Regimento"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "COMUNICAÇÃO"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Sala de Imprensa"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Publicações"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "Licitações"
+        },
+        {
+          "href": "javascript:DownloadArquivo('28022019_140923DO_2019-02-28.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 28/02/2019"
+        },
+        {
+          "href": "javascript:DownloadArquivo('21022019_133919DO_2019-02-21.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 21/02/2019"
+        },
+        {
+          "href": "javascript:DownloadArquivo('14022019_143214DO_2019-02-14.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 14/02/2019"
+        },
+        {
+          "href": "javascript:DownloadArquivo('08022019_155818DO-2019-02-07.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 07/02/2019"
+        },
+        {
+          "href": "javascript:DownloadArquivo('20122018_135847DO_2018-12-20.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 20/12/2018"
+        },
+        {
+          "href": "javascript:DownloadArquivo('13122018_095624DO_2018-12-13.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 13/12/2018"
+        },
+        {
+          "href": "javascript:DownloadArquivo('06122018_142721DO_2018-12-06.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 06/12/2018"
+        },
+        {
+          "href": "javascript:DownloadArquivo('29112018_135444DO_2018-11-29.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 29/11/2018"
+        },
+        {
+          "href": "javascript:DownloadArquivo('22112018_184454DO_2018-11-22.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 22/11/2018"
+        },
+        {
+          "href": "javascript:DownloadArquivo('08112018_133913DO_2018-11-08.pdf','DO')",
+          "texto": "Diário Oficial Notícias - 08/11/2018"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "1"
+        },
+        {
+          "href": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial#",
+          "texto": "2"
+        }
+      ],
+      "chamadas": [
+        {
+          "url": "https://www.google-analytics.com/j/collect?v=1&_v=j102&a=118742125&t=pageview&_s=1&dl=https%3A%2F%2Fwww.alerj.rj.gov.br%2FComunicacao%2FPublicacoes%2FDiarioOficial&ul=pt-br&dt=Assembl%C3%A9ia%20Legislativa%20do%20Estado%20do%20Rio%20de%20Janeiro&sr=1280x720&vp=1280x720&_u=IEBAAEABAAAAACAAI~&jid=681444711&gjid=1839311783&cid=569487346.1792247833&tid=UA-5511064-1&_gid=1100586911.1792247833&_r=1&_slc=1&z=522268008",
+          "status": 200,
+          "tipo": "text/plain",
+          "bytes": 15,
+          "inicio": "2,cG-53NTCF6TKB"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/Home/RecuperaConfiguracoesExibicao",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 35,
+          "inicio": "{\"tempoBanner\":5,\"tempoNoticia\":15}"
+        },
+        {
+          "url": "https://analytics.google.com/g/collect?v=2&tid=G-53NTCF6TKB&gtm=45je6ae1h1v9117858115za20gxf1&_p=1792247833425&_gaz=1&gcd=13l3l3l3l2l1&npa=0&dma=0&_eu=ABAIAGA&are=1&cid=569487346.1792247833&frm=0&pscdl=noapi&rcb=16&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=pt-br&gaf=2&_s=1&tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&dl=https%3A%2F%2Fwww.alerj.rj.gov.br%2FComunicacao%2FPublicacoes%2FDiarioOficial&dt=Assembl%C3%A9ia%20Legislativa%20do%20Estado%20do%20Rio%20de%20Janeiro&sid=1792247833&sct=1&seg=0&en=page_view&_fv=1&_ss=1&_ee=1&tfd=1859",
+          "status": 204,
+          "tipo": "text/plain"
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/Listar/ConsultarDocumentoEletronico?tipo=DI&pagina=1&limite=10&order=1+ASC&consultar=true&_=1792247832914",
+          "status": 200,
+          "tipo": "application/json; charset=utf-8",
+          "bytes": 3148,
+          "inicio": "{\"Lista\":[{\"Id\":746,\"NmLinkDownload\":\"28022019_140923DO_2019-02-28.pdf\",\"NmTitulo\":\"Diário Oficial Notícias - 28/02/2019\",\"NmTituloAudio\":\"\",\"NmCaminhoAudio\":\"\",\"DataHoraPublicacao\":\"28.02.2019 - 08:00\",\"NmCaminhoImagem\":\"28022019_140924DO_2019-02-28-capa.jpg\",\"NmCaminhoBase\":\"/Uploads/Publicacao/DocumentoEletronico/\"},{\"Id\":736,\"NmLinkDownload\":\"21022019_133919DO_2019-02-21.pdf\",\"NmTitulo\":\"Diári"
+        }
+      ]
+    },
+    "enderecos:https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial": {
+      "url": "https://www.alerj.rj.gov.br/Comunicacao/Publicacoes/DiarioOficial",
+      "caminhos": [
+        "/Comunicacao/SalaDeImprensa/Noticias",
+        "/Comunicacao/SalaDeImprensa/Imagens",
+        "/Comunicacao/Publicacoes/Jornal",
+        "/Comunicacao/Publicacoes/Outras"
+      ],
+      "trechos": [
+        "ajaxStart(function () {",
+        "ajaxStop(function () {",
+        "AjaxStop === 'undefined')",
+        "ajaxSetup({ cache: false }); //resolver problema com IE e cache quando são feitas chamadas via Json",
+        "Ajax(rootUrl + \"Home/RecuperaConfiguracoesExibicao\", \"\", function (response) {",
+        "Ajax(urlMetodo, parametros, funcSucesso, funcErro, isAsync) {",
+        "ajax({",
+        "url: urlMetodo,",
+        "ajaxSettings.flatOptions||{};for(d in b)void 0!==b[d]&&((e[d]?a:c||(c={}))[d]=b[d]);return c&&m.extend(!0,a,c),a}function Oc(a,b,c){var d,e,f,g,h=a.contents,i=a.dataTypes;while(\"*\"===i[0])i.shift(),void 0",
+        "ajaxSettings:{url:zc,type:\"GET\",isLocal:Dc.test(yc[1]),global:!0,processData:!0,async:!0,contentType:\"application/x-www-form-urlencoded; charset=UTF-8\",accepts:{\"*\":Jc,text:\"text/plain\",html:\"text/html\",x",
+        "url:!0,context:!0}},ajaxSetup:function(a,b){return b?Nc(Nc(a,m.ajaxSettings),b):Nc(m.ajaxSettings,a)},ajaxPrefilter:Lc(Hc),ajaxTransport:Lc(Ic),ajax:function(a,b){\"object\"==typeof a&&(b=a,a=void 0),b=b||{",
+        "ajaxSetup({},b),l=k.context||k,n=k.context&&(l.nodeType||l.jquery)?m(l):m.event,o=m.Deferred(),p=m.Callbacks(\"once memory\"),q=k.statusCode||{},r={},s={},t=0,u=\"canceled\",v={readyState:0,getResponseHeader:",
+        "ajaxStart\"),k.type=k.type.toUpperCase(),k.hasContent=!Ec.test(k.type),e=k.url,k.hasContent||(k.data&&(e=k.url+=(wc.test(e)?\"&\":\"?\")+k.data,delete k.data),k.cache===!1&&(k.url=Bc.test(e)?e.replace(Bc,\"$1_=",
+        "ajaxSend\",[v,k]),k.async&&k.timeout>0&&(g=setTimeout(function(){v.abort(\"timeout\")},k.timeout));try{t=1,i.send(r,x)}catch(w){if(!(2>t))throw w;x(-1,w)}}else x(-1,\"No Transport\");function x(a,b,c,d){var j,",
+        "ajaxSuccess\":\"ajaxError\",[v,k,j?r:s]),p.fireWith(l,[v,x]),h&&(n.trigger(\"ajaxComplete\",[v,k]),--m.active||m.event.trigger(\"ajaxStop\")))}return v},getJSON:function(a,b,c){return m.get(a,b,c,\"json\")},getScr",
+        "ajax({url:a,type:b,dataType:e,data:c,success:d})}}),m.each([\"ajaxStart\",\"ajaxStop\",\"ajaxComplete\",\"ajaxError\",\"ajaxSuccess\",\"ajaxSend\"],function(a,b){m.fn[b]=function(a){return this.on(b,a)}}),m._evalUrl=",
+        "ajax({url:a,type:\"GET\",dataType:\"script\",async:!1,global:!1,\"throws\":!0})},m.fn.extend({wrapAll:function(a){if(m.isFunction(a))return this.each(function(b){m(this).wrapAll(a.call(this,b))});if(this[0]){va",
+        "ajaxSettings&&m.ajaxSettings.traditional),m.isArray(a)||a.jquery&&!m.isPlainObject(a))m.each(a,function(){e(this.name,this.value)});else for(c in a)Vc(c,a[c],b,e);return d.join(\"&\").replace(Qc,\"+\")},m.fn.",
+        "ajaxSettings.xhr=void 0!==a.ActiveXObject?function(){return!this.isLocal&&/^(get|post|head|put|delete|options)$/i.test(this.type)&&Zc()||$c()}:Zc;var Wc=0,Xc={},Yc=m.ajaxSettings.xhr();a.ActiveXObject&&m(",
+        "ajax=!!Yc,Yc&&m.ajaxTransport(function(a){if(!a.crossDomain||k.cors){var b;return{send:function(c,d){var e,f=a.xhr(),g=++Wc;if(f.open(a.type,a.url,a.async,a.username,a.password),a.xhrFields)for(e in a.xhr",
+        "ajaxSetup({accepts:{script:\"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript\"},contents:{script:/(?:java|ecma)script/},converters:{\"text script\":function(a){return",
+        "ajaxPrefilter(\"script\",function(a){void 0===a.cache&&(a.cache=!1),a.crossDomain&&(a.type=\"GET\",a.global=!1)}),m.ajaxTransport(\"script\",function(a){if(a.crossDomain){var b,c=y.head||m(\"head\")[0]||y.documen",
+        "ajaxSetup({jsonp:\"callback\",jsonpCallback:function(){var a=_c.pop()||m.expando+\"_\"+vc++;return this[a]=!0,a}}),m.ajaxPrefilter(\"json jsonp\",function(b,c,d){var e,f,g,h=b.jsonp!==!1&&(ad.test(b.url)?\"url\":",
+        "ajax({url:a,type:f,dataType:\"html\",data:b}).done(function(a){e=arguments,g.html(d?m(\"<div>\").append(m.parseHTML(a)).find(d):a)}).complete(c&&function(a,b){g.each(c,e||[a.responseText,b,a])}),this},m.expr.",
+        "Ajax",
+        "url: options.params.url,",
+        "url: \"Please enter a valid URL.\",",
+        "url: { url: true },",
+        "url: function( value, element ) {",
+        "url: param } || param;"
+      ],
+      "campos": [
+        {
+          "tag": "input",
+          "id": "tempoBanner",
+          "nome": "tempoBanner",
+          "tipo": "hidden",
+          "valor": "5000"
+        },
+        {
+          "tag": "input",
+          "id": "tempoNoticia",
+          "nome": "tempoNoticia",
+          "tipo": "hidden",
+          "valor": "15000"
+        },
+        {
+          "tag": "input",
+          "id": "txtPesquisar",
+          "nome": "",
+          "tipo": "text",
+          "valor": ""
+        },
+        {
+          "tag": "input",
+          "id": "tipo",
+          "nome": "",
+          "tipo": "hidden",
+          "valor": "DI"
+        }
+      ]
+    },
+    "saplComoNavegador": {
+      "url": "https://sapl.al.rj.leg.br/api/materia/materialegislativa/?page_size=1",
+      "comoNavegador": true,
+      "erro": "fetch failed (ENOTFOUND)"
+    }
+  }
+}
