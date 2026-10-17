@@ -398,7 +398,6 @@ const PASSOS_SUL: Passo[] = [
       const pdfs = [...new Set([...html.matchAll(/https:\/\/storage2\.assembleia\.pr\.leg\.br\/file\/public-media\/ordem\/arquivos\/[a-z0-9_]+\.pdf/g)].map((m) => m[0]))].slice(0, 3)
       for (const [i, u] of pdfs.entries()) await gravarPdf('alep', `ordem-${i + 1}`, u)
       await gravarHtml('alep', 'agenda', 'https://www.assembleia.pr.leg.br/atividade-parlamentar/agenda')
-      await gravarHtml('alep', 'ordem-do-dia', 'https://www.assembleia.pr.leg.br/atividade-parlamentar/ordem-do-dia')
       await gravarHtml('alep', 'comissoes', 'https://www.assembleia.pr.leg.br/atividade-parlamentar/comissoes-permanentes-e-temporarias')
     },
   },

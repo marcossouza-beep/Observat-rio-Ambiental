@@ -1,9 +1,10 @@
 /**
  * Conectores das fontes estaduais (Fases 5 e 6): Assembleias com SAPL (AC, AM, RO, TO; AL, PB, PI), o Diário da ALE-RR
  * (Roraima), a pesquisa de proposições da Alepa e o Banco de Leis da Alepa (Pará), o Diário do Legislativo da Bahia, o
- * expediente e a lista de proposições da Alece (Ceará) a pesquisa de proposições da ALMT (Mato Grosso) a API de dados abertos da ALMG (Minas Gerais) a API do processo legislativo da Alesp (São Paulo) e o e-Legis da Alesc (Santa Catarina). A chave é o slug da fonte em Fontes.
+ * expediente e a lista de proposições da Alece (Ceará) a pesquisa de proposições da ALMT (Mato Grosso) a API de dados abertos da ALMG (Minas Gerais) a API do processo legislativo da Alesp (São Paulo) o e-Legis da Alesc (Santa Catarina) e a ordem do dia da Alep (Paraná). A chave é o slug da fonte em Fontes.
  */
 import { conectorAlba } from './alba/conector'
+import { conectorAlep } from './alep/conector'
 import { conectorAlece } from './alece/conector'
 import { conectorAlesc } from './alesc/conector'
 import { conectorAlerr } from './alerr/conector'
@@ -26,6 +27,7 @@ export const CONECTORES_ESTADUAIS: Record<string, Conector> = {
   'casa-mg': conectorAlmg,
   'casa-sp': conectorAlesp,
   'casa-sc': conectorAlesc,
+  'casa-pr': conectorAlep,
 }
 
 /** Dados da fonte quando ela ainda não existe em Fontes (a coleta cria). */
@@ -40,4 +42,5 @@ export const FONTES_ESTADUAIS: Record<string, { nome: string; nivel: 'A' | 'B' |
   'casa-mg': { nome: 'Assembleia Legislativa de Minas Gerais (dados abertos)', nivel: 'A', esfera: 'estadual', uf: 'MG', url: 'https://dadosabertos.almg.gov.br/documentacao/index' },
   'casa-sp': { nome: 'Assembleia Legislativa de São Paulo (processo legislativo)', nivel: 'A', esfera: 'estadual', uf: 'SP', url: 'https://www.al.sp.gov.br/propositura' },
   'casa-sc': { nome: 'Assembleia Legislativa de Santa Catarina (e-Legis)', nivel: 'B', esfera: 'estadual', uf: 'SC', url: 'https://portalelegis.alesc.sc.gov.br/proposicoes/processo-legislativo' },
+  'casa-pr': { nome: 'Assembleia Legislativa do Paraná (ordem do dia)', nivel: 'C', esfera: 'estadual', uf: 'PR', url: 'https://www.assembleia.pr.leg.br/' },
 }

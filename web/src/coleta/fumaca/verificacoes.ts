@@ -380,13 +380,15 @@ export const VERIFICACOES: Verificacao[] = [
         })
         const p = r.pacotes[0]
         const a = r.amostra as
-          | { deInteresse?: number; andamentosNoPeriodo?: number; edicoes?: number[]; projetosLidos?: number; sessoes?: string[]; materiasLidas?: number; acompanhadasAchadas?: string; paginasLidas?: number; recentes?: number }
+          | { deInteresse?: number; andamentosNoPeriodo?: number; edicoes?: number[]; projetosLidos?: number; sessoes?: string[]; materiasLidas?: number; acompanhadasAchadas?: string; paginasLidas?: number; recentes?: number; itens?: number; acompanhadasNaPauta?: number }
           | undefined
         return {
           ok: true,
           notas: [
             a?.edicoes
               ? `${a.edicoes.length} edições do diário na semana (${a.edicoes.join(', ')}), ${a.projetosLidos ?? 0} projetos lidos`
+              : a?.acompanhadasNaPauta !== undefined
+                ? `${a.sessoes?.length ?? 0} ordens do dia lidas (${(a.sessoes || []).join('; ')}), ${a.itens ?? 0} projetos em pauta`
               : a?.sessoes
                 ? `${a.sessoes.length} sessões com expediente na semana, ${a.materiasLidas ?? 0} matérias lidas; acompanhada de teste achada na lista: ${a.acompanhadasAchadas} (${a.paginasLidas} páginas lidas)`
                 : a?.recentes !== undefined
