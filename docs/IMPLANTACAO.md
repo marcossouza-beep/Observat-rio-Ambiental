@@ -77,8 +77,12 @@ Num serviço gratuito (UptimeRobot, Better Stack ou similar), monitorar `SITE_UR
 Os fluxos do GitHub rodam fora do Brasil. Os sites de AP, MA, PE, RN, DF, ES e RS (e, em alguns dias, GO e RJ) não respondem a eles. Uma máquina pequena no Brasil, cadastrada como executor próprio do GitHub, resolve: os mesmos fluxos passam a rodar lá quando pedido.
 
 1. **Máquina:** qualquer Linux com 1 vCPU, 1 GB de memória e 20 GB de disco, em São Paulo (por exemplo: Oracle Cloud "Always Free", região São Paulo; Magalu Cloud; AWS ou Google na região `sa-east-1`/`southamerica-east1`). Ela só faz chamadas de saída; não precisa de porta aberta.
-2. **Programas:** `git`, Node 22 e `corepack enable` (pnpm). Para o estudo com navegador: `sudo npx playwright install-deps chromium` uma vez.
-3. **Executor do GitHub:** no repositório, Settings → Actions → Runners → *New self-hosted runner* → Linux. Rodar os comandos mostrados na própria máquina; no `./config.sh`, informar o rótulo **`brasil`**. Depois, deixar como serviço: `sudo ./svc.sh install && sudo ./svc.sh start`.
+2. **Proteção antes de tudo** (o repositório é público): Settings → Actions → General → *Approval for running fork pull request workflows from contributors* → **Require approval for all external contributors**. Sem isso, um estranho poderia propor uma mudança nos fluxos e fazê-la rodar na sua máquina.
+3. **Executor do GitHub:** Settings → Actions → Runners → *New self-hosted runner* → Linux. Da tela, copie só o token (o texto depois de `--token` no comando `./config.sh`); ele vale por 1 hora. Na máquina, como usuário com sudo:
+   ```bash
+   curl -fsSL https://raw.githubusercontent.com/marcossouza-beep/Observat-rio-Ambiental/claude/project-evaluation-roadmap-h09v0c/infra/servidor-brasil.sh | sudo bash -s -- SEU_TOKEN
+   ```
+   O script (`infra/servidor-brasil.sh`) instala Node 22, pnpm e as bibliotecas do Chromium, cria memória de troca, cria o usuário `github`, cadastra o executor com o rótulo **`brasil`** como serviço (volta sozinho quando a máquina reinicia) e, no fim, testa se as Assembleias respondem dali. Pode ser rodado de novo com um token novo.
 4. **Variáveis do GitHub** (Settings → Secrets and variables → Actions → *Variables*):
    - `RUNNER_BRASIL` = `true` (liga o uso do servidor);
    - `FONTES_BRASIL` = fontes que só respondem do Brasil, separadas por vírgula (ex.: `casa-ap,casa-rs`), preenchida à medida que os conectores desses estados ficarem prontos.
