@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="wrap">
             <Link className="brand" href="/" aria-label={`${NOME_SITE}, página inicial`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/marca/logo.svg" alt={NOME_SITE} width={111} height={46} />
+              <img src="/marca/logo.svg" alt={NOME_SITE} width={120} height={46} />
             </Link>
             <nav className="nav" aria-label="Principal">
               <Link href="/leis?esfera=federal">Federais</Link>
@@ -39,7 +39,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="wrap">
             <span className="brand">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/marca/logo.svg" alt={NOME_SITE} width={82} height={34} />
+              <img src="/marca/logo.svg" alt={NOME_SITE} width={89} height={34} />
             </span>
             <nav aria-label="Rodapé">
               <Link href="/leis">Todas as leis</Link>
