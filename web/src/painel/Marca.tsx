@@ -1,14 +1,17 @@
-const NOME = process.env.NEXT_PUBLIC_NOME_SITE || 'Nome do Site'
+/* eslint-disable @next/next/no-img-element */
+const NOME = process.env.NEXT_PUBLIC_NOME_SITE || 'ênfase jur'
 
+/** Ícone do menu do painel (árvore, versão preta). */
 export function Icone() {
-  return <span className="obs-gota" aria-hidden="true" />
+  return <img className="obs-icone" src="/marca/icone.svg" alt="" aria-hidden="true" width={26} height={26} />
 }
 
+/** Logo da tela de entrada do painel. */
 export function Logo() {
   return (
     <span className="obs-logo">
-      <span className="obs-gota" aria-hidden="true" />
-      {NOME} <small>Painel do autor</small>
+      <img src="/marca/logo.svg" alt={NOME} width={193} height={80} />
+      <small>Painel do autor</small>
     </span>
   )
 }

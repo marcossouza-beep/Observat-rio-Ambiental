@@ -14,8 +14,9 @@
   --obs-linha: var(--theme-elevation-100);
   --obs-cinza: var(--theme-elevation-500);
 }
-.obs-gota { display: inline-block; width: 14px; height: 14px; border-radius: 50% 50% 50% 0; background: var(--obs-verde); transform: rotate(-45deg); }
-.obs-logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.3rem; }
+.obs-icone { display: block; width: 26px; height: 26px; }
+.obs-logo { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; }
+.obs-logo img { display: block; height: 80px; width: auto; }
 .obs-logo small { font-weight: 500; font-size: 0.8rem; color: var(--obs-cinza); }
 
 .obs-nav { display: grid; gap: 2px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--obs-linha); }

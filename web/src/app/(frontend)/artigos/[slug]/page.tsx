@@ -5,7 +5,7 @@ import { JsonLd } from '@/componentes/JsonLd'
 import { Rico } from '@/componentes/Rico'
 import { Trilha } from '@/componentes/Trilha'
 import { artigoPorSlug } from '@/dados/consultas'
-import { dataLonga, NOME_SITE } from '@/lib/rotulos'
+import { dataLonga, NOME_SITE, SITE_URL } from '@/lib/rotulos'
 import { cortar, url } from '@/lib/seo'
 import type { Autor } from '@/payload-types'
 
@@ -44,7 +44,7 @@ export default async function PaginaArtigo({ params }: { params: Params }) {
           dateModified: a.updatedAt,
           inLanguage: 'pt-BR',
           author: autor ? { '@type': 'Person', name: autor.nome, jobTitle: autor.titulo || undefined, sameAs: redesDe(autor).filter(Boolean) } : undefined,
-          publisher: { '@type': 'Organization', name: NOME_SITE },
+          publisher: { '@type': 'Organization', name: NOME_SITE, logo: `${SITE_URL}/marca/logo.png` },
         }}
       />
       <Trilha

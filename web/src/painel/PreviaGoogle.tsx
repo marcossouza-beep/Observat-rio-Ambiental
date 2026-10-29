@@ -2,7 +2,7 @@
 import { useAllFormFields } from '@payloadcms/ui'
 
 const SITE = (process.env.NEXT_PUBLIC_SITE_URL || 'https://nomedosite.com.br').replace(/^https?:\/\//, '').replace(/\/$/, '')
-const NOME = process.env.NEXT_PUBLIC_NOME_SITE || 'Nome do Site'
+const NOME = process.env.NEXT_PUBLIC_NOME_SITE || 'ênfase jur'
 
 /** Prévia do resultado no Google e contadores (docs/SEO.md, seção 3). */
 export function PreviaGoogle() {

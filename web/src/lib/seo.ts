@@ -62,7 +62,7 @@ export function jsonLdParecer(a: {
         }
       : undefined,
     about: { '@type': 'Legislation', name: a.lei.nome, legislationIdentifier: a.lei.identificador, legislationJurisdiction: a.lei.jurisdicao },
-    publisher: { '@type': 'Organization', name: NOME_SITE, url: SITE_URL },
+    publisher: { '@type': 'Organization', name: NOME_SITE, url: SITE_URL, logo: `${SITE_URL}/marca/logo.png` },
   }
 }
 

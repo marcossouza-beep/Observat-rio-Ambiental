@@ -104,7 +104,7 @@ const config: Config = {
         email: resendAdapter({
           apiKey: process.env.RESEND_API_KEY,
           defaultFromAddress: process.env.EMAIL_REMETENTE || 'avisos@exemplo.com',
-          defaultFromName: process.env.NEXT_PUBLIC_NOME_SITE || 'Nome do Site',
+          defaultFromName: process.env.NEXT_PUBLIC_NOME_SITE || 'ênfase jur',
         }),
       }
     : {}),

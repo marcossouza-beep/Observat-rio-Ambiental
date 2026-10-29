@@ -1,6 +1,6 @@
 /** Rótulos e nomes usados nas páginas públicas. */
 
-export const NOME_SITE = process.env.NEXT_PUBLIC_NOME_SITE || 'Nome do Site'
+export const NOME_SITE = process.env.NEXT_PUBLIC_NOME_SITE || 'ênfase jur'
 export const SITE_URL = (process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').replace(/\/$/, '')
 
 export const UF_NOME: Record<string, string> = {
