@@ -10,7 +10,7 @@ export function Icone() {
 export function Logo() {
   return (
     <span className="obs-logo">
-      <img src="/marca/logo.svg" alt={NOME} width={209} height={80} />
+      <img src="/marca/logo.svg" alt={NOME} width={265} height={80} />
       <small>Painel do autor</small>
     </span>
   )
