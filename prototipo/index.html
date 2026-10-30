@@ -1187,17 +1187,18 @@ function parBlockHTML(l){ const ins=state.inscrito; return `    <section class="
       <div class="par">
         <p>O projeto acerta ao vincular o uso dos recursos a um plano de manejo, mas não define prazo para elaborá-lo. Sem prazo, as regras podem ficar anos no papel.</p>
         <p>O conselho previsto no art. 2º não tem composição mínima. Recomendamos garantir participação das comunidades e de instituições de pesquisa.</p>
-        <p><b>Conclusão:</b> ${l.imp.toLowerCase()}, com efeito ${l.car.toLowerCase()} condicionado à regulamentação.</p>
+        <p><b>Classificação:</b> ${l.imp.toLowerCase()}, com efeito ${l.car.toLowerCase()} condicionado à regulamentação.</p>
       </div>
-      <div class="to-report"><span>Impactos por dimensão, pontos de atenção, base legal e recomendações.</span><a class="pill-btn" href="#parecer-${l.id}">Ler parecer completo${ARR}</a></div>
+      <div class="to-report"><span>Como é hoje × como fica, classificação explicada, pontos de atenção e próximos passos.</span><a class="pill-btn" href="#parecer-${l.id}">Ler parecer completo${ARR}</a></div>
     </section>
 
 `; }
 function matBlockHTML(l){ const ins=state.inscrito; return `    <section class="block b-mat" id="s-mat">
-      <h2>Material completo</h2>
+      <h2>Aprofunde</h2>
+      <p style="color:#3A443E">A nota técnica traz a análise completa: problema, hipótese, cenários e soluções. O quadro comparativo mostra, artigo por artigo, o que é hoje e o que pode vir a ser.</p>
       <div class="files">
-        <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota Técnica</b><span>Direito Ambiental</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
-        <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>Antes × depois</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
+        <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota técnica</b><span>Análise completa · 3 páginas</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
+        <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>Artigo por artigo</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
       </div>
       ${ins?"":`<div class="unlock"><button class="pill-btn" data-act="inscrever">Liberar materiais</button><span>Grátis para inscritos.</span></div>`}
     </section>
@@ -1232,7 +1233,7 @@ function lei(l){
       <div class="top" style="display:flex;gap:6px;flex-wrap:wrap">${placeTag(l.local)}${stTag(l.status)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}<button class="mini share-btn" data-share="${l.id}" style="margin-left:auto">${ICO_SHARE}Compartilhar</button></div>
       <h1>${l.titulo}</h1><span class="num">${l.num}</span>
     </header>
-    <nav class="steps" aria-label="Seções"><a href="#${l.id}" data-jump="s-lei" class="on">A lei</a><a href="#${l.id}" data-jump="s-who">Quem</a><a href="#${l.id}" data-jump="s-par">${l.parecer?"Parecer":"Parecer em breve"}</a>${l.parecer?`<a href="#${l.id}" data-jump="s-mat">Material</a>`:""}</nav>
+    <nav class="steps" aria-label="Seções"><a href="#${l.id}" data-jump="s-lei" class="on">A lei</a><a href="#${l.id}" data-jump="s-who">Quem</a><a href="#${l.id}" data-jump="s-par">${l.parecer?"Parecer":"Parecer em breve"}</a>${l.parecer?`<a href="#${l.id}" data-jump="s-mat">Aprofunde</a>`:""}</nav>
 
     <section class="block b-law" id="s-lei">
       <h2>A lei <small>texto oficial</small></h2>
@@ -1430,17 +1431,12 @@ function topoInsc(){ const b=$("#mbody"); if(b) b.scrollTop=0; if(isNarrow()) wi
 /* ---------- relatório do parecer ---------- */
 const DIMS=[["Ambiental",2,"Protege 48 mil ha de floresta e várzea contra extração ilegal."],["Social",2,"Garante às comunidades tradicionais o uso prioritário da área."],["Econômico",-1,"Restringe atividades madeireiras e de pesca comercial no entorno."],["Institucional",0,"Cria conselho, mas sem composição mínima nem orçamento definido."]];
 const VAL={2:"Muito positivo",1:"Positivo",0:"Neutro","-1":"Negativo","-2":"Muito negativo"};
-const SECS=[["r1","Contexto"],["r2","O que muda"],["r3","Impactos"],["r4","Pontos de atenção"],["r5","Base legal"],["r6","Recomendações"],["r7","Conclusão"]];
-const BASE=[["CF, art. 225","Meio ambiente equilibrado","Impõe ao poder público o dever de definir espaços territoriais especialmente protegidos (§1º, III). O projeto cumpre esse comando."],
-  ["Lei 9.985/2000","SNUC","Define a Reserva Extrativista (art. 18) e exige plano de manejo em até 5 anos (art. 27, §3º). O projeto não repete esse prazo."],
-  ["LC 140/2011","Competências","Atribui ao estado a gestão das unidades que cria (art. 8º, X). A gestão estadual prevista está correta."],
-  ["Convenção 169 OIT","Consulta prévia","Exige consulta livre, prévia e informada às comunidades afetadas. Não há registro de consulta no processo."]];
+const SECS=[["r1","Em uma frase"],["r2","O que é"],["r3","Como é hoje × como fica"],["r4","Classificação"],["r5","Por que importa"],["r6","Pontos de atenção"],["r7","Próximos passos"]];
 function parecer(l){
-  const dir=l.car==="Maléfico"?-1:l.car==="Enfraquece indiretamente"?-0.5:l.car==="Neutro"?0.25:1;
-  const dims=DIMS.map(d=>[d[0],Math.round(d[1]*dir)||0,d[2]]);
   const imp={"Baixo impacto":1,"Médio impacto":2,"Alto impacto":3}[l.imp]||3;
   const pos=l.car==="Benéfico"?82:l.car==="Maléfico"?12:l.car==="Enfraquece indiretamente"?32:50;
-  const a=ATORES[l.id];
+  const a=atores(l);
+  const corCar=l.car==="Maléfico"?"var(--rose-ink)":l.car==="Benéfico"?"var(--green-dk)":l.car==="Enfraquece indiretamente"?"#8A5A12":"var(--ink)";
   return `<div class="readbar" id="readbar"></div>
   <div class="rep">
     ${crumbs([["Início","#home"],[l.esfera==="federal"?"Leis federais":"Leis estaduais",l.esfera==="federal"?"#federais":"#estaduais"],[l.num,"#"+l.id],["Parecer",""]])}
@@ -1448,44 +1444,46 @@ function parecer(l){
       <span class="eyebrow">Parecer técnico · versão 2</span>
       <h1>${l.titulo}</h1>
       ${byAuthor("assina este parecer")}
-      <div class="meta"><span class="withflag">${flag(flagOf(l.local),"md")}${l.num} · ${l.local}</span><span>Publicado em <b>09/10/2026</b></span><span>Texto analisado: <b>versão de 08/10/2026</b></span><span>Leitura de <b>4 min</b></span></div>
+      <div class="meta"><span class="withflag">${flag(flagOf(l.local),"md")}${l.num} · ${l.local}</span><span>Publicado em <b>09/10/2026</b></span><span>Texto analisado: <b>versão de 08/10/2026</b></span><span>Leitura de <b>3 min</b></span></div>
     </header>
 
-    <div class="verdict">
-      <div class="vcard"><small>Impacto</small><span class="big">${l.imp.replace(" impacto","")}</span>
-        <div class="meter" role="img" aria-label="Impacto ${l.imp}">${[1,2,3].map(i=>`<span class="${i<=imp?"f":""}"></span>`).join("")}</div><div class="mlab"><span>Baixo</span><span>Médio</span><span>Alto</span></div></div>
-      <div class="vcard"><small>Caráter · <a class="metod-link" href="#metodologia">como classificamos</a></small><span class="big" style="color:${l.car==="Maléfico"?"var(--rose-ink)":l.car==="Benéfico"?"var(--green-dk)":l.car==="Enfraquece indiretamente"?"#8A5A12":"var(--ink)"}">${l.car}</span>
-        <div class="scale" role="img" aria-label="Caráter ${l.car}"><i style="left:${pos}%"></i></div><div class="mlab"><span>Maléfico</span><span>Indireto</span><span>Neutro</span><span>Benéfico</span></div></div>
-      <div class="vcard"><small>Próximo passo</small><span class="big">${l.status==="Aprovada"?"Regulamentação":"Plenário"}</span>
-        <span style="color:var(--gray);font-size:.9rem">${l.status==="Aprovada"?"Prazo de 180 dias para o Executivo":"Votação prevista para 14/10/2026"}</span></div>
-    </div>
-    <p class="oneline"><b>Em uma frase:</b> ${l.resumo.replace(/\.$/,"")}. A proposta é ${l.car==="Benéfico"?"positiva":"preocupante"}, mas depende de regulamentação para ter efeito real.</p>
-
     <div class="rep-body">
-      <nav class="toc" aria-label="Sumário"><small>Neste parecer</small>${SECS.map((x,i)=>`<a href="#parecer-${l.id}" data-jump="${x[0]}" class="${i===0?"on":""}"><span>${i+1}</span>${x[1]}</a>`).join("")}</nav>
+      <nav class="toc" aria-label="Sumário"><small>Neste parecer</small>${SECS.map((x,i)=>`<a href="#parecer-${l.id}" data-jump="${x[0]}" class="${i===0?"on":""}"><span>${i+1}</span>${x[1]}</a>`).join("")}<a href="#parecer-${l.id}" data-jump="r8"><span>+</span>Aprofunde</a></nav>
       <article>
-        <section class="rsec" id="r1"><h2><span>1</span>Contexto</h2>
-          <p>A região do Baixo Rio Exemplo abriga comunidades extrativistas há mais de um século e sofre pressão crescente de extração ilegal de madeira e pesca predatória. Não há hoje nenhuma proteção legal específica para a área.</p>
-          <div class="facts"><div><b>48 mil ha</b><span>área proposta</span></div><div><b>~1.200</b><span>famílias extrativistas</span></div><div><b>Amazônia</b><span>bioma</span></div></div>
+        <section class="rsec" id="r1"><h2><span>1</span>Em uma frase</h2>
+          <div class="oneline" style="margin-bottom:0">${l.resumo.replace(/\.$/,"")}. A proposta é ${l.car==="Benéfico"?"positiva":"preocupante"} para a proteção ambiental e depende de regulamentação para ter efeito real.</div>
         </section>
 
-        <section class="rsec" id="r2"><h2><span>2</span>O que muda</h2>
+        <section class="rsec" id="r2"><h2><span>2</span>O que é</h2>
+          <p>${factsSentence(l)}</p>
+          <div class="facts"><div><b>48 mil ha</b><span>área atingida</span></div><div><b>~1.200</b><span>famílias extrativistas</span></div><div><b>${(LEI_BIOMA[l.id]||["—"])[0]}</b><span>bioma</span></div></div>
+        </section>
+
+        <section class="rsec" id="r3"><h2><span>3</span>Como é hoje × como fica</h2>
           <div class="cmp">
-            ${[["Sem proteção legal específica","Reserva Extrativista de uso sustentável"],["Uso livre, sem regras","Uso conforme plano de manejo"],["Sem gestão definida","Gestão estadual com conselho deliberativo"]].map(r=>`<div class="cmp-row"><div class="bef"><small>Hoje</small>${r[0]}</div><span class="arr">${ARR}</span><div class="aft"><small>Com o projeto</small>${r[1]}</div></div>`).join("")}
+            ${[["Sem proteção legal específica","Reserva Extrativista de uso sustentável"],["Uso livre, sem regras","Uso conforme plano de manejo"],["Sem gestão definida","Gestão estadual com conselho deliberativo"]].map(r=>`<div class="cmp-row"><div class="bef"><small>Hoje</small>${r[0]}</div><span class="arr">${ARR}</span><div class="aft"><small>Com a proposta</small>${r[1]}</div></div>`).join("")}
+          </div>
+          <p class="method">O quadro comparativo, artigo por artigo, está no material de aprofundamento.</p>
+        </section>
+
+        <section class="rsec" id="r4"><h2><span>4</span>Classificação</h2>
+          <div class="verdict" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:0">
+            <div class="vcard"><small>Impacto</small><span class="big">${l.imp.replace(" impacto","")}</span>
+              <div class="meter" role="img" aria-label="Impacto ${l.imp}">${[1,2,3].map(i=>`<span class="${i<=imp?"f":""}"></span>`).join("")}</div><div class="mlab"><span>Baixo</span><span>Médio</span><span>Alto</span></div>
+              <span style="color:var(--gray);font-size:.9rem">Atinge uma área extensa e as famílias que vivem dela; o efeito é difícil de reverter.</span></div>
+            <div class="vcard"><small>Caráter · <a class="metod-link" href="#metodologia">como classificamos</a></small><span class="big" style="color:${corCar}">${l.car}</span>
+              <div class="scale" role="img" aria-label="Caráter ${l.car}"><i style="left:${pos}%"></i></div><div class="mlab"><span>Maléfico</span><span>Indireto</span><span>Neutro</span><span>Benéfico</span></div>
+              <span style="color:var(--gray);font-size:.9rem">${l.car==="Benéfico"?"Cria proteção onde hoje não existe nenhuma.":"Reduz a proteção existente ou abre caminho para o dano."}</span></div>
           </div>
         </section>
 
-        <section class="rsec" id="r3"><h2><span>3</span>Impactos por dimensão</h2>
-          <div class="chart" id="chart">
-            <div class="chart-cap"><span class="withflag">${ARL} Negativo</span><span class="withflag">Positivo ${ARR}</span></div>
-            ${dims.map(d=>`<div class="drow" tabindex="0" data-tip="${d[2]}"><span class="lab">${d[0]}</span>
-              <div class="dtrack">${d[1]===0?'<span class="dbar zero"></span>':`<span class="dbar ${d[1]>0?"pos":"neg"}" style="width:calc(${Math.abs(d[1])*24}% - 2px)"></span>`}</div>
-              <span class="val">${VAL[d[1]]}</span></div>`).join("")}
-          </div>
-          <p style="color:var(--soft);font-size:.85rem">Passe o mouse ou toque em cada dimensão para ver a justificativa.</p>
+        <section class="rsec" id="r5"><h2><span>5</span>Por que importa</h2>
+          <div class="qual"><div class="q-pos"><b>Quem ganha</b><ul><li>Comunidades extrativistas, com uso prioritário da área</li><li>A floresta e a várzea, protegidas da extração ilegal</li></ul></div>
+            <div class="q-neg"><b>Quem perde ou paga o custo</b><ul><li>Atividades madeireiras e de pesca comercial no entorno</li><li>O estado, que assume a gestão e o custo do plano de manejo</li></ul></div></div>
+          <p><b>O que está em jogo:</b> a área sofre pressão crescente e hoje não tem proteção legal específica.</p>
         </section>
 
-        <section class="rsec" id="r4"><h2><span>4</span>Pontos de atenção</h2>
+        <section class="rsec" id="r6"><h2><span>6</span>Pontos de atenção</h2>
           <div class="alerts">
             <div class="al"><span class="chipst st-pos">✓ Positivo</span><div><b>Prioridade às comunidades</b><p>O uso dos recursos fica garantido a quem já vive e trabalha na área.</p></div></div>
             <div class="al"><span class="chipst st-att">! Atenção</span><div><b>Sem prazo para o plano de manejo</b><p>Sem prazo, as regras de uso podem levar anos para existir.</p></div></div>
@@ -1493,30 +1491,17 @@ function parecer(l){
           </div>
         </section>
 
-        <section class="rsec" id="r5"><h2><span>5</span>Base legal</h2>
-          <div class="laws">${BASE.map((b,i)=>`<button class="lawchip" data-law="${i}" aria-expanded="false">${b[0]}<span>${b[1]}</span></button>`).join("")}</div>
-          <div class="lawnote" id="lawnote">Toque em uma norma para ver como ela se aplica ao projeto.</div>
-        </section>
-
-        <section class="rsec" id="r6"><h2><span>6</span>Recomendações</h2>
-          <ol class="recs">
-            <li><span>Fixar prazo de até 2 anos para o plano de manejo.</span></li>
-            <li><span>Definir composição mínima do conselho, com maioria das comunidades.</span></li>
-            <li><span>Realizar consulta prévia antes da votação em plenário.</span></li>
-          </ol>
-        </section>
-
-        <section class="rsec" id="r7"><h2><span>7</span>Conclusão</h2>
-          <div class="concl"><div class="row"><span class="tag">${l.imp}</span><span class="tag">${l.car}</span></div>
-            <p>O projeto protege uma área sensível e as comunidades que dependem dela. Para cumprir o que promete, precisa de prazo para o plano de manejo e de consulta prévia às comunidades.</p></div>
+        <section class="rsec" id="r7"><h2><span>7</span>Próximos passos</h2>
+          <div class="path">${a.etapas.map((e,i)=>`<div class="${i<a.atual?"ok":i===a.atual?"now":""}"><i></i>${e}</div>`).join("")}</div>
+          <p>${l.status==="Aprovada"?"Aprovada e sancionada. O próximo passo é a regulamentação pelo Executivo, em até 180 dias.":"Pronta para votação em plenário, prevista para 14/10/2026. Se aprovada, segue para sanção."}</p>
         </section>
 
         ${subjects(l)}
-        <div class="rep-foot">
-          <div class="panel-s"><h3>Aprofunde</h3><p>Nota Técnica com a análise jurídica completa e o Quadro comparativo artigo por artigo.</p>
+        <div class="rep-foot" id="r8">
+          <div class="panel-s"><h3>Aprofunde</h3><p>A <b>nota técnica</b> traz a análise completa em 3 páginas: problema, hipótese, impactos, cenários, soluções e casos de referência. O <b>quadro comparativo</b> mostra, artigo por artigo, o que é hoje e o que pode vir a ser.</p>
             <div class="files">
-              <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota Técnica</b><span>12 páginas</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
-              <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>3 páginas</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
+              <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota técnica</b><span>3 páginas</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
+              <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>artigo por artigo</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
             </div></div>
           ${state.inscrito&&insc.press?`<div class="panel-s" style="grid-column:1/-1;background:var(--sky);border-color:transparent"><h3 style="color:var(--sky-ink)">Para a imprensa ${insc.press==="verificado"?'<span class="pchip" style="background:#fff">✓ Verificada</span>':""}</h3>
             ${insc.press==="verificado"?`<p style="color:#2B3A55">Entrevista com o autor, gráficos em alta resolução e os dados deste parecer.</p><div class="row" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn-o" data-act="imp-entrevista">Pedir entrevista</button><button class="btn-o" data-act="imp-graficos">Baixar gráficos (PNG)</button><button class="btn-o" data-act="imp-dados">Dados (CSV)</button></div>`:`<p style="color:#2B3A55">Seu credenciamento está em análise. Assim que for aprovado, você poderá pedir entrevistas e baixar gráficos e dados.</p>`}</div>`:!state.inscrito?`<p class="hint" style="grid-column:1/-1">É jornalista? <a href="#inscricao" data-act="m-jorn-desk">Faça o credenciamento de imprensa${ARR}</a></p>`:""}
@@ -2033,7 +2018,7 @@ function metodologia(){
             <li><div><b>Monitoramento</b><p>Todos os dias coletamos novas proposições, tramitações, pautas, votações, sanções e vetos nas fontes oficiais.</p><span class="who m">Automático</span></div></li>
             <li><div><b>Triagem</b><p>Um dicionário de palavras-chave separa o que pode ser ambiental e monta o dossiê de cada proposta (texto integral, versões, tramitação, autores). O autor decide o que entra, o que só é acompanhado e o que é descartado.</p><span class="who hm">Automático + pessoa</span></div></li>
             <li><div><b>Análise</b><p>O autor lê o texto integral, compara as versões (substitutivos, emendas), a justificativa e a legislação que a proposta altera.</p><span class="who h">Pessoa</span></div></li>
-            <li><div><b>Parecer</b><p>Escrito integralmente pelo autor indicado, num modelo fixo: resumo, o que muda, impactos por dimensão, pontos de atenção, base legal, recomendações e conclusão. O autor assina e responde pelo texto.</p><span class="who h">Pessoa</span></div></li>
+            <li><div><b>Parecer, nota técnica e quadro comparativo</b><p>Escritos integralmente pelo autor indicado, em modelos fixos. O <b>parecer</b>, aberto a todos, esclarece e classifica: em uma frase, o que é, como é hoje e como fica, classificação, por que importa, pontos de atenção e próximos passos. A <b>nota técnica</b> (3 páginas) faz a análise completa: problema, hipótese, impactos, cenários, soluções e casos de referência. O <b>quadro comparativo</b> mostra, artigo por artigo, o texto vigente e o proposto. O autor assina e responde pelos três.</p><span class="who h">Pessoa</span></div></li>
             <li><div><b>Publicação e atualização</b><p>O parecer informa a versão do texto analisado. Se o texto mudar, publicamos nova versão do parecer e mantemos o histórico.</p><span class="who h">Pessoa</span></div></li>
           </ol></section>
 

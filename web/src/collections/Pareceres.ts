@@ -7,7 +7,7 @@ import { checarPublicacao, SECOES_PARECER } from '../lib/publicacao'
 
 const idDe = (v: unknown) => (v && typeof v === 'object' ? (v as { id: unknown }).id : v) ?? null
 
-const secoes: Field[] = SECOES_PARECER.map((s) => ({ name: s.nome, label: s.rotulo, type: 'richText' as const }))
+const secoes: Field[] = SECOES_PARECER.map((s) => ({ name: s.nome, label: s.rotulo, type: 'richText' as const, admin: { description: s.ajuda } }))
 
 export const Pareceres: CollectionConfig = {
   slug: 'pareceres',

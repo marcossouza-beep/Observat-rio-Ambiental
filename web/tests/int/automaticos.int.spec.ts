@@ -1,6 +1,7 @@
 /**
  * Alerta diário e resumo semanal (Fase 3): quem recebe, o que entra, o que não entra.
  */
+import { SECOES_PARECER } from '@/lib/publicacao'
 import { getPayload, type Payload } from 'payload'
 import config from '@/payload.config'
 import { beforeAll, describe, expect, it } from 'vitest'
@@ -9,7 +10,7 @@ import { alertasDiarios, resumoSemanal } from '@/tarefas/automaticos'
 let payload: Payload
 const para = (t: string) => ({ type: 'paragraph', format: '', indent: 0, version: 1, direction: 'ltr', textFormat: 0, children: [{ type: 'text', text: t, format: 0, detail: 0, mode: 'normal', style: '', version: 1 }] })
 const rich = (t: string) => ({ root: { type: 'root', format: '', indent: 0, version: 1, direction: 'ltr', children: [para(t)] } })
-const secoes = Object.fromEntries(['resumo', 'oQueMuda', 'impactos', 'pontosAtencao', 'baseLegal', 'recomendacoes', 'conclusao'].map((k) => [k, rich(`Seção ${k} com texto suficiente para contar.`)]))
+const secoes = Object.fromEntries(SECOES_PARECER.map((s) => s.nome).map((k) => [k, rich(`Seção ${k} com texto suficiente para contar.`)]))
 
 const AGORA = new Date()
 const horas = (n: number) => new Date(AGORA.getTime() + n * 36e5).toISOString()

@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest'
-import { checarPublicacao, textoDe } from '@/lib/publicacao'
+import { checarPublicacao, SECOES_PARECER, textoDe } from '@/lib/publicacao'
 import { slugProposicao, rotuloProposicao } from '@/lib/texto'
 
 const lexical = (t: string) => ({ root: { children: [{ children: [{ text: t, type: 'text' }], type: 'paragraph' }] } })
 const completo = Object.fromEntries(
-  ['resumo', 'oQueMuda', 'impactos', 'pontosAtencao', 'baseLegal', 'recomendacoes', 'conclusao'].map((k) => [k, lexical('Texto suficiente para contar como seção escrita.')]),
+  SECOES_PARECER.map((s) => s.nome).map((k) => [k, lexical('Texto suficiente para contar como seção escrita.')]),
 )
 
 describe('publicação', () => {

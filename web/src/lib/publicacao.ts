@@ -3,14 +3,20 @@
  * Travas impedem a publicação; avisos só alertam.
  */
 
+/**
+ * Seções do parecer publicado no site: elucidativo e comparativo, com a classificação explicada.
+ * A análise completa (problema, hipótese, cenários, soluções, casos) vai na nota técnica (PDF) e o
+ * "antes × depois" artigo por artigo, no quadro comparativo (PDF). O bloco "Aprofunde" com os dois
+ * PDFs é montado sozinho na página.
+ */
 export const SECOES_PARECER = [
-  { nome: 'resumo', rotulo: 'Resumo' },
-  { nome: 'oQueMuda', rotulo: 'O que muda' },
-  { nome: 'impactos', rotulo: 'Impactos por dimensão' },
-  { nome: 'pontosAtencao', rotulo: 'Pontos de atenção' },
-  { nome: 'baseLegal', rotulo: 'Base legal' },
-  { nome: 'recomendacoes', rotulo: 'Recomendações' },
-  { nome: 'conclusao', rotulo: 'Conclusão' },
+  { nome: 'resumo', rotulo: 'Em uma frase', ajuda: 'O que a proposta faz, em linguagem simples. Também vai nos e-mails e nas listas do site.' },
+  { nome: 'oQueE', rotulo: 'O que é', ajuda: 'Objeto, alcance (quem é atingido, onde, a partir de quando) e em que etapa está.' },
+  { nome: 'oQueMuda', rotulo: 'Como é hoje × como fica', ajuda: 'Os 3 a 5 pontos principais no formato antes e depois. O detalhe artigo por artigo vai no quadro comparativo.' },
+  { nome: 'classificacao', rotulo: 'Classificação', ajuda: 'Por que este impacto e este caráter, em 1 ou 2 linhas para cada.' },
+  { nome: 'porQueImporta', rotulo: 'Por que importa', ajuda: 'Quem ganha, quem perde e o que está em jogo.' },
+  { nome: 'pontosAtencao', rotulo: 'Pontos de atenção', ajuda: 'O que merece cuidado: positivo, atenção ou crítico.' },
+  { nome: 'proximosPassos', rotulo: 'Próximos passos', ajuda: 'Onde a proposta está e o que vem na tramitação.' },
 ] as const
 
 export type NomeSecao = (typeof SECOES_PARECER)[number]['nome']

@@ -309,7 +309,7 @@ Abas: **A atualizar** · Em preparação · Em revisão · Agendados · Publicad
 | Topo | Etapas (Rascunho → Em revisão → Agendado → Publicado), salvamento automático, pré-visualizar (visitante, inscrito, PDF) |
 | Faixa de contexto | Prazo prometido, data da votação, pessoas aguardando; ou, se o texto mudou, o que a página pública está mostrando |
 | Dossiê (esquerda) | Texto · Versões (com marcação mecânica do que entrou e saiu entre versões, como o controle de alterações de um editor de texto) · Tramitação · Atores · Lei afetada. Nada do dossiê é escrito no parecer sozinho |
-| Parecer | As 7 seções do modelo fixo (Resumo, O que muda, Impactos por dimensão, Pontos de atenção, Base legal, Recomendações, Conclusão); em nova versão, campo "O que mudou nesta versão" |
+| Parecer | As 7 seções do parecer do site, elucidativo e comparativo (Em uma frase, O que é, Como é hoje × como fica, Classificação, Por que importa, Pontos de atenção, Próximos passos), mais o bloco "Aprofunde" montado sozinho com a nota técnica (análise completa em 3 páginas) e o quadro comparativo (artigo por artigo); em nova versão, campo "O que mudou nesta versão" |
 | Classificação | Impacto, caráter (4 categorias com definição), áreas, biomas. Alimenta os gráficos ao publicar |
 | SEO | Prévia do Google, palavra-chave, nome popular, título (≤ 60), descrição (≤ 155), endereço; checklist ao vivo (ver `docs/SEO.md`) |
 | Materiais | Nota técnica e Quadro comparativo em PDF; visibilidade (padrão: só inscritos) |

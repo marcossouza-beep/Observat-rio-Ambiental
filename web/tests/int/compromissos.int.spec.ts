@@ -1,4 +1,5 @@
 import { PRAZOS_PADRAO, prazoDesde } from '@/lib/compromissos'
+import { SECOES_PARECER } from '@/lib/publicacao'
 import { getPayload, type Payload } from 'payload'
 import config from '@/payload.config'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
@@ -12,7 +13,7 @@ const para = (t: string) => ({
 })
 const rich = (t: string) => ({ root: { type: 'root', format: '', indent: 0, version: 1, direction: 'ltr', children: [para(t)] } })
 const secoesCompletas = Object.fromEntries(
-  ['resumo', 'oQueMuda', 'impactos', 'pontosAtencao', 'baseLegal', 'recomendacoes', 'conclusao'].map((k) => [k, rich(`Texto da seção ${k} com tamanho suficiente.`)]),
+  SECOES_PARECER.map((s) => s.nome).map((k) => [k, rich(`Texto da seção ${k} com tamanho suficiente.`)]),
 )
 
 const LIMPAR = ['compromissos', 'correcoes', 'pedidos', 'credenciamentos', 'assinantes', 'pareceres', 'versoes', 'tramitacoes', 'proposicoes'] as const

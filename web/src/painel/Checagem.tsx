@@ -20,7 +20,7 @@ export function Checagem() {
   return (
     <div className="obs-checagem">
       <h4>Antes de publicar</h4>
-      <p className="obs-nota">{r.secoesEscritas} de 7 seções escritas</p>
+      <p className="obs-nota">{r.secoesEscritas} de {SECOES_PARECER.length} seções escritas</p>
       <ul>
         {r.travas.map((t) => (
           <li key={t} className="r">

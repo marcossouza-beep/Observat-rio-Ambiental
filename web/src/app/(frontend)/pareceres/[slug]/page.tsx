@@ -110,7 +110,8 @@ export default async function PaginaParecer({ params }: { params: Params }) {
 
       {materiais.length ? (
         <section className="block b-mat">
-          <h2>Material de aprofundamento</h2>
+          <h2>Aprofunde</h2>
+          <p>A nota técnica traz a análise completa: problema, hipótese, cenários e soluções. O quadro comparativo mostra, artigo por artigo, o que é hoje e o que pode vir a ser.</p>
           {materiais.map((m) => (
             <a key={m.id} className="mat-card" href={`/api/baixar/${m.id}`} rel="nofollow">
               <span className="ic">

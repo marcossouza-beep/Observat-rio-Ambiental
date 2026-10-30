@@ -98,10 +98,10 @@ test.describe('Site público', () => {
     await expect(page.getByText('Parecer em preparação')).toHaveCount(0)
   })
 
-  test('parecer: assinatura no topo, 7 seções e dados estruturados', async ({ page }) => {
+  test('parecer: assinatura no topo, 7 seções do modelo do site e dados estruturados', async ({ page }) => {
     await page.goto(PARECER)
     await expect(page.locator('.byline')).toContainText('Nome do Autor')
-    for (const s of ['Resumo', 'O que muda', 'Impactos por dimensão', 'Pontos de atenção', 'Base legal', 'Recomendações', 'Conclusão'])
+    for (const s of ['Em uma frase', 'O que é', 'Como é hoje × como fica', 'Classificação', 'Por que importa', 'Pontos de atenção', 'Próximos passos'])
       await expect(page.getByRole('heading', { name: s, exact: true })).toBeVisible()
     const art = (await jsonLd(page)).find((j) => j['@type'] === 'Article')
     expect(art.author.name).toBe('Nome do Autor')

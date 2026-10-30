@@ -395,6 +395,9 @@ export interface Parecer {
   titulo?: string | null;
   proposicao: number | Proposicao;
   secoes?: {
+    /**
+     * O que a proposta faz, em linguagem simples. Também vai nos e-mails e nas listas do site.
+     */
     resumo?: {
       root: {
         type: string;
@@ -410,6 +413,27 @@ export interface Parecer {
       };
       [k: string]: unknown;
     } | null;
+    /**
+     * Objeto, alcance (quem é atingido, onde, a partir de quando) e em que etapa está.
+     */
+    oQueE?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    /**
+     * Os 3 a 5 pontos principais no formato antes e depois. O detalhe artigo por artigo vai no quadro comparativo.
+     */
     oQueMuda?: {
       root: {
         type: string;
@@ -425,7 +449,10 @@ export interface Parecer {
       };
       [k: string]: unknown;
     } | null;
-    impactos?: {
+    /**
+     * Por que este impacto e este caráter, em 1 ou 2 linhas para cada.
+     */
+    classificacao?: {
       root: {
         type: string;
         children: {
@@ -440,6 +467,27 @@ export interface Parecer {
       };
       [k: string]: unknown;
     } | null;
+    /**
+     * Quem ganha, quem perde e o que está em jogo.
+     */
+    porQueImporta?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    /**
+     * O que merece cuidado: positivo, atenção ou crítico.
+     */
     pontosAtencao?: {
       root: {
         type: string;
@@ -455,37 +503,10 @@ export interface Parecer {
       };
       [k: string]: unknown;
     } | null;
-    baseLegal?: {
-      root: {
-        type: string;
-        children: {
-          type: any;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
-    recomendacoes?: {
-      root: {
-        type: string;
-        children: {
-          type: any;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
-    conclusao?: {
+    /**
+     * Onde a proposta está e o que vem na tramitação.
+     */
+    proximosPassos?: {
       root: {
         type: string;
         children: {
@@ -1313,12 +1334,12 @@ export interface PareceresSelect<T extends boolean = true> {
     | T
     | {
         resumo?: T;
+        oQueE?: T;
         oQueMuda?: T;
-        impactos?: T;
+        classificacao?: T;
+        porQueImporta?: T;
         pontosAtencao?: T;
-        baseLegal?: T;
-        recomendacoes?: T;
-        conclusao?: T;
+        proximosPassos?: T;
       };
   impacto?: T;
   carater?: T;
