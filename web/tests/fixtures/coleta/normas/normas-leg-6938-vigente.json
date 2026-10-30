@@ -1,0 +1,9 @@
+{
+  "url": "https://normas.leg.br/api/binario/b10bbcdc-51fc-40ca-9a88-6e9c38182749/texto",
+  "status": 404,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-30T04:04:32.025Z",
+  "corpo": {
+    "html": "{\"timestamp\":\"2026-10-30T04:04:32.115Z\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/binario/b10bbcdc-51fc-40ca-9a88-6e9c38182749/texto\"}"
+  }
+}

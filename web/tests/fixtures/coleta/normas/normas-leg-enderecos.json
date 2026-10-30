@@ -2,7 +2,7 @@
   "url": "https://normas.leg.br/",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-30T04:03:29.183Z",
+  "gravadaEm": "2026-10-30T04:04:28.481Z",
   "corpo": {
     "scripts": [
       "https://normas.leg.br/runtime.a48d49b6acb495b9.js",
