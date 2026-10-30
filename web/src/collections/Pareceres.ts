@@ -3,11 +3,35 @@ import { equipe, publicadoOuEquipe } from '../access'
 import { mudarCompromissos } from '../hooks/compromissos'
 import { revalidarAoApagar, revalidarAoMudar } from '../hooks/revalidar'
 import { avisarPublicacao } from '../hooks/avisos'
-import { checarPublicacao, SECOES_PARECER } from '../lib/publicacao'
+import { checarPublicacao, EFEITOS_COTEJO, SECOES_PARECER } from '../lib/publicacao'
 
 const idDe = (v: unknown) => (v && typeof v === 'object' ? (v as { id: unknown }).id : v) ?? null
 
-const secoes: Field[] = SECOES_PARECER.map((s) => ({ name: s.nome, label: s.rotulo, type: 'richText' as const, admin: { description: s.ajuda } }))
+/** Quadro do cotejo: os pontos principais, lado a lado, logo abaixo do comentário "Regime vigente e proposta". */
+const comparativo: Field = {
+  name: 'comparativo',
+  label: 'Quadro: regime vigente e proposta',
+  labels: { singular: 'Ponto', plural: 'Pontos' },
+  type: 'array',
+  maxRows: 8,
+  admin: { description: 'De 3 a 5 pontos. Escreva cada lado como um enunciado objetivo, sem adjetivos. O efeito usa a mesma legenda do quadro comparativo em PDF.' },
+  fields: [
+    { name: 'dispositivo', label: 'Dispositivo', type: 'text', admin: { description: 'Ex.: Art. 3º, caput' } },
+    {
+      type: 'row',
+      fields: [
+        { name: 'vigente', label: 'Regime vigente', type: 'textarea', required: true, admin: { width: '50%', description: 'Como é hoje (lei em vigor ou ausência de regra)' } },
+        { name: 'proposto', label: 'Proposta', type: 'textarea', required: true, admin: { width: '50%', description: 'Como fica com o texto analisado' } },
+      ],
+    },
+    { name: 'efeito', label: 'Efeito na proteção ambiental', type: 'select', required: true, options: EFEITOS_COTEJO.map((e) => ({ value: e.value, label: `${e.sinal} ${e.label}` })) },
+  ],
+}
+
+const secoes: Field[] = SECOES_PARECER.flatMap((s) => {
+  const campo: Field = { name: s.nome, label: s.rotulo, type: 'richText' as const, admin: { description: s.ajuda } }
+  return s.nome === 'oQueMuda' ? [campo, comparativo] : [campo]
+})
 
 export const Pareceres: CollectionConfig = {
   slug: 'pareceres',
@@ -129,6 +153,7 @@ export const Pareceres: CollectionConfig = {
       ],
     },
     { name: 'checagem', type: 'ui', admin: { position: 'sidebar', components: { Field: '/painel/Checagem#Checagem' } } },
+    { name: 'rastro', type: 'ui', admin: { position: 'sidebar', components: { Field: '/painel/Rastro#Rastro' } } },
     {
       name: 'status',
       type: 'select',

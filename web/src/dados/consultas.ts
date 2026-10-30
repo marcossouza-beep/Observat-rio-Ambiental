@@ -69,8 +69,13 @@ export async function parecerPorSlug(slug: string) {
   const r = await payload.find({ collection: 'pareceres', ...publico, where: { slug: { equals: slug } }, limit: 1, depth: 2 })
   const parecer = r.docs[0]
   if (!parecer) return null
-  const correcoes = await payload.find({ collection: 'correcoes', ...publico, where: { parecer: { equals: parecer.id } }, sort: '-feitaEm', depth: 0 })
-  return { parecer, lei: parecer.proposicao as Proposicao, correcoes: correcoes.docs }
+  const lei = parecer.proposicao as Proposicao
+  const [correcoes, originais] = await Promise.all([
+    payload.find({ collection: 'correcoes', ...publico, where: { parecer: { equals: parecer.id } }, sort: '-feitaEm', depth: 0 }),
+    // Texto original (a "matéria bruta" que abre o parecer), mesmo quando o parecer analisa um substitutivo
+    payload.find({ collection: 'versoes', ...publico, where: { proposicao: { equals: lei.id }, tipo: { equals: 'original' } }, sort: 'data', limit: 1, depth: 0 }),
+  ])
+  return { parecer, lei, correcoes: correcoes.docs, original: originais.docs[0] || null }
 }
 
 export async function listarPareceres(limite = 30, where?: Where) {

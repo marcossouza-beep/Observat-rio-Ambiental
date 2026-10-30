@@ -98,11 +98,16 @@ test.describe('Site público', () => {
     await expect(page.getByText('Parecer em preparação')).toHaveCount(0)
   })
 
-  test('parecer: assinatura no topo, 7 seções do modelo do site e dados estruturados', async ({ page }) => {
+  test('parecer prévio: assinatura no topo, texto base antes de tudo, partes numeradas, quadro do cotejo e dados estruturados', async ({ page }) => {
     await page.goto(PARECER)
     await expect(page.locator('.byline')).toContainText('Nome do Autor')
-    for (const s of ['Em uma frase', 'O que é', 'Como é hoje × como fica', 'Classificação', 'Por que importa', 'Pontos de atenção', 'Próximos passos'])
-      await expect(page.getByRole('heading', { name: s, exact: true })).toBeVisible()
+    const partes = ['Texto base da proposta', 'Síntese', 'Objeto e alcance', 'Regime vigente e proposta', 'Classificação', 'Relevância', 'Pontos de atenção', 'Tramitação e próximos passos']
+    const romanos = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII']
+    for (const [i, s] of partes.entries()) await expect(page.getByRole('heading', { name: `${romanos[i]}. ${s}`, exact: true })).toBeVisible()
+    // O texto base vem primeiro e reproduz o arquivo oficial
+    await expect(page.locator('article h2').first()).toHaveText('I. Texto base da proposta')
+    await expect(page.getByRole('region', { name: /Íntegra/ })).toContainText('Art. 3º')
+    await expect(page.locator('.cotejo tbody tr')).toHaveCount(3)
     const art = (await jsonLd(page)).find((j) => j['@type'] === 'Article')
     expect(art.author.name).toBe('Nome do Autor')
     expect(art.about['@type']).toBe('Legislation')

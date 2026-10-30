@@ -21,6 +21,16 @@ describe('publicação', () => {
     expect(r.pode).toBe(true)
     expect(r.avisos).toContain('Nota técnica não enviada (o parecer pode sair sem ela)')
   })
+  it('quadro do cotejo vazio só avisa; com um ponto completo, some o aviso', () => {
+    const aviso = 'Quadro "regime vigente e proposta" vazio: o leitor verá só o comentário'
+    expect(checarPublicacao({ secoes: completo, impacto: 'alto', carater: 'malefico' }).avisos).toContain(aviso)
+    const meio = { ...completo, comparativo: [{ vigente: 'Exigido', proposto: '' }] }
+    expect(checarPublicacao({ secoes: meio, impacto: 'alto', carater: 'malefico' }).avisos).toContain(aviso)
+    const cheio = { ...completo, comparativo: [{ vigente: 'Exigido', proposto: 'Dispensado', efeito: 'reduz' }] }
+    const r = checarPublicacao({ secoes: cheio, impacto: 'alto', carater: 'malefico' })
+    expect(r.pode).toBe(true)
+    expect(r.avisos).not.toContain(aviso)
+  })
   it('nova versão exige nota do que mudou', () => {
     expect(checarPublicacao({ secoes: completo, impacto: 'alto', carater: 'malefico', versao: 2 }).pode).toBe(false)
     expect(checarPublicacao({ secoes: completo, impacto: 'alto', carater: 'malefico', versao: 2, notaDaVersao: 'Substitutivo dobrou o limite.' }).pode).toBe(true)

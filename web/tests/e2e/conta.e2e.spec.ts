@@ -3,7 +3,9 @@
  * Os e-mails saem no console nos testes; o link é lido do registro de envios.
  */
 import { expect, test, type Page } from '@playwright/test'
+import { PDFDocument } from 'pdf-lib'
 import { getPayload, type Payload } from 'payload'
+import { extractText, getDocumentProxy } from 'unpdf'
 import config from '../../src/payload.config.js'
 
 const EMAIL = 'inscrita-e2e@exemplo.com'
@@ -107,12 +109,12 @@ test.describe('Conta do inscrito', () => {
       .toEqual({ resumoSemanal: false, alertas: true, temas: 1, parlamentares: 1 })
   })
 
-  test('download de material: só para inscritos confirmados', async ({ browser }) => {
+  test('download de material: só para inscritos confirmados, carimbado com o link rastreável', async ({ browser }) => {
     const resex = (await payload.find({ collection: 'proposicoes', where: { chaveOrigem: { equals: 'demo:resex' } } })).docs[0]
     const par = (await payload.find({ collection: 'pareceres', where: { proposicao: { equals: resex.id } } })).docs[0]
-    const pdf = Buffer.from(
-      '%PDF-1.4\n1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n2 0 obj\n<< /Type /Pages /Kids [] /Count 0 >>\nendobj\nxref\n0 3\n0000000000 65535 f \n0000000009 00000 n \n0000000058 00000 n \ntrailer\n<< /Size 3 /Root 1 0 R >>\nstartxref\n110\n%%EOF\n',
-    )
+    const origem = await PDFDocument.create()
+    origem.addPage([595, 842])
+    const pdf = Buffer.from(await origem.save())
     const m = await payload.create({ collection: 'materiais', data: { titulo: 'Nota técnica de teste', tipo: 'nota_tecnica' }, file: { data: pdf, mimetype: 'application/pdf', name: 'nota-teste-e2e.pdf', size: pdf.length } })
     await payload.update({ collection: 'pareceres', id: par.id, data: { materiais: { notaTecnica: m.id } } })
 
@@ -124,6 +126,23 @@ test.describe('Conta do inscrito', () => {
     const r2 = await page.request.get(`/api/baixar/${m.id}`)
     expect(r2.status()).toBe(200)
     expect(r2.headers()['content-type']).toContain('application/pdf')
+
+    // Cada página sai com a identificação do parecer e o link de volta ao site
+    const { text } = await extractText(await getDocumentProxy(new Uint8Array(await r2.body())), { mergePages: true })
+    const link = `/r/${par.id}-nt-v${par.versao ?? 1}`
+    expect(text).toContain('Nota técnica do parecer prévio sobre PL nº 123/2026')
+    expect(text).toContain(link)
+
+    // O link registra o acesso (sem dado pessoal) e leva ao parecer, avisando de qual PDF o leitor veio
+    const antes = (await payload.count({ collection: 'acessos-pdf', where: { parecer: { equals: par.id } } })).totalDocs
+    const r3 = await anon.request.get(link, { maxRedirects: 0 })
+    expect(r3.status()).toBe(302)
+    expect(r3.headers().location).toContain(`/pareceres/${par.slug}?pdf=nt&v=${par.versao ?? 1}`)
+    expect((await payload.count({ collection: 'acessos-pdf', where: { parecer: { equals: par.id } } })).totalDocs).toBe(antes + 1)
+    await anon.goto(link)
+    await expect(anon.getByText('Você chegou pelo link da nota técnica.')).toBeVisible()
+    expect((await anon.request.get('/r/qualquer-coisa', { maxRedirects: 0 })).headers().location).toMatch(/\/pareceres$/)
+    await payload.delete({ collection: 'acessos-pdf', where: { parecer: { equals: par.id } } })
 
     await payload.update({ collection: 'pareceres', id: par.id, data: { materiais: { notaTecnica: null } } })
     await payload.delete({ collection: 'materiais', id: m.id })

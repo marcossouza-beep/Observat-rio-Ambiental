@@ -89,6 +89,7 @@ export interface Config {
     fontes: Fonte;
     coletas: Coleta;
     verificacoes: Verificacao;
+    'acessos-pdf': AcessoPdf;
     artigos: Artigo;
     autores: Autor;
     media: Media;
@@ -123,6 +124,7 @@ export interface Config {
     fontes: FontesSelect<false> | FontesSelect<true>;
     coletas: ColetasSelect<false> | ColetasSelect<true>;
     verificacoes: VerificacoesSelect<false> | VerificacoesSelect<true>;
+    'acessos-pdf': AcessosPdfSelect<false> | AcessosPdfSelect<true>;
     artigos: ArtigosSelect<false> | ArtigosSelect<true>;
     autores: AutoresSelect<false> | AutoresSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
@@ -396,7 +398,7 @@ export interface Parecer {
   proposicao: number | Proposicao;
   secoes?: {
     /**
-     * O que a proposta faz, em linguagem simples. Também vai nos e-mails e nas listas do site.
+     * O que a proposta faz, em uma frase e em linguagem simples. Também vai nos e-mails e nas listas do site.
      */
     resumo?: {
       root: {
@@ -432,7 +434,7 @@ export interface Parecer {
       [k: string]: unknown;
     } | null;
     /**
-     * Os 3 a 5 pontos principais no formato antes e depois. O detalhe artigo por artigo vai no quadro comparativo.
+     * Um parágrafo com o sentido geral das mudanças. Os 3 a 5 pontos principais vão no quadro logo abaixo; o detalhe artigo por artigo, no quadro comparativo (PDF).
      */
     oQueMuda?: {
       root: {
@@ -449,6 +451,27 @@ export interface Parecer {
       };
       [k: string]: unknown;
     } | null;
+    /**
+     * De 3 a 5 pontos. Escreva cada lado como um enunciado objetivo, sem adjetivos. O efeito usa a mesma legenda do quadro comparativo em PDF.
+     */
+    comparativo?:
+      | {
+          /**
+           * Ex.: Art. 3º, caput
+           */
+          dispositivo?: string | null;
+          /**
+           * Como é hoje (lei em vigor ou ausência de regra)
+           */
+          vigente: string;
+          /**
+           * Como fica com o texto analisado
+           */
+          proposto: string;
+          efeito: 'amplia' | 'reduz' | 'neutro';
+          id?: string | null;
+        }[]
+      | null;
     /**
      * Por que este impacto e este caráter, em 1 ou 2 linhas para cada.
      */
@@ -1040,6 +1063,19 @@ export interface Verificacao {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "acessos-pdf".
+ */
+export interface AcessoPdf {
+  id: number;
+  parecer: number | Parecer;
+  material: 'nota_tecnica' | 'quadro_comparativo' | 'outro';
+  versaoPdf: number;
+  em: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "artigos".
  */
 export interface Artigo {
@@ -1186,6 +1222,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'verificacoes';
         value: number | Verificacao;
+      } | null)
+    | ({
+        relationTo: 'acessos-pdf';
+        value: number | AcessoPdf;
       } | null)
     | ({
         relationTo: 'artigos';
@@ -1336,6 +1376,15 @@ export interface PareceresSelect<T extends boolean = true> {
         resumo?: T;
         oQueE?: T;
         oQueMuda?: T;
+        comparativo?:
+          | T
+          | {
+              dispositivo?: T;
+              vigente?: T;
+              proposto?: T;
+              efeito?: T;
+              id?: T;
+            };
         classificacao?: T;
         porQueImporta?: T;
         pontosAtencao?: T;
@@ -1705,6 +1754,18 @@ export interface VerificacoesSelect<T extends boolean = true> {
   resultado?: T;
   detalhe?: T;
   dados?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "acessos-pdf_select".
+ */
+export interface AcessosPdfSelect<T extends boolean = true> {
+  parecer?: T;
+  material?: T;
+  versaoPdf?: T;
+  em?: T;
   updatedAt?: T;
   createdAt?: T;
 }

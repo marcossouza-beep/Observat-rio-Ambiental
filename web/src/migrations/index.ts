@@ -12,6 +12,8 @@ import * as migration_20261015_194718_fase4 from './20261015_194718_fase4';
 import * as migration_20261016_162737_prazo_4_dias from './20261016_162737_prazo_4_dias';
 import * as migration_20261017_030200_monitoramento_fontes from './20261017_030200_monitoramento_fontes';
 import * as migration_20261030_023534_modelo_parecer_site from './20261030_023534_modelo_parecer_site';
+import * as migration_20261030_031314_quadro_cotejo from './20261030_031314_quadro_cotejo';
+import * as migration_20261030_032348_acessos_pdf from './20261030_032348_acessos_pdf';
 
 export const migrations = [
   {
@@ -82,6 +84,16 @@ export const migrations = [
   {
     up: migration_20261030_023534_modelo_parecer_site.up,
     down: migration_20261030_023534_modelo_parecer_site.down,
-    name: '20261030_023534_modelo_parecer_site'
+    name: '20261030_023534_modelo_parecer_site',
+  },
+  {
+    up: migration_20261030_031314_quadro_cotejo.up,
+    down: migration_20261030_031314_quadro_cotejo.down,
+    name: '20261030_031314_quadro_cotejo',
+  },
+  {
+    up: migration_20261030_032348_acessos_pdf.up,
+    down: migration_20261030_032348_acessos_pdf.down,
+    name: '20261030_032348_acessos_pdf'
   },
 ];

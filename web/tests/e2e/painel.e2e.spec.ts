@@ -108,7 +108,7 @@ test.describe('Painel do autor', () => {
     const linha = page.locator('.obs-linha', { hasText: 'PL nº 140/2026' })
     await linha.getByRole('button', { name: 'Começar parecer' }).click()
     await expect(page).toHaveURL(/\/admin\/collections\/pareceres\/\d+/)
-    await expect(page.locator('.obs-checagem')).toContainText('0 de 7 seções escritas')
+    await expect(page.locator('.obs-checagem:not(.obs-rastro)')).toContainText('0 de 7 seções escritas')
     await expect(page.locator('.obs-aviso')).toContainText('Parecer prometido ao público')
   })
 
@@ -119,6 +119,6 @@ test.describe('Painel do autor', () => {
     await expect(page.locator('.obs-aviso.r')).toContainText('O texto mudou')
     await expect(page.locator('.obs-dossie ins').first()).toBeVisible()
     await expect(page.locator('.obs-dossie del').first()).toBeVisible()
-    await expect(page.locator('.obs-checagem')).toContainText('7 de 7 seções escritas')
+    await expect(page.locator('.obs-checagem:not(.obs-rastro)')).toContainText('7 de 7 seções escritas')
   })
 })

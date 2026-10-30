@@ -149,3 +149,31 @@ export const Alertas: CollectionConfig = {
     { name: 'chave', type: 'text', unique: true, index: true, admin: { readOnly: true, description: 'Evita alerta repetido' } },
   ],
 }
+
+/**
+ * Acessos que chegaram pelo link impresso nos PDFs (nota técnica e quadro comparativo).
+ * Sem dado pessoal: só qual parecer, qual material, de que versão era o PDF e quando.
+ */
+export const AcessosPdf: CollectionConfig = {
+  slug: 'acessos-pdf',
+  typescript: { interface: 'AcessoPdf' },
+  labels: { singular: 'Acesso vindo de PDF', plural: 'Acessos vindos de PDF' },
+  admin: { group: 'Sistema', defaultColumns: ['em', 'parecer', 'material', 'versaoPdf'] },
+  access: { read: equipe, create: () => false, update: () => false, delete: equipe },
+  defaultSort: '-em',
+  fields: [
+    { name: 'parecer', type: 'relationship', relationTo: 'pareceres', required: true, index: true },
+    {
+      name: 'material',
+      type: 'select',
+      required: true,
+      options: [
+        { label: 'Nota técnica', value: 'nota_tecnica' },
+        { label: 'Quadro comparativo', value: 'quadro_comparativo' },
+        { label: 'Outro', value: 'outro' },
+      ],
+    },
+    { name: 'versaoPdf', label: 'Versão do parecer impressa no PDF', type: 'number', required: true },
+    { name: 'em', type: 'date', required: true, index: true, admin: { date: { pickerAppearance: 'dayAndTime' } } },
+  ],
+}

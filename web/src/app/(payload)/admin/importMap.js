@@ -25,6 +25,7 @@ import { BoldFeatureClient as BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864
 import { ItalicFeatureClient as ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { PreviaGoogle as PreviaGoogle_fffbb6eceba883293c4e694713a9e670 } from '../../../painel/PreviaGoogle'
 import { Checagem as Checagem_b638922599c2b1f1961ceaeb9e66a145 } from '../../../painel/Checagem'
+import { Rastro as Rastro_62267a743adeff5432762db42deed1e6 } from '../../../painel/Rastro'
 import { Icone as Icone_8faefc3bfba28e55cee3ffe0c75a7a1c } from '../../../painel/Marca'
 import { Logo as Logo_8faefc3bfba28e55cee3ffe0c75a7a1c } from '../../../painel/Marca'
 import { Hoje as Hoje_16dfd8c5de80ec68d5f9966eb73c3d29 } from '../../../painel/Hoje'
@@ -64,6 +65,7 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#ItalicFeatureClient": ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "/painel/PreviaGoogle#PreviaGoogle": PreviaGoogle_fffbb6eceba883293c4e694713a9e670,
   "/painel/Checagem#Checagem": Checagem_b638922599c2b1f1961ceaeb9e66a145,
+  "/painel/Rastro#Rastro": Rastro_62267a743adeff5432762db42deed1e6,
   "/painel/Marca#Icone": Icone_8faefc3bfba28e55cee3ffe0c75a7a1c,
   "/painel/Marca#Logo": Logo_8faefc3bfba28e55cee3ffe0c75a7a1c,
   "/painel/Hoje#Hoje": Hoje_16dfd8c5de80ec68d5f9966eb73c3d29,

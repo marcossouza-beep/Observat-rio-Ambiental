@@ -288,6 +288,29 @@ a:hover .go-c{background:var(--green);color:#fff}
 .facts div{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:grid;gap:2px}
 .facts b{font-size:1.25rem;font-weight:800;font-variant-numeric:tabular-nums}
 .facts span{font-size:.82rem;color:var(--gray)}
+.tb-ementa{border-left:3px solid var(--ink);padding:2px 0 2px 14px;display:grid;gap:4px}
+.tb-ementa small{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;font-weight:700;color:var(--ink)}
+.tb-ementa p{font-size:1.02rem;color:var(--ink)}
+.tb-fonte{font-size:.85rem;color:var(--gray);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.tb-fonte a{color:var(--green-dk);font-weight:600}
+.tb-integra{max-height:24rem;overflow:auto;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.tb-disp{display:grid;gap:8px;font-family:Georgia,"Times New Roman",serif;font-size:.98rem;line-height:1.6;color:#2B352F}
+.tb-disp b{color:var(--ink)}
+.tb-disp .dv{font-family:inherit;font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;text-align:center;margin-top:6px;font-family:var(--font,inherit)}
+.tb-disp .pg{padding-left:1.2em}.tb-disp .in{padding-left:2.2em}
+.tb-mais{border-top:1px solid var(--line);padding-top:10px}
+.tb-mais summary{cursor:pointer;font-weight:600;font-size:.92rem}
+.tb-mais .tb-disp{margin-top:10px}
+.cotejo table{width:100%;border-collapse:collapse;font-size:.93rem}
+.cotejo th,.cotejo td{text-align:left;vertical-align:top;padding:10px 12px;border-top:1px solid var(--line)}
+.cotejo thead th{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--gray);font-weight:700;border-top:0;border-bottom:1.5px solid var(--ink)}
+.cotejo tbody th{width:96px;font-weight:400}
+.cotejo td:nth-child(2){color:var(--gray)}
+.cj-n{display:block;font-weight:700}.cj-d{display:block;font-size:.78rem;color:var(--soft)}
+.cj-ef{width:130px;font-size:.85rem;font-weight:600}
+.cj-amplia{color:var(--green-dk)}.cj-reduz{color:var(--rose-ink)}.cj-neutro{color:var(--gray)}
+.cj-leg{font-size:.8rem;color:var(--soft)}
+.rsec.pp h2 span{color:var(--soft);min-width:2.4em}
 .cmp{display:grid;gap:8px}
 .cmp-row{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);gap:8px;align-items:stretch}
 .cmp-row > div{border-radius:14px;padding:12px 14px;font-size:.93rem}
@@ -350,6 +373,11 @@ a:hover .go-c{background:var(--green);color:#fff}
   .verdict,.facts{grid-template-columns:1fr}
   .drow{grid-template-columns:90px minmax(0,1fr)}
   .drow .val{grid-column:2}
+  .cotejo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .cotejo tr{display:grid;border-top:1.5px solid var(--ink);padding:8px 0}
+  .cotejo th,.cotejo td,.cotejo tbody th,.cj-ef{display:grid;grid-template-columns:110px minmax(0,1fr);gap:8px;border:0;padding:4px 0;width:auto}
+  .cotejo th::before,.cotejo td::before{content:attr(data-r);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--soft);font-weight:700}
+  .cj-n,.cj-d{display:inline}.cj-d::before{content:" · "}
   .cmp-row{grid-template-columns:1fr}
   .cmp-row .arr{transform:rotate(90deg);height:16px}
 }
@@ -1189,13 +1217,13 @@ function parBlockHTML(l){ const ins=state.inscrito; return `    <section class="
         <p>O conselho previsto no art. 2º não tem composição mínima. Recomendamos garantir participação das comunidades e de instituições de pesquisa.</p>
         <p><b>Classificação:</b> ${l.imp.toLowerCase()}, com efeito ${l.car.toLowerCase()} condicionado à regulamentação.</p>
       </div>
-      <div class="to-report"><span>Como é hoje × como fica, classificação explicada, pontos de atenção e próximos passos.</span><a class="pill-btn" href="#parecer-${l.id}">Ler parecer completo${ARR}</a></div>
+      <div class="to-report"><span>Texto base, regime vigente e proposta, classificação explicada, pontos de atenção e tramitação.</span><a class="pill-btn" href="#parecer-${l.id}">Ler parecer completo${ARR}</a></div>
     </section>
 
 `; }
 function matBlockHTML(l){ const ins=state.inscrito; return `    <section class="block b-mat" id="s-mat">
       <h2>Aprofunde</h2>
-      <p style="color:#3A443E">A nota técnica traz a análise completa: problema, hipótese, cenários e soluções. O quadro comparativo mostra, artigo por artigo, o que é hoje e o que pode vir a ser.</p>
+      <p style="color:#3A443E">A nota técnica é o parecer completo, com o texto base e a análise do cotejo. O quadro comparativo traz só a transcrição dos textos, artigo por artigo. Os PDFs levam a identificação do parecer e um link de volta ao site.</p>
       <div class="files">
         <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota técnica</b><span>Análise completa · 3 páginas</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
         <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>Artigo por artigo</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
@@ -1431,7 +1459,36 @@ function topoInsc(){ const b=$("#mbody"); if(b) b.scrollTop=0; if(isNarrow()) wi
 /* ---------- relatório do parecer ---------- */
 const DIMS=[["Ambiental",2,"Protege 48 mil ha de floresta e várzea contra extração ilegal."],["Social",2,"Garante às comunidades tradicionais o uso prioritário da área."],["Econômico",-1,"Restringe atividades madeireiras e de pesca comercial no entorno."],["Institucional",0,"Cria conselho, mas sem composição mínima nem orçamento definido."]];
 const VAL={2:"Muito positivo",1:"Positivo",0:"Neutro","-1":"Negativo","-2":"Muito negativo"};
-const SECS=[["r1","Em uma frase"],["r2","O que é"],["r3","Como é hoje × como fica"],["r4","Classificação"],["r5","Por que importa"],["r6","Pontos de atenção"],["r7","Próximos passos"]];
+const SECS=[["r1","Texto base da proposta"],["r2","Síntese"],["r3","Objeto e alcance"],["r4","Regime vigente e proposta"],["r5","Classificação"],["r6","Relevância"],["r7","Pontos de atenção"],["r8","Tramitação e próximos passos"]];
+const ROM=["I","II","III","IV","V","VI","VII","VIII","IX","X"];
+/* Texto base: como sai do arquivo oficial. [tipo, texto]: dv divisão, ar artigo, pg parágrafo, in inciso */
+const TEXTO_BASE={
+  resex:{ementa:"Cria a Reserva Extrativista do Baixo Rio Exemplo, com 48 mil hectares, para comunidades extrativistas.",versao:"Texto original, de 12/05/2026",
+    disp:[["dv","Capítulo I · Da criação"],["ar","Art. 1º|Fica criada a Reserva Extrativista do Baixo Rio Exemplo, no município de Exemplo, com área aproximada de 48 mil hectares, conforme memorial descritivo anexo."],["ar","Art. 2º|São objetivos da Reserva:"],["in","I –|proteger os meios de vida e a cultura das comunidades extrativistas;"],["in","II –|assegurar o uso sustentável dos recursos naturais da área;"],["in","III –|conservar a floresta e a várzea do Baixo Rio Exemplo."],["dv","Capítulo II · Da gestão"],["ar","Art. 3º|A Reserva será gerida pelo órgão estadual de meio ambiente, com conselho deliberativo."],["pg","Parágrafo único.|O conselho terá participação majoritária das comunidades residentes."],["ar","Art. 4º|O uso dos recursos naturais observará o plano de manejo, aprovado pelo conselho deliberativo."],["ar","Art. 5º|Esta Lei entra em vigor na data de sua publicação."]],
+    just:"A área sofre pressão crescente de extração ilegal de madeira e de pesca predatória e hoje não conta com proteção legal específica. A criação da Reserva assegura às comunidades o uso tradicional dos recursos e dá ao Estado instrumentos de gestão."},
+  lic:{ementa:"Dispensa de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de médio porte e transfere a decisão aos municípios.",versao:"Texto original, de 02/07/2026",
+    disp:[["ar","Art. 1º|Esta Lei estabelece hipóteses de dispensa do estudo prévio de impacto ambiental para atividades agropecuárias."],["ar","Art. 3º|Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até 15 módulos fiscais."],["pg","§ 1º|A dispensa será declarada pelo próprio empreendedor, em formulário eletrônico."],["ar","Art. 7º|O órgão estadual poderá exigir estudo complementar em caso de dano ambiental comprovado."],["ar","Art. 9º|Esta Lei entra em vigor na data de sua publicação."]],
+    just:"O licenciamento das atividades agropecuárias de médio porte impõe custos desproporcionais ao produtor. A proposta simplifica o procedimento sem afastar a responsabilidade por dano."},
+};
+const COTEJO={
+  resex:[["Art. 1º","Área sem proteção legal específica.","Reserva Extrativista de uso sustentável, com 48 mil hectares.","amplia"],["Art. 4º","Uso dos recursos sem regras próprias.","Uso conforme plano de manejo aprovado pelo conselho.","amplia"],["Art. 3º","Sem gestão definida.","Gestão estadual com conselho deliberativo de maioria comunitária.","amplia"]],
+  lic:[["Art. 3º","Estudo prévio exigido conforme porte e potencial poluidor da atividade.","Dispensa do estudo para imóveis de até 15 módulos fiscais.","reduz"],["Art. 3º, § 1º","Enquadramento feito pelo órgão licenciador.","Dispensa declarada pelo próprio empreendedor.","reduz"],["Art. 7º","Estudo exigível antes da atividade.","Estudo complementar só após dano comprovado.","reduz"]],
+};
+const EFEITO={amplia:["↑","Amplia a proteção"],reduz:["↓","Reduz a proteção"],neutro:["=","Sem efeito direto"]};
+function textoBase(l){
+  const tb=TEXTO_BASE[l.id]||{ementa:l.resumo,versao:"Texto original",disp:[["ar","Art. 1º|"+l.resumo]],just:""};
+  const linha=([k,x])=>{const [r,t]=x.includes("|")?x.split("|"):["",x]; return `<p class="${k==="dv"?"dv":k==="pg"?"pg":k==="in"?"in":""}">${r?`<b>${r}</b> `:""}${t}</p>`;};
+  return `<div class="tb-ementa"><small>Ementa</small><p>${tb.ementa}</p></div>
+    <p class="tb-fonte">${tb.versao}. Reprodução do arquivo oficial, sem edição. <a href="#parecer-${l.id}">Arquivo oficial ${ARR}</a></p>
+    <div class="tb-integra" tabindex="0" role="region" aria-label="Íntegra do texto base"><div class="tb-disp">${tb.disp.map(linha).join("")}</div></div>
+    ${tb.just?`<details class="tb-mais"><summary>Justificação do autor</summary><div class="tb-disp"><p>${tb.just}</p></div></details>`:""}`;
+}
+function cotejo(l){
+  const c=COTEJO[l.id]||COTEJO.resex;
+  return `<div class="cotejo"><table><thead><tr><th scope="col">Ponto</th><th scope="col">Regime vigente</th><th scope="col">Proposta</th><th scope="col">Efeito</th></tr></thead><tbody>
+    ${c.map((r,i)=>`<tr><th scope="row" data-r="Ponto"><span><span class="cj-n">${i+1}</span><span class="cj-d">${r[0]}</span></span></th><td data-r="Regime vigente">${r[1]}</td><td data-r="Proposta">${r[2]}</td><td data-r="Efeito" class="cj-ef cj-${r[3]}"><span>${EFEITO[r[3]][0]} ${EFEITO[r[3]][1]}</span></td></tr>`).join("")}
+  </tbody></table><p class="cj-leg">↑ amplia · ↓ reduz · = sem efeito direto na proteção ambiental. O cotejo integral, artigo por artigo, está no quadro comparativo (PDF).</p></div>`;
+}
 function parecer(l){
   const imp={"Baixo impacto":1,"Médio impacto":2,"Alto impacto":3}[l.imp]||3;
   const pos=l.car==="Benéfico"?82:l.car==="Maléfico"?12:l.car==="Enfraquece indiretamente"?32:50;
@@ -1441,32 +1498,34 @@ function parecer(l){
   <div class="rep">
     ${crumbs([["Início","#home"],[l.esfera==="federal"?"Leis federais":"Leis estaduais",l.esfera==="federal"?"#federais":"#estaduais"],[l.num,"#"+l.id],["Parecer",""]])}
     <header class="rep-head">
-      <span class="eyebrow">Parecer técnico · versão 2</span>
+      <span class="eyebrow">Parecer prévio · versão 2</span>
       <h1>${l.titulo}</h1>
       ${byAuthor("assina este parecer")}
       <div class="meta"><span class="withflag">${flag(flagOf(l.local),"md")}${l.num} · ${l.local}</span><span>Publicado em <b>09/10/2026</b></span><span>Texto analisado: <b>versão de 08/10/2026</b></span><span>Leitura de <b>3 min</b></span></div>
     </header>
 
     <div class="rep-body">
-      <nav class="toc" aria-label="Sumário"><small>Neste parecer</small>${SECS.map((x,i)=>`<a href="#parecer-${l.id}" data-jump="${x[0]}" class="${i===0?"on":""}"><span>${i+1}</span>${x[1]}</a>`).join("")}<a href="#parecer-${l.id}" data-jump="r8"><span>+</span>Aprofunde</a></nav>
+      <nav class="toc" aria-label="Sumário"><small>Sumário</small>${SECS.map((x,i)=>`<a href="#parecer-${l.id}" data-jump="${x[0]}" class="${i===0?"on":""}"><span>${ROM[i]}.</span>${x[1]}</a>`).join("")}<a href="#parecer-${l.id}" data-jump="r9"><span>+</span>Aprofunde</a></nav>
       <article>
-        <section class="rsec" id="r1"><h2><span>1</span>Em uma frase</h2>
-          <div class="oneline" style="margin-bottom:0">${l.resumo.replace(/\.$/,"")}. A proposta é ${l.car==="Benéfico"?"positiva":"preocupante"} para a proteção ambiental e depende de regulamentação para ter efeito real.</div>
+        <section class="rsec pp" id="r1"><h2><span>I.</span>Texto base da proposta</h2>
+          ${textoBase(l)}
         </section>
 
-        <section class="rsec" id="r2"><h2><span>2</span>O que é</h2>
+        <section class="rsec pp" id="r2"><h2><span>II.</span>Síntese</h2>
+          <p>${l.resumo.replace(/\.$/,"")}. A proposta é ${l.car==="Benéfico"?"positiva":"preocupante"} para a proteção ambiental e depende de regulamentação para ter efeito real.</p>
+        </section>
+
+        <section class="rsec pp" id="r3"><h2><span>III.</span>Objeto e alcance</h2>
           <p>${factsSentence(l)}</p>
           <div class="facts"><div><b>48 mil ha</b><span>área atingida</span></div><div><b>~1.200</b><span>famílias extrativistas</span></div><div><b>${(LEI_BIOMA[l.id]||["—"])[0]}</b><span>bioma</span></div></div>
         </section>
 
-        <section class="rsec" id="r3"><h2><span>3</span>Como é hoje × como fica</h2>
-          <div class="cmp">
-            ${[["Sem proteção legal específica","Reserva Extrativista de uso sustentável"],["Uso livre, sem regras","Uso conforme plano de manejo"],["Sem gestão definida","Gestão estadual com conselho deliberativo"]].map(r=>`<div class="cmp-row"><div class="bef"><small>Hoje</small>${r[0]}</div><span class="arr">${ARR}</span><div class="aft"><small>Com a proposta</small>${r[1]}</div></div>`).join("")}
-          </div>
-          <p class="method">O quadro comparativo, artigo por artigo, está no material de aprofundamento.</p>
+        <section class="rsec pp" id="r4"><h2><span>IV.</span>Regime vigente e proposta</h2>
+          <p>${l.car==="Maléfico"?"Hoje o estudo prévio é exigido conforme o porte e o potencial poluidor. O projeto cria uma dispensa ampla, decidida pelo próprio interessado.":"A área passa de nenhuma proteção legal específica a unidade de conservação de uso sustentável, com regras de uso e gestão definidas."}</p>
+          ${cotejo(l)}
         </section>
 
-        <section class="rsec" id="r4"><h2><span>4</span>Classificação</h2>
+        <section class="rsec pp" id="r5"><h2><span>V.</span>Classificação</h2>
           <div class="verdict" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:0">
             <div class="vcard"><small>Impacto</small><span class="big">${l.imp.replace(" impacto","")}</span>
               <div class="meter" role="img" aria-label="Impacto ${l.imp}">${[1,2,3].map(i=>`<span class="${i<=imp?"f":""}"></span>`).join("")}</div><div class="mlab"><span>Baixo</span><span>Médio</span><span>Alto</span></div>
@@ -1477,13 +1536,13 @@ function parecer(l){
           </div>
         </section>
 
-        <section class="rsec" id="r5"><h2><span>5</span>Por que importa</h2>
+        <section class="rsec pp" id="r6"><h2><span>VI.</span>Relevância</h2>
           <div class="qual"><div class="q-pos"><b>Quem ganha</b><ul><li>Comunidades extrativistas, com uso prioritário da área</li><li>A floresta e a várzea, protegidas da extração ilegal</li></ul></div>
             <div class="q-neg"><b>Quem perde ou paga o custo</b><ul><li>Atividades madeireiras e de pesca comercial no entorno</li><li>O estado, que assume a gestão e o custo do plano de manejo</li></ul></div></div>
           <p><b>O que está em jogo:</b> a área sofre pressão crescente e hoje não tem proteção legal específica.</p>
         </section>
 
-        <section class="rsec" id="r6"><h2><span>6</span>Pontos de atenção</h2>
+        <section class="rsec pp" id="r7"><h2><span>VII.</span>Pontos de atenção</h2>
           <div class="alerts">
             <div class="al"><span class="chipst st-pos">✓ Positivo</span><div><b>Prioridade às comunidades</b><p>O uso dos recursos fica garantido a quem já vive e trabalha na área.</p></div></div>
             <div class="al"><span class="chipst st-att">! Atenção</span><div><b>Sem prazo para o plano de manejo</b><p>Sem prazo, as regras de uso podem levar anos para existir.</p></div></div>
@@ -1491,14 +1550,14 @@ function parecer(l){
           </div>
         </section>
 
-        <section class="rsec" id="r7"><h2><span>7</span>Próximos passos</h2>
+        <section class="rsec pp" id="r8"><h2><span>VIII.</span>Tramitação e próximos passos</h2>
           <div class="path">${a.etapas.map((e,i)=>`<div class="${i<a.atual?"ok":i===a.atual?"now":""}"><i></i>${e}</div>`).join("")}</div>
           <p>${l.status==="Aprovada"?"Aprovada e sancionada. O próximo passo é a regulamentação pelo Executivo, em até 180 dias.":"Pronta para votação em plenário, prevista para 14/10/2026. Se aprovada, segue para sanção."}</p>
         </section>
 
         ${subjects(l)}
-        <div class="rep-foot" id="r8">
-          <div class="panel-s"><h3>Aprofunde</h3><p>A <b>nota técnica</b> traz a análise completa em 3 páginas: problema, hipótese, impactos, cenários, soluções e casos de referência. O <b>quadro comparativo</b> mostra, artigo por artigo, o que é hoje e o que pode vir a ser.</p>
+        <div class="rep-foot" id="r9">
+          <div class="panel-s"><h3>Aprofunde</h3><p>A <b>nota técnica</b> é o parecer completo em 3 páginas, com o texto base e a análise do cotejo: problema, hipótese, impactos, cenários, soluções e casos. O <b>quadro comparativo</b> traz só a transcrição dos textos, artigo por artigo. Os dois PDFs levam, no pé de cada página, a identificação deste parecer, o link permanente e um QR que trazem de volta a esta página.</p>
             <div class="files">
               <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota técnica</b><span>3 páginas</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
               <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>artigo por artigo</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
@@ -2018,7 +2077,7 @@ function metodologia(){
             <li><div><b>Monitoramento</b><p>Todos os dias coletamos novas proposições, tramitações, pautas, votações, sanções e vetos nas fontes oficiais.</p><span class="who m">Automático</span></div></li>
             <li><div><b>Triagem</b><p>Um dicionário de palavras-chave separa o que pode ser ambiental e monta o dossiê de cada proposta (texto integral, versões, tramitação, autores). O autor decide o que entra, o que só é acompanhado e o que é descartado.</p><span class="who hm">Automático + pessoa</span></div></li>
             <li><div><b>Análise</b><p>O autor lê o texto integral, compara as versões (substitutivos, emendas), a justificativa e a legislação que a proposta altera.</p><span class="who h">Pessoa</span></div></li>
-            <li><div><b>Parecer, nota técnica e quadro comparativo</b><p>Escritos integralmente pelo autor indicado, em modelos fixos. O <b>parecer</b>, aberto a todos, esclarece e classifica: em uma frase, o que é, como é hoje e como fica, classificação, por que importa, pontos de atenção e próximos passos. A <b>nota técnica</b> (3 páginas) faz a análise completa: problema, hipótese, impactos, cenários, soluções e casos de referência. O <b>quadro comparativo</b> mostra, artigo por artigo, o texto vigente e o proposto. O autor assina e responde pelos três.</p><span class="who h">Pessoa</span></div></li>
+            <li><div><b>Parecer, nota técnica e quadro comparativo</b><p>Escritos integralmente pelo autor indicado, em modelos fixos. O <b>parecer</b>, aberto a todos, segue a lógica de um parecer prévio: abre com o texto base da proposta, como saiu do arquivo oficial, e só depois traz síntese, objeto e alcance, regime vigente e proposta, classificação, relevância, pontos de atenção e tramitação. A <b>nota técnica</b> (3 páginas) é o parecer completo: texto base, análise do cotejo, problema, hipótese, impactos, cenários, soluções e casos de referência. O <b>quadro comparativo</b> só transcreve, artigo por artigo, o texto vigente e o proposto. Os PDFs levam em cada página a identificação do parecer e um link permanente de volta ao site. O autor assina e responde pelos três.</p><span class="who h">Pessoa</span></div></li>
             <li><div><b>Publicação e atualização</b><p>O parecer informa a versão do texto analisado. Se o texto mudar, publicamos nova versão do parecer e mantemos o histórico.</p><span class="who h">Pessoa</span></div></li>
           </ol></section>
 

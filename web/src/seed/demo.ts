@@ -28,6 +28,59 @@ type Lei = {
   pauta?: [number, string]; votacao?: [number, string, number, number]; emendas?: number
 }
 
+/** Texto base de demonstração (fictício), no formato em que sai da extração do PDF oficial. */
+const TEXTOS: Record<string, string> = {
+  lic: `Dispensa de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de médio porte.
+O CONGRESSO NACIONAL decreta:
+Art. 1º Esta Lei estabelece hipóteses de dispensa do estudo prévio de impacto ambiental para atividades
+agropecuárias.
+Art. 3º Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até 15 módulos fiscais.
+§ 1º A dispensa será declarada pelo próprio empreendedor, em formulário eletrônico.
+Art. 7º O órgão estadual poderá exigir estudo complementar em caso de dano ambiental comprovado.
+Art. 9º Esta Lei entra em vigor na data de sua publicação.
+JUSTIFICAÇÃO
+O licenciamento das atividades agropecuárias de médio porte impõe custos desproporcionais ao produtor.
+A proposta simplifica o procedimento sem afastar a responsabilidade por dano.`,
+  resex: `CAPÍTULO I
+DA CRIAÇÃO
+Art. 1º Fica criada a Reserva Extrativista do Baixo Rio Exemplo, no município de Exemplo, com área aproximada
+de 48 mil hectares, conforme memorial descritivo anexo.
+Art. 2º São objetivos da Reserva:
+I – proteger os meios de vida e a cultura das comunidades extrativistas;
+II – assegurar o uso sustentável dos recursos naturais da área;
+III – conservar a floresta e a várzea do Baixo Rio Exemplo.
+CAPÍTULO II
+DA GESTÃO
+Art. 3º A Reserva será gerida pelo órgão estadual de meio ambiente, com conselho deliberativo.
+Parágrafo único. O conselho terá participação majoritária das comunidades residentes.
+Art. 4º O uso dos recursos naturais observará o plano de manejo, aprovado pelo conselho deliberativo.
+Art. 5º Esta Lei entra em vigor na data de sua publicação.
+JUSTIFICAÇÃO
+A área sofre pressão crescente de extração ilegal de madeira e de pesca predatória e hoje não conta com proteção legal específica.`,
+}
+
+/** Quadro do cotejo de demonstração: regime vigente × proposta, ponto a ponto. */
+const COTEJOS: Record<string, { dispositivo: string; vigente: string; proposto: string; efeito: 'amplia' | 'reduz' | 'neutro' }[]> = {
+  lic: [
+    { dispositivo: 'Art. 3º', vigente: 'Estudo prévio exigido conforme porte e potencial poluidor da atividade.', proposto: 'Dispensa do estudo para imóveis de até 15 módulos fiscais.', efeito: 'reduz' },
+    { dispositivo: 'Art. 3º, § 1º', vigente: 'Enquadramento feito pelo órgão licenciador.', proposto: 'Dispensa declarada pelo próprio empreendedor.', efeito: 'reduz' },
+    { dispositivo: 'Art. 7º', vigente: 'Estudo exigível antes da atividade.', proposto: 'Estudo complementar só após dano comprovado.', efeito: 'reduz' },
+  ],
+  resex: [
+    { dispositivo: 'Art. 1º', vigente: 'Área sem proteção legal específica.', proposto: 'Reserva Extrativista de uso sustentável, com 48 mil hectares.', efeito: 'amplia' },
+    { dispositivo: 'Art. 4º', vigente: 'Uso dos recursos sem regras próprias.', proposto: 'Uso conforme plano de manejo aprovado pelo conselho.', efeito: 'amplia' },
+    { dispositivo: 'Art. 3º', vigente: 'Sem gestão definida.', proposto: 'Gestão estadual com conselho deliberativo de maioria comunitária.', efeito: 'amplia' },
+  ],
+  agua: [
+    { dispositivo: 'Art. 2º', vigente: 'Outorga individual, por usuário.', proposto: 'Outorga única para um grupo de produtores da mesma bacia.', efeito: 'reduz' },
+    { dispositivo: 'Art. 4º', vigente: 'Volume retirado controlado por usuário.', proposto: 'Volume controlado pelo grupo, sem medição individual obrigatória.', efeito: 'reduz' },
+  ],
+  caat: [
+    { dispositivo: 'Art. 2º', vigente: 'Sem metas de recomposição para o bioma.', proposto: 'Metas de recomposição da vegetação nativa até 2035.', efeito: 'amplia' },
+    { dispositivo: 'Art. 6º', vigente: 'Sem fonte de recursos própria.', proposto: 'Recursos do fundo do clima destinados ao programa.', efeito: 'amplia' },
+  ],
+}
+
 const LEIS: Lei[] = [
   { id: 'lic', sigla: 'PL', numero: 1234, ano: 2026, titulo: 'Licenciamento simplificado para fazendas de médio porte', esfera: 'federal', casa: 'camara', status: 'em_tramitacao', etapa: 'Plenário', statusOficial: 'Pronto para pauta no Plenário', ementa: 'Dispensa de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de médio porte e transfere a decisão aos municípios.', art1: 'Esta Lei estabelece hipóteses de dispensa do estudo prévio de impacto ambiental para atividades agropecuárias.', temas: ['Licenciamento'], biomas: ['Cerrado', 'Amazônia'], situacao: 'ativa', autor: ['Dep. Exemplo F', 'PARTIDO', 'GO'], relator: ['Dep. Exemplo G', 'PARTIDO', 'MT', 'Plenário'], parecer: { impacto: 'alto', carater: 'malefico', resumo: 'O projeto dispensa o estudo de impacto ambiental para atividades agropecuárias em imóveis de médio porte, com declaração do próprio produtor.', oQueMuda: 'Hoje o estudo prévio é exigido conforme o porte e o potencial poluidor. O projeto cria uma dispensa ampla, decidida pelo próprio interessado.' }, pauta: [2, 'Plenário da Câmara'], votacao: [-12, 'Comissão de Meio Ambiente', 21, 12], emendas: 7 },
   { id: 'pant', sigla: 'PL', numero: 140, ano: 2026, titulo: 'Regras de proteção do Pantanal', esfera: 'federal', casa: 'senado', status: 'em_tramitacao', etapa: 'Comissões', statusOficial: 'Aguardando votação na Comissão de Meio Ambiente', ementa: 'Estabelece regras de conservação, proteção, restauração e uso sustentável do bioma Pantanal.', temas: ['Florestas', 'Água'], biomas: ['Pantanal'], situacao: 'ativa', autor: ['Sen. Exemplo A', 'PARTIDO', 'MS'], relator: ['Sen. Exemplo B', 'PARTIDO', 'MT', 'Comissão de Meio Ambiente'], pauta: [4, 'Comissão de Meio Ambiente do Senado'], emendas: 4 },
@@ -119,7 +172,7 @@ async function criar(payload: Payload) {
     if (l.votacao)
       await payload.create({ collection: 'votacoes', data: { proposicao: prop.id, data: dias(l.votacao[0]), orgao: l.votacao[1], placarSim: l.votacao[2], placarNao: l.votacao[3], resultado: 'Aprovado' } })
     for (let i = 0; i < (l.emendas || 0); i++) await payload.create({ collection: 'emendas', data: { proposicao: prop.id, numero: String(i + 1), data: dias(-60 + i) } })
-    const textoV1 = l.id === 'lic' ? 'Art. 3º Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até 15 módulos fiscais. Art. 7º O órgão estadual poderá exigir estudo complementar em caso de dano ambiental comprovado.' : undefined
+    const textoV1 = TEXTOS[l.id] || (l.art1 ? `Art. 1º ${l.art1}` : undefined)
     const v = await payload.create({ collection: 'versoes', data: { proposicao: prop.id, data: dias(-120), tipo: 'original', rotulo: 'Texto original', texto: textoV1 } })
     if (l.parecer) {
       await payload.create({
@@ -127,7 +180,7 @@ async function criar(payload: Payload) {
         data: {
           proposicao: prop.id, status: 'publicado', impacto: l.parecer.impacto as never, carater: l.parecer.carater as never, autor: autor.id, versaoTexto: v.id, areas: temas, biomas,
           secoes: {
-            resumo: rich(l.parecer.resumo), oQueMuda: rich(l.parecer.oQueMuda),
+            resumo: rich(l.parecer.resumo), oQueMuda: rich(l.parecer.oQueMuda), comparativo: COTEJOS[l.id] || [],
             oQueE: rich(`${l.ementa} Hoje: ${l.etapa || 'em vigor'}.`),
             classificacao: rich('Impacto e caráter definidos pelo autor, com a justificativa de cada um em uma linha.'),
             porQueImporta: rich('Quem ganha, quem perde e o que está em jogo com a proposta.'),

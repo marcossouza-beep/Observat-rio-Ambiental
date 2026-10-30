@@ -17,7 +17,7 @@ import { Media } from './collections/Media'
 import { Pareceres } from './collections/Pareceres'
 import { Proposicoes } from './collections/Proposicoes'
 import { Assinantes, Comunicados, Credenciamentos, Envios } from './collections/Publico'
-import { Alertas, Coletas, Fontes, Verificacoes } from './collections/Sistema'
+import { AcessosPdf, Alertas, Coletas, Fontes, Verificacoes } from './collections/Sistema'
 import { Compromissos, Correcoes, Pedidos } from './collections/Trabalho'
 import { Users } from './collections/Users'
 import { endpoints } from './endpoints'
@@ -88,6 +88,7 @@ const config: Config = {
     Fontes,
     Coletas,
     Verificacoes,
+    AcessosPdf,
     // Conteúdo e equipe
     Artigos,
     Autores,

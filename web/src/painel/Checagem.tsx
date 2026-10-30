@@ -6,7 +6,13 @@ import { checarPublicacao, SECOES_PARECER } from '../lib/publicacao'
 export function Checagem() {
   const [campos] = useAllFormFields()
   const v = (k: string) => campos?.[k]?.value as never
-  const secoes = Object.fromEntries(SECOES_PARECER.map((s) => [s.nome, v(`secoes.${s.nome}`)]))
+  // No formulário, a lista vira campos soltos: secoes.comparativo.0.vigente, secoes.comparativo.0.proposto…
+  const linhas = Number(v('secoes.comparativo')) || 0
+  const comparativo = Array.from({ length: linhas }, (_, i) => ({
+    vigente: v(`secoes.comparativo.${i}.vigente`),
+    proposto: v(`secoes.comparativo.${i}.proposto`),
+  }))
+  const secoes = { ...Object.fromEntries(SECOES_PARECER.map((s) => [s.nome, v(`secoes.${s.nome}`)])), comparativo }
   const versao = (v('versao') as number | undefined) ?? 1
   const r = checarPublicacao({
     secoes,

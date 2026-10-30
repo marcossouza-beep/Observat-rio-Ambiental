@@ -3,14 +3,16 @@
  * Regras: respostas genéricas onde a existência do e-mail importa; sessão em cookie assinado;
  * nada de dados pessoais em respostas que não sejam da própria pessoa.
  */
-import { createReadStream, existsSync } from 'node:fs'
+import { existsSync } from 'node:fs'
+import { readFile } from 'node:fs/promises'
 import path from 'node:path'
-import { Readable } from 'node:stream'
 import type { Endpoint, Payload, PayloadRequest } from 'payload'
 import { enviarAgora, modelo } from './lib/email'
-import { NOME_SITE, SITE_URL } from './lib/rotulos'
+import { carimbarPdf } from './lib/carimbo'
+import { caminhoLink, linhasCarimbo, nomeMaterial, type TipoMaterial } from './lib/linkRastreavel'
+import { dataBR, NOME_SITE, SITE_URL } from './lib/rotulos'
 import { cookieSessao, criarSessao, emailValido, lerCookie, lerDescadastro, lerSessao, novoLinkMagico, resumo } from './lib/sessao'
-import type { Assinante } from './payload-types'
+import type { Assinante, Autor, Material, Proposicao, Versao } from './payload-types'
 import { PERFIS, SUBPERFIS } from './collections/Publico'
 
 const json = (dados: unknown, status = 200, extra: Record<string, string> = {}) =>
@@ -313,6 +315,7 @@ const baixar: Endpoint = {
       if (!a.confirmadoEm) return redirecionar('/conta?confirme=1')
     }
     const cab = { 'Content-Type': m.mimeType || 'application/pdf', 'Content-Disposition': `attachment; filename="${m.filename}"`, 'Cache-Control': 'private, no-store' }
+    let bytes: Uint8Array
     if (process.env.S3_BUCKET) {
       const { S3Client, GetObjectCommand } = await import('@aws-sdk/client-s3')
       const s3 = new S3Client({
@@ -322,12 +325,56 @@ const baixar: Endpoint = {
         credentials: { accessKeyId: process.env.S3_ACCESS_KEY_ID || '', secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '' },
       })
       const obj = await s3.send(new GetObjectCommand({ Bucket: process.env.S3_BUCKET, Key: `materiais/${m.filename}` }))
-      return new Response(obj.Body?.transformToWebStream() as ReadableStream, { headers: cab })
+      if (!obj.Body) return json({ ok: false, erro: 'Arquivo indisponível.' }, 404)
+      bytes = await obj.Body.transformToByteArray()
+    } else {
+      const arquivo = path.resolve(process.cwd(), 'arquivos', 'materiais', m.filename)
+      if (!existsSync(arquivo)) return json({ ok: false, erro: 'Arquivo indisponível.' }, 404)
+      bytes = await readFile(arquivo)
     }
-    const arquivo = path.resolve(process.cwd(), 'arquivos', 'materiais', m.filename)
-    if (!existsSync(arquivo)) return json({ ok: false, erro: 'Arquivo indisponível.' }, 404)
-    return new Response(Readable.toWeb(createReadStream(arquivo)) as ReadableStream, { headers: cab })
+    const carimbado = await carimbar(req, m, bytes).catch((e) => {
+      req.payload.logger.warn(`PDF ${m.id} sem carimbo: ${e instanceof Error ? e.message : e}`)
+      return null
+    })
+    return new Response(Buffer.from(carimbado || bytes), { headers: cab })
   },
+}
+
+/**
+ * Carimba o PDF com a identificação do parecer a que pertence e o link rastreável de volta ao site.
+ * Material que não está ligado a parecer publicado sai como está.
+ */
+async function carimbar(req: PayloadRequest, m: Material, bytes: Uint8Array) {
+  const r = await req.payload.find({
+    collection: 'pareceres',
+    where: { status: { equals: 'publicado' }, or: [{ 'materiais.notaTecnica': { equals: m.id } }, { 'materiais.quadroComparativo': { equals: m.id } }] },
+    limit: 1,
+    depth: 1,
+  })
+  const p = r.docs[0]
+  if (!p) return null
+  const lei = p.proposicao as Proposicao
+  const analisada = p.versaoTexto && typeof p.versaoTexto === 'object' ? (p.versaoTexto as Versao) : null
+  const autor = p.autor && typeof p.autor === 'object' ? (p.autor as Autor) : null
+  const idDe = (v: unknown) => (v && typeof v === 'object' ? (v as { id: number }).id : v)
+  const material: TipoMaterial = idDe(p.materiais?.quadroComparativo) === m.id ? 'quadro_comparativo' : 'nota_tecnica'
+  const link = caminhoLink({ parecer: p.id, material, versao: p.versao ?? 1 })
+  return carimbarPdf(bytes, {
+    linhas: linhasCarimbo({
+      site: SITE_URL,
+      nomeSite: NOME_SITE,
+      material,
+      proposta: lei?.rotulo || 'a proposta',
+      versao: p.versao ?? 1,
+      publicadoEm: dataBR(p.atualizadoEm || p.publicadoEm),
+      textoAnalisado: analisada ? `${analisada.rotulo || 'texto'}, de ${dataBR(analisada.data)}` : null,
+      autor: autor?.nome,
+      link,
+      baixadoEm: dataBR(new Date().toISOString()),
+    }),
+    url: `${SITE_URL}${link}`,
+    titulo: `${nomeMaterial(material)} · ${lei?.rotulo || ''}`.trim(),
+  })
 }
 
 const pedidoPublico: Endpoint = {

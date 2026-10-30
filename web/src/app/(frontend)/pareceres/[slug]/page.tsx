@@ -1,15 +1,18 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Suspense } from 'react'
 import { notFound } from 'next/navigation'
 import { Assinatura, redesDe } from '@/componentes/Autor'
+import { AvisoPdf } from '@/componentes/AvisoPdf'
 import { FormCorrecao } from '@/componentes/FormCorrecao'
 import { Carater, Impacto, Local, Situacao } from '@/componentes/Etiquetas'
 import { IconePdf, Seta } from '@/componentes/Icones'
 import { JsonLd } from '@/componentes/JsonLd'
 import { Rico } from '@/componentes/Rico'
+import { Cotejo, TextoBase } from '@/componentes/TextoBase'
 import { Trilha } from '@/componentes/Trilha'
 import { parecerPorSlug, payloadSite } from '@/dados/consultas'
-import { SECOES_PARECER, textoDe } from '@/lib/publicacao'
+import { type NomeSecao, romano, SECOES_PARECER, textoDe } from '@/lib/publicacao'
 import { dataBR, dataLonga } from '@/lib/rotulos'
 import { descricaoParecer, jsonLdParecer, jurisdicao, tituloParecer } from '@/lib/seo'
 import type { Autor, Material, Media, Versao } from '@/payload-types'
@@ -38,13 +41,18 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 export default async function PaginaParecer({ params }: { params: Params }) {
   const d = await parecerPorSlug((await params).slug)
   if (!d) notFound()
-  const { parecer, lei, correcoes } = d
+  const { parecer, lei, correcoes, original } = d
   const autor = parecer.autor && typeof parecer.autor === 'object' ? (parecer.autor as Autor) : null
   const analisada = parecer.versaoTexto && typeof parecer.versaoTexto === 'object' ? (parecer.versaoTexto as Versao) : null
   const materiais = [parecer.materiais?.notaTecnica, parecer.materiais?.quadroComparativo].filter((m): m is Material => !!m && typeof m === 'object')
   const titulo = tituloParecer(parecer, lei)
   const foto = autor?.foto && typeof autor.foto === 'object' ? (autor.foto as Media).url : null
   const ajustes = await (await payloadSite()).findGlobal({ slug: 'ajustes', depth: 0 })
+  // Partes do parecer prévio: I é sempre o texto base; as seções escritas seguem numeradas a partir de II
+  const partes = [
+    { id: 'texto-base', rotulo: 'Texto base da proposta' },
+    ...SECOES_PARECER.filter((s) => textoDe(parecer.secoes?.[s.nome])).map((s) => ({ id: s.nome, rotulo: s.rotulo })),
+  ].map((p, i) => ({ ...p, n: romano(i + 1) }))
 
   return (
     <div className="wrap">
@@ -74,13 +82,17 @@ export default async function PaginaParecer({ params }: { params: Params }) {
         </div>
         <h1>{parecer.titulo || lei.titulo || lei.rotulo}</h1>
         <div className="meta">
-          <span>Parecer técnico sobre {lei.rotulo}</span>
+          <span>Parecer prévio sobre {lei.rotulo}</span>
           {parecer.publicadoEm ? <span>Publicado em {dataLonga(parecer.publicadoEm)}</span> : null}
           {parecer.atualizadoEm && parecer.atualizadoEm !== parecer.publicadoEm ? <span>Atualizado em {dataBR(parecer.atualizadoEm)}</span> : null}
           {analisada ? <span>Analisa: {analisada.rotulo || analisada.tipo} ({dataBR(analisada.data)})</span> : null}
           {(parecer.versao ?? 1) > 1 ? <span>Versão {parecer.versao}</span> : null}
         </div>
       </header>
+
+      <Suspense fallback={null}>
+        <AvisoPdf versaoAtual={parecer.versao ?? 1} atualizadoEm={dataBR(parecer.atualizadoEm || parecer.publicadoEm) || undefined} />
+      </Suspense>
 
       {parecer.desatualizadoDesde ? (
         <section className="block b-alert" role="note">
@@ -97,21 +109,40 @@ export default async function PaginaParecer({ params }: { params: Params }) {
         </section>
       ) : null}
 
-      <article className="block b-who">
-        {SECOES_PARECER.map((s) =>
-          textoDe(parecer.secoes?.[s.nome]) ? (
-            <section key={s.nome} className="secao" id={s.nome}>
-              <h2>{s.rotulo}</h2>
-              <Rico valor={parecer.secoes?.[s.nome]} />
-            </section>
-          ) : null,
-        )}
+      <article className="block b-who pp">
+        <nav className="pp-sumario" aria-label="Partes do parecer">
+          <span className="sub-h">Sumário</span>
+          <ol>
+            {partes.map((p) => (
+              <li key={p.id}>
+                <a href={`#${p.id}`}>
+                  <span>{p.n}.</span> {p.rotulo}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+        {partes.map((p) => (
+          <section key={p.id} className="secao" id={p.id}>
+            <h2>
+              <span className="pp-n">{p.n}.</span> {p.rotulo}
+            </h2>
+            {p.id === 'texto-base' ? (
+              <TextoBase lei={lei} analisada={analisada} original={original} />
+            ) : (
+              <>
+                <Rico valor={parecer.secoes?.[p.id as NomeSecao]} />
+                {p.id === 'oQueMuda' ? <Cotejo pontos={parecer.secoes?.comparativo || []} /> : null}
+              </>
+            )}
+          </section>
+        ))}
       </article>
 
       {materiais.length ? (
         <section className="block b-mat">
           <h2>Aprofunde</h2>
-          <p>A nota técnica traz a análise completa: problema, hipótese, cenários e soluções. O quadro comparativo mostra, artigo por artigo, o que é hoje e o que pode vir a ser.</p>
+          <p>A nota técnica é o parecer completo, com o texto base e a análise do cotejo: problema, hipótese, cenários e soluções. O quadro comparativo traz só o cotejo dos textos, artigo por artigo. Os dois PDFs levam a identificação deste parecer e um link de volta a esta página, para quem os receber depois.</p>
           {materiais.map((m) => (
             <a key={m.id} className="mat-card" href={`/api/baixar/${m.id}`} rel="nofollow">
               <span className="ic">
