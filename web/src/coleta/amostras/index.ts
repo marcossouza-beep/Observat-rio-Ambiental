@@ -820,10 +820,10 @@ const PASSOS_NORMAS = [
   { fonte: 'normas', nome: 'normas-leg-9985', rodar: () => gravarHtml('normas', 'normas-leg-9985', 'https://normas.leg.br/api/public/normas?urn=urn:lex:br:federal:lei:2000-07-18;9985&tipo_documento=maior-detalhe') },
   // Referências do exemplo de parecer técnico (Lei Geral do Licenciamento Ambiental)
   { fonte: 'referencias', nome: 'normas-leg-15190', rodar: () => gravarHtml('referencias', 'normas-leg-15190', 'https://normas.leg.br/api/public/normas?urn=urn:lex:br:federal:lei:2025-08-08;15190&tipo_documento=maior-detalhe') },
-  { fonte: 'referencias', nome: 'normas-leg-15190-vigente', rodar: () => vigenteNormasLeg('normas-leg-15190-vigente', 'urn:lex:br:federal:lei:2025-08-08;15190', 'referencias') },
   { fonte: 'referencias', nome: 'camara-15190-atualizada', rodar: () => gravarHtml('referencias', 'camara-15190-atualizada', 'https://www2.camara.leg.br/legin/fed/lei/2025/lei-15190-8-agosto-2025-797833-normaatualizada-pl.html') },
-  { fonte: 'referencias', nome: 'conama-237', rodar: () => gravarHtml('referencias', 'conama-237', 'https://conama.mma.gov.br/?option=com_sisconama&task=arquivo.download&id=237') },
-  { fonte: 'referencias', nome: 'mapbiomas-rad', rodar: () => gravarHtml('referencias', 'mapbiomas-rad', 'https://alerta.mapbiomas.org/relatorio/') },
+  { fonte: 'referencias', nome: 'conama-237', rodar: () => gravarPdf('referencias', 'conama-237', 'https://conama.mma.gov.br/?option=com_sisconama&task=arquivo.download&id=237') },
+  { fonte: 'referencias', nome: 'rad2025', rodar: () => gravarPdf('referencias', 'rad2025-destaques', 'https://alerta.mapbiomas.org/wp-content/uploads/sites/17/2026/05/Factsheet-RAD-26052026-1.pdf') },
+  { fonte: 'referencias', nome: 'rad2023', rodar: () => gravarPdf('referencias', 'rad2023-destaques', 'https://alerta.mapbiomas.org/wp-content/uploads/sites/17/2024/07/RAD2023_Destaques-PT_v1-1_27-05.pdf') },
   { fonte: 'normas', nome: 'lexml-codigo-florestal', rodar: () => gravarHtml('normas', 'lexml-codigo-florestal', 'https://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2012-05-25;12651') },
 ]
 
