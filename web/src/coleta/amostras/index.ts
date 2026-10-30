@@ -772,12 +772,31 @@ const PASSOS: Passo[] = [
   },
 ]
 
+/** normas.leg.br é um aplicativo em JavaScript: grava os endereços de API citados no código, para saber de onde vem o texto. */
+async function enderecosNormasLeg() {
+  const gravadaEm = new Date().toISOString()
+  try {
+    const html = await (await fetch('https://normas.leg.br/', { signal: AbortSignal.timeout(45_000) })).text()
+    const scripts = [...html.matchAll(/src="([^"]+\.js)"/g)].map((m) => new URL(m[1], 'https://normas.leg.br/').toString())
+    const achados = new Set<string>()
+    for (const s of scripts) {
+      const js = await (await fetch(s, { signal: AbortSignal.timeout(45_000) })).text()
+      for (const m of js.matchAll(/["'`]((?:https?:)?\/\/[^"'`\s]{4,200}|\/(?:api|dadosabertos|legis|normas)[^"'`\s]{0,200})["'`]/g)) achados.add(m[1])
+      for (const m of js.matchAll(/[^"'`\s]{0,80}(?:texto|Texto|compilad|multivigente|dispositivo)[^"'`\s]{0,80}/g)) if (/\//.test(m[0])) achados.add(m[0])
+    }
+    return salvar('normas', 'normas-leg-enderecos', { url: 'https://normas.leg.br/', status: 200, tipo: 'application/json', gravadaEm, corpo: { scripts, enderecos: [...achados].slice(0, 400) } })
+  } catch (e) {
+    return salvar('normas', 'normas-leg-enderecos', { url: 'https://normas.leg.br/', status: null, tipo: '', gravadaEm, corpo: null, erro: (e as Error).message })
+  }
+}
+
 /** Texto compilado das leis alteradas (redação vigente): Planalto e LexML. */
 const PASSOS_NORMAS = [
   { fonte: 'normas', nome: 'planalto-codigo-florestal', rodar: () => gravarHtml('normas', 'planalto-codigo-florestal', 'https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651compilado.htm') },
   { fonte: 'normas', nome: 'planalto-snuc', rodar: () => gravarHtml('normas', 'planalto-snuc', 'https://www.planalto.gov.br/ccivil_03/leis/l9985.htm') },
   { fonte: 'normas', nome: 'senado-legislacao-codigo-florestal', rodar: () => gravarHtml('normas', 'senado-legislacao-codigo-florestal', `${SENADO}/legislacao/lei/12651/2012`) },
   { fonte: 'normas', nome: 'normas-leg-codigo-florestal', rodar: () => gravarHtml('normas', 'normas-leg-codigo-florestal', 'https://normas.leg.br/?urn=urn:lex:br:federal:lei:2012-05-25;12651') },
+  { fonte: 'normas', nome: 'normas-leg-enderecos', rodar: enderecosNormasLeg },
   { fonte: 'normas', nome: 'lexml-codigo-florestal', rodar: () => gravarHtml('normas', 'lexml-codigo-florestal', 'https://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2012-05-25;12651') },
 ]
 
