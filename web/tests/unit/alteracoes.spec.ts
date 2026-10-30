@@ -61,6 +61,12 @@ Art. 3º Esta Lei entra em vigor na data de sua publicação.`
     ])
   })
 
+  it('remissão com "art." minúsculo dentro do texto citado não abre outro artigo', () => {
+    const a = alteracoesDoTexto('Art. 3º A Lei nº 6.938, de 31 de agosto de 1981, passa a vigorar acrescida do seguinte art. 10-A: “Art. 10-A. A dispensa de que trata o § 5º do art. 10 será declarada pelo empreendedor. Parágrafo único. O órgão poderá exigir estudo.” (AC) Art. 4º Esta Lei entra em vigor.')
+    expect(a).toHaveLength(1)
+    expect(a[0].proposto).toBe('Art. 10-A. A dispensa de que trata o § 5º do art. 10 será declarada pelo empreendedor. Parágrafo único. O órgão poderá exigir estudo.')
+  })
+
   it('proposta que não altera lei não gera nada', () => {
     expect(alteracoesDoTexto('Art. 1º Fica criada a Reserva Extrativista. Art. 2º Esta Lei entra em vigor na data de sua publicação.')).toEqual([])
     expect(alteracoesDoTexto(null)).toEqual([])
@@ -80,5 +86,14 @@ describe('redação vigente no texto compilado', () => {
   it('artigo que não existe (acréscimo) ou lei sem texto volta vazio', () => {
     expect(artigoDaLei(CODIGO, '99')).toBe('')
     expect(artigoDaLei(null, '4')).toBe('')
+  })
+})
+
+describe('chave da lei alterada', () => {
+  it('federal e estadual', async () => {
+    const { chaveNorma } = await import('@/lib/alteracoes')
+    expect(chaveNorma({ tipo: 'Lei', numero: '12651', ano: '2012' })).toBe('lei-12651-2012')
+    expect(chaveNorma({ tipo: 'Lei Complementar', numero: '140', ano: '2011' })).toBe('lei-complementar-140-2011')
+    expect(chaveNorma({ tipo: 'Lei', numero: '5887', ano: '1995' }, 'PA')).toBe('pa-lei-5887-1995')
   })
 })

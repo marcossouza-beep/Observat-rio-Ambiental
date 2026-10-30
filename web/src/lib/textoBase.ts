@@ -62,7 +62,8 @@ export function organizarTexto(texto: string | null | undefined): TextoBase {
 }
 
 function separarCorrido(t: Trecho): Trecho[] {
-  const partes = t.texto.split(/(?<=[.:;])\s+(?=(?:Art\.\s*\d+[º°o.]?|§\s*\d+[º°o]?|Par[áa]grafo\s+[úu]nico)\s)/)
+  // Também incisos e alíneas depois de dois-pontos ou ponto e vírgula ("...: I – ...; II – ...")
+  const partes = t.texto.split(/(?<=[.:;])\s+(?=(?:Art\.\s*\d+[º°o.]?|§\s*\d+[º°o.]?|Par[áa]grafo\s+[úu]nico)\s)|(?<=[:;])\s+(?=(?:[IVXLC]+\s*[–—-]|[a-z]\))\s)/)
   if (partes.length === 1) return [t]
   return partes.map((p, i) => ({ tipo: (i === 0 ? t.tipo : tipoDe(p)) || 'texto', texto: p }))
 }

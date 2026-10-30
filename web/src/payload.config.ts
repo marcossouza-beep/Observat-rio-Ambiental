@@ -11,7 +11,7 @@ import sharp from 'sharp'
 import { Artigos } from './collections/Artigos'
 import { Autores } from './collections/Autores'
 import { Biomas, PalavrasChave, Temas } from './collections/Classificacao'
-import { Emendas, Parlamentares, Tramitacoes, Versoes, Votacoes, Votos } from './collections/Legislativo'
+import { Emendas, NormasVigentes, Parlamentares, Tramitacoes, Versoes, Votacoes, Votos } from './collections/Legislativo'
 import { Materiais } from './collections/Materiais'
 import { Media } from './collections/Media'
 import { Pareceres } from './collections/Pareceres'
@@ -71,6 +71,7 @@ const config: Config = {
     // Legislativo
     Tramitacoes,
     Versoes,
+    NormasVigentes,
     Parlamentares,
     Votacoes,
     Votos,

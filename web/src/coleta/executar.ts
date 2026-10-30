@@ -13,7 +13,8 @@ import { CONECTORES_ESTADUAIS, FONTES_ESTADUAIS } from './estaduais'
 import { buscarNaRede, identificacaoDe, semResposta, type Buscar, type Conector, type ContextoColeta } from './conector'
 import { balancoVazio, gravarEventos, gravarPacote, gravarPautas, type Balanco } from './gravar'
 import { conectorSenado } from './senado/conector'
-import { preencherTextos, type Baixador } from './textos'
+import { preencherNormas } from './normas/preencher'
+import { baixarArquivo, preencherTextos, type Baixador } from './textos'
 import { ErroFormato } from './tipos'
 
 export const CONECTORES: Record<string, Conector> = { camara: conectorCamara, senado: conectorSenado, congresso: conectorCongresso, dou: conectorDou, ...CONECTORES_ESTADUAIS }
@@ -174,5 +175,12 @@ export async function coletar(payload: Payload, fontes = Object.keys(CONECTORES)
   } catch (e) {
     textos = { erro: (e as Error).message }
   }
-  return { resultados, textos }
+  // Texto vigente das leis alteradas (como é hoje × como fica), algumas por rodada
+  let normas: Awaited<ReturnType<typeof preencherNormas>> | { erro: string }
+  try {
+    normas = await preencherNormas(payload, { baixar: opcoes.baixarArquivo || baixarArquivo(), agora: opcoes.agora })
+  } catch (e) {
+    normas = { erro: (e as Error).message }
+  }
+  return { resultados, textos, normas }
 }

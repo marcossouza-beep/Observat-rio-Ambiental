@@ -9,12 +9,14 @@ import { Carater, Impacto, Local, Situacao } from '@/componentes/Etiquetas'
 import { IconePdf, Seta } from '@/componentes/Icones'
 import { JsonLd } from '@/componentes/JsonLd'
 import { Rico } from '@/componentes/Rico'
-import { Cotejo, TextoBase } from '@/componentes/TextoBase'
+import { Cotejo, normaDe, TextoBase } from '@/componentes/TextoBase'
 import { Trilha } from '@/componentes/Trilha'
 import { parecerPorSlug, payloadSite } from '@/dados/consultas'
 import { type NomeSecao, romano, SECOES_PARECER, textoDe } from '@/lib/publicacao'
 import { dataBR, dataLonga } from '@/lib/rotulos'
-import { descricaoParecer, jsonLdParecer, jurisdicao, tituloParecer } from '@/lib/seo'
+import { descricaoParecer, jsonLdParecer, jurisdicao, palavrasDaPagina, tituloParecer } from '@/lib/seo'
+import { leisAlteradas } from '@/lib/alteracoes'
+import { leisCitadas } from '@/lib/leis'
 import type { Autor, Material, Media, Versao } from '@/payload-types'
 
 export const revalidate = 300
@@ -32,16 +34,21 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   return {
     title: titulo,
     description: descricaoParecer(d.parecer, textoDe(d.parecer.secoes?.resumo)),
+    keywords: palavrasDaPagina(d.parecer.seo, alteradasDe(d)),
     alternates: { canonical: `/pareceres/${d.parecer.slug}` },
     robots: d.parecer.seo?.indexar === false ? { index: false, follow: true } : undefined,
     openGraph: { title: titulo, type: 'article', publishedTime: d.parecer.publicadoEm || undefined, modifiedTime: d.parecer.atualizadoEm || undefined },
   }
 }
 
+type Dados = NonNullable<Awaited<ReturnType<typeof parecerPorSlug>>>
+const alteradasDe = (d: Pick<Dados, 'lei' | 'alteracoes' | 'normas'>) =>
+  leisAlteradas(d.alteracoes, leisCitadas(d.lei.ementa)).map((l) => ({ ...l, nomePopular: normaDe(d.normas, l, d.lei.esfera === 'estadual' ? d.lei.uf : null)?.nomePopular || l.nomePopular }))
+
 export default async function PaginaParecer({ params }: { params: Params }) {
   const d = await parecerPorSlug((await params).slug)
   if (!d) notFound()
-  const { parecer, lei, correcoes, original } = d
+  const { parecer, lei, correcoes, original, alteracoes, normas } = d
   const autor = parecer.autor && typeof parecer.autor === 'object' ? (parecer.autor as Autor) : null
   const analisada = parecer.versaoTexto && typeof parecer.versaoTexto === 'object' ? (parecer.versaoTexto as Versao) : null
   const materiais = [parecer.materiais?.notaTecnica, parecer.materiais?.quadroComparativo].filter((m): m is Material => !!m && typeof m === 'object')
@@ -64,6 +71,8 @@ export default async function PaginaParecer({ params }: { params: Params }) {
           atualizadoEm: parecer.atualizadoEm,
           autor: autor ? { nome: autor.nome, titulo: autor.titulo, slug: autor.slug, foto, redes: redesDe(autor) } : null,
           lei: { nome: lei.rotulo || '', identificador: lei.rotulo || '', jurisdicao: jurisdicao(lei.esfera, lei.uf) },
+          palavras: palavrasDaPagina(parecer.seo, alteradasDe(d)),
+          alteradas: alteradasDe(d),
         })}
       />
       <Trilha
@@ -83,6 +92,7 @@ export default async function PaginaParecer({ params }: { params: Params }) {
         <h1>{parecer.titulo || lei.titulo || lei.rotulo}</h1>
         <div className="meta">
           <span>Parecer prévio sobre {lei.rotulo}</span>
+          {parecer.seo?.nomePopular ? <span>Conhecido como “{parecer.seo.nomePopular}”</span> : null}
           {parecer.publicadoEm ? <span>Publicado em {dataLonga(parecer.publicadoEm)}</span> : null}
           {parecer.atualizadoEm && parecer.atualizadoEm !== parecer.publicadoEm ? <span>Atualizado em {dataBR(parecer.atualizadoEm)}</span> : null}
           {analisada ? <span>Analisa: {analisada.rotulo || analisada.tipo} ({dataBR(analisada.data)})</span> : null}
@@ -128,7 +138,7 @@ export default async function PaginaParecer({ params }: { params: Params }) {
               <span className="pp-n">{p.n}.</span> {p.rotulo}
             </h2>
             {p.id === 'texto-base' ? (
-              <TextoBase lei={lei} analisada={analisada} original={original} />
+              <TextoBase lei={lei} analisada={analisada} original={original} alteracoes={alteracoes} normas={normas} />
             ) : (
               <>
                 <Rico valor={parecer.secoes?.[p.id as NomeSecao]} />

@@ -502,3 +502,20 @@ a:hover .ico-l { transform: translateX(-3px); }
   .cj-n, .cj-disp { display: inline; }
   .cj-disp::before { content: ' · '; }
 }
+
+/* texto normativo alterado: como é hoje × como fica, literal */
+.tb-alt { display: grid; gap: 16px; }
+.tb-lei { display: grid; gap: 10px; }
+.tb-lei h3 { font-size: 1rem; font-weight: 700; }
+.tb-par { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.tb-par-cab { font-size: 0.85rem; color: var(--gray); padding: 8px 14px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.tb-par-cab b { color: var(--ink); }
+.tb-par-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.tb-par-cols > div { padding: 12px 14px; display: grid; gap: 6px; align-content: start; }
+.tb-par-cols > div + div { border-left: 1px solid var(--line); }
+.tb-par-cols > div:first-child .tb-disp { color: var(--gray); }
+.tb-par-cols .tb-disp { font-size: 0.93rem; }
+@media (max-width: 640px) {
+  .tb-par-cols { grid-template-columns: 1fr; }
+  .tb-par-cols > div + div { border-left: 0; border-top: 1px solid var(--line); }
+}

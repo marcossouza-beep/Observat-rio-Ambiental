@@ -301,6 +301,13 @@ a:hover .go-c{background:var(--green);color:#fff}
 .tb-mais{border-top:1px solid var(--line);padding-top:10px}
 .tb-mais summary{cursor:pointer;font-weight:600;font-size:.92rem}
 .tb-mais .tb-disp{margin-top:10px}
+.tb-alt{display:grid;gap:12px;margin-top:6px}.tb-alt h3{font-size:1rem;font-weight:700}
+.tb-par{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--white)}
+.tb-par-cab{font-size:.85rem;color:var(--gray);padding:8px 14px;background:var(--bg);border-bottom:1px solid var(--line)}.tb-par-cab b{color:var(--ink)}
+.tb-par-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.tb-par-cols>div{padding:12px 14px;display:grid;gap:6px;align-content:start}.tb-par-cols>div+div{border-left:1px solid var(--line)}
+.tb-par-cols small{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;font-weight:700;color:var(--ink)}
+.tb-par-cols>div:first-child .tb-disp{color:var(--gray)}.tb-par-cols .tb-disp{font-size:.93rem}.tb-vz{color:var(--gray);font-size:.93rem}
 .cotejo table{width:100%;border-collapse:collapse;font-size:.93rem}
 .cotejo th,.cotejo td{text-align:left;vertical-align:top;padding:10px 12px;border-top:1px solid var(--line)}
 .cotejo thead th{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--gray);font-weight:700;border-top:0;border-bottom:1.5px solid var(--ink)}
@@ -373,6 +380,7 @@ a:hover .go-c{background:var(--green);color:#fff}
   .verdict,.facts{grid-template-columns:1fr}
   .drow{grid-template-columns:90px minmax(0,1fr)}
   .drow .val{grid-column:2}
+  .tb-par-cols{grid-template-columns:1fr}.tb-par-cols>div+div{border-left:0;border-top:1px solid var(--line)}
   .cotejo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   .cotejo tr{display:grid;border-top:1.5px solid var(--ink);padding:8px 0}
   .cotejo th,.cotejo td,.cotejo tbody th,.cj-ef{display:grid;grid-template-columns:110px minmax(0,1fr);gap:8px;border:0;padding:4px 0;width:auto}
@@ -1466,9 +1474,12 @@ const TEXTO_BASE={
   resex:{ementa:"Cria a Reserva Extrativista do Baixo Rio Exemplo, com 48 mil hectares, para comunidades extrativistas.",versao:"Texto original, de 12/05/2026",
     disp:[["dv","Capítulo I · Da criação"],["ar","Art. 1º|Fica criada a Reserva Extrativista do Baixo Rio Exemplo, no município de Exemplo, com área aproximada de 48 mil hectares, conforme memorial descritivo anexo."],["ar","Art. 2º|São objetivos da Reserva:"],["in","I –|proteger os meios de vida e a cultura das comunidades extrativistas;"],["in","II –|assegurar o uso sustentável dos recursos naturais da área;"],["in","III –|conservar a floresta e a várzea do Baixo Rio Exemplo."],["dv","Capítulo II · Da gestão"],["ar","Art. 3º|A Reserva será gerida pelo órgão estadual de meio ambiente, com conselho deliberativo."],["pg","Parágrafo único.|O conselho terá participação majoritária das comunidades residentes."],["ar","Art. 4º|O uso dos recursos naturais observará o plano de manejo, aprovado pelo conselho deliberativo."],["ar","Art. 5º|Esta Lei entra em vigor na data de sua publicação."]],
     just:"A área sofre pressão crescente de extração ilegal de madeira e de pesca predatória e hoje não conta com proteção legal específica. A criação da Reserva assegura às comunidades o uso tradicional dos recursos e dá ao Estado instrumentos de gestão."},
-  lic:{ementa:"Dispensa de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de médio porte e transfere a decisão aos municípios.",versao:"Texto original, de 02/07/2026",
-    disp:[["ar","Art. 1º|Esta Lei estabelece hipóteses de dispensa do estudo prévio de impacto ambiental para atividades agropecuárias."],["ar","Art. 3º|Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até 15 módulos fiscais."],["pg","§ 1º|A dispensa será declarada pelo próprio empreendedor, em formulário eletrônico."],["ar","Art. 7º|O órgão estadual poderá exigir estudo complementar em caso de dano ambiental comprovado."],["ar","Art. 9º|Esta Lei entra em vigor na data de sua publicação."]],
-    just:"O licenciamento das atividades agropecuárias de médio porte impõe custos desproporcionais ao produtor. A proposta simplifica o procedimento sem afastar a responsabilidade por dano."},
+  lic:{ementa:"Altera a Lei nº 6.938, de 31 de agosto de 1981, para dispensar de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de médio porte.",versao:"Texto original, de 02/07/2026",
+    disp:[["ar","Art. 1º|Esta Lei altera a Lei nº 6.938, de 31 de agosto de 1981, para dispor sobre a dispensa de estudo prévio de impacto ambiental para atividades agropecuárias."],["ar","Art. 2º|O art. 10 da Lei nº 6.938, de 31 de agosto de 1981, passa a vigorar com a seguinte redação:"],["",'“Art. 10. ..........................................'],["pg","§ 5º|Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até 15 módulos fiscais.” (NR)"],["ar","Art. 3º|A Lei nº 6.938, de 31 de agosto de 1981, passa a vigorar acrescida do seguinte art. 10-A:"],["",'“Art. 10-A. A dispensa de que trata o § 5º do art. 10 será declarada pelo próprio empreendedor, em formulário eletrônico.'],["pg","Parágrafo único.|O órgão estadual poderá exigir estudo complementar em caso de dano ambiental comprovado.” (AC)"],["ar","Art. 4º|Esta Lei entra em vigor na data de sua publicação."]],
+    just:"O licenciamento das atividades agropecuárias de médio porte impõe custos desproporcionais ao produtor. A proposta simplifica o procedimento sem afastar a responsabilidade por dano.",
+    alt:{lei:"Lei nº 6.938/1981 (Política Nacional do Meio Ambiente)",conferido:"28/10/2026",itens:[
+      ["Art. 10","nova redação",[["ar","Art. 10.|A construção, instalação, ampliação e funcionamento de estabelecimentos e atividades utilizadores de recursos ambientais, efetiva ou potencialmente poluidores ou capazes, sob qualquer forma, de causar degradação ambiental dependerão de prévio licenciamento ambiental. (Redação dada pela Lei Complementar nº 140, de 2011)"],["pg","§ 1º|Os pedidos de licenciamento, sua renovação e a respectiva concessão serão publicados no jornal oficial, bem como em periódico regional ou local de grande circulação, ou em meio eletrônico de comunicação mantido pelo órgão ambiental competente. (Redação dada pela Lei Complementar nº 140, de 2011)"]],[["ar","Art. 10.|.........."],["pg","§ 5º|Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até 15 módulos fiscais."]]],
+      ["Art. 10-A","acréscimo",null,[["ar","Art. 10-A.|A dispensa de que trata o § 5º do art. 10 será declarada pelo próprio empreendedor, em formulário eletrônico."],["pg","Parágrafo único.|O órgão estadual poderá exigir estudo complementar em caso de dano ambiental comprovado."]]]]}},
 };
 const COTEJO={
   resex:[["Art. 1º","Área sem proteção legal específica.","Reserva Extrativista de uso sustentável, com 48 mil hectares.","amplia"],["Art. 4º","Uso dos recursos sem regras próprias.","Uso conforme plano de manejo aprovado pelo conselho.","amplia"],["Art. 3º","Sem gestão definida.","Gestão estadual com conselho deliberativo de maioria comunitária.","amplia"]],
@@ -1481,6 +1492,8 @@ function textoBase(l){
   return `<div class="tb-ementa"><small>Ementa</small><p>${tb.ementa}</p></div>
     <p class="tb-fonte">${tb.versao}. Reprodução do arquivo oficial, sem edição. <a href="#parecer-${l.id}">Arquivo oficial ${ARR}</a></p>
     <div class="tb-integra" tabindex="0" role="region" aria-label="Íntegra do texto base"><div class="tb-disp">${tb.disp.map(linha).join("")}</div></div>
+    ${tb.alt?`<div class="tb-alt"><h3>Texto normativo alterado: ${tb.alt.lei}</h3><p class="tb-fonte">Redação vigente: texto compilado da fonte oficial, conferido em ${tb.alt.conferido}. Redação proposta: ${tb.versao.toLowerCase()}. <a href="#parecer-${l.id}">Lei na fonte oficial ${ARR}</a></p>
+      ${tb.alt.itens.map(([d,t,hoje,fica])=>`<div class="tb-par"><div class="tb-par-cab"><b>${d}</b> · ${t}</div><div class="tb-par-cols"><div><small>Como é hoje</small>${hoje?`<div class="tb-disp">${hoje.map(linha).join("")}</div>`:`<p class="tb-vz">Dispositivo novo: não há redação vigente.</p>`}</div><div><small>Como fica</small><div class="tb-disp">${fica.map(linha).join("")}</div></div></div></div>`).join("")}</div>`:""}
     ${tb.just?`<details class="tb-mais"><summary>Justificação do autor</summary><div class="tb-disp"><p>${tb.just}</p></div></details>`:""}`;
 }
 function cotejo(l){

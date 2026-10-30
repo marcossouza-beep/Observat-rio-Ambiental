@@ -63,3 +63,60 @@ describe('SEO', () => {
     expect(jsonLdTrilha([{ nome: 'Início', caminho: '/' }]).itemListElement[0].position).toBe(1)
   })
 })
+
+describe('SEO da lei alterada e palavras-chave', async () => {
+  const { descricaoLei, fraseAlteracao, jsonLdLei, palavrasDaPagina } = await import('@/lib/seo')
+  const { leisCitadas } = await import('@/lib/leis')
+  const cf = leisCitadas('Altera a Lei nº 12.651, de 25 de maio de 2012.')
+
+  it('nome popular da lei vem da lista', () => {
+    expect(cf[0]).toMatchObject({ rotulo: 'Lei nº 12.651/2012', nomePopular: 'Código Florestal' })
+    // Sem o ano não há certeza de que é a lei federal
+    expect(leisCitadas('Altera a Lei nº 12.651.')[0].nomePopular).toBeUndefined()
+  })
+  it('frase da alteração, com artigo certo', () => {
+    expect(fraseAlteracao(cf)).toBe('Altera a Lei nº 12.651/2012 (Código Florestal).')
+    expect(fraseAlteracao([...cf, { rotulo: 'Decreto nº 6.514/2008', tipo: 'Decreto' }])).toBe('Altera a Lei nº 12.651/2012 (Código Florestal) e o Decreto nº 6.514/2008.')
+    expect(fraseAlteracao([])).toBe('')
+  })
+  it('descrição da página da lei leva a lei alterada', () => {
+    expect(descricaoLei({}, 'Projeto de lei da Câmara sobre áreas de preservação.', 'acompanhando', cf)).toBe(
+      'Projeto de lei da Câmara sobre áreas de preservação. Altera a Lei nº 12.651/2012 (Código Florestal).',
+    )
+  })
+  it('palavras do editor e das leis alteradas, sem repetição', () => {
+    expect(palavrasDaPagina({ palavraChave: 'PL 1234/2026 APP', nomePopular: 'PL das APPs urbanas', secundarias: ['código florestal', 'área de preservação permanente'] }, cf)).toEqual([
+      'PL 1234/2026 APP',
+      'PL das APPs urbanas',
+      'código florestal',
+      'área de preservação permanente',
+      'Lei nº 12.651/2012',
+    ])
+  })
+  it('dados estruturados: nome popular e legislação alterada', () => {
+    const j = jsonLdLei({ nome: 'PL 1/2026', identificador: 'PL 1/2026', jurisdicao: 'BR', caminho: '/leis/pl-1-2026', nomePopular: 'PL das APPs urbanas', alteradas: cf })
+    expect(j.alternateName).toBe('PL das APPs urbanas')
+    expect(j.legislationChanges).toEqual([
+      { '@type': 'Legislation', name: 'Lei nº 12.651/2012 (Código Florestal)', alternateName: 'Código Florestal', legislationIdentifier: 'urn:lex:br:federal:lei:2012-05-25;12651', url: 'https://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2012-05-25;12651' },
+    ])
+  })
+})
+
+describe('descrição não corta em abreviatura', async () => {
+  const { descricaoLei } = await import('@/lib/seo')
+  it('"Dep." e "nº" não terminam a frase', () => {
+    expect(descricaoLei({}, 'O PL nº 1.234/2026 tramita na Câmara; a autoria é de Dep. Exemplo F (PARTIDO-GO). Hoje está no Plenário.', 'parecer')).toBe(
+      'O PL nº 1.234/2026 tramita na Câmara; a autoria é de Dep. Exemplo F (PARTIDO-GO). Leia o parecer técnico.',
+    )
+  })
+})
+
+describe('descrição longa com lei alterada', async () => {
+  const { descricaoLei } = await import('@/lib/seo')
+  const { leisCitadas } = await import('@/lib/leis')
+  it('a lei alterada vem primeiro quando não cabe tudo', () => {
+    const d = descricaoLei({}, 'O PL nº 1.234/2026 tramita no Congresso Nacional; a autoria é de Dep. Exemplo F (PARTIDO-GO), com relatoria na Comissão de Meio Ambiente.', 'parecer', leisCitadas('Lei nº 6.938, de 31 de agosto de 1981'))
+    expect(d.startsWith('Altera a Lei nº 6.938/1981 (Política Nacional do Meio Ambiente). O PL nº 1.234/2026')).toBe(true)
+    expect(d.length).toBeLessThanOrEqual(155)
+  })
+})

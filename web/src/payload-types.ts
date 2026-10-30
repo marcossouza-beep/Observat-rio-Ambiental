@@ -75,6 +75,7 @@ export interface Config {
     correcoes: Correcao;
     tramitacoes: Tramitacao;
     versoes: Versao;
+    'normas-vigentes': NormaVigente;
     parlamentares: Parlamentar;
     votacoes: Votacao;
     votos: Voto;
@@ -110,6 +111,7 @@ export interface Config {
     correcoes: CorrecoesSelect<false> | CorrecoesSelect<true>;
     tramitacoes: TramitacoesSelect<false> | TramitacoesSelect<true>;
     versoes: VersoesSelect<false> | VersoesSelect<true>;
+    'normas-vigentes': NormasVigentesSelect<false> | NormasVigentesSelect<true>;
     parlamentares: ParlamentaresSelect<false> | ParlamentaresSelect<true>;
     votacoes: VotacoesSelect<false> | VotacoesSelect<true>;
     votos: VotosSelect<false> | VotosSelect<true>;
@@ -778,6 +780,34 @@ export interface Tramitacao {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "normas-vigentes".
+ */
+export interface NormaVigente {
+  id: number;
+  /**
+   * Ex.: lei-12651-2012 (federal) ou pa-lei-5887-1995 (estadual)
+   */
+  chave: string;
+  /**
+   * Ex.: Lei nº 12.651/2012
+   */
+  rotulo: string;
+  /**
+   * Ex.: Código Florestal. Aparece no site e ajuda a busca.
+   */
+  nomePopular?: string | null;
+  url?: string | null;
+  /**
+   * A lei inteira, com a redação em vigor, como está na fonte oficial (um artigo por linha, começando por "Art.").
+   */
+  texto?: string | null;
+  origem?: ('coleta' | 'manual') | null;
+  atualizadoEm?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "votacoes".
  */
 export interface Votacao {
@@ -1168,6 +1198,10 @@ export interface PayloadLockedDocument {
         value: number | Versao;
       } | null)
     | ({
+        relationTo: 'normas-vigentes';
+        value: number | NormaVigente;
+      } | null)
+    | ({
         relationTo: 'parlamentares';
         value: number | Parlamentar;
       } | null)
@@ -1502,6 +1536,21 @@ export interface VersoesSelect<T extends boolean = true> {
   tentativasTexto?: T;
   hash?: T;
   chaveOrigem?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "normas-vigentes_select".
+ */
+export interface NormasVigentesSelect<T extends boolean = true> {
+  chave?: T;
+  rotulo?: T;
+  nomePopular?: T;
+  url?: T;
+  texto?: T;
+  origem?: T;
+  atualizadoEm?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -112,7 +112,9 @@
 - **LexML:** serviço de busca no padrão SRU (consultas por URL, resposta em XML) sobre os **metadados** das normas, e o identificador **URN LexML** (ex.: `urn:lex:br:federal:lei:2012-05-25;12651`), que é a melhor chave para ligar "lei afetada" a uma norma sem ambiguidade.
 - **Limite:** não entrega o texto integral; aponta para onde ele está.
 - **Planalto:** o texto compilado das leis federais está em páginas HTML, sem API. Uso restrito: buscar o **artigo alterado** para o quadro "Lei afetada" do dossiê, com cópia guardada e link oficial. Nada de varredura em massa.
-- **Alternativa:** o Senado também mantém dados de normas jurídicas na sua API **(confirmar)** se o texto vigente vem completo por lá; se vier, preferimos ao Planalto.
+- **Teste de 30/10/2026 (GitHub Actions, fora do Brasil):** o Planalto respondeu "Acesso Negado" (bloqueio de origem) e o LexML, 503. O Planalto só serve pelo servidor no Brasil.
+- **Fonte adotada: normas.leg.br (Senado/Congresso), API pública** usada pelo próprio site: `GET https://normas.leg.br/api/public/normas?urn=<URN>&tipo_documento=maior-detalhe` devolve a ficha da norma (JSON-LD, licença CC BY 4.0) com o nome popular (`alternateName`, ex.: "Lei da Política Nacional do Meio Ambiente (1981)") e, em `encoding`, o item `version: "Current"` (Compilação Monovigente) com o `contentUrl` do texto vigente em HTML. Responde de fora do Brasil. Amostras em `tests/fixtures/coleta/normas/`.
+- **Leis estaduais:** sem fonte única; o texto vigente é colado uma vez pela equipe na ficha da lei (Painel › Legislativo › Leis alteradas) e serve a todas as propostas que alteram a mesma lei.
 
 ### 2.5 TSE — deputados estaduais
 

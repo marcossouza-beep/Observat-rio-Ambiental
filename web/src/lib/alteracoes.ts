@@ -6,6 +6,7 @@
  * Funções puras: não interpretam nada, só localizam e recortam o texto oficial.
  */
 import { leisCitadas, type LeiCitada } from './leis'
+import { slugify } from './texto'
 
 export type TipoAlteracao = 'nova_redacao' | 'acrescimo' | 'revogacao'
 export type Alteracao = {
@@ -19,11 +20,10 @@ export type Alteracao = {
   proposto: string
 }
 
-const ABRE = /[“"]/
-const FECHA = /[”"]/
 const COMANDO = /passa(?:m)?\s+a\s+vigorar\s+(?:com\s+a\s+seguinte\s+reda[çc][ãa]o|com\s+as\s+seguintes\s+altera[çc][õo]es|acrescid[oa]s?\b[^:“"]*)\s*:/gi
 const REVOGA = /\bFica(?:m)?\s+revogad[oa]s?\s+([\s\S]+?)\b(?:d[aoe]s?)\s+((?:Lei|Decreto|Medida)[^;]*?(?:de\s+\d{4}|\/\d{4}))/gi
-const ARTIGO_NO_INICIO = /^Art\.?\s*(\d+)\s*[º°o]?((?:-[A-Z])?)/i
+// Cabeçalho de artigo é sempre "Art." com maiúscula; "art." minúsculo é remissão ("do art. 10")
+const ARTIGO_NO_INICIO = /^Art\.?\s*(\d+)\s*[º°o]?((?:-[A-Z])?)/
 
 const juntar = (t: string) => t.replace(/\r/g, '').replace(/-\n(?=[a-zà-ú])/g, '').replace(/\s+/g, ' ').trim()
 const limpar = (t: string) =>
@@ -63,14 +63,14 @@ function blocoCitado(t: string, desde: number): { citado: string; fim: number } 
     }
     // Fora das aspas: um novo artigo da proposta ou um novo comando encerra o bloco
     const resto = t.slice(i, i + 12)
-    if (citado.trim() && /^\s*Art\.?\s*\d/i.test(resto)) break
+    if (citado.trim() && /^\s*Art\.?\s*\d/.test(resto)) break
   }
   return { citado, fim: i }
 }
 
 /** "Art. 4º ... Art. 4º-A ..." (dentro das aspas) → um item por artigo citado. */
 function porArtigo(citado: string): { artigo: string; dispositivo: string; texto: string }[] {
-  const partes = limpar(citado).split(/\s+(?=Art\.?\s*\d+\s*[º°o]?(?:-[A-Z])?[\s.])/i)
+  const partes = limpar(citado).split(/\s+(?=Art\.?\s*\d+\s*[º°o]?(?:-[A-Z])?[\s.])/)
   const r: { artigo: string; dispositivo: string; texto: string }[] = []
   for (const p of partes) {
     const m = ARTIGO_NO_INICIO.exec(p)
@@ -124,9 +124,13 @@ export function artigoDaLei(textoLei: string | null | undefined, artigo: string)
   if (!textoLei) return ''
   const [num, letra = ''] = artigo.split('-')
   const t = textoLei.replace(/\r/g, '')
-  const cab = new RegExp(`(?:^|\\n)\\s*(Art\\.?\\s*${num}\\s*[º°o]?${letra ? `\\s*-\\s*${letra}` : '(?!\\s*-\\s*[A-Z])'}(?![\\d])[\\s.][\\s\\S]*?)(?=\\n\\s*Art\\.?\\s*\\d|$)`, 'i')
+  const cab = new RegExp(`(?:^|\\n)\\s*(Art\\.?\\s*${num}\\s*[º°o]?${letra ? `\\s*-\\s*${letra}` : '(?!\\s*-\\s*[A-Z])'}(?![\\d])[\\s.][\\s\\S]*?)(?=\\n\\s*Art\\.?\\s*\\d|$)`)
   const m = cab.exec(t)
-  return m ? m[1].replace(/[ \t]+/g, ' ').replace(/\n\s*\n+/g, '\n').trim() : ''
+  if (!m) return ''
+  const linhas = m[1].replace(/[ \t]+/g, ' ').split('\n').map((l) => l.trim()).filter(Boolean)
+  // Título de seção ("DA POLÍTICA NACIONAL DO MEIO AMBIENTE", "CAPÍTULO II") antes do próximo artigo não é deste artigo
+  while (linhas.length > 1 && /^[^a-zà-ú]+$/.test(linhas[linhas.length - 1]) && !/^(§|[IVXLC]+\s*[-–—])/.test(linhas[linhas.length - 1])) linhas.pop()
+  return linhas.join('\n')
 }
 
 /** Agrupa por lei alterada, na ordem em que aparecem. */
@@ -138,4 +142,18 @@ export function porLei(alteracoes: Alteracao[]): { lei: LeiCitada; itens: Altera
     grupos.get(k)!.itens.push(a)
   }
   return [...grupos.values()]
+}
+
+/** Chave da ficha da lei alterada: "lei-12651-2012"; com a UF, a lei estadual de mesmo número: "pa-lei-5887-1995". */
+export const chaveNorma = (l: Pick<LeiCitada, 'tipo' | 'numero' | 'ano'>, uf?: string | null) =>
+  [uf?.toLowerCase(), slugify(l.tipo), l.numero, l.ano].filter(Boolean).join('-')
+
+/** Leis alteradas, sem repetição: as do texto (com os dispositivos) e as citadas na ementa. */
+export function leisAlteradas(alteracoes: Alteracao[], citadasNaEmenta: LeiCitada[] = []): LeiCitada[] {
+  const vistas = new Map<string, LeiCitada>()
+  for (const l of [...alteracoes.map((a) => a.lei), ...citadasNaEmenta]) {
+    const k = chaveNorma(l)
+    if (!vistas.has(k)) vistas.set(k, l)
+  }
+  return [...vistas.values()]
 }

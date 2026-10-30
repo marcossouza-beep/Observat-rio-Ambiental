@@ -14,6 +14,7 @@ import * as migration_20261017_030200_monitoramento_fontes from './20261017_0302
 import * as migration_20261030_023534_modelo_parecer_site from './20261030_023534_modelo_parecer_site';
 import * as migration_20261030_031314_quadro_cotejo from './20261030_031314_quadro_cotejo';
 import * as migration_20261030_032348_acessos_pdf from './20261030_032348_acessos_pdf';
+import * as migration_20261030_035724_normas_vigentes from './20261030_035724_normas_vigentes';
 
 export const migrations = [
   {
@@ -94,6 +95,11 @@ export const migrations = [
   {
     up: migration_20261030_032348_acessos_pdf.up,
     down: migration_20261030_032348_acessos_pdf.down,
-    name: '20261030_032348_acessos_pdf'
+    name: '20261030_032348_acessos_pdf',
+  },
+  {
+    up: migration_20261030_035724_normas_vigentes.up,
+    down: migration_20261030_035724_normas_vigentes.down,
+    name: '20261030_035724_normas_vigentes'
   },
 ];

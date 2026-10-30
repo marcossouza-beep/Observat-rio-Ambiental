@@ -82,6 +82,14 @@ test.describe('Site público', () => {
     expect(ld.some((j) => j['@type'] === 'Legislation')).toBe(true)
     expect(ld.some((j) => j['@type'] === 'BreadcrumbList')).toBe(true)
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', new RegExp(`${LIC}$`))
+    // A página da lei mostra a lei alterada pelo texto mais recente (o substitutivo) e leva isso ao SEO
+    const lei = ld.find((j) => j['@type'] === 'Legislation')
+    expect(lei.alternateName).toBe('PL do licenciamento simplificado')
+    expect(lei.legislationChanges[0]).toMatchObject({ name: 'Lei nº 6.938/1981 (Política Nacional do Meio Ambiente)', legislationIdentifier: 'urn:lex:br:federal:lei:1981-08-31;6938' })
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /Altera a Lei nº 6\.938\/1981 \(Política Nacional do Meio Ambiente\)/)
+    await expect(page.getByText('conhecido como “PL do licenciamento simplificado”')).toBeVisible()
+    await expect(page.locator('.tb-lei')).toContainText('Redação proposta: Substitutivo do relator (Plenário)')
+    await expect(page.locator('.tb-par').first()).toContainText('até 30 módulos fiscais')
   })
 
   test('lei com parecer prometido mostra o aviso e o que já se sabe', async ({ page }) => {
@@ -108,6 +116,14 @@ test.describe('Site público', () => {
     await expect(page.locator('article h2').first()).toHaveText('I. Texto base da proposta')
     await expect(page.getByRole('region', { name: /Íntegra/ })).toContainText('Art. 3º')
     await expect(page.locator('.cotejo tbody tr')).toHaveCount(3)
+    // Proposta que altera lei existente: como é hoje × como fica, literal, no mesmo bloco inicial
+    const alterado = page.locator('.tb-lei').first()
+    await expect(alterado.getByRole('heading', { name: 'Texto normativo alterado: Lei nº 6.938/1981 (Política Nacional do Meio Ambiente)' })).toBeVisible()
+    await expect(alterado.locator('.tb-par').first()).toContainText('dependerão de prévio licenciamento ambiental')
+    await expect(alterado.locator('.tb-par').first()).toContainText('§ 5º Ficam dispensadas de estudo prévio')
+    await expect(alterado.locator('.tb-par').nth(1)).toContainText('Dispositivo novo: não há redação vigente.')
+    // SEO: lei alterada e palavras-chave do editor
+    await expect(page.locator('meta[name="keywords"]')).toHaveAttribute('content', /PL do licenciamento simplificado.*Política Nacional do Meio Ambiente/)
     const art = (await jsonLd(page)).find((j) => j['@type'] === 'Article')
     expect(art.author.name).toBe('Nome do Autor')
     expect(art.about['@type']).toBe('Legislation')

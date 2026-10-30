@@ -1,5 +1,7 @@
 import type { UIFieldServerProps } from 'payload'
+import { alteracoesDoTexto, chaveNorma, porLei } from '../lib/alteracoes'
 import { diferencas, recortar, resumoDiferencas } from '../lib/diferencas'
+import { nomeDaLei } from '../lib/leis'
 import { CASA } from '../lib/rotulos'
 import type { Parlamentar } from '../payload-types'
 import { dataCurta, linkDoc } from './util'
@@ -23,6 +25,11 @@ export async function Dossie({ data, payload }: UIFieldServerProps) {
   const analisadaId = idDe(data?.versaoTexto)
   const nova = versoes.docs[0]
   const analisada = versoes.docs.find((v) => v.id === analisadaId)
+  // Lei existente alterada pelo texto analisado: a página mostra "como é hoje × como fica" se houver o texto vigente
+  const baseAlteracoes = analisada?.texto ? analisada : versoes.docs.find((v) => v.texto)
+  const grupos = porLei(alteracoesDoTexto(baseAlteracoes?.texto))
+  const chaves = grupos.flatMap((g) => [chaveNorma(g.lei), ...(prop.esfera === 'estadual' && prop.uf ? [chaveNorma(g.lei, prop.uf)] : [])])
+  const fichas = chaves.length ? (await payload.find({ collection: 'normas-vigentes', where: { chave: { in: chaves } }, limit: chaves.length, depth: 0 })).docs : []
   const comparar = nova && analisada && nova.id !== analisada.id && nova.texto && analisada.texto ? recortar(diferencas(analisada.texto, nova.texto)) : null
 
   return (
@@ -63,6 +70,35 @@ export async function Dossie({ data, payload }: UIFieldServerProps) {
                 </a>
               </li>
             ))}
+          </ul>
+        </>
+      ) : null}
+
+      {grupos.length ? (
+        <>
+          <h3>Lei alterada: como é hoje × como fica</h3>
+          <p className="obs-nota">Montado sozinho no topo do parecer, a partir do texto da proposta e do texto compilado da lei.</p>
+          <ul>
+            {grupos.map((g) => {
+              const ficha = fichas.find((f) => f.chave === chaveNorma(g.lei, prop.esfera === 'estadual' ? prop.uf : null)) || fichas.find((f) => f.chave === chaveNorma(g.lei))
+              return (
+                <li key={g.lei.rotulo}>
+                  <b>{nomeDaLei({ rotulo: g.lei.rotulo, nomePopular: ficha?.nomePopular || g.lei.nomePopular })}</b> · {g.itens.map((a) => a.dispositivo).join(', ')}
+                  <br />
+                  {ficha?.texto ? (
+                    <span className="obs-nota">
+                      Texto vigente carregado{ficha.atualizadoEm ? ` (conferido em ${dataCurta(ficha.atualizadoEm)})` : ''} · <a href={linkDoc('normas-vigentes', ficha.id)}>abrir</a>
+                    </span>
+                  ) : (
+                    <span className="obs-nota">
+                      Falta o texto vigente.{' '}
+                      <a href={ficha ? linkDoc('normas-vigentes', ficha.id) : linkDoc('normas-vigentes', 'create')}>Colar o texto compilado</a> (chave{' '}
+                      <code>{chaveNorma(g.lei, prop.esfera === 'estadual' ? prop.uf : null)}</code>). Vale para todas as propostas que alteram esta lei.
+                    </span>
+                  )}
+                </li>
+              )
+            })}
           </ul>
         </>
       ) : null}

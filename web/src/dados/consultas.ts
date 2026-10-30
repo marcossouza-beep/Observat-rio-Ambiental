@@ -8,6 +8,7 @@ import { getPayload, type Where } from 'payload'
 import config from '@payload-config'
 import type { Carater } from '@/lib/indicadores'
 import type { CasaFederal, ItemPanorama } from '@/lib/panorama'
+import { type Alteracao, alteracoesDoTexto, chaveNorma } from '@/lib/alteracoes'
 import type { Artigo, Bioma, Parecer, Proposicao, Tema } from '@/payload-types'
 
 export const payloadSite = async () => getPayload({ config: await config })
@@ -61,7 +62,19 @@ export async function leiPorSlug(slug: string) {
     payload.find({ collection: 'versoes', ...publico, where: { proposicao: { equals: lei.id } }, sort: '-data', limit: 10, depth: 0, select: { texto: false } }),
     lei.fonte && typeof lei.fonte === 'object' ? Promise.resolve(lei.fonte) : Promise.resolve(null),
   ])
-  return { lei, parecer, tramitacoes: tramitacoes.docs, votacoes: votacoes.docs, emendas: emendas.totalDocs, versoes: versoes.docs, fonte }
+  // Texto mais recente com conteúdo: dele saem as alterações em lei existente (como é hoje × como fica)
+  const atual = await payload.find({ collection: 'versoes', ...publico, where: { proposicao: { equals: lei.id }, texto: { exists: true } }, sort: '-data', limit: 1, depth: 0 })
+  const alteracoes = alteracoesDoTexto(atual.docs[0]?.texto)
+  const normas = await normasDe(alteracoes, lei.esfera === 'estadual' ? lei.uf : null)
+  return { lei, parecer, tramitacoes: tramitacoes.docs, votacoes: votacoes.docs, emendas: emendas.totalDocs, versoes: versoes.docs, fonte, alteracoes, normas, textoAtual: atual.docs[0] || null }
+}
+
+/** Fichas de texto vigente das leis alteradas (a estadual de mesmo número entra junto, se a proposta é estadual). */
+export async function normasDe(alteracoes: Alteracao[], uf?: string | null) {
+  if (!alteracoes.length) return []
+  const chaves = [...new Set(alteracoes.flatMap((a) => [chaveNorma(a.lei), ...(uf ? [chaveNorma(a.lei, uf)] : [])]))]
+  const payload = await payloadSite()
+  return (await payload.find({ collection: 'normas-vigentes', ...publico, where: { chave: { in: chaves } }, limit: chaves.length, depth: 0 })).docs
 }
 
 export async function parecerPorSlug(slug: string) {
@@ -75,7 +88,11 @@ export async function parecerPorSlug(slug: string) {
     // Texto original (a "matéria bruta" que abre o parecer), mesmo quando o parecer analisa um substitutivo
     payload.find({ collection: 'versoes', ...publico, where: { proposicao: { equals: lei.id }, tipo: { equals: 'original' } }, sort: 'data', limit: 1, depth: 0 }),
   ])
-  return { parecer, lei, correcoes: correcoes.docs, original: originais.docs[0] || null }
+  const original = originais.docs[0] || null
+  const analisada = parecer.versaoTexto && typeof parecer.versaoTexto === 'object' ? parecer.versaoTexto : null
+  const alteracoes = alteracoesDoTexto((analisada || original)?.texto)
+  const normas = await normasDe(alteracoes, lei.esfera === 'estadual' ? lei.uf : null)
+  return { parecer, lei, correcoes: correcoes.docs, original, alteracoes, normas }
 }
 
 export async function listarPareceres(limite = 30, where?: Where) {

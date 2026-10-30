@@ -47,6 +47,11 @@ Campos preenchidos pelo autor no editor (seção "SEO"):
 - Parlamentar: `{Nome} ({PARTIDO}-{UF}): leis ambientais, votos e autorias | Nome do Site`
 - Descrição: primeira frase do resumo + impacto e caráter + próximo passo.
 
+**Onde as palavras entram (automático):**
+- Palavra-chave, nome popular e secundárias vão para a meta `keywords` e para os dados estruturados (`keywords`) da página do parecer **e** da página da lei.
+- O nome popular aparece no texto visível ("conhecido como “PL do licenciamento simplificado”") e no `alternateName` da lei.
+- **Lei alterada:** quando a proposta altera lei existente, o sistema identifica a lei pelo texto e pela ementa e usa o nome pelo qual ela é procurada ("Código Florestal", "Lei do SNUC", "Lei de Crimes Ambientais"). Entra na descrição ("Altera a Lei nº 12.651/2012 (Código Florestal).", que vai para a frente quando não cabe tudo), nas palavras-chave, no título do bloco "Texto normativo alterado" e nos dados estruturados (`legislationChanges` na lei, `mentions` no parecer).
+
 **Onde buscar as palavras certas:** Search Console (termos que já trazem visitas), autocompletar e "as pessoas também perguntam" do Google, Google Trends, termos usados na busca interna do site e o apelido usado pela imprensa.
 
 **Checklist automático no editor** (aviso, não bloqueio):

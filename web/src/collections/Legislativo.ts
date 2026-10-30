@@ -124,7 +124,8 @@ export const Versoes: CollectionConfig = {
     },
     { name: 'rotulo', label: 'Rótulo', type: 'text', admin: { description: 'Ex.: Substitutivo do relator (Plenário)' } },
     { name: 'url', label: 'Arquivo oficial', type: 'text' },
-    { name: 'texto', label: 'Texto extraído', type: 'textarea' },
+    // Projetos longos passam de 40 mil caracteres (o limite padrão do Payload); a coleta corta em 400 mil
+    { name: 'texto', label: 'Texto extraído', type: 'textarea', maxLength: 400_000 },
     { name: 'extraidoPorOcr', type: 'checkbox', defaultValue: false },
     { name: 'semTextoMotivo', label: 'Por que não há texto', type: 'text', admin: { readOnly: true } },
     { name: 'tentativasTexto', label: 'Tentativas de leitura', type: 'number', defaultValue: 0, admin: { readOnly: true } },
@@ -254,5 +255,47 @@ export const Emendas: CollectionConfig = {
     { name: 'resumo', type: 'textarea' },
     { name: 'url', type: 'text' },
     chaveOrigem,
+  ],
+}
+
+/**
+ * Texto compilado (redação vigente) das leis que as propostas alteram. Uma ficha por lei serve a todas as
+ * propostas que a alteram: o site recorta dali o artigo afetado para o "como é hoje × como fica".
+ * Preenchida pela coleta quando a fonte oficial permite, ou colada pela equipe a partir da fonte oficial.
+ */
+export const NormasVigentes: CollectionConfig = {
+  slug: 'normas-vigentes',
+  typescript: { interface: 'NormaVigente' },
+  labels: { singular: 'Lei alterada (texto vigente)', plural: 'Leis alteradas (texto vigente)' },
+  admin: { group: 'Legislativo', useAsTitle: 'rotulo', defaultColumns: ['rotulo', 'nomePopular', 'origem', 'atualizadoEm'] },
+  access: acesso,
+  fields: [
+    { name: 'chave', type: 'text', required: true, unique: true, index: true, admin: { description: 'Ex.: lei-12651-2012 (federal) ou pa-lei-5887-1995 (estadual)' } },
+    { name: 'rotulo', label: 'Lei', type: 'text', required: true, admin: { description: 'Ex.: Lei nº 12.651/2012' } },
+    { name: 'nomePopular', label: 'Nome popular', type: 'text', admin: { description: 'Ex.: Código Florestal. Aparece no site e ajuda a busca.' } },
+    { name: 'url', label: 'Texto compilado na fonte oficial', type: 'text' },
+    {
+      name: 'texto',
+      label: 'Texto compilado',
+      type: 'textarea',
+      // Leis como o Código Florestal passam de 40 mil caracteres (o limite padrão do Payload)
+      maxLength: 1_000_000,
+      admin: { description: 'A lei inteira, com a redação em vigor, como está na fonte oficial (um artigo por linha, começando por "Art.").' },
+    },
+    {
+      type: 'row',
+      fields: [
+        {
+          name: 'origem',
+          type: 'select',
+          defaultValue: 'manual',
+          options: [
+            { label: 'Coleta automática', value: 'coleta' },
+            { label: 'Colado pela equipe', value: 'manual' },
+          ],
+        },
+        { name: 'atualizadoEm', label: 'Texto conferido em', type: 'date' },
+      ],
+    },
   ],
 }

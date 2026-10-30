@@ -14,7 +14,10 @@ import { oQueJaSeSabe } from '@/lib/frase'
 import { estadoDaFonte, notaPublica } from '@/lib/fontes'
 import { textoDe } from '@/lib/publicacao'
 import { CASA, dataBR, SITUACAO } from '@/lib/rotulos'
-import { descricaoLei, jsonLdLei, jurisdicao, tituloLei } from '@/lib/seo'
+import { descricaoLei, jsonLdLei, jurisdicao, palavrasDaPagina, tituloLei } from '@/lib/seo'
+import { leisAlteradas } from '@/lib/alteracoes'
+import { leisCitadas, nomeDaLei } from '@/lib/leis'
+import { normaDe, TextoAlterado } from '@/componentes/TextoBase'
 import type { Autor, Parlamentar, Versao } from '@/payload-types'
 
 export const revalidate = 300
@@ -32,6 +35,11 @@ function autoresDe(lei: NonNullable<Awaited<ReturnType<typeof leiPorSlug>>>['lei
   })
 }
 
+type Dados = NonNullable<Awaited<ReturnType<typeof leiPorSlug>>>
+/** Leis que a proposta altera, com o nome popular da ficha de texto vigente quando houver. */
+const alteradasDe = (d: Pick<Dados, 'lei' | 'alteracoes' | 'normas'>) =>
+  leisAlteradas(d.alteracoes, leisCitadas(d.lei.ementa)).map((l) => ({ ...l, nomePopular: normaDe(d.normas, l, d.lei.esfera === 'estadual' ? d.lei.uf : null)?.nomePopular || l.nomePopular }))
+
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const d = await leiPorSlug((await params).slug)
   if (!d) return { title: 'Lei não encontrada', robots: { index: false } }
@@ -41,9 +49,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const ultima = d.votacoes[0]
   const frase = oQueJaSeSabe({ ...d.lei, autores, emendas: d.emendas, ultimaVotacao: ultima ? { data: ultima.data, orgao: ultima.orgao, sim: ultima.placarSim, nao: ultima.placarNao } : null })
   const titulo = tituloLei(d.lei, estado)
+  const alteradas = alteradasDe(d)
   return {
     title: titulo,
-    description: descricaoLei(d.lei, frase, estado),
+    description: descricaoLei(d.lei, frase, estado, alteradas),
+    keywords: palavrasDaPagina(d.parecer?.seo, alteradas),
     alternates: { canonical: `/leis/${d.lei.slug}` },
     openGraph: { title: titulo, type: 'article' },
   }
@@ -52,7 +62,10 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 export default async function PaginaLei({ params }: { params: Params }) {
   const d = await leiPorSlug((await params).slug)
   if (!d) notFound()
-  const { lei, parecer, tramitacoes, votacoes, emendas, versoes, fonte } = d
+  const { lei, parecer, tramitacoes, votacoes, emendas, versoes, fonte, alteracoes, normas, textoAtual } = d
+  const citadas = leisCitadas(lei.ementa)
+  const alteradas = alteradasDe(d)
+  const nomePopular = parecer?.seo?.nomePopular
   const aviso = avisoDaLei(lei, parecer)
   const pessoas = autoresDe(lei)
   const autores = pessoas.filter((a) => a.papel !== 'relator')
@@ -81,6 +94,9 @@ export default async function PaginaLei({ params }: { params: Params }) {
           caminho: `/leis/${lei.slug}`,
           data: lei.dataApresentacao,
           situacao: lei.statusSimplificado ? SITUACAO[lei.statusSimplificado]?.rotulo : undefined,
+          nomePopular,
+          palavras: palavrasDaPagina(parecer?.seo, alteradas),
+          alteradas,
         })}
       />
       <Trilha
@@ -104,6 +120,7 @@ export default async function PaginaLei({ params }: { params: Params }) {
         <span className="num">
           {lei.rotulo}
           {lei.casa ? ` · ${CASA[lei.casa]}` : ''}
+          {nomePopular ? ` · conhecido como “${nomePopular}”` : ''}
         </span>
         <SeguirLei proposicao={lei.id} caminho={`/leis/${lei.slug}`} />
       </header>
@@ -136,13 +153,14 @@ export default async function PaginaLei({ params }: { params: Params }) {
               <p className="leis-citadas">
                 {lei.leisAfetadas.map((l, i) => (
                   <a key={l.id || i} href={l.url || '#'} target="_blank" rel="noopener">
-                    {l.rotulo}
+                    {nomeDaLei({ rotulo: l.rotulo || '', nomePopular: citadas.find((c) => c.rotulo === l.rotulo)?.nomePopular })}
                   </a>
                 ))}
               </p>
             </>
           ) : null}
         </div>
+        {alteracoes.length ? <TextoAlterado alteracoes={alteracoes} normas={normas} uf={lei.esfera === 'estadual' ? lei.uf : null} versao={textoAtual} /> : null}
         {lei.urlInteiroTeor || lei.urlFonte ? (
           <a className="link-oficial" href={lei.urlInteiroTeor || lei.urlFonte || '#'} target="_blank" rel="noopener">
             Texto integral na fonte oficial <Seta />

@@ -4,7 +4,35 @@
  */
 import { normalizar } from './relevancia'
 
-export type LeiCitada = { rotulo: string; tipo: string; numero: string; data?: string; ano?: string; urn?: string; url: string }
+export type LeiCitada = { rotulo: string; tipo: string; numero: string; data?: string; ano?: string; urn?: string; url: string; nomePopular?: string }
+
+/**
+ * Nome pelo qual as leis ambientais federais mais citadas são procuradas (texto da página e SEO).
+ * Chave: tipo na URN, número e ano; sem o ano não há certeza de que é a lei federal.
+ */
+export const NOMES_POPULARES: Record<string, string> = {
+  'lei:5197:1967': 'Lei de Proteção à Fauna',
+  'lei:6938:1981': 'Política Nacional do Meio Ambiente',
+  'lei:7802:1989': 'antiga Lei dos Agrotóxicos',
+  'lei:9433:1997': 'Lei das Águas',
+  'lei:9605:1998': 'Lei de Crimes Ambientais',
+  'lei:9795:1999': 'Política Nacional de Educação Ambiental',
+  'lei:9985:2000': 'Lei do SNUC',
+  'lei:11284:2006': 'Lei de Gestão de Florestas Públicas',
+  'lei:11428:2006': 'Lei da Mata Atlântica',
+  'lei:11959:2009': 'Lei da Pesca e Aquicultura',
+  'lei:12187:2009': 'Política Nacional sobre Mudança do Clima',
+  'lei:12305:2010': 'Política Nacional de Resíduos Sólidos',
+  'lei.complementar:140:2011': 'Lei das competências ambientais',
+  'lei:12651:2012': 'Código Florestal',
+  'lei:13123:2015': 'Lei da Biodiversidade',
+  'lei:14119:2021': 'Lei do Pagamento por Serviços Ambientais',
+  'lei:14785:2023': 'Lei dos Agrotóxicos',
+  'lei:15190:2025': 'Lei Geral do Licenciamento Ambiental',
+}
+
+/** "Lei nº 12.651/2012 (Código Florestal)" */
+export const nomeDaLei = (l: Pick<LeiCitada, 'rotulo' | 'nomePopular'>) => (l.nomePopular ? `${l.rotulo} (${l.nomePopular})` : l.rotulo)
 
 const MESES: Record<string, string> = {
   janeiro: '01', fevereiro: '02', marco: '03', abril: '04', maio: '05', junho: '06',
@@ -52,7 +80,8 @@ export function leisCitadas(texto: string | null | undefined): LeiCitada[] {
         ? `https://www.lexml.gov.br/urn/${urn}`
         : `https://www.lexml.gov.br/busca/search?keyword=${encodeURIComponent(`${tipo.nome} ${numero}${ano ? ` ${ano}` : ''}`)}`
       const chave = `${tipo.urn}:${numero}:${ano || ''}`
-      if (!achadas.has(chave)) achadas.set(chave, { rotulo, tipo: tipo.nome, numero, data, ano, urn, url })
+      const nomePopular = ano ? NOMES_POPULARES[`${tipo.urn}:${numero}:${ano}`] : undefined
+      if (!achadas.has(chave)) achadas.set(chave, { rotulo, tipo: tipo.nome, numero, data, ano, urn, url, ...(nomePopular ? { nomePopular } : {}) })
     }
   }
   return [...achadas.values()]

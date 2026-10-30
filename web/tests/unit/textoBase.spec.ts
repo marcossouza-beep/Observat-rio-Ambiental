@@ -34,6 +34,8 @@ describe('texto base da proposta', () => {
   it('separa texto corrido em artigos e parágrafos', () => {
     const t = organizarTexto('Art. 3º Ficam dispensadas as atividades de até 30 módulos. § 2º A dispensa não se aplica a zonas de amortecimento. Art. 7º O órgão poderá exigir estudo complementar.')
     expect(t.dispositivos.map((d) => d.tipo)).toEqual(['artigo', 'paragrafo', 'artigo'])
+    expect(organizarTexto('Art. 2º São objetivos: I – proteger; II – conservar: a) a fauna; b) a flora.').dispositivos.map((d) => d.tipo)).toEqual(['artigo', 'inciso', 'inciso', 'alinea', 'alinea'])
+    expect(organizarTexto('Art. 4º ....... § 10. Lei municipal poderá definir faixas.').dispositivos.map((d) => d.tipo)).toEqual(['artigo', 'paragrafo'])
     // Remissão no meio da frase não abre dispositivo
     expect(organizarTexto('Art. 4º Aplica-se o previsto no § 1º do Art. 2º desta Lei.').dispositivos).toHaveLength(1)
   })

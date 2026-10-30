@@ -30,14 +30,17 @@ type Lei = {
 
 /** Texto base de demonstração (fictício), no formato em que sai da extração do PDF oficial. */
 const TEXTOS: Record<string, string> = {
-  lic: `Dispensa de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de médio porte.
+  lic: `Altera a Lei nº 6.938, de 31 de agosto de 1981, para dispensar de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de médio porte.
 O CONGRESSO NACIONAL decreta:
-Art. 1º Esta Lei estabelece hipóteses de dispensa do estudo prévio de impacto ambiental para atividades
-agropecuárias.
-Art. 3º Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até 15 módulos fiscais.
-§ 1º A dispensa será declarada pelo próprio empreendedor, em formulário eletrônico.
-Art. 7º O órgão estadual poderá exigir estudo complementar em caso de dano ambiental comprovado.
-Art. 9º Esta Lei entra em vigor na data de sua publicação.
+Art. 1º Esta Lei altera a Lei nº 6.938, de 31 de agosto de 1981, para dispor sobre a dispensa de estudo prévio de impacto
+ambiental para atividades agropecuárias.
+Art. 2º O art. 10 da Lei nº 6.938, de 31 de agosto de 1981, passa a vigorar com a seguinte redação:
+“Art. 10. ......................................................
+§ 5º Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até 15 módulos fiscais.” (NR)
+Art. 3º A Lei nº 6.938, de 31 de agosto de 1981, passa a vigorar acrescida do seguinte art. 10-A:
+“Art. 10-A. A dispensa de que trata o § 5º do art. 10 será declarada pelo próprio empreendedor, em formulário eletrônico.
+Parágrafo único. O órgão estadual poderá exigir estudo complementar em caso de dano ambiental comprovado.” (AC)
+Art. 4º Esta Lei entra em vigor na data de sua publicação.
 JUSTIFICAÇÃO
 O licenciamento das atividades agropecuárias de médio porte impõe custos desproporcionais ao produtor.
 A proposta simplifica o procedimento sem afastar a responsabilidade por dano.`,
@@ -59,12 +62,27 @@ JUSTIFICAÇÃO
 A área sofre pressão crescente de extração ilegal de madeira e de pesca predatória e hoje não conta com proteção legal específica.`,
 }
 
+/** Ficha de texto vigente de demonstração: trecho real da compilação da Câmara (normas.leg.br) com o art. 10 da Lei nº 6.938/1981. */
+const NORMA_DEMO = {
+  chave: 'lei-6938-1981',
+  rotulo: 'Lei nº 6.938/1981',
+  nomePopular: 'Política Nacional do Meio Ambiente',
+  url: 'https://normas.leg.br/?urn=urn:lex:br:federal:lei:1981-08-31;6938',
+  texto: `Art. 9º São instrumentos da Política Nacional do Meio Ambiente:
+Art. 10. A construção, instalação, ampliação e funcionamento de estabelecimentos e atividades utilizadores de recursos ambientais, efetiva ou potencialmente poluidores ou capazes, sob qualquer forma, de causar degradação ambiental dependerão de prévio licenciamento ambiental. (“Caput” do artigo com redação dada pela Lei Complementar nº 140, de 8/12/2011)
+§ 1º Os pedidos de licenciamento, sua renovação e a respectiva concessão serão publicados no jornal oficial, bem como em periódico regional ou local de grande circulação, ou em meio eletrônico de comunicação mantido pelo órgão ambiental competente. (Parágrafo com redação dada pela Lei Complementar nº 140, de 8/12/2011)
+§ 2º (Revogado pela Lei Complementar nº 140, de 8/12/2011)
+§ 3º (Revogado pela Lei Complementar nº 140, de 8/12/2011)
+§ 4º (Revogado pela Lei Complementar nº 140, de 8/12/2011)
+Art. 11. Compete ao IBAMA propor ao CONAMA normas e padrões para implantação, acompanhamento e fiscalização do licenciamento`,
+}
+
 /** Quadro do cotejo de demonstração: regime vigente × proposta, ponto a ponto. */
 const COTEJOS: Record<string, { dispositivo: string; vigente: string; proposto: string; efeito: 'amplia' | 'reduz' | 'neutro' }[]> = {
   lic: [
-    { dispositivo: 'Art. 3º', vigente: 'Estudo prévio exigido conforme porte e potencial poluidor da atividade.', proposto: 'Dispensa do estudo para imóveis de até 15 módulos fiscais.', efeito: 'reduz' },
-    { dispositivo: 'Art. 3º, § 1º', vigente: 'Enquadramento feito pelo órgão licenciador.', proposto: 'Dispensa declarada pelo próprio empreendedor.', efeito: 'reduz' },
-    { dispositivo: 'Art. 7º', vigente: 'Estudo exigível antes da atividade.', proposto: 'Estudo complementar só após dano comprovado.', efeito: 'reduz' },
+    { dispositivo: 'Lei 6.938, art. 10, § 5º', vigente: 'Estudo prévio exigido conforme porte e potencial poluidor da atividade.', proposto: 'Dispensa do estudo para imóveis de até 15 módulos fiscais.', efeito: 'reduz' },
+    { dispositivo: 'Lei 6.938, art. 10-A', vigente: 'Enquadramento feito pelo órgão licenciador.', proposto: 'Dispensa declarada pelo próprio empreendedor.', efeito: 'reduz' },
+    { dispositivo: 'Art. 10-A, par. único', vigente: 'Estudo exigível antes da atividade.', proposto: 'Estudo complementar só após dano comprovado.', efeito: 'reduz' },
   ],
   resex: [
     { dispositivo: 'Art. 1º', vigente: 'Área sem proteção legal específica.', proposto: 'Reserva Extrativista de uso sustentável, com 48 mil hectares.', efeito: 'amplia' },
@@ -82,7 +100,7 @@ const COTEJOS: Record<string, { dispositivo: string; vigente: string; proposto: 
 }
 
 const LEIS: Lei[] = [
-  { id: 'lic', sigla: 'PL', numero: 1234, ano: 2026, titulo: 'Licenciamento simplificado para fazendas de médio porte', esfera: 'federal', casa: 'camara', status: 'em_tramitacao', etapa: 'Plenário', statusOficial: 'Pronto para pauta no Plenário', ementa: 'Dispensa de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de médio porte e transfere a decisão aos municípios.', art1: 'Esta Lei estabelece hipóteses de dispensa do estudo prévio de impacto ambiental para atividades agropecuárias.', temas: ['Licenciamento'], biomas: ['Cerrado', 'Amazônia'], situacao: 'ativa', autor: ['Dep. Exemplo F', 'PARTIDO', 'GO'], relator: ['Dep. Exemplo G', 'PARTIDO', 'MT', 'Plenário'], parecer: { impacto: 'alto', carater: 'malefico', resumo: 'O projeto dispensa o estudo de impacto ambiental para atividades agropecuárias em imóveis de médio porte, com declaração do próprio produtor.', oQueMuda: 'Hoje o estudo prévio é exigido conforme o porte e o potencial poluidor. O projeto cria uma dispensa ampla, decidida pelo próprio interessado.' }, pauta: [2, 'Plenário da Câmara'], votacao: [-12, 'Comissão de Meio Ambiente', 21, 12], emendas: 7 },
+  { id: 'lic', sigla: 'PL', numero: 1234, ano: 2026, titulo: 'Licenciamento simplificado para fazendas de médio porte', esfera: 'federal', casa: 'camara', status: 'em_tramitacao', etapa: 'Plenário', statusOficial: 'Pronto para pauta no Plenário', ementa: 'Altera a Lei nº 6.938, de 31 de agosto de 1981, para dispensar de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de médio porte.', art1: 'Esta Lei estabelece hipóteses de dispensa do estudo prévio de impacto ambiental para atividades agropecuárias.', temas: ['Licenciamento'], biomas: ['Cerrado', 'Amazônia'], situacao: 'ativa', autor: ['Dep. Exemplo F', 'PARTIDO', 'GO'], relator: ['Dep. Exemplo G', 'PARTIDO', 'MT', 'Plenário'], parecer: { impacto: 'alto', carater: 'malefico', resumo: 'O projeto dispensa o estudo de impacto ambiental para atividades agropecuárias em imóveis de médio porte, com declaração do próprio produtor.', oQueMuda: 'Hoje o estudo prévio é exigido conforme o porte e o potencial poluidor. O projeto cria uma dispensa ampla, decidida pelo próprio interessado.' }, pauta: [2, 'Plenário da Câmara'], votacao: [-12, 'Comissão de Meio Ambiente', 21, 12], emendas: 7 },
   { id: 'pant', sigla: 'PL', numero: 140, ano: 2026, titulo: 'Regras de proteção do Pantanal', esfera: 'federal', casa: 'senado', status: 'em_tramitacao', etapa: 'Comissões', statusOficial: 'Aguardando votação na Comissão de Meio Ambiente', ementa: 'Estabelece regras de conservação, proteção, restauração e uso sustentável do bioma Pantanal.', temas: ['Florestas', 'Água'], biomas: ['Pantanal'], situacao: 'ativa', autor: ['Sen. Exemplo A', 'PARTIDO', 'MS'], relator: ['Sen. Exemplo B', 'PARTIDO', 'MT', 'Comissão de Meio Ambiente'], pauta: [4, 'Comissão de Meio Ambiente do Senado'], emendas: 4 },
   { id: 'resex', sigla: 'PL', numero: 123, ano: 2026, titulo: 'Nova reserva extrativista no Baixo Rio Exemplo', esfera: 'estadual', uf: 'PA', casa: 'assembleia', status: 'em_tramitacao', etapa: 'Plenário', ementa: 'Cria a Reserva Extrativista do Baixo Rio Exemplo, com 48 mil hectares, para comunidades extrativistas.', temas: ['Unidades de conservação', 'Povos e comunidades'], biomas: ['Amazônia'], situacao: 'ativa', autor: ['Dep. Est. Exemplo C', 'PARTIDO', 'PA'], parecer: { impacto: 'alto', carater: 'benefico', resumo: 'Cria uma unidade de conservação de uso sustentável com 48 mil hectares para comunidades extrativistas.', oQueMuda: 'A área passa a ter proteção legal e plano de manejo, com uso pelas comunidades tradicionais.' }, pauta: [6, 'Plenário da Alepa'] },
   { id: 'agua', sigla: 'Lei', numero: 4567, ano: 2026, titulo: 'Outorga coletiva de água para irrigação', esfera: 'estadual', uf: 'TO', casa: 'assembleia', status: 'norma', ementa: 'Permite que produtores de uma mesma bacia dividam uma única autorização de uso da água.', temas: ['Água'], biomas: ['Cerrado'], situacao: 'ativa', autor: ['Poder Executivo', '', ''], parecer: { impacto: 'alto', carater: 'enfraquece_indiretamente', resumo: 'A lei permite a outorga coletiva de água para irrigação, com uma única autorização para vários produtores da mesma bacia.', oQueMuda: 'O controle passa do usuário individual para o grupo, o que dificulta a fiscalização do volume retirado por cada um.' }, votacao: [-20, 'Plenário da Aleto', 18, 4] },
@@ -144,6 +162,9 @@ async function criar(payload: Payload) {
     autorExist.docs[0] ||
     (await payload.create({ collection: 'autores', data: { nome: 'Nome do Autor', slug: AUTOR_SLUG, titulo: 'Mestre em Direito Ambiental', redes: { lattes: 'https://lattes.cnpq.br/0000000000000000' } } }))
 
+  // A ficha de texto vigente da demonstração só é criada se ainda não existe uma de verdade
+  const fichaDemo = await payload.find({ collection: 'normas-vigentes', where: { chave: { equals: NORMA_DEMO.chave } }, limit: 1, depth: 0 })
+  if (!fichaDemo.docs[0]) await payload.create({ collection: 'normas-vigentes', data: { ...NORMA_DEMO, origem: 'manual' } })
   let n = 0
   for (const l of LEIS) {
     const chave = `demo:${l.id}`
@@ -187,7 +208,7 @@ async function criar(payload: Payload) {
             pontosAtencao: rich('Pontos que merecem atenção na votação e na regulamentação.'),
             proximosPassos: rich('Etapa atual da tramitação e o que vem a seguir.'),
           },
-          seo: { palavraChave: `${l.sigla} ${l.numero}/${l.ano}`, nomePopular: l.titulo },
+          seo: { palavraChave: `${l.sigla} ${l.numero}/${l.ano}`, nomePopular: l.id === 'lic' ? 'PL do licenciamento simplificado' : undefined, secundarias: l.temas },
         } as never,
       })
     }
@@ -200,7 +221,7 @@ async function criar(payload: Payload) {
           data: dias(-2),
           tipo: 'substitutivo',
           rotulo: 'Substitutivo do relator (Plenário)',
-          texto: 'Art. 3º Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até 30 módulos fiscais. § 2º A dispensa não se aplica a imóveis situados em zona de amortecimento de unidade de conservação. Art. 7º O órgão municipal ou estadual poderá exigir estudo complementar em caso de dano ambiental comprovado.',
+          texto: 'Art. 2º O art. 10 da Lei nº 6.938, de 31 de agosto de 1981, passa a vigorar com a seguinte redação: “Art. 10. .......... § 5º Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até 30 módulos fiscais. § 6º A dispensa não se aplica a imóveis situados em zona de amortecimento de unidade de conservação.” (NR) Art. 3º A Lei nº 6.938, de 31 de agosto de 1981, passa a vigorar acrescida do seguinte art. 10-A: “Art. 10-A. O órgão municipal ou estadual poderá exigir estudo complementar em caso de dano ambiental comprovado.” (AC) Art. 4º Esta Lei entra em vigor na data de sua publicação.',
         },
       })
     }
