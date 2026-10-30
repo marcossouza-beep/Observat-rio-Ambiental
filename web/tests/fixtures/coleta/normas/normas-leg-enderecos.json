@@ -2,7 +2,7 @@
   "url": "https://normas.leg.br/",
   "status": 200,
   "tipo": "application/json",
-  "gravadaEm": "2026-10-30T03:53:16.329Z",
+  "gravadaEm": "2026-10-30T03:55:26.990Z",
   "corpo": {
     "scripts": [
       "https://normas.leg.br/runtime.a48d49b6acb495b9.js",
@@ -26,7 +26,25 @@
       "http://senado.leg.br",
       "http://camara.leg.br",
       "https://www.congressonacional.leg.br/",
-      "https://angular.dev/best-practices/security#preventing-cross-site-scripting-xss"
+      "https://angular.dev/best-practices/security#preventing-cross-site-scripting-xss",
+      "56);let q=(()=>{class C{constructor(){this.legislations=new Map,this.movedFragments=new Map}cacheLegislation(U,ae){if(!U[\"@id\"])return;const he=U[\"@id\"].split(\"urn=\").pop(),te=S.B.parseUrnIdentifier(he),me=te.fragment?.value.split(\",\");me?.[1]&&this.movedFragments.set(me[0],me[1]);const Ge=new M.A(te,ae);let Fe=!1,le=this.legislations.get(te.value);le||(le=new Map,Fe=!0),le.set(Ge.version,U),Fe&&t",
+      "get(te.value);le||(le=new Map,Fe=!0),le.set(Ge.version,U),Fe&&this.legislations.set(te.value,le)}getCachedLegislation(U,ae){if(!U)return null;const he=U.split(\"urn=\").pop(),te=S.B.parseUrnIdentifier(he);let me=\"\";te.fragment?.value&&(me=this.movedFragments.get(te.fragment?.value));const Ge=new M.A(te,ae);let Fe;if(Fe=this.legislations.get(me?`${te.value},${me}`:te.value),!Fe)return null;let le=Fe.",
+      "_.d(Ce,{c:()=>M});const M={production:!0,sigenUrl:\"https://legis.senado.leg.br/sigen/\",sigenDataOpen:\"https://legis.senado.leg.br/dadosabertos/\",publicApiUrl:\"/api/public/\",apresentacaoNormasYoutubeUrl:\"https://www.youtube.com/watch?v=Pda5QWrZ-jY\",googleAnalyticsKey:\"G-CW3ZH25XMK\",version:\"2.7.25\"}},9193(bt,Ce,_){var c=_(5732),M=_(2145),S=_(656),x=_(6610),q=_(7829),C=_(4303),J=_(2978);class U{_doc",
+      "`${Jt||\"\"}/${jt}`",
+      "`${se}/${Ie}`",
+      "`${Ve}, ${ye}, */*`",
+      "`ng:///${e.name}/\\u0275prov.js`",
+      "`ng:///${e.name}/\\u0275fac.js`",
+      "`\\ufffd/*${a}\\ufffd`",
+      "`\\ufffd\\\\/\\\\*\\\\d+:${t}\\ufffd`",
+      "`./@ng/component?c=${e}&t=${encodeURIComponent(t)}`",
+      "`ng:///${e.name}/\\u0275mod.js`",
+      "`ng:///${e.name}/\\u0275inj.js`",
+      "`/${qe(T.root,!0)}`",
+      "`${b}(${O.join(\"//\")})`",
+      "`${xi(v)}/${b[0]}`",
+      "`${xi(v)}/(${b.join(\"//\")})`",
+      "`Route(url:'${this.url.map(O=>O.toString()).join(\"/\")}', path:'${this.routeConfig?this.routeConfig.path:\"\"}')`"
     ]
   }
 }
