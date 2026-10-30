@@ -797,6 +797,15 @@ async function enderecosNormasLeg() {
   }
 }
 
+/** Ficha da norma no normas.leg.br e, dela, o HTML da compilação vigente ("version": "Current"). */
+async function vigenteNormasLeg(nome: string, urn: string) {
+  const r = await fetch(`https://normas.leg.br/api/public/normas?urn=${urn}&tipo_documento=maior-detalhe`, { signal: AbortSignal.timeout(45_000) })
+  const ficha = (await r.json()) as { encoding?: { version?: string; contentUrl?: string }[] }
+  const atual = ficha.encoding?.find((e) => e.version === 'Current' && e.contentUrl)
+  if (!atual?.contentUrl) return salvar('normas', nome, { url: urn, status: null, tipo: '', gravadaEm: new Date().toISOString(), corpo: null, erro: 'sem compilação vigente' })
+  return gravarHtml('normas', nome, atual.contentUrl)
+}
+
 /** Texto compilado das leis alteradas (redação vigente): Planalto e LexML. */
 const PASSOS_NORMAS = [
   { fonte: 'normas', nome: 'planalto-codigo-florestal', rodar: () => gravarHtml('normas', 'planalto-codigo-florestal', 'https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651compilado.htm') },
@@ -806,6 +815,7 @@ const PASSOS_NORMAS = [
   { fonte: 'normas', nome: 'normas-leg-enderecos', rodar: enderecosNormasLeg },
   // API pública usada pelo próprio normas.leg.br (Senado): texto da norma com a redação vigente, por URN
   { fonte: 'normas', nome: 'normas-leg-6938', rodar: () => gravarHtml('normas', 'normas-leg-6938', 'https://normas.leg.br/api/public/normas?urn=urn:lex:br:federal:lei:1981-08-31;6938&tipo_documento=maior-detalhe') },
+  { fonte: 'normas', nome: 'normas-leg-6938-vigente', rodar: () => vigenteNormasLeg('normas-leg-6938-vigente', 'urn:lex:br:federal:lei:1981-08-31;6938') },
   { fonte: 'normas', nome: 'normas-leg-9985', rodar: () => gravarHtml('normas', 'normas-leg-9985', 'https://normas.leg.br/api/public/normas?urn=urn:lex:br:federal:lei:2000-07-18;9985&tipo_documento=maior-detalhe') },
   { fonte: 'normas', nome: 'lexml-codigo-florestal', rodar: () => gravarHtml('normas', 'lexml-codigo-florestal', 'https://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2012-05-25;12651') },
 ]
