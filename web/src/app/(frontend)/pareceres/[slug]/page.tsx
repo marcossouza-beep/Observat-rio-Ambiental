@@ -152,7 +152,7 @@ export default async function PaginaParecer({ params }: { params: Params }) {
       {materiais.length ? (
         <section className="block b-mat">
           <h2>Aprofunde</h2>
-          <p>A nota técnica é o parecer completo, com o texto base e a análise do cotejo: problema, hipótese, cenários e soluções. O quadro comparativo traz só o cotejo dos textos, artigo por artigo. Os dois PDFs levam a identificação deste parecer e um link de volta a esta página, para quem os receber depois.</p>
+          <p>A nota técnica é o parecer completo, com o texto base e a análise do cotejo: problema, hipótese, cenários e soluções. O quadro comparativo traz o cotejo literal dos textos, a testagem das hipóteses e a comparação dos cenários, com gráficos. Os dois PDFs levam a identificação deste parecer e um link de volta a esta página, para quem os receber depois.</p>
           {materiais.map((m) => (
             <a key={m.id} className="mat-card" href={`/api/baixar/${m.id}`} rel="nofollow">
               <span className="ic">

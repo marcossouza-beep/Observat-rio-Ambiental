@@ -1,0 +1,14 @@
+{
+  "nota": "Exemplo ilustrativo com dados fictícios (PL do licenciamento simplificado). Substitua pelos dados da análise.",
+  "indicador": "Supressão de vegetação nativa em imóveis de médio porte",
+  "unidade": "mil ha/ano",
+  "anos": ["2025", "2026", "2027", "2028", "2029", "2030"],
+  "cenarios": [
+    { "id": "A", "nome": "A. Referência (não aprovada)", "valores": [120, 118, 116, 115, 113, 112] },
+    { "id": "B", "nome": "B. Aprovada como está", "valores": [120, 128, 136, 142, 147, 151] },
+    { "id": "C", "nome": "C. Aprovada com ajustes", "valores": [120, 122, 124, 125, 126, 126] }
+  ],
+  "limiar": { "rotulo": "Limiar da H1 (+10% sobre 2025)", "valor": 132 },
+  "dimensoes": ["Ambiental", "Social", "Econômica", "Institucional e fiscal"],
+  "potencial": { "B": [-2, -1, 1, -1], "C": [-1, 0, 1, 0] }
+}
