@@ -778,11 +778,17 @@ async function enderecosNormasLeg() {
   try {
     const html = await (await fetch('https://normas.leg.br/', { signal: AbortSignal.timeout(45_000) })).text()
     const scripts = [...html.matchAll(/src="([^"]+\.js)"/g)].map((m) => new URL(m[1], 'https://normas.leg.br/').toString())
+    // Partes carregadas depois (Angular): o runtime lista "id":"hash" → id.hash.js
+    const runtime = scripts.find((x) => /runtime/.test(x))
+    if (runtime) {
+      const rt = await (await fetch(runtime, { signal: AbortSignal.timeout(45_000) })).text()
+      for (const m of rt.matchAll(/(\d+):"([0-9a-f]{16,20})"/g)) scripts.push(`https://normas.leg.br/${m[1]}.${m[2]}.js`)
+    }
     const achados = new Set<string>()
     for (const s of scripts) {
       const js = await (await fetch(s, { signal: AbortSignal.timeout(45_000) })).text()
       for (const m of js.matchAll(/["'`]((?:https?:)?\/\/[^"'`\s]{4,200}|\/(?:api|dadosabertos|legis|normas)[^"'`\s]{0,200})["'`]/g)) achados.add(m[1])
-      for (const m of js.matchAll(/api\/public|publicApiUrl|sigenUrl|\.get\(`/g)) achados.add(js.slice(Math.max(0, (m.index ?? 0) - 160), (m.index ?? 0) + 240))
+      for (const m of js.matchAll(/api\/public|publicApiUrl|sigenUrl|\.get\(`/g)) achados.add(js.slice(Math.max(0, (m.index ?? 0) - 160), (m.index ?? 0) + 400))
       for (const m of js.matchAll(/`[^`]{0,120}\$\{[^`]{0,160}`/g)) if (/\//.test(m[0])) achados.add(m[0])
     }
     return salvar('normas', 'normas-leg-enderecos', { url: 'https://normas.leg.br/', status: 200, tipo: 'application/json', gravadaEm, corpo: { scripts, enderecos: [...achados].slice(0, 400) } })
@@ -798,6 +804,11 @@ const PASSOS_NORMAS = [
   { fonte: 'normas', nome: 'senado-legislacao-codigo-florestal', rodar: () => gravarHtml('normas', 'senado-legislacao-codigo-florestal', `${SENADO}/legislacao/lei/12651/2012`) },
   { fonte: 'normas', nome: 'normas-leg-codigo-florestal', rodar: () => gravarHtml('normas', 'normas-leg-codigo-florestal', 'https://normas.leg.br/?urn=urn:lex:br:federal:lei:2012-05-25;12651') },
   { fonte: 'normas', nome: 'normas-leg-enderecos', rodar: enderecosNormasLeg },
+  ...['normas', 'norma', 'legislation', 'documento'].map((ep) => ({
+    fonte: 'normas',
+    nome: `normas-leg-api-${ep}`,
+    rodar: () => gravarHtml('normas', `normas-leg-api-${ep}`, `https://normas.leg.br/api/public/${ep}?urn=urn:lex:br:federal:lei:2012-05-25;12651`),
+  })),
   { fonte: 'normas', nome: 'lexml-codigo-florestal', rodar: () => gravarHtml('normas', 'lexml-codigo-florestal', 'https://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2012-05-25;12651') },
 ]
 
