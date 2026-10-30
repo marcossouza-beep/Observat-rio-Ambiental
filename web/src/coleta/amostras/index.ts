@@ -782,7 +782,7 @@ async function enderecosNormasLeg() {
     for (const s of scripts) {
       const js = await (await fetch(s, { signal: AbortSignal.timeout(45_000) })).text()
       for (const m of js.matchAll(/["'`]((?:https?:)?\/\/[^"'`\s]{4,200}|\/(?:api|dadosabertos|legis|normas)[^"'`\s]{0,200})["'`]/g)) achados.add(m[1])
-      for (const m of js.matchAll(/api\/public|urn=|\.get\(`/g)) achados.add(js.slice(Math.max(0, (m.index ?? 0) - 160), (m.index ?? 0) + 240))
+      for (const m of js.matchAll(/api\/public|publicApiUrl|sigenUrl|\.get\(`/g)) achados.add(js.slice(Math.max(0, (m.index ?? 0) - 160), (m.index ?? 0) + 240))
       for (const m of js.matchAll(/`[^`]{0,120}\$\{[^`]{0,160}`/g)) if (/\//.test(m[0])) achados.add(m[0])
     }
     return salvar('normas', 'normas-leg-enderecos', { url: 'https://normas.leg.br/', status: 200, tipo: 'application/json', gravadaEm, corpo: { scripts, enderecos: [...achados].slice(0, 400) } })
