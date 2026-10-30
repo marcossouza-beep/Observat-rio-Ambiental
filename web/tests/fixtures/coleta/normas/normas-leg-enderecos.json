@@ -1,0 +1,32 @@
+{
+  "url": "https://normas.leg.br/",
+  "status": 200,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-30T03:53:16.329Z",
+  "corpo": {
+    "scripts": [
+      "https://normas.leg.br/runtime.a48d49b6acb495b9.js",
+      "https://normas.leg.br/polyfills.ef1d24d79180befa.js",
+      "https://normas.leg.br/main.d77ca558be6c3a0a.js"
+    ],
+    "enderecos": [
+      "http://schema.org/",
+      "https://normas.leg.br",
+      "https://www.googletagmanager.com/gtag/js?id=",
+      "https://legis.senado.leg.br/sigen/",
+      "https://legis.senado.leg.br/dadosabertos/",
+      "/api/public/",
+      "https://www.youtube.com/watch?v=Pda5QWrZ-jY",
+      "http://www.w3.org/2000/svg",
+      "http://www.w3.org/1999/xhtml",
+      "http://www.w3.org/1999/xlink",
+      "http://www.w3.org/XML/1998/namespace",
+      "http://www.w3.org/2000/xmlns/",
+      "http://www.w3.org/1998/Math/MathML",
+      "http://senado.leg.br",
+      "http://camara.leg.br",
+      "https://www.congressonacional.leg.br/",
+      "https://angular.dev/best-practices/security#preventing-cross-site-scripting-xss"
+    ]
+  }
+}
