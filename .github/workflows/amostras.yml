@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       fonte:
-        description: 'camara, senado, vetos, pdf, dou, sapl (separadas por vírgula) ou vazio para todas'
+        description: 'camara, senado, vetos, pdf, dou, sapl, normas (separadas por vírgula) ou vazio para todas'
         required: false
         default: ''
       servidor:

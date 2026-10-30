@@ -772,11 +772,18 @@ const PASSOS: Passo[] = [
   },
 ]
 
+/** Texto compilado das leis alteradas (redação vigente): Planalto e LexML. */
+const PASSOS_NORMAS = [
+  { fonte: 'normas', nome: 'planalto-codigo-florestal', rodar: () => gravarHtml('normas', 'planalto-codigo-florestal', 'https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651compilado.htm') },
+  { fonte: 'normas', nome: 'planalto-snuc', rodar: () => gravarHtml('normas', 'planalto-snuc', 'https://www.planalto.gov.br/ccivil_03/leis/l9985.htm') },
+  { fonte: 'normas', nome: 'lexml-codigo-florestal', rodar: () => gravarHtml('normas', 'lexml-codigo-florestal', 'https://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2012-05-25;12651') },
+]
+
 async function main() {
   const ctx: Ctx = {}
   await mkdir(saida, { recursive: true })
   const fontes = filtro ? filtro.split(',') : null
-  for (const p of [...PASSOS, ...PASSOS_SAPL, ...passosSapl('sapl-ne', SAPL_NE), ...PASSOS_NORTE, ...PASSOS_NE, ...PASSOS_CO, ...PASSOS_SE, ...PASSOS_SUL].filter((x) => !fontes || fontes.includes(x.fonte))) {
+  for (const p of [...PASSOS, ...PASSOS_SAPL, ...passosSapl('sapl-ne', SAPL_NE), ...PASSOS_NORTE, ...PASSOS_NE, ...PASSOS_CO, ...PASSOS_SE, ...PASSOS_SUL, ...PASSOS_NORMAS].filter((x) => !fontes || fontes.includes(x.fonte))) {
     try {
       await p.rodar(ctx)
     } catch (e) {
