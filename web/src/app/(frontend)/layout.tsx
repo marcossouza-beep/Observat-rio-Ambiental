@@ -8,7 +8,7 @@ import './styles.css'
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: `${NOME_SITE} — leis ambientais explicadas`, template: `%s | ${NOME_SITE}` },
-  description: 'Observatório da legislação ambiental brasileira: o que está em votação no Congresso e nos estados, com parecer técnico assinado.',
+  description: 'Observatório da legislação ambiental brasileira: o que está em votação no Congresso e nos estados, com resumo prévio e parecer técnico assinados pelo autor.',
   openGraph: { type: 'website', locale: 'pt_BR', siteName: NOME_SITE },
   robots: { index: true, follow: true },
 }
@@ -26,7 +26,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <nav className="nav" aria-label="Principal">
               <Link href="/leis?esfera=federal">Federais</Link>
               <Link href="/estaduais">Estaduais</Link>
-              <Link href="/pareceres">Opinião</Link>
+              <Link href="/resumos">Opinião</Link>
               <Link href="/artigos">Artigos</Link>
               <Link href="/temas">Temas e biomas</Link>
               <Link href="/panorama">Panorama</Link>
@@ -46,12 +46,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/temas">Temas e biomas</Link>
               <Link href="/parlamentares">Parlamentares</Link>
               <Link href="/panorama">Panorama</Link>
-              <Link href="/pareceres">Pareceres</Link>
+              <Link href="/resumos">Resumos prévios</Link>
               <Link href="/artigos">Artigos</Link>
               <Link href="/privacidade">Privacidade</Link>
               <Link href="/termos">Termos de uso</Link>
             </nav>
-            <small>Pareceres escritos e assinados pelo autor. Textos de lei com link para a fonte oficial.</small>
+            <small>Resumos prévios escritos e assinados pelo autor. Textos de lei com link para a fonte oficial.</small>
           </div>
         </footer>
       </body>

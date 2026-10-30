@@ -11,7 +11,7 @@ describe('link rastreável', () => {
     expect(caminhoLink(r)).toBe('/r/12-nt-v2')
     expect(lerCodigo('12-nt-v2')).toEqual(r)
     expect(lerCodigo('7-qc-v1')).toEqual({ parecer: 7, material: 'quadro_comparativo', versao: 1 })
-    expect(destinoLink('pl-1-2026-x', r)).toBe('/pareceres/pl-1-2026-x?pdf=nt&v=2')
+    expect(destinoLink('pl-1-2026-x', r)).toBe('/resumos/pl-1-2026-x?pdf=nt&v=2')
   })
   it('recusa códigos fora do formato', () => {
     for (const c of ['', '12', '12-xx-v1', 'abc-nt-v1', '12-nt-v', '12-nt-v1/../x']) expect(lerCodigo(c)).toBeNull()
@@ -29,7 +29,7 @@ describe('link rastreável', () => {
       link: '/r/12-qc-v2',
       baixadoEm: '30/10/2026',
     })
-    expect(l1).toBe('ênfase jur · Quadro comparativo do parecer prévio sobre PL nº 1.234/2026 · versão 2, de 09/10/2026 · analisa: Substitutivo, de 08/10/2026 · autoria: Nome do Autor')
+    expect(l1).toBe('ênfase jur · Quadro comparativo sobre PL nº 1.234/2026 · versão 2, de 09/10/2026 · analisa: Substitutivo, de 08/10/2026 · autoria: Nome do Autor')
     expect(l2).toBe('Versão atual, texto base e histórico: https://enfasejur.com.br/r/12-qc-v2 · baixado em 30/10/2026')
   })
 })
@@ -44,7 +44,7 @@ describe('carimbo no PDF', () => {
 
   it('carimba todas as páginas com o texto e o link clicável', async () => {
     const url = 'https://enfasejur.com.br/r/12-nt-v2'
-    const saida = await carimbarPdf(await pdfDeDuasPaginas(), { linhas: ['ênfase jur · Nota técnica do parecer prévio sobre PL nº 1.234/2026 · versão 2', `Versão atual: ${url}`], url, titulo: 'Nota técnica' })
+    const saida = await carimbarPdf(await pdfDeDuasPaginas(), { linhas: ['ênfase jur · Parecer técnico sobre PL nº 1.234/2026 · versão 2', `Versão atual: ${url}`], url, titulo: 'Parecer técnico' })
     expect(saida).not.toBeNull()
     const { text } = await extractText(await getDocumentProxy(new Uint8Array(saida!)), { mergePages: false })
     expect(text).toHaveLength(2)
@@ -53,7 +53,7 @@ describe('carimbo no PDF', () => {
       expect(pagina).toContain(url)
     }
     const doc = await PDFDocument.load(saida!)
-    expect(doc.getTitle()).toBe('Nota técnica')
+    expect(doc.getTitle()).toBe('Parecer técnico')
     for (const p of doc.getPages()) expect(p.node.lookup(PDFName.of('Annots'))).toBeTruthy()
   })
 

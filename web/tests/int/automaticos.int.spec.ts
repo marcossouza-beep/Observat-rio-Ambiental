@@ -73,7 +73,7 @@ describe('resumo semanal', () => {
     expect(e.para).toBe('segue@exemplo.com')
     expect(e.texto).toMatch(/^Resumo da semana/)
     expect(e.texto).toContain('Semana decisiva para o licenciamento.')
-    expect(e.texto).toContain('PARECERES PUBLICADOS')
+    expect(e.texto).toContain('RESUMOS PRÉVIOS PUBLICADOS')
     expect(e.texto).toContain('EM VOTAÇÃO NOS PRÓXIMOS DIAS')
     expect(e.texto).toContain('Fulano de Tal (PV-TO) votou Não')
     expect(e.texto).toContain('voto a favor da proteção')

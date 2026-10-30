@@ -9,12 +9,12 @@
 | Site público | **Next.js** (renderização no servidor + páginas estáticas revalidadas) | Velocidade e SEO |
 | Painel administrativo | **Payload CMS** (embutido no Next.js) | Editor rico, coleções, papéis de usuário |
 | Banco de dados | **Postgres (Supabase)** | Dados, busca textual em português (`tsvector`), autenticação de assinantes, armazenamento de PDFs |
-| Coleta e tarefas | Agendamentos do GitHub Actions chamando `POST /api/cron/<tarefa>` com segredo (o cron gratuito da Vercel só roda 1 vez por dia) | Conectores, verificação horária, pareceres agendados, limpeza |
+| Coleta e tarefas | Agendamentos do GitHub Actions chamando `POST /api/cron/<tarefa>` com segredo (o cron gratuito da Vercel só roda 1 vez por dia) | Conectores, verificação horária, resumos prévios agendados, limpeza |
 | Processamento | Extração de texto de PDF (com OCR de reserva) e comparação de versões | Texto integral, Art. 1º, diferenças entre versões |
 | Automação | Conectores, extração de texto de PDF, filtro por palavras-chave | Capturar e organizar dados e textos oficiais. **Não escreve, não resume e não interpreta pareceres** |
 | PDF | Geração automática ao publicar | Nota Técnica e Quadro comparativo para inscritos |
 | E-mail | Resend ou Brevo | Confirmação, link mágico, alertas, newsletter |
-| Arquivos | Supabase Storage (compatível com S3), bucket privado; o acesso passa pelo Payload | Fotos, Nota técnica e Quadro comparativo |
+| Arquivos | Supabase Storage (compatível com S3), bucket privado; o acesso passa pelo Payload | Fotos, Parecer técnico e Quadro comparativo |
 | Cópia do banco | GitHub Actions: `pg_dump` diário, cifrado, com teste de restauração | Recuperação em caso de falha |
 | Hospedagem | Vercel + Supabase | Custo inicial baixo |
 
@@ -39,7 +39,7 @@ Caixa de Triagem (painel)  ──  Ativar | Monitorar | Descartar
 Dossiê (texto, justificativa, substitutivos, emendas, votações, legislação afetada)
    │
    ▼
-Análise e redação do parecer pelo autor (modelo padrão; classificação definida pelo autor)
+Análise e redação do resumo prévio pelo autor (modelo padrão; classificação definida pelo autor)
    │
    ▼
 Publicação (site + PDF) → Alertas e newsletter
@@ -97,7 +97,7 @@ Tema            id, nome, slug, eixo                 -- licenciamento, florestas
 Bioma           id, nome                              -- Amazônia, Cerrado, Caatinga...
 PalavraChave    id, termo, peso, grupo, regiao (nullable), exclusao (bool)
 
-Parecer         id, proposicao_id, versao, versao_texto_id (Versao analisada), data_referencia_texto,
+Resumo prévio         id, proposicao_id, versao, versao_texto_id (Versao analisada), data_referencia_texto,
                 desatualizado_desde (preenchido quando chega Versao nova), nota_da_versao, impacto (alto|medio|baixo),
                 carater (malefico|enfraquece_indiretamente|neutro|benefico), biomas[], areas[], status (rascunho|em_revisao|agendado|publicado),
                 publicado_em, atualizado_em, pdf_url, autor_id,
@@ -127,7 +127,7 @@ Envio           id, tipo (aviso_publicacao|alerta|resumo|acesso|comunicado|respo
                 status (fila|enviado|entregue|retorno), em
 ```
 
-**Compromisso** é a tabela que sustenta `docs/ENTREGA.md`: toda promessa com prazo nasce aqui, aparece em "Hoje" e muda de cor conforme o prazo. O aviso público ("Parecer em preparação", "Atualização em preparação") é gerado a partir do compromisso aberto; se o compromisso é retirado, o aviso muda no mesmo instante.
+**Compromisso** é a tabela que sustenta `docs/ENTREGA.md`: toda promessa com prazo nasce aqui, aparece em "Hoje" e muda de cor conforme o prazo. O aviso público ("Resumo prévio em preparação", "Atualização em preparação") é gerado a partir do compromisso aberto; se o compromisso é retirado, o aviso muda no mesmo instante.
 
 ## Controle público x restrito
 
@@ -147,11 +147,11 @@ Calculados a partir dos **pareceres publicados**, nunca de votos individuais.
 
 | Indicador | Cálculo |
 |---|---|
-| Padrão de atuação | % de pareceres por caráter (maléfico, enfraquece indiretamente, neutro, benéfico), agrupados por **jurisdição/casa** (União, Câmara, Senado, Presidência, cada UF) |
+| Padrão de atuação | % de resumos prévios por caráter (maléfico, enfraquece indiretamente, neutro, benéfico), agrupados por **jurisdição/casa** (União, Câmara, Senado, Presidência, cada UF) |
 | Tudo que tramitou × aprovado | Mesmo cálculo, filtrando as proposições que viraram norma |
 | Tendência | Diferença entre benéficos e (maléficos + indiretos): ≥ 15 pontos "tende a proteger"; ≤ −15 "tende a enfraquecer"; senão "equilibrada" |
-| Amostra mínima | Grupos com menos de 5 pareceres aparecem como "amostra pequena" e não recebem tendência |
-| Por bioma e por área | Mesmo cálculo por `Parecer.biomas[]` e `Parecer.areas[]` (um parecer pode contar em mais de um grupo), mais % de alto impacto e contagem de propostas monitoradas |
+| Amostra mínima | Grupos com menos de 5 resumos prévios aparecem como "amostra pequena" e não recebem tendência |
+| Por bioma e por área | Mesmo cálculo por `Parecer.biomas[]` e `Parecer.areas[]` (um resumo prévio pode contar em mais de um grupo), mais % de alto impacto e contagem de propostas monitoradas |
 | Leitura qualitativa | Texto editorial por bioma/área ("principais pressões", "principais avanços", "o que temos visto"), atualizado pelo autor |
 
 Paleta de polaridade (validada para daltonismo): maléfico `#C2551F`, enfraquece indiretamente `#E9A04F` com listras, neutro `#C9CFCB`, benéfico `#1F7A4D`. Percentuais sempre escritos na barra e opção "ver como tabela".
@@ -161,21 +161,21 @@ Paleta de polaridade (validada para daltonismo): maléfico `#C2551F`, enfraquece
 - O perfil "Jornalista" abre um passo extra na inscrição: veículo, tipo de veículo, função, link de comprovação (obrigatórios), e-mail profissional e registro MTb (opcionais) e autorização de verificação.
 - Verificação manual no painel (fila "Credenciamento"), em até 2 dias úteis; e-mail do domínio do veículo agiliza.
 - Status: em análise → verificado (selo "Imprensa verificada") ou recusado (com motivo).
-- O que entrega hoje: verificação do vínculo e status "imprensa verificada" na conta. Envio de pareceres sob embargo ficou fora do escopo inicial; pedido de entrevista, gráficos em PNG e dados em CSV só entram se o autor decidir.
+- O que entrega hoje: verificação do vínculo e status "imprensa verificada" na conta. Envio de resumos prévios sob embargo ficou fora do escopo inicial; pedido de entrevista, gráficos em PNG e dados em CSV só entram se o autor decidir.
 - LGPD: finalidade específica (credenciamento), consentimento separado, dados não compartilhados, exclusão a pedido.
 
 ## Dados de parlamentares: o que automatizar (e o que não fazer)
 
-**Princípio:** nenhum dado de parlamentar é cadastrado à mão. Tudo vem de fonte oficial automática ou é subproduto do registro da proposição e do parecer. A energia do autor vai para a análise e o parecer.
+**Princípio:** nenhum dado de parlamentar é cadastrado à mão. Tudo vem de fonte oficial automática ou é subproduto do registro da proposição e do resumo prévio. A energia do autor vai para a análise e o resumo prévio.
 
 | Dado | Federal (Câmara e Senado) | Estadual (Assembleias) |
 |---|---|---|
 | Lista de parlamentares, partido, UF | API de Dados Abertos (automático) | Resultados oficiais da eleição no TSE: importação **uma vez por legislatura**; ajuste pontual quando um suplente assume |
-| Autoria e relatoria | API (automático) | Registrada junto com a proposição monitorada (já é preciso registrá-la para escrever o parecer) |
+| Autoria e relatoria | API (automático) | Registrada junto com a proposição monitorada (já é preciso registrá-la para escrever o resumo prévio) |
 | Emendas | API (automático) | Só quando constarem na página da proposição; opcional |
 | Votos nominais | API (automático) | **Não mostrar.** Raramente publicados em formato aberto e muitas votações são simbólicas; manter só o resultado da votação na página da lei, quando houver |
 | Presença | API (automático) | Não mostrar |
-| Padrão das propostas de autoria | Calculado dos pareceres | Calculado dos pareceres (custo zero) |
+| Padrão das propostas de autoria | Calculado dos resumos prévios | Calculado dos resumos prévios (custo zero) |
 | Comissões, mandato | API (automático) | Não mostrar (não compensa manter) |
 | Foto | API (automático) | Iniciais; foto só se a Assembleia expuser link estável |
 
@@ -187,7 +187,7 @@ Detalhes, limites e prazos em `docs/ENTREGA.md`.
 
 - **Coletas** às 6h, 12h, 18h e 23h; cada uma grava `ultima_coleta_ok` e o volume.
 - **Páginas públicas** mostram a data da última coleta; se a fonte passar de 8 h sem coleta, aparece a nota "fonte oficial fora do ar; dados até…".
-- **Nova versão do texto** em proposta com parecer publicado → `Parecer.desatualizado_desde` preenchido, faixa pública "atualização em preparação" e compromisso de atualização aberto.
+- **Nova versão do texto** em proposta com resumo prévio publicado → `Parecer.desatualizado_desde` preenchido, faixa pública "atualização em preparação" e compromisso de atualização aberto.
 - **Contagens e gráficos** são consultas ao banco, refeitas a cada publicação; nada é digitado.
 - **Verificação horária e diária** (`Verificacao`): fontes, formato das APIs, site no ar, teste das páginas, e-mails, cópia do banco, links oficiais, sitemap. Alertas por e-mail e celular.
 - **Testes**: conectores com respostas gravadas + teste diário contra a API ao vivo; testes de navegador das páginas principais a cada mudança no código; ambiente de teste antes do ar.

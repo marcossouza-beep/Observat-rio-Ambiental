@@ -18,7 +18,7 @@ export async function FaixaParecer({ data, payload, id }: UIFieldServerProps) {
   if (data?.desatualizadoDesde) {
     return (
       <div className="obs-aviso r">
-        <b>O texto mudou em {dataCurta(data.desatualizadoDesde)}.</b> O parecer publicado analisa uma versão anterior. A página pública mostra “O texto mudou depois deste parecer; atualização em preparação”.
+        <b>O texto mudou em {dataCurta(data.desatualizadoDesde)}.</b> O resumo prévio publicado analisa uma versão anterior. A página pública mostra “O texto mudou depois deste resumo prévio; atualização em preparação”.
         Aponte a nova versão em “Versão do texto analisada”, escreva “O que mudou nesta versão” e publique. <ChipPrazo prazo={atualizacao?.docs[0]?.prazoEm} agora={agora} />
         {voto ? ` Vota em ${dataCurta(voto.data)} (${voto.orgao}).` : ''}
       </div>
@@ -29,10 +29,10 @@ export async function FaixaParecer({ data, payload, id }: UIFieldServerProps) {
     <div className="obs-aviso y">
       {prop.situacaoEditorial === 'ativa' ? (
         <>
-          Parecer prometido ao público <ChipPrazo prazo={prop.prazoParecer} agora={agora} />
+          Resumo prévio prometido ao público <ChipPrazo prazo={prop.prazoParecer} agora={agora} />
         </>
       ) : (
-        <>Esta proposta está como “{prop.situacaoEditorial}”: o site não promete parecer.</>
+        <>Esta proposta está como “{prop.situacaoEditorial}”: o site não promete resumo prévio.</>
       )}
       {voto ? ` · vota em ${dataCurta(voto.data)} (${voto.orgao})` : ''}
     </div>

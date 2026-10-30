@@ -169,7 +169,7 @@ export function FormInscricao({ perfis, subperfis, temas, biomas, para, prazoImp
         <ol className="dicas">
           <li>Abra o e-mail de {NOME_SITE}.</li>
           <li>Toque no botão do e-mail para entrar.</li>
-          <li>Pronto: notas técnicas e quadros liberados.</li>
+          <li>Pronto: pareceres técnicos e quadros liberados.</li>
         </ol>
         {jornalista ? <p className="alerta">Seu pedido de credenciamento de imprensa foi registrado. A verificação leva até {prazoImprensa} dias úteis.</p> : null}
         <p className="nota-fonte">
@@ -212,12 +212,12 @@ export function FormInscricao({ perfis, subperfis, temas, biomas, para, prazoImp
       {atual === 'voce' ? (
         <>
           <ul className="beneficios">
-            <li className="lead">O parecer é aberto a todos. Inscritos também têm:</li>
+            <li className="lead">O resumo prévio é aberto a todos. Inscritos também têm:</li>
             <li>
-              <Check /> Notas técnicas e quadros comparativos em PDF
+              <Check /> Pareceres técnicos e quadros comparativos em PDF
             </li>
             <li>
-              <Check /> Aviso por e-mail no dia em que sai o parecer
+              <Check /> Aviso por e-mail no dia em que sai o resumo prévio
             </li>
             <li>
               <Check /> Grátis, sem senha, cancele com um clique
@@ -419,12 +419,12 @@ export function FormInscricao({ perfis, subperfis, temas, biomas, para, prazoImp
             <label className="chave">
               <span>
                 Resumo semanal
-                <small>Às sextas: pareceres da semana, o que vai a voto e o que andou nos seus temas, na edição da sua região</small>
+                <small>Às sextas: resumos prévios da semana, o que vai a voto e o que andou nos seus temas, na edição da sua região</small>
               </span>
               <input type="checkbox" checked={d.resumoSemanal} onChange={(e) => setD({ ...d, resumoSemanal: e.target.checked })} />
             </label>
           </div>
-          <p className="nota-fonte">Você também recebe o aviso no dia em que sair o parecer de uma lei que você segue ou pediu, e os comunicados do observatório. Dá para mudar em Minha conta e parar com um clique, em qualquer e-mail.</p>
+          <p className="nota-fonte">Você também recebe o aviso no dia em que sair o resumo prévio de uma lei que você segue ou pediu, e os comunicados do observatório. Dá para mudar em Minha conta e parar com um clique, em qualquer e-mail.</p>
           <label className="check destaque">
             <input type="checkbox" checked={d.consentimento} onChange={(e) => setD({ ...d, consentimento: e.target.checked })} />{' '}
             <span>

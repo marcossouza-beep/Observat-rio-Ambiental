@@ -33,8 +33,8 @@ export const PRAZOS_PADRAO: Record<TipoCompromisso, RegraPrazo> = {
 }
 
 export const ROTULO_COMPROMISSO: Record<TipoCompromisso, string> = {
-  parecer_prometido: 'Parecer prometido',
-  atualizacao: 'Atualização do parecer',
+  parecer_prometido: 'Resumo prévio prometido',
+  atualizacao: 'Atualização do resumo prévio',
   correcao: 'Pedido de correção',
   credenciamento: 'Credenciamento de imprensa',
   lgpd: 'Pedido de dados pessoais',

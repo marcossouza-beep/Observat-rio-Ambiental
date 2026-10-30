@@ -19,7 +19,7 @@ export async function Navegacao({ payload, user }: ServerProps) {
         Triagem {triagem.totalDocs ? <span className="obs-badge">{triagem.totalDocs}</span> : null}
       </a>
       <a href={`${ADMIN}/fila`}>
-        Fila de pareceres {atualizar.totalDocs ? <span className="obs-badge r">{atualizar.totalDocs}</span> : null}
+        Fila de resumos prévios {atualizar.totalDocs ? <span className="obs-badge r">{atualizar.totalDocs}</span> : null}
       </a>
     </nav>
   )

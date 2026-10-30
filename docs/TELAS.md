@@ -1,5 +1,7 @@
 # Telas e funcionalidades — Observatório Ambiental
 
+> **Terminologia (30/10/2026):** a página aberta do site, antes chamada "parecer", é o **resumo prévio** (`/resumos/...`; os endereços antigos `/pareceres/...` redirecionam). O PDF antes chamado "nota técnica" é o **parecer técnico**. Nomes internos do código (coleção `pareceres`, campo `notaTecnica`) não mudaram.
+
 > Especificação funcional. Rascunhos visuais: **site público** em `prototipo/index.html` e **painel do autor** em `prototipo/painel.html`.
 > Foco atual: painel e entrega real de tudo o que o site promete (ver `docs/ENTREGA.md`).
 > Fase indicada entre colchetes: **[F1]** MVP, **[F2]** Radar, **[F3]** Alertas, **[F5]** Regional.
@@ -20,20 +22,20 @@ Ordem dos blocos, de cima para baixo:
 | Abertura e busca | Frase de abertura, campo único de busca (termo, número do PL, parlamentar, tema) e atalhos "Experimente:" (ex.: licenciamento, Pantanal, Tocantins, garimpo) que preenchem a busca e levam à lista | F1 |
 | Em votação esta semana | Até 3 itens com data em destaque, título, bandeira da esfera e órgão onde será votado; link "Ver Timeline" | F2 (manual na F1) |
 | Explore | 4 cartões (2 × 2) com ícone próprio, descrição curta e contagem: Leis federais, Leis estaduais, Opinião, Artigos. Timeline e Panorama têm acesso pela agenda e pela chamada do Panorama | F1 |
-| Mais recentes | Lista das proposições com filtro de situação (Todas, Em tramitação, Aprovadas) no título do bloco e contagem; cards com "Ler parecer" ou "Parecer em breve" | F1 |
+| Mais recentes | Lista das proposições com filtro de situação (Todas, Em tramitação, Aprovadas) no título do bloco e contagem; cards com "Ler parecer" ou "Resumo prévio em breve" | F1 |
 | Panorama (chamada) | Barra fina com o padrão de atuação geral e link para o Panorama | F3 |
-| Chamada de cadastro | "Notas técnicas e quadros comparativos grátis para inscritos" | F1 |
+| Chamada de cadastro | "Pareceres técnicos e quadros comparativos grátis para inscritos" | F1 |
 | Rodapé | Temas e biomas, Metodologia, Correções, Independência, Política de privacidade, Termos de uso | F1 |
 
-**Ícones:** traço único (1,8 px), cor verde da marca, sobre quadrado verde-claro de cantos arredondados. Em telas estreitas, os cartões do Explore viram uma coluna. Temas e biomas ficam fora da home; o acesso é pelo rodapé, pelo Panorama e pelos "Assuntos" de cada parecer.
+**Ícones:** traço único (1,8 px), cor verde da marca, sobre quadrado verde-claro de cantos arredondados. Em telas estreitas, os cartões do Explore viram uma coluna. Temas e biomas ficam fora da home; o acesso é pelo rodapé, pelo Panorama e pelos "Assuntos" de cada resumo prévio.
 
 ## A2. Listagem e resultados de busca
 
 | Elemento | Funcionalidade | Fase |
 |---|---|---|
-| Barra de filtros | Casa, tipo, status, tema, região, UF, impacto, caráter, **com parecer / sem parecer**, período | F1 |
+| Barra de filtros | Casa, tipo, status, tema, região, UF, impacto, caráter, **com resumo prévio / sem parecer**, período | F1 |
 | Ordenação | Relevância, mais recentes, próximos da votação | F1 / F2 |
-| Card da proposição | Número e data; **badge de status** colorido; ementa (2 linhas); tags de impacto e caráter; autor (partido-UF); selo "Parecer disponível"; botão **Ver detalhes** | F1 |
+| Card da proposição | Número e data; **badge de status** colorido; ementa (2 linhas); tags de impacto e caráter; autor (partido-UF); selo "Resumo prévio disponível"; botão **Ver detalhes** | F1 |
 | Paginação | Numerada, com URL própria por página (SEO) | F1 |
 | Busca textual | No título, ementa e texto integral, em português (radicais, acentos) | F1 |
 
@@ -48,18 +50,18 @@ Ordem dos blocos, de cima para baixo:
 | Tags | Impacto (Alto/Médio/Baixo), caráter (Benéfico/Neutro/Maléfico), temas, biomas, regiões | Público | F1 |
 | Linha do tempo | Tramitação resumida, com destaque para a próxima etapa | Público | F1 (manual) / F2 (automática) |
 | Atores | Autor(es), relator atual, resultado das votações | Público | F2 |
-| Resumo do parecer | Em linguagem simples: o que muda, quem é afetado, quando vota | Público | F1 |
-| Conclusão | Posição do parecer em 1–2 parágrafos | Público | F1 |
-| Parecer técnico | Resumo rápido (o que muda, quem é afetado, próximo passo), análise e conclusão | Público | F1 |
+| Resumo do resumo prévio | Em linguagem simples: o que muda, quem é afetado, quando vota | Público | F1 |
+| Conclusão | Posição do resumo prévio em 1–2 parágrafos | Público | F1 |
+| Resumo prévio | Resumo rápido (o que muda, quem é afetado, próximo passo), análise e conclusão | Público | F1 |
 | Posicionamentos | Mapa de votos por parlamentar, partido e UF; orientações de bancada | Público | F2 |
 | Emendas e ênfases | Quem apresentou o quê; eixos e argumentos centrais | Público | F2 |
 | Texto integral | Texto oficial (*ipsis litteris*) com link para a fonte e versões | Público | F1 |
 | Material completo | **Nota Técnica** e **Quadro comparativo** (lei vigente × proposta) em PDF | **Inscritos** | F1 |
 | Acompanhar | Botão "Seguir esta proposição" (alertas por e-mail) | Cadastro | F3 |
 
-**Lei ainda sem parecer:** o bloco do parecer vira "Parecer em preparação" (publicado nos próximos dias, na mesma página), com "O que já se sabe" (frase automática com casa, autoria, etapa, votações e emendas) e o botão "Avise-me quando o parecer sair". O bloco Material não aparece até o parecer sair.
+**Lei ainda sem parecer:** o bloco do resumo prévio vira "Resumo prévio em preparação" (publicado nos próximos dias, na mesma página), com "O que já se sabe" (frase automática com casa, autoria, etapa, votações e emendas) e o botão "Avise-me quando o resumo prévio sair". O bloco Material não aparece até o resumo prévio sair.
 
-**Comportamento para o visitante:** lê a lei e o parecer inteiros; os materiais aparecem com cadeado e o botão **"Liberar materiais"** abre a inscrição.
+**Comportamento para o visitante:** lê a lei e o resumo prévio inteiros; os materiais aparecem com cadeado e o botão **"Liberar materiais"** abre a inscrição.
 
 ## A4. Cadastro (modal e página)
 
@@ -79,7 +81,7 @@ Ordem dos blocos, de cima para baixo:
 
 Proposições seguidas, temas e regiões assinados, preferências de e-mail, histórico de downloads, exportar e excluir meus dados. **[F3]**
 
-> **Construída em `/conta`:** e-mails (receber e-mails, alerta diário, resumo semanal), interesses (estado, temas, biomas), leis seguidas, aguardando parecer, parlamentares seguidos, baixar e excluir dados.
+> **Construída em `/conta`:** e-mails (receber e-mails, alerta diário, resumo semanal), interesses (estado, temas, biomas), leis seguidas, aguardando resumo prévio, parlamentares seguidos, baixar e excluir dados.
 
 ## A6. Página de parlamentar **[F3]**
 
@@ -92,17 +94,17 @@ Acesso pelos cartões de autor e relator, pelos autores de emendas e pela lista 
 | Cabeçalho | Retrato (ou iniciais) com bandeira do estado, cargo e casa, nome, partido, estado, mandato; botão Seguir |
 | Em números | Propostas ambientais de autoria, relatorias, emendas, presença em votações ambientais |
 | Comissões | Comissões em que atua (titular, suplente, presidente) |
-| Como votou | Resumo ("em N votações sobre propostas com parecer, votou no sentido da proteção em X"), barra contra / ausente / a favor, lista de votos com caráter da proposta, voto (Sim, Não, Ausente) e sentido |
+| Como votou | Resumo ("em N votações sobre propostas com resumo prévio, votou no sentido da proteção em X"), barra contra / ausente / a favor, lista de votos com caráter da proposta, voto (Sim, Não, Ausente) e sentido |
 | Autorias | Padrão das propostas de autoria (barra de caráter e tendência) e lista |
 | Relatorias e Emendas | Listas com link para a lei |
 | Método | Voto "Sim" em proposta benéfica, ou "Não" em proposta maléfica ou que enfraquece indiretamente, conta como a favor da proteção; propostas neutras ficam fora; mostra o sentido dos votos, não avalia a pessoa |
 
-## A3b. Autoria no parecer e no artigo
+## A3b. Autoria no resumo prévio e no artigo
 
 - **Só no topo, discreta:** foto pequena, "Por Nome do Autor" (link para a página do autor), ícones pequenos das redes (LinkedIn, Instagram, X, Currículo Lattes, e-mail) e título profissional. Sem quadro de autor no fim da página.
-- **Assuntos:** temas, biomas e esfera (federal/estado) como links internos, no fim do parecer.
-- **Trilha de navegação** no topo: Início › Leis federais › PL › Parecer.
-- **Página do autor** (acessada pelo nome): foto, título, biografia, redes, números e listas de pareceres e artigos.
+- **Assuntos:** temas, biomas e esfera (federal/estado) como links internos, no fim do resumo prévio.
+- **Trilha de navegação** no topo: Início › Leis federais › PL › Resumo prévio.
+- **Página do autor** (acessada pelo nome): foto, título, biografia, redes, números e listas de resumos prévios e artigos.
 
 ## A6b. Deputados estaduais
 
@@ -113,11 +115,11 @@ Acesso pelos cartões de autor e relator, pelos autores de emendas e pela lista 
 | Busca | Por nome ou partido |
 | Lista | Deputados com autoria, relatoria ou emenda em propostas monitoradas, com barra do caráter das autorias; os demais ficam recolhidos em "Outros N deputados" |
 | Nota de fonte | Lista vem do TSE (uma vez por legislatura); autorias vêm das propostas monitoradas; votos individuais não são mostrados |
-| Perfil estadual | Versão leve da página de parlamentar: sem "Como votou", presença e comissões; números (autorias monitoradas, relatorias, emendas, com parecer), aviso de que a Assembleia não publica votos nominais em formato aberto, abas Autorias, Relatorias e Emendas |
+| Perfil estadual | Versão leve da página de parlamentar: sem "Como votou", presença e comissões; números (autorias monitoradas, relatorias, emendas, com resumo prévio), aviso de que a Assembleia não publica votos nominais em formato aberto, abas Autorias, Relatorias e Emendas |
 
 ## A7. Página de tema e de região **[F1 / F5]**
 
-Texto introdutório do tema ou da região, proposições em pauta, pareceres, filtros; assinatura da newsletter regional.
+Texto introdutório do tema ou da região, proposições em pauta, resumos prévios, filtros; assinatura da newsletter regional.
 
 ## A8. Metodologia **[F1]**
 
@@ -125,25 +127,25 @@ Página de transparência, com sumário fixo e versão do método (ex.: 1.0) e d
 
 | Seção | Conteúdo |
 |---|---|
-| 1. Do projeto ao parecer | Monitoramento (automático) → Triagem (automático + pessoa) → Análise (pessoa) → Parecer (pessoa, modelo fixo) → Publicação e atualização (versões) |
+| 1. Do projeto ao resumo prévio | Monitoramento (automático) → Triagem (automático + pessoa) → Análise (pessoa) → Resumo prévio (pessoa, modelo fixo) → Publicação e atualização (versões) |
 | 2. Como classificamos | Caráter em 4 categorias com definição e exemplo real do site ao tocar; tabela de critérios de impacto (alto, médio, baixo); regra de desempate (usa o nível mais alto e explica) |
 | 3. Indicadores | Padrão de atuação, tendência (fórmula e limites de ±15), amostra mínima (5), sentido do voto federal, biomas e áreas (contagem múltipla), estados sem votos |
 | 4. Fontes | Tabela fonte · o que usamos · frequência; vale sempre a fonte oficial |
-| 5. Automação e IA | A automação só captura e organiza dados e textos oficiais; nunca escreve, resume, compara ou interpreta; todo parecer é escrito e assinado pelo autor |
+| 5. Automação e IA | A automação só captura e organiza dados e textos oficiais; nunca escreve, resume, compara ou interpreta; todo resumo prévio é escrito e assinado pelo autor |
 | 6. Independência e limites | Projeto pessoal, não é consultoria nem peça processual, sem patrocínio de interessados, avalia propostas e não pessoas |
 | 7. Correções | Formulário de pedido de correção e registro público das correções |
 | 8. Perguntas frequentes | Respostas curtas e expansíveis |
 
-Acesso: rodapé (Metodologia, Correções, Independência), notas de método do Panorama e do padrão de atuação, e o link "como classificamos" no veredito do parecer.
+Acesso: rodapé (Metodologia, Correções, Independência), notas de método do Panorama e do padrão de atuação, e o link "como classificamos" no veredito do resumo prévio.
 
 ## A9. Timeline **[F1 manual / F2 automática]**
 
 | Elemento | Funcionalidade |
 |---|---|
 | Próximas votações | 3 cartões com data, lei e órgão |
-| Filtros | Tudo · Pareceres · Votações · Leis sancionadas · **Seguindo** e **Meu estado** (só para inscritos; para visitantes abrem a inscrição) |
-| Feed | Agrupado por dia; cada acontecimento tem tipo (parecer publicado, entrou em pauta, votação, texto alterado, virou lei, veto), estado, número, título e uma linha de explicação |
-| Ações por item | Ler parecer / Ver lei · **Seguir** (alerta por e-mail) · **Compartilhar** |
+| Filtros | Tudo · Resumos prévios · Votações · Leis sancionadas · **Seguindo** e **Meu estado** (só para inscritos; para visitantes abrem a inscrição) |
+| Feed | Agrupado por dia; cada acontecimento tem tipo (resumo prévio publicado, entrou em pauta, votação, texto alterado, virou lei, veto), estado, número, título e uma linha de explicação |
+| Ações por item | Ler resumo prévio / Ver lei · **Seguir** (alerta por e-mail) · **Compartilhar** |
 
 ## A10. Cabeçalho do inscrito
 
@@ -154,7 +156,7 @@ Acesso: rodapé (Metodologia, Correções, Independência), notas de método do 
 
 ## A11. Compartilhar e citar
 
-Disponível na página da lei (botão), em cada item da Timeline e no fim do parecer (bloco fixo).
+Disponível na página da lei (botão), em cada item da Timeline e no fim do resumo prévio (bloco fixo).
 
 | Aba | Conteúdo |
 |---|---|
@@ -164,12 +166,12 @@ Disponível na página da lei (botão), em cada item da Timeline e no fim do par
 | Instagram | Card quadrado 1080 × 1080 gerado com título, tags e número |
 | Citação acadêmica | **ABNT (NBR 6023)**, **APA 7** e **BibTeX**, com data de acesso automática |
 
-## A12. Opinião (vitrine dos pareceres)
+## A12. Opinião (vitrine dos resumos prévios)
 
 | Elemento | Funcionalidade |
 |---|---|
-| Placar | Total de pareceres e barra Benéficos / Neutros / Maléficos; tocar numa cor filtra a lista |
-| Mais recente | Destaque do último parecer com impacto, caráter e situação |
+| Placar | Total de resumos prévios e barra Benéficos / Neutros / Maléficos; tocar numa cor filtra a lista |
+| Mais recente | Destaque do último resumo prévio com impacto, caráter e situação |
 | Lista | Data, título, estado, tags, número e tempo de leitura; filtros Benéficos, Maléficos, Alto impacto, Federais, Estaduais |
 
 ## A13. Artigos
@@ -183,7 +185,7 @@ Disponível na página da lei (botão), em cada item da Timeline e no fim do par
 
 ## A14. Leitura de artigo
 
-Barra de progresso de leitura, categoria, título, linha fina, autor; texto com intertítulos, citação em destaque e gráfico simples; **Leis citadas** (com status, levam à página da lei); **Compartilhar e citar** (mesmas abas do parecer, com textos próprios de artigo); **Leia também**.
+Barra de progresso de leitura, categoria, título, linha fina, autor; texto com intertítulos, citação em destaque e gráfico simples; **Leis citadas** (com status, levam à página da lei); **Compartilhar e citar** (mesmas abas do resumo prévio, com textos próprios de artigo); **Leia também**.
 
 ## A15. Leis estaduais
 
@@ -191,7 +193,7 @@ Barra de progresso de leitura, categoria, título, linha fina, autor; texto com 
 |---|---|
 | Mapa do Brasil em blocos | Um bloco por estado, na posição aproximada; cor indica quantas leis estão em destaque; listrado = "em breve" (estado ainda fora do monitoramento) |
 | Atalhos por região | Norte, Nordeste, Centro-Oeste, Sudeste, Sul destacam os estados da região |
-| Painel do estado | Região, nome, Assembleia; em tramitação, aprovadas, com parecer; tipo de cobertura (automática, manual, em breve); lista de leis; "Acompanhar estado" ou "Avise-me" |
+| Painel do estado | Região, nome, Assembleia; em tramitação, aprovadas, com resumo prévio; tipo de cobertura (automática, manual, em breve); lista de leis; "Acompanhar estado" ou "Avise-me" |
 | Padrão | Para o inscrito, abre no estado cadastrado |
 
 ## A16. Leis federais
@@ -213,7 +215,7 @@ Fluxo próprio para telas pequenas (no computador, a página `#inscricao-celular
 | Passos | Você → Perfil → **Imprensa** (só jornalistas) → Interesses (estado com bandeira, temas, **biomas**) → Confirmação |
 | Botão principal | Barra fixa no pé da tela, ao alcance do polegar: "Voltar" e "Continuar" com 52px de altura; a mensagem de erro aparece dentro da barra, sempre à vista; respeita a área segura do iPhone |
 | Formulário | No celular ocupa a largura toda, como uma folha; o texto de abertura some e vira a lista de benefícios do primeiro passo |
-| Benefícios | Lista curta no primeiro passo: "O parecer é aberto a todos. Inscritos também têm: notas técnicas e quadros em PDF, aviso no dia do parecer, grátis e sem senha" |
+| Benefícios | Lista curta no primeiro passo: "O resumo prévio é aberto a todos. Inscritos também têm: pareceres técnicos e quadros em PDF, aviso no dia do resumo prévio, grátis e sem senha" |
 | E-mail | Sugestão para erro de digitação no domínio ("Você quis dizer ana@gmail.com?"), com um toque para corrigir |
 | Perfil | Cartões grandes de toque (escolha única, com marcador de rádio). Ao escolher, a lista se recolhe no cartão "Perfil escolhido · Trocar" e logo abaixo aparece a pergunta curta do perfil (obrigatória): Advogado → onde atua (advocacia privada, pública, jurídico de empresa, consultoria ambiental); Servidor → órgão (ambiental, MP, Defensoria, Judiciário, Legislativo, outro); Empresa → setor (agropecuária, mineração, energia, saneamento, indústria, consultoria ambiental); ONG → foco (meio ambiente, povos e comunidades, direitos e cidadania, outro); Pesquisador → área (Direito, ciências ambientais e biológicas, agrárias, engenharias, humanas e sociais); Cidadão → o que mais descreve (interesse geral, produtor rural, mora em área afetada, professor da educação básica). **Estudante** não tem subgrupo: informa **curso** (com sugestões) e **estado onde mora**, e por isso não vê o campo de estado no passo Interesses. Jornalista segue para o credenciamento |
 | Estado | Lista pelo nome do estado, com a bandeira ao lado da escolha |
@@ -225,7 +227,7 @@ Fluxo próprio para telas pequenas (no computador, a página `#inscricao-celular
 
 ## A18. Credenciamento de imprensa
 
-Passo extra quando o perfil é Jornalista: o que o credenciamento faz (verifica o vínculo com o veículo; sem envio antecipado de pareceres, fora do escopo inicial); veículo*, tipo de veículo, função, link de comprovação*, e-mail profissional, registro MTb, autorização de verificação*. Depois: status em Minha conta ("em análise" / "verificada"). Fica para depois, se o autor decidir: selo no avatar, bloco **Para a imprensa** no parecer (pedir entrevista, gráficos PNG, dados CSV) e envio sob embargo.
+Passo extra quando o perfil é Jornalista: o que o credenciamento faz (verifica o vínculo com o veículo; sem envio antecipado de resumos prévios, fora do escopo inicial); veículo*, tipo de veículo, função, link de comprovação*, e-mail profissional, registro MTb, autorização de verificação*. Depois: status em Minha conta ("em análise" / "verificada"). Fica para depois, se o autor decidir: selo no avatar, bloco **Para a imprensa** no resumo prévio (pedir entrevista, gráficos PNG, dados CSV) e envio sob embargo.
 
 ## A19. Padrão de atuação (em Leis federais e no painel de cada estado)
 
@@ -237,8 +239,8 @@ Barras 100% com Maléfico · Enfraquece indiretamente · Neutro · Benéfico, em
 
 | Aba | Conteúdo |
 |---|---|
-| Casas e estados | Ranking com bandeira, nº de pareceres, barra de caráter e tendência; alterna "tudo que tramitou / só aprovadas"; tocar leva à página da casa ou do estado |
-| Biomas | Cartão por bioma (pareceres, propostas, barra, % alto impacto); detalhe com principais pressões e avanços, temas e leis do bioma |
+| Casas e estados | Ranking com bandeira, nº de resumos prévios, barra de caráter e tendência; alterna "tudo que tramitou / só aprovadas"; tocar leva à página da casa ou do estado |
+| Biomas | Cartão por bioma (resumos prévios, propostas, barra, % alto impacto); detalhe com principais pressões e avanços, temas e leis do bioma |
 | Áreas | Linha por área com quantidade (barra) e caráter (barra 100%); tocar abre "O que temos visto" |
 | Todas | Legenda única, definição de "enfraquece indiretamente", "Ver como tabela", método e amostra mínima |
 
@@ -246,42 +248,42 @@ Barras 100% com Maléfico · Enfraquece indiretamente · Neutro · Benéfico, em
 
 ## A21. Temas e biomas
 
-**Índice (`/temas`):** cartões dos 7 biomas e das 11 áreas, cada um com nº de pareceres, barra de caráter e % de alto impacto.
+**Índice (`/temas`):** cartões dos 7 biomas e das 11 áreas, cada um com nº de resumos prévios, barra de caráter e % de alto impacto.
 
 **Página de bioma ou tema (`/biomas/cerrado`, `/temas/especies-exoticas`):**
 
 | Bloco | Conteúdo |
 |---|---|
 | Cabeçalho | Trilha de navegação, nome, **texto de abertura escrito pelo autor** (importante para SEO), tendência e botão Seguir |
-| Números | Propostas acompanhadas, pareceres, % de alto impacto, em tramitação agora |
+| Números | Propostas acompanhadas, resumos prévios, % de alto impacto, em tramitação agora |
 | Para que lado vão as propostas | Barra de caráter com percentuais e legenda |
 | Leitura qualitativa | Bioma: principais pressões e avanços. Tema: "O que temos visto" |
-| Leis acompanhadas | Cards com estado, status, caráter e "Ler parecer" ou "Parecer em breve" |
+| Leis acompanhadas | Cards com estado, status, caráter e "Ler parecer" ou "Resumo prévio em breve" |
 | Estados | Bioma: estados que o bioma abrange; tema: estados com leis sobre o tema. Monitorados levam à página do estado; os demais aparecem em cinza |
 | Relações | Bioma → temas mais frequentes; tema → biomas onde mais aparece |
 | Artigos relacionados | Até 2 |
 
-Acesso: rodapé, Panorama (nome do bioma e "Ver página do tema") e "Assuntos" de cada parecer.
+Acesso: rodapé, Panorama (nome do bioma e "Ver página do tema") e "Assuntos" de cada resumo prévio.
 
 ---
 
 # Parte B — Painel do autor
 
-> Protótipo: `prototipo/painel.html`. **Implementado em `web/`** (Sprint 3): Hoje (`/admin`), Triagem (`/admin/triagem`), Fila (`/admin/fila`) e o editor com dossiê, checagem e prévia do Google. E-mails e Inscritos completos chegam com a Sprint 4. O painel existe para cumprir o que o site promete, no prazo, sem nada desatualizado (ver `docs/ENTREGA.md`). Funciona no computador (menu lateral) e no celular (barra inferior: Hoje, Triagem, Pareceres, Pedidos, Mais).
+> Protótipo: `prototipo/painel.html`. **Implementado em `web/`** (Sprint 3): Hoje (`/admin`), Triagem (`/admin/triagem`), Fila (`/admin/fila`) e o editor com dossiê, checagem e prévia do Google. E-mails e Inscritos completos chegam com a Sprint 4. O painel existe para cumprir o que o site promete, no prazo, sem nada desatualizado (ver `docs/ENTREGA.md`). Funciona no computador (menu lateral) e no celular (barra inferior: Hoje, Triagem, Resumos prévios, Pedidos, Mais).
 
-Menu: **Trabalho** (Hoje, Triagem, Pareceres, Pedidos) · **Sistema** (Fontes e saúde, E-mails) · **Conteúdo** (Textos do site, Palavras-chave, Inscritos, Ajustes).
+Menu: **Trabalho** (Hoje, Triagem, Resumos prévios, Pedidos) · **Sistema** (Fontes e saúde, E-mails) · **Conteúdo** (Textos do site, Palavras-chave, Inscritos, Ajustes).
 
 ## B1. Hoje **[F1]**
 
 | Bloco | Conteúdo |
 |---|---|
-| Situação | Itens urgentes e pareceres prometidos em aberto |
-| Desde ontem | Novas na triagem · leis que mudaram de situação · textos que mudaram depois do parecer · alertas enviados |
-| Precisa de você | Lista única, do mais urgente: texto mudou em lei com parecer, parecer prometido atrasado ou perto do prazo, correção, credenciamento, fonte fora do ar. Cada item tem prazo e a ação direta (Abrir, Nova data, Só acompanhar, Responder, Verificar) |
-| Votações dos próximos 7 dias | Pauta oficial com a situação do parecer (publicado, desatualizado, em preparação com progresso) |
+| Situação | Itens urgentes e resumos prévios prometidos em aberto |
+| Desde ontem | Novas na triagem · leis que mudaram de situação · textos que mudaram depois do resumo prévio · alertas enviados |
+| Precisa de você | Lista única, do mais urgente: texto mudou em lei com resumo prévio, resumo prévio prometido atrasado ou perto do prazo, correção, credenciamento, fonte fora do ar. Cada item tem prazo e a ação direta (Abrir, Nova data, Só acompanhar, Responder, Verificar) |
+| Votações dos próximos 7 dias | Pauta oficial com a situação do resumo prévio (publicado, desatualizado, em preparação com progresso) |
 | Meta da semana | Publicados, agendados, em revisão e em preparação contra a meta |
 | Fontes e sistema | Resumo da saúde das fontes |
-| Promessas no ar | Quantas páginas mostram "Parecer em preparação" e "Atualização em preparação"; quantas pessoas aguardam aviso |
+| Promessas no ar | Quantas páginas mostram "Resumo prévio em preparação" e "Atualização em preparação"; quantas pessoas aguardam aviso |
 
 ## B1b. Radar **[F2]** — construído
 
@@ -293,31 +295,31 @@ Tela `/admin/radar` e atalho no menu com contador. Lista o que a coleta trouxe n
 |---|---|
 | Lista | Nota de relevância (0–100), número, fonte, data, ementa com as palavras-chave destacadas, temas encontrados, sinal de "provável homenagem" |
 | Filtros | Todas, Câmara, Senado, DOU, Estados |
-| Capacidade | "Pareceres prometidos em aberto: 5 de 10". No limite, ativar pede prazo maior ou sugere acompanhar |
-| Ativar parecer | Janela com prazo (padrão: 4 dias depois que a proposta saiu; cada linha da Triagem mostra "saiu em" e "publicar até"), prévia do aviso público e efeito na capacidade. Ao confirmar, o aviso "Parecer em preparação" vai ao ar e o dossiê fica pronto |
-| Acompanhar | A página pública mostra "Acompanhando", sem prometer parecer |
+| Capacidade | "Resumos prévios prometidos em aberto: 5 de 10". No limite, ativar pede prazo maior ou sugere acompanhar |
+| Ativar resumo prévio | Janela com prazo (padrão: 4 dias depois que a proposta saiu; cada linha da Triagem mostra "saiu em" e "publicar até"), prévia do aviso público e efeito na capacidade. Ao confirmar, o aviso "Resumo prévio em preparação" vai ao ar e o dossiê fica pronto |
+| Acompanhar | A página pública mostra "Acompanhando", sem prometer resumo prévio |
 | Descartar | Com motivo (fora do tema, homenagem ou data, duplicada, outro); o motivo ajusta as palavras-chave |
 
-## B3. Pareceres **[F1]**
+## B3. Resumos prévios **[F1]**
 
-Abas: **A atualizar** · Em preparação · Em revisão · Agendados · Publicados · Acompanhando. Cada linha mostra prazo (com cor), progresso nas 7 seções, versão do texto analisada e quantas pessoas aguardam aviso. "A atualizar" recebe sozinho todo parecer cujo texto-base mudou.
+Abas: **A atualizar** · Em preparação · Em revisão · Agendados · Publicados · Acompanhando. Cada linha mostra prazo (com cor), progresso nas 7 seções, versão do texto analisada e quantas pessoas aguardam aviso. "A atualizar" recebe sozinho todo resumo prévio cujo texto-base mudou.
 
-## B4. Editor do parecer **[F1]**
+## B4. Editor do resumo prévio **[F1]**
 
 | Elemento | Funcionalidade |
 |---|---|
 | Topo | Etapas (Rascunho → Em revisão → Agendado → Publicado), salvamento automático, pré-visualizar (visitante, inscrito, PDF) |
 | Faixa de contexto | Prazo prometido, data da votação, pessoas aguardando; ou, se o texto mudou, o que a página pública está mostrando |
-| Dossiê (esquerda) | Texto · Versões (com marcação mecânica do que entrou e saiu entre versões, como o controle de alterações de um editor de texto) · Tramitação · Atores · Lei afetada. Nada do dossiê é escrito no parecer sozinho |
-| Parecer | Parecer prévio em partes numeradas. **I. Texto base da proposta** entra sozinho, antes de qualquer análise: ementa e íntegra do texto analisado, como saíram do arquivo oficial (com a justificação do autor e, se o parecer analisa um substitutivo, o texto original recolhidos). Se a proposta altera lei existente, o mesmo bloco traz o **texto normativo alterado**: para cada dispositivo, a redação vigente (recortada do texto compilado da lei) ao lado da redação proposta, as duas literais, com nova redação, acréscimo ou revogação indicados; o mesmo quadro aparece na página da lei, com o texto mais recente. Depois, as 7 seções escritas pelo autor: II. Síntese, III. Objeto e alcance, IV. Regime vigente e proposta (comentário + quadro ponto a ponto com o efeito ↑ ↓ =), V. Classificação, VI. Relevância, VII. Pontos de atenção, VIII. Tramitação e próximos passos. Bloco "Aprofunde" montado sozinho com a nota técnica (o parecer completo: texto base, análise do cotejo, problema, hipótese, cenários, soluções) e o quadro comparativo (A. cotejo literal artigo por artigo; B. testagem das hipóteses; C. comparação de potencialidades entre cenários, com gráficos; modelos e metodologia em `docs/modelos/`). Os dois PDFs saem carimbados no pé de cada página com a identificação do parecer (versão, texto analisado, autor), o link permanente `/r/…` e um QR; o link conta o acesso (sem dado pessoal) e leva à versão atual, avisando o leitor quando o PDF que ele tem é de uma versão anterior. Em nova versão, campo "O que mudou nesta versão" |
+| Dossiê (esquerda) | Texto · Versões (com marcação mecânica do que entrou e saiu entre versões, como o controle de alterações de um editor de texto) · Tramitação · Atores · Lei afetada. Nada do dossiê é escrito no resumo prévio sozinho |
+| Resumo prévio | Resumo prévio em partes numeradas. **I. Texto base da proposta** entra sozinho, antes de qualquer análise: ementa e íntegra do texto analisado, como saíram do arquivo oficial (com a justificação do autor e, se o resumo prévio analisa um substitutivo, o texto original recolhidos). Se a proposta altera lei existente, o mesmo bloco traz o **texto normativo alterado**: para cada dispositivo, a redação vigente (recortada do texto compilado da lei) ao lado da redação proposta, as duas literais, com nova redação, acréscimo ou revogação indicados; o mesmo quadro aparece na página da lei, com o texto mais recente. Depois, as 7 seções escritas pelo autor: II. Síntese, III. Objeto e alcance, IV. Regime vigente e proposta (comentário + quadro ponto a ponto com o efeito ↑ ↓ =), V. Classificação, VI. Relevância, VII. Pontos de atenção, VIII. Tramitação e próximos passos. Bloco "Aprofunde" montado sozinho com o parecer técnico (a análise completa: texto base, análise do cotejo, problema, hipótese, cenários, soluções) e o quadro comparativo (A. cotejo literal artigo por artigo; B. testagem das hipóteses; C. comparação de potencialidades entre cenários, com gráficos; modelos e metodologia em `docs/modelos/`). Os dois PDFs saem carimbados no pé de cada página com a identificação do resumo prévio (versão, texto analisado, autor), o link permanente `/r/…` e um QR; o link conta o acesso (sem dado pessoal) e leva à versão atual, avisando o leitor quando o PDF que ele tem é de uma versão anterior. Em nova versão, campo "O que mudou nesta versão" |
 | Classificação | Impacto, caráter (4 categorias com definição), áreas, biomas. Alimenta os gráficos ao publicar |
 | SEO | Prévia do Google, palavra-chave, nome popular, título (≤ 60), descrição (≤ 155), endereço; checklist ao vivo (ver `docs/SEO.md`) |
-| Materiais | Nota técnica e Quadro comparativo em PDF; visibilidade (padrão: só inscritos) |
-| Publicar | Agora ou agendar; travas (seções, impacto, caráter, nota de versão) e avisos (nota técnica, SEO); lista do que o sistema faz sozinho ao publicar: troca o aviso pelo parecer no mesmo endereço, envia os e-mails, atualiza gráficos, Timeline, sitemap e buscadores, gera imagem e PDF |
+| Materiais | Parecer técnico e Quadro comparativo em PDF; visibilidade (padrão: só inscritos) |
+| Publicar | Agora ou agendar; travas (seções, impacto, caráter, nota de versão) e avisos (parecer técnico, SEO); lista do que o sistema faz sozinho ao publicar: troca o aviso pelo resumo prévio no mesmo endereço, envia os e-mails, atualiza gráficos, Timeline, sitemap e buscadores, gera imagem e PDF |
 
 ## B5. Pedidos **[F1 / F3]**
 
-Abas **Correções** (prazo público de 3 dias úteis; "Procede" abre a resposta e registra a correção no parecer e na página de Correções; "Não procede" responde com a justificativa) · **Imprensa** (veículo, função, e-mail com aviso de domínio do veículo, comprovação, registro; Aprovar, Pedir mais informações, Recusar; prazo de 2 dias úteis) · **Dados pessoais** (LGPD, prazo de 15 dias; excluir e avisar).
+Abas **Correções** (prazo público de 3 dias úteis; "Procede" abre a resposta e registra a correção no resumo prévio e na página de Correções; "Não procede" responde com a justificativa) · **Imprensa** (veículo, função, e-mail com aviso de domínio do veículo, comprovação, registro; Aprovar, Pedir mais informações, Recusar; prazo de 2 dias úteis) · **Dados pessoais** (LGPD, prazo de 15 dias; excluir e avisar).
 
 ## B6. Fontes e saúde **[F2]**
 
@@ -339,11 +341,11 @@ Termo, grupo, peso, exclusão e capturas em 30 dias; teste de um termo novo ante
 
 ## B10. Inscritos **[F1]**
 
-Totais, crescimento, jornalistas credenciados, conversão, parecer que levou à inscrição, perfis com a divisão por subgrupo (estudantes por curso); exportação CSV.
+Totais, crescimento, jornalistas credenciados, conversão, resumo prévio que levou à inscrição, perfis com a divisão por subgrupo (estudantes por curso); exportação CSV.
 
 ## B11. Ajustes
 
-Prazos prometidos (parecer, atualização, correção, imprensa, LGPD) e limite de pareceres em aberto, que comandam os avisos do painel e os textos públicos; canais de alerta do autor; pessoas e papéis (autor, revisor, administrador).
+Prazos prometidos (resumo prévio, atualização, correção, imprensa, LGPD) e limite de resumos prévios em aberto, que comandam os avisos do painel e os textos públicos; canais de alerta do autor; pessoas e papéis (autor, revisor, administrador).
 
 ---
 
@@ -356,4 +358,4 @@ Prazos prometidos (parecer, atualização, correção, imprensa, LGPD) e limite 
 ## Créditos de recursos visuais
 
 - **Bandeiras dos estados:** pacote [icones-bandeiras-br-uf](https://github.com/pierrelapalu/icones-bandeiras-br-uf), de Pierre Lapalu, licença **CC0 1.0** (domínio público). Estilo usado: `rounded` (proporção 3:2, cantos arredondados). Espírito Santo na versão com o lema "Trabalha e Confia"; Paraíba na versão com "NEGO".
-- Uso no site: etiqueta de estado (bandeira + nome), bandeira do Brasil para leis federais, bandeira grande no painel do estado, seletor de estado (menu do inscrito e inscrição), cabeçalho do parecer e card do Instagram.
+- Uso no site: etiqueta de estado (bandeira + nome), bandeira do Brasil para leis federais, bandeira grande no painel do estado, seletor de estado (menu do inscrito e inscrição), cabeçalho do resumo prévio e card do Instagram.

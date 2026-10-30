@@ -32,9 +32,9 @@ export async function Triagem(props: AdminViewServerProps) {
   const regras = regrasDePrazoDe(ajustes)
   const agora = new Date()
   return (
-    <Moldura props={props} titulo="Triagem" sub="Propostas captadas pelas palavras-chave. Você decide o que vira parecer.">
+    <Moldura props={props} titulo="Triagem" sub="Propostas captadas pelas palavras-chave. Você decide o que vira resumo prévio.">
       <div className="obs-faixa">
-        <span>Pareceres prometidos em aberto</span>
+        <span>Resumos prévios prometidos em aberto</span>
         <span className="obs-barra pequena">
           <i style={{ width: `${Math.min(100, (abertos.totalDocs / limite) * 100)}%` }} className={abertos.totalDocs >= limite ? 'r' : ''} />
         </span>
@@ -78,7 +78,7 @@ export async function Triagem(props: AdminViewServerProps) {
                     </a>
                     <span>{p.esfera === 'federal' ? 'Federal' : p.uf}</span>
                     <span>saiu em {dataCurta(saida.toISOString())}</span>
-                    <span title={`Parecer publicado em até ${regras.parecer_prometido.dias} dias depois que a proposta saiu`}>
+                    <span title={`Resumo prévio publicado em até ${regras.parecer_prometido.dias} dias depois que a proposta saiu`}>
                       <ChipPrazo prazo={prazoDaRegra} agora={agora} />
                     </span>
                   </div>
@@ -110,7 +110,7 @@ export async function Triagem(props: AdminViewServerProps) {
         )}
       </section>
       <p className="obs-nota">
-        Ativar põe na página pública o aviso “Parecer em preparação” com prazo. Acompanhar mostra “Acompanhando”, sem prometer parecer. Descartar não publica nada; o
+        Ativar põe na página pública o aviso “Resumo prévio em preparação” com prazo. Acompanhar mostra “Acompanhando”, sem prometer resumo prévio. Descartar não publica nada; o
         motivo fica registrado para ajustar as palavras-chave. As áreas e os biomas sugeridos (pelos termos encontrados) vão junto ao ativar ou acompanhar; desmarque o
         que não couber.
       </p>

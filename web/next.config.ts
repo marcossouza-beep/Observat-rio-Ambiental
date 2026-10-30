@@ -26,6 +26,13 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(dirname),
   },
+  // A página que se chamava "parecer" passou a ser o "resumo prévio" (/resumos); endereços antigos continuam valendo
+  async redirects() {
+    return [
+      { source: '/pareceres', destination: '/resumos', permanent: true },
+      { source: '/pareceres/:slug', destination: '/resumos/:slug', permanent: true },
+    ]
+  },
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })

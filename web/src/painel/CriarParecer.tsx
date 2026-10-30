@@ -26,7 +26,7 @@ export function CriarParecer({ proposicao }: { proposicao: number | string }) {
   return (
     <span className="obs-acoes coluna">
       <button type="button" className="obs-btn p" disabled={salvando} onClick={criar}>
-        Começar parecer
+        Começar resumo prévio
       </button>
       {erro ? <span className="obs-erro">{erro}</span> : null}
     </span>

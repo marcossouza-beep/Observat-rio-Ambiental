@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const p = d.parlamentar
   const r = resumoDosVotos(d.votos)
   const desc = r.consideradas
-    ? `Como ${p.nome} (${p.partido}-${p.uf}) votou em propostas ambientais: a favor da proteção em ${r.aFavor} de ${r.consideradas} votações com parecer.`
+    ? `Como ${p.nome} (${p.partido}-${p.uf}) votou em propostas ambientais: a favor da proteção em ${r.aFavor} de ${r.consideradas} votações com resumo prévio.`
     : `Atuação de ${p.nome} (${p.partido}-${p.uf}) em propostas ambientais: autorias, relatorias e votos.`
   return { title: `${p.nome} (${p.partido}-${p.uf}): votos e propostas ambientais`, description: desc.slice(0, 155), alternates: { canonical: `/parlamentares/${p.slug}` } }
 }
@@ -108,7 +108,7 @@ export default async function PaginaParlamentar({ params }: { params: Params }) 
         {r.consideradas ? (
           <>
             <p className="intro">
-              Em <b>{r.consideradas}</b> {r.consideradas === 1 ? 'votação' : 'votações'} sobre propostas com parecer, votou no sentido da proteção em <b>{r.aFavor}</b>.
+              Em <b>{r.consideradas}</b> {r.consideradas === 1 ? 'votação' : 'votações'} sobre propostas com resumo prévio, votou no sentido da proteção em <b>{r.aFavor}</b>.
             </p>
             <div className="barra-sentido" role="img" aria-label={`A favor ${r.percentuais.aFavor}%, sem voto ${r.percentuais.semVoto}%, contra ${r.percentuais.contra}%`}>
               <i className="contra" style={{ width: `${r.percentuais.contra}%` }} />
@@ -128,7 +128,7 @@ export default async function PaginaParlamentar({ params }: { params: Params }) 
             </div>
           </>
         ) : (
-          <p className="nota-fonte">{votos.length ? 'Ainda não há parecer publicado sobre as propostas que votou.' : 'Nenhum voto registrado em propostas acompanhadas pelo site.'}</p>
+          <p className="nota-fonte">{votos.length ? 'Ainda não há resumo prévio publicado sobre as propostas que votou.' : 'Nenhum voto registrado em propostas acompanhadas pelo site.'}</p>
         )}
         {votos.length ? (
           <div className="votos-lista">
@@ -167,7 +167,7 @@ export default async function PaginaParlamentar({ params }: { params: Params }) 
             </div>
             <p className="nota-fonte">
               {ROTULO_TENDENCIA[padrao.tendencia.tipo]}
-              {padrao.tendencia.tipo === 'amostra_pequena' ? ` (só ${padrao.distribuicao.total} com parecer; a tendência aparece a partir de 5)` : ''} ·{' '}
+              {padrao.tendencia.tipo === 'amostra_pequena' ? ` (só ${padrao.distribuicao.total} com resumo prévio; a tendência aparece a partir de 5)` : ''} ·{' '}
               {CARATERES.filter((c) => padrao.distribuicao.percentuais[c]).map((c) => `${ROTULO_CARATER[c]} ${padrao.distribuicao.percentuais[c]}%`).join(' · ')}
             </p>
           </>
@@ -215,7 +215,7 @@ export default async function PaginaParlamentar({ params }: { params: Params }) 
       <section className="block b-pend" id="metodo">
         <h2>Método</h2>
         <p className="nota-fonte" style={{ fontSize: '0.9rem' }}>
-          Voto “Sim” em proposta benéfica, ou “Não” em proposta maléfica ou que enfraquece indiretamente, conta como a favor da proteção. Propostas neutras e as que ainda não têm parecer ficam fora da conta. A página mostra o sentido dos votos em propostas acompanhadas pelo site; não avalia a pessoa. Votos e autoria vêm das bases oficiais da Câmara e do Senado.
+          Voto “Sim” em proposta benéfica, ou “Não” em proposta maléfica ou que enfraquece indiretamente, conta como a favor da proteção. Propostas neutras e as que ainda não têm resumo prévio ficam fora da conta. A página mostra o sentido dos votos em propostas acompanhadas pelo site; não avalia a pessoa. Votos e autoria vêm das bases oficiais da Câmara e do Senado.
         </p>
       </section>
     </div>

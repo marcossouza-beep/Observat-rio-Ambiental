@@ -31,7 +31,7 @@ export const Compromissos: CollectionConfig = {
           required: true,
           options: [
             { label: 'Proposição', value: 'proposicoes' },
-            { label: 'Parecer', value: 'pareceres' },
+            { label: 'Resumo prévio', value: 'pareceres' },
             { label: 'Pedido', value: 'pedidos' },
             { label: 'Credenciamento', value: 'credenciamentos' },
           ],
@@ -142,7 +142,7 @@ export const Pedidos: CollectionConfig = {
       type: 'text',
       admin: {
         condition: (d) => d.tipo === 'correcao' && d.decisao === 'procede',
-        description: 'Aparece no rodapé do parecer e na página de Correções. Ex.: "Placar da votação na Comissão corrigido para 21 a 12."',
+        description: 'Aparece no rodapé do resumo prévio e na página de Correções. Ex.: "Placar da votação na Comissão corrigido para 21 a 12."',
       },
     },
     { name: 'correcao', label: 'Correção registrada', type: 'relationship', relationTo: 'correcoes', admin: { readOnly: true, condition: (d) => !!d.correcao } },

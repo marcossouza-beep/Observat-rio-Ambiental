@@ -16,7 +16,7 @@ export const Materiais: CollectionConfig = {
       type: 'select',
       required: true,
       options: [
-        { label: 'Nota técnica', value: 'nota_tecnica' },
+        { label: 'Parecer técnico', value: 'nota_tecnica' },
         { label: 'Quadro comparativo', value: 'quadro_comparativo' },
         { label: 'Outro', value: 'outro' },
       ],

@@ -24,14 +24,14 @@ export async function avisarPublicacao(req: PayloadRequest, parecer: { id: numbe
   })
   if (!r.docs.length) return 0
   const prop = await req.payload.findByID({ collection: 'proposicoes', id: propId, req, depth: 0 })
-  const url = `${SITE_URL}/pareceres/${parecer.slug}`
+  const url = `${SITE_URL}/resumos/${parecer.slug}`
   const resumo = textoDe(parecer.secoes?.resumo)
-  const assunto = novaVersao ? `Parecer atualizado: ${prop.rotulo}` : `Saiu o parecer: ${prop.rotulo}`
+  const assunto = novaVersao ? `Resumo prévio atualizado: ${prop.rotulo}` : `Saiu o resumo prévio: ${prop.rotulo}`
   for (const a of r.docs) {
     const m = modelo({
-      titulo: novaVersao ? `O parecer sobre ${prop.rotulo} foi atualizado` : `Saiu o parecer sobre ${prop.rotulo}`,
+      titulo: novaVersao ? `O resumo prévio sobre ${prop.rotulo} foi atualizado` : `Saiu o resumo prévio sobre ${prop.rotulo}`,
       paragrafos: [prop.titulo || '', resumo].filter(Boolean),
-      botao: { texto: 'Ler o parecer', url },
+      botao: { texto: 'Ler o resumo prévio', url },
       descadastro: linkDescadastro(a.id),
     })
     await enfileirar(req.payload, { tipo: 'aviso_publicacao', para: a.email, assunto, ...m, assinante: a.id, parecer: parecer.id }, req)

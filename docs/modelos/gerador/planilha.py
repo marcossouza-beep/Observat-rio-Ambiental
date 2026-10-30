@@ -50,7 +50,7 @@ linhas = [
     ('', {}),
     ('Como usar', dict(bold=True, size=11)),
     ('1. Preencha só as células amarelas (texto azul). As demais são fórmulas e se atualizam sozinhas.', {}),
-    ('2. Aba Hipóteses: uma linha por hipótese da nota técnica (parte 6). O critério sugere um resultado; o resultado final é sempre do autor (coluna L).', {}),
+    ('2. Aba Hipóteses: uma linha por hipótese do parecer técnico (parte 6). O critério sugere um resultado; o resultado final é sempre do autor (coluna L).', {}),
     ('3. Aba Cenários: valores do indicador da H1 por ano em cada cenário (A, B, C). O gráfico de trajetória e o limiar da H1 se atualizam.', {}),
     ('4. Aba Potencialidades: direção do efeito de B e C em relação a A, de −2 a +2, por dimensão. O gráfico se atualiza.', {}),
     ('5. Copie os gráficos para o quadro comparativo (parte C) e cite, abaixo de cada um, a fonte e o ano dos dados.', {}),
@@ -72,7 +72,7 @@ c = ws.cell(row=len(linhas) + 2, column=1, value='Célula para preencher'); entr
 
 # ---------------- Hipóteses ----------------
 wh = wb.create_sheet('Hipóteses')
-tit = ['Nº', 'Hipótese (como na nota técnica)', 'Indicador', 'Unidade', 'Fonte da linha de base', 'Linha de base', 'Sentido esperado', 'Limiar (variação que sustenta a hipótese)', 'Variação observada ou projetada', 'Confiança da evidência', 'Resultado pelo critério', 'Resultado final (autor)', 'Justificativa em 1 linha']
+tit = ['Nº', 'Hipótese (como no parecer técnico)', 'Indicador', 'Unidade', 'Fonte da linha de base', 'Linha de base', 'Sentido esperado', 'Limiar (variação que sustenta a hipótese)', 'Variação observada ou projetada', 'Confiança da evidência', 'Resultado pelo critério', 'Resultado final (autor)', 'Justificativa em 1 linha']
 cabecalho(wh, 1, tit, [5, 42, 30, 12, 26, 12, 14, 16, 16, 14, 20, 20, 40])
 wh.row_dimensions[1].height = 42
 exemplo = [
@@ -154,7 +154,7 @@ for i, dim in enumerate(dados['dimensoes']):
 dv4 = DataValidation(type='whole', operator='between', formula1='-2', formula2='2', showErrorMessage=True, error='Use um inteiro de −2 a +2.')
 wp.add_data_validation(dv4); dv4.add('B2:C5')
 r = 2 + len(dados['dimensoes']) + 1
-for t in ['Escala (sempre em relação ao cenário A, a referência)', '−2 piora muito · −1 piora · 0 sem mudança · +1 melhora · +2 melhora muito', 'Dimensões fixas: ambiental, social, econômica, institucional e fiscal (as mesmas da nota técnica, parte 7).']:
+for t in ['Escala (sempre em relação ao cenário A, a referência)', '−2 piora muito · −1 piora · 0 sem mudança · +1 melhora · +2 melhora muito', 'Dimensões fixas: ambiental, social, econômica, institucional e fiscal (as mesmas do parecer técnico, parte 7).']:
     c = wp.cell(row=r, column=1, value=t); c.font = fonte(bold=t.startswith('Escala')); r += 1
 
 bc = BarChart(); bc.type = 'bar'; bc.grouping = 'clustered'

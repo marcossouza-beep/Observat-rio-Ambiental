@@ -62,12 +62,12 @@ export async function Hoje({ payload, user }: ServerProps) {
         <b>{atrasados ? `${atrasados} ${atrasados === 1 ? 'compromisso atrasado' : 'compromissos atrasados'}` : 'Nenhum compromisso atrasado'}</b>
         <span>·</span>
         <span>
-          {prometidos} {prometidos === 1 ? 'parecer prometido' : 'pareceres prometidos'} em aberto
+          {prometidos} {prometidos === 1 ? 'resumo prévio prometido' : 'resumos prévios prometidos'} em aberto
         </span>
         <span>·</span>
         <a href={`${ADMIN}/radar`}>Radar{radar.totalDocs ? ` (${radar.totalDocs} sem ver)` : ''}</a>
         <a href={`${ADMIN}/triagem`}>Triagem</a>
-        <a href={`${ADMIN}/fila`}>Fila de pareceres</a>
+        <a href={`${ADMIN}/fila`}>Fila de resumos prévios</a>
       </div>
       <div className="obs-grid">
         <section className="obs-card">
@@ -125,7 +125,7 @@ export async function Hoje({ payload, user }: ServerProps) {
           <section className="obs-card">
             <h2>Promessas no ar</h2>
             <p className="obs-nota">
-              “Parecer em preparação” em <b>{prometidos}</b> {prometidos === 1 ? 'página' : 'páginas'} · “Atualização em preparação” em <b>{atualizacoes}</b>
+              “Resumo prévio em preparação” em <b>{prometidos}</b> {prometidos === 1 ? 'página' : 'páginas'} · “Atualização em preparação” em <b>{atualizacoes}</b>
             </p>
           </section>
         </div>
@@ -143,11 +143,11 @@ export async function Hoje({ payload, user }: ServerProps) {
                   <span>
                     <b>{p.titulo || p.rotulo}</b> · {t.orgao}{' '}
                     {par?.status === 'publicado' ? (
-                      par.desatualizadoDesde ? <Chip cor="r">Parecer desatualizado</Chip> : <Chip cor="g">Parecer publicado</Chip>
+                      par.desatualizadoDesde ? <Chip cor="r">Resumo prévio desatualizado</Chip> : <Chip cor="g">Resumo prévio publicado</Chip>
                     ) : p.situacaoEditorial === 'ativa' ? (
-                      <Chip cor="y">Parecer em preparação</Chip>
+                      <Chip cor="y">Resumo prévio em preparação</Chip>
                     ) : (
-                      <Chip>Sem parecer previsto</Chip>
+                      <Chip>Sem resumo prévio previsto</Chip>
                     )}
                   </span>
                 </a>

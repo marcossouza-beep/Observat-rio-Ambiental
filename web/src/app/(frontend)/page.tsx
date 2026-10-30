@@ -21,7 +21,7 @@ export default async function Inicio() {
   const explore = [
     { href: '/leis?esfera=federal', icone: <IconeFederal />, titulo: 'Leis federais', desc: 'Câmara, Senado e Presidência', n: `${n.federais} ${n.federais === 1 ? 'lei acompanhada' : 'leis acompanhadas'}` },
     { href: '/estaduais', icone: <IconeEstadual />, titulo: 'Leis estaduais', desc: 'Assembleias Legislativas', n: `${n.estaduais} ${n.estaduais === 1 ? 'lei' : 'leis'} · ${n.estados} ${n.estados === 1 ? 'estado' : 'estados'}` },
-    { href: '/pareceres', icone: <IconeOpiniao />, titulo: 'Opinião', desc: 'Os pareceres técnicos', n: `${n.pareceres} ${n.pareceres === 1 ? 'parecer publicado' : 'pareceres publicados'}` },
+    { href: '/resumos', icone: <IconeOpiniao />, titulo: 'Opinião', desc: 'Os resumos prévios', n: `${n.pareceres} ${n.pareceres === 1 ? 'resumo prévio publicado' : 'resumos prévios publicados'}` },
     { href: '/artigos', icone: <IconeArtigos />, titulo: 'Artigos', desc: 'Tendências, explicadores e dados', n: `${n.artigos} ${n.artigos === 1 ? 'artigo' : 'artigos'}` },
   ]
   return (
@@ -33,7 +33,7 @@ export default async function Inicio() {
           <br />
           antes de virarem <em>realidade.</em>
         </h1>
-        <p>Acompanhe o que está em votação no seu estado e no Congresso, com parecer técnico em linguagem clara.</p>
+        <p>Acompanhe o que está em votação no seu estado e no Congresso, com resumo prévio em linguagem clara.</p>
         <form className="search" action="/busca" role="search">
           <Lupa />
           <input name="q" type="search" placeholder="Busque uma lei, tema ou estado" aria-label="Buscar" />
@@ -129,7 +129,7 @@ export default async function Inicio() {
       {geral.total ? (
         <Link className="pano-chamada" href="/panorama">
           <span className="pc-t">
-            <b>Panorama</b> · para que lado vão as propostas ({geral.total} {geral.total === 1 ? 'parecer' : 'pareceres'})
+            <b>Panorama</b> · para que lado vão as propostas ({geral.total} {geral.total === 1 ? 'resumo prévio' : 'resumos prévios'})
           </span>
           <BarraCarater d={geral.tudo} fina />
           <span className="pc-s">
@@ -140,8 +140,8 @@ export default async function Inicio() {
 
       <section className="cta">
         <div>
-          <h2>Notas técnicas e quadros comparativos</h2>
-          <p>Grátis para inscritos, com aviso no dia em que sai o parecer das leis que você segue.</p>
+          <h2>Pareceres técnicos e quadros comparativos</h2>
+          <p>Grátis para inscritos, com aviso no dia em que sai o resumo prévio das leis que você segue.</p>
         </div>
         <Link className="pill-btn" href="/inscricao">
           Se inscreva grátis

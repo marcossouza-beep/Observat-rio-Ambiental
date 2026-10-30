@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (!d) return { title: 'Autor não encontrado', robots: { index: false } }
   return {
     title: `${d.autor.nome}${d.autor.titulo ? `, ${d.autor.titulo}` : ''}`,
-    description: d.autor.bio?.slice(0, 155) || `Pareceres técnicos de ${d.autor.nome} sobre legislação ambiental.`,
+    description: d.autor.bio?.slice(0, 155) || `Resumos prévios de ${d.autor.nome} sobre legislação ambiental.`,
     alternates: { canonical: `/autores/${d.autor.slug}` },
   }
 }
@@ -77,14 +77,14 @@ export default async function PaginaAutor({ params }: { params: Params }) {
       </header>
       <section className="section">
         <div className="section-h">
-          <h2>Pareceres</h2>
+          <h2>Resumos prévios</h2>
           <span>{pareceres.length}</span>
         </div>
         <div className="list">
           {pareceres.map((p) => {
             const lei = p.proposicao as Proposicao
             return (
-              <Link key={p.id} className="law" href={`/pareceres/${p.slug}`}>
+              <Link key={p.id} className="law" href={`/resumos/${p.slug}`}>
                 <div className="top">
                   <Carater valor={p.carater} />
                 </div>
@@ -94,7 +94,7 @@ export default async function PaginaAutor({ params }: { params: Params }) {
                     {lei?.rotulo} · {dataBR(p.publicadoEm)}
                   </span>
                   <span className="arrow">
-                    Ler parecer <Seta />
+                    Ler resumo prévio <Seta />
                   </span>
                 </div>
               </Link>

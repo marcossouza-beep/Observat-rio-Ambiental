@@ -16,10 +16,10 @@ describe('publicação', () => {
     expect(r.pode).toBe(false)
     expect(r.travas).toHaveLength(3)
   })
-  it('libera com tudo preenchido, avisando da nota técnica', () => {
+  it('libera com tudo preenchido, avisando do parecer técnico', () => {
     const r = checarPublicacao({ secoes: completo, impacto: 'alto', carater: 'malefico' })
     expect(r.pode).toBe(true)
-    expect(r.avisos).toContain('Nota técnica não enviada (o parecer pode sair sem ela)')
+    expect(r.avisos).toContain('Parecer técnico não enviado (o resumo prévio pode sair sem ele)')
   })
   it('quadro do cotejo vazio só avisa; com um ponto completo, some o aviso', () => {
     const aviso = 'Quadro "regime vigente e proposta" vazio: o leitor verá só o comentário'

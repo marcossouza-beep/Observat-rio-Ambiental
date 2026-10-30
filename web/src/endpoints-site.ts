@@ -56,7 +56,7 @@ async function enviarLink(payload: Payload, a: Assinante, para: string | null, p
   const url = `${SITE_URL}/api/entrar/confirmar?token=${encodeURIComponent(l.token)}${para ? `&para=${encodeURIComponent(para)}` : ''}`
   const m = modelo(
     primeiraVez
-      ? { titulo: 'Confirme sua inscrição', paragrafos: [`Olá${a.nome ? `, ${a.nome.split(' ')[0]}` : ''}! Falta só confirmar seu e-mail para liberar as notas técnicas e os quadros comparativos.`, 'O link vale por 1 hora. Se não foi você, ignore este e-mail.'], botao: { texto: 'Confirmar e entrar', url } }
+      ? { titulo: 'Confirme sua inscrição', paragrafos: [`Olá${a.nome ? `, ${a.nome.split(' ')[0]}` : ''}! Falta só confirmar seu e-mail para liberar os pareceres técnicos e os quadros comparativos.`, 'O link vale por 1 hora. Se não foi você, ignore este e-mail.'], botao: { texto: 'Confirmar e entrar', url } }
       : { titulo: 'Seu link de acesso', paragrafos: ['Use o botão abaixo para entrar. Não precisa de senha.', 'O link vale por 1 hora e só funciona uma vez. Se não foi você, ignore este e-mail.'], botao: { texto: 'Entrar', url } },
   )
   await enviarAgora(payload, { tipo: 'acesso', para: a.email, assunto: primeiraVez ? `Confirme sua inscrição em ${NOME_SITE}` : `Seu link de acesso a ${NOME_SITE}`, ...m, assinante: a.id })

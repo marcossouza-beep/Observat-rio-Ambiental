@@ -10,7 +10,7 @@ import config from '../../src/payload.config.js'
 
 const EMAIL = 'inscrita-e2e@exemplo.com'
 const PANT = '/leis/pl-140-2026-regras-de-protecao-do-pantanal'
-const RESEX_PARECER = '/pareceres/pa-pl-123-2026-nova-reserva-extrativista-no-baixo-rio-exemplo'
+const RESEX_PARECER = '/resumos/pa-pl-123-2026-nova-reserva-extrativista-no-baixo-rio-exemplo'
 let payload: Payload
 let page: Page
 
@@ -80,7 +80,7 @@ test.describe('Conta do inscrito', () => {
 
   test('Avise-me e seguir a lei, logada', async () => {
     await page.goto(PANT)
-    await page.getByRole('button', { name: 'Avise-me quando o parecer sair' }).click()
+    await page.getByRole('button', { name: 'Avise-me quando o resumo prévio sair' }).click()
     await expect(page.getByRole('button', { name: '✓ Você será avisado' })).toBeVisible()
     await page.getByRole('button', { name: 'Seguir esta lei' }).click()
     await expect(page.getByRole('button', { name: '✓ Seguindo esta lei' })).toBeVisible()
@@ -105,7 +105,8 @@ test.describe('Conta do inscrito', () => {
       .poll(async () => {
         const a = await conta()
         return { resumoSemanal: a.resumoSemanal, alertas: a.alertas, temas: (a.temas || []).length, parlamentares: (a.seguirParlamentares || []).length }
-      })
+        // Com o servidor de desenvolvimento compilando, o salvamento em segundo plano pode passar de 5 s
+      }, { timeout: 15_000 })
       .toEqual({ resumoSemanal: false, alertas: true, temas: 1, parlamentares: 1 })
   })
 
@@ -130,18 +131,18 @@ test.describe('Conta do inscrito', () => {
     // Cada página sai com a identificação do parecer e o link de volta ao site
     const { text } = await extractText(await getDocumentProxy(new Uint8Array(await r2.body())), { mergePages: true })
     const link = `/r/${par.id}-nt-v${par.versao ?? 1}`
-    expect(text).toContain('Nota técnica do parecer prévio sobre PL nº 123/2026')
+    expect(text).toContain('Parecer técnico sobre PL nº 123/2026')
     expect(text).toContain(link)
 
     // O link registra o acesso (sem dado pessoal) e leva ao parecer, avisando de qual PDF o leitor veio
     const antes = (await payload.count({ collection: 'acessos-pdf', where: { parecer: { equals: par.id } } })).totalDocs
     const r3 = await anon.request.get(link, { maxRedirects: 0 })
     expect(r3.status()).toBe(302)
-    expect(r3.headers().location).toContain(`/pareceres/${par.slug}?pdf=nt&v=${par.versao ?? 1}`)
+    expect(r3.headers().location).toContain(`/resumos/${par.slug}?pdf=nt&v=${par.versao ?? 1}`)
     expect((await payload.count({ collection: 'acessos-pdf', where: { parecer: { equals: par.id } } })).totalDocs).toBe(antes + 1)
     await anon.goto(link)
-    await expect(anon.getByText('Você chegou pelo link da nota técnica.')).toBeVisible()
-    expect((await anon.request.get('/r/qualquer-coisa', { maxRedirects: 0 })).headers().location).toMatch(/\/pareceres$/)
+    await expect(anon.getByText('Você chegou pelo link do parecer técnico.')).toBeVisible()
+    expect((await anon.request.get('/r/qualquer-coisa', { maxRedirects: 0 })).headers().location).toMatch(/\/resumos$/)
     await payload.delete({ collection: 'acessos-pdf', where: { parecer: { equals: par.id } } })
 
     await payload.update({ collection: 'pareceres', id: par.id, data: { materiais: { notaTecnica: null } } })

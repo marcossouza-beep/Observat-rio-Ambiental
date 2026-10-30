@@ -548,7 +548,7 @@ export interface Parecer {
     } | null;
   };
   /**
-   * Na dúvida entre dois níveis, use o mais alto e explique no parecer.
+   * Na dúvida entre dois níveis, use o mais alto e explique no resumo prévio.
    */
   impacto?: ('alto' | 'medio' | 'baixo') | null;
   carater?: ('malefico' | 'enfraquece_indiretamente' | 'neutro' | 'benefico') | null;
@@ -727,7 +727,7 @@ export interface Pedido {
   decisao?: ('pendente' | 'procede' | 'nao_procede' | 'atendido') | null;
   resposta?: string | null;
   /**
-   * Aparece no rodapé do parecer e na página de Correções. Ex.: "Placar da votação na Comissão corrigido para 21 a 12."
+   * Aparece no rodapé do resumo prévio e na página de Correções. Ex.: "Placar da votação na Comissão corrigido para 21 a 12."
    */
   correcaoPublica?: string | null;
   correcao?: (number | null) | Correcao;
@@ -962,7 +962,7 @@ export interface User {
   nome?: string | null;
   papel: 'admin' | 'autor' | 'revisor';
   /**
-   * Perfil público usado na assinatura dos pareceres
+   * Perfil público usado na assinatura dos resumos prévios
    */
   autor?: (number | null) | Autor;
   updatedAt: string;

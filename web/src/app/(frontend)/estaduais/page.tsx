@@ -119,7 +119,7 @@ export default async function Estaduais({ searchParams }: { searchParams: Busca 
             </div>
             <div>
               <b>{padraoUF.total}</b>
-              <span>com parecer</span>
+              <span>com resumo prévio</span>
             </div>
           </div>
           <div className="cov">

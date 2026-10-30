@@ -28,7 +28,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Busca }
   const filtrada = !!(s.situacao || s.pagina || s.casa)
   return {
     title: titulo(s.esfera, s.uf, casaValida(s.casa)),
-    description: 'Projetos de lei e normas ambientais acompanhados pelo observatório, com situação, autoria e parecer técnico.',
+    description: 'Projetos de lei e normas ambientais acompanhados pelo observatório, com situação, autoria e resumo prévio.',
     alternates: { canonical: s.esfera && !filtrada ? `/leis?esfera=${s.esfera}` : '/leis' },
     robots: filtrada ? { index: false, follow: true } : undefined,
   }

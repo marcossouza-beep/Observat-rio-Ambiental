@@ -22,6 +22,6 @@ export const Users: CollectionConfig = {
       ],
       access: { update: ({ req: { user } }) => (user as { papel?: string } | null)?.papel === 'admin' },
     },
-    { name: 'autor', type: 'relationship', relationTo: 'autores', admin: { description: 'Perfil público usado na assinatura dos pareceres' } },
+    { name: 'autor', type: 'relationship', relationTo: 'autores', admin: { description: 'Perfil público usado na assinatura dos resumos prévios' } },
   ],
 }

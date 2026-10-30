@@ -23,7 +23,7 @@ export function AviseMe({ proposicao, caminho }: { proposicao: number; caminho: 
             recarregar()
           }}
         >
-          {ligado ? '✓ Você será avisado' : 'Avise-me quando o parecer sair'}
+          {ligado ? '✓ Você será avisado' : 'Avise-me quando o resumo prévio sair'}
         </button>
         <span className="nota-fonte">Grátis. Você recebe um e-mail no dia da publicação.</span>
       </div>
@@ -43,7 +43,7 @@ export function AviseMe({ proposicao, caminho }: { proposicao: number; caminho: 
         }
       }}
     >
-      <span className="sub-h">Avise-me quando o parecer sair</span>
+      <span className="sub-h">Avise-me quando o resumo prévio sair</span>
       <label className="campo">
         Seu e-mail
         <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" placeholder="voce@exemplo.com" />

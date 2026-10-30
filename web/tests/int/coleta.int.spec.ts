@@ -242,7 +242,7 @@ describe('coleta da Câmara e do Senado', () => {
 
   it('apagar a proposição leva junto o que é dela; com parecer, não deixa', async () => {
     const par = await payload.create({ collection: 'pareceres', data: { proposicao: lic, status: 'rascunho' } })
-    await expect(payload.delete({ collection: 'proposicoes', id: lic })).rejects.toThrow(/Apague o parecer antes/)
+    await expect(payload.delete({ collection: 'proposicoes', id: lic })).rejects.toThrow(/Apague o resumo prévio antes/)
     await payload.delete({ collection: 'pareceres', id: par.id })
     await payload.delete({ collection: 'proposicoes', id: lic })
     for (const c of ['tramitacoes', 'versoes', 'votacoes', 'alertas'] as const) expect((await payload.count({ collection: c, where: { proposicao: { equals: lic } } })).totalDocs).toBe(0)

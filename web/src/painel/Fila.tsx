@@ -13,11 +13,11 @@ const ABAS = [
 ] as const
 
 const AJUDA: Record<string, string> = {
-  atualizar: 'O texto da proposta mudou depois do parecer. A página pública mostra a faixa “atualização em preparação” até sair a nova versão.',
-  prometidos: 'Pareceres prometidos ao público. O aviso “nos próximos dias” está no ar; cumpra o prazo ou passe a proposta para Acompanhar.',
+  atualizar: 'O texto da proposta mudou depois do resumo prévio. A página pública mostra a faixa “atualização em preparação” até sair a nova versão.',
+  prometidos: 'Resumos prévios prometidos ao público. O aviso “nos próximos dias” está no ar; cumpra o prazo ou passe a proposta para Acompanhar.',
   revisao: 'Prontos para a última leitura antes de agendar ou publicar.',
   agendados: 'Saem sozinhos na hora marcada (verificação a cada 15 minutos), se as travas de publicação estiverem resolvidas.',
-  publicados: 'No ar. Se o texto da proposta mudar, o parecer vai sozinho para “A atualizar”.',
+  publicados: 'No ar. Se o texto da proposta mudar, o resumo prévio vai sozinho para “A atualizar”.',
 }
 
 /** Fila de pareceres, do prometido ao publicado (docs/TELAS.md, B3). */
@@ -58,7 +58,7 @@ export async function Fila(props: AdminViewServerProps) {
           </div>
           {par ? (
             <a className="obs-btn p" href={linkDoc('pareceres', par.id)}>
-              Abrir parecer
+              Abrir resumo prévio
             </a>
           ) : (
             <CriarParecer proposicao={p.id} />
@@ -115,7 +115,7 @@ export async function Fila(props: AdminViewServerProps) {
   }
 
   return (
-    <Moldura props={props} titulo="Fila de pareceres" sub="Do prometido ao publicado, com prazo à vista.">
+    <Moldura props={props} titulo="Fila de resumos prévios" sub="Do prometido ao publicado, com prazo à vista.">
       <nav className="obs-abas" aria-label="Situação">
         {ABAS.map(([k, t]) => (
           <a key={k} href={`${ADMIN}/fila?aba=${k}`} aria-current={aba === k ? 'page' : undefined}>

@@ -1,4 +1,4 @@
-// Gera os modelos em Word da nota técnica e do quadro comparativo (ênfase jur).
+// Gera os modelos em Word do parecer técnico, do quadro comparativo e o guia da metodologia (ênfase jur).
 const fs = require('fs')
 const path = require('path')
 const {
@@ -74,29 +74,29 @@ const numeracao = { config: [
 ] }
 const estilos = { default: { document: { run: { font: FONTE, size: 21, color: CINZA } } } }
 
-// ---------------- NOTA TÉCNICA (A4 retrato) ----------------
+// ---------------- PARECER TÉCNICO (A4 retrato) ----------------
 const W = 9026 // largura útil A4 com margens de 1.440
 const nota = new Document({
-  creator: 'ênfase jur', title: 'Nota técnica (modelo)', styles: estilos, numbering: numeracao,
+  creator: 'ênfase jur', title: 'Parecer técnico (modelo)', styles: estilos, numbering: numeracao,
   sections: [{
     properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 1300, bottom: 1700, left: 1440, right: 1440, footer: 1150 } } },
-    headers: { default: cabecalho('Nota técnica') },
-    footers: { default: rodape('Nota técnica') },
+    headers: { default: cabecalho('Parecer técnico') },
+    footers: { default: rodape('Parecer técnico') },
     children: [
-      p([t('NOTA TÉCNICA Nº [__]/[ANO]', { bold: true, size: 30, color: CINZA })], { spacing: { after: 40 } }),
-      p([t('Parecer prévio sobre [sigla, número e ano da proposta]', { size: 24, color: DICA, italics: true })], { spacing: { after: 120 } }),
+      p([t('PARECER TÉCNICO Nº [__]/[ANO]', { bold: true, size: 30, color: CINZA })], { spacing: { after: 40 } }),
+      p([t('Sobre [sigla, número e ano da proposta] · resumo prévio no site: [endereço]', { size: 24, color: DICA, italics: true })], { spacing: { after: 120 } }),
       dica('Modelo padrão. Alvo: 3 páginas de análise (partes 2 a 12, cerca de 1.500 palavras); a ficha, o texto base (parte 1) e o Anexo I são transcrição e não contam. Apague as orientações em cinza e itálico ao preencher. A ordem das partes é sempre a mesma, para que as notas possam ser comparadas entre si.'),
-      dica('Este documento circula sozinho e pode ser lido meses depois: por isso abre com a identificação e o texto base. O pé de cada página fica livre: ao baixar, o sistema carimba ali a identificação do parecer, o link permanente e o QR que levam à versão atual no observatório.'),
+      dica('Este documento circula sozinho e pode ser lido meses depois: por isso abre com a identificação e o texto base. O pé de cada página fica livre: ao baixar, o sistema carimba ali a identificação do parecer técnico, o link permanente e o QR que levam à versão atual no observatório.'),
 
       h1('0. Ficha técnica'),
       ficha(W, [
         ['Proposta', '[Sigla, número e ano · casa · UF ou federal]'],
-        ['Etapa', '[Onde está na tramitação, na data do parecer]'],
+        ['Etapa', '[Onde está na tramitação, na data do parecer técnico]'],
         ['Texto analisado', '[Versão e data do texto analisado, com o endereço oficial]'],
         ['Norma vigente afetada', '[Lei e artigos que a proposta altera]'],
         ['Impacto · caráter', '[Alto, médio ou baixo] · [Maléfico, enfraquece indiretamente, neutro ou benéfico]'],
         ['Temas · biomas', '[Temas e biomas]'],
-        ['Parecer', '[Versão do parecer] · publicado em [data] · autor: [nome, título]'],
+        ['Versão', '[Versão do parecer técnico] · publicado em [data] · autor: [nome, título]'],
         ['Link permanente', '[Copie do painel, quadro "Links dos PDFs". O sistema também o carimba em cada página.]'],
         ['Quadro comparativo', '[Sim/não] · documento à parte, com a transcrição artigo por artigo'],
       ]),
@@ -127,7 +127,7 @@ const nota = new Document({
       dica('O que regula, quem é atingido, onde e a partir de quando.'),
       vaga(),
       h2('3.2 Como funciona hoje (linha de base)'),
-      dica('As regras vigentes e os números atuais. É o ponto de comparação de toda a nota.'),
+      dica('As regras vigentes e os números atuais. É o ponto de comparação de todo o parecer técnico.'),
       vaga(),
 
       h1('4. Análise do quadro comparativo'),
@@ -218,7 +218,7 @@ const nota = new Document({
       dica('Normas, dados e estudos citados. Em seguida, o que não foi possível verificar e por quê.'),
       item('[Referência]'),
       item('[Limitação da análise]'),
-      p([t('Esta nota técnica foi escrita e é assinada pelo autor indicado, que responde pelo conteúdo. Expressa análise técnica independente e não substitui orientação jurídica para casos concretos.', { size: 16, color: DICA })], { spacing: { before: 200 } }),
+      p([t('Este parecer técnico foi escrito e é assinado pelo autor indicado, que responde pelo conteúdo. Expressa análise técnica independente e não substitui orientação jurídica para casos concretos.', { size: 16, color: DICA })], { spacing: { before: 200 } }),
 
       new Paragraph({ children: [new PageBreak()] }),
       h1('Anexo I. Íntegra do texto base'),
@@ -240,17 +240,17 @@ const quadro = new Document({
     children: [
       p([t('QUADRO COMPARATIVO', { bold: true, size: 30, color: CINZA })], { spacing: { after: 40 } }),
       p([t('[Proposta]: cotejo dos textos, testagem das hipóteses e comparação de potencialidades', { size: 24, color: DICA, italics: true })], { spacing: { after: 120 } }),
-      dica('Três partes, sempre nesta ordem: A. cotejo literal dos textos (sem comentário); B. testagem das hipóteses da nota técnica (parte 6); C. comparação de potencialidades entre os cenários, com gráficos. Os números vêm da planilha de hipóteses e gráficos. O pé de cada página fica livre para o carimbo do sistema (identificação, link permanente e QR). Apague as orientações em cinza ao preencher.'),
+      dica('Três partes, sempre nesta ordem: A. cotejo literal dos textos (sem comentário); B. testagem das hipóteses do parecer técnico (parte 6); C. comparação de potencialidades entre os cenários, com gráficos. Os números vêm da planilha de hipóteses e gráficos. O pé de cada página fica livre para o carimbo do sistema (identificação, link permanente e QR). Apague as orientações em cinza ao preencher.'),
       ficha(WP, [
         ['Proposta', '[Sigla, número e ano · casa · UF ou federal] · [ementa]'],
         ['Texto proposto', '[Versão analisada e data]'],
         ['Texto vigente', '[Lei alterada, data e versão consolidada consultada]'],
-        ['Parecer de referência', 'Nota técnica nº [__]/[ANO] · versão [__] · [autor]'],
+        ['Parecer de referência', 'Parecer técnico nº [__]/[ANO] · versão [__] · [autor]'],
         ['Link permanente', '[Copie do painel, quadro "Links dos PDFs". O sistema também o carimba em cada página.]'],
       ]),
 
       h1('A. Cotejo dos textos'),
-      dica('Só transcrição: as colunas reproduzem as fontes oficiais, sem comentário. A leitura do cotejo está na nota técnica (parte 4) e no site.'),
+      dica('Só transcrição: as colunas reproduzem as fontes oficiais, sem comentário. A leitura do cotejo está no parecer técnico (parte 4) e no resumo prévio do site.'),
       tabela([1800, 6300, 6300], [
         ['Dispositivo', 'Texto vigente', 'Texto proposto'],
         ['[Lei X, art. 3º]', '[Redação atual, como na fonte oficial]', '[Redação proposta, como no texto analisado]'],
@@ -264,10 +264,10 @@ const quadro = new Document({
 
       new Paragraph({ children: [new PageBreak()] }),
       h1('B. Testagem das hipóteses'),
-      dica('Uma linha por hipótese da nota técnica (parte 6), com o limiar fixado antes de ver o resultado. A planilha sugere o resultado pelo critério; o resultado que vale é o do autor.'),
+      dica('Uma linha por hipótese do parecer técnico (parte 6), com o limiar fixado antes de ver o resultado. A planilha sugere o resultado pelo critério; o resultado que vale é o do autor.'),
       tabela([700, 3300, 2300, 1500, 1300, 1500, 1200, 2600], [
         ['Nº', 'Hipótese', 'Indicador · fonte', 'Linha de base', 'Limiar', 'Observado ou projetado', 'Confiança', 'Resultado e por quê'],
-        ['H1', '[Como na nota técnica]', '[Indicador · fonte, ano]', '[Valor, ano]', '[Ex.: +10%]', '[Ex.: +18%]', '[Alta/média/baixa]', '[Sustentada / em parte / não sustentada / inconclusiva] · [1 linha]'],
+        ['H1', '[Como no parecer técnico]', '[Indicador · fonte, ano]', '[Valor, ano]', '[Ex.: +10%]', '[Ex.: +18%]', '[Alta/média/baixa]', '[Sustentada / em parte / não sustentada / inconclusiva] · [1 linha]'],
         ['H2', '[Hipótese]', '[Indicador · fonte]', '[Valor]', '[Limiar]', '[Valor]', '[Confiança]', '[Resultado] · [1 linha]'],
       ]),
       p([t('Critérios: ', { bold: true, size: 18 }), t('sustentada, atinge o limiar no sentido esperado com evidência de confiança alta ou média; sustentada em parte, atinge ao menos metade do limiar, ou o limiar só com confiança baixa; não sustentada, fica abaixo da metade do limiar ou vai no sentido contrário; inconclusiva, falta dado ou caso comparável (diga o que faltou).', { size: 18 })], { spacing: { before: 120 } }),
@@ -275,7 +275,7 @@ const quadro = new Document({
 
       new Paragraph({ children: [new PageBreak()] }),
       h1('C. Comparação de potencialidades'),
-      dica('Os três cenários da nota técnica (parte 8), no mesmo indicador e no mesmo horizonte. Cores fixas: A azul, B laranja, C verde-água. Abaixo de cada gráfico, a fonte e o ano dos dados. Os gráficos abaixo são exemplos com dados fictícios: substitua pelos da planilha.'),
+      dica('Os três cenários do parecer técnico (parte 8), no mesmo indicador e no mesmo horizonte. Cores fixas: A azul, B laranja, C verde-água. Abaixo de cada gráfico, a fonte e o ano dos dados. Os gráficos abaixo são exemplos com dados fictícios: substitua pelos da planilha.'),
       h2('Gráfico 1. Trajetória do indicador da H1 por cenário, com o limiar da hipótese'),
       grafico('grafico-trajetoria.png', 860, 340),
       legendaFig('Exemplo ilustrativo, dados fictícios. Fonte: [fonte dos dados, ano] · Premissas: [cenários A, B e C].'),
@@ -287,7 +287,7 @@ const quadro = new Document({
       ]),
       new Paragraph({ children: [new PageBreak()] }),
       h2('Gráfico 2. Potencialidades por dimensão: B e C em relação ao cenário A'),
-      dica('Escala de −2 (piora muito) a +2 (melhora muito), sempre em relação à referência (A). Dimensões fixas: ambiental, social, econômica, institucional e fiscal, as mesmas da nota técnica (parte 7).'),
+      dica('Escala de −2 (piora muito) a +2 (melhora muito), sempre em relação à referência (A). Dimensões fixas: ambiental, social, econômica, institucional e fiscal, as mesmas do parecer técnico (parte 7).'),
       grafico('grafico-potencialidades.png', 860, 315),
       legendaFig('Exemplo ilustrativo, dados fictícios. Fonte: avaliação do autor com base em [evidências].'),
       tabela([2600, 1700, 1700, 8400], [
@@ -298,7 +298,7 @@ const quadro = new Document({
         ['Institucional e fiscal', '[−2 a +2]', '[−2 a +2]', '[Motivo]'],
       ]),
       h2('Síntese da comparação'),
-      dica('Até 3 linhas: qual cenário entrega mais proteção com menor custo, e o que a comparação muda na conclusão da nota técnica (parte 11).'),
+      dica('Até 3 linhas: qual cenário entrega mais proteção com menor custo, e o que a comparação muda na conclusão do parecer técnico (parte 11).'),
       vaga(),
 
       h1('Fontes'),
@@ -331,13 +331,13 @@ const guia = new Document({
       h1('2. Os produtos e como se ligam'),
       tabela([2000, 2300, 4726], [
         ['Produto', 'Para quem', 'O que traz'],
-        ['Parecer no site', 'Qualquer leitor', 'Parecer prévio: texto base (literal, com o como é hoje × como fica da lei alterada), síntese, objeto e alcance, regime vigente e proposta, classificação, relevância, pontos de atenção e tramitação.'],
-        ['Nota técnica (PDF)', 'Quem decide, imprensa, pesquisa', 'O parecer completo em 3 páginas de análise: texto base, leitura do cotejo, problema, hipóteses, impactos, cenários, soluções, casos, conclusão e limitações.'],
+        ['Resumo prévio (site)', 'Qualquer leitor', 'Aberto a todos: texto base (literal, com o como é hoje × como fica da lei alterada), síntese, objeto e alcance, regime vigente e proposta, classificação, relevância, pontos de atenção e tramitação.'],
+        ['Parecer técnico (PDF)', 'Quem decide, imprensa, pesquisa', 'A análise completa em 3 páginas: texto base, leitura do cotejo, problema, hipóteses, impactos, cenários, soluções, casos, conclusão e limitações.'],
         ['Quadro comparativo (PDF)', 'Quem quer conferir', 'A. cotejo literal artigo por artigo; B. testagem das hipóteses; C. comparação de potencialidades entre cenários, com gráficos.'],
         ['Planilha de hipóteses e gráficos', 'Uso interno do autor', 'Os números da testagem e dos cenários; gera os gráficos do quadro com as cores padrão.'],
       ]),
       p(t(''), { spacing: { after: 60 } }),
-      txt('A cadeia de coerência é sempre a mesma: hipóteses (nota, parte 6) → testagem (quadro, parte B) → comparação de cenários (quadro, parte C) → conclusão (nota, parte 11) → classificação publicada no site. Um elo que muda obriga a revisar os seguintes.'),
+      txt('A cadeia de coerência é sempre a mesma: hipóteses (parecer técnico, parte 6) → testagem (quadro, parte B) → comparação de cenários (quadro, parte C) → conclusão (parecer técnico, parte 11) → classificação publicada no resumo prévio. Um elo que muda obriga a revisar os seguintes.'),
 
       h1('3. Etapas e prazos'),
       new Paragraph({ numbering: { reference: 'recs', level: 0 }, children: [t('Monitoramento diário das fontes oficiais (automático).', { size: 21, color: CINZA })] }),
@@ -345,7 +345,7 @@ const guia = new Document({
       new Paragraph({ numbering: { reference: 'recs', level: 0 }, children: [t('Dossiê: texto integral, versões, tramitação, autores e texto vigente da lei alterada (automático).', { size: 21, color: CINZA })] }),
       new Paragraph({ numbering: { reference: 'recs', level: 0 }, children: [t('Análise e redação pelo autor, nos modelos fixos.', { size: 21, color: CINZA })] }),
       new Paragraph({ numbering: { reference: 'recs', level: 0 }, children: [t('Publicação em até 4 dias da saída da proposta (ou da nova versão do texto).', { size: 21, color: CINZA })] }),
-      new Paragraph({ numbering: { reference: 'recs', level: 0 }, children: [t('Atualização: texto mudou, o parecer ganha nova versão com "o que mudou"; o histórico fica público.', { size: 21, color: CINZA })] }),
+      new Paragraph({ numbering: { reference: 'recs', level: 0 }, children: [t('Atualização: texto mudou, o resumo prévio e o parecer técnico ganham nova versão com "o que mudou"; o histórico fica público.', { size: 21, color: CINZA })] }),
 
       h1('4. Leitura do texto'),
       def('Texto base.', 'Transcrição literal do arquivo oficial, sem edição, sempre com a versão e a data analisadas.'),
@@ -377,7 +377,7 @@ const guia = new Document({
       def('Formato.', '"Se aprovada, a proposta tende a produzir [efeito], porque [mecanismo]."'),
       def('Indicador.', 'O que medir e onde (fonte, unidade, ano da linha de base).'),
       def('Sentido e limiar.', 'Aumento ou redução, e a variação que sustenta a hipótese, fixados antes de olhar o resultado.'),
-      def('Quantidade.', 'De 1 a 3 por nota. Opinião, valor ou desejo não são hipóteses: precisam poder ser derrubadas por um dado.'),
+      def('Quantidade.', 'De 1 a 3 por parecer técnico. Opinião, valor ou desejo não são hipóteses: precisam poder ser derrubadas por um dado.'),
 
       h1('8. Testagem e confiança'),
       tabela([2600, 6426], [
@@ -398,7 +398,7 @@ const guia = new Document({
 
       h1('9. Cenários e potencialidades'),
       def('Cenários fixos.', 'A. referência (a proposta não é aprovada); B. aprovada como está; C. aprovada com os ajustes recomendados. Premissas escritas, mesmo indicador da H1, mesmo horizonte (padrão: 5 anos).'),
-      def('Potencialidades.', 'Direção do efeito de B e C em relação a A, de −2 (piora muito) a +2 (melhora muito), em quatro dimensões fixas: ambiental, social, econômica, institucional e fiscal. Magnitude, prazo e reversibilidade vão na nota técnica (parte 7).'),
+      def('Potencialidades.', 'Direção do efeito de B e C em relação a A, de −2 (piora muito) a +2 (melhora muito), em quatro dimensões fixas: ambiental, social, econômica, institucional e fiscal. Magnitude, prazo e reversibilidade vão no parecer técnico (parte 7).'),
 
       h1('10. Gráficos'),
       tabela([2600, 6426], [
@@ -423,7 +423,7 @@ const guia = new Document({
       item('Proteção ambiental: art. 225 da Constituição e competências da LC nº 140/2011.'),
 
       h1('13. Versões, correções e rastreabilidade'),
-      txt('Cada parecer informa a versão do texto analisado. Os PDFs saem carimbados em cada página com a identificação do parecer (versão, texto analisado, autor), o link permanente e um QR que levam à versão atual no site. Correções são registradas publicamente na página do parecer.'),
+      txt('Cada resumo prévio e cada parecer técnico informam a versão do texto analisado. Os PDFs saem carimbados em cada página com a identificação (versão, texto analisado, autor), o link permanente e um QR que levam à versão atual no site. Correções são registradas publicamente na página do resumo prévio.'),
 
       h1('14. Antes de publicar'),
       item('Texto base e versão analisada conferidos com a fonte oficial.'),
@@ -438,7 +438,7 @@ const guia = new Document({
 })
 
 ;(async () => {
-  fs.writeFileSync(path.join(SAIDA, 'modelo-nota-tecnica.docx'), await Packer.toBuffer(nota))
+  fs.writeFileSync(path.join(SAIDA, 'modelo-parecer-tecnico.docx'), await Packer.toBuffer(nota))
   fs.writeFileSync(path.join(SAIDA, 'modelo-quadro-comparativo.docx'), await Packer.toBuffer(quadro))
   fs.writeFileSync(path.join(SAIDA, 'guia-metodologia.docx'), await Packer.toBuffer(guia))
   console.log('ok')

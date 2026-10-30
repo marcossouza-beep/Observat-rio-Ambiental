@@ -36,7 +36,7 @@ const secoes: Field[] = SECOES_PARECER.flatMap((s) => {
 export const Pareceres: CollectionConfig = {
   slug: 'pareceres',
   typescript: { interface: 'Parecer' },
-  labels: { singular: 'Parecer', plural: 'Pareceres' },
+  labels: { singular: 'Resumo prévio', plural: 'Resumos prévios' },
   admin: {
     group: 'Trabalho',
     useAsTitle: 'titulo',
@@ -100,7 +100,7 @@ export const Pareceres: CollectionConfig = {
       type: 'tabs',
       tabs: [
         { label: 'Dossiê', fields: [{ name: 'dossie', type: 'ui', admin: { components: { Field: '/painel/Dossie#Dossie' } } }] },
-        { label: 'Parecer', name: 'secoes', fields: secoes },
+        { label: 'Resumo prévio', name: 'secoes', fields: secoes },
         {
           label: 'Classificação',
           fields: [
@@ -112,7 +112,7 @@ export const Pareceres: CollectionConfig = {
                 { label: 'Médio', value: 'medio' },
                 { label: 'Baixo', value: 'baixo' },
               ],
-              admin: { description: 'Na dúvida entre dois níveis, use o mais alto e explique no parecer.' },
+              admin: { description: 'Na dúvida entre dois níveis, use o mais alto e explique no resumo prévio.' },
             },
             {
               name: 'carater',
@@ -146,7 +146,7 @@ export const Pareceres: CollectionConfig = {
           label: 'Materiais',
           name: 'materiais',
           fields: [
-            { name: 'notaTecnica', label: 'Nota técnica (PDF)', type: 'upload', relationTo: 'materiais' },
+            { name: 'notaTecnica', label: 'Parecer técnico (PDF)', type: 'upload', relationTo: 'materiais' },
             { name: 'quadroComparativo', label: 'Quadro comparativo (PDF)', type: 'upload', relationTo: 'materiais' },
           ],
         },
@@ -169,7 +169,7 @@ export const Pareceres: CollectionConfig = {
     },
     { name: 'agendadoPara', type: 'date', admin: { position: 'sidebar', date: { pickerAppearance: 'dayAndTime' }, condition: (d) => d.status === 'agendado' } },
     { name: 'autor', type: 'relationship', relationTo: 'autores', admin: { position: 'sidebar' } },
-    { name: 'versao', label: 'Versão do parecer', type: 'number', defaultValue: 1, admin: { position: 'sidebar', readOnly: true } },
+    { name: 'versao', label: 'Versão do resumo prévio', type: 'number', defaultValue: 1, admin: { position: 'sidebar', readOnly: true } },
     { name: 'versaoTexto', label: 'Versão do texto analisada', type: 'relationship', relationTo: 'versoes', admin: { position: 'sidebar' } },
     { name: 'notaDaVersao', label: 'O que mudou nesta versão', type: 'textarea', admin: { position: 'sidebar', condition: (d) => (d.versao ?? 1) > 1 } },
     { name: 'desatualizadoDesde', label: 'Texto mudou em', type: 'date', admin: { position: 'sidebar', readOnly: true, description: 'Preenchido sozinho quando chega uma versão nova do texto' } },

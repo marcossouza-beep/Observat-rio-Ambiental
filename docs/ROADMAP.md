@@ -14,28 +14,28 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 
 | 2. Site público | Home com busca e filtros, categorias, listagem com cards e tags de status, página da proposição, páginas de tema |
 
-> **Sprint 2 — feita (código).** Início, lista de leis com filtros, página da lei (com os três estados: parecer, parecer em preparação com "O que já se sabe", acompanhando), parecer, opinião, temas e biomas, artigos, autor, busca, sitemap e robots; títulos, descrições, canônicos e dados estruturados; páginas atualizadas na hora em que o conteúdo muda. Ficam para depois, como previsto: inscrição e "Avise-me" (Sprint 4), Panorama e padrão de atuação (Fase 3), mapa dos estados, Timeline e Metodologia.
+> **Sprint 2 — feita (código).** Início, lista de leis com filtros, página da lei (com os três estados: resumo prévio, resumo prévio em preparação com "O que já se sabe", acompanhando), resumo prévio, opinião, temas e biomas, artigos, autor, busca, sitemap e robots; títulos, descrições, canônicos e dados estruturados; páginas atualizadas na hora em que o conteúdo muda. Ficam para depois, como previsto: inscrição e "Avise-me" (Sprint 4), Panorama e padrão de atuação (Fase 3), mapa dos estados, Timeline e Metodologia.
 
-| 3. Painel | Hoje, Pareceres (com prazos e fila "A atualizar"), editor com dossiê ao lado e modelo de 7 seções, classificação, SEO, materiais, publicação com tudo o que o sistema faz sozinho, Pedidos (correções, LGPD), Textos do site, Ajustes de prazos. Protótipo: `prototipo/painel.html` |
+| 3. Painel | Hoje, Resumos prévios (com prazos e fila "A atualizar"), editor com dossiê ao lado e modelo de 7 seções, classificação, SEO, materiais, publicação com tudo o que o sistema faz sozinho, Pedidos (correções, LGPD), Textos do site, Ajustes de prazos. Protótipo: `prototipo/painel.html` |
 
-> **Sprint 3 — feita (código).** Hoje, Triagem, Fila de pareceres, editor com dossiê (incluindo a marcação do que mudou entre versões), checagem de publicação ao vivo, prévia do Google, nota de relevância automática, correção pública a partir do pedido, meta semanal e datas no formato brasileiro. O envio de e-mails (respostas, alertas, comunicados) entra na Sprint 4, junto com a inscrição.
+> **Sprint 3 — feita (código).** Hoje, Triagem, Fila de resumos prévios, editor com dossiê (incluindo a marcação do que mudou entre versões), checagem de publicação ao vivo, prévia do Google, nota de relevância automática, correção pública a partir do pedido, meta semanal e datas no formato brasileiro. O envio de e-mails (respostas, alertas, comunicados) entra na Sprint 4, junto com a inscrição.
 
 | 4. Freemium e lançamento | Cadastro com confirmação de e-mail e link mágico, download dos materiais (PDF) para inscritos, política de privacidade e termos, SEO (endereços, títulos e descrições, dados estruturados, sitemaps, Search Console, página e quadro do autor; ver `docs/SEO.md`) |
 
 > **Sprint 4 — feita (código). Fase 1 concluída no código.** Inscrição em passos com perfil e subgrupo (estudante: curso e estado) e credenciamento de imprensa; acesso sem senha por link mágico (uso único, 1 hora); Minha conta (completar perfil, e-mails, leis seguidas, baixar dados, excluir inscrição); "Avise-me" e "Seguir esta lei"; download de PDF só para inscritos confirmados; formulário público de correção com prazo; e-mails por fila (aviso de publicação, respostas, credenciamento, comunicados) com descadastro em um clique; Política de Privacidade e Termos (texto-base). Alertas de tramitação e resumo semanal dependem dos conectores (Fases 2 e 3) e não são oferecidos no site até lá.
 
 
-**Critério de saída:** 4 a 6 semanas publicando no ritmo de 3 a 10 pareceres por semana, com o checklist de `docs/ENTREGA.md` cumprido e nenhum compromisso público vencido.
+**Critério de saída:** 4 a 6 semanas publicando no ritmo de 3 a 10 resumos prévios por semana, com o checklist de `docs/ENTREGA.md` cumprido e nenhum compromisso público vencido.
 
 ## Fase 2 — Radar de votação federal (≈ 4–6 semanas)
 
 - Conectores Câmara, Senado, Congresso (vetos) e DOU.
 - Dicionário de palavras-chave com pesos e exclusões.
 - Pontuação por palavras-chave e caixa de Triagem.
-- **Dossiê automático** entregue ao autor (texto integral, versões, justificativa, tramitação, autores, legislação afetada). O parecer é escrito pelo autor.
+- **Dossiê automático** entregue ao autor (texto integral, versões, justificativa, tramitação, autores, legislação afetada). O resumo prévio é escrito pelo autor.
 - Atores e posicionamentos: autoria, relatoria, emendas, votações, orientações, ênfases.
 - Radar com alertas internos: pauta, urgência, substitutivo, votação, sanção, veto.
-- **Detecção de nova versão do texto** em proposta com parecer: fila "A atualizar" e faixa pública automática.
+- **Detecção de nova versão do texto** em proposta com resumo prévio: fila "A atualizar" e faixa pública automática.
 - **Fontes e saúde**: coleta 4 vezes ao dia, limites de atraso e de volume, nota pública quando a fonte cai, teste diário contra as APIs ao vivo.
 
 > **Fase 2, parte 1 — feita (código): conectores Câmara e Senado e Radar.**
@@ -44,7 +44,7 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 > - Conector do Senado sobre os serviços novos de "processo": atualizados nos últimos dias, processo completo (andamentos, documentos, relatoria, lei gerada), votações nominais e a agenda do Plenário e das comissões.
 > - A mesma proposta nas duas casas vira **uma só** no site (chaves extras e número da proposta, ex.: PL 2159/2021 = PL 3729/2004).
 > - Gravação sem duplicar; propostas novas entram na **Triagem** com a nota de relevância; o que sai de pauta sai de "Em votação esta semana".
-> - **Radar** no painel: entrou na pauta, urgência, substitutivo, votação (com placar), aprovação, sanção, veto, texto novo e mudança de situação. Versões antigas trazidas pela coleta não marcam o parecer como desatualizado; só texto posterior ao analisado.
+> - **Radar** no painel: entrou na pauta, urgência, substitutivo, votação (com placar), aprovação, sanção, veto, texto novo e mudança de situação. Versões antigas trazidas pela coleta não marcam o resumo prévio como desatualizado; só texto posterior ao analisado.
 > - Saúde das fontes: cada coleta fica registrada (com amostra por 90 dias), a fonte guarda a última coleta bem-sucedida, o volume e o erro; formato mudou → a coleta daquela casa para e avisa no painel.
 > - Coleta 4 vezes ao dia pelo GitHub Actions (fluxo "Coleta"), e o teste diário das APIs agora roda os dois conectores de ponta a ponta contra a API ao vivo.
 >
@@ -54,7 +54,7 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 > - **Texto integral:** a coleta baixa o PDF das versões novas (algumas por rodada), extrai o texto, guarda na versão e dá à proposta o Art. 1º. O dossiê mostra o texto e a marcação do que mudou entre versões. PDF escaneado fica marcado (leitura por OCR fica para depois).
 > - **Leis afetadas:** as leis citadas na ementa ("altera as Leis nºs 9.605… e 9.985…") viram links para o LexML, no dossiê e na página da lei.
 > - A lei gerada liga as fontes: "Transformado na Lei 15.190/2025" (Câmara/Senado) e a "LEI Nº 15.190" do Diário Oficial caem na mesma proposta.
-> - Lei publicada não marca o parecer como desatualizado (repete a redação final); o veto chega ao autor pelo Radar.
+> - Lei publicada não marca o resumo prévio como desatualizado (repete a redação final); o veto chega ao autor pelo Radar.
 >
 > Diário Oficial validado com a edição real de 15/10/2026 (314 de 314 atos lidos).
 >
@@ -67,23 +67,23 @@ Modelo de dados já preparado para várias esferas (federal, estadual, municipal
 - Assinatura por proposição, tema, região, UF e parlamentar.
 - E-mail automático a cada mudança de status.
 - Newsletter semanal (nacional e regionais).
-- Versionamento do parecer quando o texto-base muda.
+- Versionamento do resumo prévio quando o texto-base muda.
 - Páginas de parlamentar.
 - **Credenciamento de imprensa** (passo extra na inscrição, fila de verificação no painel, selo e recursos de imprensa).
-- **Padrão de atuação** por UF e por casa da União, e página **Panorama** (casas e estados, biomas, áreas), alimentados pela classificação dos pareceres.
+- **Padrão de atuação** por UF e por casa da União, e página **Panorama** (casas e estados, biomas, áreas), alimentados pela classificação dos resumos prévios.
 
 > **Fase 3, parte 1 — feita (código): alertas, resumo semanal, assinaturas e páginas de parlamentar.**
 > - **Alerta diário (19h):** um e-mail por pessoa, só quando uma lei que ela segue entra na pauta, recebe urgência ou substitutivo, é votada, aprovada, sancionada ou vetada; no máximo um por dia; só propostas públicas.
-> - **Resumo semanal (sexta, 17h):** nota do autor (opcional, na tela "E-mails automáticos" do painel), pareceres da semana, o que vai a voto, o que andou nas leis seguidas, "Do seu interesse" (temas e biomas), "Na sua região" (estado e biomas do estado) e os votos dos parlamentares seguidos. Sai sozinho; o autor pode pular uma semana. Não sai e-mail vazio.
+> - **Resumo semanal (sexta, 17h):** nota do autor (opcional, na tela "E-mails automáticos" do painel), resumos prévios da semana, o que vai a voto, o que andou nas leis seguidas, "Do seu interesse" (temas e biomas), "Na sua região" (estado e biomas do estado) e os votos dos parlamentares seguidos. Sai sozinho; o autor pode pular uma semana. Não sai e-mail vazio.
 > - **Assinaturas:** na inscrição, alerta diário e resumo semanal aparecem marcados e podem ser desmarcados; na conta, a pessoa muda e-mails, estado, temas e biomas e vê os parlamentares que segue. Quem se inscreveu antes começa com os dois desligados (nunca viu essas opções).
-> - **Páginas de parlamentar** (`/parlamentares` e `/parlamentares/[nome]`): em números, como votou (sentido do voto pelo caráter do parecer, com barra e lista), autorias com o padrão das propostas, relatorias e emendas, método explicado; botão Seguir. Autores e relatores na página da lei levam à página do parlamentar.
+> - **Páginas de parlamentar** (`/parlamentares` e `/parlamentares/[nome]`): em números, como votou (sentido do voto pelo caráter do resumo prévio, com barra e lista), autorias com o padrão das propostas, relatorias e emendas, método explicado; botão Seguir. Autores e relatores na página da lei levam à página do parlamentar.
 >
 > **Fase 3, parte 2 — feita (código): Padrão de atuação, Panorama e resumo regional.**
-> - **Padrão de atuação** (em Leis federais, com o filtro Todas · Câmara · Senado · Presidência, e na lista de cada estado): barras "tudo que tramitou" e "só o que foi aprovado", tendência (ou "amostra pequena" abaixo de 5 pareceres), áreas mais frequentes e link para o método. Cada proposta federal conta para a casa onde começou (campo "Casa de origem", preenchido sozinho pela fonte; medida provisória = Presidência).
-> - **Panorama** (`/panorama`): abas Casas e estados (ranking com bandeira, nº de pareceres e de propostas, barra e tendência; alterna "só aprovadas"; "ver como tabela"), Biomas (cartões com pareceres, propostas, barra e % de alto impacto, mais "principais pressões e avanços" quando o autor escreve) e Áreas (quantidade e caráter, mais "O que temos visto"); método no pé. Chamada na home, cartões com números em Temas e biomas e bloco "Para que lado vão as propostas" em cada tema e bioma. Tudo calculado dos pareceres publicados.
+> - **Padrão de atuação** (em Leis federais, com o filtro Todas · Câmara · Senado · Presidência, e na lista de cada estado): barras "tudo que tramitou" e "só o que foi aprovado", tendência (ou "amostra pequena" abaixo de 5 resumos prévios), áreas mais frequentes e link para o método. Cada proposta federal conta para a casa onde começou (campo "Casa de origem", preenchido sozinho pela fonte; medida provisória = Presidência).
+> - **Panorama** (`/panorama`): abas Casas e estados (ranking com bandeira, nº de resumos prévios e de propostas, barra e tendência; alterna "só aprovadas"; "ver como tabela"), Biomas (cartões com resumos prévios, propostas, barra e % de alto impacto, mais "principais pressões e avanços" quando o autor escreve) e Áreas (quantidade e caráter, mais "O que temos visto"); método no pé. Chamada na home, cartões com números em Temas e biomas e bloco "Para que lado vão as propostas" em cada tema e bioma. Tudo calculado dos resumos prévios publicados.
 > - **Resumo regional:** quem informou o estado recebe a edição da sua região (Norte, Nordeste, Centro-Oeste, Sudeste, Sul): a nota regional do autor (opcional, em "E-mails automáticos"), depois da nacional, e "Na sua região" com as leis dos estados da região e dos biomas que a cobrem, o próprio estado primeiro. Sem estado, edição nacional.
 >
-> **Fora do escopo inicial (decisão do autor):** envio de pareceres sob embargo à imprensa credenciada. O credenciamento continua (cadastro, verificação no painel e status na conta), sem promessa de envio antecipado.
+> **Fora do escopo inicial (decisão do autor):** envio de resumos prévios sob embargo à imprensa credenciada. O credenciamento continua (cadastro, verificação no painel e status na conta), sem promessa de envio antecipado.
 
 **Critério de saída:** base de assinantes em crescimento constante.
 
@@ -110,7 +110,7 @@ Conectores dos estados da região escolhida, palavras-chave regionais, páginas 
 > - **Newsletter regional:** a edição por região do resumo semanal (Fase 3) agora termina com o botão "Leis estaduais do Norte".
 > - **Pará, Amapá e Roraima (16/10/2026):** não há base nacional com os projetos estaduais; cada um ganhou a saída que existe:
 >   - **Roraima, pelo Diário da ALE-RR** (`web/src/coleta/alerr/`, fonte `casa-rr`): o SAPL recusa até navegador, mas o diário tem a API do WordPress e publica, quase todo dia, o texto integral dos projetos e os autógrafos. O conector lê cada edição nova, separa os projetos (número, ementa, texto e autor) e marca a aprovação pelo autógrafo. Teste ao vivo: 5 edições, 11 projetos lidos na semana.
->   - **Pará, pela pesquisa de proposições da Alepa** (`web/src/coleta/alepa/proposicoes.ts`, fonte `casa-pa`): o site não tem API, mas o painel da pesquisa responde direto a POST (`/Legislativo/CallbackPanelProposicoes`), com filtro por ano, tipo e palavra. Entram os projetos novos (PL, PLC, PEC, PDL) e a busca por "ambiental". Das relevantes e das acompanhadas (também as cadastradas à mão, achadas pelo número), a página de detalhes dá andamentos, relatores e pareceres das comissões, votação no plenário, a lei quando sai e os PDFs (projeto, pareceres, redação final, lei).
+>   - **Pará, pela pesquisa de proposições da Alepa** (`web/src/coleta/alepa/proposicoes.ts`, fonte `casa-pa`): o site não tem API, mas o painel da pesquisa responde direto a POST (`/Legislativo/CallbackPanelProposicoes`), com filtro por ano, tipo e palavra. Entram os projetos novos (PL, PLC, PEC, PDL) e a busca por "ambiental". Das relevantes e das acompanhadas (também as cadastradas à mão, achadas pelo número), a página de detalhes dá andamentos, relatores e pareceres das comissões, votação no plenário, a lei quando sai e os PDFs (projeto, resumos prévios, redação final, lei).
 >   - **Pará, leis aprovadas pelo Banco de Leis** (`web/src/coleta/alepa/leis.ts`, fonte `leis-pa`): API aberta e documentada; as leis ambientais novas entram como norma, com o PDF oficial.
 >   - **Amapá:** o site da Alap não responde de fora do Brasil, nem com navegador. Precisa de coleta a partir de um servidor no Brasil.
 
@@ -120,14 +120,14 @@ Uma região por ciclo, repetindo o processo do piloto.
 
 > **Fase 6 (Nordeste) — em andamento (16/10/2026):**
 > - **Alagoas, Paraíba e Piauí, pelo SAPL** (mesmo conector do Norte). Teste ao vivo: AL 191 matérias atualizadas na semana, PB 273, PI 14; andamentos completos. Ficam de fora "Indicativo de Projeto de Lei" (PI), emendas e substitutivos a projetos (PB); projeto de código entra.
-> - **Bahia, pelo Diário Oficial do Legislativo** (`web/src/coleta/alba/`, fonte `casa-ba`): o site da Alba só tem proposições até 01/08/2025 e o sistema novo (nopapercloud) recusa acesso de fora pelo Cloudflare. O diário sai todo dia útil pela API de edições da EGBA, com o PDF completo; em "Expediente despachado pela Presidência" vêm os projetos apresentados, com texto, justificativa, autor e as comissões. Matérias que citam no título uma proposta acompanhada (parecer, ordem do dia, redação final) viram andamento. Teste ao vivo: 5 edições e 10 projetos lidos na semana.
+> - **Bahia, pelo Diário Oficial do Legislativo** (`web/src/coleta/alba/`, fonte `casa-ba`): o site da Alba só tem proposições até 01/08/2025 e o sistema novo (nopapercloud) recusa acesso de fora pelo Cloudflare. O diário sai todo dia útil pela API de edições da EGBA, com o PDF completo; em "Expediente despachado pela Presidência" vêm os projetos apresentados, com texto, justificativa, autor e as comissões. Matérias que citam no título uma proposta acompanhada (resumo prévio, ordem do dia, redação final) viram andamento. Teste ao vivo: 5 edições e 10 projetos lidos na semana.
 > - **Ceará, pelo expediente e pela lista de proposições da Alece** (`web/src/coleta/alece/`, fonte `casa-ce`): o histórico do expediente traz cada sessão com as matérias lidas (projetos de lei, de lei complementar, PEC, decreto legislativo e mensagens do Executivo), que é a apresentação oficial; a lista por legislatura do www2 traz, de cada proposta acompanhada, o histórico inteiro, comissões, local, autógrafo, lei e veto; a ficha em PDF traz o texto. Teste ao vivo: 3 sessões e 15 matérias lidas na semana; o PL 593/2026, tratado como acompanhado, foi achado na lista com 6 páginas lidas.
 > - **Palavras-chave:** 34 termos regionais dos nove estados (cada um vale só no seu estado) e nacionais que atravessam a região (Rio São Francisco e a transposição, açude, energia eólica, parque eólico). Em produção, `pnpm seed` acrescenta.
 > - **Sergipe:** o site da Alese não tem lista de proposições e o Diário Oficial do Estado não publica os projetos; fica no cadastro manual do autor.
 > - **Maranhão, Pernambuco e Rio Grande do Norte:** os sites das Assembleias não respondem de fora do Brasil (o DOE do Maranhão responde "Acesso bloqueado"). Precisam de coleta a partir de um servidor no Brasil, como o Amapá.
 
 > **Fase 6 (Centro-Oeste) — em andamento (16/10/2026):**
-> - **Mato Grosso, pela pesquisa de proposições da ALMT** (`web/src/coleta/almt/`, fonte `casa-mt`): a API própria exige chave, mas a pesquisa é aberta e responde a GET com filtros. As novas vêm do fim da lista de cada tipo (PL, PLC, PEC, PDL), pela data do protocolo; as acompanhadas, pela pesquisa por número; os andamentos (leitura, comissões, relator, parecer com PDF, votações, sanção e lei) vêm de `/proposicao/<id>/tramitacoes`. Vetos viram andamento do projeto vetado. Teste ao vivo: 14 proposições protocoladas na semana (11 páginas lidas); o PL 1/2026, tratado como acompanhado, veio com 37 andamentos.
+> - **Mato Grosso, pela pesquisa de proposições da ALMT** (`web/src/coleta/almt/`, fonte `casa-mt`): a API própria exige chave, mas a pesquisa é aberta e responde a GET com filtros. As novas vêm do fim da lista de cada tipo (PL, PLC, PEC, PDL), pela data do protocolo; as acompanhadas, pela pesquisa por número; os andamentos (leitura, comissões, relator, resumo prévio com PDF, votações, sanção e lei) vêm de `/proposicao/<id>/tramitacoes`. Vetos viram andamento do projeto vetado. Teste ao vivo: 14 proposições protocoladas na semana (11 páginas lidas); o PL 1/2026, tratado como acompanhado, veio com 37 andamentos.
 > - **Palavras-chave:** 22 termos dos quatro estados (Sema-MT, Imasul, Semad, Ibram, Chapada dos Guimarães e dos Veadeiros, Serra da Bodoquena, Lago Paranoá, Kalunga, Guarani-Kaiowá, moratória da soja e outros) e, nacionais, Rio Paraguai e bacia do Alto Paraguai.
 > - **Mato Grosso do Sul:** o sistema de proposições da ALEMS (SGPL) tem API pública em JSON, mas toda chamada passa por um desafio anti-robô; sem ele, responde 403. Caminho: pedir à ALEMS acesso para o observatório (chave ou liberação). Até lá, cadastro manual.
 > - **Goiás:** o portal da Alego respondia na sondagem de 15/10 e não respondeu nas rodadas de 16/10 nem no reteste de 17/10 (tempo esgotado a partir do GitHub); fica para o servidor no Brasil.
@@ -143,7 +143,7 @@ Uma região por ciclo, repetindo o processo do piloto.
 > **Fase 6 (Sul) — em andamento (17/10/2026):**
 > - **Santa Catarina, pelo e-Legis da Alesc** (`web/src/coleta/alesc/`, fonte `casa-sc`): a lista do processo legislativo vem das mais novas para as mais antigas, com número, ementa, entrada, autoria, setor e situação; a ficha de cada proposta traz regime, matéria legislativa e a linha do tempo de tramitações, com setor de origem e de destino. As novas vêm do começo da lista; as acompanhadas, da lista filtrada pelo número. Teste ao vivo: o PL 600/2026, tratado como acompanhado, veio com 8 andamentos; nenhuma proposta nova com entrada na semana (a mais recente é de 07/10).
 > - **Palavras-chave:** 18 termos dos três estados (IAT, Instituto Água e Terra, Fepam, IMA, Floresta com Araucária, Baía de Paranaguá, Lagoa dos Patos, Rio Guaíba, Serra do Tabuleiro, Código Ambiental de Santa Catarina e outros).
-> - **Paraná, pela ordem do dia da Alep** (`web/src/coleta/alep/`, fonte `casa-pr`): a pesquisa legislativa passa por captcha, que não é contornado; a página inicial lista, sem captcha, as ordens do dia das próximas e últimas sessões em PDF. Cada item (etapa, número, autoria, ementa e pareceres) vira andamento "pauta" da proposta acompanhada, na data da sessão; os relevantes que ainda não estão no site entram como novos, sem data de apresentação (a ordem do dia não traz). Teste sobre os PDFs reais: 86ª Sessão Ordinária e 13ª Extraordinária de 19/10, com 7 e 4 projetos. A apresentação e os andamentos de comissão dependem de a Alep dar acesso à pesquisa.
+> - **Paraná, pela ordem do dia da Alep** (`web/src/coleta/alep/`, fonte `casa-pr`): a pesquisa legislativa passa por captcha, que não é contornado; a página inicial lista, sem captcha, as ordens do dia das próximas e últimas sessões em PDF. Cada item (etapa, número, autoria, ementa e resumos prévios) vira andamento "pauta" da proposta acompanhada, na data da sessão; os relevantes que ainda não estão no site entram como novos, sem data de apresentação (a ordem do dia não traz). Teste sobre os PDFs reais: 86ª Sessão Ordinária e 13ª Extraordinária de 19/10, com 7 e 4 projetos. A apresentação e os andamentos de comissão dependem de a Alep dar acesso à pesquisa.
 > - **Rio Grande do Sul:** a ALRS não responde de fora do Brasil; precisa de servidor no Brasil.
 
 > **Estados que dependem de servidor no Brasil (17/10/2026):** os fluxos de levantamento, amostras e coleta já aceitam um executor próprio no Brasil (rótulo `brasil`; `docs/IMPLANTACAO.md`, seção 5.1). Com a máquina cadastrada, o primeiro passo é o levantamento de AP, MA, PE, RN, DF, ES, RS, GO e RJ a partir dela; depois, amostras e conectores, que entram em `FONTES_BRASIL` e passam a ser coletados de lá.

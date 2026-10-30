@@ -42,7 +42,7 @@ test.describe('Painel do autor', () => {
   test('Hoje mostra o que precisa do autor', async () => {
     await page.goto('/admin')
     await expect(page.getByRole('heading', { name: 'Precisa de você' })).toBeVisible()
-    await expect(page.locator('.obs-hoje')).toContainText('Atualização do parecer')
+    await expect(page.locator('.obs-hoje')).toContainText('Atualização do resumo prévio')
     await expect(page.locator('.obs-hoje')).toContainText('Votações dos próximos 7 dias')
     await expect(page.locator('.obs-nav')).toContainText('Triagem')
   })
@@ -71,7 +71,7 @@ test.describe('Painel do autor', () => {
       await agua.click()
       await expect(agua).toHaveAttribute('aria-pressed', 'false')
     }
-    await linha.getByRole('button', { name: 'Ativar parecer' }).click()
+    await linha.getByRole('button', { name: 'Ativar resumo prévio' }).click()
     await linha.locator('input[type="date"]').fill('2026-12-01')
     await linha.getByRole('button', { name: 'Ativar e publicar aviso' }).click()
     await expect(page.locator('.obs-tri', { hasText: 'tilápia' })).toHaveCount(0)
@@ -85,7 +85,7 @@ test.describe('Painel do autor', () => {
     expect(c.docs[0].prazoEm.slice(0, 10)).toBe('2026-12-01')
 
     const pub = await page.request.get(`/leis/${p.slug}`)
-    expect(await pub.text()).toContain('Parecer em preparação')
+    expect(await pub.text()).toContain('Resumo prévio em preparação')
   })
 
   test('Triagem: descartar pede motivo', async () => {
@@ -106,10 +106,10 @@ test.describe('Painel do autor', () => {
     await expect(page.locator('.obs-linha')).toContainText('PL nº 1.234/2026')
     await page.goto('/admin/fila?aba=prometidos')
     const linha = page.locator('.obs-linha', { hasText: 'PL nº 140/2026' })
-    await linha.getByRole('button', { name: 'Começar parecer' }).click()
+    await linha.getByRole('button', { name: 'Começar resumo prévio' }).click()
     await expect(page).toHaveURL(/\/admin\/collections\/pareceres\/\d+/)
     await expect(page.locator('.obs-checagem:not(.obs-rastro)')).toContainText('0 de 7 seções escritas')
-    await expect(page.locator('.obs-aviso')).toContainText('Parecer prometido ao público')
+    await expect(page.locator('.obs-aviso')).toContainText('Resumo prévio prometido ao público')
   })
 
   test('Editor: dossiê com o que mudou entre as versões', async () => {

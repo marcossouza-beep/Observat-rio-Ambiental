@@ -5,7 +5,7 @@ import { PERFIS, SUBPERFIS } from '@/collections/Publico'
 
 export const metadata: Metadata = {
   title: 'Inscreva-se grátis',
-  description: 'Notas técnicas e quadros comparativos em PDF e aviso no dia em que sai o parecer. Grátis e sem senha.',
+  description: 'Pareceres técnicos e quadros comparativos em PDF e aviso no dia em que sai o resumo prévio. Grátis e sem senha.',
   alternates: { canonical: '/inscricao' },
 }
 
@@ -18,7 +18,7 @@ export default async function Inscricao({ searchParams }: { searchParams: Promis
         <h1>
           Acompanhe as leis <span className="t-em">ambientais</span> que importam para você
         </h1>
-        <p>O parecer é aberto a todos. Inscritos baixam as notas técnicas e os quadros comparativos em PDF e recebem um aviso no dia em que sai o parecer das leis que seguem.</p>
+        <p>O resumo prévio é aberto a todos. Inscritos baixam os pareceres técnicos e os quadros comparativos em PDF e recebem um aviso no dia em que sai o resumo prévio das leis que seguem.</p>
       </header>
       <FormInscricao
         perfis={PERFIS}

@@ -7,12 +7,12 @@ export const url = (caminho: string) => `${SITE_URL}${caminho.startsWith('/') ? 
 export function tituloLei(p: { rotulo?: string | null; titulo?: string | null }, estado: 'parecer' | 'em_preparacao' | 'acompanhando') {
   const base = `${p.rotulo}${p.titulo ? ` — ${p.titulo}` : ''}`
   if (estado === 'parecer') return `${base}: texto, tramitação e votação`
-  if (estado === 'em_preparacao') return `${base}: o que é, situação e votação — parecer em breve`
+  if (estado === 'em_preparacao') return `${base}: o que é, situação e votação — resumo prévio em breve`
   return `${base}: o que é, situação e votação`
 }
 
 export function tituloParecer(par: { seo?: { tituloSeo?: string | null } | null }, p: { rotulo?: string | null; titulo?: string | null }) {
-  return par.seo?.tituloSeo || `${p.rotulo}: parecer técnico${p.titulo ? ` — ${p.titulo}` : ''}`
+  return par.seo?.tituloSeo || `${p.rotulo}: resumo prévio${p.titulo ? ` — ${p.titulo}` : ''}`
 }
 
 // Ponto de abreviatura ("Dep.", "Sen.", "nº", "art.") não termina a frase
@@ -32,7 +32,7 @@ export function cortar(t: string, max = 155) {
 export function descricaoParecer(par: { seo?: { metaDescricao?: string | null } | null; impacto?: string | null; carater?: string | null }, resumo: string) {
   if (par.seo?.metaDescricao) return par.seo.metaDescricao
   const etiquetas = [par.impacto ? IMPACTO[par.impacto] : '', par.carater ? CARATER[par.carater]?.rotulo.toLowerCase() : ''].filter(Boolean).join(', ')
-  return cortar(`Parecer técnico: ${primeiraFrase(resumo)}${etiquetas ? ` ${etiquetas}.` : ''}`)
+  return cortar(`Resumo prévio: ${primeiraFrase(resumo)}${etiquetas ? ` ${etiquetas}.` : ''}`)
 }
 
 type LeiAlterada = { rotulo: string; tipo?: string; nomePopular?: string | null; urn?: string | null; url?: string | null }
@@ -46,7 +46,7 @@ export function fraseAlteracao(leis: LeiAlterada[]) {
 }
 
 export function descricaoLei(p: { ementa?: string | null }, frase: string, estado: 'parecer' | 'em_preparacao' | 'acompanhando', alteradas: LeiAlterada[] = []) {
-  const fim = estado === 'parecer' ? ' Leia o parecer técnico.' : estado === 'em_preparacao' ? ' Parecer técnico em preparação.' : ''
+  const fim = estado === 'parecer' ? ' Leia o resumo prévio.' : estado === 'em_preparacao' ? ' Resumo prévio em preparação.' : ''
   const altera = fraseAlteracao(alteradas)
   const base = primeiraFrase(frase || p.ementa || '')
   const tudo = `${base}${altera ? ` ${altera}` : ''}${fim}`

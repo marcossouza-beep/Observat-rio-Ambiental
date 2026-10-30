@@ -24,7 +24,7 @@ test.describe('Painel', () => {
   test('listas principais abrem', async () => {
     for (const [slug, titulo] of [
       ['proposicoes', 'Proposições'],
-      ['pareceres', 'Pareceres'],
+      ['pareceres', 'Resumos prévios'],
       ['compromissos', 'Compromissos'],
       ['fontes', 'Fontes'],
     ]) {

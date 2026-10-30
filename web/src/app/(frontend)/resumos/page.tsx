@@ -10,19 +10,19 @@ import type { Autor, Proposicao } from '@/payload-types'
 
 export const revalidate = 300
 export const metadata: Metadata = {
-  title: 'Opinião: pareceres técnicos sobre leis ambientais',
-  description: 'Pareceres técnicos assinados sobre projetos de lei e normas ambientais, em linguagem clara.',
-  alternates: { canonical: '/pareceres' },
+  title: 'Opinião: resumos prévios sobre leis ambientais',
+  description: 'Resumos prévios assinados sobre projetos de lei e normas ambientais, em linguagem clara.',
+  alternates: { canonical: '/resumos' },
 }
 
 export default async function Pareceres() {
   const r = await listarPareceres(50)
   return (
     <div className="wrap">
-      <Trilha itens={[{ nome: 'Pareceres', caminho: '/pareceres' }]} />
+      <Trilha itens={[{ nome: 'Resumos prévios', caminho: '/resumos' }]} />
       <header className="lawhead">
         <h1>Opinião</h1>
-        <p style={{ color: 'var(--gray)' }}>Os pareceres técnicos, do mais recente ao mais antigo. Cada um é escrito e assinado pelo autor.</p>
+        <p style={{ color: 'var(--gray)' }}>Os resumos prévios, do mais recente ao mais antigo. Cada um é escrito e assinado pelo autor.</p>
       </header>
       <div className="list">
         {r.docs.length ? (
@@ -31,7 +31,7 @@ export default async function Pareceres() {
             const autor = p.autor && typeof p.autor === 'object' ? (p.autor as Autor) : null
             const resumo = textoDe(p.secoes?.resumo)
             return (
-              <Link key={p.id} className="law" href={`/pareceres/${p.slug}`}>
+              <Link key={p.id} className="law" href={`/resumos/${p.slug}`}>
                 <div className="top">
                   <Local esfera={lei?.esfera} uf={lei?.uf} />
                   <Impacto valor={p.impacto} />
@@ -45,14 +45,14 @@ export default async function Pareceres() {
                     {autor ? ` · ${autor.nome}` : ''}
                   </span>
                   <span className="arrow">
-                    Ler parecer <Seta />
+                    Ler resumo prévio <Seta />
                   </span>
                 </div>
               </Link>
             )
           })
         ) : (
-          <p className="empty">Os primeiros pareceres aparecem aqui em breve.</p>
+          <p className="empty">Os primeiros resumos prévios aparecem aqui em breve.</p>
         )}
       </div>
     </div>

@@ -43,7 +43,7 @@ export function FormCorrecao({ parecer, prazoDiasUteis }: { parecer: number; pra
         <button className="pill-btn" type="submit" disabled={estado === 'enviando'}>
           Enviar
         </button>
-        <span className="nota-fonte">Respondemos em até {prazoDiasUteis} dias úteis. Correções ficam registradas no parecer.</span>
+        <span className="nota-fonte">Respondemos em até {prazoDiasUteis} dias úteis. Correções ficam registradas no resumo prévio.</span>
       </div>
       {estado === 'erro' ? <p className="erro">{erro}</p> : null}
     </form>

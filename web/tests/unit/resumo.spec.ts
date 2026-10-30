@@ -50,14 +50,14 @@ describe('resumo semanal', () => {
     expect(r.assunto).toMatch(/^Resumo da semana \(Norte\): /)
     expect(r.paragrafos[0]).toBe('Semana de votações importantes.')
     expect(r.secoes.map((s) => [s.titulo, s.itens.map((x) => x.texto)])).toEqual([
-      ['Pareceres publicados', ['Parecer sobre o licenciamento']],
+      ['Resumos prévios publicados', ['Parecer sobre o licenciamento']],
       ['Em votação nos próximos dias', ['PL nº 4/2026']],
       ['O que andou nas leis que você segue', ['Licenciamento (PL nº 1/2026)']],
       ['Do seu interesse', ['PL nº 2/2026']],
       ['Na sua região (Norte)', ['PL nº 3/2026']],
       ['Parlamentares que você segue', ['Fulano (PT-SP) votou Não · PL nº 1/2026']],
     ])
-    expect(r.secoes[5].itens[0].detalhe).toBe('Parecer: Maléfico · voto a favor da proteção')
+    expect(r.secoes[5].itens[0].detalhe).toBe('Resumo prévio: Maléfico · voto a favor da proteção')
   })
 
   it('sem nada para contar e sem nota, não sai e-mail', () => {

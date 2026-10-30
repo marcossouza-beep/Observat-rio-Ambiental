@@ -6,7 +6,7 @@ import type { Padrao } from '@/lib/panorama'
 export function BarraCarater({ d, fina = false }: { d: Distribuicao; fina?: boolean }) {
   const texto = CARATERES.filter((c) => d.percentuais[c]).map((c) => `${ROTULO_CARATER[c]} ${d.percentuais[c]}%`).join(', ')
   return (
-    <div className={`barra-carater${fina ? '' : ' alta'}`} role="img" aria-label={d.total ? texto : 'Sem pareceres'}>
+    <div className={`barra-carater${fina ? '' : ' alta'}`} role="img" aria-label={d.total ? texto : 'Sem resumos prévios'}>
       {CARATERES.map((c) =>
         d.percentuais[c] ? (
           <i key={c} className={`c-${c}`} style={{ width: `${d.percentuais[c]}%` }}>
@@ -36,7 +36,7 @@ export function SeloTendencia({ t }: { t: Tendencia }) {
 
 /** Texto curto da tendência, com o saldo ou o aviso de amostra pequena. */
 export function textoTendencia(t: Tendencia) {
-  if (t.tipo === 'amostra_pequena') return t.total ? `só ${t.total} ${t.total === 1 ? 'parecer' : 'pareceres'}; a tendência aparece a partir de ${AMOSTRA_MINIMA}` : 'nenhum parecer ainda'
+  if (t.tipo === 'amostra_pequena') return t.total ? `só ${t.total} ${t.total === 1 ? 'resumo prévio' : 'resumos prévios'}; a tendência aparece a partir de ${AMOSTRA_MINIMA}` : 'nenhum resumo prévio ainda'
   return `saldo de ${t.saldo > 0 ? '+' : ''}${t.saldo} pontos`
 }
 
@@ -56,13 +56,13 @@ export function PadraoAtuacao({ titulo, padrao, nomesAreas }: { titulo: string; 
       <div className="padrao-linhas">
         <div>
           <span>
-            Tudo que tramitou <small>{padrao.total} {padrao.total === 1 ? 'parecer' : 'pareceres'}</small>
+            Tudo que tramitou <small>{padrao.total} {padrao.total === 1 ? 'resumo prévio' : 'resumos prévios'}</small>
           </span>
           <BarraCarater d={padrao.tudo} />
         </div>
         <div>
           <span>
-            Só o que foi aprovado <small>{padrao.aprovadas.total ? `${padrao.aprovadas.total} ${padrao.aprovadas.total === 1 ? 'parecer' : 'pareceres'}` : 'nenhuma aprovada ainda'}</small>
+            Só o que foi aprovado <small>{padrao.aprovadas.total ? `${padrao.aprovadas.total} ${padrao.aprovadas.total === 1 ? 'resumo prévio' : 'resumos prévios'}` : 'nenhuma aprovada ainda'}</small>
           </span>
           {padrao.aprovadas.total ? <BarraCarater d={padrao.aprovadas} /> : <div className="barra-carater alta vazia" />}
         </div>

@@ -10,8 +10,8 @@ import { rotuloProposicao, slugProposicao } from '../lib/texto'
 
 export const SITUACOES_EDITORIAIS = [
   { label: 'Na triagem', value: 'triagem' },
-  { label: 'Parecer prometido (ativa)', value: 'ativa' },
-  { label: 'Acompanhando (sem parecer previsto)', value: 'monitorada' },
+  { label: 'Resumo prévio prometido (ativa)', value: 'ativa' },
+  { label: 'Acompanhando (sem resumo prévio previsto)', value: 'monitorada' },
   { label: 'Descartada', value: 'descartada' },
 ]
 
@@ -98,7 +98,7 @@ export const Proposicoes: CollectionConfig = {
       // Com parecer, não: o parecer é do autor e precisa ser apagado de propósito antes.
       async ({ id, req }) => {
         const pareceres = await req.payload.count({ collection: 'pareceres', where: { proposicao: { equals: id } }, req })
-        if (pareceres.totalDocs) throw new APIError('Esta proposição tem parecer. Apague o parecer antes de apagar a proposição.', 400, null, true)
+        if (pareceres.totalDocs) throw new APIError('Esta proposição tem resumo prévio. Apague o resumo prévio antes de apagar a proposição.', 400, null, true)
         const votacoes = await req.payload.find({ collection: 'votacoes', where: { proposicao: { equals: id } }, limit: 0, depth: 0, req, select: {} })
         const ids = votacoes.docs.map((v) => v.id)
         if (ids.length) await req.payload.delete({ collection: 'votos', where: { votacao: { in: ids } }, req })
@@ -233,7 +233,7 @@ export const Proposicoes: CollectionConfig = {
       options: SITUACOES_EDITORIAIS,
       admin: { position: 'sidebar' },
     },
-    { name: 'prazoParecer', label: 'Parecer prometido para', type: 'date', admin: { position: 'sidebar', readOnly: true } },
+    { name: 'prazoParecer', label: 'Resumo prévio prometido para', type: 'date', admin: { position: 'sidebar', readOnly: true } },
     { name: 'ativadaEm', label: 'Ativada em', type: 'date', admin: { position: 'sidebar', readOnly: true }, access: { read: campoSoEquipe } },
     { name: 'relevancia', label: 'Nota de relevância', type: 'number', min: 0, max: 100, admin: { position: 'sidebar' }, access: { read: campoSoEquipe } },
     { name: 'termosEncontrados', label: 'Termos encontrados', type: 'text', hasMany: true, admin: { position: 'sidebar' }, access: { read: campoSoEquipe } },

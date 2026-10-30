@@ -22,10 +22,10 @@ export function PreviaGoogle() {
     <div className="obs-previa">
       <div className="obs-google">
         <div className="u">
-          {SITE} › pareceres › {slug || '…'}
+          {SITE} › resumos › {slug || '…'}
         </div>
         <div className="t">
-          {titulo || 'Título do parecer'} | {NOME}
+          {titulo || 'Título do resumo prévio'} | {NOME}
         </div>
         <div className="d">{desc || 'A descrição aparece aqui. Sem ela, usamos a primeira frase do resumo com impacto e caráter.'}</div>
       </div>

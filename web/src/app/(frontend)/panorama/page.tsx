@@ -16,7 +16,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Busca }
   const s = await searchParams
   return {
     title: 'Panorama da legislação ambiental',
-    description: 'Para que lado vão as propostas ambientais, por casa do Congresso, estado, bioma e área, calculado a partir dos pareceres publicados.',
+    description: 'Para que lado vão as propostas ambientais, por casa do Congresso, estado, bioma e área, calculado a partir dos resumos prévios publicados.',
     alternates: { canonical: '/panorama' },
     robots: s.aba || s.so ? { index: false, follow: true } : undefined,
   }
@@ -40,7 +40,7 @@ function Tabela({ linhas, aprovadas, rotulo }: { linhas: Linha[]; aprovadas: boo
           <thead>
             <tr>
               <th scope="col">Grupo</th>
-              <th scope="col">Pareceres</th>
+              <th scope="col">Resumos prévios</th>
               {CARATERES.map((c) => (
                 <th key={c} scope="col">
                   {ROTULO_CARATER[c]}
@@ -82,7 +82,7 @@ function Ranking({ linhas, aprovadas }: { linhas: Linha[]; aprovadas: boolean })
             <span className="rk-nome">
               <Bandeira uf={l.bandeira} /> {l.nome}
               <small>
-                {d.total} {d.total === 1 ? 'parecer' : 'pareceres'} · {l.propostas} {l.propostas === 1 ? 'proposta acompanhada' : 'propostas acompanhadas'}
+                {d.total} {d.total === 1 ? 'resumo prévio' : 'resumos prévios'} · {l.propostas} {l.propostas === 1 ? 'proposta acompanhada' : 'propostas acompanhadas'}
               </small>
             </span>
             {d.total ? <BarraCarater d={d} fina /> : <span className="barra-carater vazia" />}
@@ -137,11 +137,11 @@ export default async function Panorama({ searchParams }: { searchParams: Busca }
       <Trilha itens={[{ nome: 'Panorama', caminho: '/panorama' }]} />
       <header className="lawhead">
         <h1>Panorama</h1>
-        <p className="intro">Para que lado vão as propostas ambientais: o caráter de cada parecer publicado, somado por casa, estado, bioma e área. Avaliamos propostas, não pessoas.</p>
+        <p className="intro">Para que lado vão as propostas ambientais: o caráter de cada resumo prévio publicado, somado por casa, estado, bioma e área. Avaliamos propostas, não pessoas.</p>
       </header>
 
       {!itens.length ? (
-        <p className="empty">O Panorama aparece aqui assim que houver pareceres publicados. Nenhum número é digitado: tudo sai da classificação dos pareceres.</p>
+        <p className="empty">O Panorama aparece aqui assim que houver resumos prévios publicados. Nenhum número é digitado: tudo sai da classificação dos resumos prévios.</p>
       ) : (
         <>
           <nav className="chips abas" aria-label="Abas do Panorama">
@@ -196,7 +196,7 @@ export default async function Panorama({ searchParams }: { searchParams: Busca }
                         <Link href={`/biomas/${b.slug}`}>{b.nome}</Link>
                       </h3>
                       <p className="nota-fonte">
-                        {p.total} {p.total === 1 ? 'parecer' : 'pareceres'} · {nProps} {nProps === 1 ? 'proposta' : 'propostas'}
+                        {p.total} {p.total === 1 ? 'resumo prévio' : 'resumos prévios'} · {nProps} {nProps === 1 ? 'proposta' : 'propostas'}
                         {p.total ? ` · ${p.altoImpacto}% de alto impacto` : ''}
                       </p>
                       {p.total ? <BarraCarater d={p.tudo} fina /> : <span className="barra-carater vazia" />}
@@ -255,7 +255,7 @@ export default async function Panorama({ searchParams }: { searchParams: Busca }
                           {nProps} {nProps === 1 ? 'proposta' : 'propostas'}
                         </small>
                       </span>
-                      <span className="qtd" aria-label={`${p.total} pareceres`}>
+                      <span className="qtd" aria-label={`${p.total} resumos prévios`}>
                         <i style={{ width: `${Math.round((p.total / maxArea) * 100)}%` }} />
                         <b>{p.total}</b>
                       </span>
@@ -282,7 +282,7 @@ export default async function Panorama({ searchParams }: { searchParams: Busca }
         </div>
         <LegendaCarater />
         <ul>
-          <li>Só entram pareceres publicados, cada um com a classificação de caráter feita pelo autor. Nenhum número é digitado.</li>
+          <li>Só entram resumos prévios publicados, cada um com a classificação de caráter feita pelo autor. Nenhum número é digitado.</li>
           <li>
             <b>Enfraquece indiretamente:</b> a proposta não muda a proteção de forma direta, mas abre caminho para o dano (corta fiscalização ou orçamento, amplia prazos, cria exceções que dependem de
             regulamento).
@@ -292,7 +292,7 @@ export default async function Panorama({ searchParams }: { searchParams: Busca }
             entre os dois, &quot;equilibrada&quot;.
           </li>
           <li>
-            <b>Amostra mínima:</b> grupos com menos de {AMOSTRA_MINIMA} pareceres aparecem como &quot;amostra pequena&quot; e não recebem tendência.
+            <b>Amostra mínima:</b> grupos com menos de {AMOSTRA_MINIMA} resumos prévios aparecem como &quot;amostra pequena&quot; e não recebem tendência.
           </li>
           <li>
             <b>Só aprovadas:</b> o mesmo cálculo, só com as propostas aprovadas ou que já viraram norma.
@@ -301,7 +301,7 @@ export default async function Panorama({ searchParams }: { searchParams: Busca }
             <b>Casas:</b> cada proposta federal conta para a casa onde começou (medidas provisórias, para a Presidência) e também para a União.
           </li>
           <li>
-            <b>Biomas e áreas:</b> um parecer pode contar em mais de um bioma ou área; por isso as somas passam do total.
+            <b>Biomas e áreas:</b> um resumo prévio pode contar em mais de um bioma ou área; por isso as somas passam do total.
           </li>
         </ul>
       </section>

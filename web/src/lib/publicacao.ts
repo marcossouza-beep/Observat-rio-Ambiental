@@ -78,7 +78,7 @@ export function checarPublicacao(p: ParecerParaPublicar) {
   if ((p.versao ?? 1) > 1 && !(p.notaDaVersao || '').trim()) travas.push('Descreva o que mudou nesta versão')
   const pontos = (p.secoes?.comparativo || []).filter((c) => (c.vigente || '').trim() && (c.proposto || '').trim())
   if (!pontos.length) avisos.push('Quadro "regime vigente e proposta" vazio: o leitor verá só o comentário')
-  if (!p.temNotaTecnica) avisos.push('Nota técnica não enviada (o parecer pode sair sem ela)')
+  if (!p.temNotaTecnica) avisos.push('Parecer técnico não enviado (o resumo prévio pode sair sem ele)')
   if ((p.seo?.tituloSeo || '').length > 60) avisos.push('Título SEO acima de 60 caracteres')
   if ((p.seo?.metaDescricao || '').length > 155) avisos.push('Descrição acima de 155 caracteres')
   return { pode: travas.length === 0, travas, avisos, secoesEscritas: SECOES_PARECER.length - faltam.length }

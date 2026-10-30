@@ -42,8 +42,8 @@ export function Checagem() {
       </ul>
       <h4>Ao publicar, o sistema faz sozinho</h4>
       <ol>
-        <li>{versao > 1 ? 'Troca a faixa “atualização em preparação” pela nova versão' : 'Troca o aviso “Parecer em preparação” pelo parecer, no mesmo endereço'}</li>
-        <li>Cumpre o compromisso público e tira o parecer da fila</li>
+        <li>{versao > 1 ? 'Troca a faixa “atualização em preparação” pela nova versão' : 'Troca o aviso “Resumo prévio em preparação” pelo resumo prévio, no mesmo endereço'}</li>
+        <li>Cumpre o compromisso público e tira o resumo prévio da fila</li>
         <li>Atualiza a página da lei, listas, temas, biomas e o sitemap</li>
       </ol>
     </div>

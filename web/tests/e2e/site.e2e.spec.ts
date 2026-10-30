@@ -8,7 +8,7 @@ import config from '../../src/payload.config.js'
 const LIC = '/leis/pl-1234-2026-licenciamento-simplificado-para-fazendas-de-medio-porte'
 const PANT = '/leis/pl-140-2026-regras-de-protecao-do-pantanal'
 const DRONES = '/leis/pl-3010-2026-uso-de-agrotoxicos-por-drones'
-const PARECER = '/pareceres/pl-1234-2026-licenciamento-simplificado-para-fazendas-de-medio-porte'
+const PARECER = '/resumos/pl-1234-2026-licenciamento-simplificado-para-fazendas-de-medio-porte'
 
 const jsonLd = async (page: import('@playwright/test').Page) =>
   (await page.locator('script[type="application/ld+json"]').allTextContents()).map((t) => JSON.parse(t))
@@ -23,29 +23,29 @@ test.describe('Site público', () => {
 
   test('Panorama: casas e estados, só aprovadas, biomas, áreas e método', async ({ page }) => {
     await page.goto('/')
-    await expect(page.locator('.pano-chamada')).toContainText('4 pareceres')
+    await expect(page.locator('.pano-chamada')).toContainText('4 resumos prévios')
     await page.locator('.pano-chamada').click()
     await expect(page).toHaveURL(/\/panorama$/)
     await expect(page.locator('h1')).toHaveText('Panorama')
     const linha = (nome: string) => page.locator('.ranking-linha', { hasText: nome })
-    await expect(linha('União')).toContainText('2 pareceres')
-    await expect(linha('Câmara dos Deputados')).toContainText('1 parecer')
-    await expect(linha('Senado Federal')).toContainText('0 pareceres')
-    await expect(linha('Presidência da República')).toContainText('1 parecer')
-    await expect(linha('Pará')).toContainText('1 parecer')
-    await expect(linha('Amazonas')).toContainText('0 pareceres · 1 proposta acompanhada')
+    await expect(linha('União')).toContainText('2 resumos prévios')
+    await expect(linha('Câmara dos Deputados')).toContainText('1 resumo prévio')
+    await expect(linha('Senado Federal')).toContainText('0 resumos prévios')
+    await expect(linha('Presidência da República')).toContainText('1 resumo prévio')
+    await expect(linha('Pará')).toContainText('1 resumo prévio')
+    await expect(linha('Amazonas')).toContainText('0 resumos prévios · 1 proposta acompanhada')
     // Amostra pequena: nenhum grupo da demonstração tem 5 pareceres
     await expect(linha('União')).toContainText('Amostra pequena')
     await expect(linha('Pará').getByRole('img')).toHaveAttribute('aria-label', 'Benéfico 100%')
     await page.getByRole('link', { name: 'Só aprovadas' }).click()
     await expect(page).toHaveURL(/so=aprovadas/)
-    await expect(linha('União')).toContainText('1 parecer')
-    await expect(linha('Pará')).toContainText('0 pareceres')
+    await expect(linha('União')).toContainText('1 resumo prévio')
+    await expect(linha('Pará')).toContainText('0 resumos prévios')
     await page.locator('.como-tabela').first().locator('summary').click()
     await expect(page.locator('.como-tabela table').first()).toContainText('Presidência da República')
 
     await page.getByRole('link', { name: 'Biomas', exact: true }).click()
-    await expect(page.locator('.pano-card', { hasText: 'Cerrado' })).toContainText('2 pareceres')
+    await expect(page.locator('.pano-card', { hasText: 'Cerrado' })).toContainText('2 resumos prévios')
     await expect(page.locator('.pano-card', { hasText: 'Cerrado' })).toContainText('100% de alto impacto')
     await page.getByRole('link', { name: 'Áreas', exact: true }).click()
     await expect(page.locator('.area-linha', { hasText: 'Licenciamento' }).locator('.qtd b')).toHaveText('1')
@@ -56,7 +56,7 @@ test.describe('Site público', () => {
   test('Leis federais: padrão de atuação acompanha o filtro de casa; estado tem o seu', async ({ page }) => {
     await page.goto('/leis?esfera=federal')
     await expect(page.locator('.padrao h2')).toHaveText('Padrão de atuação · União')
-    await expect(page.locator('.padrao')).toContainText('2 pareceres')
+    await expect(page.locator('.padrao')).toContainText('2 resumos prévios')
     await page.getByRole('link', { name: 'Câmara', exact: true }).click()
     await expect(page).toHaveURL(/casa=camara/)
     await expect(page.locator('h1')).toHaveText('Leis ambientais federais: Câmara dos Deputados')
@@ -69,15 +69,15 @@ test.describe('Site público', () => {
     await expect(page.locator('.padrao h2')).toHaveText('Padrão de atuação · Tocantins')
     await expect(page.locator('.padrao')).toContainText('Só o que foi aprovado')
     await page.goto('/biomas/cerrado')
-    await expect(page.locator('.numeros')).toContainText('2pareceres')
+    await expect(page.locator('.numeros')).toContainText('2resumos prévios')
     await page.goto('/temas')
-    await expect(page.locator('.tb-card', { hasText: 'Cerrado' })).toContainText('2 pareceres')
+    await expect(page.locator('.tb-card', { hasText: 'Cerrado' })).toContainText('2 resumos prévios')
   })
 
   test('lei com parecer', async ({ page }) => {
     await page.goto(LIC)
     await expect(page).toHaveTitle(/texto, tramitação e votação/)
-    await expect(page.getByRole('link', { name: /Ler o parecer completo/ })).toBeVisible()
+    await expect(page.getByRole('link', { name: /Ler o resumo prévio completo/ })).toBeVisible()
     const ld = await jsonLd(page)
     expect(ld.some((j) => j['@type'] === 'Legislation')).toBe(true)
     expect(ld.some((j) => j['@type'] === 'BreadcrumbList')).toBe(true)
@@ -94,16 +94,16 @@ test.describe('Site público', () => {
 
   test('lei com parecer prometido mostra o aviso e o que já se sabe', async ({ page }) => {
     await page.goto(PANT)
-    await expect(page).toHaveTitle(/parecer em breve/)
-    await expect(page.getByRole('heading', { name: 'Parecer em preparação' })).toBeVisible()
+    await expect(page).toHaveTitle(/resumo prévio em breve/)
+    await expect(page.getByRole('heading', { name: 'Resumo prévio em preparação' })).toBeVisible()
     await expect(page.getByText('O que já se sabe')).toBeVisible()
   })
 
   test('lei só acompanhada não promete parecer', async ({ page }) => {
     await page.goto(DRONES)
-    await expect(page).not.toHaveTitle(/parecer em breve/)
+    await expect(page).not.toHaveTitle(/resumo prévio em breve/)
     await expect(page.getByRole('heading', { name: 'Acompanhando' })).toBeVisible()
-    await expect(page.getByText('Parecer em preparação')).toHaveCount(0)
+    await expect(page.getByText('Resumo prévio em preparação')).toHaveCount(0)
   })
 
   test('parecer prévio: assinatura no topo, texto base antes de tudo, partes numeradas, quadro do cotejo e dados estruturados', async ({ page }) => {
@@ -150,8 +150,12 @@ test.describe('Site público', () => {
     await expect(page.locator('.law').first()).toBeVisible()
     await page.goto('/biomas/pantanal')
     await expect(page.locator('h1')).toContainText('Pantanal')
-    await page.goto('/pareceres')
+    await page.goto('/resumos')
     await expect(page.locator('.law')).toHaveCount(4)
+    // Endereço antigo (/pareceres) leva ao novo (/resumos), de forma permanente
+    const antigo = await page.request.get(PARECER.replace('/resumos/', '/pareceres/'), { maxRedirects: 0 })
+    expect(antigo.status()).toBe(308)
+    expect(antigo.headers().location).toBe(PARECER)
     await page.goto('/artigos')
     await expect(page.locator('.law').first()).toBeVisible()
   })

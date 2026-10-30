@@ -113,10 +113,10 @@ export function montarResumo(i: InscritoResumo, d: DadosResumo) {
   // 1. Pareceres publicados na semana (os seguidos, da região e de interesse primeiro)
   const pareceres = [...d.pareceres].sort((a, b) => ordem(a.leiId) - ordem(b.leiId))
   secoes.push({
-    titulo: 'Pareceres publicados',
+    titulo: 'Resumos prévios publicados',
     itens: pareceres.slice(0, 10).map((p) => ({
       texto: p.titulo,
-      url: `${SITE_URL}/pareceres/${p.slug}`,
+      url: `${SITE_URL}/resumos/${p.slug}`,
       detalhe: [p.carater ? `Caráter: ${ROTULO_CARATER[p.carater]}` : '', p.resumo ? curto(p.resumo, 200) : ''].filter(Boolean).join(' · ') || undefined,
     })),
   })
@@ -155,7 +155,7 @@ export function montarResumo(i: InscritoResumo, d: DadosResumo) {
       return {
         texto: `${v.nome}${v.partido ? ` (${v.partido}${v.uf ? `-${v.uf}` : ''})` : ''} votou ${rotuloVoto} · ${lei(v.leiId)!.rotulo}`,
         url: urlLei(lei(v.leiId)!),
-        detalhe: c ? `Parecer: ${ROTULO_CARATER[c]}${sentido === null ? '' : sentido ? ' · voto a favor da proteção' : ' · voto contra a proteção'}` : 'Ainda sem parecer publicado',
+        detalhe: c ? `Resumo prévio: ${ROTULO_CARATER[c]}${sentido === null ? '' : sentido ? ' · voto a favor da proteção' : ' · voto contra a proteção'}` : 'Ainda sem resumo prévio publicado',
       }
     }),
   })

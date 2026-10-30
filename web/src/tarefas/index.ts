@@ -105,7 +105,7 @@ export async function publicarAgendados(payload: Payload, agora = new Date()): P
   if (erros.length) {
     await payload.create({
       collection: 'verificacoes',
-      data: { tipo: 'compromissos', resultado: 'falha', detalhe: `Parecer agendado não publicado: ${erros.join(' | ')}`.slice(0, 500) },
+      data: { tipo: 'compromissos', resultado: 'falha', detalhe: `Resumo prévio agendado não publicado: ${erros.join(' | ')}`.slice(0, 500) },
     })
   }
   return { publicados, erros }

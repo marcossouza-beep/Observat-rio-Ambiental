@@ -29,13 +29,13 @@ type Params = Promise<{ slug: string }>
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const d = await parecerPorSlug((await params).slug)
-  if (!d) return { title: 'Parecer não encontrado', robots: { index: false } }
+  if (!d) return { title: 'Resumo prévio não encontrado', robots: { index: false } }
   const titulo = tituloParecer(d.parecer, d.lei)
   return {
     title: titulo,
     description: descricaoParecer(d.parecer, textoDe(d.parecer.secoes?.resumo)),
     keywords: palavrasDaPagina(d.parecer.seo, alteradasDe(d)),
-    alternates: { canonical: `/pareceres/${d.parecer.slug}` },
+    alternates: { canonical: `/resumos/${d.parecer.slug}` },
     robots: d.parecer.seo?.indexar === false ? { index: false, follow: true } : undefined,
     openGraph: { title: titulo, type: 'article', publishedTime: d.parecer.publicadoEm || undefined, modifiedTime: d.parecer.atualizadoEm || undefined },
   }
@@ -66,7 +66,7 @@ export default async function PaginaParecer({ params }: { params: Params }) {
       <JsonLd
         dados={jsonLdParecer({
           titulo,
-          caminho: `/pareceres/${parecer.slug}`,
+          caminho: `/resumos/${parecer.slug}`,
           publicadoEm: parecer.publicadoEm,
           atualizadoEm: parecer.atualizadoEm,
           autor: autor ? { nome: autor.nome, titulo: autor.titulo, slug: autor.slug, foto, redes: redesDe(autor) } : null,
@@ -77,8 +77,8 @@ export default async function PaginaParecer({ params }: { params: Params }) {
       />
       <Trilha
         itens={[
-          { nome: 'Pareceres', caminho: '/pareceres' },
-          { nome: lei.rotulo || 'Parecer', caminho: `/pareceres/${parecer.slug}` },
+          { nome: 'Resumos prévios', caminho: '/resumos' },
+          { nome: lei.rotulo || 'Resumo prévio', caminho: `/resumos/${parecer.slug}` },
         ]}
       />
       <header className="lawhead">
@@ -91,7 +91,7 @@ export default async function PaginaParecer({ params }: { params: Params }) {
         </div>
         <h1>{parecer.titulo || lei.titulo || lei.rotulo}</h1>
         <div className="meta">
-          <span>Parecer prévio sobre {lei.rotulo}</span>
+          <span>Resumo prévio sobre {lei.rotulo}</span>
           {parecer.seo?.nomePopular ? <span>Conhecido como “{parecer.seo.nomePopular}”</span> : null}
           {parecer.publicadoEm ? <span>Publicado em {dataLonga(parecer.publicadoEm)}</span> : null}
           {parecer.atualizadoEm && parecer.atualizadoEm !== parecer.publicadoEm ? <span>Atualizado em {dataBR(parecer.atualizadoEm)}</span> : null}
@@ -107,7 +107,7 @@ export default async function PaginaParecer({ params }: { params: Params }) {
       {parecer.desatualizadoDesde ? (
         <section className="block b-alert" role="note">
           <p>
-            <b>O texto mudou em {dataBR(parecer.desatualizadoDesde)}.</b> Este parecer analisa a versão anterior. A atualização está em preparação e sairá nesta mesma página.
+            <b>O texto mudou em {dataBR(parecer.desatualizadoDesde)}.</b> Este resumo prévio analisa a versão anterior. A atualização está em preparação e sairá nesta mesma página.
           </p>
         </section>
       ) : null}
@@ -120,7 +120,7 @@ export default async function PaginaParecer({ params }: { params: Params }) {
       ) : null}
 
       <article className="block b-who pp">
-        <nav className="pp-sumario" aria-label="Partes do parecer">
+        <nav className="pp-sumario" aria-label="Partes do resumo prévio">
           <span className="sub-h">Sumário</span>
           <ol>
             {partes.map((p) => (
@@ -152,7 +152,7 @@ export default async function PaginaParecer({ params }: { params: Params }) {
       {materiais.length ? (
         <section className="block b-mat">
           <h2>Aprofunde</h2>
-          <p>A nota técnica é o parecer completo, com o texto base e a análise do cotejo: problema, hipótese, cenários e soluções. O quadro comparativo traz o cotejo literal dos textos, a testagem das hipóteses e a comparação dos cenários, com gráficos. Os dois PDFs levam a identificação deste parecer e um link de volta a esta página, para quem os receber depois.</p>
+          <p>O parecer técnico é a análise completa, com o texto base e a leitura do cotejo: problema, hipótese, cenários e soluções. O quadro comparativo traz o cotejo literal dos textos, a testagem das hipóteses e a comparação dos cenários, com gráficos. Os dois PDFs levam a identificação deste resumo prévio e um link de volta a esta página, para quem os receber depois.</p>
           {materiais.map((m) => (
             <a key={m.id} className="mat-card" href={`/api/baixar/${m.id}`} rel="nofollow">
               <span className="ic">

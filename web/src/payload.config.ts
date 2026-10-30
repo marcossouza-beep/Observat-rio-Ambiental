@@ -53,7 +53,7 @@ const config: Config = {
       graphics: { Icon: '/painel/Marca#Icone', Logo: '/painel/Marca#Logo' },
       views: {
         triagem: { Component: '/painel/Triagem#Triagem', path: '/triagem', meta: { title: 'Triagem' } },
-        fila: { Component: '/painel/Fila#Fila', path: '/fila', meta: { title: 'Fila de pareceres' } },
+        fila: { Component: '/painel/Fila#Fila', path: '/fila', meta: { title: 'Fila de resumos prévios' } },
         radar: { Component: '/painel/Radar#Radar', path: '/radar', meta: { title: 'Radar' } },
       },
     },

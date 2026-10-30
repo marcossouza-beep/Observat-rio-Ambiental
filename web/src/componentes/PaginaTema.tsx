@@ -15,7 +15,7 @@ export async function PaginaTema({ tipo, item }: { tipo: 'temas' | 'biomas'; ite
   const tema = tipo === 'temas' ? (item as Tema) : null
   const numeros = [
     [props.length, props.length === 1 ? 'proposta acompanhada' : 'propostas acompanhadas'],
-    [p.total, p.total === 1 ? 'parecer' : 'pareceres'],
+    [p.total, p.total === 1 ? 'resumo prévio' : 'resumos prévios'],
     [p.total ? `${p.altoImpacto}%` : '–', 'de alto impacto'],
     [props.filter((x) => x.emTramitacao).length, 'em tramitação agora'],
   ] as const

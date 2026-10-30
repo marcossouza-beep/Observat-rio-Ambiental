@@ -46,17 +46,17 @@ describe('aviso da lei', () => {
 describe('SEO', () => {
   it('título da lei muda quando o parecer sai', () => {
     const p = { rotulo: 'PL nº 1.234/2026', titulo: 'Licenciamento simplificado' }
-    expect(tituloLei(p, 'em_preparacao')).toBe('PL nº 1.234/2026 — Licenciamento simplificado: o que é, situação e votação — parecer em breve')
+    expect(tituloLei(p, 'em_preparacao')).toBe('PL nº 1.234/2026 — Licenciamento simplificado: o que é, situação e votação — resumo prévio em breve')
     expect(tituloLei(p, 'parecer')).toBe('PL nº 1.234/2026 — Licenciamento simplificado: texto, tramitação e votação')
-    expect(tituloLei(p, 'acompanhando')).not.toMatch(/parecer em breve/)
+    expect(tituloLei(p, 'acompanhando')).not.toMatch(/resumo prévio em breve/)
   })
   it('descrição do parecer até 155 caracteres', () => {
     const d = descricaoParecer({ impacto: 'alto', carater: 'malefico' }, 'O projeto dispensa o estudo de impacto ambiental para fazendas de médio porte. Outra frase.')
-    expect(d).toBe('Parecer técnico: O projeto dispensa o estudo de impacto ambiental para fazendas de médio porte. Alto impacto, maléfico.')
+    expect(d).toBe('Resumo prévio: O projeto dispensa o estudo de impacto ambiental para fazendas de médio porte. Alto impacto, maléfico.')
     expect(cortar('a '.repeat(100)).length).toBeLessThanOrEqual(155)
   })
   it('dados estruturados', () => {
-    const j = jsonLdParecer({ titulo: 'T', caminho: '/pareceres/x', autor: { nome: 'Autor', redes: ['https://lattes', null] }, lei: { nome: 'PL', identificador: 'PL 1/2026', jurisdicao: jurisdicao('estadual', 'PA') } })
+    const j = jsonLdParecer({ titulo: 'T', caminho: '/resumos/x', autor: { nome: 'Autor', redes: ['https://lattes', null] }, lei: { nome: 'PL', identificador: 'PL 1/2026', jurisdicao: jurisdicao('estadual', 'PA') } })
     expect(j['@type']).toBe('Article')
     expect(j.author?.sameAs).toEqual(['https://lattes'])
     expect(j.about.legislationJurisdiction).toBe('BR-PA')
@@ -106,7 +106,7 @@ describe('descrição não corta em abreviatura', async () => {
   const { descricaoLei } = await import('@/lib/seo')
   it('"Dep." e "nº" não terminam a frase', () => {
     expect(descricaoLei({}, 'O PL nº 1.234/2026 tramita na Câmara; a autoria é de Dep. Exemplo F (PARTIDO-GO). Hoje está no Plenário.', 'parecer')).toBe(
-      'O PL nº 1.234/2026 tramita na Câmara; a autoria é de Dep. Exemplo F (PARTIDO-GO). Leia o parecer técnico.',
+      'O PL nº 1.234/2026 tramita na Câmara; a autoria é de Dep. Exemplo F (PARTIDO-GO). Leia o resumo prévio.',
     )
   })
 })

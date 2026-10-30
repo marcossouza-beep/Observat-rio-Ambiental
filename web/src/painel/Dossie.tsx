@@ -77,7 +77,7 @@ export async function Dossie({ data, payload }: UIFieldServerProps) {
       {grupos.length ? (
         <>
           <h3>Lei alterada: como é hoje × como fica</h3>
-          <p className="obs-nota">Montado sozinho no topo do parecer, a partir do texto da proposta e do texto compilado da lei.</p>
+          <p className="obs-nota">Montado sozinho no topo do resumo prévio, a partir do texto da proposta e do texto compilado da lei.</p>
           <ul>
             {grupos.map((g) => {
               const ficha = fichas.find((f) => f.chave === chaveNorma(g.lei, prop.esfera === 'estadual' ? prop.uf : null)) || fichas.find((f) => f.chave === chaveNorma(g.lei))
@@ -108,7 +108,7 @@ export async function Dossie({ data, payload }: UIFieldServerProps) {
         <ul>
           {versoes.docs.map((v) => (
             <li key={v.id}>
-              {dataCurta(v.data)} · {v.rotulo || v.tipo} {v.id === analisadaId ? <b>(analisada no parecer)</b> : null}
+              {dataCurta(v.data)} · {v.rotulo || v.tipo} {v.id === analisadaId ? <b>(analisada no resumo prévio)</b> : null}
               {v.url ? (
                 <>
                   {' '}
@@ -178,7 +178,7 @@ export async function Dossie({ data, payload }: UIFieldServerProps) {
           </li>
         ))}
       </ul>
-      <p className="obs-nota">Dados das fontes oficiais. Nada daqui é escrito no parecer sozinho.</p>
+      <p className="obs-nota">Dados das fontes oficiais. Nada daqui é escrito no resumo prévio sozinho.</p>
     </div>
   )
 }

@@ -252,7 +252,7 @@ a:hover .go-c{background:var(--green);color:#fff}
 .done-card p{color:var(--gray);max-width:36ch}
 .mail{font-weight:600;color:var(--ink);background:var(--green-50);padding:4px 10px;border-radius:8px}
 
-/* ---------- relatório do parecer ---------- */
+/* ---------- relatório do resumo prévio ---------- */
 .readbar{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;background:var(--green);z-index:10;width:0;transition:width .1s linear}
 .rep{max-width:1040px;margin:0 auto;padding-inline:20px;padding-block:8px 72px}
 .rep-head{display:grid;gap:14px;padding-block:18px 26px;max-width:760px}
@@ -1037,7 +1037,7 @@ const ICON = {
   opiniao:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5" stroke-linecap="round"/></svg>',
   artigos:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 17l5-5 4 4 7-8"/><path d="M15 8h5v5"/></svg>',
 };
-const TOPICS = [["todos","timeline","Timeline","Tudo, em ordem"],["estadual","estado","Leis estaduais","Por estado"],["federal","federal","Leis federais","Câmara e Senado"],["parecer","opiniao","Opinião","Pareceres técnicos"],["artigos","artigos","Artigos","Tendências"]];
+const TOPICS = [["todos","timeline","Timeline","Tudo, em ordem"],["estadual","estado","Leis estaduais","Por estado"],["federal","federal","Leis federais","Câmara e Senado"],["parecer","opiniao","Opinião","Resumos prévios técnicos"],["artigos","artigos","Artigos","Tendências"]];
 const LEIS = [
   {id:"resex",esfera:"estadual",local:"Pará",status:"Em tramitação",titulo:"Nova reserva extrativista no Baixo Rio Exemplo",num:"PL nº 123/2026",
    resumo:"Cria uma unidade de conservação de uso sustentável com 48 mil hectares para comunidades extrativistas.",imp:"Alto impacto",car:"Benéfico",parecer:true},
@@ -1168,7 +1168,7 @@ function listHTML(){
   return ls.slice(0,6).map((l,i)=>`<a class="law" href="#${l.id}" style="animation-delay:${i*40}ms">
     <div class="top">${placeTag(l.local)}${stTag(l.status)}</div>
     <h3>${l.titulo}</h3><p>${l.resumo}</p>
-    <div class="go"><span class="num">${l.num}</span><span class="arrow">${l.parecer?"Ler parecer":"Parecer em breve"}${ARR}</span></div></a>`).join("");
+    <div class="go"><span class="num">${l.num}</span><span class="arrow">${l.parecer?"Ler parecer":"Resumo prévio em breve"}${ARR}</span></div></a>`).join("");
 }
 const HICO={
   federal:'<path d="M3 9.2 12 4l9 5.2z"/><path d="M5.5 11.5v6M10 11.5v6M14 11.5v6M18.5 11.5v6"/><path d="M3.5 20h17"/>',
@@ -1183,7 +1183,7 @@ function homeTopics(){
   const nFed=LEIS.filter(l=>l.esfera==="federal").length, nEst=LEIS.filter(l=>l.esfera==="estadual").length, nPar=LEIS.filter(l=>l.parecer).length;
   const T=[["federais","federal","Leis federais","Câmara, Senado e Presidência",`${nFed} leis acompanhadas`],
     ["estaduais","estadual","Leis estaduais","Assembleias, com mapa por estado",`${nEst} leis · ${Object.keys(COBERTURA).length} estados`],
-    ["opiniao","opiniao","Opinião","Os pareceres técnicos",`${nPar} pareceres publicados`],
+    ["opiniao","opiniao","Opinião","Os resumos prévios técnicos",`${nPar} resumos prévios publicados`],
     ["artigos","artigos","Artigos","Tendências, explicadores e dados",`${ARTIGOS.length} artigos`]];
   return `<div class="tgrid">${T.map(t=>`<a class="tcard" href="#${t[0]}"><span class="tico">${svgI(HICO[t[1]])}</span><div><b>${t[2]}</b><span>${t[3]}</span><small>${t[4]}</small></div></a>`).join("")}</div>`;
 }
@@ -1192,7 +1192,7 @@ function home(){
   return `<div class="wrap">
     <section class="hero">
       <h1>Leis <em>ambientais</em> explicadas,<br>antes de virarem <em>realidade.</em></h1>
-      <p>Acompanhe o que está em votação no seu estado e no Congresso, com parecer técnico em linguagem clara.</p>
+      <p>Acompanhe o que está em votação no seu estado e no Congresso, com resumo prévio em linguagem clara.</p>
       <form class="search" id="sf" role="search">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
         <input id="q" type="text" placeholder="Busque uma lei, tema ou estado" value="${state.q}" aria-label="Buscar" autocomplete="off">
@@ -1209,11 +1209,11 @@ function home(){
       <div class="list" id="list">${listHTML()}</div>
     </section>
     <a class="pano-teaser" href="#panorama"><div style="display:grid;gap:4px"><b>Panorama</b><p>Padrão de atuação da União e dos estados, por bioma e por área.</p></div>${sbar(ATUACAO.BR.p,ATUACAO.BR.n)}<span class="arrow">Ver${ARR}</span></a>
-    ${state.inscrito?"":`<section class="cta"><div style="display:grid;gap:4px"><h2>Notas técnicas e quadros comparativos</h2><p>Grátis para inscritos, com aviso quando uma lei andar.</p></div><button class="pill-btn" data-act="pagina">Se inscreva grátis</button></section>`}
+    ${state.inscrito?"":`<section class="cta"><div style="display:grid;gap:4px"><h2>Pareceres técnicos e quadros comparativos</h2><p>Grátis para inscritos, com aviso quando uma lei andar.</p></div><button class="pill-btn" data-act="pagina">Se inscreva grátis</button></section>`}
   </div>`;
 }
 function parBlockHTML(l){ const ins=state.inscrito; return `    <section class="block b-par" id="s-par">
-      <h2>Parecer técnico</h2>
+      <h2>Resumo prévio</h2>
       ${byAuthor()}
       <div class="quick">
         <div><b>O que muda</b><span>${l.resumo}</span></div>
@@ -1225,15 +1225,15 @@ function parBlockHTML(l){ const ins=state.inscrito; return `    <section class="
         <p>O conselho previsto no art. 2º não tem composição mínima. Recomendamos garantir participação das comunidades e de instituições de pesquisa.</p>
         <p><b>Classificação:</b> ${l.imp.toLowerCase()}, com efeito ${l.car.toLowerCase()} condicionado à regulamentação.</p>
       </div>
-      <div class="to-report"><span>Texto base, regime vigente e proposta, classificação explicada, pontos de atenção e tramitação.</span><a class="pill-btn" href="#parecer-${l.id}">Ler parecer completo${ARR}</a></div>
+      <div class="to-report"><span>Texto base, regime vigente e proposta, classificação explicada, pontos de atenção e tramitação.</span><a class="pill-btn" href="#parecer-${l.id}">Ler resumo prévio completo${ARR}</a></div>
     </section>
 
 `; }
 function matBlockHTML(l){ const ins=state.inscrito; return `    <section class="block b-mat" id="s-mat">
       <h2>Aprofunde</h2>
-      <p style="color:#3A443E">A nota técnica é o parecer completo, com o texto base e a análise do cotejo. O quadro comparativo traz o cotejo literal dos textos, a testagem das hipóteses e a comparação dos cenários, com gráficos. Os PDFs levam a identificação do parecer e um link de volta ao site.</p>
+      <p style="color:#3A443E">O parecer técnico é o resumo prévio completo, com o texto base e a análise do cotejo. O quadro comparativo traz o cotejo literal dos textos, a testagem das hipóteses e a comparação dos cenários, com gráficos. Os PDFs levam a identificação do resumo prévio e um link de volta ao site.</p>
       <div class="files">
-        <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota técnica</b><span>Análise completa · 3 páginas</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
+        <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Parecer técnico</b><span>Análise completa · 3 páginas</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
         <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>Artigo por artigo</span></span><span class="st">${ins?"Baixar":"🔒"}</span></button>
       </div>
       ${ins?"":`<div class="unlock"><button class="pill-btn" data-act="inscrever">Liberar materiais</button><span>Grátis para inscritos.</span></div>`}
@@ -1256,9 +1256,9 @@ function pendingHTML(l){
   const seg=state.seguindo.includes(l.id)&&state.inscrito;
   return `<section class="block b-pend" id="s-par">
       <div class="pend-h"><span class="pend-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-        <div><h2>Parecer em preparação</h2><p>O parecer técnico sobre ${l.num} está sendo escrito e será publicado nos próximos dias, nesta mesma página.</p></div></div>
+        <div><h2>Resumo prévio em preparação</h2><p>O resumo prévio sobre ${l.num} está sendo escrito e será publicado nos próximos dias, nesta mesma página.</p></div></div>
       <div class="pend-facts"><span class="sub-h">O que já se sabe</span><p>${factsSentence(l)}</p><small>Informações da tramitação oficial, atualizadas automaticamente · última coleta: 14/10, 06:10.</small></div>
-      <div class="unlock"><button class="pill-btn" data-seguir="${l.id}">${seg?"Você será avisado":"Avise-me quando o parecer sair"}</button><span>Grátis. Você recebe um e-mail no dia da publicação.</span></div>
+      <div class="unlock"><button class="pill-btn" data-seguir="${l.id}">${seg?"Você será avisado":"Avise-me quando o resumo prévio sair"}</button><span>Grátis. Você recebe um e-mail no dia da publicação.</span></div>
     </section>`;
 }
 function lei(l){
@@ -1269,7 +1269,7 @@ function lei(l){
       <div class="top" style="display:flex;gap:6px;flex-wrap:wrap">${placeTag(l.local)}${stTag(l.status)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}<button class="mini share-btn" data-share="${l.id}" style="margin-left:auto">${ICO_SHARE}Compartilhar</button></div>
       <h1>${l.titulo}</h1><span class="num">${l.num}</span>
     </header>
-    <nav class="steps" aria-label="Seções"><a href="#${l.id}" data-jump="s-lei" class="on">A lei</a><a href="#${l.id}" data-jump="s-who">Quem</a><a href="#${l.id}" data-jump="s-par">${l.parecer?"Parecer":"Parecer em breve"}</a>${l.parecer?`<a href="#${l.id}" data-jump="s-mat">Aprofunde</a>`:""}</nav>
+    <nav class="steps" aria-label="Seções"><a href="#${l.id}" data-jump="s-lei" class="on">A lei</a><a href="#${l.id}" data-jump="s-who">Quem</a><a href="#${l.id}" data-jump="s-par">${l.parecer?"Resumo prévio":"Resumo prévio em breve"}</a>${l.parecer?`<a href="#${l.id}" data-jump="s-mat">Aprofunde</a>`:""}</nav>
 
     <section class="block b-law" id="s-lei">
       <h2>A lei <small>texto oficial</small></h2>
@@ -1297,7 +1297,7 @@ function lei(l){
 function modal(){
   return `<div class="scrim" data-act="fechar"><form class="modal" id="f">
     <h2>Se inscreva grátis</h2>
-    <p>Libere as notas técnicas e os quadros comparativos em PDF.</p>
+    <p>Libere os pareceres técnicos e os quadros comparativos em PDF.</p>
     <input id="n" type="text" placeholder="Seu nome" aria-label="Nome" required>
     <input id="e" type="email" placeholder="Seu e-mail" aria-label="E-mail" required>
     <div class="row">
@@ -1352,12 +1352,12 @@ const PERK_ICON={
   bell:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>',
   map:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg>',
 };
-const PERKS=[["doc","Notas técnicas em PDF","A análise jurídica completa de cada lei."],["cmp","Quadros comparativos","O que diz a lei hoje e o que muda com o projeto."],["bell","Alertas antes da votação","Um e-mail quando a lei que você segue andar."],["map","Destaques do seu estado","O que está em pauta perto de você."]];
+const PERKS=[["doc","Pareceres técnicos em PDF","A análise jurídica completa de cada lei."],["cmp","Quadros comparativos","O que diz a lei hoje e o que muda com o projeto."],["bell","Alertas antes da votação","Um e-mail quando a lei que você segue andar."],["map","Destaques do seu estado","O que está em pauta perto de você."]];
 function stepBody(id){
   if(id==="voce") return `<label class="field" for="i-nome">Nome<input id="i-nome" type="text" autocomplete="name" placeholder="Como podemos te chamar?" value="${insc.nome}"></label>
       <label class="field" for="i-email">E-mail<input id="i-email" type="email" inputmode="email" autocomplete="email" placeholder="voce@exemplo.com" value="${insc.email}"></label>`;
   if(id==="perfil") return `<div class="pcards" role="radiogroup" aria-label="Perfil">${PERFIS.map(x=>`<button class="pcard" role="radio" data-perfil="${x}" aria-checked="${insc.perfil===x}"><b>${x}</b><span class="${x==="Jornalista"?"press":""}">${PERFIL_DESC[x]}</span><i></i></button>`).join("")}</div><div id="pdet">${perfilDetalhe()}</div>`;
-  if(id==="imprensa"){ const m=insc.imp; return `<div class="pressbox"><b>O que o credenciamento libera</b><ul><li>Pareceres antes da publicação, sob embargo</li><li>Contato direto com o autor para entrevistas</li><li>Gráficos e dados prontos para matérias</li><li>Selo "Imprensa verificada" no seu perfil</li></ul></div>
+  if(id==="imprensa"){ const m=insc.imp; return `<div class="pressbox"><b>O que o credenciamento libera</b><ul><li>Resumos prévios antes da publicação, sob embargo</li><li>Contato direto com o autor para entrevistas</li><li>Gráficos e dados prontos para matérias</li><li>Selo "Imprensa verificada" no seu perfil</li></ul></div>
       <label class="field" for="ip-veiculo"><span>Veículo <span class="req">*</span></span><input id="ip-veiculo" type="text" autocomplete="organization" placeholder="Ex.: Jornal do Tocantins" value="${m.veiculo}"></label>
       <div class="field">Tipo de veículo<div class="opts">${VTIPOS.map(v=>`<button class="opt" data-vtipo="${v}" aria-pressed="${m.tipo===v}">${v}</button>`).join("")}</div></div>
       <label class="field" for="ip-funcao">Função<select id="ip-funcao">${FUNCOES.map(f=>`<option ${m.funcao===f?"selected":""}>${f}</option>`).join("")}</select></label>
@@ -1371,7 +1371,7 @@ function stepBody(id){
       <div class="field">Biomas <span class="hint">escolha quantos quiser</span><div class="opts">${BIOMAS_L.map(x=>`<button class="opt" data-bioma="${x}" aria-pressed="${insc.biomas.includes(x)}">${x}</button>`).join("")}</div></div>`;
   const t=(k,b,d)=>`<div class="toggle"><div><b>${b}</b><span>${d}</span></div><button class="sw" role="switch" aria-checked="${insc[k]}" aria-label="${b}" data-sw="${k}"></button></div>`;
   return `${t("alertas","Alertas de tramitação","Quando uma lei dos seus temas entrar em pauta ou for votada")}
-      ${t("news","Resumo semanal","Os pareceres da semana, toda segunda-feira")}
+      ${t("news","Resumo semanal","Os resumos prévios da semana, toda segunda-feira")}
       ${t("regional","Destaques "+deUF(insc.uf),"Leis do seu estado e da sua região")}
       <label class="consent"><input id="i-lgpd" type="checkbox"> Concordo com a Política de Privacidade e com o uso dos meus dados para envio dos conteúdos escolhidos.</label>`;
 }
@@ -1391,7 +1391,7 @@ function inscricao(){
   return `<div class="wrap" style="max-width:1040px"><div class="sign">
     <aside class="sign-l">
       <h1>Acompanhe as leis <em>ambientais</em> que importam para você</h1>
-      <p>O parecer é aberto a todos. Inscritos recebem o material de aprofundamento e são avisados antes das votações.</p>
+      <p>O resumo prévio é aberto a todos. Inscritos recebem o material de aprofundamento e são avisados antes das votações.</p>
       <ul class="perks">${PERKS.map(k=>`<li><span class="pi">${PERK_ICON[k[0]]}</span><div><b>${k[1]}</b><span>${k[2]}</span></div></li>`).join("")}</ul>
       <div class="assure"><span>Grátis</span><span>Sem senha</span><span>Cancele com um clique</span></div>
       <a href="#inscricao-celular" class="arrow" style="font-size:.9rem">Ver como fica no celular${ARR}</a>
@@ -1408,7 +1408,7 @@ function mobileSignup(full){
     foot=`<a class="pill-btn block" href="#home" style="text-align:center">Explorar as leis</a>`;
   } else {
     const intro = id==="voce" ? `<div class="mbrand" role="img" aria-label="ênfase jur"><i></i></div>
-      <h2>Leis ambientais explicadas antes da votação</h2><p class="lead">Grátis, sem senha. O parecer é aberto a todos; inscritos recebem o aprofundamento e os alertas.</p>
+      <h2>Leis ambientais explicadas antes da votação</h2><p class="lead">Grátis, sem senha. O resumo prévio é aberto a todos; inscritos recebem o aprofundamento e os alertas.</p>
       <div class="mperks" aria-label="Benefícios">${PERKS.map(k=>`<div class="mperk"><span class="pi">${PERK_ICON[k[0]]}</span><div><b>${k[1]}</b><span>${k[2]}</span></div></div>`).join("")}</div>` 
       : `<h2>${STEP_TXT[id][0]}</h2><p class="lead">${STEP_TXT[id][1]}</p>`;
     body = intro + stepBody(id);
@@ -1464,7 +1464,7 @@ function validaPasso(){
 }
 function topoInsc(){ const b=$("#mbody"); if(b) b.scrollTop=0; if(isNarrow()) window.scrollTo(0,0); }
 
-/* ---------- relatório do parecer ---------- */
+/* ---------- relatório do resumo prévio ---------- */
 const DIMS=[["Ambiental",2,"Protege 48 mil ha de floresta e várzea contra extração ilegal."],["Social",2,"Garante às comunidades tradicionais o uso prioritário da área."],["Econômico",-1,"Restringe atividades madeireiras e de pesca comercial no entorno."],["Institucional",0,"Cria conselho, mas sem composição mínima nem orçamento definido."]];
 const VAL={2:"Muito positivo",1:"Positivo",0:"Neutro","-1":"Negativo","-2":"Muito negativo"};
 const SECS=[["r1","Texto base da proposta"],["r2","Síntese"],["r3","Objeto e alcance"],["r4","Regime vigente e proposta"],["r5","Classificação"],["r6","Relevância"],["r7","Pontos de atenção"],["r8","Tramitação e próximos passos"]];
@@ -1511,7 +1511,7 @@ function parecer(l){
   <div class="rep">
     ${crumbs([["Início","#home"],[l.esfera==="federal"?"Leis federais":"Leis estaduais",l.esfera==="federal"?"#federais":"#estaduais"],[l.num,"#"+l.id],["Parecer",""]])}
     <header class="rep-head">
-      <span class="eyebrow">Parecer prévio · versão 2</span>
+      <span class="eyebrow">Resumo prévio · versão 2</span>
       <h1>${l.titulo}</h1>
       ${byAuthor("assina este parecer")}
       <div class="meta"><span class="withflag">${flag(flagOf(l.local),"md")}${l.num} · ${l.local}</span><span>Publicado em <b>09/10/2026</b></span><span>Texto analisado: <b>versão de 08/10/2026</b></span><span>Leitura de <b>3 min</b></span></div>
@@ -1570,13 +1570,13 @@ function parecer(l){
 
         ${subjects(l)}
         <div class="rep-foot" id="r9">
-          <div class="panel-s"><h3>Aprofunde</h3><p>A <b>nota técnica</b> é o parecer completo em 3 páginas, com o texto base e a análise do cotejo: problema, hipótese, impactos, cenários, soluções e casos. O <b>quadro comparativo</b> traz o cotejo literal dos textos, a testagem das hipóteses e a comparação dos cenários, com gráficos. Os dois PDFs levam, no pé de cada página, a identificação deste parecer, o link permanente e um QR que trazem de volta a esta página.</p>
+          <div class="panel-s"><h3>Aprofunde</h3><p>O <b>parecer técnico</b> é a análise completa em 3 páginas, com o texto base e a análise do cotejo: problema, hipótese, impactos, cenários, soluções e casos. O <b>quadro comparativo</b> traz o cotejo literal dos textos, a testagem das hipóteses e a comparação dos cenários, com gráficos. Os dois PDFs levam, no pé de cada página, a identificação deste resumo prévio, o link permanente e um QR que trazem de volta a esta página.</p>
             <div class="files">
-              <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Nota técnica</b><span>3 páginas</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
+              <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Parecer técnico</b><span>3 páginas</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
               <button class="file" data-act="pdf"><span class="ic">PDF</span><span><b>Quadro comparativo</b><span>artigo por artigo</span></span><span class="st">${state.inscrito?"Baixar":"🔒"}</span></button>
             </div></div>
           ${state.inscrito&&insc.press?`<div class="panel-s" style="grid-column:1/-1;background:var(--sky);border-color:transparent"><h3 style="color:var(--sky-ink)">Para a imprensa ${insc.press==="verificado"?'<span class="pchip" style="background:#fff">✓ Verificada</span>':""}</h3>
-            ${insc.press==="verificado"?`<p style="color:#2B3A55">Entrevista com o autor, gráficos em alta resolução e os dados deste parecer.</p><div class="row" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn-o" data-act="imp-entrevista">Pedir entrevista</button><button class="btn-o" data-act="imp-graficos">Baixar gráficos (PNG)</button><button class="btn-o" data-act="imp-dados">Dados (CSV)</button></div>`:`<p style="color:#2B3A55">Seu credenciamento está em análise. Assim que for aprovado, você poderá pedir entrevistas e baixar gráficos e dados.</p>`}</div>`:!state.inscrito?`<p class="hint" style="grid-column:1/-1">É jornalista? <a href="#inscricao" data-act="m-jorn-desk">Faça o credenciamento de imprensa${ARR}</a></p>`:""}
+            ${insc.press==="verificado"?`<p style="color:#2B3A55">Entrevista com o autor, gráficos em alta resolução e os dados deste resumo prévio.</p><div class="row" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn-o" data-act="imp-entrevista">Pedir entrevista</button><button class="btn-o" data-act="imp-graficos">Baixar gráficos (PNG)</button><button class="btn-o" data-act="imp-dados">Dados (CSV)</button></div>`:`<p style="color:#2B3A55">Seu credenciamento está em análise. Assim que for aprovado, você poderá pedir entrevistas e baixar gráficos e dados.</p>`}</div>`:!state.inscrito?`<p class="hint" style="grid-column:1/-1">É jornalista? <a href="#inscricao" data-act="m-jorn-desk">Faça o credenciamento de imprensa${ARR}</a></p>`:""}
           <div class="panel-s" style="grid-column:1/-1"><h3>Compartilhar e citar</h3><p>Textos prontos para redes sociais e referência para trabalhos acadêmicos.</p>${shareHTML(l)}</div>
         </div>
       </article>
@@ -1621,7 +1621,7 @@ function menuHTML(){
 }
 
 /* ---------- timeline ---------- */
-const KIND={par:"Parecer publicado",pauta:"Entrou em pauta",vot:"Votação",lei:"Virou lei",sub:"Texto alterado",veto:"Veto"};
+const KIND={par:"Resumo prévio publicado",pauta:"Entrou em pauta",vot:"Votação",lei:"Virou lei",sub:"Texto alterado",veto:"Veto"};
 const EVENTOS=[
   {dia:"Hoje · 9 de outubro",h:"10:20",k:"par",id:"resex",txt:"Alto impacto, benéfico. Pede prazo para o plano de manejo e consulta prévia às comunidades."},
   {dia:"Hoje · 9 de outubro",h:"08:05",k:"pauta",id:"lic",txt:"Vai a plenário na quarta (14/10) em regime de urgência."},
@@ -1664,7 +1664,7 @@ function timeline(){
     <section style="display:grid;gap:10px"><span class="sub-h">Próximas votações</span>
       <div class="upcoming">${PROXIMAS.map(u=>{ const l=LEIS.find(x=>x.id===u[2]); return `<a class="up" href="#${l.id}"><span class="d"><b>${u[0]}</b><small>${u[1]}</small></span><div><p>${l.titulo}</p><span>${u[3]}</span></div></a>`; }).join("")}</div>
     </section>
-    <div class="tl-filters" role="group" aria-label="Filtrar">${f("tudo","Tudo")}${f("par","Pareceres")}${f("vot","Votações")}${f("lei","Leis sancionadas")}${f("seg","Seguindo",1)}${f("uf","Meu estado"+(state.inscrito?" ("+insc.uf+")":""),1)}</div>
+    <div class="tl-filters" role="group" aria-label="Filtrar">${f("tudo","Tudo")}${f("par","Resumos prévios")}${f("vot","Votações")}${f("lei","Leis sancionadas")}${f("seg","Seguindo",1)}${f("uf","Meu estado"+(state.inscrito?" ("+insc.uf+")":""),1)}</div>
     <div class="feed" id="feed">${feedHTML()}</div>
   </div>`;
 }
@@ -1677,7 +1677,7 @@ function opLista(){
   return LEIS.filter(l=>l.parecer && (f==="todos"||(f==="ben"&&l.car==="Benéfico")||(f==="mal"&&l.car==="Maléfico")||(f==="neu"&&l.car==="Neutro")||(f==="ind"&&l.car==="Enfraquece indiretamente")||(f==="alto"&&l.imp==="Alto impacto")||(f==="fed"&&l.esfera==="federal")||(f==="est"&&l.esfera==="estadual")));
 }
 function opRows(){
-  const ls=opLista(); if(!ls.length) return `<p class="empty">Nenhum parecer com esse filtro.</p>`;
+  const ls=opLista(); if(!ls.length) return `<p class="empty">Nenhum resumo prévio com esse filtro.</p>`;
   return ls.map((l,i)=>{ const d=PAR_DATA[l.id]||["01","set",4]; return `<a class="op" href="#parecer-${l.id}" style="animation-delay:${i*40}ms"><span class="dt"><b>${d[0]}</b>${d[1]}</span>
     <div><h3>${l.titulo}</h3><div class="row">${placeTag(l.local)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}<span class="min">${l.num} · ${d[2]} min</span></div></div>
     <span class="arrow">${GO}</span></a>`; }).join("");
@@ -1689,8 +1689,8 @@ function opiniao(){
   const top=all[0];
   const f=(k,t)=>`<button class="chip" data-op="${k}" aria-pressed="${opFiltro.v===k}">${t}</button>`;
   return `<div class="wrap">
-    <header class="pg-head"><h1>Opinião</h1><p>Pareceres técnicos sobre as leis ambientais em tramitação e recém-aprovadas. Cada um traz impacto, caráter, pontos de atenção e recomendações.</p></header>
-    <section class="tally"><div class="tally-h"><b>${tot} pareceres publicados</b><span>Toque numa cor para filtrar</span></div>
+    <header class="pg-head"><h1>Opinião</h1><p>Resumos prévios sobre as leis ambientais em tramitação e recém-aprovadas. Cada um traz impacto, caráter, pontos de atenção e recomendações.</p></header>
+    <section class="tally"><div class="tally-h"><b>${tot} resumos prévios publicados</b><span>Toque numa cor para filtrar</span></div>
       <div class="stack">${seg("mal","s-mal","Maléficos")}${seg("ind","s-ind","Enfraquecem indiretamente")}${seg("neu","s-neu","Neutros")}${seg("ben","s-ben","Benéficos")}</div>
       <div class="tally-leg"><span><i style="background:var(--pol-neg)"></i><b>${n.mal}</b> maléficos</span><span><i style="background:repeating-linear-gradient(135deg,var(--pol-ind) 0 3px,#F3C185 3px 5px)"></i><b>${n.ind}</b> enfraquecem indiretamente</span><span><i style="background:var(--pol-mid)"></i><b>${n.neu}</b> neutros</span><span><i style="background:var(--pol-pos)"></i><b>${n.ben}</b> benéficos</span></div>
     </section>
@@ -1698,7 +1698,7 @@ function opiniao(){
       <a class="feat" href="#parecer-${top.id}"><div class="fl"><small class="withflag">${flag(flagOf(top.local))}Parecer técnico · ${top.local}</small><h2>${top.titulo}</h2><p>${top.resumo}</p><span class="arrow">Ler parecer${ARR}</span></div>
         <div class="fr"><div class="vline"><small>Impacto</small><b>${top.imp.replace(" impacto","")}</b></div><div class="vline"><small>Caráter</small><b style="color:${top.car==="Maléfico"?"var(--rose-ink)":top.car==="Enfraquece indiretamente"?"#8A5A12":"var(--green-dk)"}">${top.car}</b></div><div class="vline"><small>Situação</small><b>${top.status}</b></div></div></a>
     </section>
-    <section class="section"><div class="section-h"><h2>Todos os pareceres</h2></div>
+    <section class="section"><div class="section-h"><h2>Todos os resumos prévios</h2></div>
       <div class="chips" style="justify-content:flex-start">${f("todos","Todos")}${f("ben","Benéficos")}${f("mal","Maléficos")}${f("ind","Enfraquecem indiretamente")}${f("alto","Alto impacto")}${f("fed","Federais")}${f("est","Estaduais")}</div>
       <div class="ops" id="ops">${opRows()}</div>
     </section>
@@ -1730,7 +1730,7 @@ function artigos(){
       <div class="byline">${photo("sm")}<span>${AUTOR.nome} · ${a.data} · ${a.min} min</span></div></div><div class="cover ${a.cv}"></div></a>
     <section class="section"><div class="chips" style="justify-content:flex-start">${["Todos","Tendências","Explicadores","Dados"].map(c=>`<button class="chip" data-art="${c}" aria-pressed="${artFiltro.v===c}">${c}</button>`).join("")}</div>
       <div class="arts" id="arts">${artCards()}</div></section>
-    ${state.inscrito?"":`<section class="news"><div><b>Um artigo por semana no seu e-mail</b><p>Junto com os pareceres e alertas das leis que você segue.</p></div><button class="pill-btn" data-act="pagina">Se inscreva grátis</button></section>`}
+    ${state.inscrito?"":`<section class="news"><div><b>Um artigo por semana no seu e-mail</b><p>Junto com os resumos prévios e alertas das leis que você segue.</p></div><button class="pill-btn" data-act="pagina">Se inscreva grátis</button></section>`}
   </div>`;
 }
 function artigo(a){
@@ -1780,7 +1780,7 @@ function ufPanel(uf){
   const ls=leisUF(uf); const cob=COBERTURA[uf]||"breve"; const reg=Object.keys(REGIAO).find(r=>REGIAO[r].includes(uf));
   const t=COB_TXT[cob];
   return `<div class="ufpanel" id="ufpanel"><span class="sub-h">${reg}</span><div class="uf-title">${flag(uf,"lg")}<h2>${UF_NOME[uf]}</h2></div><p class="casa">Assembleia Legislativa · Diário Oficial do Estado</p>
-    <div class="ufstats"><div><b>${ls.filter(l=>l.status!=="Aprovada").length}</b><span>em tramitação</span></div><div><b>${ls.filter(l=>l.status==="Aprovada").length}</b><span>aprovadas</span></div><div><b>${ls.filter(l=>l.parecer).length}</b><span>com parecer</span></div></div>
+    <div class="ufstats"><div><b>${ls.filter(l=>l.status!=="Aprovada").length}</b><span>em tramitação</span></div><div><b>${ls.filter(l=>l.status==="Aprovada").length}</b><span>aprovadas</span></div><div><b>${ls.filter(l=>l.parecer).length}</b><span>com resumo prévio</span></div></div>
     <div class="cov"><span class="tag ${cob==="auto"?"tg-ben":cob==="manual"?"tg-alto":"tg-place"}">${t[0]}</span><span>${t[1]}</span></div>
     ${atuacaoBlock(uf)}
     <div class="minilist">${ls.length?ls.map(l=>`<a class="minilaw" href="#${l.id}"><b>${l.titulo}</b><div class="row">${stTag(l.status)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}<span class="n">${l.num}</span></div></a>`).join(""):
@@ -1817,7 +1817,7 @@ function fedCards(){
   return ls.map((l,i)=>`<a class="law" href="#${l.id}" style="animation-delay:${i*40}ms">
     <div class="top">${placeTag(l.casa)}${stTag(l.status)}<span class="tag tg-alto">${l.imp}</span>${carTag(l.car)}</div>
     <h3>${l.titulo}</h3><p>${l.resumo}</p>
-    <div class="go"><span class="num">${l.num} · ${l.etapa}</span><span class="arrow">${l.parecer?"Ler parecer":"Parecer em breve"}${ARR}</span></div></a>`).join("");
+    <div class="go"><span class="num">${l.num} · ${l.etapa}</span><span class="arrow">${l.parecer?"Ler parecer":"Resumo prévio em breve"}${ARR}</span></div></a>`).join("");
 }
 function funnelHTML(){
   const base=LEIS.filter(l=>l.esfera==="federal" && (fedSel.casa==="Todas"||l.casa===fedSel.casa));
@@ -1842,7 +1842,7 @@ function federais(){
 function refreshFed(){ $("#atuwrap").innerHTML=atuacaoBlock(fedSel.casa==="Todas"?"BR":fedSel.casa); $("#funnel").innerHTML=funnelHTML(); $("#fedlist").innerHTML=fedCards(); $("#fedcnt").textContent=fedLista().length+" leis"; $("#fedtit").textContent=fedSel.etapa||"Todas as leis federais"; }
 
 
-/* ---------- padrão de atuação (base: pareceres; dados fictícios) ---------- */
+/* ---------- padrão de atuação (base: resumos prévios; dados fictícios) ---------- */
 const ATUACAO={
   BR:{nome:"União",sub:"Câmara, Senado e Presidência",n:48,p:[31,13,21,35],ap:{n:14,p:[35,15,21,29]},temas:[["Licenciamento",29],["Florestas",21],["Mineração",15]]},
   "Câmara":{nome:"Câmara dos Deputados",n:26,p:[38,16,19,27],ap:{n:6,p:[35,15,17,33]},temas:[["Licenciamento",35],["Agrotóxicos",19],["Mineração",15]]},
@@ -1862,7 +1862,7 @@ const POL_VAR={m:"neg",i:"ind",n:"mid",b:"pos"};
 const DEF_IND="Enfraquece indiretamente: a proposta não muda a proteção de forma direta, mas abre caminho para o dano, por exemplo cortando fiscalização ou orçamento, ampliando prazos ou criando exceções que dependem de regulamento.";
 const AMOSTRA_MIN=5;
 function sbar(p,n,small){
-  if(!n) return `<span class="nodata">Nenhum parecer no período</span>`;
+  if(!n) return `<span class="nodata">Nenhum resumo prévio no período</span>`;
   const lab=["Maléfico","Enfraquece indiretamente","Neutro","Benéfico"];
   const bar=`<div class="sbar ${small?"sm":""}" role="img" aria-label="${lab.map((l,i)=>l+" "+p[i]+"%").join(", ")}">${p.map((v,i)=>v?`<i class="${"minb"[i]}" style="flex:${v}" data-t="${lab[i]}: ${v}% (${Math.round(v*n/100)} de ${n})"></i>`:"").join("")}</div>`;
   if(small) return bar;
@@ -1874,7 +1874,7 @@ function tendencia(a){
   return d>=15?`<span class="trend tr-pos" data-t="Propostas benéficas superam as que enfraquecem em ${d} pontos">Tende a proteger</span>`:d<=-15?`<span class="trend tr-neg" data-t="Propostas que enfraquecem (direta ou indiretamente) superam as benéficas em ${-d} pontos">Tende a enfraquecer</span>`:`<span class="trend tr-eq" data-t="Diferença menor que 15 pontos">Equilibrada</span>`;
 }
 const plegend = () => `<div class="plegend">${POL.map(([k,t])=>`<span ${k==="i"?`data-t="${DEF_IND}" style="cursor:help;text-decoration:underline dotted"`:""}><i style="background:${k==="i"?"repeating-linear-gradient(135deg,var(--pol-ind) 0 3px,#F3C185 3px 5px)":"var(--pol-"+POL_VAR[k]+")"}"></i>${t}</span>`).join("")}</div>`;
-const METODO = "Percentual dos pareceres do observatório sobre propostas desta casa, pelo caráter da mudança para a proteção ambiental (maléfico, enfraquece indiretamente, neutro ou benéfico). Mede o conteúdo das propostas, não o voto de cada parlamentar. Dados fictícios no protótipo.";
+const METODO = "Percentual dos resumos prévios do observatório sobre propostas desta casa, pelo caráter da mudança para a proteção ambiental (maléfico, enfraquece indiretamente, neutro ou benéfico). Mede o conteúdo das propostas, não o voto de cada parlamentar. Dados fictícios no protótipo.";
 function atuacaoBlock(key){
   const a=ATUACAO[key]; if(!a) return "";
   const nome = a.nome || UF_NOME[key];
@@ -1905,7 +1905,7 @@ const AREAS=[
   ["Clima",6,[12,5,33,50],50,"Avanços na regulamentação do mercado de carbono e em metas de restauração."],
   ["Agrotóxicos",5,[42,18,40,0],40,"Novas formas de aplicação chegam sem regras de distância mínima de casas e rios."],
   ["Unidades de conservação",5,[0,0,20,80],60,"A criação de unidades estaduais é a principal agenda positiva do período."],
-  ["Povos e comunidades",4,[35,15,25,25],75,"A falta de consulta prévia é o ponto crítico mais citado nos pareceres."],
+  ["Povos e comunidades",4,[35,15,25,25],75,"A falta de consulta prévia é o ponto crítico mais citado nos resumos prévios."],
   ["Espécies exóticas",4,[40,20,25,15],60,"Propostas que liberam o cultivo de espécies exóticas em rios e reservatórios, como a tilápia, avançam mais rápido que as regras de controle de espécies invasoras."],
   ["Fauna",3,[23,10,33,34],33,"Pouca atividade legislativa; temas pontuais de pesca e caça."],
   ["Saneamento",3,[0,0,67,33],33,"Mudanças de prazo nas metas de universalização."],
@@ -1917,7 +1917,7 @@ function panoCasas(){
   const fed=["BR","Câmara","Senado","Presidência"];
   if(pano.tabela){
     const tr=k=>{ const a=ATUACAO[k], g=get(a); return `<tr><td>${flag(UF_NOME[k]?k:"BR")} ${a.nome||UF_NOME[k]}</td><td class="r">${g.n}</td><td class="r">${g.p[0]}%</td><td class="r">${g.p[1]}%</td><td class="r">${g.p[2]}%</td><td class="r">${g.p[3]}%</td></tr>`; };
-    return `<div class="tw"><table class="ptable"><thead><tr><th>Casa ou estado</th><th class="r">Pareceres</th><th class="r">Maléfico</th><th class="r">Indireto</th><th class="r">Neutro</th><th class="r">Benéfico</th></tr></thead><tbody>${[...fed,...ufs].map(tr).join("")}</tbody></table></div>`;
+    return `<div class="tw"><table class="ptable"><thead><tr><th>Casa ou estado</th><th class="r">Resumos prévios</th><th class="r">Maléfico</th><th class="r">Indireto</th><th class="r">Neutro</th><th class="r">Benéfico</th></tr></thead><tbody>${[...fed,...ufs].map(tr).join("")}</tbody></table></div>`;
   }
   const row=k=>{ const a=ATUACAO[k], g=get(a), uf=!!UF_NOME[k];
     return `<a class="prow" href="#${uf?"estaduais":"federais"}" data-pgo="${k}"><div class="nm">${flag(uf?k:"BR","md")}<div><b>${a.nome||UF_NOME[k]}</b><small>${g.n} pareceres${a.sub?" · "+a.sub:""}</small></div></div>${sbar(g.p,g.n)}${tendencia({n:g.n,p:g.p})}</a>`; };
@@ -1925,11 +1925,11 @@ function panoCasas(){
     <div class="prows"><div class="pgroup">União</div>${fed.map(row).join("")}<div class="pgroup">Estados monitorados</div>${ufs.map(row).join("")}</div>`;
 }
 function panoBiomas(){
-  if(pano.tabela) return `<div class="tw"><table class="ptable"><thead><tr><th>Bioma</th><th class="r">Propostas</th><th class="r">Pareceres</th><th class="r">Maléfico</th><th class="r">Indireto</th><th class="r">Neutro</th><th class="r">Benéfico</th><th class="r">Alto impacto</th></tr></thead><tbody>${BIOMAS.map(b=>`<tr><td>${b.nome}</td><td class="r">${b.prop}</td><td class="r">${b.n}</td><td class="r">${b.p[0]}%</td><td class="r">${b.p[1]}%</td><td class="r">${b.p[2]}%</td><td class="r">${b.p[3]}%</td><td class="r">${b.alto}%</td></tr>`).join("")}</tbody></table></div>`;
+  if(pano.tabela) return `<div class="tw"><table class="ptable"><thead><tr><th>Bioma</th><th class="r">Propostas</th><th class="r">Resumos prévios</th><th class="r">Maléfico</th><th class="r">Indireto</th><th class="r">Neutro</th><th class="r">Benéfico</th><th class="r">Alto impacto</th></tr></thead><tbody>${BIOMAS.map(b=>`<tr><td>${b.nome}</td><td class="r">${b.prop}</td><td class="r">${b.n}</td><td class="r">${b.p[0]}%</td><td class="r">${b.p[1]}%</td><td class="r">${b.p[2]}%</td><td class="r">${b.p[3]}%</td><td class="r">${b.alto}%</td></tr>`).join("")}</tbody></table></div>`;
   const b=BIOMAS.find(x=>x.nome===pano.bio)||BIOMAS[0];
   const leis=LEIS.filter(l=>(LEI_BIOMA[l.id]||[]).includes(b.nome));
-  return `<div class="bgrid">${BIOMAS.map(x=>`<button class="bcard" data-bio="${x.nome}" aria-pressed="${x.nome===b.nome}"><h3>${x.nome}</h3><small>${x.n} pareceres · ${x.prop} propostas</small>${sbar(x.p,x.n,true)}<div class="fx"><span>Alto impacto ${x.alto}%</span>${x.n<AMOSTRA_MIN?`<span>amostra pequena</span>`:`<span>${x.temas[0]}</span>`}</div></button>`).join("")}</div>
-    <div class="bdetail" id="bdetail"><div class="atu-h"><div><span class="sub-h">Bioma</span><h3><a href="#bioma-${slugify(b.nome)}">${b.nome}</a></h3><small style="color:var(--soft)">${b.n} pareceres sobre ${b.prop} propostas · alto impacto em ${b.alto}%</small></div>${tendencia(b)}</div>
+  return `<div class="bgrid">${BIOMAS.map(x=>`<button class="bcard" data-bio="${x.nome}" aria-pressed="${x.nome===b.nome}"><h3>${x.nome}</h3><small>${x.n} resumos prévios · ${x.prop} propostas</small>${sbar(x.p,x.n,true)}<div class="fx"><span>Alto impacto ${x.alto}%</span>${x.n<AMOSTRA_MIN?`<span>amostra pequena</span>`:`<span>${x.temas[0]}</span>`}</div></button>`).join("")}</div>
+    <div class="bdetail" id="bdetail"><div class="atu-h"><div><span class="sub-h">Bioma</span><h3><a href="#bioma-${slugify(b.nome)}">${b.nome}</a></h3><small style="color:var(--soft)">${b.n} resumos prévios sobre ${b.prop} propostas · alto impacto em ${b.alto}%</small></div>${tendencia(b)}</div>
       ${sbar(b.p,b.n)}${plegend()}
       <div class="qual"><div class="q-neg"><b>Principais pressões</b><ul>${b.neg.map(x=>`<li>${x}</li>`).join("")||"<li>Nenhuma no período</li>"}</ul></div><div class="q-pos"><b>Principais avanços</b><ul>${b.pos.map(x=>`<li>${x}</li>`).join("")||"<li>Nenhum no período</li>"}</ul></div></div>
       <div class="themes">Temas mais frequentes: ${b.temas.map(t=>`<span class="t">${t}</span>`).join("")}</div>
@@ -1937,23 +1937,23 @@ function panoBiomas(){
     </div>`;
 }
 function panoAreas(){
-  if(pano.tabela) return `<div class="tw"><table class="ptable"><thead><tr><th>Área</th><th class="r">Pareceres</th><th class="r">Maléfico</th><th class="r">Indireto</th><th class="r">Neutro</th><th class="r">Benéfico</th><th class="r">Alto impacto</th></tr></thead><tbody>${AREAS.map(a=>`<tr><td>${a[0]}</td><td class="r">${a[1]}</td><td class="r">${a[2][0]}%</td><td class="r">${a[2][1]}%</td><td class="r">${a[2][2]}%</td><td class="r">${a[2][3]}%</td><td class="r">${a[3]}%</td></tr>`).join("")}</tbody></table></div>`;
+  if(pano.tabela) return `<div class="tw"><table class="ptable"><thead><tr><th>Área</th><th class="r">Resumos prévios</th><th class="r">Maléfico</th><th class="r">Indireto</th><th class="r">Neutro</th><th class="r">Benéfico</th><th class="r">Alto impacto</th></tr></thead><tbody>${AREAS.map(a=>`<tr><td>${a[0]}</td><td class="r">${a[1]}</td><td class="r">${a[2][0]}%</td><td class="r">${a[2][1]}%</td><td class="r">${a[2][2]}%</td><td class="r">${a[2][3]}%</td><td class="r">${a[3]}%</td></tr>`).join("")}</tbody></table></div>`;
   const max=Math.max(...AREAS.map(a=>a[1]));
-  return `<div class="arows">${AREAS.map(a=>`<button class="arow" data-area="${a[0]}" aria-expanded="${pano.area===a[0]}"><b>${a[0]}</b><span class="mag"><span class="tr"><i style="width:${a[1]/max*100}%"></i></span><span>${a[1]}</span></span>${sbar(a[2],a[1])}<span class="chev">${CHEV}</span></button>${pano.area===a[0]?`<p class="anote"><b>O que temos visto:</b> ${a[4]} Alto impacto em ${a[3]}% dos pareceres. <a class="metod-link" href="#tema-${slugify(a[0])}">Ver página do tema</a></p>`:""}`).join("")}</div>`;
+  return `<div class="arows">${AREAS.map(a=>`<button class="arow" data-area="${a[0]}" aria-expanded="${pano.area===a[0]}"><b>${a[0]}</b><span class="mag"><span class="tr"><i style="width:${a[1]/max*100}%"></i></span><span>${a[1]}</span></span>${sbar(a[2],a[1])}<span class="chev">${CHEV}</span></button>${pano.area===a[0]?`<p class="anote"><b>O que temos visto:</b> ${a[4]} Alto impacto em ${a[3]}% dos resumos prévios. <a class="metod-link" href="#tema-${slugify(a[0])}">Ver página do tema</a></p>`:""}`).join("")}</div>`;
 }
 function panoBody(){ return pano.tab==="casas"?panoCasas():pano.tab==="biomas"?panoBiomas():panoAreas(); }
 function panorama(){
   const tabs=[["casas","Casas e estados"],["biomas","Biomas"],["areas","Áreas"]];
-  const desc={casas:"O padrão de atuação de cada casa da União e de cada estado, pelo caráter das propostas analisadas.",biomas:"Quantas propostas atingem cada bioma, o tipo de mudança que trazem e o que mais pesa em cada um.",areas:"As áreas do meio ambiente com mais pareceres e o caráter das propostas em cada uma. Toque numa área para ver a leitura qualitativa."};
+  const desc={casas:"O padrão de atuação de cada casa da União e de cada estado, pelo caráter das propostas analisadas.",biomas:"Quantas propostas atingem cada bioma, o tipo de mudança que trazem e o que mais pesa em cada um.",areas:"As áreas do meio ambiente com mais resumos prévios e o caráter das propostas em cada uma. Toque numa área para ver a leitura qualitativa."};
   return `<div class="wrap" style="max-width:1040px">
-    <header class="pg-head"><h1>Panorama</h1><p>Os números por trás dos pareceres: quem propõe o quê, em quais biomas e em quais áreas do meio ambiente.</p></header>
-    <div class="kpis"><div class="kpi"><b>101</b><span>pareceres publicados</span></div><div class="kpi"><b>128</b><span>propostas monitoradas</span></div><div class="kpi"><b>8</b><span>estados + União</span></div><div class="kpi"><b>7</b><span>biomas</span></div></div>
+    <header class="pg-head"><h1>Panorama</h1><p>Os números por trás dos resumos prévios: quem propõe o quê, em quais biomas e em quais áreas do meio ambiente.</p></header>
+    <div class="kpis"><div class="kpi"><b>101</b><span>resumos prévios publicados</span></div><div class="kpi"><b>128</b><span>propostas monitoradas</span></div><div class="kpi"><b>8</b><span>estados + União</span></div><div class="kpi"><b>7</b><span>biomas</span></div></div>
     <div class="ptabs"><div class="seg" role="tablist">${tabs.map(t=>`<button role="tab" data-ptab="${t[0]}" aria-pressed="${pano.tab===t[0]}">${t[1]}</button>`).join("")}</div>
       <button class="btn-o" data-act="ptabela" aria-pressed="${pano.tabela}">${pano.tabela?"Ver como gráfico":"Ver como tabela"}</button></div>
     <p style="color:var(--gray);margin:14px 0 8px" id="pdesc">${desc[pano.tab]}</p>
     ${pano.tabela?"":plegend()}<p class="method" style="margin-top:6px">${DEF_IND}</p>
     <div id="pbody" style="margin-top:12px">${panoBody()}</div>
-    <p class="method" style="margin-top:18px">Método: cada parecer classifica a proposta como maléfica (enfraquece diretamente), que enfraquece indiretamente, neutra ou benéfica à proteção ambiental e como de alto, médio ou baixo impacto. Os percentuais somam os pareceres de cada grupo; um parecer pode envolver mais de um bioma ou área. Grupos com menos de ${AMOSTRA_MIN} pareceres aparecem como "amostra pequena". Dados fictícios no protótipo. <a class="metod-link" href="#metodologia">Ver metodologia completa</a></p>
+    <p class="method" style="margin-top:18px">Método: cada resumo prévio classifica a proposta como maléfica (enfraquece diretamente), que enfraquece indiretamente, neutra ou benéfica à proteção ambiental e como de alto, médio ou baixo impacto. Os percentuais somam os resumos prévios de cada grupo; um resumo prévio pode envolver mais de um bioma ou área. Grupos com menos de ${AMOSTRA_MIN} resumos prévios aparecem como "amostra pequena". Dados fictícios no protótipo. <a class="metod-link" href="#metodologia">Ver metodologia completa</a></p>
   </div>`;
 }
 
@@ -1999,12 +1999,12 @@ function parlamentar(slug){
   if(est){ d.nAut=d.autorias.length; d.autP=carP(d.autorias); if(parlSel.tab==="votos") parlSel.tab="autorias"; }
   const tabs=[...(est?[]:[["votos","Como votou"]]),["autorias","Autorias"+(est?" ("+d.autorias.length+")":"")],["relatorias","Relatorias ("+d.relatorias.length+")"],["emendas","Emendas ("+d.emendas.length+")"]];
   let body="";
-  if(parlSel.tab==="votos") body = tot?`<div class="vote-sum"><p>Em <b>${tot} votações</b> sobre propostas com parecer, votou no sentido da proteção ambiental em <b>${pro}</b>.</p>
+  if(parlSel.tab==="votos") body = tot?`<div class="vote-sum"><p>Em <b>${tot} votações</b> sobre propostas com resumo prévio, votou no sentido da proteção ambiental em <b>${pro}</b>.</p>
       <div class="sb"><div class="sbar" role="img" aria-label="A favor da proteção ${pc(pro)}%, contra ${pc(contra)}%, ausente ${pc(aus)}%">${contra?`<i class="m" style="flex:${contra}" data-t="Contra a proteção: ${contra} de ${tot}"></i>`:""}${aus?`<i class="n" style="flex:${aus}" data-t="Ausente ou abstenção: ${aus} de ${tot}"></i>`:""}${pro?`<i class="b" style="flex:${pro}" data-t="A favor da proteção: ${pro} de ${tot}"></i>`:""}</div>
       <div class="svals">${contra?`<span><i class="m"></i>Contra a proteção ${pc(contra)}%</span>`:""}${aus?`<span><i class="n"></i>Ausente ${pc(aus)}%</span>`:""}${pro?`<span><i class="b"></i>A favor da proteção ${pc(pro)}%</span>`:""}</div></div></div>
       <div class="vrows" style="margin-top:10px">${d.votos.map(v=>`<div class="vrow"><span class="dt">${v.data}</span><div><a href="#${v.l.id}"><b>${v.l.titulo}</b></a><small>${v.l.num} · ${v.orgao}</small> ${carTag(v.l.car)}</div><span class="vchip ${v.voto==="Sim"?"v-sim":v.voto==="Não"?"v-nao":"v-aus"}">${v.voto}</span><span class="sentido ${v.pro===true?"s-pro":v.pro===false?"s-contra":"s-na"}">${v.pro===true?"A favor da proteção":v.pro===false?"Contra a proteção":"Sem voto"}</span></div>`).join("")}</div>`
-    : `<p class="hint">Nenhuma votação com parecer no período.</p>`;
-  if(parlSel.tab==="autorias") body=`<div class="atu" style="margin-bottom:12px"><div class="atu-h"><div><h3>Padrão das propostas de autoria</h3><small>Base: ${d.nAut} propostas ambientais com parecer</small></div>${tendencia({n:d.nAut,p:d.autP})}</div>${sbar(d.autP,d.nAut)}${plegend()}</div>`+lst(d.autorias,"Nenhuma proposta de autoria monitorada.");
+    : `<p class="hint">Nenhuma votação com resumo prévio no período.</p>`;
+  if(parlSel.tab==="autorias") body=`<div class="atu" style="margin-bottom:12px"><div class="atu-h"><div><h3>Padrão das propostas de autoria</h3><small>Base: ${d.nAut} propostas ambientais com resumo prévio</small></div>${tendencia({n:d.nAut,p:d.autP})}</div>${sbar(d.autP,d.nAut)}${plegend()}</div>`+lst(d.autorias,"Nenhuma proposta de autoria monitorada.");
   if(parlSel.tab==="relatorias") body=lst(d.relatorias,"Nenhuma relatoria em proposta monitorada.");
   if(parlSel.tab==="emendas") body=d.emendas.length?`<div class="emendas">${d.emendas.map(([l,n,t])=>`<div class="emenda"><span class="n">${n}</span><div>${t}<span><a href="#${l.id}">${l.titulo}</a> · ${l.num}</span></div></div>`).join("")}</div>`:`<p class="hint">Nenhuma emenda em proposta monitorada.</p>`;
   const seg=state.seguindoP.includes(d.slug);
@@ -2013,11 +2013,11 @@ function parlamentar(slug){
     <header class="parl-head"><div class="portrait" aria-hidden="true">${ini(d.nome)}${flag(d.uf)}</div>
       <div><span class="sub-h">${d.cargo} · ${d.casa}</span><h1>${d.nome}</h1><div class="meta"><span>${d.pu.split("-")[0]} · ${UF_NOME[d.uf]||d.uf}</span><span>Mandato ${d.mandato}</span></div></div>
       <div class="parl-acts"><button class="mini ${seg&&state.inscrito?"on":""}" data-seguir-p="${d.slug}">${ICO_BELL}${seg&&state.inscrito?"Seguindo":"Seguir"}</button></div></header>
-    <div class="kpis pstats"><div class="kpi"><b>${d.nAut}</b><span>propostas ambientais de autoria${est?" monitoradas":""}</span></div><div class="kpi"><b>${d.relatorias.length}</b><span>relatorias</span></div><div class="kpi"><b>${d.emendas.length}</b><span>emendas</span></div>${est?`<div class="kpi"><b>${d.autorias.filter(l=>l.parecer).length}</b><span>com parecer publicado</span></div>`:`<div class="kpi"><b>${tot?Math.round((tot-aus)/tot*100):0}%</b><span>presença em votações ambientais</span></div>`}</div>
+    <div class="kpis pstats"><div class="kpi"><b>${d.nAut}</b><span>propostas ambientais de autoria${est?" monitoradas":""}</span></div><div class="kpi"><b>${d.relatorias.length}</b><span>relatorias</span></div><div class="kpi"><b>${d.emendas.length}</b><span>emendas</span></div>${est?`<div class="kpi"><b>${d.autorias.filter(l=>l.parecer).length}</b><span>com resumo prévio publicado</span></div>`:`<div class="kpi"><b>${tot?Math.round((tot-aus)/tot*100):0}%</b><span>presença em votações ambientais</span></div>`}</div>
     ${est?`<p class="datanote" style="margin-top:14px">A ${ALE_SIGLA[d.uf]||"Assembleia"} não publica votos nominais em formato aberto. Por isso esta página mostra só o que o deputado propôs, relatou e emendou nas leis que acompanhamos.</p>`:`<div class="comm" style="margin-top:14px">${d.comissoes.map(c=>`<span>${c}</span>`).join("")}</div>`}
     <div class="ptabs2" role="tablist">${tabs.map(t=>`<button role="tab" data-ptab2="${t[0]}" aria-selected="${parlSel.tab===t[0]}">${t[1]}</button>`).join("")}</div>
     <section style="padding-block:18px 10px" id="parlbody">${body}</section>
-    <p class="method">${est?"O padrão das propostas usa a classificação dos pareceres do observatório sobre as propostas de autoria. Mostra o sentido das propostas, não avalia a pessoa. Dados fictícios no protótipo.":`Os indicadores usam a classificação dos pareceres do observatório: um voto "Sim" numa proposta benéfica, ou "Não" numa proposta maléfica ou que enfraquece indiretamente, conta como a favor da proteção. Propostas neutras não entram na conta. Mostram o sentido dos votos e das propostas, não avaliam a pessoa. Dados fictícios no protótipo.`}</p>
+    <p class="method">${est?"O padrão das propostas usa a classificação dos resumos prévios do observatório sobre as propostas de autoria. Mostra o sentido das propostas, não avalia a pessoa. Dados fictícios no protótipo.":`Os indicadores usam a classificação dos resumos prévios do observatório: um voto "Sim" numa proposta benéfica, ou "Não" numa proposta maléfica ou que enfraquece indiretamente, conta como a favor da proteção. Propostas neutras não entram na conta. Mostram o sentido dos votos e das propostas, não avaliam a pessoa. Dados fictícios no protótipo.`}</p>
   </div>`;
 }
 function parlLista(esfera){
@@ -2085,17 +2085,17 @@ function metodologia(){
     <div class="rep-body">
       <nav class="toc" aria-label="Nesta página"><small>Nesta página</small>${MSECS.map((x,i)=>`<a href="#metodologia" data-jump="${x[0]}" class="${i===0?"on":""}"><span>${i+1}</span>${x[1]}</a>`).join("")}</nav>
       <article>
-        <section class="rsec" id="m1"><h2><span>1</span>Do projeto ao parecer</h2>
+        <section class="rsec" id="m1"><h2><span>1</span>Do projeto ao resumo prévio</h2>
           <ol class="flow">
             <li><div><b>Monitoramento</b><p>Todos os dias coletamos novas proposições, tramitações, pautas, votações, sanções e vetos nas fontes oficiais.</p><span class="who m">Automático</span></div></li>
             <li><div><b>Triagem</b><p>Um dicionário de palavras-chave separa o que pode ser ambiental e monta o dossiê de cada proposta (texto integral, versões, tramitação, autores). O autor decide o que entra, o que só é acompanhado e o que é descartado.</p><span class="who hm">Automático + pessoa</span></div></li>
             <li><div><b>Análise</b><p>O autor lê o texto integral, compara as versões (substitutivos, emendas), a justificativa e a legislação que a proposta altera.</p><span class="who h">Pessoa</span></div></li>
-            <li><div><b>Parecer, nota técnica e quadro comparativo</b><p>Escritos integralmente pelo autor indicado, em modelos fixos. O <b>parecer</b>, aberto a todos, segue a lógica de um parecer prévio: abre com o texto base da proposta, como saiu do arquivo oficial, e só depois traz síntese, objeto e alcance, regime vigente e proposta, classificação, relevância, pontos de atenção e tramitação. A <b>nota técnica</b> (3 páginas) é o parecer completo: texto base, análise do cotejo, problema, hipótese, impactos, cenários, soluções e casos de referência. O <b>quadro comparativo</b> traz o cotejo literal (texto vigente × proposto), a testagem das hipóteses e a comparação de potencialidades entre os cenários, com gráficos. Os PDFs levam em cada página a identificação do parecer e um link permanente de volta ao site. O autor assina e responde pelos três.</p><span class="who h">Pessoa</span></div></li>
-            <li><div><b>Publicação e atualização</b><p>O parecer informa a versão do texto analisado. Se o texto mudar, publicamos nova versão do parecer e mantemos o histórico.</p><span class="who h">Pessoa</span></div></li>
+            <li><div><b>Resumo prévio, parecer técnico e quadro comparativo</b><p>Escritos integralmente pelo autor indicado, em modelos fixos. O <b>resumo prévio</b>, aberto a todos, segue a lógica de um resumo prévio: abre com o texto base da proposta, como saiu do arquivo oficial, e só depois traz síntese, objeto e alcance, regime vigente e proposta, classificação, relevância, pontos de atenção e tramitação. O <b>parecer técnico</b> (3 páginas) é a análise completa: texto base, análise do cotejo, problema, hipótese, impactos, cenários, soluções e casos de referência. O <b>quadro comparativo</b> traz o cotejo literal (texto vigente × proposto), a testagem das hipóteses e a comparação de potencialidades entre os cenários, com gráficos. Os PDFs levam em cada página a identificação do resumo prévio e um link permanente de volta ao site. O autor assina e responde pelos três.</p><span class="who h">Pessoa</span></div></li>
+            <li><div><b>Publicação e atualização</b><p>O resumo prévio informa a versão do texto analisado. Se o texto mudar, publicamos nova versão do resumo prévio e mantemos o histórico.</p><span class="who h">Pessoa</span></div></li>
           </ol></section>
 
         <section class="rsec" id="m2"><h2><span>2</span>Como classificamos</h2>
-          <p>Cada parecer recebe duas etiquetas: o <b>caráter</b> (para que lado a proposta move a proteção ambiental) e o <b>impacto</b> (o tamanho do efeito).</p>
+          <p>Cada resumo prévio recebe duas etiquetas: o <b>caráter</b> (para que lado a proposta move a proteção ambiental) e o <b>impacto</b> (o tamanho do efeito).</p>
           <h3 style="font-size:1.05rem;margin-top:6px">Caráter</h3>
           <div class="cscale" role="group" aria-label="Categorias de caráter">${CARATER.map(c=>`<button class="cbox" data-car="${c.k}" aria-pressed="${metSel.car===c.k}"><span class="sw2" style="background:${c.cor}"></span><b>${c.nome}</b><span>${c.sub}</span></button>`).join("")}</div>
           <div id="cex">${cexHTML()}</div>
@@ -2104,16 +2104,16 @@ function metodologia(){
             <tr><td><span class="tag tg-alto">Alto</span></td><td>Atinge um bioma inteiro, uma norma geral (como o licenciamento) ou muitas pessoas; ou o dano é difícil de reverter.</td></tr>
             <tr><td><span class="tag tg-alto" style="opacity:.8">Médio</span></td><td>Efeito regional ou setorial, com possibilidade de correção por regulamento ou fiscalização.</td></tr>
             <tr><td><span class="tag tg-alto" style="opacity:.6">Baixo</span></td><td>Efeito local, pontual ou só procedimental.</td></tr></tbody></table></div>
-          <p class="method">Na dúvida entre dois níveis, usamos o mais alto e explicamos o motivo no parecer.</p></section>
+          <p class="method">Na dúvida entre dois níveis, usamos o mais alto e explicamos o motivo no resumo prévio.</p></section>
 
         <section class="rsec" id="m3"><h2><span>3</span>Indicadores</h2>
-          <p>Os gráficos do Panorama, dos estados, das casas e dos parlamentares são contagens dos nossos pareceres. Eles medem o conteúdo das propostas, não o mérito das pessoas.</p>
+          <p>Os gráficos do Panorama, dos estados, das casas e dos parlamentares são contagens dos nossos resumos prévios. Eles medem o conteúdo das propostas, não o mérito das pessoas.</p>
           <div class="rules">
-            <div class="rule"><b>Padrão de atuação</b><p>Percentual de pareceres em cada caráter, por casa ou estado. Mostramos tudo que tramitou e, separado, só o que foi aprovado.</p></div>
+            <div class="rule"><b>Padrão de atuação</b><p>Percentual de resumos prévios em cada caráter, por casa ou estado. Mostramos tudo que tramitou e, separado, só o que foi aprovado.</p></div>
             <div class="rule"><b>Tendência</b><p><code>benéficos − (maléficos + indiretos)</code>. A partir de 15 pontos: "tende a proteger"; abaixo de −15: "tende a enfraquecer"; entre os dois: "equilibrada".</p></div>
-            <div class="rule"><b>Amostra mínima</b><p>Com menos de 5 pareceres, o grupo aparece como "amostra pequena" e não recebe tendência.</p></div>
+            <div class="rule"><b>Amostra mínima</b><p>Com menos de 5 resumos prévios, o grupo aparece como "amostra pequena" e não recebe tendência.</p></div>
             <div class="rule"><b>Sentido do voto (federal)</b><p>"Sim" em proposta benéfica ou "Não" em proposta maléfica ou indireta conta a favor da proteção. Propostas neutras ficam fora. Só usamos votos nominais publicados pela casa.</p></div>
-            <div class="rule"><b>Biomas e áreas</b><p>Um parecer pode contar em mais de um bioma ou área. Por isso as somas por bioma podem passar do total de pareceres.</p></div>
+            <div class="rule"><b>Biomas e áreas</b><p>Um resumo prévio pode contar em mais de um bioma ou área. Por isso as somas por bioma podem passar do total de resumos prévios.</p></div>
             <div class="rule"><b>Estados</b><p>As Assembleias raramente publicam votos nominais em formato aberto. Nos estados mostramos autorias, relatorias e emendas, não votos.</p></div>
           </div></section>
 
@@ -2131,19 +2131,19 @@ function metodologia(){
         <section class="rsec" id="m5"><h2><span>5</span>Automação e inteligência artificial</h2>
           <p>A tecnologia só busca e organiza. A análise e a escrita são do autor.</p>
           <div class="iacols"><div class="yes"><b>A automação faz</b><ul><li>Captura, pelas APIs e diários oficiais, os textos e dados das proposições</li><li>Extrai o texto de documentos em PDF</li><li>Separa por palavras-chave o que pode ser ambiental</li><li>Organiza e entrega ao autor o dossiê de cada proposta</li></ul></div>
-            <div class="no"><b>Nunca faz</b><ul><li>Escrever, rascunhar ou resumir pareceres</li><li>Comparar ou interpretar o texto da lei</li><li>Definir caráter ou impacto</li><li>Avaliar parlamentares</li></ul></div></div>
-          <p class="method">Todo parecer é escrito do início ao fim e assinado pelo autor indicado, que responde pelo conteúdo.</p></section>
+            <div class="no"><b>Nunca faz</b><ul><li>Escrever, rascunhar ou resumir resumos prévios</li><li>Comparar ou interpretar o texto da lei</li><li>Definir caráter ou impacto</li><li>Avaliar parlamentares</li></ul></div></div>
+          <p class="method">Todo resumo prévio é escrito do início ao fim e assinado pelo autor indicado, que responde pelo conteúdo.</p></section>
 
         <section class="rsec" id="m6"><h2><span>6</span>Independência e limites</h2>
           <div class="limits">
-            <div>${ICO_CHECK}<span><b>Projeto pessoal e independente.</b> Os pareceres expressam a análise técnica do autor e não representam nenhuma instituição.</span></div>
-            <div>${ICO_CHECK}<span><b>Não é consultoria nem peça processual.</b> O parecer é uma análise pública; não substitui orientação jurídica para um caso concreto.</span></div>
+            <div>${ICO_CHECK}<span><b>Projeto pessoal e independente.</b> Os resumos prévios expressam a análise técnica do autor e não representam nenhuma instituição.</span></div>
+            <div>${ICO_CHECK}<span><b>Não é consultoria nem peça processual.</b> O resumo prévio é uma análise pública; não substitui orientação jurídica para um caso concreto.</span></div>
             <div>${ICO_CHECK}<span><b>Sem financiamento de interessados.</b> Não aceitamos patrocínio de quem tenha interesse direto nas leis analisadas.</span></div>
             <div>${ICO_CHECK}<span><b>Avaliamos propostas, não pessoas.</b> Os indicadores mostram o sentido das propostas e dos votos.</span></div>
           </div></section>
 
         <section class="rsec" id="m7"><h2><span>7</span>Correções</h2>
-          <p>Errou um número, uma data ou uma leitura do texto? Avise. Corrigimos, informamos no próprio parecer o que mudou e registramos abaixo.</p>
+          <p>Errou um número, uma data ou uma leitura do texto? Avise. Corrigimos, informamos no próprio resumo prévio o que mudou e registramos abaixo.</p>
           <form class="atu" id="fixform" style="gap:10px"><div class="two-f" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
             <label class="field" for="fx-n">Seu nome<input id="fx-n" type="text" autocomplete="name"></label>
             <label class="field" for="fx-e">E-mail<input id="fx-e" type="email" inputmode="email" autocomplete="email"></label></div>
@@ -2158,10 +2158,10 @@ function metodologia(){
 
         <section class="rsec" id="m8"><h2><span>8</span>Perguntas frequentes</h2>
           <div class="faq">
-            <details><summary>Quem escreve os pareceres?${CHEV}</summary><p>O autor do observatório, que assina cada parecer. A estrutura está pronta para colaboradores, sempre identificados.</p></details>
-            <details><summary>Por que "maléfico" e "benéfico"? Isso não é opinião?${CHEV}</summary><p>É uma avaliação técnica com critério público: para que lado a proposta move a proteção ambiental prevista na Constituição e nas leis gerais. O raciocínio completo está em cada parecer, e você pode discordar com base nele.</p></details>
-            <details><summary>Vocês analisam todas as leis?${CHEV}</summary><p>Monitoramos todas as que passam pela triagem ambiental, mas escrevemos parecer sobre as mais relevantes e as que estão perto de votação.</p></details>
-            <details><summary>Posso usar o conteúdo em reportagens ou trabalhos acadêmicos?${CHEV}</summary><p>Sim, citando a fonte. Cada parecer tem citação pronta em ABNT, APA e BibTeX. Jornalistas credenciados têm acesso a gráficos e dados.</p></details>
+            <details><summary>Quem escreve os resumos prévios?${CHEV}</summary><p>O autor do observatório, que assina cada resumo prévio. A estrutura está pronta para colaboradores, sempre identificados.</p></details>
+            <details><summary>Por que "maléfico" e "benéfico"? Isso não é opinião?${CHEV}</summary><p>É uma avaliação técnica com critério público: para que lado a proposta move a proteção ambiental prevista na Constituição e nas leis gerais. O raciocínio completo está em cada resumo prévio, e você pode discordar com base nele.</p></details>
+            <details><summary>Vocês analisam todas as leis?${CHEV}</summary><p>Monitoramos todas as que passam pela triagem ambiental, mas escrevemos resumo prévio sobre as mais relevantes e as que estão perto de votação.</p></details>
+            <details><summary>Posso usar o conteúdo em reportagens ou trabalhos acadêmicos?${CHEV}</summary><p>Sim, citando a fonte. Cada resumo prévio tem citação pronta em ABNT, APA e BibTeX. Jornalistas credenciados têm acesso a gráficos e dados.</p></details>
             <details><summary>O método muda?${CHEV}</summary><p>Pode mudar. Quando mudar, a versão do método sobe, a data é atualizada e explicamos aqui o que mudou.</p></details>
           </div></section>
       </article>
@@ -2170,7 +2170,7 @@ function metodologia(){
 }
 
 
-/* ---------- autor dos pareceres ---------- */
+/* ---------- autor dos resumos prévios ---------- */
 const SOC_ICO={
   linkedin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>', instagram:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>',
   x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l16 16M20 4L4 20"/></svg>',
@@ -2178,13 +2178,13 @@ const SOC_ICO={
   email:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',
 };
 const AUTOR={slug:"nome-do-autor",nome:"Nome do Autor",titulo:"Mestre em Direito Ambiental",
-  bio:"Atua há 15 anos com legislação ambiental e licenciamento. Pesquisa conservação na Amazônia e no Cerrado. Escreve os pareceres do observatório.",
+  bio:"Atua há 15 anos com legislação ambiental e licenciamento. Pesquisa conservação na Amazônia e no Cerrado. Escreve os resumos prévios do observatório.",
   redes:[["linkedin","LinkedIn"],["instagram","Instagram"],["x","X"],["lattes","Currículo Lattes"],["email","E-mail"]]};
 const photo = (cls) => `<span class="photo ${cls}" role="img" aria-label="Foto de ${AUTOR.nome}">${iniciais(AUTOR.nome)}</span>`;
 const socials = () => `<div class="socials">${AUTOR.redes.map(([k,t])=>`<a class="soc" href="#autor" aria-label="${t}" title="${t}" data-soc="${t}">${SOC_ICO[k]}</a>`).join("")}</div>`;
 const miniSocials = () => `<span class="msoc">${AUTOR.redes.map(([k,t])=>`<a href="#autor" aria-label="${t}" title="${t}" data-soc="${t}">${SOC_ICO[k]}</a>`).join("")}</span>`;
 const byAuthor = (extra) => `<div class="byauthor">${photo("sm")}<div><span>Por <a href="#autor">${AUTOR.nome}</a>${miniSocials()}</span><small>${AUTOR.titulo}${extra?" · "+extra:""}</small></div></div>`;
-const authorBox = () => `<aside class="abox" aria-label="Sobre o autor">${photo("md")}<div><span class="eyebrow">Sobre o autor</span><h3><a href="#autor">${AUTOR.nome}</a></h3><span class="tit">${AUTOR.titulo}</span><p>${AUTOR.bio}</p>${socials()}<a class="arrow" href="#autor" style="font-size:.88rem;margin-top:10px">Todos os pareceres do autor${ARR}</a></div></aside>`;
+const authorBox = () => `<aside class="abox" aria-label="Sobre o autor">${photo("md")}<div><span class="eyebrow">Sobre o autor</span><h3><a href="#autor">${AUTOR.nome}</a></h3><span class="tit">${AUTOR.titulo}</span><p>${AUTOR.bio}</p>${socials()}<a class="arrow" href="#autor" style="font-size:.88rem;margin-top:10px">Todos os resumos prévios do autor${ARR}</a></div></aside>`;
 const LEI_TEMAS={resex:["Unidades de conservação","Povos e comunidades"],lic:["Licenciamento"],agua:["Água"],caat:["Florestas","Clima"],pant:["Florestas"],apps:["Florestas"],drones:["Agrotóxicos"],decarb:["Clima"],tofogo:["Florestas"],amgarimpo:["Mineração"],mtpant:["Florestas","Água"]};
 function subjects(l){
   const bio=(LEI_BIOMA[l.id]||[]); const uf=UF_NOME_R[l.local];
@@ -2196,9 +2196,9 @@ function autorPage(){
   const ps=LEIS.filter(l=>l.parecer);
   return `<div class="wrap">
     ${crumbs([["Início","#home"],["Autores","#autor"],[AUTOR.nome,""]])}
-    <header class="auth-head">${photo("lg")}<div><span class="sub-h">Autor dos pareceres</span><h1>${AUTOR.nome}</h1><span class="tit" style="color:var(--green-dk);font-weight:600">${AUTOR.titulo}</span><p style="color:var(--gray);margin-top:8px;max-width:60ch">${AUTOR.bio}</p>${socials()}</div></header>
-    <div class="kpis pstats" style="margin-top:14px"><div class="kpi"><b>${ps.length}</b><span>pareceres publicados</span></div><div class="kpi"><b>${ARTIGOS.length}</b><span>artigos</span></div><div class="kpi"><b>2</b><span>correções registradas</span></div><div class="kpi"><b>2026</b><span>no observatório desde</span></div></div>
-    <section class="section"><div class="section-h"><h2>Pareceres</h2><a class="arrow" href="#opiniao" style="font-size:.88rem">Ver na Opinião${ARR}</a></div><div class="ops">${opRows()}</div></section>
+    <header class="auth-head">${photo("lg")}<div><span class="sub-h">Autor dos resumos prévios</span><h1>${AUTOR.nome}</h1><span class="tit" style="color:var(--green-dk);font-weight:600">${AUTOR.titulo}</span><p style="color:var(--gray);margin-top:8px;max-width:60ch">${AUTOR.bio}</p>${socials()}</div></header>
+    <div class="kpis pstats" style="margin-top:14px"><div class="kpi"><b>${ps.length}</b><span>resumos prévios publicados</span></div><div class="kpi"><b>${ARTIGOS.length}</b><span>artigos</span></div><div class="kpi"><b>2</b><span>correções registradas</span></div><div class="kpi"><b>2026</b><span>no observatório desde</span></div></div>
+    <section class="section"><div class="section-h"><h2>Resumos prévios</h2><a class="arrow" href="#opiniao" style="font-size:.88rem">Ver na Opinião${ARR}</a></div><div class="ops">${opRows()}</div></section>
     <section class="section"><div class="section-h"><h2>Artigos</h2></div><div class="arts">${ARTIGOS.slice(0,4).map(x=>`<a class="art" href="#artigo-${x.id}"><div class="cover ${x.cv}"><span class="cat">${x.cat}</span></div><div class="in"><h3>${x.titulo}</h3><span class="min">${x.data} · ${x.min} min de leitura</span></div></a>`).join("")}</div></section>
   </div>`;
 }
@@ -2230,17 +2230,17 @@ const ARTIGO_TEMA={"Licenciamento":["onda","caminho"],"Clima":["carbono"],"Flore
 function relArts(k){ const ids=ARTIGO_TEMA[k]||["glossario","caminho"]; return ARTIGOS.filter(a=>ids.includes(a.id)).slice(0,2); }
 function lawCards(ls){
   if(!ls.length) return `<p class="hint">Nenhuma lei acompanhada neste momento.</p>`;
-  return `<div class="list">${ls.map(l=>`<a class="law" href="#${l.id}"><div class="top">${placeTag(l.local)}${stTag(l.status)}${carTag(l.car)}</div><h3>${l.titulo}</h3><p>${l.resumo}</p><div class="go"><span class="num">${l.num}</span><span class="arrow">${l.parecer?"Ler parecer":"Parecer em breve"}${ARR}</span></div></a>`).join("")}</div>`;
+  return `<div class="list">${ls.map(l=>`<a class="law" href="#${l.id}"><div class="top">${placeTag(l.local)}${stTag(l.status)}${carTag(l.car)}</div><h3>${l.titulo}</h3><p>${l.resumo}</p><div class="go"><span class="num">${l.num}</span><span class="arrow">${l.parecer?"Ler parecer":"Resumo prévio em breve"}${ARR}</span></div></a>`).join("")}</div>`;
 }
 function temasBiomas(){
   const amax=Math.max(...AREAS.map(a=>a[1]));
   return `<div class="wrap" style="max-width:1040px">
     ${crumbs([["Início","#home"],["Temas e biomas",""]])}
-    <header class="pg-head"><h1>Temas e biomas</h1><p>Escolha um assunto ou um bioma para ver as leis acompanhadas, os pareceres e o que tem pesado em cada um.</p></header>
+    <header class="pg-head"><h1>Temas e biomas</h1><p>Escolha um assunto ou um bioma para ver as leis acompanhadas, os resumos prévios e o que tem pesado em cada um.</p></header>
     <section class="section"><div class="section-h"><h2>Biomas</h2><span>${BIOMAS.length} biomas</span></div>
-      <div class="tb-grid">${BIOMAS.map(b=>`<a class="tbc bio" href="#bioma-${slugify(b.nome)}"><h3>${b.nome}</h3><small>${b.n} pareceres · ${b.prop} propostas</small>${sbar(b.p,b.n,true)}<div class="fx"><span>Alto impacto ${b.alto}%</span>${GO}</div></a>`).join("")}</div></section>
+      <div class="tb-grid">${BIOMAS.map(b=>`<a class="tbc bio" href="#bioma-${slugify(b.nome)}"><h3>${b.nome}</h3><small>${b.n} resumos prévios · ${b.prop} propostas</small>${sbar(b.p,b.n,true)}<div class="fx"><span>Alto impacto ${b.alto}%</span>${GO}</div></a>`).join("")}</div></section>
     <section class="section"><div class="section-h"><h2>Temas</h2><span>${AREAS.length} áreas do meio ambiente</span></div>
-      <div class="tb-grid">${AREAS.map(a=>`<a class="tbc" href="#tema-${slugify(a[0])}"><h3>${a[0]}</h3><small>${a[1]} pareceres</small>${sbar(a[2],a[1],true)}<div class="fx"><span>Alto impacto ${a[3]}%</span>${GO}</div></a>`).join("")}</div></section>
+      <div class="tb-grid">${AREAS.map(a=>`<a class="tbc" href="#tema-${slugify(a[0])}"><h3>${a[0]}</h3><small>${a[1]} resumos prévios</small>${sbar(a[2],a[1],true)}<div class="fx"><span>Alto impacto ${a[3]}%</span>${GO}</div></a>`).join("")}</div></section>
     <div style="margin-top:14px">${plegend()}</div>
   </div>`;
 }
@@ -2257,8 +2257,8 @@ function tbDetail(kind,key){
     ${crumbs([["Início","#home"],["Temas e biomas","#temas"],[nome,""]])}
     <header class="tb-head"><span class="sub-h">${isB?"Bioma":"Tema"}</span><h1>${nome}</h1><p class="intro">${(isB?BIOMA_INTRO:TEMA_INTRO)[nome]||""}</p>
       <div class="row">${tendencia({n,p})}<button class="mini" data-act="seguir-tema" data-nome="${nome}">${ICO_BELL}Seguir ${isB?"este bioma":"este tema"}</button></div></header>
-    <div class="kpis pstats" style="margin-top:10px"><div class="kpi"><b>${prop}</b><span>propostas acompanhadas</span></div><div class="kpi"><b>${n}</b><span>pareceres publicados</span></div><div class="kpi"><b>${alto}%</b><span>de alto impacto</span></div><div class="kpi"><b>${emPauta}</b><span>em tramitação agora</span></div></div>
-    <section class="section"><div class="section-h"><h2>Para que lado vão as propostas</h2><span>Base: ${n} pareceres</span></div>${sbar(p,n)}${plegend()}</section>
+    <div class="kpis pstats" style="margin-top:10px"><div class="kpi"><b>${prop}</b><span>propostas acompanhadas</span></div><div class="kpi"><b>${n}</b><span>resumos prévios publicados</span></div><div class="kpi"><b>${alto}%</b><span>de alto impacto</span></div><div class="kpi"><b>${emPauta}</b><span>em tramitação agora</span></div></div>
+    <section class="section"><div class="section-h"><h2>Para que lado vão as propostas</h2><span>Base: ${n} resumos prévios</span></div>${sbar(p,n)}${plegend()}</section>
     ${isB?`<section class="section" style="padding-top:0"><div class="qual"><div class="q-neg"><b>Principais pressões</b><ul>${b.neg.map(x=>`<li>${x}</li>`).join("")||"<li>Nenhuma no período</li>"}</ul></div><div class="q-pos"><b>Principais avanços</b><ul>${b.pos.map(x=>`<li>${x}</li>`).join("")||"<li>Nenhum no período</li>"}</ul></div></div></section>`
          :`<section class="section" style="padding-top:0"><div class="datanote" style="font-size:.95rem"><b>O que temos visto:</b> ${a[4]}</div></section>`}
     <section class="section"><div class="section-h"><h2>Leis acompanhadas</h2><span>${leis.length} neste protótipo</span></div>${lawCards(leis)}</section>
@@ -2285,12 +2285,12 @@ function textos(l){
   const hoje=new Date(); const acesso=`${hoje.getDate()} ${MESES[hoje.getMonth()]} ${hoje.getFullYear()}`;
   const tags="#MeioAmbiente #LegislaçãoAmbiental #"+l.local.replace(/\s/g,"");
   return {
-    whatsapp:`*${l.titulo}*\n${l.num} · ${l.local} · ${l.status}\n\n${l.imp} · ${l.car}\n${l.resumo}\n\nLeia o parecer técnico: ${url}`,
-    linkedin:`${l.titulo} (${l.num})\n\nO que muda: ${l.resumo}\n\nNossa avaliação: ${l.imp.toLowerCase()}, caráter ${l.car.toLowerCase()}. O parecer técnico traz impactos por dimensão, pontos de atenção, base legal e recomendações.\n\nLeia na íntegra: ${url}\n\n${tags}`,
+    whatsapp:`*${l.titulo}*\n${l.num} · ${l.local} · ${l.status}\n\n${l.imp} · ${l.car}\n${l.resumo}\n\nLeia o resumo prévio: ${url}`,
+    linkedin:`${l.titulo} (${l.num})\n\nO que muda: ${l.resumo}\n\nNossa avaliação: ${l.imp.toLowerCase()}, caráter ${l.car.toLowerCase()}. O resumo prévio traz impactos por dimensão, pontos de atenção, base legal e recomendações.\n\nLeia na íntegra: ${url}\n\n${tags}`,
     x:`${l.titulo} (${l.num}, ${l.local}): ${l.imp.toLowerCase()}, ${l.car.toLowerCase()}. Entenda o que muda ${url} ${tags}`,
-    abnt:`SOBRENOME, Nome do Autor. ${l.titulo}: parecer técnico sobre o ${l.num}. Versão 2. ênfase jur, 9 out. 2026. Disponível em: ${url}. Acesso em: ${acesso}.`,
+    abnt:`SOBRENOME, Nome do Autor. ${l.titulo}: resumo prévio sobre o ${l.num}. Versão 2. ênfase jur, 9 out. 2026. Disponível em: ${url}. Acesso em: ${acesso}.`,
     apa:`Sobrenome, N. A. (2026, 9 de outubro). ${l.titulo} [Parecer técnico sobre o ${l.num}, versão 2]. ênfase jur. ${url}`,
-    bibtex:`@misc{parecer_${l.id}_2026,\n  author       = {Sobrenome, Nome do Autor},\n  title        = {${l.titulo}: parecer técnico sobre o ${l.num}},\n  howpublished = {ênfase jur},\n  year         = {2026},\n  month        = {out},\n  note         = {Versão 2. Disponível em: \\url{${url}}. Acesso em: ${hoje.getDate()} ${MESES_L[hoje.getMonth()]} ${hoje.getFullYear()}}\n}`,
+    bibtex:`@misc{parecer_${l.id}_2026,\n  author       = {Sobrenome, Nome do Autor},\n  title        = {${l.titulo}: resumo prévio sobre o ${l.num}},\n  howpublished = {ênfase jur},\n  year         = {2026},\n  month        = {out},\n  note         = {Versão 2. Disponível em: \\url{${url}}. Acesso em: ${hoje.getDate()} ${MESES_L[hoje.getMonth()]} ${hoje.getFullYear()}}\n}`,
   };
 }
 function textosArtigo(a){
@@ -2311,7 +2311,7 @@ function shareHTML(l){
   let body="";
   if(tab==="instagram"){
     const art=ARTIGOS.includes(l);
-    body=`<div class="ig" aria-label="Prévia do card para Instagram"><small>${art?"Artigo · "+l.cat:flag(flagOf(l.local))+"Parecer técnico · "+l.local}</small><h4>${l.titulo}</h4>
+    body=`<div class="ig" aria-label="Prévia do card para Instagram"><small>${art?"Artigo · "+l.cat:flag(flagOf(l.local))+"Resumo prévio · "+l.local}</small><h4>${l.titulo}</h4>
       <div class="tg">${art?`<span>${l.min} min de leitura</span>`:`<span>${l.imp}</span><span>${l.car}</span><span>${l.status}</span>`}</div><div class="ft"><span>${art?l.data+" 2026":l.num}</span><span>ênfase jur</span></div></div>
       <div class="share-row"><span>Card 1080 × 1080 para feed e stories</span><button class="pill-btn" data-act="baixar-card">Baixar imagem</button></div>`;
   } else if(tab==="citacao"){

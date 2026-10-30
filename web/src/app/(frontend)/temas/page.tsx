@@ -8,7 +8,7 @@ import { agrupar, padrao } from '@/lib/panorama'
 export const revalidate = 300
 export const metadata: Metadata = {
   title: 'Temas e biomas da legislação ambiental',
-  description: 'Leis e pareceres organizados por área (licenciamento, florestas, água, espécies exóticas…) e por bioma.',
+  description: 'Leis e resumos prévios organizados por área (licenciamento, florestas, água, espécies exóticas…) e por bioma.',
   alternates: { canonical: '/temas' },
 }
 
@@ -17,7 +17,7 @@ function Cartao({ href, nome, itens }: { href: string; nome: string; itens: Para
   return (
     <Link href={href} className="tb-card">
       <b>{nome}</b>
-      <small>{p.total ? `${p.total} ${p.total === 1 ? 'parecer' : 'pareceres'} · ${p.altoImpacto}% de alto impacto` : 'Sem pareceres ainda'}</small>
+      <small>{p.total ? `${p.total} ${p.total === 1 ? 'resumo prévio' : 'resumos prévios'} · ${p.altoImpacto}% de alto impacto` : 'Sem resumos prévios ainda'}</small>
       {p.total ? <BarraCarater d={p.tudo} fina /> : null}
     </Link>
   )

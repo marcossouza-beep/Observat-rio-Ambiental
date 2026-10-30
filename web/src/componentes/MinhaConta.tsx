@@ -102,11 +102,11 @@ export function MinhaConta({ subperfis, perguntas, temas, biomas }: { subperfis:
       <section className="caixa">
         <h2>E-mails</h2>
         <div>
-          {chave('aceitaEmails', 'Receber e-mails do observatório', 'Aviso no dia em que sai o parecer de uma lei que você segue ou pediu, e comunicados do autor')}
+          {chave('aceitaEmails', 'Receber e-mails do observatório', 'Aviso no dia em que sai o resumo prévio de uma lei que você segue ou pediu, e comunicados do autor')}
           {marcado.aceitaEmails ?? sessao.aceitaEmails ? (
             <>
               {chave('alertas', 'Alerta diário', 'No fim do dia, quando uma lei que você segue entrar na pauta, for votada, sancionada ou vetada')}
-              {chave('resumoSemanal', 'Resumo semanal', 'Às sextas: pareceres da semana, o que vai a voto e o que andou nos seus temas, na sua região e com os parlamentares que você segue')}
+              {chave('resumoSemanal', 'Resumo semanal', 'Às sextas: resumos prévios da semana, o que vai a voto e o que andou nos seus temas, na sua região e com os parlamentares que você segue')}
             </>
           ) : (
             <p className="nota-fonte">Com os e-mails desligados, você não recebe alerta nem resumo.</p>
@@ -159,7 +159,7 @@ export function MinhaConta({ subperfis, perguntas, temas, biomas }: { subperfis:
         )}
         {avisar.length ? (
           <>
-            <h3 style={{ fontSize: '1rem' }}>Aguardando parecer</h3>
+            <h3 style={{ fontSize: '1rem' }}>Aguardando resumo prévio</h3>
             <ul style={{ paddingLeft: '1.1em', display: 'grid', gap: 6 }}>
               {avisar.map((l) => (
                 <li key={l.id}>

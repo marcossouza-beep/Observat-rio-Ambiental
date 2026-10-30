@@ -48,7 +48,7 @@ export const Assinantes: CollectionConfig = {
     { name: 'biomas', type: 'relationship', relationTo: 'biomas', hasMany: true },
     { name: 'seguindo', label: 'Leis que segue', type: 'relationship', relationTo: 'proposicoes', hasMany: true },
     { name: 'seguirParlamentares', label: 'Parlamentares que segue', type: 'relationship', relationTo: 'parlamentares', hasMany: true },
-    { name: 'avisarParecer', label: 'Pediu aviso de parecer', type: 'relationship', relationTo: 'proposicoes', hasMany: true },
+    { name: 'avisarParecer', label: 'Pediu aviso de resumo prévio', type: 'relationship', relationTo: 'proposicoes', hasMany: true },
     {
       type: 'row',
       fields: [

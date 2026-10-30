@@ -352,7 +352,7 @@ const FON=[
 ];
 const SIS=[
   ["ok","Site no ar","99,98% nos últimos 30 dias · verificado a cada 5 min"],
-  ["ok","Teste das páginas (7h)","14 de 14 passaram: home, busca, lei, parecer, inscrição, download, painel"],
+  ["ok","Teste das páginas (7h)","14 de 14 passaram: home, busca, lei, resumo prévio, inscrição, download, painel"],
   ["ok","E-mails","Fila vazia · retorno de 0,8% · último envio 06:40"],
   ["ok","Cópia do banco","Hoje, 03:00 · teste de restauração em 01/10"],
   ["y","Links oficiais","2 links da Aleto voltaram erro na verificação de domingo"],
@@ -382,7 +382,7 @@ const sumO=o=>Object.values(o).reduce((a,b)=>a+b,0);
 /* ---------- estado ---------- */
 const S={tab:{},edPane:"dos",dTab:"texto",eTab:"parecer",
   cfg:{parecer:7,atual:5,corr:3,cred:2,lgpd:15,cap:10},
-  seo:{kw:"PL 140/2026 Pantanal",tit:"PL 140/2026: o que muda na proteção do Pantanal",desc:"Parecer técnico: o projeto proíbe converter vegetação nativa em áreas alagáveis e limita o uso do fogo. Vota na CMA em 16/10.",slug:"pl-140-2026-protecao-pantanal"},
+  seo:{kw:"PL 140/2026 Pantanal",tit:"PL 140/2026: o que muda na proteção do Pantanal",desc:"Resumo prévio técnico: o projeto proíbe converter vegetação nativa em áreas alagáveis e limita o uso do fogo. Vota na CMA em 16/10.",slug:"pl-140-2026-protecao-pantanal"},
   cls:{pant:{imp:"Alto",car:"",areas:["Florestas","Água"],biomas:["Pantanal"]}},
   mats:{nota:false,quadro:false},
   pubModo:"agora",embargo:true,
@@ -417,7 +417,7 @@ function hl(txt,kws){ let s=txt; kws.forEach(k=>{ s=s.replace(new RegExp("("+k.r
 
 /* ---------- navegação ---------- */
 const NAV=[
-  ["Trabalho",[["hoje","Hoje"],["triagem","Triagem"],["pareceres","Pareceres"],["pedidos","Pedidos"]]],
+  ["Trabalho",[["hoje","Hoje"],["triagem","Triagem"],["pareceres","Resumos prévios"],["pedidos","Pedidos"]]],
   ["Sistema",[["fontes","Fontes e saúde"],["envios","E-mails"]]],
   ["Conteúdo",[["conteudo","Textos do site"],["palavras","Palavras-chave"],["inscritos","Inscritos"],["ajustes","Ajustes"]]]
 ];
@@ -436,7 +436,7 @@ function side(cur){
   document.getElementById("side").innerHTML=`<div class="brand"><i role="img" aria-label="ênfase jur"></i><small>Painel do autor</small></div>${navLinks(cur)}
   <div class="me"><span class="av">NA</span><div>Nome do Autor<br><span>Autor e administrador</span></div></div>`;
   const b=badges();
-  const tb=[["hoje","Hoje"],["triagem","Triagem"],["pareceres","Pareceres"],["pedidos","Pedidos"]];
+  const tb=[["hoje","Hoje"],["triagem","Triagem"],["pareceres","Resumos prévios"],["pedidos","Pedidos"]];
   document.getElementById("tabbar").innerHTML=tb.map(([k,t])=>`<a href="#${k}" ${cur===k?'aria-current="page"':""}>${I(IC[k],20)}${t}${k==="pareceres"&&b.par?`<span class="b">${b.par}</span>`:k==="pedidos"&&b.ped?`<span class="b">${b.ped}</span>`:""}</a>`).join("")+
     `<button data-more ${["fontes","envios","conteudo","palavras","inscritos","ajustes"].includes(cur)?'aria-current="page"':""}>${I(IC.mais,20)}Mais</button>`;
 }
@@ -446,9 +446,9 @@ const mtop=()=>`<div class="mtop"><div class="brand"><i role="img" aria-label="�
 function todos(){
   const L=[];
   Object.entries(P).forEach(([k,p])=>{
-    if(p.st==="atualizar") L.push({u:-5,ico:"r",i:"alerta",t:`O texto mudou e a proposta vota hoje: ${p.titulo}`,m:`${flag(p.uf)} ${p.num} · ${p.nova} · o parecer publicado analisa o ${p.versao.toLowerCase()} <span class="chip r">Vota hoje</span>`,a:`<a class="btn sm p" href="#editor-${k}">Ver mudanças</a>`});
-    if(p.st==="preparo"&&p.dias<0) L.push({u:p.dias,ico:"r",i:"relogio",t:`Parecer prometido está atrasado: ${p.titulo}`,m:`${flag(p.uf)} ${p.num} · prometido para ${p.prazo} · ${p.aviso} pessoas pediram aviso ${prazoChip(p.dias,p.prazo)}`,a:`<a class="btn sm" href="#editor-${k}">Abrir</a><button class="btn sm" data-novadata="${k}">Nova data</button><button class="btn sm" data-acomp="${k}">Só acompanhar</button>`});
-    if(p.st==="preparo"&&p.dias>=0&&p.dias<=2) L.push({u:p.dias,ico:"y",i:"pareceres",t:`Parecer prometido: ${p.titulo}`,m:`${flag(p.uf)} ${p.num} · ${prog(p.sec)}${p.vota?` · vota ${p.vota}`:""} ${prazoChip(p.dias,p.prazo)}`,a:`<a class="btn sm p" href="#editor-${k}">Continuar</a>`});
+    if(p.st==="atualizar") L.push({u:-5,ico:"r",i:"alerta",t:`O texto mudou e a proposta vota hoje: ${p.titulo}`,m:`${flag(p.uf)} ${p.num} · ${p.nova} · o resumo prévio publicado analisa o ${p.versao.toLowerCase()} <span class="chip r">Vota hoje</span>`,a:`<a class="btn sm p" href="#editor-${k}">Ver mudanças</a>`});
+    if(p.st==="preparo"&&p.dias<0) L.push({u:p.dias,ico:"r",i:"relogio",t:`Resumo prévio prometido está atrasado: ${p.titulo}`,m:`${flag(p.uf)} ${p.num} · prometido para ${p.prazo} · ${p.aviso} pessoas pediram aviso ${prazoChip(p.dias,p.prazo)}`,a:`<a class="btn sm" href="#editor-${k}">Abrir</a><button class="btn sm" data-novadata="${k}">Nova data</button><button class="btn sm" data-acomp="${k}">Só acompanhar</button>`});
+    if(p.st==="preparo"&&p.dias>=0&&p.dias<=2) L.push({u:p.dias,ico:"y",i:"pareceres",t:`Resumo prévio prometido: ${p.titulo}`,m:`${flag(p.uf)} ${p.num} · ${prog(p.sec)}${p.vota?` · vota ${p.vota}`:""} ${prazoChip(p.dias,p.prazo)}`,a:`<a class="btn sm p" href="#editor-${k}">Continuar</a>`});
   });
   PED.corr.forEach(c=>{ if(c.dias<=2) L.push({u:c.dias,ico:c.dias===0?"r":"y",i:"corr",t:`Pedido de correção: ${P[c.alvo].titulo}`,m:`“${c.txt.slice(0,72)}…” ${prazoChip(c.dias,c.prazo)}`,a:`<a class="btn sm" href="#pedidos">Responder</a>`}); });
   PED.imp.forEach(c=>{ if(c.dias<=1) L.push({u:c.dias,ico:"y",i:"imprensa",t:`Credenciamento de imprensa: ${c.nome}, ${c.veic}`,m:`${c.func} ${prazoChip(c.dias,c.prazo)}`,a:`<a class="btn sm" href="#pedidos" data-ptab="imp">Verificar</a>`}); });
@@ -462,11 +462,11 @@ function hoje(){
   const meta=6;
   return `${mtop()}
   <div class="ph"><div><h1>Bom dia, Nome</h1><p class="sub">Quarta, 14 de outubro · última coleta às 07:05</p></div>
-    <div class="status">${L.some(x=>x.ico==="r")?`<span class="dot r"></span><b>${L.filter(x=>x.ico==="r").length} itens urgentes</b>`:`<span class="dot"></span><b>Tudo em dia</b>`}<span class="muted">·</span><span>${abertos()} pareceres prometidos em aberto</span></div></div>
+    <div class="status">${L.some(x=>x.ico==="r")?`<span class="dot r"></span><b>${L.filter(x=>x.ico==="r").length} itens urgentes</b>`:`<span class="dot"></span><b>Tudo em dia</b>`}<span class="muted">·</span><span>${abertos()} resumos prévios prometidos em aberto</span></div></div>
   <div class="since">
     <div><b>${b.tri}</b><span>novas na triagem</span></div>
     <div><b>3</b><span>leis mudaram de situação</span></div>
-    <div><b>1</b><span>texto mudou depois do parecer</span></div>
+    <div><b>1</b><span>texto mudou depois do resumo prévio</span></div>
     <div><b>318</b><span>alertas enviados às 06:40</span></div>
   </div>
   <div class="grid2">
@@ -475,7 +475,7 @@ function hoje(){
         <div class="todo">${L.length?L.map(x=>`<div><span class="ico ${x.ico}">${I(IC[x.i])}</span><div><p>${x.t}</p><div class="m">${x.m}</div></div><div class="acts">${x.a}</div></div>`).join(""):`<p class="empty">Nada pendente. Bom trabalho.</p>`}</div>
       </section>
       <section class="card"><div class="ch"><h2>Votações dos próximos 7 dias</h2><span>pauta oficial</span></div>
-        ${votos.map(([d,w,k])=>{const p=P[k]; const s=p.st==="publicado"?`<span class="chip g">Parecer publicado</span>`:p.st==="atualizar"?`<span class="chip r">Parecer desatualizado</span>`:`<span class="chip y">Em preparação</span> ${prog(p.sec)}`;
+        ${votos.map(([d,w,k])=>{const p=P[k]; const s=p.st==="publicado"?`<span class="chip g">Resumo prévio publicado</span>`:p.st==="atualizar"?`<span class="chip r">Resumo prévio desatualizado</span>`:`<span class="chip y">Em preparação</span> ${prog(p.sec)}`;
           return `<a class="vote" href="#editor-${k}"><span class="d">${d.slice(0,2)}<small>${w}</small></span><div><p>${p.titulo}</p><div class="m">${flag(p.uf)} ${p.orgao} · ${s}</div></div></a>`;}).join("")}
       </section>
     </div>
@@ -489,7 +489,7 @@ function hoje(){
       </section>
       <section class="card"><div class="ch"><h2>Promessas no ar</h2></div>
         <div class="mini">
-          <div><span class="dot y"></span>“Parecer em preparação”<span>${Object.values(P).filter(p=>p.st==="preparo"||p.st==="revisao"||p.st==="agendado").length} páginas</span></div>
+          <div><span class="dot y"></span>“Resumo prévio em preparação”<span>${Object.values(P).filter(p=>p.st==="preparo"||p.st==="revisao"||p.st==="agendado").length} páginas</span></div>
           <div><span class="dot r"></span>“Atualização em preparação”<span>${Object.values(P).filter(p=>p.st==="atualizar").length} página</span></div>
           <div><span class="dot"></span>Pessoas aguardando aviso<span>${Object.values(P).reduce((s,p)=>s+(p.aviso||0),0)}</span></div>
         </div>
@@ -505,8 +505,8 @@ function triagem(){
   const list=TRI.filter(t=>f==="Todas"||(f==="Estados"?t.uf!=="BR":t.fonte===f));
   const ab=abertos(), cap=S.cfg.cap;
   return `${mtop()}
-  <div class="ph"><div><h1>Triagem</h1><p class="sub">Propostas captadas pelas palavras-chave. Você decide o que vira parecer.</p></div>
-    <div class="cap">Pareceres prometidos em aberto <span class="bar"><i style="width:${ab/cap*100}%;${ab>=cap?"background:var(--rose-ink)":""}"></i></span><b>${ab} de ${cap}</b></div></div>
+  <div class="ph"><div><h1>Triagem</h1><p class="sub">Propostas captadas pelas palavras-chave. Você decide o que vira resumo prévio.</p></div>
+    <div class="cap">Resumos prévios prometidos em aberto <span class="bar"><i style="width:${ab/cap*100}%;${ab>=cap?"background:var(--rose-ink)":""}"></i></span><b>${ab} de ${cap}</b></div></div>
   <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px"><div class="seg">${fontes.map(x=>`<button data-trif="${x}" aria-pressed="${f===x}">${x}</button>`).join("")}</div><span class="muted">Ordenado pela nota de relevância</span></div>
   <section class="card">${list.length?list.map(t=>`<div class="tri" id="${t.id}">
     <span class="score ${t.score>=75?"sh":t.score>=50?"sm":"sl"}" title="Nota de relevância">${t.score}</span>
@@ -515,32 +515,32 @@ function triagem(){
       <div class="m">${t.temas.length?t.temas.map(x=>`<span class="chip">${x}</span>`).join(""):`<span class="chip">Sem tema claro</span>`}${t.score<40?`<span class="chip y">Provável homenagem</span>`:""}</div>
       ${S.disc===t.id?`<div class="disc"><span class="muted" style="align-self:center">Motivo:</span>${["Fora do tema","Homenagem ou data","Duplicada","Outro"].map(m=>`<button class="tg" data-discm="${t.id}" data-m="${m}">${m}</button>`).join("")}</div>`:""}
     </div>
-    <div class="acts"><button class="btn sm p" data-ativar="${t.id}">Ativar parecer</button><button class="btn sm" data-acomptri="${t.id}">Acompanhar</button><button class="btn sm" data-disc="${t.id}">Descartar</button></div>
+    <div class="acts"><button class="btn sm p" data-ativar="${t.id}">Ativar resumo prévio</button><button class="btn sm" data-acomptri="${t.id}">Acompanhar</button><button class="btn sm" data-disc="${t.id}">Descartar</button></div>
   </div>`).join(""):`<p class="empty">Nada novo nesta fonte. A próxima coleta é às 12h.</p>`}</section>
-  <p class="muted" style="margin-top:12px">Ativar põe na página pública o aviso “Parecer em preparação” com prazo. Acompanhar mostra “Acompanhando”, sem prometer parecer. Descartar não publica nada; o motivo ajusta o peso das palavras-chave.</p>`;
+  <p class="muted" style="margin-top:12px">Ativar põe na página pública o aviso “Resumo prévio em preparação” com prazo. Acompanhar mostra “Acompanhando”, sem prometer resumo prévio. Descartar não publica nada; o motivo ajusta o peso das palavras-chave.</p>`;
 }
 function modalAtivar(id){
   const t=TRI.find(x=>x.id===id); const ab=abertos(), cap=S.cfg.cap;
   const prazo=`${14+S.cfg.parecer}/10`;
   document.getElementById("ovl").innerHTML=`<div class="ov" data-close><div class="modal" role="dialog" aria-modal="true" aria-label="Ativar parecer">
-    <h2>Ativar parecer</h2><p class="sub">${flag(t.uf)} ${t.num}</p>
+    <h2>Ativar resumo prévio</h2><p class="sub">${flag(t.uf)} ${t.num}</p>
     <div class="field" style="margin-top:14px"><label for="pz">Prazo prometido</label><input class="in" id="pz" type="date" value="2026-10-${14+S.cfg.parecer}"><span class="hint">Padrão: ${S.cfg.parecer} dias. Você será avisado 2 dias antes.</span></div>
-    ${ab>=cap?`<div class="note r">${I(IC.alerta)}<div>Você já tem <b>${ab} pareceres prometidos</b>, o limite que definiu. Considere um prazo mais longo ou acompanhar.</div></div>`:`<div class="note g">${I(IC.ok)}<div>Ficará com <b>${ab+1} de ${cap}</b> pareceres prometidos em aberto.</div></div>`}
-    <div class="pubprev"><b>O que aparece na página pública</b>Parecer em preparação. O parecer técnico sobre ${t.num} está sendo escrito e será publicado nos próximos dias, nesta mesma página. <u>Avise-me quando o parecer sair</u></div>
+    ${ab>=cap?`<div class="note r">${I(IC.alerta)}<div>Você já tem <b>${ab} resumos prévios prometidos</b>, o limite que definiu. Considere um prazo mais longo ou acompanhar.</div></div>`:`<div class="note g">${I(IC.ok)}<div>Ficará com <b>${ab+1} de ${cap}</b> resumos prévios prometidos em aberto.</div></div>`}
+    <div class="pubprev"><b>O que aparece na página pública</b>Resumo prévio em preparação. O resumo prévio sobre ${t.num} está sendo escrito e será publicado nos próximos dias, nesta mesma página. <u>Avise-me quando o resumo prévio sair</u></div>
     <p class="muted">O dossiê (texto, versões, tramitação, autores e lei afetada) fica pronto no editor.</p>
     <div class="mrow"><button class="btn" data-close>Cancelar</button><button class="btn p" data-confativar="${id}">Ativar e publicar aviso</button></div>
   </div></div>`;
 }
 
-/* ---------- PARECERES ---------- */
+/* ---------- RESUMOS PRÉVIOS ---------- */
 function pareceres(){
   const tabs=[["atualizar","A atualizar"],["preparo","Em preparação"],["revisao","Em revisão"],["agendado","Agendados"],["publicado","Publicados"],["acompanhando","Acompanhando"]];
   const cur=S.tab.par||"preparo";
   const list=Object.entries(P).filter(([k,p])=>p.st===cur||(cur==="publicado"&&p.st==="atualizar"));
   list.sort((a,b)=>(a[1].dias??99)-(b[1].dias??99));
-  const help={atualizar:"O texto da proposta mudou depois do parecer. A página pública mostra a faixa “atualização em preparação” até sair a nova versão.",preparo:"Pareceres prometidos ao público. O aviso “nos próximos dias” está no ar; cumpra o prazo ou mude para Acompanhar.",revisao:"Prontos para a última leitura antes de agendar ou publicar.",agendado:"Saem sozinhos na data marcada. Jornalistas credenciados recebem antes, sob embargo.",publicado:"No ar. Se o texto da proposta mudar, o sistema move o parecer para A atualizar.",acompanhando:"Sem parecer previsto. A página pública mostra “Acompanhando: siga para saber quando houver novidade”."}[cur];
+  const help={atualizar:"O texto da proposta mudou depois do resumo prévio. A página pública mostra a faixa “atualização em preparação” até sair a nova versão.",preparo:"Resumos prévios prometidos ao público. O aviso “nos próximos dias” está no ar; cumpra o prazo ou mude para Acompanhar.",revisao:"Prontos para a última leitura antes de agendar ou publicar.",agendado:"Saem sozinhos na data marcada. Jornalistas credenciados recebem antes, sob embargo.",publicado:"No ar. Se o texto da proposta mudar, o sistema move o resumo prévio para A atualizar.",acompanhando:"Sem resumo prévio previsto. A página pública mostra “Acompanhando: siga para saber quando houver novidade”."}[cur];
   return `${mtop()}
-  <div class="ph"><div><h1>Pareceres</h1><p class="sub">Do prometido ao publicado, com prazo à vista.</p></div><a class="btn p" href="#triagem">${I('<path d="M12 5v14M5 12h14"/>',16)}Novo pela triagem</a></div>
+  <div class="ph"><div><h1>Resumos prévios</h1><p class="sub">Do prometido ao publicado, com prazo à vista.</p></div><a class="btn p" href="#triagem">${I('<path d="M12 5v14M5 12h14"/>',16)}Novo pela triagem</a></div>
   <div class="tabs" role="tablist">${tabs.map(([k,t])=>{const n=Object.values(P).filter(p=>p.st===k||(k==="publicado"&&p.st==="atualizar")).length;return `<button role="tab" data-ptab2="${k}" aria-selected="${cur===k}">${t}<span class="chip ${k==="atualizar"&&n?"r":""}">${n}</span></button>`;}).join("")}</div>
   <p class="muted" style="margin:-4px 0 12px">${help}</p>
   <section class="card"><div class="rows">${list.length?list.map(([k,p])=>`<div>
@@ -550,8 +550,8 @@ function pareceres(){
         p.st==="agendado"?`<span class="chip l">Sai ${p.quando}</span>${p.embargo?`<span class="chip">Embargo para imprensa enviado</span>`:""}`:
         p.st==="publicado"?`Publicado em ${p.pub} · analisa: ${p.versao} · ${p.seguem} seguem`:
         p.st==="atualizar"?`Publicado em ${p.pub} · analisa: ${p.versao} · <b style="color:var(--rose-ink)">novo: ${p.nova}</b> ${prazoChip(p.dias,p.prazo)}`:
-        `${p.seguem} seguem · sem parecer previsto`}</div></div>
-    <div class="acts">${p.st==="acompanhando"?`<button class="btn sm" data-ativarp="${k}">Ativar parecer</button>`:`<a class="btn sm ${p.st==="atualizar"||p.st==="preparo"?"p":""}" href="#editor-${k}">${p.st==="atualizar"?"Atualizar":p.st==="publicado"?"Abrir":"Abrir editor"}</a>`}</div>
+        `${p.seguem} seguem · sem resumo prévio previsto`}</div></div>
+    <div class="acts">${p.st==="acompanhando"?`<button class="btn sm" data-ativarp="${k}">Ativar resumo prévio</button>`:`<a class="btn sm ${p.st==="atualizar"||p.st==="preparo"?"p":""}" href="#editor-${k}">${p.st==="atualizar"?"Atualizar":p.st==="publicado"?"Abrir":"Abrir editor"}</a>`}</div>
   </div>`).join(""):`<p class="empty">Nada aqui.</p>`}</div></section>`;
 }
 
@@ -573,7 +573,7 @@ const DOS={
     texto:`<p><b>Art. 3º</b> Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até 30 módulos fiscais.</p>
 <p><b>Art. 4º</b> A dispensa será declarada pelo próprio interessado, por meio eletrônico. <br>§ 2º A dispensa não se aplica a imóveis situados em zona de amortecimento de unidade de conservação.</p>
 <p><b>Art. 7º</b> O órgão municipal ou estadual poderá exigir estudo complementar em caso de dano ambiental comprovado.</p>`,
-    versoes:[["Substitutivo do relator (Plenário)","12/10"],["Texto aprovado na CMADS (analisado no parecer)","02/10"],["Texto original","11/03"]],
+    versoes:[["Substitutivo do relator (Plenário)","12/10"],["Texto aprovado na CMADS (analisado no resumo prévio)","02/10"],["Texto original","11/03"]],
     diff:`<p><b>Art. 3º</b> Ficam dispensadas de estudo prévio de impacto ambiental as atividades agropecuárias em imóveis rurais de até <del>15</del> <ins>30</ins> módulos fiscais.</p>
 <p><b>Art. 4º</b> A dispensa será declarada pelo próprio interessado, por meio eletrônico. <ins>§ 2º A dispensa não se aplica a imóveis situados em zona de amortecimento de unidade de conservação.</ins></p>
 <p><b>Art. 7º</b> O órgão <ins>municipal ou</ins> estadual poderá exigir estudo complementar em caso de dano ambiental comprovado.</p>`,
@@ -600,7 +600,7 @@ function editor(k){
   const isUpd=p.st==="atualizar";
   const stepI={preparo:0,revisao:1,agendado:2,publicado:3,atualizar:0}[p.st]??0;
   const steps=["Rascunho","Em revisão","Agendado","Publicado"].map((s,i)=>`<span class="${i<stepI?"done":i===stepI?"on":""}"><i></i>${s}</span>`).join("<em></em>");
-  const banner=isUpd?`<div class="note r" style="margin-bottom:14px">${I(IC.alerta)}<div><b>O texto mudou em ${p.mudou}.</b> O parecer publicado (v1) analisa o ${p.versao.toLowerCase()}. Desde a coleta das 06:10 de 12/10, a página pública mostra: “O texto mudou depois deste parecer; atualização em preparação”. A proposta vota hoje.</div></div>`:
+  const banner=isUpd?`<div class="note r" style="margin-bottom:14px">${I(IC.alerta)}<div><b>O texto mudou em ${p.mudou}.</b> O resumo prévio publicado (v1) analisa o ${p.versao.toLowerCase()}. Desde a coleta das 06:10 de 12/10, a página pública mostra: “O texto mudou depois deste resumo prévio; atualização em preparação”. A proposta vota hoje.</div></div>`:
     p.st==="preparo"?`<div class="note ${p.dias<=2?"y":""}" style="margin-bottom:14px">${I(IC.relogio)}<div>Prometido para <b>${p.prazo}</b>${p.vota?` · vota em ${p.vota} (${p.orgao})`:""} · ${p.aviso} pessoas aguardam o aviso.</div></div>`:"";
   const dtab=S.dTab;
   const dtabs=[["texto","Texto"],["versoes","Versões"],["tram","Tramitação"],["atores","Atores"],["afetada","Lei afetada"]];
@@ -609,7 +609,7 @@ function editor(k){
   if(dtab==="versoes") dbody=`<div class="tl">${d.versoes.map(v=>`<div><b>${v[1]}</b><span>${v[0]}</span></div>`).join("")}</div>
     ${d.diff?`<h2 style="margin:16px 0 4px;font-size:.95rem">Diferenças: 02/10 → 12/10</h2><p class="muted" style="margin-bottom:10px">Marcação mecânica de trechos incluídos e retirados, como o controle de alterações de um editor de texto. A leitura e a avaliação são suas.</p><div class="lawtext diff">${d.diff}</div>`:`<p class="muted" style="margin-top:12px">Só uma versão desde o relatório. Se chegar outra, as diferenças aparecem aqui e você é avisado.</p>`}`;
   if(dtab==="tram") dbody=`<div class="tl">${d.tram.map(v=>`<div><b>${v[0]}</b><span>${v[1]}</span></div>`).join("")}</div>`;
-  if(dtab==="atores") dbody=`<div class="tl">${d.atores.map(v=>`<div style="grid-template-columns:120px 1fr"><b>${v[0]}</b><span>${v[1]}</span></div>`).join("")}</div><p class="muted" style="margin-top:10px">Ênfases e posicionamentos são registrados por você na aba Parecer.</p>`;
+  if(dtab==="atores") dbody=`<div class="tl">${d.atores.map(v=>`<div style="grid-template-columns:120px 1fr"><b>${v[0]}</b><span>${v[1]}</span></div>`).join("")}</div><p class="muted" style="margin-top:10px">Ênfases e posicionamentos são registrados por você na aba Resumo prévio.</p>`;
   if(dtab==="afetada") dbody=`<div class="tl">${d.afetada.map(v=>`<div style="grid-template-columns:1fr"><span><b style="color:var(--ink);font-size:.88rem">${v[0]}</b><br>${v[1]}</span></div>`).join("")}</div>`;
   const etab=S.eTab;
   const etabs=[["parecer","Parecer"],["class","Classificação"],["seo","SEO"],["mat","Materiais"],["pub",isUpd?"Nova versão":"Publicar"]];
@@ -617,13 +617,13 @@ function editor(k){
   <div class="ed-top"><a class="back" href="#pareceres">${I(IC.voltar,16)}Pareceres</a><span class="muted">·</span><span>${flag(p.uf)} <span class="num">${p.num}</span></span><span class="steps">${steps}</span><span class="muted" style="margin-left:auto" id="saved">Salvo às 10:42</span><button class="btn sm" data-prev>${I(IC.ver,15)}Pré-visualizar</button></div>
   <h1 style="margin-bottom:12px">${p.titulo}</h1>
   ${banner}
-  <div class="seg mtabs"><button data-edpane="dos" aria-pressed="${S.edPane==="dos"}">Dossiê</button><button data-edpane="ed" aria-pressed="${S.edPane==="ed"}">Parecer</button></div>
+  <div class="seg mtabs"><button data-edpane="dos" aria-pressed="${S.edPane==="dos"}">Dossiê</button><button data-edpane="ed" aria-pressed="${S.edPane==="ed"}">Resumo prévio</button></div>
   <div class="ed">
     <section class="card dos pane ${S.edPane==="dos"?"show":""}">
       <div class="ch" style="margin-bottom:6px"><h2>Dossiê</h2><span>fontes oficiais · 14/10, 06:10</span></div>
       <div class="tabs" role="tablist">${dtabs.map(([t,n])=>`<button role="tab" data-dtab="${t}" aria-selected="${dtab===t}">${n}${t==="versoes"&&d.diff?`<span class="chip r">nova</span>`:""}</button>`).join("")}</div>
       ${dbody}
-      <p class="muted" style="margin-top:14px;border-top:1px solid var(--line);padding-top:10px">Dados capturados das fontes oficiais. Nada daqui é escrito no parecer sozinho.</p>
+      <p class="muted" style="margin-top:14px;border-top:1px solid var(--line);padding-top:10px">Dados capturados das fontes oficiais. Nada daqui é escrito no resumo prévio sozinho.</p>
     </section>
     <section class="pane ${S.edPane==="ed"?"show":""}">
       <div class="tabs" role="tablist">${etabs.map(([t,n])=>`<button role="tab" data-etab="${t}" aria-selected="${etab===t}">${n}</button>`).join("")}</div>
@@ -636,8 +636,8 @@ function epane(k){
   if(t==="parecer"){
     const n=secCount(k);
     return `<div class="ch"><span>${isUpd?"Versão 2 · parte do texto da v1":"Modelo fixo do parecer"}</span><span id="secn">${n} de 7 seções</span></div>
-    ${isUpd?`<div class="field"><label for="mud">O que mudou nesta versão</label><textarea class="in" id="mud" placeholder="Aparece no topo do parecer. Ex.: O substitutivo de 12/10 dobrou o limite para 30 módulos fiscais e excluiu as zonas de amortecimento.">${S.mud||""}</textarea></div>`:""}
-    <div class="blk done" style="background:var(--bg)"><label>I. Texto base da proposta <span class="muted" style="font-weight:500">automático</span></label><div class="muted" style="font-size:.88rem">Ementa e íntegra do texto analisado, como saíram do arquivo oficial, abrem o parecer antes de qualquer análise. Vêm do dossiê (aba Texto); não se escreve aqui.</div></div>
+    ${isUpd?`<div class="field"><label for="mud">O que mudou nesta versão</label><textarea class="in" id="mud" placeholder="Aparece no topo do resumo prévio. Ex.: O substitutivo de 12/10 dobrou o limite para 30 módulos fiscais e excluiu as zonas de amortecimento.">${S.mud||""}</textarea></div>`:""}
+    <div class="blk done" style="background:var(--bg)"><label>I. Texto base da proposta <span class="muted" style="font-weight:500">automático</span></label><div class="muted" style="font-size:.88rem">Ementa e íntegra do texto analisado, como saíram do arquivo oficial, abrem o resumo prévio antes de qualquer análise. Vêm do dossiê (aba Texto); não se escreve aqui.</div></div>
     ${MODELO.map((b,i)=>{const v=blockText(k,b);return `<div class="blk ${v.trim().length>20?"done":""}"><label for="b-${b}">${["II","III","IV","V","VI","VII","VIII"][i]}. ${b}</label><textarea id="b-${b}" data-blk="${k}|${b}" rows="3" placeholder="Escreva aqui">${v}</textarea></div>${b==="Regime vigente e proposta"?cotejoEd(k):""}`;}).join("")}`;
   }
   if(t==="class"){
@@ -646,7 +646,7 @@ function epane(k){
     const AR=["Licenciamento","Florestas","Água","Clima","Mineração","Agrotóxicos","Espécies exóticas","Unidades de conservação","Povos e comunidades","Fauna","Saneamento"];
     const BI=["Amazônia","Cerrado","Caatinga","Mata Atlântica","Pantanal","Pampa","Costeiro e marinho"];
     return `<section class="card">
-      <div class="field"><label>Impacto</label><div class="seg">${["Alto","Médio","Baixo"].map(x=>`<button data-imp="${k}|${x}" aria-pressed="${c.imp===x}">${x}</button>`).join("")}</div><span class="hint">Na dúvida entre dois níveis, use o mais alto e explique no parecer.</span></div>
+      <div class="field"><label>Impacto</label><div class="seg">${["Alto","Médio","Baixo"].map(x=>`<button data-imp="${k}|${x}" aria-pressed="${c.imp===x}">${x}</button>`).join("")}</div><span class="hint">Na dúvida entre dois níveis, use o mais alto e explique no resumo prévio.</span></div>
       <div class="field"><label>Caráter</label><div class="opts">${CAR.map(([n,col,dsc])=>`<button class="opt" data-car="${k}|${n}" aria-pressed="${c.car===n}"><i class="sw" style="background:${col}"></i><div><b>${n}</b><span>${dsc}</span></div></button>`).join("")}</div></div>
       <div class="field"><label>Áreas</label><div class="chips">${AR.map(x=>`<button class="tg" data-area="${k}|${x}" aria-pressed="${c.areas.includes(x)}">${x}</button>`).join("")}</div></div>
       <div class="field" style="margin:0"><label>Biomas</label><div class="chips">${BI.map(x=>`<button class="tg" data-bio="${k}|${x}" aria-pressed="${c.biomas.includes(x)}">${x}</button>`).join("")}</div><span class="hint">Estado e casa vêm da proposta. Esta classificação alimenta os gráficos do site ao publicar.</span></div>
@@ -656,7 +656,7 @@ function epane(k){
     const s=S.seo; const kw=s.kw.toLowerCase().split(" ")[0]+" "+(s.kw.toLowerCase().split(" ")[1]||"");
     const inT=s.tit.toLowerCase().includes("pl 140/2026"), inS=s.slug.includes("pl-140-2026");
     return `<section class="card">
-      <div class="gprev"><div class="u">nomedosite.com.br › pareceres › ${s.slug}</div><div class="tt" id="gt">${s.tit} | ênfase jur</div><div class="ds" id="gd">${s.desc}</div></div>
+      <div class="gprev"><div class="u">nomedosite.com.br › resumos prévios › ${s.slug}</div><div class="tt" id="gt">${s.tit} | ênfase jur</div><div class="ds" id="gd">${s.desc}</div></div>
       <div class="field"><label for="s-kw">Palavra-chave principal</label><input class="in" id="s-kw" data-seo="kw" value="${s.kw}"></div>
       <div class="field"><label for="s-np">Nome popular</label><input class="in" id="s-np" value="PL do Pantanal"><span class="hint">Como a imprensa chama a proposta.</span></div>
       <div class="field"><label for="s-tit">Título SEO</label><input class="in" id="s-tit" data-seo="tit" value="${s.tit}"><span class="cnt ${s.tit.length>60?"over":""}" id="c-tit">${s.tit.length}/60</span></div>
@@ -668,28 +668,28 @@ function epane(k){
   if(t==="mat"){
     const m=S.mats;
     const one=(key,nome,dsc)=>`<div class="mat ${m[key]?"ok":""}"><span class="ico ${m[key]?"g":""}">${I(m[key]?IC.ok:IC.up)}</span><div><b>${nome}</b><div class="muted">${m[key]?`${key==="nota"?"nota-tecnica":"quadro-comparativo"}-pl-140-2026.pdf · 12 páginas`:dsc}</div></div>${m[key]?`<button class="btn sm" data-matx="${key}">Trocar</button>`:`<button class="btn sm p" data-mat="${key}">Enviar PDF</button>`}</div>`;
-    return `<section class="card">${one("nota","Nota técnica","O parecer completo em 3 páginas: texto base, análise do cotejo, problema, hipótese, cenários, soluções")}${one("quadro","Quadro comparativo","Cotejo literal, testagem das hipóteses e comparação dos cenários, com gráficos")}
-      <div class="note" style="margin:10px 0 0">${I(IC.ok)}<div><b>Links dos PDFs</b> · carimbados sozinhos no pé de cada página ao baixar, com QR e a identificação do parecer (versão, texto analisado, autor). Levam à versão atual deste parecer.<br><span class="muted">Nota técnica: enfasejur.com.br/r/12-nt-v1 · 37 acessos</span><br><span class="muted">Quadro comparativo: enfasejur.com.br/r/12-qc-v1 · 12 acessos</span></div></div>
+    return `<section class="card">${one("nota","Parecer técnico","A análise completa em 3 páginas: texto base, análise do cotejo, problema, hipótese, cenários, soluções")}${one("quadro","Quadro comparativo","Cotejo literal, testagem das hipóteses e comparação dos cenários, com gráficos")}
+      <div class="note" style="margin:10px 0 0">${I(IC.ok)}<div><b>Links dos PDFs</b> · carimbados sozinhos no pé de cada página ao baixar, com QR e a identificação do resumo prévio (versão, texto analisado, autor). Levam à versão atual deste resumo prévio.<br><span class="muted">Parecer técnico: enfasejur.com.br/r/12-nt-v1 · 37 acessos</span><br><span class="muted">Quadro comparativo: enfasejur.com.br/r/12-qc-v1 · 12 acessos</span></div></div>
       <div class="field" style="margin:6px 0 0"><label for="vis">Quem baixa</label><select class="in" id="vis"><option>Só inscritos (padrão)</option><option>Todos</option></select><span class="hint">O site entrega o arquivo por link temporário, só para inscritos com e-mail confirmado.</span></div></section>`;
   }
   if(t==="pub"){
     const c=S.cls[k]||{}; const n=secCount(k);
     const blk=[]; if(n<7) blk.push(`Faltam ${7-n} seções do modelo`); if(!c.imp) blk.push("Impacto não definido"); if(!c.car) blk.push("Caráter não definido"); if(isUpd&&!(S.mud||"").trim()) blk.push("Descreva o que mudou nesta versão");
-    const warn=[]; if(!S.mats.nota) warn.push("Nota técnica não enviada (o parecer sai sem ela; dá para anexar depois)"); if(S.seo.tit.length>60||S.seo.desc.length>155) warn.push("Título ou descrição acima do limite");
+    const warn=[]; if(!S.mats.nota) warn.push("Parecer técnico não enviada (o resumo prévio sai sem ela; dá para anexar depois)"); if(S.seo.tit.length>60||S.seo.desc.length>155) warn.push("Título ou descrição acima do limite");
     return `<section class="card">
-      ${isUpd?`<div class="field"><label>Versão</label><div class="note">Nova versão <b>v2</b>, analisando o <b>${p.nova.toLowerCase()}</b>. A v1 continua no histórico do parecer, com link.</div></div>`:""}
+      ${isUpd?`<div class="field"><label>Versão</label><div class="note">Nova versão <b>v2</b>, analisando o <b>${p.nova.toLowerCase()}</b>. A v1 continua no histórico do resumo prévio, com link.</div></div>`:""}
       <div class="field"><label>Quando</label><div class="seg">${[["agora","Publicar agora"],["agendar","Agendar"]].map(([v,t])=>`<button data-pmodo="${v}" aria-pressed="${S.pubModo===v}">${t}</button>`).join("")}</div>
         ${S.pubModo==="agendar"?`<input class="in" type="datetime-local" value="2026-10-15T08:00" style="margin-top:6px">`:""}</div>
       <div class="field"><label style="display:flex;gap:8px;align-items:center;font-weight:500"><input type="checkbox" data-emb ${S.embargo?"checked":""}> Enviar antes, sob embargo, aos 12 jornalistas credenciados</label></div>
       <div class="chk" style="margin-bottom:16px">${blk.map(x=>`<div class="no">${I(IC.x,16)}${x}</div>`).join("")}${warn.map(x=>`<div class="wa">${I(IC.alerta,16)}${x}</div>`).join("")}${!blk.length&&!warn.length?`<div class="ok">${I(IC.ok,16)}Tudo pronto</div>`:""}</div>
       <h2 style="font-size:.95rem;margin-bottom:8px">Ao ${S.pubModo==="agora"?"publicar":"chegar a hora"}, o sistema faz sozinho</h2>
       <div class="after">
-        <div>${isUpd?"Troca a faixa “atualização em preparação” pela v2, com a nota “O que mudou”":"Troca o aviso “Parecer em preparação” pelo parecer, no mesmo endereço"}</div>
+        <div>${isUpd?"Troca a faixa “atualização em preparação” pela v2, com a nota “O que mudou”":"Troca o aviso “Resumo prévio em preparação” pelo resumo prévio, no mesmo endereço"}</div>
         <div>${isUpd?`Avisa por e-mail as ${p.seguem} pessoas que seguem a lei`:`Envia e-mail às ${p.aviso} pessoas que pediram aviso e às ${p.seguem} que seguem a lei`}</div>
         <div>Atualiza contagens, gráficos, Panorama, página do estado, temas e biomas</div>
         <div>Registra o evento na Timeline e na página da lei</div>
         <div>Atualiza o sitemap e avisa Google e Bing</div>
-        <div>Gera a imagem de compartilhamento e o PDF do parecer</div>
+        <div>Gera a imagem de compartilhamento e o PDF do resumo prévio</div>
       </div>
       <div class="mrow"><button class="btn" data-send-rev>Enviar para revisão</button><button class="btn p" data-publicar="${k}" ${blk.length?"aria-disabled=\"true\"":""}>${S.pubModo==="agora"?(isUpd?"Publicar v2":"Publicar"):"Agendar"}</button></div>
     </section>`;
@@ -717,9 +717,9 @@ function pedidos(){
   let body="";
   if(cur==="corr") body=PED.corr.length?PED.corr.map(c=>`<section class="card"><div class="ch"><div class="m" style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-size:.82rem;color:var(--gray)">${flag(P[c.alvo].uf)} <span class="num">${P[c.alvo].num}</span> · ${c.quem} · ${c.rec}</div>${prazoChip(c.dias,c.prazo)}</div>
     <p style="font-weight:600;margin-bottom:10px">“${c.txt}”</p>
-    ${S.resp[c.id]?`<div class="field"><label for="r-${c.id}">Resposta</label><textarea class="in" id="r-${c.id}" rows="4">Obrigado pelo aviso. Conferimos na fonte oficial e você tem razão. O parecer foi corrigido hoje e a correção está registrada no próprio parecer e na página de Correções.</textarea></div>
-      <div class="note g" style="margin-bottom:10px">${I(IC.ok)}<div>Ao enviar: a correção entra no rodapé do parecer e na lista pública de Correções, com data.</div></div>`:""}
-    <div style="display:flex;gap:6px;flex-wrap:wrap"><a class="btn sm" href="#editor-${c.alvo}">Abrir parecer</a>${S.resp[c.id]?`<button class="btn sm p" data-enviar="${c.id}">Corrigir e responder</button>`:`<button class="btn sm p" data-resp="${c.id}">Procede</button><button class="btn sm" data-np="${c.id}">Não procede</button>`}</div></section>`).join(""):`<section class="card"><p class="empty">Nenhum pedido de correção aberto.</p></section>`;
+    ${S.resp[c.id]?`<div class="field"><label for="r-${c.id}">Resposta</label><textarea class="in" id="r-${c.id}" rows="4">Obrigado pelo aviso. Conferimos na fonte oficial e você tem razão. O resumo prévio foi corrigido hoje e a correção está registrada no próprio resumo prévio e na página de Correções.</textarea></div>
+      <div class="note g" style="margin-bottom:10px">${I(IC.ok)}<div>Ao enviar: a correção entra no rodapé do resumo prévio e na lista pública de Correções, com data.</div></div>`:""}
+    <div style="display:flex;gap:6px;flex-wrap:wrap"><a class="btn sm" href="#editor-${c.alvo}">Abrir resumo prévio</a>${S.resp[c.id]?`<button class="btn sm p" data-enviar="${c.id}">Corrigir e responder</button>`:`<button class="btn sm p" data-resp="${c.id}">Procede</button><button class="btn sm" data-np="${c.id}">Não procede</button>`}</div></section>`).join(""):`<section class="card"><p class="empty">Nenhum pedido de correção aberto.</p></section>`;
   if(cur==="imp") body=PED.imp.length?PED.imp.map(c=>`<section class="card"><div class="ch"><div><h2>${c.nome}</h2><p class="muted">${c.veic} · ${c.func} · pedido em ${c.rec}</p></div>${prazoChip(c.dias,c.prazo)}</div>
     <div class="tl" style="margin-bottom:12px">
       <div style="grid-template-columns:150px 1fr"><b>E-mail</b><span>${c.mail} ${c.dom?`<span class="chip g">domínio do veículo</span>`:`<span class="chip y">e-mail pessoal</span>`}</span></div>
@@ -784,7 +784,7 @@ function envios(){
   <section class="card"><div class="ch"><h2>Resumo semanal</h2><span class="chip l">Sai sex, 16/10, 17h</span></div>
     <p class="muted" style="margin-bottom:10px">Montado sozinho com o que aconteceu na semana. Se você não mexer, sai assim mesmo.</p>
     <div class="pubprev" style="margin-top:0"><b>Nesta semana no observatório</b>
-      · 2 pareceres publicados: Nova reserva extrativista (PA) e Uso de agrotóxicos por drones<br>
+      · 2 resumos prévios publicados: Nova reserva extrativista (PA) e Uso de agrotóxicos por drones<br>
       · O PL do licenciamento foi votado no Plenário da Câmara<br>
       · Na próxima semana: Pantanal na CMA do Senado (16/10), reserva extrativista na Alepa (21/10)<br>
       · Cada inscrito recebe também o que mudou nas leis, temas e estados que segue</div>
@@ -794,7 +794,7 @@ function envios(){
     <div class="tl">
       <div style="grid-template-columns:62px 1fr"><b>06:40</b><span>Alertas de tramitação: 3 leis andaram · 318 e-mails (um por pessoa, agrupados)</span></div>
       <div style="grid-template-columns:62px 1fr"><b>10:00</b><span>Embargo: “Uso de agrotóxicos por drones” enviado a 12 jornalistas · libera 15/10, 8h</span></div>
-      <div style="grid-template-columns:62px 1fr"><b>—</b><span>Ao publicar o parecer do Pantanal: 86 pessoas do “Avise-me”</span></div>
+      <div style="grid-template-columns:62px 1fr"><b>—</b><span>Ao publicar o resumo prévio do Pantanal: 86 pessoas do “Avise-me”</span></div>
     </div>
   </section></div>
   <div><section class="card"><div class="ch"><h2>Entrega (30 dias)</h2></div>
@@ -802,7 +802,7 @@ function envios(){
       <div>Enviados<span>14.920</span></div><div>Entregues<span>99,2%</span></div><div>Abertos<span>48%</span></div><div>Retorno (bounce)<span>0,8%</span></div><div>Descadastros<span>21</span></div>
     </div></section>
     <section class="card"><div class="ch"><h2>Regras</h2></div><div class="mini" style="font-size:.86rem;color:var(--gray)">
-      <div>No máximo 1 alerta de tramitação por pessoa por dia</div><div>Só eventos relevantes: pauta, votação, aprovação, sanção, veto, parecer</div><div>Descadastro em um clique em todo e-mail</div>
+      <div>No máximo 1 alerta de tramitação por pessoa por dia</div><div>Só eventos relevantes: pauta, votação, aprovação, sanção, veto, resumo prévio</div><div>Descadastro em um clique em todo e-mail</div>
     </div></section></div></div>`;
 }
 
@@ -841,7 +841,7 @@ function palavras(){
 function inscritos(){
   return `${mtop()}<div class="ph"><div><h1>Inscritos</h1><p class="sub">Quem recebe materiais e alertas.</p></div><button class="btn">Exportar CSV</button></div>
   <div class="since"><div><b>1.240</b><span>inscritos confirmados</span></div><div><b>+86</b><span>nos últimos 7 dias</span></div><div><b>12</b><span>jornalistas credenciados</span></div><div><b>3,4%</b><span>visitas que viram inscrição</span></div></div>
-  <section class="card"><div class="ch"><h2>De onde vieram</h2><span>parecer que levou à inscrição</span></div>
+  <section class="card"><div class="ch"><h2>De onde vieram</h2><span>resumo prévio que levou à inscrição</span></div>
     <div class="mini"><div>Licenciamento simplificado<span>412</span></div><div>Restauração da Caatinga<span>188</span></div><div>Nova reserva extrativista<span>96</span></div><div>Outorga coletiva de água<span>71</span></div><div>Página inicial e outros<span>473</span></div></div></section>
   <section class="card"><div class="ch"><h2>Perfis</h2><span>cada perfil com seu subgrupo; estudantes por curso</span></div>
     <div class="note y" style="margin-bottom:12px">${I(IC.alerta)}<div><b>96 inscritos ainda sem subgrupo</b> (vieram pela inscrição rápida). O site pede para completar no menu da conta, com um aviso discreto no avatar.</div></div>
@@ -855,12 +855,12 @@ function ajustes(){
   const f=(k,l,h,u)=>`<div class="field"><label for="cfg-${k}">${l}</label><div style="display:flex;align-items:center;gap:8px"><input class="in" id="cfg-${k}" type="number" min="1" value="${c[k]}" data-cfg="${k}" style="width:90px"><span class="muted">${u}</span></div><span class="hint">${h}</span></div>`;
   return `${mtop()}<div class="ph"><div><h1>Ajustes</h1><p class="sub">Os prazos daqui comandam os avisos do painel e os textos públicos.</p></div></div>
   <div class="grid2"><section class="card"><div class="ch"><h2>Prazos prometidos</h2></div>
-    ${f("parecer","Parecer prometido (“nos próximos dias”)","Conta a partir da ativação na triagem. Aviso 2 dias antes.","dias corridos")}
+    ${f("parecer","Resumo prévio prometido (“nos próximos dias”)","Conta a partir da ativação na triagem. Aviso 2 dias antes.","dias corridos")}
     ${f("atual","Atualização depois que o texto muda","Conta a partir da detecção da nova versão.","dias corridos")}
     ${f("corr","Resposta a pedido de correção","Aparece na página de Metodologia.","dias úteis")}
     ${f("cred","Verificação de imprensa","Aparece na inscrição de jornalistas.","dias úteis")}
     ${f("lgpd","Pedido de dados pessoais","Limite legal.","dias")}
-    ${f("cap","Limite de pareceres prometidos em aberto","Acima disso, a triagem pede prazo maior ou sugere acompanhar.","pareceres")}
+    ${f("cap","Limite de resumos prévios prometidos em aberto","Acima disso, a triagem pede prazo maior ou sugere acompanhar.","pareceres")}
   </section>
   <div><section class="card"><div class="ch"><h2>Alertas para você</h2></div>
     <div class="mini" style="font-size:.88rem">${["E-mail · nome@exemplo.com","Celular (Telegram)","Resumo diário às 7h"].map(x=>`<div><input type="checkbox" checked aria-label="${x}"> ${x}</div>`).join("")}</div></section>
@@ -897,13 +897,13 @@ document.addEventListener("click",e=>{
   if(d.ativar){ return modalAtivar(d.ativar); }
   if(d.confativar){ const tr=TRI.find(x=>x.id===d.confativar); const i=TRI.indexOf(tr); TRI.splice(i,1);
     const key="n"+tr.id; P[key]={num:tr.num,titulo:tr.ementa.split(",")[0].replace(/\.$/,""),uf:tr.uf,casa:tr.fonte,st:"preparo",ativado:"14/10",prazo:`${14+S.cfg.parecer}/10`,dias:S.cfg.parecer,versao:"Texto original",sec:0,aviso:0,seguem:0};
-    document.getElementById("ovl").innerHTML=""; rerender(); return toast(`${tr.num} ativado. Aviso “Parecer em preparação” no ar · prazo ${14+S.cfg.parecer}/10.`); }
-  if(d.acomptri){ const tr=TRI.find(x=>x.id===d.acomptri); TRI.splice(TRI.indexOf(tr),1); rerender(); return toast(`${tr.num}: acompanhando. A página pública não promete parecer.`); }
+    document.getElementById("ovl").innerHTML=""; rerender(); return toast(`${tr.num} ativado. Aviso “Resumo prévio em preparação” no ar · prazo ${14+S.cfg.parecer}/10.`); }
+  if(d.acomptri){ const tr=TRI.find(x=>x.id===d.acomptri); TRI.splice(TRI.indexOf(tr),1); rerender(); return toast(`${tr.num}: acompanhando. A página pública não promete resumo prévio.`); }
   if(d.disc){ S.disc=S.disc===d.disc?null:d.disc; return rerender(); }
   if(d.discm){ const tr=TRI.find(x=>x.id===d.discm); TRI.splice(TRI.indexOf(tr),1); S.disc=null; rerender(); return toast(`Descartado (${d.m}). O motivo ajusta as palavras-chave.`); }
   if(d.acomp){ P[d.acomp].st="acompanhando"; rerender(); return toast(`Agora só acompanhando. O aviso público mudou para “Acompanhando”; ${P[d.acomp].aviso} pessoas serão avisadas quando houver novidade.`); }
   if(d.novadata){ const p=P[d.novadata]; p.prazo="19/10"; p.dias=5; rerender(); return toast(`Novo prazo: 19/10. O aviso público continua no ar.`); }
-  if(d.ativarp){ const p=P[d.ativarp]; p.st="preparo"; p.prazo=`${14+S.cfg.parecer}/10`; p.dias=S.cfg.parecer; p.sec=0; p.aviso=0; p.versao=p.versao||"Texto vigente"; rerender(); return toast(`Parecer ativado. Prazo ${p.prazo}.`); }
+  if(d.ativarp){ const p=P[d.ativarp]; p.st="preparo"; p.prazo=`${14+S.cfg.parecer}/10`; p.dias=S.cfg.parecer; p.sec=0; p.aviso=0; p.versao=p.versao||"Texto vigente"; rerender(); return toast(`Resumo prévio ativado. Prazo ${p.prazo}.`); }
   if(d.dtab){ S.dTab=d.dtab; return rerender(); }
   if(d.etab){ S.eTab=d.etab; return rerender(); }
   if(d.edpane){ S.edPane=d.edpane; return rerender(); }
@@ -928,7 +928,7 @@ document.addEventListener("click",e=>{
   if(d.prev!==undefined){ return toast("Prévia: como visitante, como inscrito e em PDF (no site real abre em nova aba)."); }
   if(d.coletar!==undefined){ S.coletando=true; rerender(); setTimeout(()=>{ S.coletando=false; S.senadoOk=true; rerender(); toast("Senado coletado: 71 itens. Nota pública retirada."); },1400); return; }
   if(d.resp){ S.resp[d.resp]=true; return rerender(); }
-  if(d.enviar){ PED.corr=PED.corr.filter(c=>c.id!==d.enviar); rerender(); return toast("Resposta enviada. Correção registrada no parecer e na página de Correções."); }
+  if(d.enviar){ PED.corr=PED.corr.filter(c=>c.id!==d.enviar); rerender(); return toast("Resposta enviada. Correção registrada no resumo prévio e na página de Correções."); }
   if(d.np){ PED.corr=PED.corr.filter(c=>c.id!==d.np); rerender(); return toast("Resposta enviada explicando por que o texto se mantém."); }
   if(d.cred){ const [id,a]=d.cred.split("|"); const c=PED.imp.find(x=>x.id===id); PED.imp=PED.imp.filter(x=>x.id!==id); rerender();
     return toast(a==="ok"?`${c.nome} credenciada. Selo e embargo liberados.`:a==="info"?`Pedido de mais informações enviado a ${c.nome}. O prazo fica suspenso até a resposta.`:`Recusa enviada a ${c.nome}, com o motivo.`); }
@@ -945,7 +945,7 @@ document.addEventListener("input",e=>{
     document.getElementById("gt").textContent=s.tit+" | ênfase jur"; document.getElementById("gd").textContent=s.desc;
     const ct=document.getElementById("c-tit"); ct.textContent=s.tit.length+"/60"; ct.classList.toggle("over",s.tit.length>60);
     const cd=document.getElementById("c-desc"); cd.textContent=s.desc.length+"/155"; cd.classList.toggle("over",s.desc.length>155);
-    document.querySelector(".gprev .u").textContent="nomedosite.com.br › pareceres › "+s.slug;
+    document.querySelector(".gprev .u").textContent="nomedosite.com.br › resumos prévios › "+s.slug;
     document.getElementById("seochk").innerHTML=seoChk(); }
   if(d.cfg){ const v=parseInt(el.value,10); if(v>0) S.cfg[d.cfg]=v; }
   if(d.testkw!==undefined){ const v=el.value.trim(); document.getElementById("ttr").textContent=v?`“${v}” capturaria ${Math.max(1,(v.length*7)%40)} propostas nos últimos 30 dias (${Math.max(0,(v.length*3)%9)} já descartadas).`:"Mostra quantas propostas dos últimos 30 dias o termo capturaria."; }

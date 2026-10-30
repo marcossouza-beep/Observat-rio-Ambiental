@@ -1,7 +1,7 @@
 'use client'
 import { useSearchParams } from 'next/navigation'
 
-const MATERIAL: Record<string, string> = { nt: 'da nota técnica', qc: 'do quadro comparativo', pdf: 'de um PDF' }
+const MATERIAL: Record<string, string> = { nt: 'do parecer técnico', qc: 'do quadro comparativo', pdf: 'de um PDF' }
 
 /**
  * Usar dentro de <Suspense>: lê o endereço só no navegador, sem tirar a página do cache.
@@ -21,7 +21,7 @@ export function AvisoPdf({ versaoAtual, atualizadoEm }: { versaoAtual: number; a
         {antigo ? (
           <>
             <b>
-              Você chegou pelo link {MATERIAL[origem.m]} da versão {origem.v} deste parecer.
+              Você chegou pelo link {MATERIAL[origem.m]} da versão {origem.v} deste resumo prévio.
             </b>{' '}
             Esta página traz a versão {versaoAtual}
             {atualizadoEm ? `, atualizada em ${atualizadoEm}` : ''}. O que mudou está logo abaixo.

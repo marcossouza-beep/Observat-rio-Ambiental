@@ -69,7 +69,7 @@ export function AcoesTriagem({ id, rotulo, prazoPadrao, abertos, limite, classif
 
   if (modo === 'ativar')
     return (
-      <div className="obs-acoes coluna" role="group" aria-label={`Ativar parecer de ${rotulo}`}>
+      <div className="obs-acoes coluna" role="group" aria-label={`Ativar resumo prévio de ${rotulo}`}>
         {chips}
         <label>
           Publicar até (sugerido: 4 dias depois que a proposta saiu)
@@ -84,7 +84,7 @@ export function AcoesTriagem({ id, rotulo, prazoPadrao, abertos, limite, classif
             Ficará com {abertos + 1} de {limite} em aberto.
           </span>
         )}
-        <span className="obs-nota">A página pública passa a mostrar “Parecer em preparação… nos próximos dias”.</span>
+        <span className="obs-nota">A página pública passa a mostrar “Resumo prévio em preparação… nos próximos dias”.</span>
         <div className="obs-acoes">
           <button type="button" className="obs-btn p" disabled={salvando || !prazo || (lotado && !mesmoAssim)} onClick={() => salvar({ situacaoEditorial: 'ativa', prazoParecer: `${prazo}T15:00:00.000Z`, ...classificar() })}>
             Ativar e publicar aviso
@@ -124,7 +124,7 @@ export function AcoesTriagem({ id, rotulo, prazoPadrao, abertos, limite, classif
     <div className="obs-acoes coluna">
       {chips}
       <button type="button" className="obs-btn p" onClick={() => setModo('ativar')}>
-        Ativar parecer
+        Ativar resumo prévio
       </button>
       <button type="button" className="obs-btn" disabled={salvando} onClick={() => salvar({ situacaoEditorial: 'monitorada', ...classificar() })}>
         Acompanhar

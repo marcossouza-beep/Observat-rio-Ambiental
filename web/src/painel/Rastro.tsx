@@ -13,13 +13,13 @@ export async function Rastro({ data, payload }: UIFieldServerProps) {
     payload.count({ collection: 'acessos-pdf', where: { parecer: { equals: data.id }, material: { equals: material } } }).then((r) => r.totalDocs)
   const [nt, qc] = await Promise.all([contar('nota_tecnica'), contar('quadro_comparativo')])
   const linhas: [string, TipoMaterial, number][] = [
-    ['Nota técnica', 'nota_tecnica', nt],
+    ['Parecer técnico', 'nota_tecnica', nt],
     ['Quadro comparativo', 'quadro_comparativo', qc],
   ]
   return (
     <div className="obs-checagem obs-rastro">
       <h4>Links dos PDFs</h4>
-      <p className="obs-nota">Carimbados sozinhos no pé de cada página, com QR, ao baixar. Levam à versão atual deste parecer.</p>
+      <p className="obs-nota">Carimbados sozinhos no pé de cada página, com QR, ao baixar. Levam à versão atual deste resumo prévio.</p>
       <ul>
         {linhas.map(([nome, material, n]) => (
           <li key={material}>

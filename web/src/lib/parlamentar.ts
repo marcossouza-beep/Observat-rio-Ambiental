@@ -19,7 +19,7 @@ export const ROTULO_SENTIDO: Record<Sentido, string> = {
   contra: 'Contra a proteção',
   sem_voto: 'Ausente, abstenção ou obstrução',
   neutra: 'Proposta neutra',
-  sem_parecer: 'Ainda sem parecer',
+  sem_parecer: 'Ainda sem resumo prévio',
 }
 
 /** Resumo: só votos em propostas com parecer de caráter não neutro entram na conta. */

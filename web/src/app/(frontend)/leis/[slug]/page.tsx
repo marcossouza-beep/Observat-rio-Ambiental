@@ -128,7 +128,7 @@ export default async function PaginaLei({ params }: { params: Params }) {
       <nav className="steps" aria-label="Seções da página">
         <a href="#a-lei">A lei</a>
         <a href="#quem">Quem</a>
-        <a href="#parecer">{comParecer ? 'Parecer' : aviso.tipo === 'em_preparacao' ? 'Parecer em breve' : 'Acompanhamento'}</a>
+        <a href="#parecer">{comParecer ? 'Resumo prévio' : aviso.tipo === 'em_preparacao' ? 'Resumo prévio em breve' : 'Acompanhamento'}</a>
         {tramitacoes.length ? <a href="#tramitacao">Tramitação</a> : null}
       </nav>
 
@@ -234,7 +234,7 @@ export default async function PaginaLei({ params }: { params: Params }) {
       {aviso.tipo === 'desatualizado' ? (
         <section className="block b-alert" role="note">
           <p>
-            <b>O texto mudou em {dataBR(aviso.desde)}.</b> Este parecer analisa {analisada ? `a versão "${analisada.rotulo || analisada.tipo}" de ${dataBR(analisada.data)}` : 'uma versão anterior'}. A
+            <b>O texto mudou em {dataBR(aviso.desde)}.</b> Este resumo prévio analisa {analisada ? `a versão "${analisada.rotulo || analisada.tipo}" de ${dataBR(analisada.data)}` : 'uma versão anterior'}. A
             atualização está em preparação.
           </p>
         </section>
@@ -243,12 +243,12 @@ export default async function PaginaLei({ params }: { params: Params }) {
       {comParecer && parecer ? (
         <section className="block b-par" id="parecer">
           <h2>
-            Parecer técnico
+            Resumo prévio
             {autorParecer ? <small>por {autorParecer.nome}</small> : null}
           </h2>
           {textoDe(parecer.secoes?.resumo) ? <Rico valor={parecer.secoes?.resumo} /> : null}
-          <Link className="pill-btn" href={`/pareceres/${parecer.slug}`} style={{ justifySelf: 'start' }}>
-            Ler o parecer completo <Seta />
+          <Link className="pill-btn" href={`/resumos/${parecer.slug}`} style={{ justifySelf: 'start' }}>
+            Ler o resumo prévio completo <Seta />
           </Link>
         </section>
       ) : aviso.tipo === 'em_preparacao' ? (
@@ -258,8 +258,8 @@ export default async function PaginaLei({ params }: { params: Params }) {
               <Relogio />
             </span>
             <div>
-              <h2>Parecer em preparação</h2>
-              <p>O parecer técnico sobre {lei.rotulo} está sendo escrito e será publicado nos próximos dias, nesta mesma página.</p>
+              <h2>Resumo prévio em preparação</h2>
+              <p>O resumo prévio sobre {lei.rotulo} está sendo escrito e será publicado nos próximos dias, nesta mesma página.</p>
             </div>
           </div>
           <div className="pend-facts">

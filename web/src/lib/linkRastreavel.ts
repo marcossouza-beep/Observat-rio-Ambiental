@@ -22,9 +22,9 @@ export function lerCodigo(codigo: string): Rastro | null {
 export const caminhoLink = (r: Rastro) => `/r/${codigoLink(r)}`
 
 /** Destino do link: a página do parecer, com a origem para o aviso "você veio de um PDF da versão X". */
-export const destinoLink = (slug: string, r: Rastro) => `/pareceres/${slug}?pdf=${MATERIAL_CODIGO[r.material]}&v=${r.versao}`
+export const destinoLink = (slug: string, r: Rastro) => `/resumos/${slug}?pdf=${MATERIAL_CODIGO[r.material]}&v=${r.versao}`
 
-const NOME_MATERIAL: Record<TipoMaterial, string> = { nota_tecnica: 'Nota técnica', quadro_comparativo: 'Quadro comparativo', outro: 'Material' }
+const NOME_MATERIAL: Record<TipoMaterial, string> = { nota_tecnica: 'Parecer técnico', quadro_comparativo: 'Quadro comparativo', outro: 'Material' }
 export const nomeMaterial = (t: TipoMaterial) => NOME_MATERIAL[t]
 
 /** Linhas do rodapé carimbado em cada página do PDF. Só caracteres que as fontes padrão do PDF aceitam. */
@@ -41,7 +41,7 @@ export function linhasCarimbo(c: {
   baixadoEm: string
 }): [string, string] {
   const l1 = [
-    `${c.nomeSite} · ${nomeMaterial(c.material)} do parecer prévio sobre ${c.proposta}`,
+    `${c.nomeSite} · ${nomeMaterial(c.material)} sobre ${c.proposta}`,
     `versão ${c.versao}${c.publicadoEm ? `, de ${c.publicadoEm}` : ''}`,
     c.textoAnalisado ? `analisa: ${c.textoAnalisado}` : null,
     c.autor ? `autoria: ${c.autor}` : null,
