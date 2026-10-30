@@ -776,6 +776,8 @@ const PASSOS: Passo[] = [
 const PASSOS_NORMAS = [
   { fonte: 'normas', nome: 'planalto-codigo-florestal', rodar: () => gravarHtml('normas', 'planalto-codigo-florestal', 'https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651compilado.htm') },
   { fonte: 'normas', nome: 'planalto-snuc', rodar: () => gravarHtml('normas', 'planalto-snuc', 'https://www.planalto.gov.br/ccivil_03/leis/l9985.htm') },
+  { fonte: 'normas', nome: 'senado-legislacao-codigo-florestal', rodar: () => gravarHtml('normas', 'senado-legislacao-codigo-florestal', `${SENADO}/legislacao/lei/12651/2012`) },
+  { fonte: 'normas', nome: 'normas-leg-codigo-florestal', rodar: () => gravarHtml('normas', 'normas-leg-codigo-florestal', 'https://normas.leg.br/?urn=urn:lex:br:federal:lei:2012-05-25;12651') },
   { fonte: 'normas', nome: 'lexml-codigo-florestal', rodar: () => gravarHtml('normas', 'lexml-codigo-florestal', 'https://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2012-05-25;12651') },
 ]
 
