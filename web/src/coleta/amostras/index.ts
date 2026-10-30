@@ -803,7 +803,8 @@ async function vigenteNormasLeg(nome: string, urn: string) {
   const ficha = (await r.json()) as { encoding?: { version?: string; contentUrl?: string }[] }
   const atual = ficha.encoding?.find((e) => e.version === 'Current' && e.contentUrl)
   if (!atual?.contentUrl) return salvar('normas', nome, { url: urn, status: null, tipo: '', gravadaEm: new Date().toISOString(), corpo: null, erro: 'sem compilação vigente' })
-  return gravarHtml('normas', nome, atual.contentUrl)
+  // O próprio normas.leg.br troca /api/binario/ por /api/public/binario/ para baixar o texto
+  return gravarHtml('normas', nome, atual.contentUrl.replace('/api/binario/', '/api/public/binario/'))
 }
 
 /** Texto compilado das leis alteradas (redação vigente): Planalto e LexML. */
