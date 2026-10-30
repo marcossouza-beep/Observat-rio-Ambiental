@@ -1,0 +1,9 @@
+{
+  "url": "https://normas.leg.br/api/public/legislation?urn=urn:lex:br:federal:lei:2012-05-25;12651",
+  "status": 404,
+  "tipo": "application/json",
+  "gravadaEm": "2026-10-30T04:01:18.704Z",
+  "corpo": {
+    "html": "{\"timestamp\":\"2026-10-30T04:01:18.807Z\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/public/legislation\"}"
+  }
+}
