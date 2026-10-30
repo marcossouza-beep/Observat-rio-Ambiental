@@ -1,0 +1,141 @@
+{
+  "nota": "Exemplo didático sobre a Lei nº 15.190/2025. Dados observados: MapBiomas, RAD 2022 a 2025. Cenários 2026-2030: trajetórias por premissa, não previsões.",
+  "indicador": "Área desmatada no Brasil (MapBiomas, RAD)",
+  "unidade": "mil ha/ano",
+  "observado": {
+    "anos": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "valores": [
+      2070,
+      1830,
+      1242,
+      985
+    ]
+  },
+  "anos": [
+    "2025",
+    "2026",
+    "2027",
+    "2028",
+    "2029",
+    "2030"
+  ],
+  "cenarios": [
+    {
+      "id": "A",
+      "nome": "A. Sem a dispensa (regime anterior)",
+      "valores": [
+        985,
+        886,
+        798,
+        718,
+        646,
+        582
+      ],
+      "premissa": "queda de 10% ao ano, metade do ritmo de 2024 para 2025"
+    },
+    {
+      "id": "B",
+      "nome": "B. Lei como está (vetos derrubados)",
+      "valores": [
+        985,
+        1034,
+        1086,
+        1140,
+        1197,
+        1257
+      ],
+      "premissa": "alta de 5% ao ano com a reabertura de frentes sem análise de localização"
+    },
+    {
+      "id": "C",
+      "nome": "C. Com os ajustes recomendados",
+      "valores": [
+        985,
+        936,
+        889,
+        844,
+        802,
+        762
+      ],
+      "premissa": "queda de 5% ao ano, com CAR analisado exigido nas regiões críticas"
+    }
+  ],
+  "limiar": {
+    "rotulo": "Limiar da H1: nível de 2025",
+    "valor": 985
+  },
+  "dimensoes": [
+    "Ambiental",
+    "Social",
+    "Econômica",
+    "Institucional e fiscal"
+  ],
+  "potencial": {
+    "B": [
+      -2,
+      -1,
+      1,
+      -1
+    ],
+    "C": [
+      -1,
+      0,
+      1,
+      0
+    ]
+  },
+  "hipoteses": [
+    [
+      "H1",
+      "Se mantida a dispensa do art. 9º, a área desmatada anual tende a parar de cair, porque a abertura de áreas para cultivo e pecuária deixa de passar por análise de localização e condicionantes.",
+      "Área desmatada no Brasil (RAD MapBiomas)",
+      "ha/ano",
+      "MapBiomas, RAD 2025 (dado de 2025)",
+      984794,
+      "aumento",
+      0,
+      null,
+      null,
+      null,
+      "Inconclusiva",
+      "Lei em vigor desde 4/2/2026; o RAD com dados de 2026 sai em maio de 2027."
+    ],
+    [
+      "H2",
+      "A dispensa recai sobre o vetor que concentra a perda de vegetação nativa no país.",
+      "Participação da agropecuária na área desmatada",
+      "%",
+      "MapBiomas, RAD 2024 (série 2019-2024)",
+      null,
+      "acima de",
+      0.8,
+      0.97,
+      "média",
+      null,
+      "Sustentada",
+      "Mais de 97% da perda de vegetação nativa de 2019 a 2024 teve a agropecuária como vetor."
+    ],
+    [
+      "H3",
+      "O filtro de regularidade do § 1º tende a ser declaratório, porque a maior parte dos cadastros no CAR não foi analisada.",
+      "Cadastros no CAR com análise concluída",
+      "%",
+      "SFB, Sicar, dez/2025 (via Portal DBO)",
+      null,
+      "abaixo de",
+      0.5,
+      0.059,
+      "média",
+      null,
+      "Sustentada",
+      "480,7 mil análises concluídas em 8,15 milhões de cadastros (5,9%) no fim de 2025."
+    ]
+  ],
+  "aviso": "EXEMPLO DIDÁTICO sobre a Lei nº 15.190/2025. Dados observados reais (MapBiomas RAD; SFB/Sicar), conferidos em 30/10/2026. Os cenários de 2026 a 2030 são trajetórias por premissa, não previsões.",
+  "premissas": "Base 2025: 984.794 ha (MapBiomas, RAD 2025). A. Sem a dispensa (regime anterior): queda de 10% ao ano, metade do ritmo de 2024 para 2025 · B. Lei como está (vetos derrubados): alta de 5% ao ano com a reabertura de frentes sem análise de localização · C. Com os ajustes recomendados: queda de 5% ao ano, com CAR analisado exigido nas regiões críticas."
+}

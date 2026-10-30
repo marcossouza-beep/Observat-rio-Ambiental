@@ -64,7 +64,7 @@ linhas = [
     ('Regras dos gráficos', dict(bold=True, size=11)),
     ('Um eixo só (nunca dois eixos verticais). Valor do rótulo no fim da linha ou da barra. Fonte e ano abaixo de cada gráfico. Sem 3D, sem sombra.', {}),
     ('', {}),
-    ('Os valores já preenchidos são um EXEMPLO ILUSTRATIVO COM DADOS FICTÍCIOS (PL do licenciamento simplificado). Substitua pelos dados da análise.', dict(bold=True, color='B23B3B')),
+    (dados.get('aviso') or 'Os valores já preenchidos são um EXEMPLO ILUSTRATIVO COM DADOS FICTÍCIOS (PL do licenciamento simplificado). Substitua pelos dados da análise.', dict(bold=True, color='B23B3B')),
 ]
 for i, (t, f) in enumerate(linhas, 1):
     c = ws.cell(row=i, column=1, value=t); c.font = fonte(**f); c.alignment = Alignment(wrap_text=True)
@@ -72,10 +72,10 @@ c = ws.cell(row=len(linhas) + 2, column=1, value='Célula para preencher'); entr
 
 # ---------------- Hipóteses ----------------
 wh = wb.create_sheet('Hipóteses')
-tit = ['Nº', 'Hipótese (como no parecer técnico)', 'Indicador', 'Unidade', 'Fonte da linha de base', 'Linha de base', 'Sentido esperado', 'Limiar (variação que sustenta a hipótese)', 'Variação observada ou projetada', 'Confiança da evidência', 'Resultado pelo critério', 'Resultado final (autor)', 'Justificativa em 1 linha']
+tit = ['Nº', 'Hipótese (como no parecer técnico)', 'Indicador', 'Unidade', 'Fonte da linha de base', 'Linha de base', 'Sentido esperado', 'Limiar (variação ou nível que sustenta a hipótese)', 'Observado (variação ou nível)', 'Confiança da evidência', 'Resultado pelo critério', 'Resultado final (autor)', 'Justificativa em 1 linha']
 cabecalho(wh, 1, tit, [5, 42, 30, 12, 26, 12, 14, 16, 16, 14, 20, 20, 40])
 wh.row_dimensions[1].height = 42
-exemplo = [
+exemplo = dados.get('hipoteses') or [
     ['H1', 'Se aprovada como está, a proposta tende a aumentar a supressão de vegetação nativa em imóveis de médio porte, porque retira a análise prévia.', dados['indicador'], dados['unidade'], 'Exemplo fictício, 2025', 120, 'aumento', 0.10, 0.18, 'baixa', None, 'Sustentada em parte', 'Um só caso de referência estadual (+18% em 3 anos); falta série própria.'],
     ['H2', 'Com os ajustes recomendados (zona de amortecimento e limite de 4 módulos), o aumento fica abaixo da metade do previsto em H1.', dados['indicador'], dados['unidade'], 'Exemplo fictício, 2025', 120, 'aumento', 0.05, None, 'baixa', None, None, 'Sem caso de referência comparável.'],
 ]
@@ -84,17 +84,20 @@ for i in range(2, 8):
     wh.cell(row=i, column=1, value=linha[0]).font = fonte(bold=True)
     for j in range(2, 14):
         if j == 11: continue
-        entrada(wh.cell(row=i, column=j), linha[j - 1], '0%' if j in (8, 9) else ('#,##0' if j == 6 else None))
+        entrada(wh.cell(row=i, column=j), linha[j - 1], '0.0%' if j in (8, 9) else ('#,##0' if j == 6 else None))
     # Critério (sugestão): sem dado → inconclusiva; atingiu o limiar → sustentada; metade do limiar → em parte; resto → não sustentada
     g, h, i_ = f'G{i}', f'H{i}', f'I{i}'
     j_ = f'J{i}'
-    formula(wh.cell(row=i, column=11), f'=IF(OR({h}="",{i_}=""),"Inconclusiva",IF(IF({g}="redução",-{i_},{i_})>=ABS({h}),IF({j_}="baixa","Sustentada em parte","Sustentada"),IF(IF({g}="redução",-{i_},{i_})>=ABS({h})/2,"Sustentada em parte","Não sustentada")))')
+    # aumento/redução: variação contra o limiar (metade do limiar = em parte); acima de/abaixo de: nível contra o limiar
+    atingiu = f'OR(AND({g}="aumento",{i_}>=ABS({h})),AND({g}="redução",-{i_}>=ABS({h})),AND({g}="acima de",{i_}>={h}),AND({g}="abaixo de",{i_}<={h}))'
+    metade = f'OR(AND({g}="aumento",{i_}>=ABS({h})/2),AND({g}="redução",-{i_}>=ABS({h})/2))'
+    formula(wh.cell(row=i, column=11), f'=IF(OR({h}="",{i_}=""),"Inconclusiva",IF({atingiu},IF({j_}="baixa","Sustentada em parte","Sustentada"),IF({metade},"Sustentada em parte","Não sustentada")))')
     wh.row_dimensions[i].height = 60
-dv1 = DataValidation(type='list', formula1='"aumento,redução"', allow_blank=True); wh.add_data_validation(dv1); dv1.add('G2:G7')
+dv1 = DataValidation(type='list', formula1='"aumento,redução,acima de,abaixo de"', allow_blank=True); wh.add_data_validation(dv1); dv1.add('G2:G7')
 dv2 = DataValidation(type='list', formula1='"alta,média,baixa"', allow_blank=True); wh.add_data_validation(dv2); dv2.add('J2:J7')
 dv3 = DataValidation(type='list', formula1='"Sustentada,Sustentada em parte,Não sustentada,Inconclusiva"', allow_blank=True); wh.add_data_validation(dv3); dv3.add('L2:L7')
 wh['K1'].comment = Comment('Sugestão automática: atingiu o limiar → Sustentada (ou Sustentada em parte, se a confiança é baixa); metade do limiar → Sustentada em parte; abaixo → Não sustentada; sem dado → Inconclusiva. O resultado que vale é o da coluna L, decidido pelo autor.', 'ênfase jur')
-wh['H1'].comment = Comment('Em proporção: 10% = 0,10. Para hipótese de redução, informe o limiar como positivo e escolha "redução" no sentido.', 'ênfase jur')
+wh['H1'].comment = Comment('Em proporção: 10% = 0,10. Aumento/redução: o limiar é uma variação (para redução, informe positivo). Acima de/abaixo de: o limiar é um nível (ex.: 0,80 = 80%).', 'ênfase jur')
 r = 9
 for t in ['Critérios', 'Sustentada: o indicador atinge o limiar no sentido esperado, com evidência de confiança alta ou média.', 'Sustentada em parte: atinge ao menos metade do limiar, ou atinge o limiar só com evidência de confiança baixa.', 'Não sustentada: fica abaixo da metade do limiar ou vai no sentido contrário.', 'Inconclusiva: não há dado ou caso comparável suficiente. Diga o que faltou.']:
     c = wh.cell(row=r, column=2, value=t); c.font = fonte(bold=(r == 9)); r += 1
@@ -118,7 +121,7 @@ for i, ano in enumerate(dados['anos']):
     formula(wc.cell(row=r, column=7), f'=IF($D$5=0,"",D{r}/$D$5-1)', '0%')
 fim = 4 + len(dados['anos'])
 wc.cell(row=fim + 2, column=1, value='Fonte e premissas:').font = fonte(bold=True)
-entrada(wc.cell(row=fim + 2, column=2), 'Exemplo fictício. Informe fonte, ano e premissas de cada cenário.')
+entrada(wc.cell(row=fim + 2, column=2), dados.get('premissas') or 'Exemplo fictício. Informe fonte, ano e premissas de cada cenário.')
 wc.merge_cells(start_row=fim + 2, start_column=2, end_row=fim + 2, end_column=7)
 
 lc = LineChart()
