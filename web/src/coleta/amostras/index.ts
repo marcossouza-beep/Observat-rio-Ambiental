@@ -804,11 +804,9 @@ const PASSOS_NORMAS = [
   { fonte: 'normas', nome: 'senado-legislacao-codigo-florestal', rodar: () => gravarHtml('normas', 'senado-legislacao-codigo-florestal', `${SENADO}/legislacao/lei/12651/2012`) },
   { fonte: 'normas', nome: 'normas-leg-codigo-florestal', rodar: () => gravarHtml('normas', 'normas-leg-codigo-florestal', 'https://normas.leg.br/?urn=urn:lex:br:federal:lei:2012-05-25;12651') },
   { fonte: 'normas', nome: 'normas-leg-enderecos', rodar: enderecosNormasLeg },
-  ...['normas', 'norma', 'legislation', 'documento'].map((ep) => ({
-    fonte: 'normas',
-    nome: `normas-leg-api-${ep}`,
-    rodar: () => gravarHtml('normas', `normas-leg-api-${ep}`, `https://normas.leg.br/api/public/${ep}?urn=urn:lex:br:federal:lei:2012-05-25;12651`),
-  })),
+  // API pública usada pelo próprio normas.leg.br (Senado): texto da norma com a redação vigente, por URN
+  { fonte: 'normas', nome: 'normas-leg-6938', rodar: () => gravarHtml('normas', 'normas-leg-6938', 'https://normas.leg.br/api/public/normas?urn=urn:lex:br:federal:lei:1981-08-31;6938&tipo_documento=maior-detalhe') },
+  { fonte: 'normas', nome: 'normas-leg-9985', rodar: () => gravarHtml('normas', 'normas-leg-9985', 'https://normas.leg.br/api/public/normas?urn=urn:lex:br:federal:lei:2000-07-18;9985&tipo_documento=maior-detalhe') },
   { fonte: 'normas', nome: 'lexml-codigo-florestal', rodar: () => gravarHtml('normas', 'lexml-codigo-florestal', 'https://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2012-05-25;12651') },
 ]
 
