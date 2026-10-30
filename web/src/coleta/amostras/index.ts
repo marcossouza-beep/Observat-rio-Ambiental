@@ -798,13 +798,13 @@ async function enderecosNormasLeg() {
 }
 
 /** Ficha da norma no normas.leg.br e, dela, o HTML da compilação vigente ("version": "Current"). */
-async function vigenteNormasLeg(nome: string, urn: string) {
+async function vigenteNormasLeg(nome: string, urn: string, fonte = 'normas') {
   const r = await fetch(`https://normas.leg.br/api/public/normas?urn=${urn}&tipo_documento=maior-detalhe`, { signal: AbortSignal.timeout(45_000) })
   const ficha = (await r.json()) as { encoding?: { version?: string; contentUrl?: string }[] }
   const atual = ficha.encoding?.find((e) => e.version === 'Current' && e.contentUrl)
-  if (!atual?.contentUrl) return salvar('normas', nome, { url: urn, status: null, tipo: '', gravadaEm: new Date().toISOString(), corpo: null, erro: 'sem compilação vigente' })
+  if (!atual?.contentUrl) return salvar(fonte, nome, { url: urn, status: null, tipo: '', gravadaEm: new Date().toISOString(), corpo: null, erro: 'sem compilação vigente' })
   // O próprio normas.leg.br troca /api/binario/ por /api/public/binario/ para baixar o texto
-  return gravarHtml('normas', nome, atual.contentUrl.replace('/api/binario/', '/api/public/binario/'))
+  return gravarHtml(fonte, nome, atual.contentUrl.replace('/api/binario/', '/api/public/binario/'))
 }
 
 /** Texto compilado das leis alteradas (redação vigente): Planalto e LexML. */
@@ -818,6 +818,12 @@ const PASSOS_NORMAS = [
   { fonte: 'normas', nome: 'normas-leg-6938', rodar: () => gravarHtml('normas', 'normas-leg-6938', 'https://normas.leg.br/api/public/normas?urn=urn:lex:br:federal:lei:1981-08-31;6938&tipo_documento=maior-detalhe') },
   { fonte: 'normas', nome: 'normas-leg-6938-vigente', rodar: () => vigenteNormasLeg('normas-leg-6938-vigente', 'urn:lex:br:federal:lei:1981-08-31;6938') },
   { fonte: 'normas', nome: 'normas-leg-9985', rodar: () => gravarHtml('normas', 'normas-leg-9985', 'https://normas.leg.br/api/public/normas?urn=urn:lex:br:federal:lei:2000-07-18;9985&tipo_documento=maior-detalhe') },
+  // Referências do exemplo de parecer técnico (Lei Geral do Licenciamento Ambiental)
+  { fonte: 'referencias', nome: 'normas-leg-15190', rodar: () => gravarHtml('referencias', 'normas-leg-15190', 'https://normas.leg.br/api/public/normas?urn=urn:lex:br:federal:lei:2025-08-08;15190&tipo_documento=maior-detalhe') },
+  { fonte: 'referencias', nome: 'normas-leg-15190-vigente', rodar: () => vigenteNormasLeg('normas-leg-15190-vigente', 'urn:lex:br:federal:lei:2025-08-08;15190', 'referencias') },
+  { fonte: 'referencias', nome: 'camara-15190-atualizada', rodar: () => gravarHtml('referencias', 'camara-15190-atualizada', 'https://www2.camara.leg.br/legin/fed/lei/2025/lei-15190-8-agosto-2025-797833-normaatualizada-pl.html') },
+  { fonte: 'referencias', nome: 'conama-237', rodar: () => gravarHtml('referencias', 'conama-237', 'https://conama.mma.gov.br/?option=com_sisconama&task=arquivo.download&id=237') },
+  { fonte: 'referencias', nome: 'mapbiomas-rad', rodar: () => gravarHtml('referencias', 'mapbiomas-rad', 'https://alerta.mapbiomas.org/relatorio/') },
   { fonte: 'normas', nome: 'lexml-codigo-florestal', rodar: () => gravarHtml('normas', 'lexml-codigo-florestal', 'https://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2012-05-25;12651') },
 ]
 
