@@ -78,16 +78,21 @@ Os fluxos do GitHub rodam fora do Brasil. Os sites de AP, MA, PE, RN, DF, ES e R
 
 1. **Máquina:** qualquer Linux com 1 vCPU, 1 GB de memória e 20 GB de disco, em São Paulo (por exemplo: Oracle Cloud "Always Free", região São Paulo; Magalu Cloud; AWS ou Google na região `sa-east-1`/`southamerica-east1`). Ela só faz chamadas de saída; não precisa de porta aberta.
 2. **Proteção antes de tudo** (o repositório é público): Settings → Actions → General → *Approval for running fork pull request workflows from contributors* → **Require approval for all external contributors**. Sem isso, um estranho poderia propor uma mudança nos fluxos e fazê-la rodar na sua máquina.
-3. **Executor do GitHub:** Settings → Actions → Runners → *New self-hosted runner* → Linux. Da tela, copie só o token (o texto depois de `--token` no comando `./config.sh`); ele vale por 1 hora. Na máquina, como usuário com sudo:
+3. **Atalho na Oracle (sem formulários):** com o token do passo seguinte em mãos, abra o **Cloud Shell** (ícone `>_` no topo do console, região Brazil East) e cole:
+   ```bash
+   curl -fsSL https://raw.githubusercontent.com/marcossouza-beep/Observat-rio-Ambiental/claude/project-evaluation-roadmap-h09v0c/infra/oracle-criar-servidor.sh | bash -s -- SEU_TOKEN
+   ```
+   O script (`infra/oracle-criar-servidor.sh`) cria a rede com saída para a internet, a sub-rede pública e a máquina gratuita (AMD E2.1.Micro; se não houver, ARM A1 com 1 OCPU e 6 GB), que roda sozinha o `servidor-brasil.sh` ao ligar. Nesse caso, pule a parte "Na máquina" do passo 4.
+4. **Executor do GitHub:** Settings → Actions → Runners → *New self-hosted runner* → Linux. Da tela, copie só o token (o texto depois de `--token` no comando `./config.sh`); ele vale por 1 hora. Na máquina, como usuário com sudo:
    ```bash
    curl -fsSL https://raw.githubusercontent.com/marcossouza-beep/Observat-rio-Ambiental/claude/project-evaluation-roadmap-h09v0c/infra/servidor-brasil.sh | sudo bash -s -- SEU_TOKEN
    ```
    O script (`infra/servidor-brasil.sh`) instala Node 22, pnpm e as bibliotecas do Chromium, cria memória de troca, cria o usuário `github`, cadastra o executor com o rótulo **`brasil`** como serviço (volta sozinho quando a máquina reinicia) e, no fim, testa se as Assembleias respondem dali. Pode ser rodado de novo com um token novo.
-4. **Variáveis do GitHub** (Settings → Secrets and variables → Actions → *Variables*):
+5. **Variáveis do GitHub** (Settings → Secrets and variables → Actions → *Variables*):
    - `RUNNER_BRASIL` = `true` (liga o uso do servidor);
    - `FONTES_BRASIL` = fontes que só respondem do Brasil, separadas por vírgula (ex.: `casa-ap,casa-rs`), preenchida à medida que os conectores desses estados ficarem prontos.
-5. **Conferir:** Actions → **Levantamento regional** → *Run workflow* com `servidor` = `brasil` e as UFs `AP,MA,PE,RN,DF,ES,RS,GO,RJ`. O resultado vira um commit com "(servidor no Brasil)" na mensagem; a partir dele os conectores desses estados podem ser construídos, com amostras gravadas também pelo servidor (**Gravar amostras das APIs**, `servidor` = `brasil`).
-6. **Coleta:** com as variáveis ligadas, a **Coleta** das 6h, 12h, 18h e 23h roda as fontes de `FONTES_BRASIL` no servidor no Brasil e as demais no GitHub, como hoje.
+6. **Conferir:** Actions → **Levantamento regional** → *Run workflow* com `servidor` = `brasil` e as UFs `AP,MA,PE,RN,DF,ES,RS,GO,RJ`. O resultado vira um commit com "(servidor no Brasil)" na mensagem; a partir dele os conectores desses estados podem ser construídos, com amostras gravadas também pelo servidor (**Gravar amostras das APIs**, `servidor` = `brasil`).
+7. **Coleta:** com as variáveis ligadas, a **Coleta** das 6h, 12h, 18h e 23h roda as fontes de `FONTES_BRASIL` no servidor no Brasil e as demais no GitHub, como hoje.
 
 Cuidado: um executor próprio roda o código dos fluxos do repositório. Mantenha o repositório privado ou, se for público, em Settings → Actions → General exija aprovação para fluxos de colaboradores externos; os fluxos deste projeto que usam o servidor só rodam por agendamento ou à mão.
 
