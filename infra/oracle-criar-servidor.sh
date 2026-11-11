@@ -3,7 +3,7 @@
 # rede com saída para a internet, sub-rede pública, máquina Ubuntu e o cadastro no GitHub (rótulo "brasil").
 #
 # Uso, no Cloud Shell do Oracle (ícone >_ no topo do console), com o token da tela "New self-hosted runner":
-#   curl -fsSL https://raw.githubusercontent.com/marcossouza-beep/Observat-rio-Ambiental/claude/project-evaluation-roadmap-h09v0c/infra/oracle-criar-servidor.sh | bash -s -- SEU_TOKEN
+#   curl -fsSL https://raw.githubusercontent.com/marcossouza-beep/Observat-rio-Ambiental/claude/project-evaluation-roadmap-h09v0c/infra/oracle-criar-servidor.sh | bash -s -- SEU_TOKEN [TENTATIVAS]
 #
 # Pode rodar de novo: reaproveita a rede "observatorio-rede" se já existir. A máquina instala tudo sozinha
 # ao ligar (infra/servidor-brasil.sh) e aparece no GitHub em 10 a 15 minutos.
@@ -65,30 +65,68 @@ echo "  ok"
 
 AD="$(oci iam availability-domain list -c "$C" --query 'data[0].name' --raw-output)"
 
-lancar() { # forma, configuração da forma (ou vazio)
-  local forma="$1" config="$2" imagem
-  imagem="$(oci compute image list -c "$C" --operating-system "Canonical Ubuntu" --operating-system-version "24.04" \
-    --shape "$forma" --sort-by TIMECREATED --sort-order DESC --limit 1 --query 'data[0].id' --raw-output 2>/dev/null || true)"
-  [ -n "$imagem" ] && [ "$imagem" != "null" ] || return 1
+ERRO="$(mktemp)"
+# lancar roda dentro de $(...), um subprocesso: os motivos vão para um arquivo, não para uma variável
+MOTIVOS="$(mktemp)"
+
+lancar() { # forma, configuração da forma (ou vazio). Escreve o id da máquina; em falha, guarda o motivo em MOTIVOS.
+  local forma="$1" config="$2" imagem="" versao
+  for versao in 24.04 22.04; do
+    imagem="$(oci compute image list -c "$C" --operating-system "Canonical Ubuntu" --operating-system-version "$versao" \
+      --shape "$forma" --sort-by TIMECREATED --sort-order DESC --limit 1 --query 'data[0].id' --raw-output 2>/dev/null || true)"
+    [ -n "$imagem" ] && [ "$imagem" != "null" ] && break
+    imagem=""
+  done
+  if [ -z "$imagem" ]; then
+    echo "$forma: não há imagem Ubuntu compatível nesta região" >>"$MOTIVOS"
+    return 1
+  fi
   local extra=()
   [ -n "$config" ] && extra=(--shape-config "$config")
-  oci compute instance launch -c "$C" --availability-domain "$AD" --display-name "$NOME" \
+  if oci compute instance launch -c "$C" --availability-domain "$AD" --display-name "$NOME" \
     --shape "$forma" ${extra[@]+"${extra[@]}"} --image-id "$imagem" --subnet-id "$SUB" --assign-public-ip true \
     --ssh-authorized-keys-file "$HOME/.ssh/id_rsa.pub" --user-data-file "$INICIO" \
-    --wait-for-state RUNNING --query 'data.id' --raw-output
+    --wait-for-state RUNNING --query 'data.id' --raw-output 2>"$ERRO"; then
+    return 0
+  fi
+  # A resposta de erro do Oracle traz "code" e "message"; guarda os dois para explicar o motivo
+  local codigo mensagem
+  codigo="$(grep -o '"code": "[^"]*"' "$ERRO" | head -1 | cut -d'"' -f4)"
+  mensagem="$(grep -o '"message": "[^"]*"' "$ERRO" | head -1 | cut -d'"' -f4)"
+  echo "$forma: ${codigo:-erro} ${mensagem:-$(head -c 300 "$ERRO" | tr '\n' ' ')}" >>"$MOTIVOS"
+  return 1
 }
 
-passo "Máquina ($NOME), Ubuntu 24.04, camada gratuita"
+passo "Máquinas que já existem na conta"
+# shellcheck disable=SC2016  # crases são literais do filtro JMESPath do Oracle, não do bash
+oci compute instance list -c "$C" --query 'data[?"lifecycle-state"!=`TERMINATED`].["display-name",shape,"lifecycle-state"]' \
+  --output table 2>/dev/null || echo "  (não consegui listar)"
 JA="$(oci compute instance list -c "$C" --display-name "$NOME" --lifecycle-state RUNNING --query 'data[0].id' --raw-output 2>/dev/null || true)"
 if [ -n "$JA" ] && [ "$JA" != "null" ]; then
   falha "já existe uma máquina '$NOME' ligada. Se ela não apareceu no GitHub, apague-a em Compute → Instances (Terminate) e rode de novo com um token novo."
 fi
-if ID="$(lancar VM.Standard.E2.1.Micro '')"; then
-  echo "  máquina AMD gratuita criada: $ID"
-elif ID="$(lancar VM.Standard.A1.Flex '{"ocpus":1,"memoryInGBs":6}')"; then
-  echo "  máquina ARM gratuita criada: $ID"
-else
-  falha "o Oracle não tem máquina gratuita disponível agora em $REGIAO (\"out of capacity\"). Tente de novo em algumas horas; o comando reaproveita a rede."
+
+# Tentativas: o segundo argumento diz quantas (padrão 1). Entre uma e outra, espera 2 minutos.
+TENTATIVAS="${2:-1}"
+ID=""
+for ((n = 1; n <= TENTATIVAS; n++)); do
+  passo "Máquina ($NOME), camada gratuita · tentativa $n de $TENTATIVAS"
+  : >"$MOTIVOS"
+  if ID="$(lancar VM.Standard.E2.1.Micro '')"; then
+    echo "  máquina AMD gratuita criada: $ID"
+    break
+  elif ID="$(lancar VM.Standard.A1.Flex '{"ocpus":1,"memoryInGBs":6}')"; then
+    echo "  máquina ARM gratuita criada: $ID"
+    break
+  fi
+  ID=""
+  while IFS= read -r m; do echo "  recusada · $m"; done <"$MOTIVOS"
+  if ((n < TENTATIVAS)); then echo "  nova tentativa em 2 minutos..."; sleep 120; fi
+done
+rm -f "$ERRO" "$MOTIVOS"
+if [ -z "$ID" ]; then
+  rm -f "$INICIO"
+  falha "o Oracle recusou as duas máquinas gratuitas (motivos acima). \"Out of host capacity\" passa com o tempo: rode de novo, ou com mais tentativas (ex.: ... | bash -s -- SEU_TOKEN 20). \"LimitExceeded\": apague máquinas antigas em Compute → Instances."
 fi
 rm -f "$INICIO"
 
